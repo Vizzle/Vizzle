@@ -21,6 +21,23 @@
 		AF468FF819C6CAF700766349 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF468FDA19C6CAF700766349 /* UIKit.framework */; };
 		AF46900019C6CAF700766349 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF468FFE19C6CAF700766349 /* InfoPlist.strings */; };
 		AF46900219C6CAF700766349 /* VizzleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46900119C6CAF700766349 /* VizzleTests.m */; };
+		AF46906819C6CEB900766349 /* VZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46905919C6CEB900766349 /* VZViewController.m */; };
+		AF46906B19C6CEB900766349 /* VZViewControllerLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46906319C6CEB900766349 /* VZViewControllerLogic.m */; };
+		AF46906C19C6CEB900766349 /* VZModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46906619C6CEB900766349 /* VZModel.m */; };
+		AF46907119C6D4BD00766349 /* VZHTTPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46907019C6D4BD00766349 /* VZHTTPModel.m */; };
+		AF46907419C6D4CF00766349 /* VZHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46907319C6D4CF00766349 /* VZHTTPRequest.m */; };
+		AF46907719C6D4F200766349 /* VZHTTPListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46907619C6D4F200766349 /* VZHTTPListModel.m */; };
+		AF46907A19C6D50E00766349 /* VZItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46907919C6D50E00766349 /* VZItem.m */; };
+		AF46907D19C6D52900766349 /* VZListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46907C19C6D52900766349 /* VZListCell.m */; };
+		AF46908019C6D5F200766349 /* VZListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46907F19C6D5F200766349 /* VZListViewDataSource.m */; };
+		AF46908319C6D60B00766349 /* VZListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46908219C6D60B00766349 /* VZListViewDelegate.m */; };
+		AF46908619C6D6BA00766349 /* VZListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46908519C6D6BA00766349 /* VZListViewController.m */; };
+		AF46908919C6D6E900766349 /* VZListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46908819C6D6E900766349 /* VZListItem.m */; };
+		AF46908C19C6D79D00766349 /* VZListDefaultErrorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46908B19C6D79D00766349 /* VZListDefaultErrorCell.m */; };
+		AF46909219C6DA0700766349 /* VZListDefaultLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46909119C6DA0700766349 /* VZListDefaultLoadingCell.m */; };
+		AF46909519C6DA2D00766349 /* VZListDefaultTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46909419C6DA2D00766349 /* VZListDefaultTextCell.m */; };
+		AF46909819C6DA6E00766349 /* VZListDefaultTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46909719C6DA6E00766349 /* VZListDefaultTextItem.m */; };
+		AF46909B19C6ED1500766349 /* VZFooterViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46909A19C6ED1500766349 /* VZFooterViewFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +70,41 @@
 		AF468FFD19C6CAF700766349 /* VizzleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VizzleTests-Info.plist"; sourceTree = "<group>"; };
 		AF468FFF19C6CAF700766349 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AF46900119C6CAF700766349 /* VizzleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VizzleTests.m; sourceTree = "<group>"; };
+		AF46905819C6CEB900766349 /* VZViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZViewController.h; sourceTree = "<group>"; };
+		AF46905919C6CEB900766349 /* VZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZViewController.m; sourceTree = "<group>"; };
+		AF46906219C6CEB900766349 /* VZViewControllerLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZViewControllerLogic.h; sourceTree = "<group>"; };
+		AF46906319C6CEB900766349 /* VZViewControllerLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZViewControllerLogic.m; sourceTree = "<group>"; };
+		AF46906519C6CEB900766349 /* VZModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZModel.h; sourceTree = "<group>"; };
+		AF46906619C6CEB900766349 /* VZModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZModel.m; sourceTree = "<group>"; };
+		AF46906E19C6D0B100766349 /* VizzleConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VizzleConfig.h; sourceTree = "<group>"; };
+		AF46906F19C6D4BD00766349 /* VZHTTPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPModel.h; sourceTree = "<group>"; };
+		AF46907019C6D4BD00766349 /* VZHTTPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModel.m; sourceTree = "<group>"; };
+		AF46907219C6D4CF00766349 /* VZHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPRequest.h; sourceTree = "<group>"; };
+		AF46907319C6D4CF00766349 /* VZHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPRequest.m; sourceTree = "<group>"; };
+		AF46907519C6D4F200766349 /* VZHTTPListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPListModel.h; sourceTree = "<group>"; };
+		AF46907619C6D4F200766349 /* VZHTTPListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPListModel.m; sourceTree = "<group>"; };
+		AF46907819C6D50E00766349 /* VZItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZItem.h; sourceTree = "<group>"; };
+		AF46907919C6D50E00766349 /* VZItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZItem.m; sourceTree = "<group>"; };
+		AF46907B19C6D52900766349 /* VZListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListCell.h; sourceTree = "<group>"; };
+		AF46907C19C6D52900766349 /* VZListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListCell.m; sourceTree = "<group>"; };
+		AF46907E19C6D5F200766349 /* VZListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewDataSource.h; sourceTree = "<group>"; };
+		AF46907F19C6D5F200766349 /* VZListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListViewDataSource.m; sourceTree = "<group>"; };
+		AF46908119C6D60B00766349 /* VZListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewDelegate.h; sourceTree = "<group>"; };
+		AF46908219C6D60B00766349 /* VZListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListViewDelegate.m; sourceTree = "<group>"; };
+		AF46908419C6D6BA00766349 /* VZListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewController.h; sourceTree = "<group>"; };
+		AF46908519C6D6BA00766349 /* VZListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListViewController.m; sourceTree = "<group>"; };
+		AF46908719C6D6E900766349 /* VZListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListItem.h; sourceTree = "<group>"; };
+		AF46908819C6D6E900766349 /* VZListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListItem.m; sourceTree = "<group>"; };
+		AF46908A19C6D79D00766349 /* VZListDefaultErrorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultErrorCell.h; sourceTree = "<group>"; };
+		AF46908B19C6D79D00766349 /* VZListDefaultErrorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultErrorCell.m; sourceTree = "<group>"; };
+		AF46909019C6DA0700766349 /* VZListDefaultLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultLoadingCell.h; sourceTree = "<group>"; };
+		AF46909119C6DA0700766349 /* VZListDefaultLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultLoadingCell.m; sourceTree = "<group>"; };
+		AF46909319C6DA2D00766349 /* VZListDefaultTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultTextCell.h; sourceTree = "<group>"; };
+		AF46909419C6DA2D00766349 /* VZListDefaultTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultTextCell.m; sourceTree = "<group>"; };
+		AF46909619C6DA6E00766349 /* VZListDefaultTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultTextItem.h; sourceTree = "<group>"; };
+		AF46909719C6DA6E00766349 /* VZListDefaultTextItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultTextItem.m; sourceTree = "<group>"; };
+		AF46909919C6ED1500766349 /* VZFooterViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFooterViewFactory.h; sourceTree = "<group>"; };
+		AF46909A19C6ED1500766349 /* VZFooterViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFooterViewFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +211,7 @@
 				AF46905419C6CB9300766349 /* VZDebugger */,
 				AF46905519C6CB9300766349 /* VZMV* */,
 				AF46905619C6CB9300766349 /* VZScaffold */,
+				AF46906E19C6D0B100766349 /* VizzleConfig.h */,
 			);
 			path = Vizzle;
 			sourceTree = "<group>";
@@ -173,6 +226,13 @@
 		AF46905519C6CB9300766349 /* VZMV* */ = {
 			isa = PBXGroup;
 			children = (
+				AF46905719C6CEB900766349 /* controller */,
+				AF46905A19C6CEB900766349 /* datasource */,
+				AF46905D19C6CEB900766349 /* delegate */,
+				AF46906019C6CEB900766349 /* item */,
+				AF46906119C6CEB900766349 /* logic */,
+				AF46906419C6CEB900766349 /* model */,
+				AF46906719C6CEB900766349 /* view */,
 			);
 			path = "VZMV*";
 			sourceTree = "<group>";
@@ -182,6 +242,89 @@
 			children = (
 			);
 			path = VZScaffold;
+			sourceTree = "<group>";
+		};
+		AF46905719C6CEB900766349 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				AF46905819C6CEB900766349 /* VZViewController.h */,
+				AF46905919C6CEB900766349 /* VZViewController.m */,
+				AF46908419C6D6BA00766349 /* VZListViewController.h */,
+				AF46908519C6D6BA00766349 /* VZListViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		AF46905A19C6CEB900766349 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				AF46907E19C6D5F200766349 /* VZListViewDataSource.h */,
+				AF46907F19C6D5F200766349 /* VZListViewDataSource.m */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		AF46905D19C6CEB900766349 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				AF46908119C6D60B00766349 /* VZListViewDelegate.h */,
+				AF46908219C6D60B00766349 /* VZListViewDelegate.m */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
+		AF46906019C6CEB900766349 /* item */ = {
+			isa = PBXGroup;
+			children = (
+				AF46907819C6D50E00766349 /* VZItem.h */,
+				AF46907919C6D50E00766349 /* VZItem.m */,
+				AF46908719C6D6E900766349 /* VZListItem.h */,
+				AF46908819C6D6E900766349 /* VZListItem.m */,
+				AF46909619C6DA6E00766349 /* VZListDefaultTextItem.h */,
+				AF46909719C6DA6E00766349 /* VZListDefaultTextItem.m */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		AF46906119C6CEB900766349 /* logic */ = {
+			isa = PBXGroup;
+			children = (
+				AF46906219C6CEB900766349 /* VZViewControllerLogic.h */,
+				AF46906319C6CEB900766349 /* VZViewControllerLogic.m */,
+			);
+			path = logic;
+			sourceTree = "<group>";
+		};
+		AF46906419C6CEB900766349 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				AF46907219C6D4CF00766349 /* VZHTTPRequest.h */,
+				AF46907319C6D4CF00766349 /* VZHTTPRequest.m */,
+				AF46906519C6CEB900766349 /* VZModel.h */,
+				AF46906619C6CEB900766349 /* VZModel.m */,
+				AF46906F19C6D4BD00766349 /* VZHTTPModel.h */,
+				AF46907019C6D4BD00766349 /* VZHTTPModel.m */,
+				AF46907519C6D4F200766349 /* VZHTTPListModel.h */,
+				AF46907619C6D4F200766349 /* VZHTTPListModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		AF46906719C6CEB900766349 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				AF46907B19C6D52900766349 /* VZListCell.h */,
+				AF46907C19C6D52900766349 /* VZListCell.m */,
+				AF46908A19C6D79D00766349 /* VZListDefaultErrorCell.h */,
+				AF46908B19C6D79D00766349 /* VZListDefaultErrorCell.m */,
+				AF46909019C6DA0700766349 /* VZListDefaultLoadingCell.h */,
+				AF46909119C6DA0700766349 /* VZListDefaultLoadingCell.m */,
+				AF46909319C6DA2D00766349 /* VZListDefaultTextCell.h */,
+				AF46909419C6DA2D00766349 /* VZListDefaultTextCell.m */,
+				AF46909919C6ED1500766349 /* VZFooterViewFactory.h */,
+				AF46909A19C6ED1500766349 /* VZFooterViewFactory.m */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,9 +424,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF46909219C6DA0700766349 /* VZListDefaultLoadingCell.m in Sources */,
+				AF46907D19C6D52900766349 /* VZListCell.m in Sources */,
+				AF46906819C6CEB900766349 /* VZViewController.m in Sources */,
+				AF46908319C6D60B00766349 /* VZListViewDelegate.m in Sources */,
 				AF468FED19C6CAF700766349 /* ViewController.m in Sources */,
+				AF46908019C6D5F200766349 /* VZListViewDataSource.m in Sources */,
+				AF46906B19C6CEB900766349 /* VZViewControllerLogic.m in Sources */,
+				AF46906C19C6CEB900766349 /* VZModel.m in Sources */,
+				AF46907A19C6D50E00766349 /* VZItem.m in Sources */,
+				AF46908619C6D6BA00766349 /* VZListViewController.m in Sources */,
+				AF46909B19C6ED1500766349 /* VZFooterViewFactory.m in Sources */,
 				AF468FE719C6CAF700766349 /* AppDelegate.m in Sources */,
+				AF46908919C6D6E900766349 /* VZListItem.m in Sources */,
+				AF46907119C6D4BD00766349 /* VZHTTPModel.m in Sources */,
+				AF46907719C6D4F200766349 /* VZHTTPListModel.m in Sources */,
 				AF468FE319C6CAF700766349 /* main.m in Sources */,
+				AF46908C19C6D79D00766349 /* VZListDefaultErrorCell.m in Sources */,
+				AF46909519C6DA2D00766349 /* VZListDefaultTextCell.m in Sources */,
+				AF46907419C6D4CF00766349 /* VZHTTPRequest.m in Sources */,
+				AF46909819C6DA6E00766349 /* VZListDefaultTextItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

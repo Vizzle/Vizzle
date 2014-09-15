@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  Vizzle
 //
-//  Created by moxin.xt on 14-9-15.
-//  Copyright (c) 2014年 taobao. All rights reserved.
+//  Created by Jayson Xu on 14-9-15.
+//  Copyright (c) 2014年 VizLab. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -1,13 +1,13 @@
 //
-//  ViewController.h
+//  VZListDefaultTextItem.m
 //  Vizzle
 //
 //  Created by Jayson Xu on 14-9-15.
 //  Copyright (c) 2014年 VizLab. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "VZListDefaultTextItem.h"
 
-@interface ViewController : UIViewController
+@implementation VZListDefaultTextItem
 
 @end

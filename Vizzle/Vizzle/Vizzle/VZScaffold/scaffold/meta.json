@@ -1,8 +1,8 @@
 {
 "model":[
 	{
-		"name":"",
-		"class":"",
+		"name":"VZModel",
+		"class":"NSObject",
 		"api":"",
 		"v":" ",
 		"in":[],
@@ -12,25 +12,25 @@
 	
 "item":[
 	{
-		"name":"",
-		"class":"",
+		"name":"VZItem",
+		"class":"NSObject",
 		"response":""
 	}
 ],
 
 "controller":[
 	{
-		"name":"",
-		"class":"",
+		"name":"VZViewController",
+		"class":"UIViewController",
 		"protocols":[],
 		"models":[{"name":"","class":""}],
 		"datasource":{"name":"","class":"","cell":[{"class":"","itemclass":""}]},
 		"delegate":{"name":"","class":""},
-		"logic":{"class":""}
+		"logic":{"class":"VZViewControllerLogic"}
 	}
 ],
 
 "view":{"xib":""},
 
-"author":""
+"author":"Tao Xu"
 }
