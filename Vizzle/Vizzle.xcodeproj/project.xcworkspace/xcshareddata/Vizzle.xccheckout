@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BE88007F-D0C8-4C32-8925-6070A0774465</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Vizzle</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9125DFDB-2AED-43A8-A003-32A03B3FC21F</key>
+		<string>https://github.com/akaDealloc/Vizzle.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Vizzle/Vizzle.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9125DFDB-2AED-43A8-A003-32A03B3FC21F</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/akaDealloc/Vizzle.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9125DFDB-2AED-43A8-A003-32A03B3FC21F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9125DFDB-2AED-43A8-A003-32A03B3FC21F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Vizzle</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,36 @@
+{
+"model":[
+	{
+		"name":"",
+		"class":"",
+		"api":"",
+		"v":" ",
+		"in":[],
+		"out":[]
+	}
+],
+	
+"item":[
+	{
+		"name":"",
+		"class":"",
+		"response":""
+	}
+],
+
+"controller":[
+	{
+		"name":"",
+		"class":"",
+		"protocols":[],
+		"models":[{"name":"","class":""}],
+		"datasource":{"name":"","class":"","cell":[{"class":"","itemclass":""}]},
+		"delegate":{"name":"","class":""},
+		"logic":{"class":""}
+	}
+],
+
+"view":{"xib":""},
+
+"author":""
+}

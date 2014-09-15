@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF468FD719C6CAF700766349 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF468FD619C6CAF700766349 /* Foundation.framework */; };
+		AF468FD919C6CAF700766349 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF468FD819C6CAF700766349 /* CoreGraphics.framework */; };
+		AF468FDB19C6CAF700766349 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF468FDA19C6CAF700766349 /* UIKit.framework */; };
+		AF468FE119C6CAF700766349 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF468FDF19C6CAF700766349 /* InfoPlist.strings */; };
+		AF468FE319C6CAF700766349 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF468FE219C6CAF700766349 /* main.m */; };
+		AF468FE719C6CAF700766349 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF468FE619C6CAF700766349 /* AppDelegate.m */; };
+		AF468FEA19C6CAF700766349 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF468FE819C6CAF700766349 /* Main.storyboard */; };
+		AF468FED19C6CAF700766349 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF468FEC19C6CAF700766349 /* ViewController.m */; };
+		AF468FEF19C6CAF700766349 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF468FEE19C6CAF700766349 /* Images.xcassets */; };
+		AF468FF619C6CAF700766349 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF468FF519C6CAF700766349 /* XCTest.framework */; };
+		AF468FF719C6CAF700766349 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF468FD619C6CAF700766349 /* Foundation.framework */; };
+		AF468FF819C6CAF700766349 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF468FDA19C6CAF700766349 /* UIKit.framework */; };
+		AF46900019C6CAF700766349 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF468FFE19C6CAF700766349 /* InfoPlist.strings */; };
+		AF46900219C6CAF700766349 /* VizzleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46900119C6CAF700766349 /* VizzleTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF468FF919C6CAF700766349 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF468FCB19C6CAF600766349 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF468FD219C6CAF700766349;
+			remoteInfo = Vizzle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AF468FD319C6CAF700766349 /* Vizzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vizzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF468FD619C6CAF700766349 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AF468FD819C6CAF700766349 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AF468FDA19C6CAF700766349 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AF468FDE19C6CAF700766349 /* Vizzle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Vizzle-Info.plist"; sourceTree = "<group>"; };
+		AF468FE019C6CAF700766349 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AF468FE219C6CAF700766349 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AF468FE419C6CAF700766349 /* Vizzle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vizzle-Prefix.pch"; sourceTree = "<group>"; };
+		AF468FE519C6CAF700766349 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AF468FE619C6CAF700766349 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AF468FE919C6CAF700766349 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF468FEB19C6CAF700766349 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AF468FEC19C6CAF700766349 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AF468FEE19C6CAF700766349 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AF468FF419C6CAF700766349 /* VizzleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VizzleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF468FF519C6CAF700766349 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AF468FFD19C6CAF700766349 /* VizzleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VizzleTests-Info.plist"; sourceTree = "<group>"; };
+		AF468FFF19C6CAF700766349 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AF46900119C6CAF700766349 /* VizzleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VizzleTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF468FD019C6CAF700766349 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF468FD919C6CAF700766349 /* CoreGraphics.framework in Frameworks */,
+				AF468FDB19C6CAF700766349 /* UIKit.framework in Frameworks */,
+				AF468FD719C6CAF700766349 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF468FF119C6CAF700766349 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF468FF619C6CAF700766349 /* XCTest.framework in Frameworks */,
+				AF468FF819C6CAF700766349 /* UIKit.framework in Frameworks */,
+				AF468FF719C6CAF700766349 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF468FCA19C6CAF600766349 = {
+			isa = PBXGroup;
+			children = (
+				AF468FDC19C6CAF700766349 /* Vizzle */,
+				AF468FFB19C6CAF700766349 /* VizzleTests */,
+				AF468FD519C6CAF700766349 /* Frameworks */,
+				AF468FD419C6CAF700766349 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF468FD419C6CAF700766349 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF468FD319C6CAF700766349 /* Vizzle.app */,
+				AF468FF419C6CAF700766349 /* VizzleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF468FD519C6CAF700766349 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF468FD619C6CAF700766349 /* Foundation.framework */,
+				AF468FD819C6CAF700766349 /* CoreGraphics.framework */,
+				AF468FDA19C6CAF700766349 /* UIKit.framework */,
+				AF468FF519C6CAF700766349 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF468FDC19C6CAF700766349 /* Vizzle */ = {
+			isa = PBXGroup;
+			children = (
+				AF46905319C6CB9300766349 /* Vizzle */,
+				AF468FE519C6CAF700766349 /* AppDelegate.h */,
+				AF468FE619C6CAF700766349 /* AppDelegate.m */,
+				AF468FE819C6CAF700766349 /* Main.storyboard */,
+				AF468FEB19C6CAF700766349 /* ViewController.h */,
+				AF468FEC19C6CAF700766349 /* ViewController.m */,
+				AF468FEE19C6CAF700766349 /* Images.xcassets */,
+				AF468FDD19C6CAF700766349 /* Supporting Files */,
+			);
+			path = Vizzle;
+			sourceTree = "<group>";
+		};
+		AF468FDD19C6CAF700766349 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF468FDE19C6CAF700766349 /* Vizzle-Info.plist */,
+				AF468FDF19C6CAF700766349 /* InfoPlist.strings */,
+				AF468FE219C6CAF700766349 /* main.m */,
+				AF468FE419C6CAF700766349 /* Vizzle-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF468FFB19C6CAF700766349 /* VizzleTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF46900119C6CAF700766349 /* VizzleTests.m */,
+				AF468FFC19C6CAF700766349 /* Supporting Files */,
+			);
+			path = VizzleTests;
+			sourceTree = "<group>";
+		};
+		AF468FFC19C6CAF700766349 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF468FFD19C6CAF700766349 /* VizzleTests-Info.plist */,
+				AF468FFE19C6CAF700766349 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF46905319C6CB9300766349 /* Vizzle */ = {
+			isa = PBXGroup;
+			children = (
+				AF46905419C6CB9300766349 /* VZDebugger */,
+				AF46905519C6CB9300766349 /* VZMV* */,
+				AF46905619C6CB9300766349 /* VZScaffold */,
+			);
+			path = Vizzle;
+			sourceTree = "<group>";
+		};
+		AF46905419C6CB9300766349 /* VZDebugger */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VZDebugger;
+			sourceTree = "<group>";
+		};
+		AF46905519C6CB9300766349 /* VZMV* */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "VZMV*";
+			sourceTree = "<group>";
+		};
+		AF46905619C6CB9300766349 /* VZScaffold */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VZScaffold;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF468FD219C6CAF700766349 /* Vizzle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF46900519C6CAF700766349 /* Build configuration list for PBXNativeTarget "Vizzle" */;
+			buildPhases = (
+				AF468FCF19C6CAF700766349 /* Sources */,
+				AF468FD019C6CAF700766349 /* Frameworks */,
+				AF468FD119C6CAF700766349 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vizzle;
+			productName = Vizzle;
+			productReference = AF468FD319C6CAF700766349 /* Vizzle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF468FF319C6CAF700766349 /* VizzleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF46900819C6CAF700766349 /* Build configuration list for PBXNativeTarget "VizzleTests" */;
+			buildPhases = (
+				AF468FF019C6CAF700766349 /* Sources */,
+				AF468FF119C6CAF700766349 /* Frameworks */,
+				AF468FF219C6CAF700766349 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF468FFA19C6CAF700766349 /* PBXTargetDependency */,
+			);
+			name = VizzleTests;
+			productName = VizzleTests;
+			productReference = AF468FF419C6CAF700766349 /* VizzleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF468FCB19C6CAF600766349 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = taobao;
+				TargetAttributes = {
+					AF468FF319C6CAF700766349 = {
+						TestTargetID = AF468FD219C6CAF700766349;
+					};
+				};
+			};
+			buildConfigurationList = AF468FCE19C6CAF600766349 /* Build configuration list for PBXProject "Vizzle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF468FCA19C6CAF600766349;
+			productRefGroup = AF468FD419C6CAF700766349 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF468FD219C6CAF700766349 /* Vizzle */,
+				AF468FF319C6CAF700766349 /* VizzleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF468FD119C6CAF700766349 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF468FEF19C6CAF700766349 /* Images.xcassets in Resources */,
+				AF468FE119C6CAF700766349 /* InfoPlist.strings in Resources */,
+				AF468FEA19C6CAF700766349 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF468FF219C6CAF700766349 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF46900019C6CAF700766349 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF468FCF19C6CAF700766349 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF468FED19C6CAF700766349 /* ViewController.m in Sources */,
+				AF468FE719C6CAF700766349 /* AppDelegate.m in Sources */,
+				AF468FE319C6CAF700766349 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF468FF019C6CAF700766349 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF46900219C6CAF700766349 /* VizzleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF468FFA19C6CAF700766349 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF468FD219C6CAF700766349 /* Vizzle */;
+			targetProxy = AF468FF919C6CAF700766349 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF468FDF19C6CAF700766349 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF468FE019C6CAF700766349 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AF468FE819C6CAF700766349 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF468FE919C6CAF700766349 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF468FFE19C6CAF700766349 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF468FFF19C6CAF700766349 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF46900319C6CAF700766349 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AF46900419C6CAF700766349 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF46900619C6CAF700766349 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vizzle/Vizzle-Prefix.pch";
+				INFOPLIST_FILE = "Vizzle/Vizzle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AF46900719C6CAF700766349 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vizzle/Vizzle-Prefix.pch";
+				INFOPLIST_FILE = "Vizzle/Vizzle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AF46900919C6CAF700766349 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Vizzle.app/Vizzle";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vizzle/Vizzle-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "VizzleTests/VizzleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AF46900A19C6CAF700766349 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Vizzle.app/Vizzle";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vizzle/Vizzle-Prefix.pch";
+				INFOPLIST_FILE = "VizzleTests/VizzleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF468FCE19C6CAF600766349 /* Build configuration list for PBXProject "Vizzle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF46900319C6CAF700766349 /* Debug */,
+				AF46900419C6CAF700766349 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF46900519C6CAF700766349 /* Build configuration list for PBXNativeTarget "Vizzle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF46900619C6CAF700766349 /* Debug */,
+				AF46900719C6CAF700766349 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AF46900819C6CAF700766349 /* Build configuration list for PBXNativeTarget "VizzleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF46900919C6CAF700766349 /* Debug */,
+				AF46900A19C6CAF700766349 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF468FCB19C6CAF600766349 /* Project object */;
+}
