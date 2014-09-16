@@ -40,13 +40,13 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
  */
 - (NSDictionary *)dataParams;
 /**
- *  MTop API Name
+ *  API NAME
  *
  *  @return NSString
  */
 - (NSString *)methodName;
 /**
- *  解析MTop返回的JSON，并返回结果给Model来处理
+ *  解析JSON RESPONSE，并返回结果给Model来处理
  *  如果解析JSON错误，请设置error，并返回nil
  *
  *  @param JSON 请求返回的JSON结果
@@ -73,7 +73,7 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
  */
 - (NSString* )customRequestClassName;
 /**
- *  MTOP POST 请求的body参数
+ *  POST 请求的body参数
  *
  *  v = VZModel : 1.2
  *

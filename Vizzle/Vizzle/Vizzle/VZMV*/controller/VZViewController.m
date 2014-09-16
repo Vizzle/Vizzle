@@ -133,8 +133,7 @@
     
     VZLog(@"[%@]-->dealloc",self.class);
     
-    [self.logic logic_dealloc];
-    
+    [_logic logic_dealloc];
     [_modelDictInternal removeAllObjects];
     _modelDictInternal    = nil;
 }
