@@ -133,7 +133,8 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ( indexPath.section == self.controller.keyModel.sectionNumber)
+    NSInteger numberOfSections = [self.controller.dataSource numberOfSectionsInTableView:tableView];
+    if ( indexPath.section == numberOfSections - 1)
     {
         VZListViewDataSource* dataSource = (VZListViewDataSource*)tableView.dataSource;
         NSArray* items = dataSource.itemsForSection[@(indexPath.section)];

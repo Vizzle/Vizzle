@@ -239,24 +239,25 @@
     
 }
 
-- (void)showModel:(VZModel *)model{
-    
+- (void)showModel:(VZModel *)model
+{
+    //todo:
+}
+
+- (void)showEmpty:(VZModel *)model
+{
+    //todo:
 }
 
 
-
-- (void)showEmpty:(VZModel *)model {
-    
+- (void)showLoading:(VZModel*)model
+{
+    //todo:
 }
 
-
-- (void)showLoading:(VZModel*)model{
-
-    
-}
-
-- (void)showError:(NSError *)error withModel:(VZModel*)model{
-
+- (void)showError:(NSError *)error withModel:(VZModel*)model
+{
+    //todo:
 }
 
 @end

@@ -247,7 +247,14 @@
         return NO;
     }
     
-    numberOfRows = [self.dataSource tableView:self.tableView numberOfRowsInSection:model.sectionNumber];
+    numberOfRows = 0;
+    
+    for (int i=0; i<numberOfSections; i++) {
+        numberOfRows =  [self.dataSource tableView:self.tableView numberOfRowsInSection:model.sectionNumber];
+        if (numberOfRows > 0) {
+            break;
+        }
+    }
     
     if (!numberOfRows) {
         return NO;
@@ -270,7 +277,7 @@
 
 - (void)showEmpty:(VZHTTPListModel *)model
 {
-    VZLog(@"[%@]-->showEmpty:{key:%@,section:%d}",[self class],model.key,model.sectionNumber);
+    VZLog(@"[%@]-->showEmpty:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
     
     [super showEmpty:model];
     
@@ -281,7 +288,7 @@
 //默认loading 样式
 - (void)showLoading:(VZHTTPListModel *)model
 {
-    VZLog(@"[%@]-->showLoading:{key:%@,section:%d}",[self class],model.key,model.sectionNumber);
+    VZLog(@"[%@]-->showLoading:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
     
     if (model == _keyModel) {
             self.tableView.tableFooterView = self.footerViewLoading;
@@ -306,7 +313,7 @@
 
 - (void)showModel:(VZHTTPListModel *)model
 {
-    VZLog(@"[%@]-->showModel:{key:%@,section:%d}",[self class],model.key,model.sectionNumber);
+    VZLog(@"[%@]-->showModel:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
     
     [super showModel:model];
     
@@ -323,7 +330,7 @@
 
 - (void)showError:(NSError *)error withModel:(VZHTTPListModel *)model
 {
-    VZLog(@"[%@]-->showError:{key:%@,section:%d}",[self class], model.key,model.sectionNumber);
+    VZLog(@"[%@]-->showError:{key:%@,section:%ld}",[self class], model.key,(long)model.sectionNumber);
     
     [self endRefreshing];
     
@@ -428,7 +435,7 @@
 
 - (void)showNoResult:(VZHTTPListModel *)model
 {
-    NSLog(@"[%@]-->showNoResult:{key:%@,section:%d}",[self class],model.key,model.sectionNumber);
+    NSLog(@"[%@]-->showNoResult:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
     
     [self endRefreshing];
     
@@ -455,7 +462,7 @@
 }
 - (void)showComplete:(VZHTTPListModel *)model
 {
-    VZLog(@"[%@]-->showComplete:{section:%d}",[self class],model.sectionNumber);
+    VZLog(@"[%@]-->showComplete:{section:%ld}",[self class],(long)model.sectionNumber);
     
     if (model == _keyModel) {
         self.tableView.tableFooterView =  self.footerViewComplete;

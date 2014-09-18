@@ -7,6 +7,75 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF19596419CB29B600285954 /* VLKOFListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF19594C19CB29B600285954 /* VLKOFListCell.m */; };
+		AF19596519CB29B600285954 /* kof_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = AF19594E19CB29B600285954 /* kof_meta.json */; };
+		AF19596619CB29B600285954 /* VLKOFListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF19595119CB29B600285954 /* VLKOFListViewController.m */; };
+		AF19596719CB29B600285954 /* VLKOFListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AF19595419CB29B600285954 /* VLKOFListViewDataSource.m */; };
+		AF19596819CB29B600285954 /* VLKOFListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF19595719CB29B600285954 /* VLKOFListViewDelegate.m */; };
+		AF19596919CB29B600285954 /* VLKOFListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AF19595A19CB29B600285954 /* VLKOFListItem.m */; };
+		AF19596A19CB29B600285954 /* VLKOFLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = AF19595D19CB29B600285954 /* VLKOFLogic.m */; };
+		AF19596B19CB29B600285954 /* VLKOFListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF19596019CB29B600285954 /* VLKOFListModel.m */; };
+		AF19596C19CB29B600285954 /* VLKOFSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF19596319CB29B600285954 /* VLKOFSubView.m */; };
+		AF1959B019CB29D700285954 /* parser.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19596E19CB29D700285954 /* parser.rb */; };
+		AF1959B119CB29D700285954 /* icoupon.json in Resources */ = {isa = PBXBuildFile; fileRef = AF19597019CB29D700285954 /* icoupon.json */; };
+		AF1959B219CB29D700285954 /* kof.json in Resources */ = {isa = PBXBuildFile; fileRef = AF19597119CB29D700285954 /* kof.json */; };
+		AF1959B319CB29D700285954 /* renderer.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19597219CB29D700285954 /* renderer.rb */; };
+		AF1959B419CB29D700285954 /* sb_scaffold.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19597319CB29D700285954 /* sb_scaffold.rb */; };
+		AF1959B519CB29D700285954 /* scaffold.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19597419CB29D700285954 /* scaffold.rb */; };
+		AF1959B619CB29D700285954 /* template_comment.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19597719CB29D700285954 /* template_comment.rb */; };
+		AF1959B719CB29D700285954 /* template_item.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19597819CB29D700285954 /* template_item.rb */; };
+		AF1959B819CB29D700285954 /* template_listcell.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19597919CB29D700285954 /* template_listcell.rb */; };
+		AF1959B919CB29D700285954 /* template_listItem.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19597A19CB29D700285954 /* template_listItem.rb */; };
+		AF1959BA19CB29D700285954 /* template_listviewcontroller.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19597B19CB29D700285954 /* template_listviewcontroller.rb */; };
+		AF1959BB19CB29D700285954 /* template_listviewdatasource.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19597C19CB29D700285954 /* template_listviewdatasource.rb */; };
+		AF1959BC19CB29D700285954 /* template_listviewdelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19597D19CB29D700285954 /* template_listviewdelegate.rb */; };
+		AF1959BD19CB29D700285954 /* template_model.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19597E19CB29D700285954 /* template_model.rb */; };
+		AF1959BE19CB29D700285954 /* template_view.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19597F19CB29D700285954 /* template_view.rb */; };
+		AF1959BF19CB29D700285954 /* template_viewcontroller.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19598019CB29D700285954 /* template_viewcontroller.rb */; };
+		AF1959C019CB29D700285954 /* template_viewcontrollerlogic.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19598119CB29D700285954 /* template_viewcontrollerlogic.rb */; };
+		AF1959C119CB29D700285954 /* test_comment.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19598219CB29D700285954 /* test_comment.rb */; };
+		AF1959C219CB29D700285954 /* test_item.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19598319CB29D700285954 /* test_item.rb */; };
+		AF1959C319CB29D700285954 /* test_listcell.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19598419CB29D700285954 /* test_listcell.rb */; };
+		AF1959C419CB29D700285954 /* test_listItem.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19598519CB29D700285954 /* test_listItem.rb */; };
+		AF1959C519CB29D700285954 /* test_listviewcontroller.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19598619CB29D700285954 /* test_listviewcontroller.rb */; };
+		AF1959C619CB29D700285954 /* test_listviewdatasource.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19598719CB29D700285954 /* test_listviewdatasource.rb */; };
+		AF1959C719CB29D700285954 /* test_listviewdelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19598819CB29D700285954 /* test_listviewdelegate.rb */; };
+		AF1959C819CB29D700285954 /* test_model.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19598919CB29D700285954 /* test_model.rb */; };
+		AF1959C919CB29D700285954 /* test_view.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19598A19CB29D700285954 /* test_view.rb */; };
+		AF1959CA19CB29D700285954 /* test_viewcontroller.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19598B19CB29D700285954 /* test_viewcontroller.rb */; };
+		AF1959CB19CB29D700285954 /* test_viewcontrollerlogic.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19598C19CB29D700285954 /* test_viewcontrollerlogic.rb */; };
+		AF1959CC19CB29D700285954 /* template_comment.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19598E19CB29D700285954 /* template_comment.rb */; };
+		AF1959CD19CB29D700285954 /* template_httplistmodel.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19598F19CB29D700285954 /* template_httplistmodel.rb */; };
+		AF1959CE19CB29D700285954 /* template_httpmodel.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599019CB29D700285954 /* template_httpmodel.rb */; };
+		AF1959CF19CB29D700285954 /* template_item.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599119CB29D700285954 /* template_item.rb */; };
+		AF1959D019CB29D700285954 /* template_listcell.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599219CB29D700285954 /* template_listcell.rb */; };
+		AF1959D119CB29D700285954 /* template_listItem.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599319CB29D700285954 /* template_listItem.rb */; };
+		AF1959D219CB29D700285954 /* template_listviewcontroller.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599419CB29D700285954 /* template_listviewcontroller.rb */; };
+		AF1959D319CB29D700285954 /* template_listviewdatasource.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599519CB29D700285954 /* template_listviewdatasource.rb */; };
+		AF1959D419CB29D700285954 /* template_listviewdelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599619CB29D700285954 /* template_listviewdelegate.rb */; };
+		AF1959D519CB29D700285954 /* template_view.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599719CB29D700285954 /* template_view.rb */; };
+		AF1959D619CB29D700285954 /* template_viewcontroller.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599819CB29D700285954 /* template_viewcontroller.rb */; };
+		AF1959D719CB29D700285954 /* template_viewcontrollerlogic.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599919CB29D700285954 /* template_viewcontrollerlogic.rb */; };
+		AF1959D819CB29D700285954 /* test_comment.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599A19CB29D700285954 /* test_comment.rb */; };
+		AF1959D919CB29D700285954 /* test_httplistmodel.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599B19CB29D700285954 /* test_httplistmodel.rb */; };
+		AF1959DA19CB29D700285954 /* test_httpmodel.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599C19CB29D700285954 /* test_httpmodel.rb */; };
+		AF1959DB19CB29D700285954 /* test_item.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599D19CB29D700285954 /* test_item.rb */; };
+		AF1959DC19CB29D700285954 /* test_listcell.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599E19CB29D700285954 /* test_listcell.rb */; };
+		AF1959DD19CB29D700285954 /* test_listItem.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF19599F19CB29D700285954 /* test_listItem.rb */; };
+		AF1959DE19CB29D700285954 /* test_listviewcontroller.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF1959A019CB29D700285954 /* test_listviewcontroller.rb */; };
+		AF1959DF19CB29D700285954 /* test_listviewdatasource.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF1959A119CB29D700285954 /* test_listviewdatasource.rb */; };
+		AF1959E019CB29D700285954 /* test_listviewdelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF1959A219CB29D700285954 /* test_listviewdelegate.rb */; };
+		AF1959E119CB29D700285954 /* test_view.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF1959A319CB29D700285954 /* test_view.rb */; };
+		AF1959E219CB29D700285954 /* test_viewcontroller.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF1959A419CB29D700285954 /* test_viewcontroller.rb */; };
+		AF1959E319CB29D700285954 /* test_viewcontrollerlogic.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF1959A519CB29D700285954 /* test_viewcontrollerlogic.rb */; };
+		AF1959E419CB29D700285954 /* vz_scaffold.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF1959A619CB29D700285954 /* vz_scaffold.rb */; };
+		AF1959E519CB29D700285954 /* txqs_uikit.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF1959A819CB29D700285954 /* txqs_uikit.rb */; };
+		AF1959E619CB29D700285954 /* txqs_util.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF1959A919CB29D700285954 /* txqs_util.rb */; };
+		AF1959E719CB29D700285954 /* txqs_view.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF1959AA19CB29D700285954 /* txqs_view.rb */; };
+		AF1959E819CB29D700285954 /* sbmvc.yml in Resources */ = {isa = PBXBuildFile; fileRef = AF1959AC19CB29D700285954 /* sbmvc.yml */; };
+		AF1959E919CB29D700285954 /* sbmvc_yml.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF1959AD19CB29D700285954 /* sbmvc_yml.rb */; };
+		AF1959EA19CB29D700285954 /* vizzle.yml in Resources */ = {isa = PBXBuildFile; fileRef = AF1959AE19CB29D700285954 /* vizzle.yml */; };
+		AF1959EB19CB29D700285954 /* vizzle_yml.rb in Resources */ = {isa = PBXBuildFile; fileRef = AF1959AF19CB29D700285954 /* vizzle_yml.rb */; };
 		AF468FD719C6CAF700766349 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF468FD619C6CAF700766349 /* Foundation.framework */; };
 		AF468FD919C6CAF700766349 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF468FD819C6CAF700766349 /* CoreGraphics.framework */; };
 		AF468FDB19C6CAF700766349 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF468FDA19C6CAF700766349 /* UIKit.framework */; };
@@ -51,6 +120,83 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF19594B19CB29B600285954 /* VLKOFListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLKOFListCell.h; sourceTree = "<group>"; };
+		AF19594C19CB29B600285954 /* VLKOFListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLKOFListCell.m; sourceTree = "<group>"; };
+		AF19594E19CB29B600285954 /* kof_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kof_meta.json; sourceTree = "<group>"; };
+		AF19595019CB29B600285954 /* VLKOFListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLKOFListViewController.h; sourceTree = "<group>"; };
+		AF19595119CB29B600285954 /* VLKOFListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLKOFListViewController.m; sourceTree = "<group>"; };
+		AF19595319CB29B600285954 /* VLKOFListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLKOFListViewDataSource.h; sourceTree = "<group>"; };
+		AF19595419CB29B600285954 /* VLKOFListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLKOFListViewDataSource.m; sourceTree = "<group>"; };
+		AF19595619CB29B600285954 /* VLKOFListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLKOFListViewDelegate.h; sourceTree = "<group>"; };
+		AF19595719CB29B600285954 /* VLKOFListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLKOFListViewDelegate.m; sourceTree = "<group>"; };
+		AF19595919CB29B600285954 /* VLKOFListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLKOFListItem.h; sourceTree = "<group>"; };
+		AF19595A19CB29B600285954 /* VLKOFListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLKOFListItem.m; sourceTree = "<group>"; };
+		AF19595C19CB29B600285954 /* VLKOFLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLKOFLogic.h; sourceTree = "<group>"; };
+		AF19595D19CB29B600285954 /* VLKOFLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLKOFLogic.m; sourceTree = "<group>"; };
+		AF19595F19CB29B600285954 /* VLKOFListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLKOFListModel.h; sourceTree = "<group>"; };
+		AF19596019CB29B600285954 /* VLKOFListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLKOFListModel.m; sourceTree = "<group>"; };
+		AF19596219CB29B600285954 /* VLKOFSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLKOFSubView.h; sourceTree = "<group>"; };
+		AF19596319CB29B600285954 /* VLKOFSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLKOFSubView.m; sourceTree = "<group>"; };
+		AF19596E19CB29D700285954 /* parser.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = parser.rb; sourceTree = "<group>"; };
+		AF19597019CB29D700285954 /* icoupon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = icoupon.json; sourceTree = "<group>"; };
+		AF19597119CB29D700285954 /* kof.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kof.json; sourceTree = "<group>"; };
+		AF19597219CB29D700285954 /* renderer.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = renderer.rb; sourceTree = "<group>"; };
+		AF19597319CB29D700285954 /* sb_scaffold.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = sb_scaffold.rb; sourceTree = "<group>"; };
+		AF19597419CB29D700285954 /* scaffold.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = scaffold.rb; sourceTree = "<group>"; };
+		AF19597719CB29D700285954 /* template_comment.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_comment.rb; sourceTree = "<group>"; };
+		AF19597819CB29D700285954 /* template_item.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_item.rb; sourceTree = "<group>"; };
+		AF19597919CB29D700285954 /* template_listcell.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_listcell.rb; sourceTree = "<group>"; };
+		AF19597A19CB29D700285954 /* template_listItem.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_listItem.rb; sourceTree = "<group>"; };
+		AF19597B19CB29D700285954 /* template_listviewcontroller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_listviewcontroller.rb; sourceTree = "<group>"; };
+		AF19597C19CB29D700285954 /* template_listviewdatasource.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_listviewdatasource.rb; sourceTree = "<group>"; };
+		AF19597D19CB29D700285954 /* template_listviewdelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_listviewdelegate.rb; sourceTree = "<group>"; };
+		AF19597E19CB29D700285954 /* template_model.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_model.rb; sourceTree = "<group>"; };
+		AF19597F19CB29D700285954 /* template_view.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_view.rb; sourceTree = "<group>"; };
+		AF19598019CB29D700285954 /* template_viewcontroller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_viewcontroller.rb; sourceTree = "<group>"; };
+		AF19598119CB29D700285954 /* template_viewcontrollerlogic.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_viewcontrollerlogic.rb; sourceTree = "<group>"; };
+		AF19598219CB29D700285954 /* test_comment.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_comment.rb; sourceTree = "<group>"; };
+		AF19598319CB29D700285954 /* test_item.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_item.rb; sourceTree = "<group>"; };
+		AF19598419CB29D700285954 /* test_listcell.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_listcell.rb; sourceTree = "<group>"; };
+		AF19598519CB29D700285954 /* test_listItem.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_listItem.rb; sourceTree = "<group>"; };
+		AF19598619CB29D700285954 /* test_listviewcontroller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_listviewcontroller.rb; sourceTree = "<group>"; };
+		AF19598719CB29D700285954 /* test_listviewdatasource.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_listviewdatasource.rb; sourceTree = "<group>"; };
+		AF19598819CB29D700285954 /* test_listviewdelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_listviewdelegate.rb; sourceTree = "<group>"; };
+		AF19598919CB29D700285954 /* test_model.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_model.rb; sourceTree = "<group>"; };
+		AF19598A19CB29D700285954 /* test_view.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_view.rb; sourceTree = "<group>"; };
+		AF19598B19CB29D700285954 /* test_viewcontroller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_viewcontroller.rb; sourceTree = "<group>"; };
+		AF19598C19CB29D700285954 /* test_viewcontrollerlogic.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_viewcontrollerlogic.rb; sourceTree = "<group>"; };
+		AF19598E19CB29D700285954 /* template_comment.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_comment.rb; sourceTree = "<group>"; };
+		AF19598F19CB29D700285954 /* template_httplistmodel.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_httplistmodel.rb; sourceTree = "<group>"; };
+		AF19599019CB29D700285954 /* template_httpmodel.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_httpmodel.rb; sourceTree = "<group>"; };
+		AF19599119CB29D700285954 /* template_item.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_item.rb; sourceTree = "<group>"; };
+		AF19599219CB29D700285954 /* template_listcell.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_listcell.rb; sourceTree = "<group>"; };
+		AF19599319CB29D700285954 /* template_listItem.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_listItem.rb; sourceTree = "<group>"; };
+		AF19599419CB29D700285954 /* template_listviewcontroller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_listviewcontroller.rb; sourceTree = "<group>"; };
+		AF19599519CB29D700285954 /* template_listviewdatasource.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_listviewdatasource.rb; sourceTree = "<group>"; };
+		AF19599619CB29D700285954 /* template_listviewdelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_listviewdelegate.rb; sourceTree = "<group>"; };
+		AF19599719CB29D700285954 /* template_view.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_view.rb; sourceTree = "<group>"; };
+		AF19599819CB29D700285954 /* template_viewcontroller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_viewcontroller.rb; sourceTree = "<group>"; };
+		AF19599919CB29D700285954 /* template_viewcontrollerlogic.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = template_viewcontrollerlogic.rb; sourceTree = "<group>"; };
+		AF19599A19CB29D700285954 /* test_comment.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_comment.rb; sourceTree = "<group>"; };
+		AF19599B19CB29D700285954 /* test_httplistmodel.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_httplistmodel.rb; sourceTree = "<group>"; };
+		AF19599C19CB29D700285954 /* test_httpmodel.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_httpmodel.rb; sourceTree = "<group>"; };
+		AF19599D19CB29D700285954 /* test_item.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_item.rb; sourceTree = "<group>"; };
+		AF19599E19CB29D700285954 /* test_listcell.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_listcell.rb; sourceTree = "<group>"; };
+		AF19599F19CB29D700285954 /* test_listItem.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_listItem.rb; sourceTree = "<group>"; };
+		AF1959A019CB29D700285954 /* test_listviewcontroller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_listviewcontroller.rb; sourceTree = "<group>"; };
+		AF1959A119CB29D700285954 /* test_listviewdatasource.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_listviewdatasource.rb; sourceTree = "<group>"; };
+		AF1959A219CB29D700285954 /* test_listviewdelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_listviewdelegate.rb; sourceTree = "<group>"; };
+		AF1959A319CB29D700285954 /* test_view.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_view.rb; sourceTree = "<group>"; };
+		AF1959A419CB29D700285954 /* test_viewcontroller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_viewcontroller.rb; sourceTree = "<group>"; };
+		AF1959A519CB29D700285954 /* test_viewcontrollerlogic.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = test_viewcontrollerlogic.rb; sourceTree = "<group>"; };
+		AF1959A619CB29D700285954 /* vz_scaffold.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = vz_scaffold.rb; sourceTree = "<group>"; };
+		AF1959A819CB29D700285954 /* txqs_uikit.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = txqs_uikit.rb; sourceTree = "<group>"; };
+		AF1959A919CB29D700285954 /* txqs_util.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = txqs_util.rb; sourceTree = "<group>"; };
+		AF1959AA19CB29D700285954 /* txqs_view.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = txqs_view.rb; sourceTree = "<group>"; };
+		AF1959AC19CB29D700285954 /* sbmvc.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sbmvc.yml; sourceTree = "<group>"; };
+		AF1959AD19CB29D700285954 /* sbmvc_yml.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = sbmvc_yml.rb; sourceTree = "<group>"; };
+		AF1959AE19CB29D700285954 /* vizzle.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vizzle.yml; sourceTree = "<group>"; };
+		AF1959AF19CB29D700285954 /* vizzle_yml.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = vizzle_yml.rb; sourceTree = "<group>"; };
 		AF468FD319C6CAF700766349 /* Vizzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vizzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF468FD619C6CAF700766349 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AF468FD819C6CAF700766349 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +277,226 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF19594819CB29B600285954 /* example */ = {
+			isa = PBXGroup;
+			children = (
+				AF19594919CB29B600285954 /* KOF */,
+			);
+			name = example;
+			path = Vizzle/example;
+			sourceTree = SOURCE_ROOT;
+		};
+		AF19594919CB29B600285954 /* KOF */ = {
+			isa = PBXGroup;
+			children = (
+				AF19594A19CB29B600285954 /* cell */,
+				AF19594D19CB29B600285954 /* config */,
+				AF19594F19CB29B600285954 /* controller */,
+				AF19595219CB29B600285954 /* datasource */,
+				AF19595519CB29B600285954 /* delegate */,
+				AF19595819CB29B600285954 /* item */,
+				AF19595B19CB29B600285954 /* logic */,
+				AF19595E19CB29B600285954 /* model */,
+				AF19596119CB29B600285954 /* view */,
+			);
+			path = KOF;
+			sourceTree = "<group>";
+		};
+		AF19594A19CB29B600285954 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				AF19594B19CB29B600285954 /* VLKOFListCell.h */,
+				AF19594C19CB29B600285954 /* VLKOFListCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		AF19594D19CB29B600285954 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				AF19594E19CB29B600285954 /* kof_meta.json */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		AF19594F19CB29B600285954 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				AF19595019CB29B600285954 /* VLKOFListViewController.h */,
+				AF19595119CB29B600285954 /* VLKOFListViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		AF19595219CB29B600285954 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				AF19595319CB29B600285954 /* VLKOFListViewDataSource.h */,
+				AF19595419CB29B600285954 /* VLKOFListViewDataSource.m */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		AF19595519CB29B600285954 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				AF19595619CB29B600285954 /* VLKOFListViewDelegate.h */,
+				AF19595719CB29B600285954 /* VLKOFListViewDelegate.m */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
+		AF19595819CB29B600285954 /* item */ = {
+			isa = PBXGroup;
+			children = (
+				AF19595919CB29B600285954 /* VLKOFListItem.h */,
+				AF19595A19CB29B600285954 /* VLKOFListItem.m */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		AF19595B19CB29B600285954 /* logic */ = {
+			isa = PBXGroup;
+			children = (
+				AF19595C19CB29B600285954 /* VLKOFLogic.h */,
+				AF19595D19CB29B600285954 /* VLKOFLogic.m */,
+			);
+			path = logic;
+			sourceTree = "<group>";
+		};
+		AF19595E19CB29B600285954 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				AF19595F19CB29B600285954 /* VLKOFListModel.h */,
+				AF19596019CB29B600285954 /* VLKOFListModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		AF19596119CB29B600285954 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				AF19596219CB29B600285954 /* VLKOFSubView.h */,
+				AF19596319CB29B600285954 /* VLKOFSubView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		AF19596D19CB29D700285954 /* scaffold */ = {
+			isa = PBXGroup;
+			children = (
+				AF19596E19CB29D700285954 /* parser.rb */,
+				AF19596F19CB29D700285954 /* proj_config */,
+				AF19597219CB29D700285954 /* renderer.rb */,
+				AF19597319CB29D700285954 /* sb_scaffold.rb */,
+				AF19597419CB29D700285954 /* scaffold.rb */,
+				AF19597519CB29D700285954 /* template */,
+				AF1959A619CB29D700285954 /* vz_scaffold.rb */,
+				AF1959A719CB29D700285954 /* xib2objc */,
+				AF1959AB19CB29D700285954 /* yml */,
+			);
+			path = scaffold;
+			sourceTree = "<group>";
+		};
+		AF19596F19CB29D700285954 /* proj_config */ = {
+			isa = PBXGroup;
+			children = (
+				AF19597019CB29D700285954 /* icoupon.json */,
+				AF19597119CB29D700285954 /* kof.json */,
+			);
+			path = proj_config;
+			sourceTree = "<group>";
+		};
+		AF19597519CB29D700285954 /* template */ = {
+			isa = PBXGroup;
+			children = (
+				AF19597619CB29D700285954 /* sbmvc */,
+				AF19598D19CB29D700285954 /* vizzle */,
+			);
+			path = template;
+			sourceTree = "<group>";
+		};
+		AF19597619CB29D700285954 /* sbmvc */ = {
+			isa = PBXGroup;
+			children = (
+				AF19597719CB29D700285954 /* template_comment.rb */,
+				AF19597819CB29D700285954 /* template_item.rb */,
+				AF19597919CB29D700285954 /* template_listcell.rb */,
+				AF19597A19CB29D700285954 /* template_listItem.rb */,
+				AF19597B19CB29D700285954 /* template_listviewcontroller.rb */,
+				AF19597C19CB29D700285954 /* template_listviewdatasource.rb */,
+				AF19597D19CB29D700285954 /* template_listviewdelegate.rb */,
+				AF19597E19CB29D700285954 /* template_model.rb */,
+				AF19597F19CB29D700285954 /* template_view.rb */,
+				AF19598019CB29D700285954 /* template_viewcontroller.rb */,
+				AF19598119CB29D700285954 /* template_viewcontrollerlogic.rb */,
+				AF19598219CB29D700285954 /* test_comment.rb */,
+				AF19598319CB29D700285954 /* test_item.rb */,
+				AF19598419CB29D700285954 /* test_listcell.rb */,
+				AF19598519CB29D700285954 /* test_listItem.rb */,
+				AF19598619CB29D700285954 /* test_listviewcontroller.rb */,
+				AF19598719CB29D700285954 /* test_listviewdatasource.rb */,
+				AF19598819CB29D700285954 /* test_listviewdelegate.rb */,
+				AF19598919CB29D700285954 /* test_model.rb */,
+				AF19598A19CB29D700285954 /* test_view.rb */,
+				AF19598B19CB29D700285954 /* test_viewcontroller.rb */,
+				AF19598C19CB29D700285954 /* test_viewcontrollerlogic.rb */,
+			);
+			path = sbmvc;
+			sourceTree = "<group>";
+		};
+		AF19598D19CB29D700285954 /* vizzle */ = {
+			isa = PBXGroup;
+			children = (
+				AF19598E19CB29D700285954 /* template_comment.rb */,
+				AF19598F19CB29D700285954 /* template_httplistmodel.rb */,
+				AF19599019CB29D700285954 /* template_httpmodel.rb */,
+				AF19599119CB29D700285954 /* template_item.rb */,
+				AF19599219CB29D700285954 /* template_listcell.rb */,
+				AF19599319CB29D700285954 /* template_listItem.rb */,
+				AF19599419CB29D700285954 /* template_listviewcontroller.rb */,
+				AF19599519CB29D700285954 /* template_listviewdatasource.rb */,
+				AF19599619CB29D700285954 /* template_listviewdelegate.rb */,
+				AF19599719CB29D700285954 /* template_view.rb */,
+				AF19599819CB29D700285954 /* template_viewcontroller.rb */,
+				AF19599919CB29D700285954 /* template_viewcontrollerlogic.rb */,
+				AF19599A19CB29D700285954 /* test_comment.rb */,
+				AF19599B19CB29D700285954 /* test_httplistmodel.rb */,
+				AF19599C19CB29D700285954 /* test_httpmodel.rb */,
+				AF19599D19CB29D700285954 /* test_item.rb */,
+				AF19599E19CB29D700285954 /* test_listcell.rb */,
+				AF19599F19CB29D700285954 /* test_listItem.rb */,
+				AF1959A019CB29D700285954 /* test_listviewcontroller.rb */,
+				AF1959A119CB29D700285954 /* test_listviewdatasource.rb */,
+				AF1959A219CB29D700285954 /* test_listviewdelegate.rb */,
+				AF1959A319CB29D700285954 /* test_view.rb */,
+				AF1959A419CB29D700285954 /* test_viewcontroller.rb */,
+				AF1959A519CB29D700285954 /* test_viewcontrollerlogic.rb */,
+			);
+			path = vizzle;
+			sourceTree = "<group>";
+		};
+		AF1959A719CB29D700285954 /* xib2objc */ = {
+			isa = PBXGroup;
+			children = (
+				AF1959A819CB29D700285954 /* txqs_uikit.rb */,
+				AF1959A919CB29D700285954 /* txqs_util.rb */,
+				AF1959AA19CB29D700285954 /* txqs_view.rb */,
+			);
+			path = xib2objc;
+			sourceTree = "<group>";
+		};
+		AF1959AB19CB29D700285954 /* yml */ = {
+			isa = PBXGroup;
+			children = (
+				AF1959AC19CB29D700285954 /* sbmvc.yml */,
+				AF1959AD19CB29D700285954 /* sbmvc_yml.rb */,
+				AF1959AE19CB29D700285954 /* vizzle.yml */,
+				AF1959AF19CB29D700285954 /* vizzle_yml.rb */,
+			);
+			path = yml;
+			sourceTree = "<group>";
+		};
 		AF468FCA19C6CAF600766349 = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +574,7 @@
 		AF46905319C6CB9300766349 /* Vizzle */ = {
 			isa = PBXGroup;
 			children = (
+				AF19594819CB29B600285954 /* example */,
 				AF46905419C6CB9300766349 /* VZDebugger */,
 				AF46905519C6CB9300766349 /* VZMV* */,
 				AF46905619C6CB9300766349 /* VZScaffold */,
@@ -240,6 +607,7 @@
 		AF46905619C6CB9300766349 /* VZScaffold */ = {
 			isa = PBXGroup;
 			children = (
+				AF19596D19CB29D700285954 /* scaffold */,
 			);
 			path = VZScaffold;
 			sourceTree = "<group>";
@@ -404,8 +772,69 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF468FEF19C6CAF700766349 /* Images.xcassets in Resources */,
+				AF1959BD19CB29D700285954 /* template_model.rb in Resources */,
+				AF1959D419CB29D700285954 /* template_listviewdelegate.rb in Resources */,
+				AF1959B619CB29D700285954 /* template_comment.rb in Resources */,
+				AF1959B019CB29D700285954 /* parser.rb in Resources */,
+				AF1959DA19CB29D700285954 /* test_httpmodel.rb in Resources */,
+				AF1959D219CB29D700285954 /* template_listviewcontroller.rb in Resources */,
+				AF1959CF19CB29D700285954 /* template_item.rb in Resources */,
 				AF468FE119C6CAF700766349 /* InfoPlist.strings in Resources */,
+				AF1959DE19CB29D700285954 /* test_listviewcontroller.rb in Resources */,
+				AF1959C119CB29D700285954 /* test_comment.rb in Resources */,
+				AF1959DD19CB29D700285954 /* test_listItem.rb in Resources */,
+				AF1959B719CB29D700285954 /* template_item.rb in Resources */,
+				AF1959B519CB29D700285954 /* scaffold.rb in Resources */,
+				AF1959E219CB29D700285954 /* test_viewcontroller.rb in Resources */,
+				AF1959DB19CB29D700285954 /* test_item.rb in Resources */,
+				AF1959E719CB29D700285954 /* txqs_view.rb in Resources */,
+				AF1959B219CB29D700285954 /* kof.json in Resources */,
+				AF1959CB19CB29D700285954 /* test_viewcontrollerlogic.rb in Resources */,
+				AF1959C219CB29D700285954 /* test_item.rb in Resources */,
+				AF1959D319CB29D700285954 /* template_listviewdatasource.rb in Resources */,
+				AF1959C419CB29D700285954 /* test_listItem.rb in Resources */,
+				AF1959E619CB29D700285954 /* txqs_util.rb in Resources */,
+				AF1959BE19CB29D700285954 /* template_view.rb in Resources */,
+				AF1959C519CB29D700285954 /* test_listviewcontroller.rb in Resources */,
+				AF1959B819CB29D700285954 /* template_listcell.rb in Resources */,
+				AF1959B319CB29D700285954 /* renderer.rb in Resources */,
+				AF1959C719CB29D700285954 /* test_listviewdelegate.rb in Resources */,
+				AF1959C819CB29D700285954 /* test_model.rb in Resources */,
+				AF1959C319CB29D700285954 /* test_listcell.rb in Resources */,
+				AF1959E519CB29D700285954 /* txqs_uikit.rb in Resources */,
+				AF1959BC19CB29D700285954 /* template_listviewdelegate.rb in Resources */,
+				AF1959DC19CB29D700285954 /* test_listcell.rb in Resources */,
+				AF1959C619CB29D700285954 /* test_listviewdatasource.rb in Resources */,
+				AF1959D019CB29D700285954 /* template_listcell.rb in Resources */,
+				AF1959C019CB29D700285954 /* template_viewcontrollerlogic.rb in Resources */,
+				AF1959EB19CB29D700285954 /* vizzle_yml.rb in Resources */,
 				AF468FEA19C6CAF700766349 /* Main.storyboard in Resources */,
+				AF1959DF19CB29D700285954 /* test_listviewdatasource.rb in Resources */,
+				AF1959E819CB29D700285954 /* sbmvc.yml in Resources */,
+				AF1959CC19CB29D700285954 /* template_comment.rb in Resources */,
+				AF1959BA19CB29D700285954 /* template_listviewcontroller.rb in Resources */,
+				AF1959CE19CB29D700285954 /* template_httpmodel.rb in Resources */,
+				AF1959D819CB29D700285954 /* test_comment.rb in Resources */,
+				AF1959BF19CB29D700285954 /* template_viewcontroller.rb in Resources */,
+				AF19596519CB29B600285954 /* kof_meta.json in Resources */,
+				AF1959E119CB29D700285954 /* test_view.rb in Resources */,
+				AF1959B419CB29D700285954 /* sb_scaffold.rb in Resources */,
+				AF1959BB19CB29D700285954 /* template_listviewdatasource.rb in Resources */,
+				AF1959CD19CB29D700285954 /* template_httplistmodel.rb in Resources */,
+				AF1959B919CB29D700285954 /* template_listItem.rb in Resources */,
+				AF1959D719CB29D700285954 /* template_viewcontrollerlogic.rb in Resources */,
+				AF1959E419CB29D700285954 /* vz_scaffold.rb in Resources */,
+				AF1959D919CB29D700285954 /* test_httplistmodel.rb in Resources */,
+				AF1959EA19CB29D700285954 /* vizzle.yml in Resources */,
+				AF1959E019CB29D700285954 /* test_listviewdelegate.rb in Resources */,
+				AF1959E919CB29D700285954 /* sbmvc_yml.rb in Resources */,
+				AF1959E319CB29D700285954 /* test_viewcontrollerlogic.rb in Resources */,
+				AF1959C919CB29D700285954 /* test_view.rb in Resources */,
+				AF1959D519CB29D700285954 /* template_view.rb in Resources */,
+				AF1959CA19CB29D700285954 /* test_viewcontroller.rb in Resources */,
+				AF1959D119CB29D700285954 /* template_listItem.rb in Resources */,
+				AF1959D619CB29D700285954 /* template_viewcontroller.rb in Resources */,
+				AF1959B119CB29D700285954 /* icoupon.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +859,13 @@
 				AF46908319C6D60B00766349 /* VZListViewDelegate.m in Sources */,
 				AF468FED19C6CAF700766349 /* ViewController.m in Sources */,
 				AF46908019C6D5F200766349 /* VZListViewDataSource.m in Sources */,
+				AF19596819CB29B600285954 /* VLKOFListViewDelegate.m in Sources */,
 				AF46906B19C6CEB900766349 /* VZViewControllerLogic.m in Sources */,
+				AF19596C19CB29B600285954 /* VLKOFSubView.m in Sources */,
+				AF19596619CB29B600285954 /* VLKOFListViewController.m in Sources */,
+				AF19596919CB29B600285954 /* VLKOFListItem.m in Sources */,
+				AF19596719CB29B600285954 /* VLKOFListViewDataSource.m in Sources */,
+				AF19596B19CB29B600285954 /* VLKOFListModel.m in Sources */,
 				AF46906C19C6CEB900766349 /* VZModel.m in Sources */,
 				AF46907A19C6D50E00766349 /* VZItem.m in Sources */,
 				AF46908619C6D6BA00766349 /* VZListViewController.m in Sources */,
@@ -438,10 +873,12 @@
 				AF468FE719C6CAF700766349 /* AppDelegate.m in Sources */,
 				AF46908919C6D6E900766349 /* VZListItem.m in Sources */,
 				AF46907119C6D4BD00766349 /* VZHTTPModel.m in Sources */,
+				AF19596419CB29B600285954 /* VLKOFListCell.m in Sources */,
 				AF46907719C6D4F200766349 /* VZHTTPListModel.m in Sources */,
 				AF468FE319C6CAF700766349 /* main.m in Sources */,
 				AF46908C19C6D79D00766349 /* VZListDefaultErrorCell.m in Sources */,
 				AF46909519C6DA2D00766349 /* VZListDefaultTextCell.m in Sources */,
+				AF19596A19CB29B600285954 /* VLKOFLogic.m in Sources */,
 				AF46907419C6D4CF00766349 /* VZHTTPRequest.m in Sources */,
 				AF46909819C6DA6E00766349 /* VZListDefaultTextItem.m in Sources */,
 			);
@@ -648,6 +1085,7 @@
 				AF46900719C6CAF700766349 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF46900819C6CAF700766349 /* Build configuration list for PBXNativeTarget "VizzleTests" */ = {
 			isa = XCConfigurationList;
@@ -656,6 +1094,7 @@
 				AF46900A19C6CAF700766349 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
