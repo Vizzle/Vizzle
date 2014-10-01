@@ -43,5 +43,6 @@ NSLog(@"[VZ]-->" fmt, ## __VA_ARGS__); \
 #define kParseJSONError 998
 #define kLoginError 997
 #define kRequestTimeout 996
+#define kAFNetworkingError 995
 
 #endif

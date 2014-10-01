@@ -7,8 +7,9 @@
 //
 
 #import "VZAFRequest.h"
-#import "AFNetworking.h"
 
+#ifdef _AFNETWORKING_
+#import "AFNetworking.h"
 @interface VZAFClient : AFHTTPSessionManager
 
 + (instancetype) sharedClient;
@@ -29,15 +30,20 @@
 
 
 @end
+#endif
 
 
 @interface VZAFRequest()
 
+#ifdef _AFNETWORKING_
 @property(nonatomic,strong) VZAFClient* afClient;
+#endif
+
 @property(nonatomic,strong) NSString* url;
 @property(nonatomic,copy) NSDictionary* queries;
-
+#ifdef _AFNETWORKING_
 @property(nonatomic,strong) NSURLSessionTask* currentTask;
+#endif
 
 @end
 
@@ -53,6 +59,8 @@
 
 - (void)initRequestWithBaseURL:(NSString*)url
 {
+#ifdef _AFNETWORKING_
+    
     NSParameterAssert(url);
     
     if (url.length == 0) {
@@ -66,17 +74,27 @@
 
     self.afClient = [VZAFClient sharedClient];
     self.afClient.session.configuration.timeoutIntervalForRequest = self.timeoutSeconds;
+
+#else
+    
+     [self requestDidFailWithError:[NSError errorWithDomain:VZErrorDomain code:kAFNetworkingError userInfo:@{NSLocalizedDescriptionKey : @"Did not find AFNetworking!"}]];
+    
+#endif
     
 }
 
 - (void)addHeaderParams:(NSDictionary *)params
 {
+#ifdef _AFNETWORKING_
     self.afClient.session.configuration.HTTPAdditionalHeaders = params;
+#endif
 }
 
 - (void)addQueries:(NSDictionary *)queries
 {
+#ifdef _AFNETWORKING_
     self.queries = queries;
+#endif
 
 }
 - (void)addBodyData:(NSDictionary *)aData forKey:(NSString *)key
@@ -85,6 +103,8 @@
 }
 - (void)load
 {
+    
+#ifdef _AFNETWORKING_
     [self requestDidStart];
     
     __weak typeof(self) weakSelf = self;
@@ -103,11 +123,14 @@
         [weakSelf requestDidFailWithError:error];
         
     }];
+#endif
     
 }
 - (void)cancel
 {
+#ifdef _AFNETWORKING_
     [self.currentTask cancel];
+#endif
 }
 
 

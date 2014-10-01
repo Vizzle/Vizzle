@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VZAFRequest.h"
+#import "VZHTTPRequest.h"
 
 @interface VZAFRequest : NSObject <VZHTTPRequestInterface>
 
