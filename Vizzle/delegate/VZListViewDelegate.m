@@ -265,7 +265,7 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
         _textLabel.textColor       = [UIColor redColor];
         _textLabel.backgroundColor = [UIColor clearColor];
         _textLabel.text            = @"下拉刷新";
-        //[self addSubview:_textLabel];
+        [self addSubview:_textLabel];
         
     }
     return self;
@@ -302,7 +302,11 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 //通知controller
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
                 [self.controller performSelector:@selector(pullRefreshDidTrigger) withObject:nil afterDelay:1.0f];
+#pragma clang diagnostic pop
                 
             });
             
@@ -328,6 +332,7 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
     if (!self.bRefreshing) {
         
         _bRefreshing = YES;
+        _textLabel.text = @"刷新中...";
         [UIView animateWithDuration:0.3 animations:^{
             
             UIEdgeInsets inset = scrollView.contentInset;
@@ -357,6 +362,7 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
             
             [self stopAnimation];
             _bRefreshing = NO;
+            _textLabel.text = @"下拉刷新";
             
         }];
         

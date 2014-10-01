@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:Example/VizzleListExample/../../Vizzle"
+      name = "Vizzle">
+      <Group
+         location = "group:adapter"
+         name = "adapter">
+      </Group>
+      <FileRef
+         location = "group:VizzleConfig.h">
+      </FileRef>
+      <Group
+         location = "group:Vizzle/controller"
+         name = "controller">
+         <FileRef
+            location = "group:Vizzle/controller/VZListViewController.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/controller/VZListViewController.m">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/controller/VZViewController.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/controller/VZViewController.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Vizzle/datasource"
+         name = "datasource">
+         <FileRef
+            location = "group:Vizzle/datasource/VZListViewDataSource.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/datasource/VZListViewDataSource.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Vizzle/delegate"
+         name = "delegate">
+         <FileRef
+            location = "group:Vizzle/delegate/VZListViewDelegate.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/delegate/VZListViewDelegate.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Vizzle/item"
+         name = "item">
+         <FileRef
+            location = "group:Vizzle/item/VZItem.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/item/VZItem.m">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/item/VZListDefaultTextItem.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/item/VZListDefaultTextItem.m">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/item/VZListItem.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/item/VZListItem.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Vizzle/logic"
+         name = "logic">
+         <FileRef
+            location = "group:Vizzle/logic/VZViewControllerLogic.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/logic/VZViewControllerLogic.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Vizzle/model"
+         name = "model">
+         <FileRef
+            location = "group:Vizzle/model/VZHTTPListModel.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/model/VZHTTPListModel.m">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/model/VZHTTPModel.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/model/VZHTTPModel.m">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/model/VZHTTPRequest.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/model/VZHTTPRequest.m">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/model/VZModel.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/model/VZModel.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Vizzle/view"
+         name = "view">
+         <FileRef
+            location = "group:Vizzle/view/VZFooterViewFactory.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/view/VZFooterViewFactory.m">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/view/VZListCell.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/view/VZListCell.m">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/view/VZListDefaultErrorCell.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/view/VZListDefaultErrorCell.m">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/view/VZListDefaultLoadingCell.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/view/VZListDefaultLoadingCell.m">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/view/VZListDefaultTextCell.h">
+         </FileRef>
+         <FileRef
+            location = "group:Vizzle/view/VZListDefaultTextCell.m">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:Example/VizzleListExample/../../VZScaffold"
+      name = "VZScaffold">
+      <Group
+         location = "group:VZScaffold/scaffold"
+         name = "scaffold">
+         <FileRef
+            location = "group:VZScaffold/scaffold/parser.rb">
+         </FileRef>
+         <Group
+            location = "group:VZScaffold/scaffold/proj_config"
+            name = "proj_config">
+            <FileRef
+               location = "group:VZScaffold/scaffold/proj_config/icoupon.json">
+            </FileRef>
+            <FileRef
+               location = "group:VZScaffold/scaffold/proj_config/kof.json">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:VZScaffold/scaffold/renderer.rb">
+         </FileRef>
+         <FileRef
+            location = "group:VZScaffold/scaffold/sb_scaffold.rb">
+         </FileRef>
+         <FileRef
+            location = "group:VZScaffold/scaffold/scaffold.rb">
+         </FileRef>
+         <Group
+            location = "group:VZScaffold/scaffold/template"
+            name = "template">
+            <Group
+               location = "group:VZScaffold/scaffold/template/sbmvc"
+               name = "sbmvc">
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/template_comment.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/template_item.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/template_listcell.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/template_listItem.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/template_listviewcontroller.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/template_listviewdatasource.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/template_listviewdelegate.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/template_model.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/template_view.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/template_viewcontroller.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/template_viewcontrollerlogic.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/test_comment.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/test_item.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/test_listcell.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/test_listItem.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/test_listviewcontroller.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/test_listviewdatasource.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/test_listviewdelegate.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/test_model.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/test_view.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/test_viewcontroller.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/sbmvc/test_viewcontrollerlogic.rb">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:VZScaffold/scaffold/template/vizzle"
+               name = "vizzle">
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/template_comment.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/template_httplistmodel.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/template_httpmodel.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/template_item.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/template_listcell.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/template_listItem.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/template_listviewcontroller.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/template_listviewdatasource.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/template_listviewdelegate.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/template_view.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/template_viewcontroller.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/template_viewcontrollerlogic.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/test_comment.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/test_httplistmodel.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/test_httpmodel.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/test_item.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/test_listcell.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/test_listItem.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/test_listviewcontroller.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/test_listviewdatasource.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/test_listviewdelegate.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/test_view.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/test_viewcontroller.rb">
+               </FileRef>
+               <FileRef
+                  location = "group:VZScaffold/scaffold/template/vizzle/test_viewcontrollerlogic.rb">
+               </FileRef>
+            </Group>
+         </Group>
+         <FileRef
+            location = "group:VZScaffold/scaffold/vz_scaffold.rb">
+         </FileRef>
+         <Group
+            location = "group:VZScaffold/scaffold/xib2objc"
+            name = "xib2objc">
+            <FileRef
+               location = "group:VZScaffold/scaffold/xib2objc/txqs_uikit.rb">
+            </FileRef>
+            <FileRef
+               location = "group:VZScaffold/scaffold/xib2objc/txqs_util.rb">
+            </FileRef>
+            <FileRef
+               location = "group:VZScaffold/scaffold/xib2objc/txqs_view.rb">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:VZScaffold/scaffold/yml"
+            name = "yml">
+            <FileRef
+               location = "group:VZScaffold/scaffold/yml/sbmvc.yml">
+            </FileRef>
+            <FileRef
+               location = "group:VZScaffold/scaffold/yml/sbmvc_yml.rb">
+            </FileRef>
+            <FileRef
+               location = "group:VZScaffold/scaffold/yml/vizzle.yml">
+            </FileRef>
+            <FileRef
+               location = "group:VZScaffold/scaffold/yml/vizzle_yml.rb">
+            </FileRef>
+         </Group>
+      </Group>
+   </Group>
+   <FileRef
+      location = "group:Example/VizzleListExample/VizzleListExample.xcodeproj">
+   </FileRef>
+</Workspace>

@@ -72,9 +72,6 @@
 
 - (void)loadInternal {
     
-    //1, check params
-    NSDictionary *dataParams = [self dataParams];
-    
     //2, create request
     NSString* clz = @"";
     if (self.requestType == VZModelDefault) {
@@ -103,9 +100,10 @@
     //3, init request
     [self.request initRequestWithBaseURL:[self methodName]];
     
-    //4, add request data
-    [self.request addParams:dataParams forKey:@"data"];
     
+    //4, add request data
+    [self.request addHeaderParams:[self headerParams]];
+    [self.request addQueries:[self dataParams]];
     
     //VZMV* => 1.2:add post body data
     if ([self isPost]) {
@@ -126,20 +124,23 @@
     return nil;
 }
 
+- (NSDictionary* )headerParams{
+    return nil;
+}
+
 - (NSString *)methodName {
     return nil;
 }
 
-- (BOOL)parseResponse:(id)JSON
-{
-    return NO;
+- (BOOL)parseResponse:(id)JSON{
+    
+    return YES;
 }
 - (BOOL)useCache {
     return NO;
 }
 
-- (BOOL)isPost
-{
+- (BOOL)isPost{
     return NO;
 }
 
@@ -157,9 +158,9 @@
 #pragma mark - request callback
 
 
-- (void)requestDidStartLoad:(id<VZHTTPRequestInterface>)request
+- (void)requestDidStart:(id<VZHTTPRequestInterface>)request
 {
-    [self didFinishLoading];
+    [self didStartLoading];
 }
 - (void)requestDidFinish:(id)JSON
 {

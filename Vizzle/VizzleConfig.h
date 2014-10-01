@@ -27,6 +27,10 @@
 #import "VZFooterViewFactory.h"
 #import "VZViewControllerLogic.h"
 
+#ifdef _AFNETWORKING_
+#import "VZAFRequest.h"
+#endif
+
 
 
 #undef	VZLog
