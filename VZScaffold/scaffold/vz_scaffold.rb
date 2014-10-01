@@ -9,7 +9,7 @@ $arg1 = ARGV[1]
 $arg2 = ARGV[2]
 
 
-config_path = "./proj_config/kof.json"
+config_path = "./proj_config/vizzle.json"
 package_name = $arg0
 type = ""
 response_json_path = ""

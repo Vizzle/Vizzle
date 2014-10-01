@@ -34,11 +34,17 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
 @required
 
 /**
- *  请求业务数据，例如业务的入参
+ *  querys
  *
  *  @return NSDictionary
  */
-- (NSDictionary *)dataParams;
+- (NSDictionary* )dataParams;
+/**
+ *  parameters for header
+ *
+ *  @return NSDictionary
+ */
+- (NSDictionary* )headerParams;
 /**
  *  API NAME
  *

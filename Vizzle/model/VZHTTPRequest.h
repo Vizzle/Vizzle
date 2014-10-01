@@ -16,7 +16,7 @@
 
 @required
 
-- (void)requestDidStartLoad:(id<VZHTTPRequestInterface>)request;
+- (void)requestDidStart:(id<VZHTTPRequestInterface>)request;
 - (void)requestDidFinish:(id)JSON;
 - (void)requestDidFailWithError:(NSError *)error;
 
@@ -24,6 +24,9 @@
 
 @protocol VZHTTPRequestInterface <NSObject>
 
+@property (nonatomic,assign) NSTimeInterval timeoutSeconds;
+//@property(nonatomic,assign) NSURLCachePolicy cachePolicy;
+@property(nonatomic,assign) NSStringEncoding stringEncoding;
 @property (nonatomic) BOOL isPost;
 @property (nonatomic,weak) id<VZHTTPRequestDelegate> delegate;
 
@@ -45,10 +48,18 @@
 /**
  *  增加HTTP GET请求参数
  *
- *  @param aParams 参数
+ *  @param query 参数
  *  @param key     不同参数类型对应的key
  */
-- (void)addParams:(NSDictionary* )aParams forKey:(NSString*)key;
+- (void)addQueries:(NSDictionary* )queries;
+
+/**
+ *  增加HTTP Header参数
+ *
+ *  @param param 参数
+ *  @param key     不同参数类型对应的key
+ */
+- (void)addHeaderParams:(NSDictionary* )params;
 /**
  *  增加HTTP的POST请求参数
  *

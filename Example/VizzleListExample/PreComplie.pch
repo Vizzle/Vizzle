@@ -6,26 +6,22 @@
 //  Copyright (c) 2014年 VizLab. All rights reserved.
 //
 
-#ifndef VizzleListExample_PreComplie_pch
-#define VizzleListExample_PreComplie_pch
+#import <Availability.h>
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-#if __IPHONE_OS_VERSION_MIN_REQUIRED
 
 #ifndef __IPHONE_6_0
 #warning "This project uses features only available in iPhone SDK 6.0 and later."
+#endif
 
 #ifdef __OBJC__
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "VizzleConfig.h"
+#import "AFNetworking.h"
+#import "UIKit+AFNetworking.h"
 
 #endif
 
-#endif
 
-#endif
 
-#endif
