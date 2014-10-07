@@ -7,8 +7,9 @@
 //
 
 #import "VZAFRequest.h"
-#import "AFNetworking.h"
 
+#ifdef _AFNETWORKING_
+#import "AFNetworking.h"
 @interface VZAFClient : AFHTTPSessionManager
 
 + (instancetype) sharedClient;
@@ -29,15 +30,20 @@
 
 
 @end
+#endif
 
 
 @interface VZAFRequest()
 
+#ifdef _AFNETWORKING_
 @property(nonatomic,strong) VZAFClient* afClient;
+#endif
+
 @property(nonatomic,strong) NSString* url;
 @property(nonatomic,copy) NSDictionary* queries;
-
+#ifdef _AFNETWORKING_
 @property(nonatomic,strong) NSURLSessionTask* currentTask;
+#endif
 
 @end
 
@@ -45,6 +51,7 @@
 
 @synthesize isPost = _isPost;
 @synthesize delegate = _delegate;
+@synthesize requestURL     = _requestURL;
 @synthesize stringEncoding = _stringEncoding;
 @synthesize timeoutSeconds = _timeoutSeconds;
 @synthesize responseObject = _responseObject;
@@ -53,6 +60,8 @@
 
 - (void)initRequestWithBaseURL:(NSString*)url
 {
+#ifdef _AFNETWORKING_
+    
     NSParameterAssert(url);
     
     if (url.length == 0) {
@@ -66,17 +75,27 @@
 
     self.afClient = [VZAFClient sharedClient];
     self.afClient.session.configuration.timeoutIntervalForRequest = self.timeoutSeconds;
+
+#else
+    
+     [self requestDidFailWithError:[NSError errorWithDomain:VZErrorDomain code:kAFNetworkingError userInfo:@{NSLocalizedDescriptionKey : @"Did not find AFNetworking!"}]];
+    
+#endif
     
 }
 
 - (void)addHeaderParams:(NSDictionary *)params
 {
+#ifdef _AFNETWORKING_
     self.afClient.session.configuration.HTTPAdditionalHeaders = params;
+#endif
 }
 
 - (void)addQueries:(NSDictionary *)queries
 {
+#ifdef _AFNETWORKING_
     self.queries = queries;
+#endif
 
 }
 - (void)addBodyData:(NSDictionary *)aData forKey:(NSString *)key
@@ -85,6 +104,14 @@
 }
 - (void)load
 {
+    
+#ifdef _AFNETWORKING_
+
+    
+    NSMutableURLRequest *request = [self.afClient.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:self.url relativeToURL:nil] absoluteString] parameters:self.queries error:nil];
+    
+    self.requestURL = request.URL.absoluteString;
+    
     [self requestDidStart];
     
     __weak typeof(self) weakSelf = self;
@@ -103,11 +130,14 @@
         [weakSelf requestDidFailWithError:error];
         
     }];
+#endif
     
 }
 - (void)cancel
 {
+#ifdef _AFNETWORKING_
     [self.currentTask cancel];
+#endif
 }
 
 

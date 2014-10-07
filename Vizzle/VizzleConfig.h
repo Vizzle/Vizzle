@@ -26,6 +26,8 @@
 #import "VZListDefaultTextItem.h"
 #import "VZFooterViewFactory.h"
 #import "VZViewControllerLogic.h"
+#import "VZView.h"
+
 
 #ifdef _AFNETWORKING_
 #import "VZAFRequest.h"
@@ -43,5 +45,6 @@ NSLog(@"[VZ]-->" fmt, ## __VA_ARGS__); \
 #define kParseJSONError 998
 #define kLoginError 997
 #define kRequestTimeout 996
+#define kAFNetworkingError 995
 
 #endif

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2BAD68904E344FB7BFC8FC63 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77AC2DD27F2B45EF9409DA36 /* libPods.a */; };
+		AF92BD5519E3921600BE0037 /* VZFilckrListModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF92BD5419E3921600BE0037 /* VZFilckrListModelTest.m */; };
 		AFD37A9D19D83F8F0077CE06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37A9C19D83F8F0077CE06 /* main.m */; };
 		AFD37AA019D83F8F0077CE06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37A9F19D83F8F0077CE06 /* AppDelegate.m */; };
 		AFD37AA319D83F8F0077CE06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37AA219D83F8F0077CE06 /* ViewController.m */; };
@@ -43,6 +44,16 @@
 		AFD37C3019D92A5A0077CE06 /* VZTimelineListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37C2519D92A5A0077CE06 /* VZTimelineListModel.m */; };
 		AFD37C3119D92A5A0077CE06 /* VZTimelineSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37C2819D92A5A0077CE06 /* VZTimelineSubView.m */; };
 		AFF532A519DC2C7800870591 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF532A419DC2C7800870591 /* placeholder@2x.png */; };
+		AFF5336619DC43F700870591 /* VZFlickrListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF5334D19DC43F700870591 /* VZFlickrListCell.m */; };
+		AFF5336719DC43F700870591 /* flickr_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = AFF5334F19DC43F700870591 /* flickr_meta.json */; };
+		AFF5336819DC43F700870591 /* VZFlickrListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF5335219DC43F700870591 /* VZFlickrListViewController.m */; };
+		AFF5336919DC43F700870591 /* VZFlickrListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF5335519DC43F700870591 /* VZFlickrListViewDataSource.m */; };
+		AFF5336A19DC43F700870591 /* VZFlickrListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF5335819DC43F700870591 /* VZFlickrListViewDelegate.m */; };
+		AFF5336B19DC43F700870591 /* VZFlickrListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF5335B19DC43F700870591 /* VZFlickrListItem.m */; };
+		AFF5336C19DC43F700870591 /* VZFlickrLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF5335E19DC43F700870591 /* VZFlickrLogic.m */; };
+		AFF5336D19DC43F700870591 /* VZFlickrListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF5336119DC43F700870591 /* VZFlickrListModel.m */; };
+		AFF5336E19DC43F700870591 /* VZFlickrSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF5336519DC43F700870591 /* VZFlickrSubView.m */; };
+		AFF5337119E1983500870591 /* VZView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF5337019E1983500870591 /* VZView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +69,7 @@
 /* Begin PBXFileReference section */
 		344875739C2F42ABA5319A72 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		77AC2DD27F2B45EF9409DA36 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF92BD5419E3921600BE0037 /* VZFilckrListModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFilckrListModelTest.m; sourceTree = "<group>"; };
 		AFD37A9719D83F8F0077CE06 /* VizzleListExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VizzleListExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD37A9B19D83F8F0077CE06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFD37A9C19D83F8F0077CE06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -127,6 +139,26 @@
 		AFD37C2719D92A5A0077CE06 /* VZTimelineSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTimelineSubView.h; sourceTree = "<group>"; };
 		AFD37C2819D92A5A0077CE06 /* VZTimelineSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTimelineSubView.m; sourceTree = "<group>"; };
 		AFF532A419DC2C7800870591 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
+		AFF5334C19DC43F700870591 /* VZFlickrListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFlickrListCell.h; sourceTree = "<group>"; };
+		AFF5334D19DC43F700870591 /* VZFlickrListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFlickrListCell.m; sourceTree = "<group>"; };
+		AFF5334F19DC43F700870591 /* flickr_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flickr_meta.json; sourceTree = "<group>"; };
+		AFF5335119DC43F700870591 /* VZFlickrListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFlickrListViewController.h; sourceTree = "<group>"; };
+		AFF5335219DC43F700870591 /* VZFlickrListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFlickrListViewController.m; sourceTree = "<group>"; };
+		AFF5335419DC43F700870591 /* VZFlickrListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFlickrListViewDataSource.h; sourceTree = "<group>"; };
+		AFF5335519DC43F700870591 /* VZFlickrListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFlickrListViewDataSource.m; sourceTree = "<group>"; };
+		AFF5335719DC43F700870591 /* VZFlickrListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFlickrListViewDelegate.h; sourceTree = "<group>"; };
+		AFF5335819DC43F700870591 /* VZFlickrListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFlickrListViewDelegate.m; sourceTree = "<group>"; };
+		AFF5335A19DC43F700870591 /* VZFlickrListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFlickrListItem.h; sourceTree = "<group>"; };
+		AFF5335B19DC43F700870591 /* VZFlickrListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFlickrListItem.m; sourceTree = "<group>"; };
+		AFF5335D19DC43F700870591 /* VZFlickrLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFlickrLogic.h; sourceTree = "<group>"; };
+		AFF5335E19DC43F700870591 /* VZFlickrLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFlickrLogic.m; sourceTree = "<group>"; };
+		AFF5336019DC43F700870591 /* VZFlickrListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFlickrListModel.h; sourceTree = "<group>"; };
+		AFF5336119DC43F700870591 /* VZFlickrListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFlickrListModel.m; sourceTree = "<group>"; };
+		AFF5336419DC43F700870591 /* VZFlickrSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFlickrSubView.h; sourceTree = "<group>"; };
+		AFF5336519DC43F700870591 /* VZFlickrSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFlickrSubView.m; sourceTree = "<group>"; };
+		AFF5336F19E1983500870591 /* VZView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZView.h; sourceTree = "<group>"; };
+		AFF5337019E1983500870591 /* VZView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZView.m; sourceTree = "<group>"; };
+		AFF534A219E2935700870591 /* VZFlickrListConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VZFlickrListConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +211,7 @@
 		AFD37A9919D83F8F0077CE06 /* VizzleListExample */ = {
 			isa = PBXGroup;
 			children = (
+				AFF5334A19DC43F700870591 /* Flickr */,
 				AFD37C0E19D92A5A0077CE06 /* Timeline */,
 				AFD37B7B19D840B60077CE06 /* vendor */,
 				AFD37A9E19D83F8F0077CE06 /* AppDelegate.h */,
@@ -206,6 +239,7 @@
 		AFD37AB319D83F8F0077CE06 /* VizzleListExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				AF92BD5419E3921600BE0037 /* VZFilckrListModelTest.m */,
 				AFD37AB619D83F8F0077CE06 /* VizzleListExampleTests.m */,
 				AFD37AB419D83F8F0077CE06 /* Supporting Files */,
 			);
@@ -324,6 +358,8 @@
 				AFD37BA319D840C50077CE06 /* VZListDefaultLoadingCell.m */,
 				AFD37BA419D840C50077CE06 /* VZListDefaultTextCell.h */,
 				AFD37BA519D840C50077CE06 /* VZListDefaultTextCell.m */,
+				AFF5336F19E1983500870591 /* VZView.h */,
+				AFF5337019E1983500870591 /* VZView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -442,6 +478,111 @@
 			path = resource;
 			sourceTree = "<group>";
 		};
+		AFF5334A19DC43F700870591 /* Flickr */ = {
+			isa = PBXGroup;
+			children = (
+				AFF5334B19DC43F700870591 /* cell */,
+				AFF5334E19DC43F700870591 /* config */,
+				AFF5335019DC43F700870591 /* controller */,
+				AFF5335319DC43F700870591 /* datasource */,
+				AFF5335619DC43F700870591 /* delegate */,
+				AFF5335919DC43F700870591 /* item */,
+				AFF5335C19DC43F700870591 /* logic */,
+				AFF5335F19DC43F700870591 /* model */,
+				AFF5336219DC43F700870591 /* resource */,
+				AFF5336319DC43F700870591 /* view */,
+			);
+			path = Flickr;
+			sourceTree = "<group>";
+		};
+		AFF5334B19DC43F700870591 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				AFF5334C19DC43F700870591 /* VZFlickrListCell.h */,
+				AFF5334D19DC43F700870591 /* VZFlickrListCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		AFF5334E19DC43F700870591 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				AFF5334F19DC43F700870591 /* flickr_meta.json */,
+				AFF534A219E2935700870591 /* VZFlickrListConfig.h */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		AFF5335019DC43F700870591 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				AFF5335119DC43F700870591 /* VZFlickrListViewController.h */,
+				AFF5335219DC43F700870591 /* VZFlickrListViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		AFF5335319DC43F700870591 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				AFF5335419DC43F700870591 /* VZFlickrListViewDataSource.h */,
+				AFF5335519DC43F700870591 /* VZFlickrListViewDataSource.m */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		AFF5335619DC43F700870591 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				AFF5335719DC43F700870591 /* VZFlickrListViewDelegate.h */,
+				AFF5335819DC43F700870591 /* VZFlickrListViewDelegate.m */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
+		AFF5335919DC43F700870591 /* item */ = {
+			isa = PBXGroup;
+			children = (
+				AFF5335A19DC43F700870591 /* VZFlickrListItem.h */,
+				AFF5335B19DC43F700870591 /* VZFlickrListItem.m */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		AFF5335C19DC43F700870591 /* logic */ = {
+			isa = PBXGroup;
+			children = (
+				AFF5335D19DC43F700870591 /* VZFlickrLogic.h */,
+				AFF5335E19DC43F700870591 /* VZFlickrLogic.m */,
+			);
+			path = logic;
+			sourceTree = "<group>";
+		};
+		AFF5335F19DC43F700870591 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				AFF5336019DC43F700870591 /* VZFlickrListModel.h */,
+				AFF5336119DC43F700870591 /* VZFlickrListModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		AFF5336219DC43F700870591 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		AFF5336319DC43F700870591 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				AFF5336419DC43F700870591 /* VZFlickrSubView.h */,
+				AFF5336519DC43F700870591 /* VZFlickrSubView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -529,6 +670,7 @@
 				AFD37AAB19D83F8F0077CE06 /* LaunchScreen.xib in Resources */,
 				AFD37AA819D83F8F0077CE06 /* Images.xcassets in Resources */,
 				AFD37C2A19D92A5A0077CE06 /* timeline_meta.json in Resources */,
+				AFF5336719DC43F700870591 /* flickr_meta.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,17 +724,25 @@
 				AFD37BAC19D840C50077CE06 /* VZListItem.m in Sources */,
 				AFD37BAE19D840C50077CE06 /* VZHTTPListModel.m in Sources */,
 				AFD37BB219D840C50077CE06 /* VZFooterViewFactory.m in Sources */,
+				AFF5336A19DC43F700870591 /* VZFlickrListViewDelegate.m in Sources */,
 				AFD37BA619D840C50077CE06 /* VZListViewController.m in Sources */,
+				AFF5336919DC43F700870591 /* VZFlickrListViewDataSource.m in Sources */,
 				AFD37BA919D840C50077CE06 /* VZListViewDelegate.m in Sources */,
 				AFD37BB519D840C50077CE06 /* VZListDefaultLoadingCell.m in Sources */,
+				AFF5336619DC43F700870591 /* VZFlickrListCell.m in Sources */,
 				AFD37BAA19D840C50077CE06 /* VZItem.m in Sources */,
+				AFF5336D19DC43F700870591 /* VZFlickrListModel.m in Sources */,
 				AFD37C2F19D92A5A0077CE06 /* VZTimelineLogic.m in Sources */,
+				AFF5337119E1983500870591 /* VZView.m in Sources */,
 				AFD37BA719D840C50077CE06 /* VZViewController.m in Sources */,
 				AFD37BAB19D840C50077CE06 /* VZListDefaultTextItem.m in Sources */,
+				AFF5336B19DC43F700870591 /* VZFlickrListItem.m in Sources */,
 				AFD37AA319D83F8F0077CE06 /* ViewController.m in Sources */,
 				AFD37C2C19D92A5A0077CE06 /* VZTimelineListViewDataSource.m in Sources */,
 				AFD37BB119D840C50077CE06 /* VZModel.m in Sources */,
 				AFD37BB419D840C50077CE06 /* VZListDefaultErrorCell.m in Sources */,
+				AFF5336C19DC43F700870591 /* VZFlickrLogic.m in Sources */,
+				AFF5336E19DC43F700870591 /* VZFlickrSubView.m in Sources */,
 				AFD37C2B19D92A5A0077CE06 /* VZTimelineListViewController.m in Sources */,
 				AFD37C0D19D927D60077CE06 /* VZAFRequest.m in Sources */,
 				AFD37C3019D92A5A0077CE06 /* VZTimelineListModel.m in Sources */,
@@ -607,6 +757,7 @@
 				AFD37A9D19D83F8F0077CE06 /* main.m in Sources */,
 				AFD37BAF19D840C50077CE06 /* VZHTTPModel.m in Sources */,
 				AFD37BB019D840C50077CE06 /* VZHTTPRequest.m in Sources */,
+				AFF5336819DC43F700870591 /* VZFlickrListViewController.m in Sources */,
 				AFD37C2E19D92A5A0077CE06 /* VZTimelineListItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -615,6 +766,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF92BD5519E3921600BE0037 /* VZFilckrListModelTest.m in Sources */,
 				AFD37AB719D83F8F0077CE06 /* VizzleListExampleTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
