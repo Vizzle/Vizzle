@@ -24,9 +24,9 @@
 
 @protocol VZHTTPRequestInterface <NSObject>
 
+@property (nonatomic,strong) NSString* requestURL;
 @property (nonatomic,assign) NSTimeInterval timeoutSeconds;
-//@property(nonatomic,assign) NSURLCachePolicy cachePolicy;
-@property(nonatomic,assign) NSStringEncoding stringEncoding;
+@property (nonatomic,assign) NSStringEncoding stringEncoding;
 @property (nonatomic) BOOL isPost;
 @property (nonatomic,weak) id<VZHTTPRequestDelegate> delegate;
 

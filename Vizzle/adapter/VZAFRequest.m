@@ -51,6 +51,7 @@
 
 @synthesize isPost = _isPost;
 @synthesize delegate = _delegate;
+@synthesize requestURL     = _requestURL;
 @synthesize stringEncoding = _stringEncoding;
 @synthesize timeoutSeconds = _timeoutSeconds;
 @synthesize responseObject = _responseObject;
@@ -105,6 +106,12 @@
 {
     
 #ifdef _AFNETWORKING_
+
+    
+    NSMutableURLRequest *request = [self.afClient.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:self.url relativeToURL:nil] absoluteString] parameters:self.queries error:nil];
+    
+    self.requestURL = request.URL.absoluteString;
+    
     [self requestDidStart];
     
     __weak typeof(self) weakSelf = self;

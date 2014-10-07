@@ -26,6 +26,8 @@
 #import "VZListDefaultTextItem.h"
 #import "VZFooterViewFactory.h"
 #import "VZViewControllerLogic.h"
+#import "VZView.h"
+
 
 #ifdef _AFNETWORKING_
 #import "VZAFRequest.h"

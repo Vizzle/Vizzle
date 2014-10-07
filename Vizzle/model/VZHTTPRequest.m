@@ -13,6 +13,8 @@
 
 @synthesize delegate = _delegate;
 @synthesize isPost = _isPost;
+@synthesize requestURL = _requestURL;
+@synthesize stringEncoding = _stringEncoding;
 @synthesize timeoutSeconds = _timeoutSeconds;
 @synthesize responseObject = _responseObject;
 @synthesize responseString = _responseString;

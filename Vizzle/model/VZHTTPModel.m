@@ -160,12 +160,19 @@
 
 - (void)requestDidStart:(id<VZHTTPRequestInterface>)request
 {
+    NSLog(@"[%@]-->REQUEST_START:%@",self.class,request.requestURL);
+    
     [self didStartLoading];
 }
+
+
 - (void)requestDidFinish:(id)JSON
 {
     _responseString = self.request.responseString;
     _responseObject = self.request.responseObject;
+    
+    NSLog(@"[%@]-->REQUEST_FINISH:%@",self.class,JSON);
+    
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
        
@@ -189,6 +196,9 @@
 }
 - (void)requestDidFailWithError:(NSError *)error
 {
+    NSLog(@"[%@]-->REQUEST_FAILED:%@",self.class,error);
+    
+    
     _responseString = self.request.responseString;
     _responseObject = self.request.responseObject;
     
