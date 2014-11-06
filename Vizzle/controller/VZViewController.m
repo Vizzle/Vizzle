@@ -8,14 +8,16 @@
 #import "VZViewControllerLogic.h"
 #import "VizzleConfig.h"
 #import "VZHTTPModel.h"
+#import <libkern/OSAtomic.h>
 
 @interface VZViewController ()<VZViewControllerLogicInterface>
 {
-    //VZMV* => 1.1 Internal status of viewcontroller
-    enum ModelStatus{bEmpty,bLoading,bModel,bError} _status;
+
+    //VZMV* => 1.4 Internal states of viewcontroller
+    NSMutableDictionary* _states; //<key:model's key, value>
     
-    //VZMV* => 1.1 Internal state of viewcontroller
-    struct InternalState { enum ModelStatus status; char* key;}_state __unused;
+    //lock here
+    OSSpinLock _lock;
 }
 
 @end
@@ -69,7 +71,8 @@
 - (id)init {
     if (self = [super init]) {
         _modelDictInternal = [NSMutableDictionary new];
-        _status = bEmpty;
+        _states = [NSMutableDictionary new];
+        _lock = OS_SPINLOCK_INIT;
         
     }
     return self;
@@ -142,14 +145,19 @@
 #pragma mark - public
 
 - (void)registerModel:(VZModel *)model{
+    
     model.delegate = self;
+    
+    NSAssert(model.key != nil, @"model must have a key");
+    
     [_modelDictInternal setObject:model forKey:model.key];
 }
 
 - (void)unRegisterModel:(VZModel *)model{
     
-    [_modelDictInternal removeObjectForKey:model.key];
+     NSAssert(model.key != nil, @"model must have a key");
     
+    [_modelDictInternal removeObjectForKey:model.key];
     
 }
 
@@ -171,9 +179,8 @@
 
 - (void)modelDidStart:(VZModel *)model {
     
-    _status = bLoading;
-    VZLog(@"[%@]-->{status : loading}",self.class);
     [self showLoading:model];
+    [self updateState:@"loading" withKey:model.key];
 }
 
 - (void)modelDidFinish:(VZModel *)model {
@@ -183,33 +190,21 @@
     //VZMV* 1.1 => 修改了showEmpty逻辑
     if ([self canShowModel:model])
     {
-        _status = bModel;
-        VZLog(@"[%@]-->{status : model}",self.class);
         [self showModel:model];
+        [self updateState:@"model" withKey:model.key];
     }
     else
     {
-        if (_status != bModel
-            && _status != bError
-            && _status != bEmpty) {
-            
-            _status = bEmpty;
-            VZLog(@"[%@]-->{status : empty}",self.class);
-            [self showEmpty:model];
-        }
-        else
-        {
-            //noop;
-            VZLog(@"[%@]-->{status : invalid}",self.class);
-        }
+        
+        [self showEmpty:model];
+        [self updateState:@"empty" withKey:model.key];
     }
 }
 
 - (void)modelDidFail:(VZModel *)model withError:(NSError *)error {
     
-    _status = bError;
-    VZLog(@"[%@]-->{status : error}",self.class);
     [self showError:error withModel:model];
+    [self updateState:@"error" withKey:model.key];
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -218,6 +213,22 @@
 - (void)onControllerShouldPerformAction:(int)type args:(NSDictionary* )dict
 {
     
+}
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark - private 
+
+- (void)updateState:(id) status withKey:(NSString* )key
+{
+    if (status && key) {
+        
+        OSSpinLockLock(&_lock);
+        
+        _states[key] = status;
+        VZLog(@"[%@]-->status:%@",self.class,_states);
+        
+        OSSpinLockUnlock(&_lock);
+    }
 }
 
 @end 

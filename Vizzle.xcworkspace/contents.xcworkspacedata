@@ -143,6 +143,9 @@
       </Group>
    </Group>
    <FileRef
+      location = "group:Test/VizzleTest/VizzleTest.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Example/VizzleListExample/VizzleListExample.xcodeproj">
    </FileRef>
 </Workspace>
