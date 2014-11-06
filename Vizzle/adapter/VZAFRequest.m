@@ -7,6 +7,7 @@
 //
 
 #import "VZAFRequest.h"
+#import "VizzleConfig.h"
 
 #ifdef _AFNETWORKING_
 #import "AFNetworking.h"

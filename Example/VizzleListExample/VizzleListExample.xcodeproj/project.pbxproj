@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2BAD68904E344FB7BFC8FC63 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77AC2DD27F2B45EF9409DA36 /* libPods.a */; };
 		AF92BD5519E3921600BE0037 /* VZFilckrListModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF92BD5419E3921600BE0037 /* VZFilckrListModelTest.m */; };
+		AF92BD5A19E6657400BE0037 /* VZFilckrViewControllerLogicTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF92BD5919E6657400BE0037 /* VZFilckrViewControllerLogicTest.m */; };
 		AFD37A9D19D83F8F0077CE06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37A9C19D83F8F0077CE06 /* main.m */; };
 		AFD37AA019D83F8F0077CE06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37A9F19D83F8F0077CE06 /* AppDelegate.m */; };
 		AFD37AA319D83F8F0077CE06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37AA219D83F8F0077CE06 /* ViewController.m */; };
@@ -70,6 +71,7 @@
 		344875739C2F42ABA5319A72 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		77AC2DD27F2B45EF9409DA36 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF92BD5419E3921600BE0037 /* VZFilckrListModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFilckrListModelTest.m; sourceTree = "<group>"; };
+		AF92BD5919E6657400BE0037 /* VZFilckrViewControllerLogicTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFilckrViewControllerLogicTest.m; sourceTree = "<group>"; };
 		AFD37A9719D83F8F0077CE06 /* VizzleListExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VizzleListExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD37A9B19D83F8F0077CE06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFD37A9C19D83F8F0077CE06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 		AFD37AB319D83F8F0077CE06 /* VizzleListExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				AF92BD5919E6657400BE0037 /* VZFilckrViewControllerLogicTest.m */,
 				AF92BD5419E3921600BE0037 /* VZFilckrListModelTest.m */,
 				AFD37AB619D83F8F0077CE06 /* VizzleListExampleTests.m */,
 				AFD37AB419D83F8F0077CE06 /* Supporting Files */,
@@ -767,6 +770,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF92BD5519E3921600BE0037 /* VZFilckrListModelTest.m in Sources */,
+				AF92BD5A19E6657400BE0037 /* VZFilckrViewControllerLogicTest.m in Sources */,
 				AFD37AB719D83F8F0077CE06 /* VizzleListExampleTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

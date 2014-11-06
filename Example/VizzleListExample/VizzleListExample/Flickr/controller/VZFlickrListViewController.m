@@ -82,6 +82,8 @@
     if (self) {
         self.logic = self.flickrLogic;
         
+
+        
     }
     return self;
 }
