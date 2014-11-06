@@ -137,8 +137,12 @@
     VZLog(@"[%@]-->dealloc",self.class);
     
     [_logic logic_dealloc];
+    
+    OSSpinLockLock(&_lock);
     [_modelDictInternal removeAllObjects];
-    _modelDictInternal    = nil;
+    [_states removeAllObjects];
+    OSSpinLockUnlock(&_lock);
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -150,15 +154,20 @@
     
     NSAssert(model.key != nil, @"model must have a key");
     
+    OSSpinLockLock(&_lock);
     [_modelDictInternal setObject:model forKey:model.key];
+    [_states setObject:@"ready" forKey:model.key];
+    OSSpinLockUnlock(&_lock);
 }
 
 - (void)unRegisterModel:(VZModel *)model{
     
      NSAssert(model.key != nil, @"model must have a key");
     
+    OSSpinLockLock(&_lock);
     [_modelDictInternal removeObjectForKey:model.key];
-    
+    [_states removeObjectForKey:model.key];
+    OSSpinLockUnlock(&_lock);
 }
 
 - (void)load {
