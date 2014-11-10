@@ -200,7 +200,7 @@
     if ([self canShowModel:model])
     {
         [self showModel:model];
-        [self updateState:@"model" withKey:model.key];
+        [self updateState:@"finished" withKey:model.key];
     }
     else
     {
