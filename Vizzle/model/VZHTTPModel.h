@@ -99,6 +99,8 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
 
 @interface VZHTTPModel : VZModel<VZHTTPModel>
 
+
+
 /**
  *  model的请求类型
  *
@@ -117,6 +119,21 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
  *  VZModel=>1.2
  */
 @property(nonatomic,strong,readonly) NSString* responseString;
+
+/**
+ *  增加model的请求参数
+ *
+ *  VZModel => 1.4
+ *
+ */
+- (void)setRequestParam:(id)value forKey:(id <NSCopying>)key;
+/**
+ *  去掉model的参数
+ *
+ *  VZModel => 1.4
+ *
+ */
+- (void)removeRequestParamForKey:(id <NSCopying>)key;
 
 
 @end
