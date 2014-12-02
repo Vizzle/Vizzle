@@ -14,10 +14,23 @@
 @interface VZHTTPModel()<VZHTTPRequestDelegate>
 
 @property(nonatomic,strong) id<VZHTTPRequestInterface> request;
+@property(nonatomic,strong)NSMutableDictionary* requestParams;
 
 @end
 
 @implementation VZHTTPModel
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - getters
+
+- (NSMutableDictionary* )requestParams
+{
+    if (!_requestParams) {
+        
+        _requestParams =[ NSMutableDictionary new ];
+    }
+    return _requestParams;
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - life cycle
@@ -70,6 +83,22 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - public methods
 
+- (void)setRequestParam:(id)value forKey:(id <NSCopying>)key;
+{
+    if (value && key) {
+        [self.requestParams setObject:value forKey:key];
+    }
+}
+- (void)removeRequestParamForKey:(id <NSCopying>)key
+{
+    if (key) {
+        [self.requestParams removeObjectForKey:key];
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - private methods
+
 - (void)loadInternal {
     
     //2, create request
@@ -121,7 +150,8 @@
 #pragma mark - subclassing methods
 
 - (NSDictionary *)dataParams {
-    return nil;
+    
+    return self.requestParams;
 }
 
 - (NSDictionary* )headerParams{
