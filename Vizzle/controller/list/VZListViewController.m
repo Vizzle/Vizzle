@@ -82,7 +82,10 @@
 - (VZListViewDataSource* )dataSource
 {
     if(!_dataSource)
+    {
         _dataSource = [[VZListViewDataSource alloc]init];
+        _dataSource.controller = self;
+    }
     
     return _dataSource;
 }
@@ -90,7 +93,10 @@
 - (VZListViewDelegate* )delegate
 {
     if(!_delegate)
+    {
         _delegate = [[VZListViewDelegate alloc]init];
+        _delegate.controller = self;
+    }
     
     return _delegate;
     

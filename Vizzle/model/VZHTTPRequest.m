@@ -18,6 +18,7 @@
 @synthesize timeoutSeconds = _timeoutSeconds;
 @synthesize responseObject = _responseObject;
 @synthesize responseString = _responseString;
+@synthesize responseError  = _responseError;
 
 - (void)initRequestWithBaseURL:(NSString*)url
 {
