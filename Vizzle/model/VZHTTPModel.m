@@ -143,6 +143,10 @@
     //5, start loading
     [self.request load];
     
+    //6, for debug
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"VZRequestLog" object:nil userInfo:@{@"url": [NSURL URLWithString:self.request.requestURL]?:[NSNull null]}];
+    
+    
     
 }
 
@@ -203,6 +207,8 @@
     
     NSLog(@"[%@]-->REQUEST_FINISH:%@",self.class,JSON);
     
+    //for debug
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"VZResponseLog" object:nil userInfo:@{@"json": _responseString ?:@"responseString为空"}];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
        
@@ -231,6 +237,9 @@
     
     _responseString = self.request.responseString;
     _responseObject = self.request.responseObject;
+    
+    //for debug
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"VZResponseLog" object:nil userInfo:@{@"json": _responseString ?:@"responseString为空",@"error":self.request.responseError}];
     
     [self didFailWithError:error];
 }

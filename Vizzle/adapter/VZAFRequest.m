@@ -57,6 +57,7 @@
 @synthesize timeoutSeconds = _timeoutSeconds;
 @synthesize responseObject = _responseObject;
 @synthesize responseString = _responseString;
+@synthesize responseError  = _responseError;
 
 
 - (void)initRequestWithBaseURL:(NSString*)url
@@ -128,6 +129,11 @@
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
+        __strong typeof (weakSelf) strongSelf = weakSelf;
+        
+        if (strongSelf) {
+            strongSelf -> _responseError = error;
+        }
         [weakSelf requestDidFailWithError:error];
         
     }];

@@ -38,6 +38,7 @@
  */
 @property (nonatomic,strong,readonly) NSString* responseString;
 @property(nonatomic,strong,readonly) id responseObject;
+@property(nonatomic,strong,retain) NSError* responseError;
 
 /**
  *  创建请求的request
