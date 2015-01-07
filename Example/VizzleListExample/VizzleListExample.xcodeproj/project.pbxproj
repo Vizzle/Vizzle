@@ -30,8 +30,6 @@
 		AFB818CC1A0E16D600E1DAAB /* VZListDefaultTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818B61A0E16D600E1DAAB /* VZListDefaultTextCell.m */; };
 		AFB818CD1A0E16D600E1DAAB /* VZView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818B81A0E16D600E1DAAB /* VZView.m */; };
 		AFB818D01A0E16FC00E1DAAB /* VZTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818CF1A0E16FC00E1DAAB /* VZTemplate.m */; };
-		AFB818D61A0E188A00E1DAAB /* NSObject+VZChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818D51A0E188A00E1DAAB /* NSObject+VZChannel.m */; };
-		AFB818D81A0E1B1B00E1DAAB /* VZChannel.mm in Sources */ = {isa = PBXBuildFile; fileRef = AFB818D71A0E1B1B00E1DAAB /* VZChannel.mm */; };
 		AFD37A9D19D83F8F0077CE06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37A9C19D83F8F0077CE06 /* main.m */; };
 		AFD37AA019D83F8F0077CE06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37A9F19D83F8F0077CE06 /* AppDelegate.m */; };
 		AFD37AA319D83F8F0077CE06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37AA219D83F8F0077CE06 /* ViewController.m */; };
@@ -116,10 +114,6 @@
 		AFB818BA1A0E16D600E1DAAB /* VizzleConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VizzleConfig.h; sourceTree = "<group>"; };
 		AFB818CE1A0E16FC00E1DAAB /* VZTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTemplate.h; sourceTree = "<group>"; };
 		AFB818CF1A0E16FC00E1DAAB /* VZTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTemplate.m; sourceTree = "<group>"; };
-		AFB818D11A0E182100E1DAAB /* VZChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZChannel.h; sourceTree = "<group>"; };
-		AFB818D41A0E188A00E1DAAB /* NSObject+VZChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+VZChannel.h"; sourceTree = "<group>"; };
-		AFB818D51A0E188A00E1DAAB /* NSObject+VZChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+VZChannel.m"; sourceTree = "<group>"; };
-		AFB818D71A0E1B1B00E1DAAB /* VZChannel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VZChannel.mm; sourceTree = "<group>"; };
 		AFD37A9719D83F8F0077CE06 /* VizzleListExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VizzleListExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD37A9B19D83F8F0077CE06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFD37A9C19D83F8F0077CE06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -203,7 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				AFB818871A0E16D600E1DAAB /* adapter */,
-				AFB8188A1A0E16D600E1DAAB /* channel */,
 				AFB8188B1A0E16D600E1DAAB /* controller */,
 				AFB818971A0E16D600E1DAAB /* item */,
 				AFB8189F1A0E16D600E1DAAB /* logic */,
@@ -223,17 +216,6 @@
 				AFB818891A0E16D600E1DAAB /* VZAFRequest.m */,
 			);
 			path = adapter;
-			sourceTree = "<group>";
-		};
-		AFB8188A1A0E16D600E1DAAB /* channel */ = {
-			isa = PBXGroup;
-			children = (
-				AFB818D11A0E182100E1DAAB /* VZChannel.h */,
-				AFB818D71A0E1B1B00E1DAAB /* VZChannel.mm */,
-				AFB818D41A0E188A00E1DAAB /* NSObject+VZChannel.h */,
-				AFB818D51A0E188A00E1DAAB /* NSObject+VZChannel.m */,
-			);
-			path = channel;
 			sourceTree = "<group>";
 		};
 		AFB8188B1A0E16D600E1DAAB /* controller */ = {
@@ -783,7 +765,6 @@
 				AFB818BC1A0E16D600E1DAAB /* VZListViewDataSource.m in Sources */,
 				AFF5336A19DC43F700870591 /* VZFlickrListViewDelegate.m in Sources */,
 				AFF5336919DC43F700870591 /* VZFlickrListViewDataSource.m in Sources */,
-				AFB818D81A0E1B1B00E1DAAB /* VZChannel.mm in Sources */,
 				AFB818C31A0E16D600E1DAAB /* VZViewControllerLogic.m in Sources */,
 				AFF5336619DC43F700870591 /* VZFlickrListCell.m in Sources */,
 				AFB818C71A0E16D600E1DAAB /* VZModel.m in Sources */,
@@ -797,7 +778,6 @@
 				AFB818BB1A0E16D600E1DAAB /* VZAFRequest.m in Sources */,
 				AFD37C2F19D92A5A0077CE06 /* VZTimelineLogic.m in Sources */,
 				AFF5336B19DC43F700870591 /* VZFlickrListItem.m in Sources */,
-				AFB818D61A0E188A00E1DAAB /* NSObject+VZChannel.m in Sources */,
 				AFD37AA319D83F8F0077CE06 /* ViewController.m in Sources */,
 				AFD37C2C19D92A5A0077CE06 /* VZTimelineListViewDataSource.m in Sources */,
 				AFB818C21A0E16D600E1DAAB /* VZItem.m in Sources */,
