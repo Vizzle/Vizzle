@@ -60,6 +60,10 @@ typedef NS_ENUM(int , ENCODE_TYPE)
     
     //cache sets
 	objc_setAssociatedObject(self, VZItemCachedPropertyKeysKey, set, OBJC_ASSOCIATION_COPY);
+    
+    
+    free(properties);
+    
     return set;
 }
 

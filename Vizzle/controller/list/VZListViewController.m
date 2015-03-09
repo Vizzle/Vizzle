@@ -297,7 +297,13 @@
     VZLog(@"[%@]-->showLoading:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
     
     if (model == _keyModel) {
+        
+        if (model.sectionNumber == 0) {
+            self.tableView.tableFooterView = self.footerViewEmpty;
+        }
+        else{
             self.tableView.tableFooterView = self.footerViewLoading;
+        }
     }
     else
     {
