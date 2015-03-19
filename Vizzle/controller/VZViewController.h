@@ -8,8 +8,10 @@
 #import <UIKit/UIKit.h>
 
 @class VZModel;
+@class VZViewModel;
+@class VZTemplate;
+
 @protocol VZModelDelegate;
-@class VZViewControllerLogic;
 
 @interface VZViewController : UIViewController<VZModelDelegate>
 {
@@ -20,17 +22,28 @@
 }
 
 /**
- *  UI无关的业务逻辑
+ *
+ * controller的唯一标示
  */
-@property(nonatomic,strong) VZViewControllerLogic* logic;
+@property(nonatomic,strong,readonly) NSString* uuid;
 /**
  *  modelDictionary
  */
 @property(nonatomic,strong,readonly) NSDictionary* modelDictionary;
 /**
+ * 
+ * template
+ */
+@property(nonatomic,strong,readonly) VZTemplate* viewTemplate;
+/**
+ *
+ * viewModel
+ */
+@property(nonatomic,strong) VZViewModel* viewModel;
+/**
  *  recv memory warning
  */
-@property(nonatomic,assign,readonly) BOOL receiveMemoryWarning;
+@property(nonatomic,assign) BOOL receiveMemoryWarning;
 /**
  *  注册Model，用于Model和ViewController进行数据通讯
  *
@@ -44,7 +57,18 @@
  *  @param model 数据Model
  */
 - (void)unRegisterModel:(VZModel *)model;
-
+/*
+ *  注册Template
+ *
+ *  @param clz 数据Template
+ */
+- (void)registerViewTemplateClass:(Class )clz;
+/*
+ *  注册ViewModel
+ *
+ *  @param clz 数据ViewModel
+ */
+- (void)registerViewModel:(VZViewModel* )viewModel;
 /**
  *  加载Model数据
  */

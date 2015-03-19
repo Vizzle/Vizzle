@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface VZItem : NSObject
+@interface VZItem : NSObject<NSCoding,NSCopying>
 
 /**
  *  自动进行KVC绑定

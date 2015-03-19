@@ -10,8 +10,6 @@
 
 
 #import "VZTimelineListViewController.h"
-#import "VZTimelineLogic.h"
- 
 #import "VZTimelineListModel.h" 
 #import "VZTimelineListViewDataSource.h"
 #import "VZTimelineListViewDelegate.h"
@@ -22,7 +20,6 @@
 @property(nonatomic,strong)VZTimelineListModel *timelineListModel; 
 @property(nonatomic,strong)VZTimelineListViewDataSource *ds;
 @property(nonatomic,strong)VZTimelineListViewDelegate *dl;
-@property(nonatomic,strong)VZTimelineLogic *timelineLogic;
 
 @end
 
@@ -64,14 +61,7 @@
    return _dl;
 }
 
-- (VZTimelineLogic *)timelineLogic
-{
-    if(!_timelineLogic){
-        _timelineLogic = [VZTimelineLogic new];
-    }
 
-    return _timelineLogic;
-}
 
 ////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - life cycle methods
@@ -81,8 +71,7 @@
     self = [super init];
     
     if (self) {
-        self.logic = self.timelineLogic;
-        
+                
     }
     return self;
 }

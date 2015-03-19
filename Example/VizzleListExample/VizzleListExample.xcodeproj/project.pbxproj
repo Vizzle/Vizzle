@@ -8,30 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		2BAD68904E344FB7BFC8FC63 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77AC2DD27F2B45EF9409DA36 /* libPods.a */; };
+		4529DD351ABA99B3009347C2 /* VZAFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCE21ABA99B3009347C2 /* VZAFRequest.m */; };
+		4529DD361ABA99B3009347C2 /* VZListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCE51ABA99B3009347C2 /* VZListViewController.m */; };
+		4529DD371ABA99B3009347C2 /* VZListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCE71ABA99B3009347C2 /* VZListViewDataSource.m */; };
+		4529DD381ABA99B3009347C2 /* VZListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCE91ABA99B3009347C2 /* VZListViewDelegate.m */; };
+		4529DD391ABA99B3009347C2 /* VZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCEB1ABA99B3009347C2 /* VZViewController.m */; };
+		4529DD3A1ABA99B3009347C2 /* NSNotificationCenter+VZSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCEE1ABA99B3009347C2 /* NSNotificationCenter+VZSignal.m */; };
+		4529DD3B1ABA99B3009347C2 /* NSObject+Deallocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCF01ABA99B3009347C2 /* NSObject+Deallocation.m */; };
+		4529DD3C1ABA99B3009347C2 /* NSObject+VZChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCF21ABA99B3009347C2 /* NSObject+VZChannel.m */; };
+		4529DD3D1ABA99B3009347C2 /* NSObject+VZSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCF41ABA99B3009347C2 /* NSObject+VZSignal.m */; };
+		4529DD3E1ABA99B3009347C2 /* UIControl+VZSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCF61ABA99B3009347C2 /* UIControl+VZSignal.m */; };
+		4529DD3F1ABA99B3009347C2 /* VZChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCF81ABA99B3009347C2 /* VZChannel.m */; };
+		4529DD401ABA99B3009347C2 /* VZDummyBindingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCFA1ABA99B3009347C2 /* VZDummyBindingObject.m */; };
+		4529DD411ABA99B3009347C2 /* VZDynamicBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCFC1ABA99B3009347C2 /* VZDynamicBlock.m */; };
+		4529DD421ABA99B3009347C2 /* VZKVOCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCFE1ABA99B3009347C2 /* VZKVOCenter.m */; };
+		4529DD431ABA99B3009347C2 /* VZObserveInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD001ABA99B3009347C2 /* VZObserveInfo.m */; };
+		4529DD441ABA99B3009347C2 /* VZObserverProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD021ABA99B3009347C2 /* VZObserverProxy.m */; };
+		4529DD451ABA99B3009347C2 /* VZSignal+VZChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD041ABA99B3009347C2 /* VZSignal+VZChannel.m */; };
+		4529DD461ABA99B3009347C2 /* VZSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD061ABA99B3009347C2 /* VZSignal.m */; };
+		4529DD471ABA99B3009347C2 /* VZSignalDisposal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD081ABA99B3009347C2 /* VZSignalDisposal.m */; };
+		4529DD481ABA99B3009347C2 /* VZSignalDisposalProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD0A1ABA99B3009347C2 /* VZSignalDisposalProxy.m */; };
+		4529DD491ABA99B3009347C2 /* VZSignalScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD0C1ABA99B3009347C2 /* VZSignalScheduler.m */; };
+		4529DD4A1ABA99B3009347C2 /* VZSignalSubscriber.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD0E1ABA99B3009347C2 /* VZSignalSubscriber.m */; };
+		4529DD4B1ABA99B3009347C2 /* VZTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD101ABA99B3009347C2 /* VZTuple.m */; };
+		4529DD4C1ABA99B3009347C2 /* VZHTTPListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD131ABA99B3009347C2 /* VZHTTPListModel.m */; };
+		4529DD4D1ABA99B3009347C2 /* VZHTTPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD151ABA99B3009347C2 /* VZHTTPModel.m */; };
+		4529DD4E1ABA99B3009347C2 /* VZHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD171ABA99B3009347C2 /* VZHTTPRequest.m */; };
+		4529DD4F1ABA99B3009347C2 /* VZItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD191ABA99B3009347C2 /* VZItem.m */; };
+		4529DD501ABA99B3009347C2 /* VZListDefaultTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD1B1ABA99B3009347C2 /* VZListDefaultTextItem.m */; };
+		4529DD511ABA99B3009347C2 /* VZListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD1D1ABA99B3009347C2 /* VZListItem.m */; };
+		4529DD521ABA99B3009347C2 /* VZModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD1F1ABA99B3009347C2 /* VZModel.m */; };
+		4529DD531ABA99B3009347C2 /* VZFooterViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD231ABA99B3009347C2 /* VZFooterViewFactory.m */; };
+		4529DD541ABA99B3009347C2 /* VZListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD251ABA99B3009347C2 /* VZListCell.m */; };
+		4529DD551ABA99B3009347C2 /* VZListDefaultErrorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD271ABA99B3009347C2 /* VZListDefaultErrorCell.m */; };
+		4529DD561ABA99B3009347C2 /* VZListDefaultLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD291ABA99B3009347C2 /* VZListDefaultLoadingCell.m */; };
+		4529DD571ABA99B3009347C2 /* VZListDefaultTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD2B1ABA99B3009347C2 /* VZListDefaultTextCell.m */; };
+		4529DD581ABA99B3009347C2 /* VZTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD2E1ABA99B3009347C2 /* VZTemplate.m */; };
+		4529DD591ABA99B3009347C2 /* VZViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD311ABA99B3009347C2 /* VZViewModel.m */; };
 		AF92BD5519E3921600BE0037 /* VZFilckrListModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF92BD5419E3921600BE0037 /* VZFilckrListModelTest.m */; };
-		AF92BD5A19E6657400BE0037 /* VZFilckrViewControllerLogicTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF92BD5919E6657400BE0037 /* VZFilckrViewControllerLogicTest.m */; };
-		AFB818BB1A0E16D600E1DAAB /* VZAFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818891A0E16D600E1DAAB /* VZAFRequest.m */; };
-		AFB818BC1A0E16D600E1DAAB /* VZListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB8188F1A0E16D600E1DAAB /* VZListViewDataSource.m */; };
-		AFB818BD1A0E16D600E1DAAB /* VZListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818921A0E16D600E1DAAB /* VZListViewDelegate.m */; };
-		AFB818BE1A0E16D600E1DAAB /* VZListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818941A0E16D600E1DAAB /* VZListViewController.m */; };
-		AFB818BF1A0E16D600E1DAAB /* VZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818961A0E16D600E1DAAB /* VZViewController.m */; };
-		AFB818C01A0E16D600E1DAAB /* VZListDefaultTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB8189A1A0E16D600E1DAAB /* VZListDefaultTextItem.m */; };
-		AFB818C11A0E16D600E1DAAB /* VZListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB8189C1A0E16D600E1DAAB /* VZListItem.m */; };
-		AFB818C21A0E16D600E1DAAB /* VZItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB8189E1A0E16D600E1DAAB /* VZItem.m */; };
-		AFB818C31A0E16D600E1DAAB /* VZViewControllerLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818A11A0E16D600E1DAAB /* VZViewControllerLogic.m */; };
-		AFB818C41A0E16D600E1DAAB /* VZHTTPListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818A41A0E16D600E1DAAB /* VZHTTPListModel.m */; };
-		AFB818C51A0E16D600E1DAAB /* VZHTTPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818A61A0E16D600E1DAAB /* VZHTTPModel.m */; };
-		AFB818C61A0E16D600E1DAAB /* VZHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818A81A0E16D600E1DAAB /* VZHTTPRequest.m */; };
-		AFB818C71A0E16D600E1DAAB /* VZModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818AA1A0E16D600E1DAAB /* VZModel.m */; };
-		AFB818C81A0E16D600E1DAAB /* VZFooterViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818AE1A0E16D600E1DAAB /* VZFooterViewFactory.m */; };
-		AFB818C91A0E16D600E1DAAB /* VZListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818B01A0E16D600E1DAAB /* VZListCell.m */; };
-		AFB818CA1A0E16D600E1DAAB /* VZListDefaultErrorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818B21A0E16D600E1DAAB /* VZListDefaultErrorCell.m */; };
-		AFB818CB1A0E16D600E1DAAB /* VZListDefaultLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818B41A0E16D600E1DAAB /* VZListDefaultLoadingCell.m */; };
-		AFB818CC1A0E16D600E1DAAB /* VZListDefaultTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818B61A0E16D600E1DAAB /* VZListDefaultTextCell.m */; };
-		AFB818CD1A0E16D600E1DAAB /* VZView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818B81A0E16D600E1DAAB /* VZView.m */; };
-		AFB818D01A0E16FC00E1DAAB /* VZTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818CF1A0E16FC00E1DAAB /* VZTemplate.m */; };
-		AFB818D61A0E188A00E1DAAB /* NSObject+VZChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB818D51A0E188A00E1DAAB /* NSObject+VZChannel.m */; };
-		AFB818D81A0E1B1B00E1DAAB /* VZChannel.mm in Sources */ = {isa = PBXBuildFile; fileRef = AFB818D71A0E1B1B00E1DAAB /* VZChannel.mm */; };
 		AFD37A9D19D83F8F0077CE06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37A9C19D83F8F0077CE06 /* main.m */; };
 		AFD37AA019D83F8F0077CE06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37A9F19D83F8F0077CE06 /* AppDelegate.m */; };
 		AFD37AA319D83F8F0077CE06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37AA219D83F8F0077CE06 /* ViewController.m */; };
@@ -45,7 +59,6 @@
 		AFD37C2C19D92A5A0077CE06 /* VZTimelineListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37C1919D92A5A0077CE06 /* VZTimelineListViewDataSource.m */; };
 		AFD37C2D19D92A5A0077CE06 /* VZTimelineListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37C1C19D92A5A0077CE06 /* VZTimelineListViewDelegate.m */; };
 		AFD37C2E19D92A5A0077CE06 /* VZTimelineListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37C1F19D92A5A0077CE06 /* VZTimelineListItem.m */; };
-		AFD37C2F19D92A5A0077CE06 /* VZTimelineLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37C2219D92A5A0077CE06 /* VZTimelineLogic.m */; };
 		AFD37C3019D92A5A0077CE06 /* VZTimelineListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37C2519D92A5A0077CE06 /* VZTimelineListModel.m */; };
 		AFD37C3119D92A5A0077CE06 /* VZTimelineSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37C2819D92A5A0077CE06 /* VZTimelineSubView.m */; };
 		AFF532A519DC2C7800870591 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF532A419DC2C7800870591 /* placeholder@2x.png */; };
@@ -55,7 +68,6 @@
 		AFF5336919DC43F700870591 /* VZFlickrListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF5335519DC43F700870591 /* VZFlickrListViewDataSource.m */; };
 		AFF5336A19DC43F700870591 /* VZFlickrListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF5335819DC43F700870591 /* VZFlickrListViewDelegate.m */; };
 		AFF5336B19DC43F700870591 /* VZFlickrListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF5335B19DC43F700870591 /* VZFlickrListItem.m */; };
-		AFF5336C19DC43F700870591 /* VZFlickrLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF5335E19DC43F700870591 /* VZFlickrLogic.m */; };
 		AFF5336D19DC43F700870591 /* VZFlickrListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF5336119DC43F700870591 /* VZFlickrListModel.m */; };
 		AFF5336E19DC43F700870591 /* VZFlickrSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF5336519DC43F700870591 /* VZFlickrSubView.m */; };
 /* End PBXBuildFile section */
@@ -72,54 +84,85 @@
 
 /* Begin PBXFileReference section */
 		344875739C2F42ABA5319A72 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		4529DCE11ABA99B3009347C2 /* VZAFRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZAFRequest.h; sourceTree = "<group>"; };
+		4529DCE21ABA99B3009347C2 /* VZAFRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZAFRequest.m; sourceTree = "<group>"; };
+		4529DCE41ABA99B3009347C2 /* VZListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewController.h; sourceTree = "<group>"; };
+		4529DCE51ABA99B3009347C2 /* VZListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListViewController.m; sourceTree = "<group>"; };
+		4529DCE61ABA99B3009347C2 /* VZListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewDataSource.h; sourceTree = "<group>"; };
+		4529DCE71ABA99B3009347C2 /* VZListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListViewDataSource.m; sourceTree = "<group>"; };
+		4529DCE81ABA99B3009347C2 /* VZListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewDelegate.h; sourceTree = "<group>"; };
+		4529DCE91ABA99B3009347C2 /* VZListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListViewDelegate.m; sourceTree = "<group>"; };
+		4529DCEA1ABA99B3009347C2 /* VZViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZViewController.h; sourceTree = "<group>"; };
+		4529DCEB1ABA99B3009347C2 /* VZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZViewController.m; sourceTree = "<group>"; };
+		4529DCED1ABA99B3009347C2 /* NSNotificationCenter+VZSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+VZSignal.h"; sourceTree = "<group>"; };
+		4529DCEE1ABA99B3009347C2 /* NSNotificationCenter+VZSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+VZSignal.m"; sourceTree = "<group>"; };
+		4529DCEF1ABA99B3009347C2 /* NSObject+Deallocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Deallocation.h"; sourceTree = "<group>"; };
+		4529DCF01ABA99B3009347C2 /* NSObject+Deallocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Deallocation.m"; sourceTree = "<group>"; };
+		4529DCF11ABA99B3009347C2 /* NSObject+VZChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+VZChannel.h"; sourceTree = "<group>"; };
+		4529DCF21ABA99B3009347C2 /* NSObject+VZChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+VZChannel.m"; sourceTree = "<group>"; };
+		4529DCF31ABA99B3009347C2 /* NSObject+VZSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+VZSignal.h"; sourceTree = "<group>"; };
+		4529DCF41ABA99B3009347C2 /* NSObject+VZSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+VZSignal.m"; sourceTree = "<group>"; };
+		4529DCF51ABA99B3009347C2 /* UIControl+VZSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+VZSignal.h"; sourceTree = "<group>"; };
+		4529DCF61ABA99B3009347C2 /* UIControl+VZSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+VZSignal.m"; sourceTree = "<group>"; };
+		4529DCF71ABA99B3009347C2 /* VZChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZChannel.h; sourceTree = "<group>"; };
+		4529DCF81ABA99B3009347C2 /* VZChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZChannel.m; sourceTree = "<group>"; };
+		4529DCF91ABA99B3009347C2 /* VZDummyBindingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZDummyBindingObject.h; sourceTree = "<group>"; };
+		4529DCFA1ABA99B3009347C2 /* VZDummyBindingObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZDummyBindingObject.m; sourceTree = "<group>"; };
+		4529DCFB1ABA99B3009347C2 /* VZDynamicBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZDynamicBlock.h; sourceTree = "<group>"; };
+		4529DCFC1ABA99B3009347C2 /* VZDynamicBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZDynamicBlock.m; sourceTree = "<group>"; };
+		4529DCFD1ABA99B3009347C2 /* VZKVOCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZKVOCenter.h; sourceTree = "<group>"; };
+		4529DCFE1ABA99B3009347C2 /* VZKVOCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZKVOCenter.m; sourceTree = "<group>"; };
+		4529DCFF1ABA99B3009347C2 /* VZObserveInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZObserveInfo.h; sourceTree = "<group>"; };
+		4529DD001ABA99B3009347C2 /* VZObserveInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZObserveInfo.m; sourceTree = "<group>"; };
+		4529DD011ABA99B3009347C2 /* VZObserverProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZObserverProxy.h; sourceTree = "<group>"; };
+		4529DD021ABA99B3009347C2 /* VZObserverProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZObserverProxy.m; sourceTree = "<group>"; };
+		4529DD031ABA99B3009347C2 /* VZSignal+VZChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VZSignal+VZChannel.h"; sourceTree = "<group>"; };
+		4529DD041ABA99B3009347C2 /* VZSignal+VZChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VZSignal+VZChannel.m"; sourceTree = "<group>"; };
+		4529DD051ABA99B3009347C2 /* VZSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZSignal.h; sourceTree = "<group>"; };
+		4529DD061ABA99B3009347C2 /* VZSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZSignal.m; sourceTree = "<group>"; };
+		4529DD071ABA99B3009347C2 /* VZSignalDisposal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZSignalDisposal.h; sourceTree = "<group>"; };
+		4529DD081ABA99B3009347C2 /* VZSignalDisposal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZSignalDisposal.m; sourceTree = "<group>"; };
+		4529DD091ABA99B3009347C2 /* VZSignalDisposalProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZSignalDisposalProxy.h; sourceTree = "<group>"; };
+		4529DD0A1ABA99B3009347C2 /* VZSignalDisposalProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZSignalDisposalProxy.m; sourceTree = "<group>"; };
+		4529DD0B1ABA99B3009347C2 /* VZSignalScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZSignalScheduler.h; sourceTree = "<group>"; };
+		4529DD0C1ABA99B3009347C2 /* VZSignalScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZSignalScheduler.m; sourceTree = "<group>"; };
+		4529DD0D1ABA99B3009347C2 /* VZSignalSubscriber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZSignalSubscriber.h; sourceTree = "<group>"; };
+		4529DD0E1ABA99B3009347C2 /* VZSignalSubscriber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZSignalSubscriber.m; sourceTree = "<group>"; };
+		4529DD0F1ABA99B3009347C2 /* VZTuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTuple.h; sourceTree = "<group>"; };
+		4529DD101ABA99B3009347C2 /* VZTuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTuple.m; sourceTree = "<group>"; };
+		4529DD121ABA99B3009347C2 /* VZHTTPListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPListModel.h; sourceTree = "<group>"; };
+		4529DD131ABA99B3009347C2 /* VZHTTPListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPListModel.m; sourceTree = "<group>"; };
+		4529DD141ABA99B3009347C2 /* VZHTTPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPModel.h; sourceTree = "<group>"; };
+		4529DD151ABA99B3009347C2 /* VZHTTPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModel.m; sourceTree = "<group>"; };
+		4529DD161ABA99B3009347C2 /* VZHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPRequest.h; sourceTree = "<group>"; };
+		4529DD171ABA99B3009347C2 /* VZHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPRequest.m; sourceTree = "<group>"; };
+		4529DD181ABA99B3009347C2 /* VZItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZItem.h; sourceTree = "<group>"; };
+		4529DD191ABA99B3009347C2 /* VZItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZItem.m; sourceTree = "<group>"; };
+		4529DD1A1ABA99B3009347C2 /* VZListDefaultTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultTextItem.h; sourceTree = "<group>"; };
+		4529DD1B1ABA99B3009347C2 /* VZListDefaultTextItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultTextItem.m; sourceTree = "<group>"; };
+		4529DD1C1ABA99B3009347C2 /* VZListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListItem.h; sourceTree = "<group>"; };
+		4529DD1D1ABA99B3009347C2 /* VZListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListItem.m; sourceTree = "<group>"; };
+		4529DD1E1ABA99B3009347C2 /* VZModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZModel.h; sourceTree = "<group>"; };
+		4529DD1F1ABA99B3009347C2 /* VZModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZModel.m; sourceTree = "<group>"; };
+		4529DD221ABA99B3009347C2 /* VZFooterViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFooterViewFactory.h; sourceTree = "<group>"; };
+		4529DD231ABA99B3009347C2 /* VZFooterViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFooterViewFactory.m; sourceTree = "<group>"; };
+		4529DD241ABA99B3009347C2 /* VZListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListCell.h; sourceTree = "<group>"; };
+		4529DD251ABA99B3009347C2 /* VZListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListCell.m; sourceTree = "<group>"; };
+		4529DD261ABA99B3009347C2 /* VZListDefaultErrorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultErrorCell.h; sourceTree = "<group>"; };
+		4529DD271ABA99B3009347C2 /* VZListDefaultErrorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultErrorCell.m; sourceTree = "<group>"; };
+		4529DD281ABA99B3009347C2 /* VZListDefaultLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultLoadingCell.h; sourceTree = "<group>"; };
+		4529DD291ABA99B3009347C2 /* VZListDefaultLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultLoadingCell.m; sourceTree = "<group>"; };
+		4529DD2A1ABA99B3009347C2 /* VZListDefaultTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultTextCell.h; sourceTree = "<group>"; };
+		4529DD2B1ABA99B3009347C2 /* VZListDefaultTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultTextCell.m; sourceTree = "<group>"; };
+		4529DD2D1ABA99B3009347C2 /* VZTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTemplate.h; sourceTree = "<group>"; };
+		4529DD2E1ABA99B3009347C2 /* VZTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTemplate.m; sourceTree = "<group>"; };
+		4529DD301ABA99B3009347C2 /* VZViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZViewModel.h; sourceTree = "<group>"; };
+		4529DD311ABA99B3009347C2 /* VZViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZViewModel.m; sourceTree = "<group>"; };
+		4529DD321ABA99B3009347C2 /* VizzleConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VizzleConfig.h; sourceTree = "<group>"; };
+		4529DD331ABA99B3009347C2 /* VZEXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZEXT.h; sourceTree = "<group>"; };
+		4529DD341ABA99B3009347C2 /* VZEXT_API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZEXT_API.h; sourceTree = "<group>"; };
 		77AC2DD27F2B45EF9409DA36 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF92BD5419E3921600BE0037 /* VZFilckrListModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFilckrListModelTest.m; sourceTree = "<group>"; };
-		AF92BD5919E6657400BE0037 /* VZFilckrViewControllerLogicTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFilckrViewControllerLogicTest.m; sourceTree = "<group>"; };
-		AFB818881A0E16D600E1DAAB /* VZAFRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZAFRequest.h; sourceTree = "<group>"; };
-		AFB818891A0E16D600E1DAAB /* VZAFRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZAFRequest.m; sourceTree = "<group>"; };
-		AFB8188E1A0E16D600E1DAAB /* VZListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewDataSource.h; sourceTree = "<group>"; };
-		AFB8188F1A0E16D600E1DAAB /* VZListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListViewDataSource.m; sourceTree = "<group>"; };
-		AFB818911A0E16D600E1DAAB /* VZListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewDelegate.h; sourceTree = "<group>"; };
-		AFB818921A0E16D600E1DAAB /* VZListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListViewDelegate.m; sourceTree = "<group>"; };
-		AFB818931A0E16D600E1DAAB /* VZListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewController.h; sourceTree = "<group>"; };
-		AFB818941A0E16D600E1DAAB /* VZListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListViewController.m; sourceTree = "<group>"; };
-		AFB818951A0E16D600E1DAAB /* VZViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZViewController.h; sourceTree = "<group>"; };
-		AFB818961A0E16D600E1DAAB /* VZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZViewController.m; sourceTree = "<group>"; };
-		AFB818991A0E16D600E1DAAB /* VZListDefaultTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultTextItem.h; sourceTree = "<group>"; };
-		AFB8189A1A0E16D600E1DAAB /* VZListDefaultTextItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultTextItem.m; sourceTree = "<group>"; };
-		AFB8189B1A0E16D600E1DAAB /* VZListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListItem.h; sourceTree = "<group>"; };
-		AFB8189C1A0E16D600E1DAAB /* VZListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListItem.m; sourceTree = "<group>"; };
-		AFB8189D1A0E16D600E1DAAB /* VZItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZItem.h; sourceTree = "<group>"; };
-		AFB8189E1A0E16D600E1DAAB /* VZItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZItem.m; sourceTree = "<group>"; };
-		AFB818A01A0E16D600E1DAAB /* VZViewControllerLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZViewControllerLogic.h; sourceTree = "<group>"; };
-		AFB818A11A0E16D600E1DAAB /* VZViewControllerLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZViewControllerLogic.m; sourceTree = "<group>"; };
-		AFB818A31A0E16D600E1DAAB /* VZHTTPListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPListModel.h; sourceTree = "<group>"; };
-		AFB818A41A0E16D600E1DAAB /* VZHTTPListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPListModel.m; sourceTree = "<group>"; };
-		AFB818A51A0E16D600E1DAAB /* VZHTTPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPModel.h; sourceTree = "<group>"; };
-		AFB818A61A0E16D600E1DAAB /* VZHTTPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModel.m; sourceTree = "<group>"; };
-		AFB818A71A0E16D600E1DAAB /* VZHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPRequest.h; sourceTree = "<group>"; };
-		AFB818A81A0E16D600E1DAAB /* VZHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPRequest.m; sourceTree = "<group>"; };
-		AFB818A91A0E16D600E1DAAB /* VZModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZModel.h; sourceTree = "<group>"; };
-		AFB818AA1A0E16D600E1DAAB /* VZModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZModel.m; sourceTree = "<group>"; };
-		AFB818AD1A0E16D600E1DAAB /* VZFooterViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFooterViewFactory.h; sourceTree = "<group>"; };
-		AFB818AE1A0E16D600E1DAAB /* VZFooterViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFooterViewFactory.m; sourceTree = "<group>"; };
-		AFB818AF1A0E16D600E1DAAB /* VZListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListCell.h; sourceTree = "<group>"; };
-		AFB818B01A0E16D600E1DAAB /* VZListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListCell.m; sourceTree = "<group>"; };
-		AFB818B11A0E16D600E1DAAB /* VZListDefaultErrorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultErrorCell.h; sourceTree = "<group>"; };
-		AFB818B21A0E16D600E1DAAB /* VZListDefaultErrorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultErrorCell.m; sourceTree = "<group>"; };
-		AFB818B31A0E16D600E1DAAB /* VZListDefaultLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultLoadingCell.h; sourceTree = "<group>"; };
-		AFB818B41A0E16D600E1DAAB /* VZListDefaultLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultLoadingCell.m; sourceTree = "<group>"; };
-		AFB818B51A0E16D600E1DAAB /* VZListDefaultTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultTextCell.h; sourceTree = "<group>"; };
-		AFB818B61A0E16D600E1DAAB /* VZListDefaultTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultTextCell.m; sourceTree = "<group>"; };
-		AFB818B71A0E16D600E1DAAB /* VZView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZView.h; sourceTree = "<group>"; };
-		AFB818B81A0E16D600E1DAAB /* VZView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZView.m; sourceTree = "<group>"; };
-		AFB818BA1A0E16D600E1DAAB /* VizzleConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VizzleConfig.h; sourceTree = "<group>"; };
-		AFB818CE1A0E16FC00E1DAAB /* VZTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTemplate.h; sourceTree = "<group>"; };
-		AFB818CF1A0E16FC00E1DAAB /* VZTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTemplate.m; sourceTree = "<group>"; };
-		AFB818D11A0E182100E1DAAB /* VZChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZChannel.h; sourceTree = "<group>"; };
-		AFB818D41A0E188A00E1DAAB /* NSObject+VZChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+VZChannel.h"; sourceTree = "<group>"; };
-		AFB818D51A0E188A00E1DAAB /* NSObject+VZChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+VZChannel.m"; sourceTree = "<group>"; };
-		AFB818D71A0E1B1B00E1DAAB /* VZChannel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VZChannel.mm; sourceTree = "<group>"; };
 		AFD37A9719D83F8F0077CE06 /* VizzleListExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VizzleListExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD37A9B19D83F8F0077CE06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFD37A9C19D83F8F0077CE06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -145,8 +188,6 @@
 		AFD37C1C19D92A5A0077CE06 /* VZTimelineListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTimelineListViewDelegate.m; sourceTree = "<group>"; };
 		AFD37C1E19D92A5A0077CE06 /* VZTimelineListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTimelineListItem.h; sourceTree = "<group>"; };
 		AFD37C1F19D92A5A0077CE06 /* VZTimelineListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTimelineListItem.m; sourceTree = "<group>"; };
-		AFD37C2119D92A5A0077CE06 /* VZTimelineLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTimelineLogic.h; sourceTree = "<group>"; };
-		AFD37C2219D92A5A0077CE06 /* VZTimelineLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTimelineLogic.m; sourceTree = "<group>"; };
 		AFD37C2419D92A5A0077CE06 /* VZTimelineListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTimelineListModel.h; sourceTree = "<group>"; };
 		AFD37C2519D92A5A0077CE06 /* VZTimelineListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTimelineListModel.m; sourceTree = "<group>"; };
 		AFD37C2719D92A5A0077CE06 /* VZTimelineSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTimelineSubView.h; sourceTree = "<group>"; };
@@ -163,8 +204,6 @@
 		AFF5335819DC43F700870591 /* VZFlickrListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFlickrListViewDelegate.m; sourceTree = "<group>"; };
 		AFF5335A19DC43F700870591 /* VZFlickrListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFlickrListItem.h; sourceTree = "<group>"; };
 		AFF5335B19DC43F700870591 /* VZFlickrListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFlickrListItem.m; sourceTree = "<group>"; };
-		AFF5335D19DC43F700870591 /* VZFlickrLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFlickrLogic.h; sourceTree = "<group>"; };
-		AFF5335E19DC43F700870591 /* VZFlickrLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFlickrLogic.m; sourceTree = "<group>"; };
 		AFF5336019DC43F700870591 /* VZFlickrListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFlickrListModel.h; sourceTree = "<group>"; };
 		AFF5336119DC43F700870591 /* VZFlickrListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFlickrListModel.m; sourceTree = "<group>"; };
 		AFF5336419DC43F700870591 /* VZFlickrSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFlickrSubView.h; sourceTree = "<group>"; };
@@ -199,166 +238,159 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AFB818861A0E16D600E1DAAB /* Vizzle */ = {
+		4529DCDF1ABA99B3009347C2 /* Vizzle */ = {
 			isa = PBXGroup;
 			children = (
-				AFB818871A0E16D600E1DAAB /* adapter */,
-				AFB8188A1A0E16D600E1DAAB /* channel */,
-				AFB8188B1A0E16D600E1DAAB /* controller */,
-				AFB818971A0E16D600E1DAAB /* item */,
-				AFB8189F1A0E16D600E1DAAB /* logic */,
-				AFB818A21A0E16D600E1DAAB /* model */,
-				AFB818AB1A0E16D600E1DAAB /* view */,
-				AFB818B91A0E16D600E1DAAB /* viewmodel */,
-				AFB818BA1A0E16D600E1DAAB /* VizzleConfig.h */,
+				4529DCE01ABA99B3009347C2 /* adapter */,
+				4529DCE31ABA99B3009347C2 /* controller */,
+				4529DCEC1ABA99B3009347C2 /* FRP */,
+				4529DD111ABA99B3009347C2 /* model */,
+				4529DD201ABA99B3009347C2 /* view */,
+				4529DD2F1ABA99B3009347C2 /* ViewModel */,
+				4529DD321ABA99B3009347C2 /* VizzleConfig.h */,
+				4529DD331ABA99B3009347C2 /* VZEXT.h */,
+				4529DD341ABA99B3009347C2 /* VZEXT_API.h */,
 			);
 			name = Vizzle;
-			path = ../../../Vizzle;
+			path = ../../Vizzle;
 			sourceTree = "<group>";
 		};
-		AFB818871A0E16D600E1DAAB /* adapter */ = {
+		4529DCE01ABA99B3009347C2 /* adapter */ = {
 			isa = PBXGroup;
 			children = (
-				AFB818881A0E16D600E1DAAB /* VZAFRequest.h */,
-				AFB818891A0E16D600E1DAAB /* VZAFRequest.m */,
+				4529DCE11ABA99B3009347C2 /* VZAFRequest.h */,
+				4529DCE21ABA99B3009347C2 /* VZAFRequest.m */,
 			);
 			path = adapter;
 			sourceTree = "<group>";
 		};
-		AFB8188A1A0E16D600E1DAAB /* channel */ = {
+		4529DCE31ABA99B3009347C2 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				AFB818D11A0E182100E1DAAB /* VZChannel.h */,
-				AFB818D71A0E1B1B00E1DAAB /* VZChannel.mm */,
-				AFB818D41A0E188A00E1DAAB /* NSObject+VZChannel.h */,
-				AFB818D51A0E188A00E1DAAB /* NSObject+VZChannel.m */,
-			);
-			path = channel;
-			sourceTree = "<group>";
-		};
-		AFB8188B1A0E16D600E1DAAB /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				AFB8188C1A0E16D600E1DAAB /* list */,
-				AFB818951A0E16D600E1DAAB /* VZViewController.h */,
-				AFB818961A0E16D600E1DAAB /* VZViewController.m */,
+				4529DCE41ABA99B3009347C2 /* VZListViewController.h */,
+				4529DCE51ABA99B3009347C2 /* VZListViewController.m */,
+				4529DCE61ABA99B3009347C2 /* VZListViewDataSource.h */,
+				4529DCE71ABA99B3009347C2 /* VZListViewDataSource.m */,
+				4529DCE81ABA99B3009347C2 /* VZListViewDelegate.h */,
+				4529DCE91ABA99B3009347C2 /* VZListViewDelegate.m */,
+				4529DCEA1ABA99B3009347C2 /* VZViewController.h */,
+				4529DCEB1ABA99B3009347C2 /* VZViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
 		};
-		AFB8188C1A0E16D600E1DAAB /* list */ = {
+		4529DCEC1ABA99B3009347C2 /* FRP */ = {
 			isa = PBXGroup;
 			children = (
-				AFB8188D1A0E16D600E1DAAB /* datasource */,
-				AFB818901A0E16D600E1DAAB /* delegate */,
-				AFB818931A0E16D600E1DAAB /* VZListViewController.h */,
-				AFB818941A0E16D600E1DAAB /* VZListViewController.m */,
+				4529DCED1ABA99B3009347C2 /* NSNotificationCenter+VZSignal.h */,
+				4529DCEE1ABA99B3009347C2 /* NSNotificationCenter+VZSignal.m */,
+				4529DCEF1ABA99B3009347C2 /* NSObject+Deallocation.h */,
+				4529DCF01ABA99B3009347C2 /* NSObject+Deallocation.m */,
+				4529DCF11ABA99B3009347C2 /* NSObject+VZChannel.h */,
+				4529DCF21ABA99B3009347C2 /* NSObject+VZChannel.m */,
+				4529DCF31ABA99B3009347C2 /* NSObject+VZSignal.h */,
+				4529DCF41ABA99B3009347C2 /* NSObject+VZSignal.m */,
+				4529DCF51ABA99B3009347C2 /* UIControl+VZSignal.h */,
+				4529DCF61ABA99B3009347C2 /* UIControl+VZSignal.m */,
+				4529DCF71ABA99B3009347C2 /* VZChannel.h */,
+				4529DCF81ABA99B3009347C2 /* VZChannel.m */,
+				4529DCF91ABA99B3009347C2 /* VZDummyBindingObject.h */,
+				4529DCFA1ABA99B3009347C2 /* VZDummyBindingObject.m */,
+				4529DCFB1ABA99B3009347C2 /* VZDynamicBlock.h */,
+				4529DCFC1ABA99B3009347C2 /* VZDynamicBlock.m */,
+				4529DCFD1ABA99B3009347C2 /* VZKVOCenter.h */,
+				4529DCFE1ABA99B3009347C2 /* VZKVOCenter.m */,
+				4529DCFF1ABA99B3009347C2 /* VZObserveInfo.h */,
+				4529DD001ABA99B3009347C2 /* VZObserveInfo.m */,
+				4529DD011ABA99B3009347C2 /* VZObserverProxy.h */,
+				4529DD021ABA99B3009347C2 /* VZObserverProxy.m */,
+				4529DD031ABA99B3009347C2 /* VZSignal+VZChannel.h */,
+				4529DD041ABA99B3009347C2 /* VZSignal+VZChannel.m */,
+				4529DD051ABA99B3009347C2 /* VZSignal.h */,
+				4529DD061ABA99B3009347C2 /* VZSignal.m */,
+				4529DD071ABA99B3009347C2 /* VZSignalDisposal.h */,
+				4529DD081ABA99B3009347C2 /* VZSignalDisposal.m */,
+				4529DD091ABA99B3009347C2 /* VZSignalDisposalProxy.h */,
+				4529DD0A1ABA99B3009347C2 /* VZSignalDisposalProxy.m */,
+				4529DD0B1ABA99B3009347C2 /* VZSignalScheduler.h */,
+				4529DD0C1ABA99B3009347C2 /* VZSignalScheduler.m */,
+				4529DD0D1ABA99B3009347C2 /* VZSignalSubscriber.h */,
+				4529DD0E1ABA99B3009347C2 /* VZSignalSubscriber.m */,
+				4529DD0F1ABA99B3009347C2 /* VZTuple.h */,
+				4529DD101ABA99B3009347C2 /* VZTuple.m */,
 			);
-			path = list;
+			path = FRP;
 			sourceTree = "<group>";
 		};
-		AFB8188D1A0E16D600E1DAAB /* datasource */ = {
+		4529DD111ABA99B3009347C2 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				AFB8188E1A0E16D600E1DAAB /* VZListViewDataSource.h */,
-				AFB8188F1A0E16D600E1DAAB /* VZListViewDataSource.m */,
-			);
-			path = datasource;
-			sourceTree = "<group>";
-		};
-		AFB818901A0E16D600E1DAAB /* delegate */ = {
-			isa = PBXGroup;
-			children = (
-				AFB818911A0E16D600E1DAAB /* VZListViewDelegate.h */,
-				AFB818921A0E16D600E1DAAB /* VZListViewDelegate.m */,
-			);
-			path = delegate;
-			sourceTree = "<group>";
-		};
-		AFB818971A0E16D600E1DAAB /* item */ = {
-			isa = PBXGroup;
-			children = (
-				AFB818981A0E16D600E1DAAB /* list */,
-				AFB8189D1A0E16D600E1DAAB /* VZItem.h */,
-				AFB8189E1A0E16D600E1DAAB /* VZItem.m */,
-			);
-			path = item;
-			sourceTree = "<group>";
-		};
-		AFB818981A0E16D600E1DAAB /* list */ = {
-			isa = PBXGroup;
-			children = (
-				AFB818991A0E16D600E1DAAB /* VZListDefaultTextItem.h */,
-				AFB8189A1A0E16D600E1DAAB /* VZListDefaultTextItem.m */,
-				AFB8189B1A0E16D600E1DAAB /* VZListItem.h */,
-				AFB8189C1A0E16D600E1DAAB /* VZListItem.m */,
-			);
-			path = list;
-			sourceTree = "<group>";
-		};
-		AFB8189F1A0E16D600E1DAAB /* logic */ = {
-			isa = PBXGroup;
-			children = (
-				AFB818A01A0E16D600E1DAAB /* VZViewControllerLogic.h */,
-				AFB818A11A0E16D600E1DAAB /* VZViewControllerLogic.m */,
-			);
-			path = logic;
-			sourceTree = "<group>";
-		};
-		AFB818A21A0E16D600E1DAAB /* model */ = {
-			isa = PBXGroup;
-			children = (
-				AFB818A31A0E16D600E1DAAB /* VZHTTPListModel.h */,
-				AFB818A41A0E16D600E1DAAB /* VZHTTPListModel.m */,
-				AFB818A51A0E16D600E1DAAB /* VZHTTPModel.h */,
-				AFB818A61A0E16D600E1DAAB /* VZHTTPModel.m */,
-				AFB818A71A0E16D600E1DAAB /* VZHTTPRequest.h */,
-				AFB818A81A0E16D600E1DAAB /* VZHTTPRequest.m */,
-				AFB818A91A0E16D600E1DAAB /* VZModel.h */,
-				AFB818AA1A0E16D600E1DAAB /* VZModel.m */,
+				4529DD121ABA99B3009347C2 /* VZHTTPListModel.h */,
+				4529DD131ABA99B3009347C2 /* VZHTTPListModel.m */,
+				4529DD141ABA99B3009347C2 /* VZHTTPModel.h */,
+				4529DD151ABA99B3009347C2 /* VZHTTPModel.m */,
+				4529DD161ABA99B3009347C2 /* VZHTTPRequest.h */,
+				4529DD171ABA99B3009347C2 /* VZHTTPRequest.m */,
+				4529DD181ABA99B3009347C2 /* VZItem.h */,
+				4529DD191ABA99B3009347C2 /* VZItem.m */,
+				4529DD1A1ABA99B3009347C2 /* VZListDefaultTextItem.h */,
+				4529DD1B1ABA99B3009347C2 /* VZListDefaultTextItem.m */,
+				4529DD1C1ABA99B3009347C2 /* VZListItem.h */,
+				4529DD1D1ABA99B3009347C2 /* VZListItem.m */,
+				4529DD1E1ABA99B3009347C2 /* VZModel.h */,
+				4529DD1F1ABA99B3009347C2 /* VZModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
 		};
-		AFB818AB1A0E16D600E1DAAB /* view */ = {
+		4529DD201ABA99B3009347C2 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				AFB818AC1A0E16D600E1DAAB /* list */,
-				AFB818B71A0E16D600E1DAAB /* VZView.h */,
-				AFB818B81A0E16D600E1DAAB /* VZView.m */,
-				AFB818CE1A0E16FC00E1DAAB /* VZTemplate.h */,
-				AFB818CF1A0E16FC00E1DAAB /* VZTemplate.m */,
+				4529DD211ABA99B3009347C2 /* list */,
+				4529DD2C1ABA99B3009347C2 /* Template */,
 			);
 			path = view;
 			sourceTree = "<group>";
 		};
-		AFB818AC1A0E16D600E1DAAB /* list */ = {
+		4529DD211ABA99B3009347C2 /* list */ = {
 			isa = PBXGroup;
 			children = (
-				AFB818AD1A0E16D600E1DAAB /* VZFooterViewFactory.h */,
-				AFB818AE1A0E16D600E1DAAB /* VZFooterViewFactory.m */,
-				AFB818AF1A0E16D600E1DAAB /* VZListCell.h */,
-				AFB818B01A0E16D600E1DAAB /* VZListCell.m */,
-				AFB818B11A0E16D600E1DAAB /* VZListDefaultErrorCell.h */,
-				AFB818B21A0E16D600E1DAAB /* VZListDefaultErrorCell.m */,
-				AFB818B31A0E16D600E1DAAB /* VZListDefaultLoadingCell.h */,
-				AFB818B41A0E16D600E1DAAB /* VZListDefaultLoadingCell.m */,
-				AFB818B51A0E16D600E1DAAB /* VZListDefaultTextCell.h */,
-				AFB818B61A0E16D600E1DAAB /* VZListDefaultTextCell.m */,
+				4529DD221ABA99B3009347C2 /* VZFooterViewFactory.h */,
+				4529DD231ABA99B3009347C2 /* VZFooterViewFactory.m */,
+				4529DD241ABA99B3009347C2 /* VZListCell.h */,
+				4529DD251ABA99B3009347C2 /* VZListCell.m */,
+				4529DD261ABA99B3009347C2 /* VZListDefaultErrorCell.h */,
+				4529DD271ABA99B3009347C2 /* VZListDefaultErrorCell.m */,
+				4529DD281ABA99B3009347C2 /* VZListDefaultLoadingCell.h */,
+				4529DD291ABA99B3009347C2 /* VZListDefaultLoadingCell.m */,
+				4529DD2A1ABA99B3009347C2 /* VZListDefaultTextCell.h */,
+				4529DD2B1ABA99B3009347C2 /* VZListDefaultTextCell.m */,
 			);
 			path = list;
 			sourceTree = "<group>";
 		};
-		AFB818B91A0E16D600E1DAAB /* viewmodel */ = {
+		4529DD2C1ABA99B3009347C2 /* Template */ = {
 			isa = PBXGroup;
 			children = (
+				4529DD2D1ABA99B3009347C2 /* VZTemplate.h */,
+				4529DD2E1ABA99B3009347C2 /* VZTemplate.m */,
 			);
-			path = viewmodel;
+			path = Template;
+			sourceTree = "<group>";
+		};
+		4529DD2F1ABA99B3009347C2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4529DD301ABA99B3009347C2 /* VZViewModel.h */,
+				4529DD311ABA99B3009347C2 /* VZViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		AFD37A8E19D83F8F0077CE06 = {
 			isa = PBXGroup;
 			children = (
+				4529DCDF1ABA99B3009347C2 /* Vizzle */,
 				AFD37A9919D83F8F0077CE06 /* VizzleListExample */,
 				AFD37AB319D83F8F0077CE06 /* VizzleListExampleTests */,
 				AFD37A9819D83F8F0077CE06 /* Products */,
@@ -381,7 +413,6 @@
 			children = (
 				AFF5334A19DC43F700870591 /* Flickr */,
 				AFD37C0E19D92A5A0077CE06 /* Timeline */,
-				AFD37B7B19D840B60077CE06 /* vendor */,
 				AFD37A9E19D83F8F0077CE06 /* AppDelegate.h */,
 				AFD37A9F19D83F8F0077CE06 /* AppDelegate.m */,
 				AFD37AA119D83F8F0077CE06 /* ViewController.h */,
@@ -407,7 +438,6 @@
 		AFD37AB319D83F8F0077CE06 /* VizzleListExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				AF92BD5919E6657400BE0037 /* VZFilckrViewControllerLogicTest.m */,
 				AF92BD5419E3921600BE0037 /* VZFilckrListModelTest.m */,
 				AFD37AB619D83F8F0077CE06 /* VizzleListExampleTests.m */,
 				AFD37AB419D83F8F0077CE06 /* Supporting Files */,
@@ -423,14 +453,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AFD37B7B19D840B60077CE06 /* vendor */ = {
-			isa = PBXGroup;
-			children = (
-				AFB818861A0E16D600E1DAAB /* Vizzle */,
-			);
-			name = vendor;
-			sourceTree = "<group>";
-		};
 		AFD37C0E19D92A5A0077CE06 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,7 +463,6 @@
 				AFD37C1719D92A5A0077CE06 /* datasource */,
 				AFD37C1A19D92A5A0077CE06 /* delegate */,
 				AFD37C1D19D92A5A0077CE06 /* item */,
-				AFD37C2019D92A5A0077CE06 /* logic */,
 				AFD37C2319D92A5A0077CE06 /* model */,
 				AFD37C2619D92A5A0077CE06 /* view */,
 			);
@@ -501,15 +522,6 @@
 			path = item;
 			sourceTree = "<group>";
 		};
-		AFD37C2019D92A5A0077CE06 /* logic */ = {
-			isa = PBXGroup;
-			children = (
-				AFD37C2119D92A5A0077CE06 /* VZTimelineLogic.h */,
-				AFD37C2219D92A5A0077CE06 /* VZTimelineLogic.m */,
-			);
-			path = logic;
-			sourceTree = "<group>";
-		};
 		AFD37C2319D92A5A0077CE06 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,7 +557,6 @@
 				AFF5335319DC43F700870591 /* datasource */,
 				AFF5335619DC43F700870591 /* delegate */,
 				AFF5335919DC43F700870591 /* item */,
-				AFF5335C19DC43F700870591 /* logic */,
 				AFF5335F19DC43F700870591 /* model */,
 				AFF5336219DC43F700870591 /* resource */,
 				AFF5336319DC43F700870591 /* view */,
@@ -605,15 +616,6 @@
 				AFF5335B19DC43F700870591 /* VZFlickrListItem.m */,
 			);
 			path = item;
-			sourceTree = "<group>";
-		};
-		AFF5335C19DC43F700870591 /* logic */ = {
-			isa = PBXGroup;
-			children = (
-				AFF5335D19DC43F700870591 /* VZFlickrLogic.h */,
-				AFF5335E19DC43F700870591 /* VZFlickrLogic.m */,
-			);
-			path = logic;
 			sourceTree = "<group>";
 		};
 		AFF5335F19DC43F700870591 /* model */ = {
@@ -779,47 +781,60 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFB818CB1A0E16D600E1DAAB /* VZListDefaultLoadingCell.m in Sources */,
-				AFB818BC1A0E16D600E1DAAB /* VZListViewDataSource.m in Sources */,
+				4529DD3B1ABA99B3009347C2 /* NSObject+Deallocation.m in Sources */,
+				4529DD371ABA99B3009347C2 /* VZListViewDataSource.m in Sources */,
+				4529DD361ABA99B3009347C2 /* VZListViewController.m in Sources */,
 				AFF5336A19DC43F700870591 /* VZFlickrListViewDelegate.m in Sources */,
+				4529DD511ABA99B3009347C2 /* VZListItem.m in Sources */,
+				4529DD521ABA99B3009347C2 /* VZModel.m in Sources */,
+				4529DD4D1ABA99B3009347C2 /* VZHTTPModel.m in Sources */,
 				AFF5336919DC43F700870591 /* VZFlickrListViewDataSource.m in Sources */,
-				AFB818D81A0E1B1B00E1DAAB /* VZChannel.mm in Sources */,
-				AFB818C31A0E16D600E1DAAB /* VZViewControllerLogic.m in Sources */,
 				AFF5336619DC43F700870591 /* VZFlickrListCell.m in Sources */,
-				AFB818C71A0E16D600E1DAAB /* VZModel.m in Sources */,
-				AFB818C11A0E16D600E1DAAB /* VZListItem.m in Sources */,
-				AFB818C01A0E16D600E1DAAB /* VZListDefaultTextItem.m in Sources */,
+				4529DD3F1ABA99B3009347C2 /* VZChannel.m in Sources */,
+				4529DD351ABA99B3009347C2 /* VZAFRequest.m in Sources */,
+				4529DD501ABA99B3009347C2 /* VZListDefaultTextItem.m in Sources */,
+				4529DD431ABA99B3009347C2 /* VZObserveInfo.m in Sources */,
 				AFF5336D19DC43F700870591 /* VZFlickrListModel.m in Sources */,
-				AFB818C61A0E16D600E1DAAB /* VZHTTPRequest.m in Sources */,
-				AFB818C81A0E16D600E1DAAB /* VZFooterViewFactory.m in Sources */,
-				AFB818CD1A0E16D600E1DAAB /* VZView.m in Sources */,
-				AFB818CA1A0E16D600E1DAAB /* VZListDefaultErrorCell.m in Sources */,
-				AFB818BB1A0E16D600E1DAAB /* VZAFRequest.m in Sources */,
-				AFD37C2F19D92A5A0077CE06 /* VZTimelineLogic.m in Sources */,
+				4529DD421ABA99B3009347C2 /* VZKVOCenter.m in Sources */,
+				4529DD411ABA99B3009347C2 /* VZDynamicBlock.m in Sources */,
+				4529DD401ABA99B3009347C2 /* VZDummyBindingObject.m in Sources */,
 				AFF5336B19DC43F700870591 /* VZFlickrListItem.m in Sources */,
-				AFB818D61A0E188A00E1DAAB /* NSObject+VZChannel.m in Sources */,
 				AFD37AA319D83F8F0077CE06 /* ViewController.m in Sources */,
 				AFD37C2C19D92A5A0077CE06 /* VZTimelineListViewDataSource.m in Sources */,
-				AFB818C21A0E16D600E1DAAB /* VZItem.m in Sources */,
-				AFF5336C19DC43F700870591 /* VZFlickrLogic.m in Sources */,
-				AFB818BE1A0E16D600E1DAAB /* VZListViewController.m in Sources */,
-				AFB818C41A0E16D600E1DAAB /* VZHTTPListModel.m in Sources */,
-				AFB818BF1A0E16D600E1DAAB /* VZViewController.m in Sources */,
 				AFF5336E19DC43F700870591 /* VZFlickrSubView.m in Sources */,
+				4529DD3A1ABA99B3009347C2 /* NSNotificationCenter+VZSignal.m in Sources */,
 				AFD37C2B19D92A5A0077CE06 /* VZTimelineListViewController.m in Sources */,
-				AFB818CC1A0E16D600E1DAAB /* VZListDefaultTextCell.m in Sources */,
+				4529DD451ABA99B3009347C2 /* VZSignal+VZChannel.m in Sources */,
+				4529DD3E1ABA99B3009347C2 /* UIControl+VZSignal.m in Sources */,
 				AFD37C3019D92A5A0077CE06 /* VZTimelineListModel.m in Sources */,
-				AFB818D01A0E16FC00E1DAAB /* VZTemplate.m in Sources */,
+				4529DD461ABA99B3009347C2 /* VZSignal.m in Sources */,
+				4529DD551ABA99B3009347C2 /* VZListDefaultErrorCell.m in Sources */,
 				AFD37C3119D92A5A0077CE06 /* VZTimelineSubView.m in Sources */,
+				4529DD541ABA99B3009347C2 /* VZListCell.m in Sources */,
+				4529DD581ABA99B3009347C2 /* VZTemplate.m in Sources */,
+				4529DD4B1ABA99B3009347C2 /* VZTuple.m in Sources */,
+				4529DD4A1ABA99B3009347C2 /* VZSignalSubscriber.m in Sources */,
+				4529DD391ABA99B3009347C2 /* VZViewController.m in Sources */,
 				AFD37C2D19D92A5A0077CE06 /* VZTimelineListViewDelegate.m in Sources */,
+				4529DD481ABA99B3009347C2 /* VZSignalDisposalProxy.m in Sources */,
 				AFD37AA019D83F8F0077CE06 /* AppDelegate.m in Sources */,
-				AFB818C91A0E16D600E1DAAB /* VZListCell.m in Sources */,
+				4529DD531ABA99B3009347C2 /* VZFooterViewFactory.m in Sources */,
+				4529DD4C1ABA99B3009347C2 /* VZHTTPListModel.m in Sources */,
 				AFD37C2919D92A5A0077CE06 /* VZTimelineListCell.m in Sources */,
-				AFB818C51A0E16D600E1DAAB /* VZHTTPModel.m in Sources */,
+				4529DD591ABA99B3009347C2 /* VZViewModel.m in Sources */,
+				4529DD571ABA99B3009347C2 /* VZListDefaultTextCell.m in Sources */,
 				AFD37A9D19D83F8F0077CE06 /* main.m in Sources */,
-				AFB818BD1A0E16D600E1DAAB /* VZListViewDelegate.m in Sources */,
+				4529DD4E1ABA99B3009347C2 /* VZHTTPRequest.m in Sources */,
+				4529DD381ABA99B3009347C2 /* VZListViewDelegate.m in Sources */,
+				4529DD3D1ABA99B3009347C2 /* NSObject+VZSignal.m in Sources */,
 				AFF5336819DC43F700870591 /* VZFlickrListViewController.m in Sources */,
+				4529DD4F1ABA99B3009347C2 /* VZItem.m in Sources */,
 				AFD37C2E19D92A5A0077CE06 /* VZTimelineListItem.m in Sources */,
+				4529DD471ABA99B3009347C2 /* VZSignalDisposal.m in Sources */,
+				4529DD561ABA99B3009347C2 /* VZListDefaultLoadingCell.m in Sources */,
+				4529DD441ABA99B3009347C2 /* VZObserverProxy.m in Sources */,
+				4529DD491ABA99B3009347C2 /* VZSignalScheduler.m in Sources */,
+				4529DD3C1ABA99B3009347C2 /* NSObject+VZChannel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -828,7 +843,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF92BD5519E3921600BE0037 /* VZFilckrListModelTest.m in Sources */,
-				AF92BD5A19E6657400BE0037 /* VZFilckrViewControllerLogicTest.m in Sources */,
 				AFD37AB719D83F8F0077CE06 /* VizzleListExampleTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

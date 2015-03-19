@@ -2,145 +2,271 @@
 <Workspace
    version = "1.0">
    <Group
-      location = "group:Example/VizzleListExample/../../Vizzle"
+      location = "group:Vizzle"
       name = "Vizzle">
       <Group
          location = "group:adapter"
          name = "adapter">
+         <FileRef
+            location = "group:VZAFRequest.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZAFRequest.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:controller"
+         name = "controller">
+         <FileRef
+            location = "group:VZListViewController.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZListViewController.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZListViewDataSource.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZListViewDataSource.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZListViewDelegate.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZListViewDelegate.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZViewController.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZViewController.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:FRP"
+         name = "FRP">
+         <FileRef
+            location = "group:NSNotificationCenter+VZSignal.h">
+         </FileRef>
+         <FileRef
+            location = "group:NSNotificationCenter+VZSignal.m">
+         </FileRef>
+         <FileRef
+            location = "group:NSObject+Deallocation.h">
+         </FileRef>
+         <FileRef
+            location = "group:NSObject+Deallocation.m">
+         </FileRef>
+         <FileRef
+            location = "group:NSObject+VZChannel.h">
+         </FileRef>
+         <FileRef
+            location = "group:NSObject+VZChannel.m">
+         </FileRef>
+         <FileRef
+            location = "group:NSObject+VZSignal.h">
+         </FileRef>
+         <FileRef
+            location = "group:NSObject+VZSignal.m">
+         </FileRef>
+         <FileRef
+            location = "group:UIControl+VZSignal.h">
+         </FileRef>
+         <FileRef
+            location = "group:UIControl+VZSignal.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZChannel.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZChannel.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZDummyBindingObject.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZDummyBindingObject.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZDynamicBlock.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZDynamicBlock.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZKVOCenter.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZKVOCenter.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZObserveInfo.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZObserveInfo.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZObserverProxy.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZObserverProxy.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZSignal+VZChannel.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZSignal+VZChannel.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZSignal.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZSignal.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZSignalDisposal.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZSignalDisposal.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZSignalDisposalProxy.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZSignalDisposalProxy.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZSignalScheduler.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZSignalScheduler.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZSignalSubscriber.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZSignalSubscriber.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZTuple.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZTuple.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:model"
+         name = "model">
+         <FileRef
+            location = "group:VZHTTPListModel.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZHTTPListModel.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZHTTPModel.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZHTTPModel.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZHTTPRequest.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZHTTPRequest.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZItem.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZItem.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZListDefaultTextItem.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZListDefaultTextItem.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZListItem.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZListItem.m">
+         </FileRef>
+         <FileRef
+            location = "group:VZModel.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZModel.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:view"
+         name = "view">
+         <Group
+            location = "group:list"
+            name = "list">
+            <FileRef
+               location = "group:VZFooterViewFactory.h">
+            </FileRef>
+            <FileRef
+               location = "group:VZFooterViewFactory.m">
+            </FileRef>
+            <FileRef
+               location = "group:VZListCell.h">
+            </FileRef>
+            <FileRef
+               location = "group:VZListCell.m">
+            </FileRef>
+            <FileRef
+               location = "group:VZListDefaultErrorCell.h">
+            </FileRef>
+            <FileRef
+               location = "group:VZListDefaultErrorCell.m">
+            </FileRef>
+            <FileRef
+               location = "group:VZListDefaultLoadingCell.h">
+            </FileRef>
+            <FileRef
+               location = "group:VZListDefaultLoadingCell.m">
+            </FileRef>
+            <FileRef
+               location = "group:VZListDefaultTextCell.h">
+            </FileRef>
+            <FileRef
+               location = "group:VZListDefaultTextCell.m">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Template"
+            name = "Template">
+            <FileRef
+               location = "group:VZTemplate.h">
+            </FileRef>
+            <FileRef
+               location = "group:VZTemplate.m">
+            </FileRef>
+         </Group>
+      </Group>
+      <Group
+         location = "group:ViewModel"
+         name = "ViewModel">
+         <FileRef
+            location = "group:VZViewModel.h">
+         </FileRef>
+         <FileRef
+            location = "group:VZViewModel.m">
+         </FileRef>
       </Group>
       <FileRef
          location = "group:VizzleConfig.h">
       </FileRef>
-      <Group
-         location = "group:Vizzle/controller"
-         name = "controller">
-         <FileRef
-            location = "group:Vizzle/controller/VZListViewController.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/controller/VZListViewController.m">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/controller/VZViewController.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/controller/VZViewController.m">
-         </FileRef>
-      </Group>
-      <Group
-         location = "group:Vizzle/datasource"
-         name = "datasource">
-         <FileRef
-            location = "group:Vizzle/datasource/VZListViewDataSource.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/datasource/VZListViewDataSource.m">
-         </FileRef>
-      </Group>
-      <Group
-         location = "group:Vizzle/delegate"
-         name = "delegate">
-         <FileRef
-            location = "group:Vizzle/delegate/VZListViewDelegate.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/delegate/VZListViewDelegate.m">
-         </FileRef>
-      </Group>
-      <Group
-         location = "group:Vizzle/item"
-         name = "item">
-         <FileRef
-            location = "group:Vizzle/item/VZItem.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/item/VZItem.m">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/item/VZListDefaultTextItem.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/item/VZListDefaultTextItem.m">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/item/VZListItem.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/item/VZListItem.m">
-         </FileRef>
-      </Group>
-      <Group
-         location = "group:Vizzle/logic"
-         name = "logic">
-         <FileRef
-            location = "group:Vizzle/logic/VZViewControllerLogic.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/logic/VZViewControllerLogic.m">
-         </FileRef>
-      </Group>
-      <Group
-         location = "group:Vizzle/model"
-         name = "model">
-         <FileRef
-            location = "group:Vizzle/model/VZHTTPListModel.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/model/VZHTTPListModel.m">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/model/VZHTTPModel.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/model/VZHTTPModel.m">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/model/VZHTTPRequest.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/model/VZHTTPRequest.m">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/model/VZModel.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/model/VZModel.m">
-         </FileRef>
-      </Group>
-      <Group
-         location = "group:Vizzle/view"
-         name = "view">
-         <FileRef
-            location = "group:Vizzle/view/VZFooterViewFactory.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/view/VZFooterViewFactory.m">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/view/VZListCell.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/view/VZListCell.m">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/view/VZListDefaultErrorCell.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/view/VZListDefaultErrorCell.m">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/view/VZListDefaultLoadingCell.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/view/VZListDefaultLoadingCell.m">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/view/VZListDefaultTextCell.h">
-         </FileRef>
-         <FileRef
-            location = "group:Vizzle/view/VZListDefaultTextCell.m">
-         </FileRef>
-      </Group>
+      <FileRef
+         location = "group:VZEXT.h">
+      </FileRef>
+      <FileRef
+         location = "group:VZEXT_API.h">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:Test/VizzleTest/VizzleTest.xcodeproj">
