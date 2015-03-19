@@ -5,12 +5,10 @@
 // 
 
 #import "VZViewController.h"
-#import "VZViewControllerLogic.h"
 #import "VizzleConfig.h"
-#import "VZHTTPModel.h"
 #import <libkern/OSAtomic.h>
 
-@interface VZViewController ()<VZViewControllerLogicInterface>
+@interface VZViewController ()
 {
 
     //VZMV* => 1.4 Internal states of viewcontroller
@@ -23,17 +21,12 @@
 @end
 
 @implementation VZViewController
-@synthesize logic = _logic;
 
 
 ////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - setters
 
-- (void)setLogic:(VZViewControllerLogic *)logic
-{
-    _logic = logic;
-    _logic.viewController = self;
-}
+
 
 ////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - getters
@@ -41,14 +34,6 @@
 - (NSDictionary*)modelDictionary
 {
     return [_modelDictInternal copy];
-}
-- (VZViewControllerLogic* )logic
-{
-    if (!_logic) {
-        _logic = [VZViewControllerLogic new];
-        _logic.viewController = self;
-    }
-    return _logic;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -73,6 +58,7 @@
         _modelDictInternal = [NSMutableDictionary new];
         _states = [NSMutableDictionary new];
         _lock = OS_SPINLOCK_INIT;
+        _uuid = [[NSUUID UUID] UUIDString];
         
     }
     return self;
@@ -88,36 +74,30 @@
 {
     [super viewDidLoad];
     
-    [self.logic logic_view_did_load];
+  
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    [self.logic logic_view_will_appear];
-    
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    [self.logic logic_view_did_appear];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     
-    [self.logic logic_view_will_disappear];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    
-    [self.logic logic_view_did_disappear];
+
 }
 
 
@@ -135,8 +115,6 @@
 -(void)dealloc {
     
     VZLog(@"[%@]-->dealloc",self.class);
-    
-    [_logic logic_dealloc];
     
     OSSpinLockLock(&_lock);
     [_modelDictInternal removeAllObjects];
@@ -168,6 +146,39 @@
     [_modelDictInternal removeObjectForKey:model.key];
     [_states removeObjectForKey:model.key];
     OSSpinLockUnlock(&_lock);
+}
+
+/*
+ *  注册Template
+ *
+ *  @param clz 数据Template
+ */
+- (void)registerViewTemplate:(VZTemplate* )viewTemplate
+{
+    NSParameterAssert(viewTemplate != nil);
+    _viewTemplate = viewTemplate;
+    _viewTemplate.identifier = self.uuid;
+}
+- (void)registerViewTemplateClass:(Class )clz
+{
+    NSParameterAssert(![clz isSubclassOfClass:[VZTemplate class]]);
+    
+    _viewTemplate = [[VZTemplate alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)) Identifier:[self uuid]];
+    [self.view addSubview:_viewTemplate.contentView];
+    
+}
+/*
+ *  注册ViewModel
+ *
+ *  @param clz 数据ViewModel
+ */
+- (void)registerViewModel:(VZViewModel* )viewModel
+{
+    NSParameterAssert(viewModel != nil);
+    
+    _viewModel = viewModel;
+    _viewModel.identifier     = self.uuid;
+    _viewModel.viewController = self;
 }
 
 - (void)load {

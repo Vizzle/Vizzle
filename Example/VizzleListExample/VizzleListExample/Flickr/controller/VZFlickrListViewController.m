@@ -10,9 +10,7 @@
 
 
 #import "VZFlickrListViewController.h"
-#import "VZFlickrLogic.h"
- 
-#import "VZFlickrListModel.h" 
+#import "VZFlickrListModel.h"
 #import "VZFlickrListViewDataSource.h"
 #import "VZFlickrListViewDelegate.h"
 
@@ -22,7 +20,7 @@
 @property(nonatomic,strong)VZFlickrListModel *flickrListModel; 
 @property(nonatomic,strong)VZFlickrListViewDataSource *ds;
 @property(nonatomic,strong)VZFlickrListViewDelegate *dl;
-@property(nonatomic,strong)VZFlickrLogic *flickrLogic;
+
 
 @end
 
@@ -63,14 +61,7 @@
    return _dl;
 }
 
-- (VZFlickrLogic *)flickrLogic
-{
-    if(!_flickrLogic){
-        _flickrLogic = [VZFlickrLogic new];
-    }
 
-    return _flickrLogic;
-}
 
 ////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - life cycle methods
@@ -80,8 +71,7 @@
     self = [super init];
     
     if (self) {
-        self.logic = self.flickrLogic;
-        
+   
 
         
     }

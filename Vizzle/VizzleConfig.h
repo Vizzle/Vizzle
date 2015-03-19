@@ -9,6 +9,11 @@
 #ifndef Vizzle_VizzleConfig_h
 #define Vizzle_VizzleConfig_h
 
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreGraphics/CoreGraphics.h>
+
+
 #import "VZListViewDelegate.h"
 #import "VZListViewDataSource.h"
 #import "VZViewController.h"
@@ -25,9 +30,37 @@
 #import "VZListItem.h"
 #import "VZListDefaultTextItem.h"
 #import "VZFooterViewFactory.h"
-#import "VZViewControllerLogic.h"
-#import "VZView.h"
 
+
+////////////////////////////////
+#import "VZSignal.h"
+#import "VZSignalDisposal.h"
+#import "VZSignalDisposalProxy.h"
+#import "VZSignalSubscriber.h"
+#import "VZDummyBindingObject.h"
+#import "VZSignalScheduler.h"
+#import "VZTuple.h"
+
+#import "VZViewModel.h"
+#import "VZTemplate.h"
+
+#import "VZKVOCenter.h"
+#import "VZObserveInfo.h"
+#import "VZObserverProxy.h"
+
+
+#import "NSObject+VZSignal.h"
+#import "NSObject+VZChannel.h"
+#import "VZSignal+VZChannel.h"
+#import "NSNotificationCenter+VZSignal.h"
+
+#import "VZEXT.h"
+#import "VZEXT_API.h"
+
+#import "UIControl+VZSignal.h"
+#import "NSObject+Deallocation.h"
+
+////////////////////////////////
 
 #ifdef _AFNETWORKING_
 #import "VZAFRequest.h"
