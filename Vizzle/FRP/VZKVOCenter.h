@@ -14,6 +14,6 @@
 + (instancetype)sharedInstance;
 
 - (void)observe:(id)object info:(VZObserveInfo *)info;
-- (void)unobserve:(id)object infos:(NSSet *)infos;
+- (void)unobserve:(id)object info:(VZObserveInfo *)info;
 
 @end

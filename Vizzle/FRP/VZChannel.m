@@ -49,6 +49,11 @@
     return self;
 }
 
+- (NSString* )description
+{
+    return [NSString stringWithFormat:@"<[%@] ==> %@>",self.class,_channels];
+}
+
 - (void)vz_listenOn:(NSString* )cname Object:(id)obj Callback:(VZChannelCallback)block
 {
    
@@ -110,17 +115,22 @@
     
     [listeners enumerateObjectsUsingBlock:^(VZChannelListener* listener, BOOL *stop) {
         
-        if (obj == listener.object) {
+        if (obj == listener.object || listener.object == nil) {
             taregetListener = listener;
             *stop = YES;
         }
     }];
     
     if (taregetListener) {
+    
+        [listeners removeObject:taregetListener];
         
-        NSMutableSet* set = _channels[cname];
-        [set removeObject:taregetListener];
+        if (listeners.count == 0) {
+            [_channels removeObjectForKey:cname];
+        }
     }
+    
+
     
 }
 
@@ -129,28 +139,37 @@
     __block NSString*   channelName = @"";
     __block VZChannelListener*  taregetListener = nil;
     
-    [_channels enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    [_channels enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
        
-        NSMutableSet* listeners = (NSMutableSet* )obj;
+        NSMutableSet* listeners = (NSMutableSet* )value;
         
         [listeners enumerateObjectsUsingBlock:^(VZChannelListener* listener, BOOL *stop) {
            
-            if (obj == listener.object) {
+            //listener is dead or equal to the obj
+            if (obj == listener.object || !listener.object) {
                 channelName = key;
                 taregetListener = listener;
                 *stop = YES;
             }
         }];
+        
+        if (channelName.length > 0) {
+            
+            if (taregetListener) {
+                
+                NSMutableSet* set = _channels[channelName];
+                taregetListener.object = nil;
+                taregetListener.block = nil;
+                [set removeObject:taregetListener];
+                
+                if (set.count == 0) {
+                    [_channels removeObjectForKey:channelName];
+                }
+            }
+        }
     }];
     
-    if (channelName.length > 0) {
-        
-        if (taregetListener) {
-            
-            NSMutableSet* set = _channels[channelName];
-            [set removeObject:taregetListener];
-        }
-    }
+
 
 }
 

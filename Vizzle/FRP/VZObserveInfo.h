@@ -13,6 +13,8 @@
 @interface VZObserveInfo : NSObject
 
 @property(nonatomic,weak) VZObserverProxy* proxy;
+@property(nonatomic,weak) id observer;
+@property(nonatomic,strong) id object;
 @property(nonatomic,copy) NSString* keyPath;
 @property(nonatomic,assign)NSKeyValueObservingOptions options;
 @property(nonatomic,assign)SEL action;
@@ -21,5 +23,7 @@
 
 - (instancetype)initWithProxy:(VZObserverProxy *)proxy keyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options block:(void(^)(id,NSDictionary*))callback action:(SEL)action context:(void *)context;
 
+
+- (instancetype)initWithObserver:(id)observer Object:(id)object keyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options block:(void(^)(id,NSDictionary*))callback action:(SEL)action context:(void *)context;
 
 @end

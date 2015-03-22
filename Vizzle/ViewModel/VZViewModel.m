@@ -7,29 +7,17 @@
 //
 
 #import "VZViewModel.h"
-#import "VZObserverProxy.h"
-#import "NSObject+VZChannel.h"
-#import <objc/runtime.h>
-#import <UIKit/UIKit.h>
-#import "VZSignal.h"
-#import "VZEXT.h"
-#import "VZEXT_API.h"
-#import "NSObject+VZSignal.h"
-#import "VZSignal.h"
-#import "VZSignalDisposal.h"
-#import "VZSignalDisposalProxy.h"
-#import "VZDummyBindingObject.h"
-#import "VZSignalSubscriber.h"
-#import "UIControl+VZSignal.h"
-
 
 @interface VZViewModel()
-
-@property(nonatomic,strong) NSMutableDictionary* map;
 
 @end
 
 @implementation VZViewModel
+
+- (id)init
+{
+    return [self initWithIdentifier:@""];
+}
 
 - (instancetype )initWithIdentifier:(NSString* )identifier
 {
@@ -37,12 +25,12 @@
     
     if (self) {
 
-        _identifier = identifier;
 
+        _identifier = identifier;
+        
         [self observeSelf];
         
         [self observeCallback];
-        
     }
     return self;
 }
@@ -66,8 +54,12 @@
 
 - (void)dealloc
 {
-    [self.proxy unObserveAll];
+    //[self.proxy unObserveAll];
     [self vz_removeFromChannel];
+    
+    
+
+    //[[VZChannel sharedInstance]vz_removeListener:self];
 }
 
 

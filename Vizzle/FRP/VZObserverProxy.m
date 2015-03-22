@@ -13,7 +13,9 @@
 
 @implementation VZObserverProxy
 {
-    NSMapTable* _observerMap;
+    //NSMapTable* _observerMap;
+    NSMutableDictionary* _observerMap;
+    NSMutableDictionary* _objectMap;
     OSSpinLock _lock;
 }
 
@@ -28,7 +30,10 @@
         
         _observer = observer;
         
-        _observerMap = [NSMapTable new];
+//        NSPointerFunctionsOptions keyOptions = NSPointerFunctionsWeakMemory|NSPointerFunctionsObjectPointerPersonality;
+//        _observerMap = [[NSMapTable alloc] initWithKeyOptions:keyOptions valueOptions:NSPointerFunctionsStrongMemory|NSPointerFunctionsObjectPersonality capacity:0];
+        _observerMap = [[NSMutableDictionary alloc]initWithCapacity:1];
+        _objectMap   = [[NSMutableDictionary alloc]initWithCapacity:1];
         
         _lock = OS_SPINLOCK_INIT;
         
@@ -50,26 +55,31 @@
     }
 
     VZObserveInfo* info = [[VZObserveInfo alloc]initWithProxy:self keyPath:keyPath options:options block:block action:NULL context:NULL];
-    
+
     // lock
     OSSpinLockLock(&_lock);
     
-    NSMutableSet *infos = [_observerMap objectForKey:object];
     
-    // check for info existence
+    //拿到object对应的key
+    NSString* hashString = [self hashKey:object];
+
+    //让proxy强引用object
+    [_objectMap setObject:object forKey:hashString];
+    
+    NSMutableSet *infos = [_observerMap objectForKey:hashString];
     VZObserveInfo *existingInfo = [infos member:info];
     if (nil != existingInfo) {
-        NSLog(@"observation info already exists %@", existingInfo);
         
-        // unlock and return
+        //set已经存在
         OSSpinLockUnlock(&_lock);
         return;
     }
-    
-    // lazilly create set of infos
+
     if (nil == infos) {
         infos = [NSMutableSet set];
-        [_observerMap setObject:infos forKey:object];
+        
+        //引用callback等信息
+        [_observerMap setObject:infos forKey:hashString];
     }
     
     // add info and oberve
@@ -104,16 +114,24 @@
     // lock
     OSSpinLockLock(&_lock);
     
-    NSMutableSet *infos = [_observerMap objectForKey:object];
-    
-    // remove infos
-    [_observerMap removeObjectForKey:object];
+    NSString* str = [self hashKey:object];
+  
+    NSMutableSet *infos = [_observerMap objectForKey:str];
+
+    [_observerMap removeObjectForKey:str];
     
     // unlock
     OSSpinLockUnlock(&_lock);
     
-    // unobserve
-    [[VZKVOCenter sharedInstance] unobserve:object infos:infos];
+    //center取消注册
+    for (VZObserveInfo* info in infos) {
+        
+        [[VZKVOCenter sharedInstance] unobserve:object info:info];
+        
+    }
+    
+    //解开对object的引用
+    [_objectMap removeObjectForKey:str];
 }
 
 - (void)unObserveAll
@@ -122,18 +140,39 @@
     OSSpinLockLock(&_lock);
     
     NSMutableDictionary *objectInfoMaps = [_observerMap copy];
+    NSMutableDictionary* objectMaps     = [_objectMap copy];
     
     // clear table and map
     [_observerMap removeAllObjects];
+    [_objectMap removeAllObjects];
     
     // unlock
     OSSpinLockUnlock(&_lock);
     
-    for (id object in objectInfoMaps) {
-        // unobserve each registered object and infos
-        NSSet *infos = [objectInfoMaps objectForKey:object];
-        [[VZKVOCenter sharedInstance] unobserve:object infos:infos];
-    }
+    
+    
+    [objectMaps enumerateKeysAndObjectsUsingBlock:^(NSString* key, id obj, BOOL *stop) {
+        
+        NSMutableSet* set = [objectInfoMaps objectForKey:key];
+        
+        for (VZObserveInfo* info in set) {
+            
+            [[VZKVOCenter sharedInstance] unobserve:obj info:info];
+            
+        }
+        
+    }];
+    
+    //clean object map
+    [objectMaps removeAllObjects];
+
+
+}
+
+- (NSString* )hashKey:(id)object
+{
+    return [NSString stringWithFormat:@"<%@  - %ld>",[object class], [object hash]];
+    
 }
 
 

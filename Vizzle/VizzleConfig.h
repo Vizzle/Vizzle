@@ -47,11 +47,14 @@
 #import "VZKVOCenter.h"
 #import "VZObserveInfo.h"
 #import "VZObserverProxy.h"
+#import "NSObject+VZOberveProxy.h"
 
 
-#import "NSObject+VZSignal.h"
+#import "VZChannel.h"
 #import "NSObject+VZChannel.h"
 #import "VZSignal+VZChannel.h"
+
+#import "NSObject+VZSignal.h"
 #import "NSNotificationCenter+VZSignal.h"
 
 #import "VZEXT.h"

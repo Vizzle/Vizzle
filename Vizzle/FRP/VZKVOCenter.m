@@ -34,7 +34,8 @@
     if (self) {
         
         _lock = OS_SPINLOCK_INIT;
-        _infos = [NSHashTable new];
+        _infos = [NSHashTable alloc];
+        _infos = [_infos initWithOptions:NSPointerFunctionsWeakMemory|NSPointerFunctionsObjectPointerPersonality capacity:0];
         
     }
     return self;
@@ -43,7 +44,7 @@
 
 - (NSString* )description
 {
-    NSMutableString *s = [NSMutableString stringWithFormat:@"<%@:%p", NSStringFromClass([self class]), self];
+    NSMutableString *s = [NSMutableString stringWithFormat:@"<%@ ==> ", NSStringFromClass([self class])];
     
     // lock
     OSSpinLockLock(&_lock);
@@ -93,7 +94,6 @@
     // remove observer
     [object removeObserver:self forKeyPath:info.keyPath context:(void *)info];
 }
-
 - (void)unobserve:(id)object infos:(NSSet *)infos
 {
     if (0 == infos.count) {

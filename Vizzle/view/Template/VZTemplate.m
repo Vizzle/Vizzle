@@ -45,7 +45,7 @@ typedef void(^TemplateCallback)(id value);
 - (void)dealloc
 {
     
-    [self.proxy unObserveAll];
+    //[self.proxy unObserveAll];
     [self vz_removeFromChannel];
 }
 

@@ -81,9 +81,9 @@
         case 13: return @selector(performWith:::::::::::::);
         case 14: return @selector(performWith::::::::::::::);
         case 15: return @selector(performWith:::::::::::::::);
+        default: {NSLog(@"Arguments Count is too high!");return NULL;};
     }
     
-    NSCAssert(NO, @"The argument count is too damn high! Only blocks of up to 15 arguments are currently supported.");
     return NULL;
 }
 

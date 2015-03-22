@@ -10,10 +10,8 @@
 
 
 @class VZSignal;
-@class VZObserverProxy;
-@interface NSObject (VZSignal)
 
-@property(nonatomic,strong,readonly)VZObserverProxy* proxy;
+@interface NSObject (VZSignal)
 
 - (VZSignal* )vz_observeKeypath:(NSString* )keypath;
 

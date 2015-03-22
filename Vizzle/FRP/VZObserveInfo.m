@@ -24,6 +24,22 @@
     return self;
 }
 
+- (instancetype)initWithObserver:(id)observer Object:(id)object keyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options block:(void(^)(id,NSDictionary*))callback action:(SEL)action context:(void *)context
+{
+    self = [super init];
+    if (nil != self) {
+        
+        self.observer           = observer;
+        self.object             = object;
+        self.observeCallback    =  callback;
+        self.keyPath            =  keyPath;
+        self.options            = options;
+        self.action             = action;
+        self.context            = (__bridge id)(context);
+    }
+    return self;
+}
+
 - (NSUInteger)hash
 {
     return [_keyPath hash];
@@ -47,7 +63,7 @@
 {
     NSMutableString *s = [NSMutableString stringWithFormat:@"<%@:%p keyPath:%@", NSStringFromClass([self class]), self, _keyPath];
     if (0 != _options) {
-        //[s appendFormat:@" options:%@", describe_options(_options)];
+        [s appendFormat:@" options:%lu", _options];
     }
     if (NULL != _action) {
         [s appendFormat:@" action:%@", NSStringFromSelector(_action)];

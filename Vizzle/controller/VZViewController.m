@@ -155,15 +155,18 @@
  */
 - (void)registerViewTemplate:(VZTemplate* )viewTemplate
 {
-    NSParameterAssert(viewTemplate != nil);
-    _viewTemplate = viewTemplate;
-    _viewTemplate.identifier = self.uuid;
+    if (viewTemplate) {
+      
+        _viewTemplate = viewTemplate;
+        _viewTemplate.identifier = self.uuid;
+    }
+
 }
 - (void)registerViewTemplateClass:(Class )clz
 {
-    NSParameterAssert(![clz isSubclassOfClass:[VZTemplate class]]);
+    NSAssert([clz isSubclassOfClass:[VZTemplate class]],@"Template Class must be the subclass of VZTemplate");
     
-    _viewTemplate = [[VZTemplate alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)) Identifier:[self uuid]];
+    _viewTemplate = [[clz alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)) Identifier:[self uuid]];
     [self.view addSubview:_viewTemplate.contentView];
     
 }
@@ -174,8 +177,7 @@
  */
 - (void)registerViewModel:(VZViewModel* )viewModel
 {
-    NSParameterAssert(viewModel != nil);
-    
+    NSAssert(viewModel != nil, @"ViewModel cannot be nil!");
     _viewModel = viewModel;
     _viewModel.identifier     = self.uuid;
     _viewModel.viewController = self;
