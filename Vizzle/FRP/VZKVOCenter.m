@@ -14,7 +14,7 @@
 @implementation VZKVOCenter
 {
     OSSpinLock _lock;
-    NSHashTable* _infos;
+    NSMutableSet* _infos;
 }
 
 + (instancetype)sharedInstance
@@ -34,8 +34,7 @@
     if (self) {
         
         _lock = OS_SPINLOCK_INIT;
-        _infos = [NSHashTable alloc];
-        _infos = [_infos initWithOptions:NSPointerFunctionsWeakMemory|NSPointerFunctionsObjectPointerPersonality capacity:0];
+        _infos = [NSMutableSet new];
         
     }
     return self;

@@ -120,6 +120,11 @@
     [_modelDictInternal removeAllObjects];
     [_states removeAllObjects];
     OSSpinLockUnlock(&_lock);
+    
+    //release viewmodel
+    if (self.viewModel) {
+        self.viewModel.proxy = nil;
+    }
 
 }
 

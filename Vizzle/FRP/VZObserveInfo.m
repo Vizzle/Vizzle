@@ -24,21 +24,7 @@
     return self;
 }
 
-- (instancetype)initWithObserver:(id)observer Object:(id)object keyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options block:(void(^)(id,NSDictionary*))callback action:(SEL)action context:(void *)context
-{
-    self = [super init];
-    if (nil != self) {
-        
-        self.observer           = observer;
-        self.object             = object;
-        self.observeCallback    =  callback;
-        self.keyPath            =  keyPath;
-        self.options            = options;
-        self.action             = action;
-        self.context            = (__bridge id)(context);
-    }
-    return self;
-}
+
 
 - (NSUInteger)hash
 {

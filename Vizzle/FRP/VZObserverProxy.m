@@ -139,8 +139,8 @@
     // lock
     OSSpinLockLock(&_lock);
     
-    NSMutableDictionary *objectInfoMaps = [_observerMap copy];
-    NSMutableDictionary* objectMaps     = [_objectMap copy];
+    NSMutableDictionary *objectInfoMaps = [_observerMap mutableCopy];
+    NSMutableDictionary* objectMaps     = [_objectMap mutableCopy];
     
     // clear table and map
     [_observerMap removeAllObjects];

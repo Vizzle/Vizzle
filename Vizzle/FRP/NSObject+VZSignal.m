@@ -7,7 +7,6 @@
 //
 
 #import "NSObject+VZSignal.h"
-#import "FBKVOController.h"
 
 @interface NSObject()
 
@@ -29,6 +28,8 @@
     
     VZSignal* signal = [VZSignal createSignal:^VZSignalDisposalProxy *(id<VZSignalSubscriber> subscriber) {
         
+        
+    
         //watching for KVO-change:
         [weakSelf.proxy observe:weakSelf keyPath:keypath options:NSKeyValueObservingOptionNew block:^(id observer, NSDictionary *change) {
             
@@ -43,26 +44,11 @@
             }
         }];
         
-        
-//        [weakSelf.KVOControllerNonRetaining observe:weakSelf keyPath:keypath options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
-//           
-//            if (change.count > 0) {
-//                
-//                if (change[@"new"] != [NSNull null]) {
-//                    
-//                    [subscriber sendNext:change[@"new"]];
-//                }
-//                else
-//                    [subscriber sendCompleted];
-//            }
-//        }];
-        
         return nil;
     }] ;
     
     return signal;
-    
-//    return nil;
+
 }
 
 
