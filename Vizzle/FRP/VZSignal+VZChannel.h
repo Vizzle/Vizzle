@@ -10,6 +10,6 @@
 
 @interface VZSignal (VZChannel)
 
-- (VZSignal* )send:(NSString* )channel;
+- (void )send:(NSString* )channel;
 
 @end

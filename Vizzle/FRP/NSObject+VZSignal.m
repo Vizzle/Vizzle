@@ -28,7 +28,6 @@
     
     VZSignal* signal = [VZSignal createSignal:^VZSignalDisposalProxy *(id<VZSignalSubscriber> subscriber) {
         
-        
     
         //watching for KVO-change:
         [weakSelf.kvoProxy observe:weakSelf keyPath:keypath options:NSKeyValueObservingOptionNew block:^(id observer, NSDictionary *change) {
@@ -44,7 +43,9 @@
             }
         }];
         
-        return nil;
+        return [VZSignalDisposalProxy proxyWithDisposal:[VZSignalDisposal disposableWithBlock:^{
+            NSLog(@"KVO Signal Dead");
+        }]];
     }] ;
     
     return signal;
@@ -52,10 +53,9 @@
 }
 
 
-- (VZSignal* )vz_observeChannel:(NSString* )channelName KeyPath:(NSString* )keypath
+- (VZSignal* )vz_observeChannel:(NSString* )channelName
 {
-    
-    
+
     NSRecursiveLock *objectLock = [[NSRecursiveLock alloc] init];
     objectLock.name = @"org.vizlab.vizzle.vzchannel";
     
@@ -64,11 +64,8 @@
     
     VZSignal* signal = [VZSignal createSignal:^VZSignalDisposalProxy *(id<VZSignalSubscriber> subscriber) {
         
-        NSString* newChannelName =  [NSString stringWithFormat:@"%@-%@",channelName,keypath];
-        
-        [weakSelf vz_listOnChannel:newChannelName withNotificationBlock:^(id obj, id data) {
+        [weakSelf vz_listOnChannel:channelName withNotificationBlock:^(id obj, id data) {
            
-     
             if (data) {
                 
                 [subscriber sendNext:data];

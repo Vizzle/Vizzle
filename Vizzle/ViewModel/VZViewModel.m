@@ -24,42 +24,32 @@
     self = [super init];
     
     if (self) {
-
-
+        
         _identifier = identifier;
-        
-        [self observeSelf];
-        
-        [self observeCallback];
+    
     }
     return self;
 }
+- (NSString* )key:(NSString* )key
+{
+    return [NSString stringWithFormat:@"%@-%@",self.identifier,key];
+}
 
-- (void)observeSelf
+- (void)beginObserving
 {
 
 }
 
-- (void)observeCallback
+- (void)endObserving
 {
-
+    self.kvoProxy = nil;
+    [self vz_removeFromChannel];
 }
 
-- (void)fire:(id) data id:(NSString* )viewId
-{
-    //将数据包装一下，发个channel
-    NSString* name = [NSString stringWithFormat:@"%@-%@",self.identifier,viewId];
-    [self vz_postToChannel:name withObject:self Data:data];
-}
 
 - (void)dealloc
 {
-    //[self.proxy unObserveAll];
-    [self vz_removeFromChannel];
-    
-    
-
-    //[[VZChannel sharedInstance]vz_removeListener:self];
+    [self endObserving];
 }
 
 

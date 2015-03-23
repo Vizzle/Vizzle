@@ -35,52 +35,31 @@ typedef void(^TemplateCallback)(id value);
         _identifier = identifier;
         _contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame))];
         
-        [self createSubViews];
-        [self createBindings];
-        
     }
     return self;
 }
 
 - (void)dealloc
 {
-    
-    //[self.proxy unObserveAll];
+    [self endBinding];
+}
+
+- (NSString* )key:(NSString* )key
+{
+    return [NSString stringWithFormat:@"%@-%@",self.identifier,key];
+}
+
+
+
+- (void)beginBinding
+{
+
+}
+
+- (void)endBinding
+{
+    self.kvoProxy = nil;
     [self vz_removeFromChannel];
-}
-
-- (void)createSubViews
-{
-    
-    
-}
-
-- (void)createBindings
-{
-   
-}
-
-
-
-- (UIView* )findViewById:(NSUInteger)tag
-{
-    UIView* ret = nil;
-    for (UIView* v in self.contentView.subviews) {
-        
-        if (v.tag == tag) {
-            
-            ret = v;
-            break;
-        }
-    }
-    return ret;
-}
-
-
-- (void)fire:(id)data id:(NSString* )identifier
-{
-    NSString* name = [NSString stringWithFormat:@"%@-%@",self.identifier,identifier];
-    [self vz_postToChannel:name withObject:self Data:data];
 }
 
 

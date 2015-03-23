@@ -15,30 +15,25 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Channel
 
-- (VZSignal* )send:(NSString *)channel
+- (void )send:(NSString *)channel
 {
-    
-    __weak typeof(self)weakSelf = self;
-    VZSignal* sig = [VZSignal createSignal:^VZSignalDisposalProxy *(id<VZSignalSubscriber> subscriber) {
+    if (!channel || channel.length == 0) {
+        return;
+    }
+     __weak typeof(self)weakSelf = self;
+    [self subscribeNext:^(id x) {
         
-        VZSignalDisposalProxy* disposal = [self subscribeNext:^(id x) {
-            
-            [weakSelf vz_postToChannel:channel withObject:weakSelf Data:x];
-            [subscriber sendNext:x];
-            
-        } error:^(NSError *error) {
-            
-            [subscriber sendError:error];
-            
-        } completed:^{
-            
-            [subscriber sendCompleted];
-        }];
+        [weakSelf vz_postToChannel:channel withObject:weakSelf Data:x];
         
-        return disposal;
+    } error:^(NSError *error) {
+        
+        [weakSelf vz_postToChannel:channel withObject:weakSelf Data:error];
+        
+        
+    } completed:^{
+        
+        //noop..
     }];
-    
-    return sig;
 }
 
 @end

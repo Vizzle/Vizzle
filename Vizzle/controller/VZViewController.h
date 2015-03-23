@@ -68,7 +68,7 @@
  *
  *  @param clz 数据ViewModel
  */
-- (void)registerViewModel:(VZViewModel* )viewModel;
+- (void)registerViewModelClass:(Class )viewModel;
 /**
  *  加载Model数据
  */

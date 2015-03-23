@@ -123,7 +123,12 @@
     
     //release viewmodel
     if (self.viewModel) {
-        self.viewModel.kvoProxy = nil;
+        [self.viewModel endObserving];
+    }
+    
+    //release template
+    if (self.viewTemplate) {
+        [self.viewTemplate endBinding];
     }
 
 }
@@ -158,21 +163,35 @@
  *
  *  @param clz 数据Template
  */
-- (void)registerViewTemplate:(VZTemplate* )viewTemplate
-{
-    if (viewTemplate) {
-      
-        _viewTemplate = viewTemplate;
-        _viewTemplate.identifier = self.uuid;
-    }
-
-}
+//- (void)registerViewTemplate:(VZTemplate* )viewTemplate
+//{
+//    if (viewTemplate) {
+//      
+//        _viewTemplate = viewTemplate;
+//        _viewTemplate.identifier = self.uuid;
+//        [_viewTemplate beginBinding];
+//    }
+//
+//}
 - (void)registerViewTemplateClass:(Class )clz
 {
-    NSAssert([clz isSubclassOfClass:[VZTemplate class]],@"Template Class must be the subclass of VZTemplate");
+    NSAssert([clz isSubclassOfClass:[VZTemplate class]],@"Template's Class must be the subclass of VZTemplate");
     
     _viewTemplate = [[clz alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)) Identifier:[self uuid]];
+
     [self.view addSubview:_viewTemplate.contentView];
+    [_viewTemplate beginBinding];
+    
+}
+
+- (void)registerViewModelClass:(Class)clz
+{
+     NSAssert([clz isSubclassOfClass:[VZViewModel class]],@"ViewModel's Class must be the subclass of VZTemplate");
+    
+    _viewModel = [[clz alloc]initWithIdentifier:[self uuid]];
+    _viewModel.viewController = self;
+    [_viewModel beginObserving];
+    
     
 }
 /*
@@ -180,13 +199,14 @@
  *
  *  @param clz 数据ViewModel
  */
-- (void)registerViewModel:(VZViewModel* )viewModel
-{
-    NSAssert(viewModel != nil, @"ViewModel cannot be nil!");
-    _viewModel = viewModel;
-    _viewModel.identifier     = self.uuid;
-    _viewModel.viewController = self;
-}
+//- (void)registerViewModel:(VZViewModel* )viewModel
+//{
+//    NSAssert(viewModel != nil, @"ViewModel cannot be nil!");
+//    _viewModel = viewModel;
+//    _viewModel.identifier     = self.uuid;
+//    _viewModel.viewController = self;
+//    [_viewModel beginObserving];
+//}
 
 - (void)load {
     

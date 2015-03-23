@@ -15,7 +15,7 @@
 
 - (VZSignal* )vz_observeKeypath:(NSString* )keypath;
 
-- (VZSignal* )vz_observeChannel:(NSString* )channelName KeyPath:(NSString* )keypath;
+- (VZSignal* )vz_observeChannel:(NSString* )channelName;
 
 @end
 

@@ -14,17 +14,21 @@
 }
 
 @property(nonatomic,copy) NSString* identifier;
+
 @property(nonatomic,strong,readonly) UIView* contentView;
 
 - (instancetype)initWithFrame:(CGRect)frame;
+
 - (instancetype)initWithFrame:(CGRect)frame Identifier:(NSString* )identifier;
-- (void)createSubViews;
-- (void)createBindings;
+
+- (NSString* )key:(NSString* )key;
+
+- (void)beginBinding;
+
+- (void)endBinding;
+
+
+
+
 @end
 
-
-@interface VZTemplate(SubClassing)
-
-- (void)fire:(id)data id:(NSString* )identifier;
-
-@end

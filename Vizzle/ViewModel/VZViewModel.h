@@ -19,16 +19,14 @@
 
 - (instancetype)initWithIdentifier:(NSString* )identifier;
 
-- (void)fire:(id) data id:(NSString* )viewId;
+- (NSString* )key:(NSString* )key;
+
+- (void)beginObserving;
+
+- (void)endObserving;
 
 @end
 
-@interface VZViewModel(Subclassing)
 
-- (void)observeSelf;
-- (void)observeCallback;
-
-
-@end
 
 

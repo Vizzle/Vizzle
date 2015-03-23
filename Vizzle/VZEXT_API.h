@@ -20,12 +20,12 @@ id keypath = @vz_ext_keypath(TARGET,KEYPATH);\
 [target_ vz_observeKeypath:keypath]; \
 })
 
-#define VZChannel(NAME, KEYPATH) \
-({ \
+#define VZObserve_(NAME) \
+({\
 id name = (NAME); \
-id keypath = (KEYPATH); \
-[self vz_observeChannel:name KeyPath:keypath]; \
-})
+[self vz_observeChannel:name]; \
+})\
+
 
 
 /// Do not use this directly
