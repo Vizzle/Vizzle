@@ -123,7 +123,7 @@
     
     //release viewmodel
     if (self.viewModel) {
-        self.viewModel.proxy = nil;
+        self.viewModel.kvoProxy = nil;
     }
 
 }

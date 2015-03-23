@@ -23,39 +23,24 @@ static void *VZObserveProxyWeakKey = &VZObserveProxyWeakKey;
 
 @implementation NSObject (VZOberveProxy)
 
-- (VZObserverProxy *)proxy
+- (VZObserverProxy *)kvoProxy
 {
     id proxy = objc_getAssociatedObject(self, VZObserveProxyKey);
     
     if (nil == proxy) {
     
         VZObserverProxy* proxy = [[VZObserverProxy alloc]initWithObserver:self];
-        self.proxy = proxy;
+        self.kvoProxy = proxy;
     }
     
     return proxy;
 }
 
-- (void)setProxy:(VZObserverProxy *)proxy
+- (void)setKvoProxy:(VZObserverProxy *)kvoProxy
 {
-    objc_setAssociatedObject(self, VZObserveProxyKey, proxy, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, VZObserveProxyKey, kvoProxy, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (VZObserverProxy *)weakProxy
-{
-    id proxy = objc_getAssociatedObject(self, VZObserveProxyWeakKey);
-    
-    if (nil == proxy) {
-        proxy = [[VZObserverProxy alloc] initWithObserver:self];
-        self.weakProxy = proxy;
-    }
-    
-    return proxy;
-}
 
-- (void)setWeakProxy:(VZObserverProxy *)weakProxy
-{
-    objc_setAssociatedObject(self, VZObserveProxyWeakKey, weakProxy, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
 
 @end

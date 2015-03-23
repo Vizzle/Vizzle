@@ -12,7 +12,6 @@
 
 @interface NSObject (VZOberveProxy)
 
-@property (nonatomic, strong) VZObserverProxy *proxy;
-@property (nonatomic, strong) VZObserverProxy *weakProxy;
+@property (nonatomic, strong) VZObserverProxy *kvoProxy;
 
 @end

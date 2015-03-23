@@ -31,7 +31,7 @@
         
     
         //watching for KVO-change:
-        [weakSelf.proxy observe:weakSelf keyPath:keypath options:NSKeyValueObservingOptionNew block:^(id observer, NSDictionary *change) {
+        [weakSelf.kvoProxy observe:weakSelf keyPath:keypath options:NSKeyValueObservingOptionNew block:^(id observer, NSDictionary *change) {
             
             if (change.count > 0) {
                 
