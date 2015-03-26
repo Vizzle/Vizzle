@@ -44,20 +44,18 @@
 - (NSString* )description
 {
     NSMutableString *s = [NSMutableString stringWithFormat:@"<%@ ==> ", NSStringFromClass([self class])];
+
+    NSMutableArray *infoDescriptions = [NSMutableArray arrayWithCapacity:_infos.count];
     
     // lock
     OSSpinLockLock(&_lock);
-    
-    NSMutableArray *infoDescriptions = [NSMutableArray arrayWithCapacity:_infos.count];
     for (VZObserveInfo *info in _infos) {
         [infoDescriptions addObject:info.description];
     }
-    
-    [s appendFormat:@" contexts:%@", infoDescriptions];
-    
     // unlock
     OSSpinLockUnlock(&_lock);
     
+    [s appendFormat:@" contexts:%@", infoDescriptions];
     [s appendString:@">"];
     return s;
     

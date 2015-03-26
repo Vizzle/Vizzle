@@ -7,7 +7,7 @@
 //
 
 #import "VZChannel.h"
-
+#import <libkern/OSAtomic.h>
 
 @interface VZChannelListener:NSObject
 
@@ -25,6 +25,7 @@
 @implementation VZChannel
 {
     NSMutableDictionary* _channels;
+    OSSpinLock _lock;
 }
 
 + (instancetype)sharedInstance
@@ -44,6 +45,8 @@
     
     if (self) {
         _channels = [NSMutableDictionary new];
+        _lock = OS_SPINLOCK_INIT;
+        
     }
     
     return self;
@@ -58,6 +61,8 @@
 {
    
     NSMutableSet* listeners = _channels[cname];
+    
+    OSSpinLockLock(&_lock);
     
     if (!listeners) {
         listeners = [NSMutableSet new];
@@ -85,7 +90,7 @@
         listener.block = block;
         [listeners addObject:listener];
     }
-    
+    OSSpinLockUnlock(&_lock);
 }
 
 
@@ -93,6 +98,8 @@
 - (void)vz_post:(id)data To:(NSString* )cname From:(id)obj
 {
     NSMutableSet* listeners = _channels[cname];
+    
+    OSSpinLockLock(&_lock);
     
     [listeners enumerateObjectsUsingBlock:^(VZChannelListener* listener, BOOL *stop) {
        
@@ -105,13 +112,18 @@
         }
     
     }];
+    
+    OSSpinLockUnlock(&_lock);
 
 }
 
 - (void)vz_removeListener:(id)obj From:(NSString* )cname
 {
+    
     NSMutableSet* listeners = _channels[cname];
     __block VZChannelListener*  taregetListener = nil;
+    
+    OSSpinLockLock(&_lock);
     
     [listeners enumerateObjectsUsingBlock:^(VZChannelListener* listener, BOOL *stop) {
         
@@ -130,6 +142,7 @@
         }
     }
     
+    OSSpinLockUnlock(&_lock);
 
     
 }
@@ -138,6 +151,8 @@
 {
     __block NSString*   channelName = @"";
     __block VZChannelListener*  taregetListener = nil;
+    
+    OSSpinLockLock(&_lock);
     
     [_channels enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
        
@@ -169,6 +184,8 @@
         }
     }];
     
+    
+    OSSpinLockUnlock(&_lock);
 
 
 }
