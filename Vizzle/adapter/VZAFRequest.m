@@ -24,7 +24,7 @@
     static VZAFClient* client;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        client = [[VZAFClient alloc]initWithBaseURL:nil];
+        client = [[VZAFClient alloc]initWithBaseURL:[NSURL URLWithString:@""]];
     });
     return client;
 }
@@ -86,6 +86,12 @@
     
 }
 
+- (void)dealloc
+{
+    [self cancel];
+    self.currentTask = nil;
+}
+
 - (void)addHeaderParams:(NSDictionary *)params
 {
 #ifdef _AFNETWORKING_
@@ -96,7 +102,7 @@
 - (void)addQueries:(NSDictionary *)queries
 {
 #ifdef _AFNETWORKING_
-    self.queries = queries;
+    self.queries = [queries copy];
 #endif
 
 }
@@ -108,35 +114,71 @@
 {
     
 #ifdef _AFNETWORKING_
-
     
-    NSMutableURLRequest *request = [self.afClient.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:self.url relativeToURL:nil] absoluteString] parameters:self.queries error:nil];
     
+    NSString* type = self.isPost?@"POST":@"GET";
+    
+    NSMutableURLRequest *request = [self.afClient.requestSerializer requestWithMethod:type URLString:self.url parameters:self.queries error:nil];
     self.requestURL = request.URL.absoluteString;
     
     [self requestDidStart];
     
+    
     __weak typeof(self) weakSelf = self;
-    self.currentTask = [self.afClient GET:self.url parameters:self.queries success:^(NSURLSessionDataTask *task, id responseObject) {
-        
-        __strong typeof (weakSelf) strongSelf = weakSelf;
-        
-        if (strongSelf) {
-            strongSelf -> _responseObject = responseObject;
-        }
-        
-        [weakSelf requestDidFinish:responseObject];
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
-        __strong typeof (weakSelf) strongSelf = weakSelf;
-        
-        if (strongSelf) {
-            strongSelf -> _responseError = error;
-        }
-        [weakSelf requestDidFailWithError:error];
-        
-    }];
+    if (self.isPost)
+    {
+        type = @"POST";
+        self.currentTask = [self.afClient POST:self.url parameters:self.queries success:^(NSURLSessionDataTask *task, id responseObject) {
+            
+            __strong typeof (weakSelf) strongSelf = weakSelf;
+            
+            if (strongSelf) {
+                //AF没有获取responseString的方法
+                strongSelf -> _responseObject = responseObject;
+            }
+            
+            [weakSelf requestDidFinish:responseObject];
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+            __strong typeof (weakSelf) strongSelf = weakSelf;
+            
+            if (strongSelf) {
+                strongSelf -> _responseError = error;
+            }
+            [weakSelf requestDidFailWithError:error];
+            
+        }];
+    }
+    else
+    {
+        type = @"GET";
+        self.currentTask = [self.afClient GET:self.url parameters:self.queries success:^(NSURLSessionDataTask *task, id responseObject) {
+            
+            __strong typeof (weakSelf) strongSelf = weakSelf;
+            
+            if (strongSelf) {
+                //AF没有获取responseString的方法
+                strongSelf -> _responseObject = responseObject;
+            }
+            
+            [weakSelf requestDidFinish:responseObject];
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+            __strong typeof (weakSelf) strongSelf = weakSelf;
+            
+            if (strongSelf) {
+                strongSelf -> _responseError = error;
+            }
+            [weakSelf requestDidFailWithError:error];
+            
+        }];
+    }
+    
+
+    
+    
 #endif
     
 }
