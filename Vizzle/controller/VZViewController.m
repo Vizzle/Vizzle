@@ -42,15 +42,13 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithCoder:aDecoder];
-    
-    if (self) {
-        
-        self = [self init];
-        
-        
-    }
-    return self;
+    return [super initWithCoder:aDecoder];
+
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 }
 
 - (id)init {

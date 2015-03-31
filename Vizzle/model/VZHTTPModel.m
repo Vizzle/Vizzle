@@ -239,7 +239,7 @@
     _responseObject = self.request.responseObject;
     
     //for debug
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"VZResponseLog" object:nil userInfo:@{@"json": _responseString ?:@"responseString为空",@"error":self.request.responseError}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"VZResponseLog" object:nil userInfo:@{@"json": _responseString ?:@"responseString为空",@"error":error}];
     
     [self didFailWithError:error];
 }
