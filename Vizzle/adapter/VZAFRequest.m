@@ -134,6 +134,7 @@
             
             if (strongSelf) {
                 //AF没有获取responseString的方法
+                strongSelf -> _responseString = [NSString stringWithFormat:@"%@",responseObject];
                 strongSelf -> _responseObject = responseObject;
             }
             
@@ -144,6 +145,7 @@
             __strong typeof (weakSelf) strongSelf = weakSelf;
             
             if (strongSelf) {
+                strongSelf -> _responseString = [NSString stringWithFormat:@"%@",task.response];
                 strongSelf -> _responseError = error;
             }
             [weakSelf requestDidFailWithError:error];
@@ -159,6 +161,7 @@
             
             if (strongSelf) {
                 //AF没有获取responseString的方法
+                strongSelf -> _responseString = [NSString stringWithFormat:@"%@",responseObject];
                 strongSelf -> _responseObject = responseObject;
             }
             
@@ -169,6 +172,8 @@
             __strong typeof (weakSelf) strongSelf = weakSelf;
             
             if (strongSelf) {
+                //AF没有获取responseString的方法
+                strongSelf -> _responseString = [NSString stringWithFormat:@"%@",task.response];
                 strongSelf -> _responseError = error;
             }
             [weakSelf requestDidFailWithError:error];
