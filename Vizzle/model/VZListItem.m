@@ -12,13 +12,15 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
+    [super encodeWithCoder:aCoder];
+    
     [aCoder encodeObject:self.indexPath     forKey:@"indexPath"];
     [aCoder encodeObject:@(self.itemHeight) forKey:@"itemHeight"];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super init];
+    self = [super initWithCoder:aDecoder];
     
     if(self)
     {
@@ -27,6 +29,15 @@
     }
     
     return self;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    VZListItem* item  = [super copyWithZone:zone];
+    item.indexPath = self.indexPath;
+    item.itemHeight = self.itemHeight;
+    
+    return item;
 }
 
 - (void)dealloc

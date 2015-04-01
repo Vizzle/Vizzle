@@ -31,7 +31,7 @@ typedef NS_ENUM(int, VZListItemType)
     kItem_Customize = 3
 };
 
-@interface VZListItem : VZItem
+@interface VZListItem : VZItem<NSCoding,NSCopying>
 
 /**
  *  @required
