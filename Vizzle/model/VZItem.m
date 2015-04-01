@@ -50,7 +50,7 @@ typedef NS_ENUM(int , ENCODE_TYPE)
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    return [VZItem new];
+    return [[self class]allocWithZone:zone];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
