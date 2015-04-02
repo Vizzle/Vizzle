@@ -20,8 +20,6 @@
 {
     //CFMutableDictionaryRef _modelMap;
     NSMutableDictionary* _itemsForSectionInternal;
-    NSMutableDictionary* _totalCountForSectionInternal;
-    
 }
 
 @end
@@ -41,10 +39,7 @@
     return [_itemsForSectionInternal copy];
 }
 
-- (NSDictionary*)totalCountForSection
-{
-    return [_totalCountForSectionInternal copy];
-}
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)init
@@ -53,7 +48,7 @@
     
     if (self) {
         _itemsForSectionInternal      = [NSMutableDictionary new];
-        _totalCountForSectionInternal = [NSMutableDictionary new];
+       
     }
     return self;
 }
@@ -62,9 +57,7 @@
     _controller = nil;
     [_itemsForSectionInternal removeAllObjects];
     _itemsForSectionInternal = nil;
-    
-    [_totalCountForSectionInternal removeAllObjects];
-    _totalCountForSectionInternal = nil;
+ 
     NSLog(@"[%@]--->dealloc",self.class);
 }
 
@@ -264,10 +257,6 @@
 // bind model
 - (void)tableViewControllerDidLoadModel:(VZHTTPListModel*)model ForSection:(NSInteger)section
 {
-    
-    // set totoal count
-    [_totalCountForSectionInternal setObject:@(model.totalCount) forKey:@(section)];
-    
     // set data
     NSMutableArray* items = [model.objects mutableCopy];
     [self setItems:items ForSection:section];

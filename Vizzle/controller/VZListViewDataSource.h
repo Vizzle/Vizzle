@@ -42,7 +42,7 @@
  * <k:NSInterger v:section>
  * section到列表数据总数的映射
  */
-@property(nonatomic,strong)  NSDictionary* totalCountForSection;
+//@property(nonatomic,strong)  NSDictionary* totalCountForSection;
 
 /**
  *  根据section为datasource赋值
