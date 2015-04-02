@@ -11,7 +11,7 @@
 @interface NSObject (VZChannel)
 
 - (void)vz_postToChannel:(NSString* )channelName withObject:(id)object Data:(id)data;
-- (void)vz_listOnChannel:(NSString* )channelName withNotificationBlock:(void(^)(id,id))block;
+- (void)vz_listOnChannel:(NSString* )channelName withNotificationBlock:(void(^)(id obj,id data))block;
 - (void)vz_removeFromChannel:(NSString* )channelName;
 - (void)vz_removeFromChannel;
 
