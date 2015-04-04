@@ -13,6 +13,7 @@
 
 }
 
+//和viewmodel对应的key
 @property(nonatomic,copy) NSString* identifier;
 
 @property(nonatomic,strong,readonly) UIView* contentView;
@@ -23,8 +24,10 @@
 
 - (NSString* )key:(NSString* )key;
 
+//注册待观察的对象
 - (void)beginBinding;
 
+//dealloc时会调用
 - (void)endBinding;
 
 

@@ -13,16 +13,17 @@
 @class VZViewController;
 @interface VZViewModel : NSObject
 
+//和template一对一的key
 @property(nonatomic,copy)  NSString* identifier;
-
-@property(nonatomic,weak)  VZViewController *viewController;
 
 - (instancetype)initWithIdentifier:(NSString* )identifier;
 
 - (NSString* )key:(NSString* )key;
 
+//注册待观察的对象
 - (void)beginObserving;
 
+//dealloc时会调用
 - (void)endObserving;
 
 @end
