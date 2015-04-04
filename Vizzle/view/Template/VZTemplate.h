@@ -28,7 +28,7 @@
 - (void)beginBinding;
 
 //dealloc时会调用
-- (void)endBinding;
+- (void)endBinding;//注册待观察的对象
 
 
 

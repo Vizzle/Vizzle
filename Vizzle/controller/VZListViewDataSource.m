@@ -90,7 +90,7 @@
     return NO;
 }
 
-- (NSArray *)ItemsForSection:(int)section {
+- (NSArray *)itemsForSection:(int)section {
     if (section < [_itemsForSectionInternal count]) {
         return _itemsForSectionInternal[@(section)];
     }

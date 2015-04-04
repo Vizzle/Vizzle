@@ -57,7 +57,7 @@
  *
  *  @param n 获取的section
  */
-- (NSArray *)ItemsForSection:(int)section;
+- (NSArray *)itemsForSection:(int)section;
 
 /**
  *  清除datasource中section部分的object

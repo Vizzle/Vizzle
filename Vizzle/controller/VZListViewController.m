@@ -20,14 +20,10 @@
 {
     NSInteger _loadMoreSection;
 }
-/**
- *  不同状态的footerview
- */
-@property(nonatomic,strong) UIView* footerViewNoResult;
-@property(nonatomic,strong) UIView* footerViewLoading;
-@property(nonatomic,strong) UIView* footerViewComplete;
-@property(nonatomic,strong) UIView* footerViewEmpty;
-@property(nonatomic,strong) UIView* footerViewError;
+
+
+
+
 
 @end
 
@@ -103,6 +99,8 @@
 }
 
 
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - life cycle
 
@@ -136,18 +134,14 @@
 {
     [super loadView];
     
-    self.footerViewNoResult = [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, self.view.frame.size.width, 44) Text:@"没有结果"];
-    self.footerViewLoading = [VZFooterViewFactory loadingFooterView:CGRectMake(0, 0, self.view.frame.size.width, 44) Text:@"努力加载中..."];
-    self.footerViewError   = [VZFooterViewFactory errorFooterView:CGRectMake(0, 0, self.view.frame.size.width, 44) Text:@"加载失败"];
-    self.footerViewEmpty   = [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, self.view.frame.size.width, 1) Text:@""];
-    self.footerViewComplete = [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, self.view.frame.size.width, 1) Text:@""];
+
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    
     [self.view addSubview:self.tableView];
+
 }
 - (void)viewDidUnload
 {
@@ -299,10 +293,10 @@
     if (model == _keyModel) {
         
         if (model.sectionNumber == 0) {
-            self.tableView.tableFooterView = self.footerViewEmpty;
+            self.tableView.tableFooterView = [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 1) Text:@""];
         }
         else{
-            self.tableView.tableFooterView = self.footerViewLoading;
+            self.tableView.tableFooterView =  [VZFooterViewFactory loadingFooterView:CGRectMake(0, 0,CGRectGetWidth(self.tableView.bounds), 44) Text:@"努力加载中..."];
         }
     }
     else
@@ -333,7 +327,7 @@
     [self reloadTableView];
     
     //VZMV* => 1.1 : reset footer view
-    self.tableView.tableFooterView = self.footerViewComplete;
+    self.tableView.tableFooterView = [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 1) Text:@""];
     
   
     [self endRefreshing];
@@ -349,8 +343,7 @@
     if (model == _keyModel) {
         
         //VZMV* => 1.1 : 翻页出错的时候底部展示错误内容
-        self.footerViewError.bounds = CGRectMake(0, 0, CGRectGetWidth(self.footerViewError.bounds), 44);
-        self.tableView.tableFooterView = self.footerViewError;
+        self.tableView.tableFooterView =  [VZFooterViewFactory errorFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 44) Text:@"加载失败"];
         
     }
     else
@@ -453,11 +446,11 @@
     
     
     if (model == _keyModel) {
-        self.tableView.tableFooterView = self.footerViewNoResult;
+        self.tableView.tableFooterView = [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 44) Text:@"没有结果"];
     }
     else
     {
-        //SBMVC => 1.1:解决注册了同一个section的不同model的状态的问题
+        //VZ => 1.1:解决注册了同一个section的不同model的状态的问题
         if (model.sectionNumber != _keyModel.sectionNumber) {
             
             NSInteger section = model.sectionNumber;
@@ -477,7 +470,7 @@
     VZLog(@"[%@]-->showComplete:{section:%ld}",[self class],(long)model.sectionNumber);
     
     if (model == _keyModel) {
-        self.tableView.tableFooterView =  self.footerViewComplete;
+        self.tableView.tableFooterView =  [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 1) Text:@""];
     }
     else
     {
@@ -487,10 +480,6 @@
 - (void)showLoadMoreFooterView
 {
     VZLog(@"[%@]-->showLoadMoreFooterView",self.class);
-    
-    if (self.tableView.tableFooterView == self.footerViewLoading) {
-        return;
-    }
     
     self.tableView.tableFooterView = [VZFooterViewFactory clickableFooterView:CGRectMake(0, 0, self.tableView.frame.size.width, 44)Text:@"点一下加载更多" Target:self Action:@selector(onLoadMoreClicked:) ];
 }

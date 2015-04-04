@@ -187,7 +187,6 @@
      NSAssert([clz isSubclassOfClass:[VZViewModel class]],@"ViewModel's Class must be the subclass of VZTemplate");
     
     _viewModel = [[clz alloc]initWithIdentifier:[self uuid]];
-    _viewModel.viewController = self;
     [_viewModel beginObserving];
     
     
