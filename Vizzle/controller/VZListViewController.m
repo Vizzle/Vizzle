@@ -52,6 +52,7 @@
 
 - (void)setKeyModel:(VZHTTPListModel *)keyModel
 {
+    NSAssert([keyModel isKindOfClass:[VZHTTPListModel class]],@"keyModel类型错误");
     _keyModel = keyModel;
     _loadMoreSection = keyModel.sectionNumber;
 }
@@ -166,6 +167,13 @@
 
 ////////////////////////////////////////////////////////////////////
 #pragma mark - VZViewController
+
+- (void)registerModel:(VZModel *)model
+{
+    NSAssert([model isKindOfClass:[VZHTTPListModel class]], @"model类型不正确");
+    
+    return [super registerModel:model];
+}
 
 - (void)load
 {
