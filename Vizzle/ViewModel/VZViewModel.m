@@ -7,6 +7,8 @@
 //
 
 #import "VZViewModel.h"
+#import "NSObject+VZOberveProxy.h"
+#import "NSObject+VZChannel.h"
 
 @interface VZViewModel()
 

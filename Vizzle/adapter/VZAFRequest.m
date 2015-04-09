@@ -89,7 +89,9 @@
 - (void)dealloc
 {
     [self cancel];
+#ifdef _AFNETWORKING_
     self.currentTask = nil;
+#endif
 }
 
 - (void)addHeaderParams:(NSDictionary *)params

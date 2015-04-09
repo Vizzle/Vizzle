@@ -6,7 +6,14 @@
 //  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
+#import "VZSignal.h"
 #import "NSObject+VZSignal.h"
+#import "VZSignalDisposal.h"
+#import "VZSignalDisposalProxy.h"
+#import "VZObserverProxy.h"
+#import "NSObject+VZOberveProxy.h"
+#import "VZSignalSubscriber.h"
+#import "NSObject+VZChannel.h"
 
 @interface NSObject()
 

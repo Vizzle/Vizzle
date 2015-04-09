@@ -10,6 +10,7 @@
 #import "NSObject+VZChannel.h"
 #import "NSObject+VZSignal.h"
 #import "VZObserverProxy.h"
+#import "NSObject+VZOberveProxy.h"
 
 
 typedef void(^TemplateCallback)(id value);

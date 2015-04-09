@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45211D4B1AD62B7F007DD2E9 /* NSObject+VZOberveProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45211D4A1AD62B7F007DD2E9 /* NSObject+VZOberveProxy.m */; };
 		4529DCBA1ABA9813009347C2 /* VZAFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DC671ABA9813009347C2 /* VZAFRequest.m */; };
 		4529DCBB1ABA9813009347C2 /* VZListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DC6A1ABA9813009347C2 /* VZListViewController.m */; };
 		4529DCBC1ABA9813009347C2 /* VZListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DC6C1ABA9813009347C2 /* VZListViewDataSource.m */; };
@@ -66,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		45211D491AD62B7F007DD2E9 /* NSObject+VZOberveProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+VZOberveProxy.h"; sourceTree = "<group>"; };
+		45211D4A1AD62B7F007DD2E9 /* NSObject+VZOberveProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+VZOberveProxy.m"; sourceTree = "<group>"; };
 		4529DC661ABA9813009347C2 /* VZAFRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZAFRequest.h; sourceTree = "<group>"; };
 		4529DC671ABA9813009347C2 /* VZAFRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZAFRequest.m; sourceTree = "<group>"; };
 		4529DC691ABA9813009347C2 /* VZListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewController.h; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 		4529DC711ABA9813009347C2 /* FRP */ = {
 			isa = PBXGroup;
 			children = (
+				45211D491AD62B7F007DD2E9 /* NSObject+VZOberveProxy.h */,
+				45211D4A1AD62B7F007DD2E9 /* NSObject+VZOberveProxy.m */,
 				4529DC721ABA9813009347C2 /* NSNotificationCenter+VZSignal.h */,
 				4529DC731ABA9813009347C2 /* NSNotificationCenter+VZSignal.m */,
 				4529DC741ABA9813009347C2 /* NSObject+Deallocation.h */,
@@ -523,6 +528,7 @@
 				4529DCC41ABA9813009347C2 /* VZChannel.m in Sources */,
 				4529DCD21ABA9813009347C2 /* VZHTTPModel.m in Sources */,
 				4529DCD51ABA9813009347C2 /* VZListDefaultTextItem.m in Sources */,
+				45211D4B1AD62B7F007DD2E9 /* NSObject+VZOberveProxy.m in Sources */,
 				4529DCD81ABA9813009347C2 /* VZFooterViewFactory.m in Sources */,
 				4529DCBC1ABA9813009347C2 /* VZListViewDataSource.m in Sources */,
 				4529DCC51ABA9813009347C2 /* VZDummyBindingObject.m in Sources */,
