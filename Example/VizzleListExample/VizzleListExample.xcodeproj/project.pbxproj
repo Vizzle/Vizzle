@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2BAD68904E344FB7BFC8FC63 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77AC2DD27F2B45EF9409DA36 /* libPods.a */; };
+		45211D471AD62341007DD2E9 /* NSObject+VZOberveProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45211D461AD62341007DD2E9 /* NSObject+VZOberveProxy.m */; };
 		4529DD351ABA99B3009347C2 /* VZAFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCE21ABA99B3009347C2 /* VZAFRequest.m */; };
 		4529DD361ABA99B3009347C2 /* VZListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCE51ABA99B3009347C2 /* VZListViewController.m */; };
 		4529DD371ABA99B3009347C2 /* VZListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCE71ABA99B3009347C2 /* VZListViewDataSource.m */; };
@@ -84,6 +85,8 @@
 
 /* Begin PBXFileReference section */
 		344875739C2F42ABA5319A72 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		45211D461AD62341007DD2E9 /* NSObject+VZOberveProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+VZOberveProxy.m"; sourceTree = "<group>"; };
+		45211D481AD62348007DD2E9 /* NSObject+VZOberveProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+VZOberveProxy.h"; sourceTree = "<group>"; };
 		4529DCE11ABA99B3009347C2 /* VZAFRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZAFRequest.h; sourceTree = "<group>"; };
 		4529DCE21ABA99B3009347C2 /* VZAFRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZAFRequest.m; sourceTree = "<group>"; };
 		4529DCE41ABA99B3009347C2 /* VZListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewController.h; sourceTree = "<group>"; };
@@ -282,6 +285,8 @@
 		4529DCEC1ABA99B3009347C2 /* FRP */ = {
 			isa = PBXGroup;
 			children = (
+				45211D481AD62348007DD2E9 /* NSObject+VZOberveProxy.h */,
+				45211D461AD62341007DD2E9 /* NSObject+VZOberveProxy.m */,
 				4529DCED1ABA99B3009347C2 /* NSNotificationCenter+VZSignal.h */,
 				4529DCEE1ABA99B3009347C2 /* NSNotificationCenter+VZSignal.m */,
 				4529DCEF1ABA99B3009347C2 /* NSObject+Deallocation.h */,
@@ -790,6 +795,7 @@
 				4529DD4D1ABA99B3009347C2 /* VZHTTPModel.m in Sources */,
 				AFF5336919DC43F700870591 /* VZFlickrListViewDataSource.m in Sources */,
 				AFF5336619DC43F700870591 /* VZFlickrListCell.m in Sources */,
+				45211D471AD62341007DD2E9 /* NSObject+VZOberveProxy.m in Sources */,
 				4529DD3F1ABA99B3009347C2 /* VZChannel.m in Sources */,
 				4529DD351ABA99B3009347C2 /* VZAFRequest.m in Sources */,
 				4529DD501ABA99B3009347C2 /* VZListDefaultTextItem.m in Sources */,
