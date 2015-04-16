@@ -38,6 +38,26 @@
         [self loadInternal];
     }
 }
+
+- (void)loadUntilComplete:(VZModelCallback)aCallback
+{
+    [self loadWithCompletion:^(VZModel *model, NSError *error) {
+       
+        VZHTTPListModel* listModel = (VZHTTPListModel* )model;
+        
+        if(listModel.hasMore)
+        {
+            [listModel loadUntilComplete:aCallback];
+        }
+        else
+        {
+            if (aCallback)
+            {
+                aCallback(model,error);
+            }
+        }
+    }];
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZModel
 
