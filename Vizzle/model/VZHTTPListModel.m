@@ -10,7 +10,7 @@
 
 @interface VZHTTPListModel()
 
-
+@property(nonatomic,copy) VZModelCallback requestCallbackInternal;
 
 @end
 
@@ -39,23 +39,31 @@
     }
 }
 
-- (void)loadUntilComplete:(VZModelCallback)aCallback
+
+
+- (void)loadAllWithCompletion:(VZModelCallback)aCallback
 {
+    __weak typeof(self) weakSelf = self;
     [self loadWithCompletion:^(VZModel *model, NSError *error) {
        
         VZHTTPListModel* listModel = (VZHTTPListModel* )model;
         
         if(listModel.hasMore)
         {
-            [listModel loadUntilComplete:aCallback];
+            [listModel loadMore];
         }
         else
         {
             if (aCallback)
             {
                 aCallback(model,error);
+                
+                __strong typeof(weakSelf) strongSelf = weakSelf;
+                strongSelf -> _requestCallbackInternal = nil;
             }
         }
+        
+  
     }];
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -67,8 +75,37 @@
     [self.objects removeAllObjects];
     [super reset];
 }
+
+- (void)didFinishLoading
+{
+    [super didFinishLoading];
+    
+    if (_requestCallbackInternal) {
+        _requestCallbackInternal(self,nil);
+       // _requestCallbackInternal = nil;
+    }
+}
+
+- (void)didFailWithError:(NSError *)error
+{
+    [super didFailWithError:error];
+    
+    if (_requestCallbackInternal) {
+        _requestCallbackInternal(self,error);
+        _requestCallbackInternal = nil;
+    }
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZHTTPModel
+
+
+- (void)loadWithCompletion:(VZModelCallback)aCallback
+{
+    if (aCallback) {
+        _requestCallbackInternal = aCallback;
+    }
+    [self loadInternal];
+}
 
 
 - (BOOL)parseResponse:(id)JSON
@@ -88,7 +125,7 @@
             _hasMore = list.count == self.pageSize;
         }
         else{
-            _hasMore = self.pageSize*self.currentPageIndex >= self.totalCount;
+            _hasMore = self.pageSize*self.currentPageIndex < self.totalCount;
         }
         
         if (list.count > 0) {
