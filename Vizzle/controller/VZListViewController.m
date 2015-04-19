@@ -301,10 +301,13 @@
     if (model == _keyModel) {
         
         if (model.sectionNumber == 0) {
-            self.tableView.tableFooterView = [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 1) Text:@""];
+         
+            self.tableView.tableFooterView =  [VZFooterViewFactory loadingFooterView:CGRectMake(0, 0,CGRectGetWidth(self.tableView.bounds), 44) Text:@"努力加载中..."];
         }
         else{
-            self.tableView.tableFooterView =  [VZFooterViewFactory loadingFooterView:CGRectMake(0, 0,CGRectGetWidth(self.tableView.bounds), 44) Text:@"努力加载中..."];
+            
+            self.tableView.tableFooterView = [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 1) Text:@""];
+
         }
     }
     else
