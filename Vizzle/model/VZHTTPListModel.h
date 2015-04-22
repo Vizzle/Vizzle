@@ -77,6 +77,11 @@ typedef NS_OPTIONS(NSUInteger, VZPageMode) {
 /**
  * 翻页数据持续加载完成
  */
+- (void)loadAll;
+
+/**
+ * 翻页数据持续加载完成，使用block做回调
+ */
 - (void)loadAllWithCompletion:(VZModelCallback)aCallback;
 
 @end

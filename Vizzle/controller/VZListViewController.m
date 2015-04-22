@@ -149,13 +149,6 @@
 {
     [super viewDidUnload];
     
-    //VZMV* => 1.1 : 低内存问题
-#if __should_handle_memory_warning__
-    
-    if ([self shouldHandleMemoryWarning]) {
-        _receiveMemoryWarning = true;
-    }
-#endif
     
 }
 
@@ -178,27 +171,20 @@
 
 - (void)load
 {
-    if (!_keyModel) {
-        return;
-    }
-#if __should_handle_memory_warning__
-    
-    // VZMV* => 1.1 : 处理5.0以下memorywarning
-    if([self shouldHandleMemoryWarning])
-    {
-        if (!_receiveMemoryWarning) {
-            [super load];
-        }
-        _receiveMemoryWarning = false;
-    }
-    else
-        _receiveMemoryWarning = false;
-#else
-    
-    [super load];
-    
-#endif
-    
+   NSAssert(_keyModel != nil, @"至少需要指定一个keymodel");
+
+    [_modelDictInternal  enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        VZHTTPListModel *model = (VZHTTPListModel*)obj;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (self.needLoadAll) {
+                [model loadAll];
+            }
+            else
+                [model load];
+        });
+    }];
 }
 
 - (void)loadMore
@@ -219,11 +205,6 @@
     }
 }
 
-- (void)loadAll;
-{
-    
-}
-
 - (void)didLoadModel:(VZHTTPListModel *)model
 {
     //VZMV* => 1.1 : 多个model注册同一个section，只有keymodel才能被加载
@@ -231,14 +212,11 @@
     
     if (model.sectionNumber == section) {
         
+        //只处理key model带回来的数据
         if (model == self.keyModel ) {
             [self.dataSource tableViewControllerDidLoadModel:model ForSection:model.sectionNumber];
         }
-        else
-        {
-            //@discussion:
-            //对于非keymodel请求带回来的数据，是否要缓存在datasource中
-        }
+
     }
     else
         [self.dataSource tableViewControllerDidLoadModel:model ForSection:model.sectionNumber];

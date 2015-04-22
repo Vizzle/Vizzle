@@ -52,11 +52,6 @@
  *  加载更多Model数据，例如下一页
  */
 - (void)loadMore;
-
-/*
- *  将所有数据加载完成
- */
-- (void)loadAll;
 /**
  * 加载某个section对应的model
  */

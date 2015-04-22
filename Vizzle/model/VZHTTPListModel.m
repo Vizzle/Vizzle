@@ -40,6 +40,18 @@
 }
 
 
+- (void)loadAll
+{
+    [self loadAllWithCompletion:^(VZModel *model, NSError *error) {
+       
+        if (!error) {
+            [super didFinishLoading];
+        }
+        else
+            [super didFailWithError:error];
+        
+    }];
+}
 
 - (void)loadAllWithCompletion:(VZModelCallback)aCallback
 {
@@ -82,7 +94,6 @@
     
     if (_requestCallbackInternal) {
         _requestCallbackInternal(self,nil);
-       // _requestCallbackInternal = nil;
     }
 }
 
@@ -92,7 +103,6 @@
     
     if (_requestCallbackInternal) {
         _requestCallbackInternal(self,error);
-        _requestCallbackInternal = nil;
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
