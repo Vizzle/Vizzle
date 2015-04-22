@@ -82,13 +82,13 @@
 
 - (void)beginRefreshing
 {
-    if (self.controller.bNeedPullRefresh) {
+    if (self.controller.needPullRefresh) {
         [self.pullRefreshView startRefreshing];
     }
 }
 - (void)endRefreshing
 {
-    if (self.controller.bNeedPullRefresh) {
+    if (self.controller.needPullRefresh) {
         [self.pullRefreshView stopRefreshing];
     }
     
@@ -190,7 +190,7 @@
 - (void)scrollViewDidEndDragging:(UIScrollView*)scrollView willDecelerate:(BOOL)decelerate
 {
     //下拉刷新
-    if (self.controller.bNeedPullRefresh) {
+    if (self.controller.needPullRefresh) {
         [self.pullRefreshView scrollviewDidEndDragging:scrollView];
         
     }
@@ -205,7 +205,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (self.controller.bNeedPullRefresh) {
+    if (self.controller.needPullRefresh) {
         [self.pullRefreshView scrollviewDidScroll:scrollView];
     }
     

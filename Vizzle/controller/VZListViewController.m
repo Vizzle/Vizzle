@@ -124,8 +124,9 @@
         
         _clearItemsWhenModelReload = YES;
         _loadmoreAutomatically = YES;
-        _bNeedPullRefresh      = NO;
-        _bNeedLoadMore         = NO;
+        _needPullRefresh      = NO;
+        _needLoadMore         = NO;
+        _needLoadAll          = NO;
     }
     return self;
 }
@@ -202,7 +203,7 @@
 
 - (void)loadMore
 {
-    if (self.bNeedLoadMore) {
+    if (self.needLoadMore) {
         
         NSAssert(_keyModel != nil, @"至少需要指定一个keymodel");
         
@@ -216,6 +217,11 @@
             
         }
     }
+}
+
+- (void)loadAll;
+{
+    
 }
 
 - (void)didLoadModel:(VZHTTPListModel *)model

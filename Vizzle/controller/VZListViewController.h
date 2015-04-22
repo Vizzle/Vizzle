@@ -34,11 +34,15 @@
 /**
  *  是否需要翻页
  */
-@property(nonatomic,assign) BOOL bNeedLoadMore;
+@property(nonatomic,assign) BOOL needLoadMore;
+/**
+ *  是否需要一次加载完成
+ */
+@property(nonatomic,assign) BOOL needLoadAll;
 /**
  *  是否需要下拉刷新
  */
-@property(nonatomic,assign) BOOL bNeedPullRefresh;
+@property(nonatomic,assign) BOOL needPullRefresh;
 /**
  *  model reload的时候是否清空当前数据,默认为YES
  */
@@ -48,6 +52,11 @@
  *  加载更多Model数据，例如下一页
  */
 - (void)loadMore;
+
+/*
+ *  将所有数据加载完成
+ */
+- (void)loadAll;
 /**
  * 加载某个section对应的model
  */
