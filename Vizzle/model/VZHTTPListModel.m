@@ -58,10 +58,12 @@
 {
     _isLoadingAll = true;
     
+    [self reset];
+    
     [super didStartLoading];
     
     __weak typeof(self) weakSelf = self;
-    
+ 
     [self loadAllWithCompletion:^(VZModel *model, NSError *error) {
        
         __strong typeof(weakSelf) strongSelf = weakSelf;
@@ -80,7 +82,10 @@
 
 - (void)loadAllWithCompletion:(VZModelCallback)aCallback
 {
+    [self reset];
+    
     __weak typeof(self) weakSelf = self;
+ 
     [self loadWithCompletion:^(VZModel *model, NSError *error) {
        
         VZHTTPListModel* listModel = (VZHTTPListModel* )model;
