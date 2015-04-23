@@ -9,8 +9,14 @@
 #import "VZHTTPListModel.h"
 
 @interface VZHTTPListModel()
+{
+    //state,bad
+    BOOL _isLoadingAll;
+}
 
 @property(nonatomic,copy) VZModelCallback requestCallbackInternal;
+
+
 
 @end
 
@@ -42,14 +48,25 @@
 
 - (void)loadAll
 {
+    _isLoadingAll = true;
+    
+    [super didStartLoading];
+    
+    __weak typeof(self) weakSelf = self;
+    
     [self loadAllWithCompletion:^(VZModel *model, NSError *error) {
        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        if (strongSelf) {
+            strongSelf ->_isLoadingAll = false;
+        }
+        
         if (!error) {
             [super didFinishLoading];
         }
         else
             [super didFailWithError:error];
-        
     }];
 }
 
@@ -88,9 +105,24 @@
     [super reset];
 }
 
+- (void)didStartLoading
+{
+    if (!_isLoadingAll) {
+       
+        [super didStartLoading];
+    }
+    else
+    {
+        //noop
+    }
+}
+
 - (void)didFinishLoading
 {
-    [super didFinishLoading];
+    if (!_isLoadingAll) {
+     
+        [super didFinishLoading];
+    }
     
     if (_requestCallbackInternal) {
         _requestCallbackInternal(self,nil);
@@ -99,9 +131,13 @@
 
 - (void)didFailWithError:(NSError *)error
 {
-    [super didFailWithError:error];
+    if (!_isLoadingAll) {
+        
+        [super didFailWithError:error];
+    }
     
-    if (_requestCallbackInternal) {
+    if (_requestCallbackInternal)
+    {
         _requestCallbackInternal(self,error);
     }
 }
