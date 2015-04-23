@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2BAD68904E344FB7BFC8FC63 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77AC2DD27F2B45EF9409DA36 /* libPods.a */; };
+		4509F5161AE8930500CA84CA /* BXFriendsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509F4FF1AE8930500CA84CA /* BXFriendsListCell.m */; };
+		4509F5171AE8930500CA84CA /* friends_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 4509F5021AE8930500CA84CA /* friends_meta.json */; };
+		4509F5181AE8930500CA84CA /* BXFriendsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509F5051AE8930500CA84CA /* BXFriendsListViewController.m */; };
+		4509F5191AE8930500CA84CA /* BXFriendsListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509F5081AE8930500CA84CA /* BXFriendsListViewDataSource.m */; };
+		4509F51A1AE8930500CA84CA /* BXFriendsListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509F50B1AE8930500CA84CA /* BXFriendsListViewDelegate.m */; };
+		4509F51B1AE8930500CA84CA /* BXFriendsListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509F50E1AE8930500CA84CA /* BXFriendsListItem.m */; };
+		4509F51C1AE8930500CA84CA /* BXFriendsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509F5111AE8930500CA84CA /* BXFriendsListModel.m */; };
+		4509F5201AE8941800CA84CA /* BXHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509F51F1AE8941800CA84CA /* BXHTTPRequest.m */; };
 		45211D471AD62341007DD2E9 /* NSObject+VZOberveProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45211D461AD62341007DD2E9 /* NSObject+VZOberveProxy.m */; };
 		4529DD351ABA99B3009347C2 /* VZAFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCE21ABA99B3009347C2 /* VZAFRequest.m */; };
 		4529DD361ABA99B3009347C2 /* VZListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCE51ABA99B3009347C2 /* VZListViewController.m */; };
@@ -85,6 +93,22 @@
 
 /* Begin PBXFileReference section */
 		344875739C2F42ABA5319A72 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		4509F4FE1AE8930500CA84CA /* BXFriendsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXFriendsListCell.h; sourceTree = "<group>"; };
+		4509F4FF1AE8930500CA84CA /* BXFriendsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXFriendsListCell.m; sourceTree = "<group>"; };
+		4509F5011AE8930500CA84CA /* BXFriendsConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXFriendsConfig.h; sourceTree = "<group>"; };
+		4509F5021AE8930500CA84CA /* friends_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = friends_meta.json; sourceTree = "<group>"; };
+		4509F5041AE8930500CA84CA /* BXFriendsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXFriendsListViewController.h; sourceTree = "<group>"; };
+		4509F5051AE8930500CA84CA /* BXFriendsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXFriendsListViewController.m; sourceTree = "<group>"; };
+		4509F5071AE8930500CA84CA /* BXFriendsListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXFriendsListViewDataSource.h; sourceTree = "<group>"; };
+		4509F5081AE8930500CA84CA /* BXFriendsListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXFriendsListViewDataSource.m; sourceTree = "<group>"; };
+		4509F50A1AE8930500CA84CA /* BXFriendsListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXFriendsListViewDelegate.h; sourceTree = "<group>"; };
+		4509F50B1AE8930500CA84CA /* BXFriendsListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXFriendsListViewDelegate.m; sourceTree = "<group>"; };
+		4509F50D1AE8930500CA84CA /* BXFriendsListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXFriendsListItem.h; sourceTree = "<group>"; };
+		4509F50E1AE8930500CA84CA /* BXFriendsListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXFriendsListItem.m; sourceTree = "<group>"; };
+		4509F5101AE8930500CA84CA /* BXFriendsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXFriendsListModel.h; sourceTree = "<group>"; };
+		4509F5111AE8930500CA84CA /* BXFriendsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXFriendsListModel.m; sourceTree = "<group>"; };
+		4509F51E1AE8941800CA84CA /* BXHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXHTTPRequest.h; sourceTree = "<group>"; };
+		4509F51F1AE8941800CA84CA /* BXHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXHTTPRequest.m; sourceTree = "<group>"; };
 		45211D461AD62341007DD2E9 /* NSObject+VZOberveProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+VZOberveProxy.m"; sourceTree = "<group>"; };
 		45211D481AD62348007DD2E9 /* NSObject+VZOberveProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+VZOberveProxy.h"; sourceTree = "<group>"; };
 		4529DCE11ABA99B3009347C2 /* VZAFRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZAFRequest.h; sourceTree = "<group>"; };
@@ -239,6 +263,101 @@
 				77AC2DD27F2B45EF9409DA36 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4509F4FC1AE8930500CA84CA /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				4509F4FD1AE8930500CA84CA /* cell */,
+				4509F5001AE8930500CA84CA /* config */,
+				4509F5031AE8930500CA84CA /* controller */,
+				4509F5061AE8930500CA84CA /* datasource */,
+				4509F5091AE8930500CA84CA /* delegate */,
+				4509F50C1AE8930500CA84CA /* item */,
+				4509F50F1AE8930500CA84CA /* model */,
+				4509F5121AE8930500CA84CA /* resource */,
+				4509F5151AE8930500CA84CA /* view */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		4509F4FD1AE8930500CA84CA /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				4509F4FE1AE8930500CA84CA /* BXFriendsListCell.h */,
+				4509F4FF1AE8930500CA84CA /* BXFriendsListCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		4509F5001AE8930500CA84CA /* config */ = {
+			isa = PBXGroup;
+			children = (
+				4509F5011AE8930500CA84CA /* BXFriendsConfig.h */,
+				4509F5021AE8930500CA84CA /* friends_meta.json */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		4509F5031AE8930500CA84CA /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4509F5041AE8930500CA84CA /* BXFriendsListViewController.h */,
+				4509F5051AE8930500CA84CA /* BXFriendsListViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		4509F5061AE8930500CA84CA /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				4509F5071AE8930500CA84CA /* BXFriendsListViewDataSource.h */,
+				4509F5081AE8930500CA84CA /* BXFriendsListViewDataSource.m */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		4509F5091AE8930500CA84CA /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				4509F50A1AE8930500CA84CA /* BXFriendsListViewDelegate.h */,
+				4509F50B1AE8930500CA84CA /* BXFriendsListViewDelegate.m */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
+		4509F50C1AE8930500CA84CA /* item */ = {
+			isa = PBXGroup;
+			children = (
+				4509F50D1AE8930500CA84CA /* BXFriendsListItem.h */,
+				4509F50E1AE8930500CA84CA /* BXFriendsListItem.m */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		4509F50F1AE8930500CA84CA /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4509F51E1AE8941800CA84CA /* BXHTTPRequest.h */,
+				4509F51F1AE8941800CA84CA /* BXHTTPRequest.m */,
+				4509F5101AE8930500CA84CA /* BXFriendsListModel.h */,
+				4509F5111AE8930500CA84CA /* BXFriendsListModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4509F5121AE8930500CA84CA /* resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		4509F5151AE8930500CA84CA /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		4529DCDF1ABA99B3009347C2 /* Vizzle */ = {
@@ -416,6 +535,7 @@
 		AFD37A9919D83F8F0077CE06 /* VizzleListExample */ = {
 			isa = PBXGroup;
 			children = (
+				4509F4FC1AE8930500CA84CA /* Friends */,
 				AFF5334A19DC43F700870591 /* Flickr */,
 				AFD37C0E19D92A5A0077CE06 /* Timeline */,
 				AFD37A9E19D83F8F0077CE06 /* AppDelegate.h */,
@@ -731,6 +851,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFF532A519DC2C7800870591 /* placeholder@2x.png in Resources */,
+				4509F5171AE8930500CA84CA /* friends_meta.json in Resources */,
 				AFD37AA619D83F8F0077CE06 /* Main.storyboard in Resources */,
 				AFD37AAB19D83F8F0077CE06 /* LaunchScreen.xib in Resources */,
 				AFD37AA819D83F8F0077CE06 /* Images.xcassets in Resources */,
@@ -787,6 +908,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4529DD3B1ABA99B3009347C2 /* NSObject+Deallocation.m in Sources */,
+				4509F51A1AE8930500CA84CA /* BXFriendsListViewDelegate.m in Sources */,
 				4529DD371ABA99B3009347C2 /* VZListViewDataSource.m in Sources */,
 				4529DD361ABA99B3009347C2 /* VZListViewController.m in Sources */,
 				AFF5336A19DC43F700870591 /* VZFlickrListViewDelegate.m in Sources */,
@@ -801,17 +923,22 @@
 				4529DD501ABA99B3009347C2 /* VZListDefaultTextItem.m in Sources */,
 				4529DD431ABA99B3009347C2 /* VZObserveInfo.m in Sources */,
 				AFF5336D19DC43F700870591 /* VZFlickrListModel.m in Sources */,
+				4509F5181AE8930500CA84CA /* BXFriendsListViewController.m in Sources */,
 				4529DD421ABA99B3009347C2 /* VZKVOCenter.m in Sources */,
 				4529DD411ABA99B3009347C2 /* VZDynamicBlock.m in Sources */,
+				4509F5201AE8941800CA84CA /* BXHTTPRequest.m in Sources */,
 				4529DD401ABA99B3009347C2 /* VZDummyBindingObject.m in Sources */,
 				AFF5336B19DC43F700870591 /* VZFlickrListItem.m in Sources */,
 				AFD37AA319D83F8F0077CE06 /* ViewController.m in Sources */,
+				4509F51B1AE8930500CA84CA /* BXFriendsListItem.m in Sources */,
+				4509F51C1AE8930500CA84CA /* BXFriendsListModel.m in Sources */,
 				AFD37C2C19D92A5A0077CE06 /* VZTimelineListViewDataSource.m in Sources */,
 				AFF5336E19DC43F700870591 /* VZFlickrSubView.m in Sources */,
 				4529DD3A1ABA99B3009347C2 /* NSNotificationCenter+VZSignal.m in Sources */,
 				AFD37C2B19D92A5A0077CE06 /* VZTimelineListViewController.m in Sources */,
 				4529DD451ABA99B3009347C2 /* VZSignal+VZChannel.m in Sources */,
 				4529DD3E1ABA99B3009347C2 /* UIControl+VZSignal.m in Sources */,
+				4509F5191AE8930500CA84CA /* BXFriendsListViewDataSource.m in Sources */,
 				AFD37C3019D92A5A0077CE06 /* VZTimelineListModel.m in Sources */,
 				4529DD461ABA99B3009347C2 /* VZSignal.m in Sources */,
 				4529DD551ABA99B3009347C2 /* VZListDefaultErrorCell.m in Sources */,
@@ -825,6 +952,7 @@
 				4529DD481ABA99B3009347C2 /* VZSignalDisposalProxy.m in Sources */,
 				AFD37AA019D83F8F0077CE06 /* AppDelegate.m in Sources */,
 				4529DD531ABA99B3009347C2 /* VZFooterViewFactory.m in Sources */,
+				4509F5161AE8930500CA84CA /* BXFriendsListCell.m in Sources */,
 				4529DD4C1ABA99B3009347C2 /* VZHTTPListModel.m in Sources */,
 				AFD37C2919D92A5A0077CE06 /* VZTimelineListCell.m in Sources */,
 				4529DD591ABA99B3009347C2 /* VZViewModel.m in Sources */,

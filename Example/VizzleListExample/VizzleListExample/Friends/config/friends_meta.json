@@ -1,0 +1,98 @@
+{
+  "controller": [
+    {
+      "class": "BXFriendsListViewController",
+      "superclass": "VZListViewController",
+      "model": [
+        {
+          "name": "friendsListModel",
+          "class": "BXFriendsListModel",
+          "superclass": "VZHTTPListModel"
+        }
+      ],
+      "datasource": {
+        "name": "ds",
+        "class": "BXFriendsListViewDataSource",
+        "superclass": "VZListViewDataSource"
+      },
+      "delegate": {
+        "name": "dl",
+        "class": "BXFriendsListViewDelegate",
+        "superclass": "VZListViewDelegate"
+      },
+      "tpath": "./template/vizzle/template_listviewcontroller.rb",
+      "namespace": "T_ListViewController",
+      "filepath": "./Friends/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "BXFriendsListModel",
+      "superclass": "VZHTTPListModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httplistmodel.rb",
+      "namespace": "T_HTTPListModel",
+      "filepath": "./Friends/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "BXFriendsListModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "BXFriendsListModel",
+      "modelsuperclass": "VZHTTPListModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./Friends/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "BXFriendsListItem",
+      "superclass": "VZListItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_listItem.rb",
+      "namespace": "T_ListItem",
+      "filepath": "./Friends/item/"
+    }
+  ],
+  "cell": [
+    {
+      "class": "BXFriendsListCell",
+      "superclass": "VZListCell",
+      "itemclass": "BXFriendsListItem",
+      "height": "44",
+      "tpath": "./template/vizzle/template_listcell.rb",
+      "namespace": "T_ListCell",
+      "filepath": "./Friends/cell/"
+    }
+  ],
+  "datasource": [
+    {
+      "class": "BXFriendsListViewDataSource",
+      "superclass": "VZListViewDataSource",
+      "cellclass": "BXFriendsListCell",
+      "tpath": "./template/vizzle/template_listviewdatasource.rb",
+      "namespace": "T_ListViewDataSource",
+      "filepath": "./Friends/datasource/"
+    }
+  ],
+  "delegate": [
+    {
+      "class": "BXFriendsListViewDelegate",
+      "superclass": "VZListViewDelegate",
+      "tpath": "./template/vizzle/template_listviewdelegate.rb",
+      "namespace": "T_ListViewDelegate",
+      "filepath": "./Friends/delegate/"
+    }
+  ],
+  "config": {
+    "class": "BXFriendsConfig",
+    "proj": "BX",
+    "package_name": "Friends",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./Friends/config/"
+  }
+}

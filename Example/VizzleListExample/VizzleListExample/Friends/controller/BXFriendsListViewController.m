@@ -1,29 +1,30 @@
   
 //
-//  VZTimelineListViewController.m
-//  VizzleListExample
+//  BXFriendsListViewController.m
+//  BX
 //
-//  Created by Jayson Xu on 2014-09-29 13:48:38 +0800.
-//  Copyright (c) 2014年 VizLab. All rights reserved.
+//  Created by Jayson.xu@foxmail.com on 2015-04-23 10:39:37 +0800.
+//  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
 
 
-#import "VZTimelineListViewController.h"
-#import "VZTimelineListModel.h" 
-#import "VZTimelineListViewDataSource.h"
-#import "VZTimelineListViewDelegate.h"
+#import "BXFriendsListViewController.h"
+ 
+#import "BXFriendsListModel.h" 
+#import "BXFriendsListViewDataSource.h"
+#import "BXFriendsListViewDelegate.h"
 
-@interface VZTimelineListViewController()
+@interface BXFriendsListViewController()
 
  
-@property(nonatomic,strong)VZTimelineListModel *timelineListModel; 
-@property(nonatomic,strong)VZTimelineListViewDataSource *ds;
-@property(nonatomic,strong)VZTimelineListViewDelegate *dl;
+@property(nonatomic,strong)BXFriendsListModel *friendsListModel; 
+@property(nonatomic,strong)BXFriendsListViewDataSource *ds;
+@property(nonatomic,strong)BXFriendsListViewDelegate *dl;
 
 @end
 
-@implementation VZTimelineListViewController
+@implementation BXFriendsListViewController
 
 //////////////////////////////////////////////////////////// 
 #pragma mark - setters 
@@ -34,60 +35,46 @@
 #pragma mark - getters 
 
    
-- (VZTimelineListModel *)timelineListModel
+- (BXFriendsListModel *)friendsListModel
 {
-    if (!_timelineListModel) {
-        _timelineListModel = [VZTimelineListModel new];
-        _timelineListModel.key = @"__VZTimelineListModel__";
-        _timelineListModel.requestType = VZModelAFNetworking;
+    if (!_friendsListModel) {
+        _friendsListModel = [BXFriendsListModel new];
+        _friendsListModel.requestType = VZModelCustom;
+        _friendsListModel.key = @"__BXFriendsListModel__";
     }
-    return _timelineListModel;
+    return _friendsListModel;
 }
 
 
-- (VZTimelineListViewDataSource *)ds{
+- (BXFriendsListViewDataSource *)ds{
 
   if (!_ds) {
-      _ds = [VZTimelineListViewDataSource new];
+      _ds = [BXFriendsListViewDataSource new];
    }
    return _ds;
 }
 
-- (VZTimelineListViewDelegate *)dl{
+ 
+- (BXFriendsListViewDelegate *)dl{
 
   if (!_dl) {
-      _dl = [VZTimelineListViewDelegate new];
+      _dl = [BXFriendsListViewDelegate new];
    }
    return _dl;
 }
 
 
-
 ////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - life cycle methods
-
-- (id)init
-{
-    self = [super init];
-    
-    if (self) {
-                
-    }
-    return self;
-}
 
 - (void)loadView
 {
     [super loadView];
-    self.view.backgroundColor = [UIColor whiteColor];
-    [self setTitle:@"Timeline"];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     //1,config your tableview
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
@@ -96,16 +83,17 @@
     self.tableView.separatorStyle = YES;
     
     //2,set some properties:下拉刷新，自动翻页
-    self.needLoadMore = NO;
-    //self.needLoadAll = YES;
-    self.needPullRefresh = YES;
+    self.needLoadAll = YES;
+    self.needPullRefresh = NO;
 
+    
     //3，bind your delegate and datasource to tableview
     self.dataSource = self.ds;
     self.delegate = self.dl;
+    
 
     //4,@REQUIRED:YOU MUST SET A KEY MODEL!
-    self.keyModel = self.timelineListModel;
+    self.keyModel = self.friendsListModel;
     
     //5,REQUIRED:register model to parent view controller
     [self registerModel:self.keyModel];
@@ -163,8 +151,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
   //todo...
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
   
 }
 
