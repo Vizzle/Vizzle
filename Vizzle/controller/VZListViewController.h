@@ -36,10 +36,6 @@
  */
 @property(nonatomic,assign) BOOL needLoadMore;
 /**
- *  是否需要一次加载完成
- */
-@property(nonatomic,assign) BOOL needLoadAll;
-/**
  *  是否需要下拉刷新
  */
 @property(nonatomic,assign) BOOL needPullRefresh;

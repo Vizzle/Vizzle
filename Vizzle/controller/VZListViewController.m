@@ -18,6 +18,7 @@
 
 @interface VZListViewController ()
 {
+    //state,bad
     NSInteger _loadMoreSection;
 }
 
@@ -126,7 +127,6 @@
         _loadmoreAutomatically = YES;
         _needPullRefresh      = NO;
         _needLoadMore         = NO;
-        _needLoadAll          = NO;
     }
     return self;
 }
@@ -171,20 +171,8 @@
 
 - (void)load
 {
-   NSAssert(_keyModel != nil, @"至少需要指定一个keymodel");
-
-    [_modelDictInternal  enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        VZHTTPListModel *model = (VZHTTPListModel*)obj;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            if (self.needLoadAll) {
-                [model loadAll];
-            }
-            else
-                [model load];
-        });
-    }];
+    NSAssert(_keyModel != nil, @"至少需要指定一个keymodel");
+    [super load];
 }
 
 - (void)loadMore

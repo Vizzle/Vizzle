@@ -45,6 +45,14 @@
     }
 }
 
+- (void)load
+{
+    if (self.needLoadAll) {
+        [self loadAll];
+    }
+    else
+        [super load];
+}
 
 - (void)loadAll
 {

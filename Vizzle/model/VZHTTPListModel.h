@@ -68,6 +68,10 @@ typedef NS_OPTIONS(NSUInteger, VZPageMode) {
  *  数据
  */
 @property(nonatomic,strong) NSMutableArray* objects;
+/**
+ * 加载完所有数据
+ */
+@property(nonatomic,assign) BOOL needLoadAll;
 
 /**
  *  model加载更多的请求

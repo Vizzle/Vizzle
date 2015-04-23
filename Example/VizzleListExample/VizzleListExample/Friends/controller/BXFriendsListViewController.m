@@ -10,7 +10,6 @@
 
 
 #import "BXFriendsListViewController.h"
- 
 #import "BXFriendsListModel.h" 
 #import "BXFriendsListViewDataSource.h"
 #import "BXFriendsListViewDelegate.h"
@@ -41,6 +40,7 @@
         _friendsListModel = [BXFriendsListModel new];
         _friendsListModel.requestType = VZModelCustom;
         _friendsListModel.key = @"__BXFriendsListModel__";
+        _friendsListModel.needLoadAll = true;
     }
     return _friendsListModel;
 }
@@ -83,10 +83,8 @@
     self.tableView.separatorStyle = YES;
     
     //2,set some properties:下拉刷新，自动翻页
-    self.needLoadAll = YES;
-    self.needPullRefresh = NO;
+    self.needPullRefresh = YES;
 
-    
     //3，bind your delegate and datasource to tableview
     self.dataSource = self.ds;
     self.delegate = self.dl;
