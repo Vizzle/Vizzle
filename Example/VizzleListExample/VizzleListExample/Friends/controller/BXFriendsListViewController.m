@@ -13,6 +13,7 @@
 #import "BXFriendsListModel.h" 
 #import "BXFriendsListViewDataSource.h"
 #import "BXFriendsListViewDelegate.h"
+#import "BXFriendsListItem.h"
 
 @interface BXFriendsListViewController()
 
@@ -40,7 +41,7 @@
         _friendsListModel = [BXFriendsListModel new];
         _friendsListModel.requestType = VZModelCustom;
         _friendsListModel.key = @"__BXFriendsListModel__";
-        _friendsListModel.needLoadAll = true;
+        //_friendsListModel.needLoadAll = true;
     }
     return _friendsListModel;
 }
@@ -76,28 +77,43 @@
 {
     [super viewDidLoad];
     
-    //1,config your tableview
-    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    self.tableView.backgroundColor = [UIColor whiteColor];
-    self.tableView.showsVerticalScrollIndicator = YES;
-    self.tableView.separatorStyle = YES;
-    
-    //2,set some properties:下拉刷新，自动翻页
-    self.needPullRefresh = YES;
-
-    //3，bind your delegate and datasource to tableview
-    self.dataSource = self.ds;
-    self.delegate = self.dl;
-    
-
-    //4,@REQUIRED:YOU MUST SET A KEY MODEL!
-    self.keyModel = self.friendsListModel;
-    
-    //5,REQUIRED:register model to parent view controller
-    [self registerModel:self.keyModel];
-
-    //6,Load Data
-    [self load];
+//    //1,config your tableview
+//    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+//    self.tableView.backgroundColor = [UIColor whiteColor];
+//    self.tableView.showsVerticalScrollIndicator = YES;
+//    self.tableView.separatorStyle = YES;
+//    
+//    //2,set some properties:下拉刷新，自动翻页
+//    self.needPullRefresh = YES;
+//
+//    //3，bind your delegate and datasource to tableview
+//    self.dataSource = self.ds;
+//    self.delegate = self.dl;
+//    
+//
+//    //4,@REQUIRED:YOU MUST SET A KEY MODEL!
+//    self.keyModel = self.friendsListModel;
+//    
+//    //5,REQUIRED:register model to parent view controller
+//    [self registerModel:self.keyModel];
+//
+//    //6,Load Data
+//    [self load];
+    [self.friendsListModel loadAllWithCompletion:^(VZModel *model, NSError *error) {
+       
+        if (!error) {
+            
+            BXFriendsListModel* listModel = (BXFriendsListModel* )model;
+            
+            for (BXFriendsListItem* item in listModel.objects) {
+                
+                NSLog(@"%@",item.nickname);
+                
+            }
+            
+        }
+        
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated

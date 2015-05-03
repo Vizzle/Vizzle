@@ -123,7 +123,7 @@
     NSMutableURLRequest *request = [self.afClient.requestSerializer requestWithMethod:type URLString:self.url parameters:self.queries error:nil];
     self.requestURL = request.URL.absoluteString;
     
-    NSString* bodyString = [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding];
+    //NSString* bodyString = [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding];
     
     [self requestDidStart];
     
