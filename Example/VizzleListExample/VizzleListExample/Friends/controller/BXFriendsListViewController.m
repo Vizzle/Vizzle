@@ -14,7 +14,7 @@
 #import "BXFriendsListViewDataSource.h"
 #import "BXFriendsListViewDelegate.h"
 #import "BXFriendsListItem.h"
-
+#import "Vizzle.h"
 @interface BXFriendsListViewController()
 
  

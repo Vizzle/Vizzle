@@ -17,7 +17,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "VizzleConfig.h"
+#import "Vizzle.h"
 #import "AFNetworking.h"
 #import "UIKit+AFNetworking.h"
 

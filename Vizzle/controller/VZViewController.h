@@ -8,9 +8,6 @@
 #import <UIKit/UIKit.h>
 
 @class VZModel;
-@class VZViewModel;
-@class VZTemplate;
-
 @protocol VZModelDelegate;
 
 @interface VZViewController : UIViewController<VZModelDelegate>
@@ -31,16 +28,6 @@
  */
 @property(nonatomic,strong,readonly) NSDictionary* modelDictionary;
 /**
- * 
- * template
- */
-@property(nonatomic,strong,readonly) VZTemplate* viewTemplate;
-/**
- *
- * viewModel
- */
-@property(nonatomic,strong) VZViewModel* viewModel;
-/**
  *  recv memory warning
  */
 @property(nonatomic,assign) BOOL receiveMemoryWarning;
@@ -57,24 +44,10 @@
  *  @param model 数据Model
  */
 - (void)unRegisterModel:(VZModel *)model;
-/*
- *  注册Template
- *
- *  @param clz 数据Template
- */
-- (void)registerViewTemplateClass:(Class )clz;
-/*
- *  注册ViewModel
- *
- *  @param clz 数据ViewModel
- */
-- (void)registerViewModelClass:(Class )viewModel;
 /**
  *  加载Model数据
  */
 - (void)load;
-
-
 
 
 @end
@@ -94,20 +67,5 @@
 
 - (void)showError:(NSError *)error withModel:(VZModel*)model;
 
-
-@end
-
-/**
- *  处理memory warning
- */
-@interface VZViewController(MemoryWarning)
-/**
- *  默认返回为YES，则由基类负责处理MemoryWarning
- *
- *  重载返回NO，则由子类实现MemoryWarning的逻辑
- *
- *  @return BOOL
- */
-- (BOOL)shouldHandleMemoryWarning;
 
 @end

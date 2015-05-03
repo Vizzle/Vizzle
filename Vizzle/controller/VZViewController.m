@@ -5,7 +5,7 @@
 // 
 
 #import "VZViewController.h"
-#import "VizzleConfig.h"
+#import "VZHTTPModel.h"
 #import <libkern/OSAtomic.h>
 
 @interface VZViewController ()
@@ -112,23 +112,13 @@
 
 -(void)dealloc {
     
-    VZLog(@"[%@]-->dealloc",self.class);
+    NSLog(@"[%@]-->dealloc",self.class);
     
     OSSpinLockLock(&_lock);
     [_modelDictInternal removeAllObjects];
     [_states removeAllObjects];
     OSSpinLockUnlock(&_lock);
     
-    //release viewmodel
-    if (self.viewModel) {
-        [self.viewModel endObserving];
-    }
-    
-    //release template
-    if (self.viewTemplate) {
-        [self.viewTemplate endBinding];
-    }
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -156,54 +146,6 @@
     OSSpinLockUnlock(&_lock);
 }
 
-/*
- *  注册Template
- *
- *  @param clz 数据Template
- */
-//- (void)registerViewTemplate:(VZTemplate* )viewTemplate
-//{
-//    if (viewTemplate) {
-//      
-//        _viewTemplate = viewTemplate;
-//        _viewTemplate.identifier = self.uuid;
-//        [_viewTemplate beginBinding];
-//    }
-//
-//}
-- (void)registerViewTemplateClass:(Class )clz
-{
-    NSAssert([clz isSubclassOfClass:[VZTemplate class]],@"Template's Class must be the subclass of VZTemplate");
-    
-    _viewTemplate = [[clz alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)) Identifier:[self uuid]];
-
-    [self.view addSubview:_viewTemplate.contentView];
-    [_viewTemplate beginBinding];
-    
-}
-
-- (void)registerViewModelClass:(Class)clz
-{
-     NSAssert([clz isSubclassOfClass:[VZViewModel class]],@"ViewModel's Class must be the subclass of VZTemplate");
-    
-    _viewModel = [[clz alloc]initWithIdentifier:[self uuid]];
-    [_viewModel beginObserving];
-    
-    
-}
-/*
- *  注册ViewModel
- *
- *  @param clz 数据ViewModel
- */
-//- (void)registerViewModel:(VZViewModel* )viewModel
-//{
-//    NSAssert(viewModel != nil, @"ViewModel cannot be nil!");
-//    _viewModel = viewModel;
-//    _viewModel.identifier     = self.uuid;
-//    _viewModel.viewController = self;
-//    [_viewModel beginObserving];
-//}
 
 - (void)load {
     
@@ -269,7 +211,7 @@
         OSSpinLockLock(&_lock);
         
         _states[key] = status;
-        VZLog(@"[%@]-->status:%@",self.class,_states);
+        NSLog(@"[%@]-->status:%@",self.class,_states);
         
         OSSpinLockUnlock(&_lock);
     }
@@ -317,11 +259,3 @@
 
 @end
 
-@implementation VZViewController(MemoryWarning)
-
-- (BOOL)shouldHandleMemoryWarning
-{
-    return YES;
-}
-
-@end

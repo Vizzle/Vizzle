@@ -8,7 +8,6 @@
 
 #import "VZListViewController.h"
 #import "VZHTTPListModel.h"
-#import "VizzleConfig.h"
 #import "VZListDefaultTextItem.h"
 #import "VZListViewDataSource.h"
 #import "VZListViewDelegate.h"
@@ -257,7 +256,7 @@
 
 - (void)showEmpty:(VZHTTPListModel *)model
 {
-    VZLog(@"[%@]-->showEmpty:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
+    NSLog(@"[%@]-->showEmpty:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
     
     [super showEmpty:model];
     
@@ -268,7 +267,7 @@
 //默认loading 样式
 - (void)showLoading:(VZHTTPListModel *)model
 {
-    VZLog(@"[%@]-->showLoading:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
+    NSLog(@"[%@]-->showLoading:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
     
     if (model == _keyModel) {
         
@@ -303,7 +302,7 @@
 
 - (void)showModel:(VZHTTPListModel *)model
 {
-    VZLog(@"[%@]-->showModel:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
+    NSLog(@"[%@]-->showModel:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
     
     [super showModel:model];
     
@@ -320,7 +319,7 @@
 
 - (void)showError:(NSError *)error withModel:(VZHTTPListModel *)model
 {
-    VZLog(@"[%@]-->showError:{key:%@,section:%ld}",[self class], model.key,(long)model.sectionNumber);
+    NSLog(@"[%@]-->showError:{key:%@,section:%ld}",[self class], model.key,(long)model.sectionNumber);
     
     [self endRefreshing];
     
@@ -451,7 +450,7 @@
 }
 - (void)showComplete:(VZHTTPListModel *)model
 {
-    VZLog(@"[%@]-->showComplete:{section:%ld}",[self class],(long)model.sectionNumber);
+    NSLog(@"[%@]-->showComplete:{section:%ld}",[self class],(long)model.sectionNumber);
     
     if (model == _keyModel) {
         self.tableView.tableFooterView =  [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 1) Text:@""];
@@ -463,7 +462,7 @@
 }
 - (void)showLoadMoreFooterView
 {
-    VZLog(@"[%@]-->showLoadMoreFooterView",self.class);
+    NSLog(@"[%@]-->showLoadMoreFooterView",self.class);
     
     self.tableView.tableFooterView = [VZFooterViewFactory clickableFooterView:CGRectMake(0, 0, self.tableView.frame.size.width, 44)Text:@"点一下加载更多" Target:self Action:@selector(onLoadMoreClicked:) ];
 }

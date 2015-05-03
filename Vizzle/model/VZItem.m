@@ -8,7 +8,7 @@
 
 #import "VZItem.h"
 #include <objc/runtime.h>
-#import "VizzleConfig.h"
+#import "Vizzle.h"
 
 //cached property keys
 static void *VZItemCachedPropertyKeysKey = &VZItemCachedPropertyKeysKey;

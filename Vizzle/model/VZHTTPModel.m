@@ -8,7 +8,7 @@
 
 #import "VZHTTPModel.h"
 #import "VZHTTPRequest.h"
-#import "VizzleConfig.h"
+#import "Vizzle.h"
 
 
 @interface VZHTTPModel()<VZHTTPRequestDelegate>
