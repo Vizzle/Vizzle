@@ -14,7 +14,7 @@
 typedef NS_ENUM(NSInteger,VZModelRequestType)
 {
     /**
-     *  默认HTTP请求，使用NSURLSessionManager
+     *  默认HTTP请求，使用VZHTTPRequest
      */
     VZModelDefault = 0,
     /**

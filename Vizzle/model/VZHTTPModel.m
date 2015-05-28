@@ -133,13 +133,7 @@
     //4, add request data
     [self.request addHeaderParams:[self headerParams]];
     [self.request addQueries:[self dataParams]];
-    
-    //VZMV* => 1.2:add post body data
-    if ([self isPost]) {
-        [self.request addBodyData:[self bodyData] forKey:@"file"];
-    }
-    
-    
+
     //5, start loading
     [self.request load];
  

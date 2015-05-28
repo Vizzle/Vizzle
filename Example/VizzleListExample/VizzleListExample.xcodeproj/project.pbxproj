@@ -25,6 +25,16 @@
 		4529DD551ABA99B3009347C2 /* VZListDefaultErrorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD271ABA99B3009347C2 /* VZListDefaultErrorCell.m */; };
 		4529DD561ABA99B3009347C2 /* VZListDefaultLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD291ABA99B3009347C2 /* VZListDefaultLoadingCell.m */; };
 		4529DD571ABA99B3009347C2 /* VZListDefaultTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DD2B1ABA99B3009347C2 /* VZListDefaultTextCell.m */; };
+		456BE9501AFF6DBF0064FBB6 /* VZHTTPConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE93F1AFF6DBF0064FBB6 /* VZHTTPConnectionOperation.m */; };
+		456BE9511AFF6DBF0064FBB6 /* VZHTTPNetworkAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE9411AFF6DBF0064FBB6 /* VZHTTPNetworkAgent.m */; };
+		456BE9521AFF6DBF0064FBB6 /* VZHTTPNetworkSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE9441AFF6DBF0064FBB6 /* VZHTTPNetworkSecurity.m */; };
+		456BE9531AFF6DBF0064FBB6 /* VZHTTPRequestGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE9461AFF6DBF0064FBB6 /* VZHTTPRequestGenerator.m */; };
+		456BE9541AFF6DBF0064FBB6 /* VZHTTPResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE9481AFF6DBF0064FBB6 /* VZHTTPResponseParser.m */; };
+		456BE9551AFF6DBF0064FBB6 /* VZHTTPRunloopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE94A1AFF6DBF0064FBB6 /* VZHTTPRunloopOperation.m */; };
+		456BE9561AFF6DBF0064FBB6 /* VZHTTPURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE94C1AFF6DBF0064FBB6 /* VZHTTPURLConnectionOperation.m */; };
+		456BE9571AFF6DBF0064FBB6 /* VZHTTPURLResponseCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE94E1AFF6DBF0064FBB6 /* VZHTTPURLResponseCache.m */; };
+		456BE95A1AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE9591AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.m */; };
+		459B245C1B170F22009BB189 /* VZHTTPResponseCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B245B1B170F22009BB189 /* VZHTTPResponseCache.m */; };
 		45CE94BE1AF67BFD00144AA4 /* BXFriendsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CE948D1AF67BFD00144AA4 /* BXFriendsListCell.m */; };
 		45CE94BF1AF67BFD00144AA4 /* friends_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45CE94901AF67BFD00144AA4 /* friends_meta.json */; };
 		45CE94C01AF67BFD00144AA4 /* BXFriendsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CE94931AF67BFD00144AA4 /* BXFriendsListViewController.m */; };
@@ -97,6 +107,28 @@
 		4529DD2A1ABA99B3009347C2 /* VZListDefaultTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultTextCell.h; sourceTree = "<group>"; };
 		4529DD2B1ABA99B3009347C2 /* VZListDefaultTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultTextCell.m; sourceTree = "<group>"; };
 		4529DD321ABA99B3009347C2 /* Vizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vizzle.h; sourceTree = "<group>"; };
+		456BE93E1AFF6DBF0064FBB6 /* VZHTTPConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPConnectionOperation.h; sourceTree = "<group>"; };
+		456BE93F1AFF6DBF0064FBB6 /* VZHTTPConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPConnectionOperation.m; sourceTree = "<group>"; };
+		456BE9401AFF6DBF0064FBB6 /* VZHTTPNetworkAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPNetworkAgent.h; sourceTree = "<group>"; };
+		456BE9411AFF6DBF0064FBB6 /* VZHTTPNetworkAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPNetworkAgent.m; sourceTree = "<group>"; };
+		456BE9421AFF6DBF0064FBB6 /* VZHTTPNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPNetwork.h; sourceTree = "<group>"; };
+		456BE9431AFF6DBF0064FBB6 /* VZHTTPNetworkSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPNetworkSecurity.h; sourceTree = "<group>"; };
+		456BE9441AFF6DBF0064FBB6 /* VZHTTPNetworkSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPNetworkSecurity.m; sourceTree = "<group>"; };
+		456BE9451AFF6DBF0064FBB6 /* VZHTTPRequestGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPRequestGenerator.h; sourceTree = "<group>"; };
+		456BE9461AFF6DBF0064FBB6 /* VZHTTPRequestGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPRequestGenerator.m; sourceTree = "<group>"; };
+		456BE9471AFF6DBF0064FBB6 /* VZHTTPResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseParser.h; sourceTree = "<group>"; };
+		456BE9481AFF6DBF0064FBB6 /* VZHTTPResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPResponseParser.m; sourceTree = "<group>"; };
+		456BE9491AFF6DBF0064FBB6 /* VZHTTPRunloopOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPRunloopOperation.h; sourceTree = "<group>"; };
+		456BE94A1AFF6DBF0064FBB6 /* VZHTTPRunloopOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPRunloopOperation.m; sourceTree = "<group>"; };
+		456BE94B1AFF6DBF0064FBB6 /* VZHTTPURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPURLConnectionOperation.h; sourceTree = "<group>"; };
+		456BE94C1AFF6DBF0064FBB6 /* VZHTTPURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPURLConnectionOperation.m; sourceTree = "<group>"; };
+		456BE94D1AFF6DBF0064FBB6 /* VZHTTPURLResponseCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPURLResponseCache.h; sourceTree = "<group>"; };
+		456BE94E1AFF6DBF0064FBB6 /* VZHTTPURLResponseCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPURLResponseCache.m; sourceTree = "<group>"; };
+		456BE9581AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+VZHTTPNetworkUtil.h"; sourceTree = "<group>"; };
+		456BE9591AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+VZHTTPNetworkUtil.m"; sourceTree = "<group>"; };
+		459B24591B170F22009BB189 /* VZHTTPNetworkAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPNetworkAssert.h; sourceTree = "<group>"; };
+		459B245A1B170F22009BB189 /* VZHTTPResponseCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseCache.h; sourceTree = "<group>"; };
+		459B245B1B170F22009BB189 /* VZHTTPResponseCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPResponseCache.m; sourceTree = "<group>"; };
 		45CE948C1AF67BFD00144AA4 /* BXFriendsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXFriendsListCell.h; sourceTree = "<group>"; };
 		45CE948D1AF67BFD00144AA4 /* BXFriendsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXFriendsListCell.m; sourceTree = "<group>"; };
 		45CE948F1AF67BFD00144AA4 /* BXFriendsConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXFriendsConfig.h; sourceTree = "<group>"; };
@@ -211,6 +243,7 @@
 		4529DD111ABA99B3009347C2 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				456BE93A1AFF6DBF0064FBB6 /* VZNetwork */,
 				4529DD121ABA99B3009347C2 /* VZHTTPListModel.h */,
 				4529DD131ABA99B3009347C2 /* VZHTTPListModel.m */,
 				4529DD141ABA99B3009347C2 /* VZHTTPModel.h */,
@@ -252,6 +285,35 @@
 				4529DD2B1ABA99B3009347C2 /* VZListDefaultTextCell.m */,
 			);
 			path = list;
+			sourceTree = "<group>";
+		};
+		456BE93A1AFF6DBF0064FBB6 /* VZNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				459B24591B170F22009BB189 /* VZHTTPNetworkAssert.h */,
+				459B245A1B170F22009BB189 /* VZHTTPResponseCache.h */,
+				459B245B1B170F22009BB189 /* VZHTTPResponseCache.m */,
+				456BE9581AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.h */,
+				456BE9591AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.m */,
+				456BE93E1AFF6DBF0064FBB6 /* VZHTTPConnectionOperation.h */,
+				456BE93F1AFF6DBF0064FBB6 /* VZHTTPConnectionOperation.m */,
+				456BE9401AFF6DBF0064FBB6 /* VZHTTPNetworkAgent.h */,
+				456BE9411AFF6DBF0064FBB6 /* VZHTTPNetworkAgent.m */,
+				456BE9421AFF6DBF0064FBB6 /* VZHTTPNetwork.h */,
+				456BE9431AFF6DBF0064FBB6 /* VZHTTPNetworkSecurity.h */,
+				456BE9441AFF6DBF0064FBB6 /* VZHTTPNetworkSecurity.m */,
+				456BE9451AFF6DBF0064FBB6 /* VZHTTPRequestGenerator.h */,
+				456BE9461AFF6DBF0064FBB6 /* VZHTTPRequestGenerator.m */,
+				456BE9471AFF6DBF0064FBB6 /* VZHTTPResponseParser.h */,
+				456BE9481AFF6DBF0064FBB6 /* VZHTTPResponseParser.m */,
+				456BE9491AFF6DBF0064FBB6 /* VZHTTPRunloopOperation.h */,
+				456BE94A1AFF6DBF0064FBB6 /* VZHTTPRunloopOperation.m */,
+				456BE94B1AFF6DBF0064FBB6 /* VZHTTPURLConnectionOperation.h */,
+				456BE94C1AFF6DBF0064FBB6 /* VZHTTPURLConnectionOperation.m */,
+				456BE94D1AFF6DBF0064FBB6 /* VZHTTPURLResponseCache.h */,
+				456BE94E1AFF6DBF0064FBB6 /* VZHTTPURLResponseCache.m */,
+			);
+			path = VZNetwork;
 			sourceTree = "<group>";
 		};
 		45CE948A1AF67BFD00144AA4 /* Friends */ = {
@@ -648,18 +710,26 @@
 				4529DD371ABA99B3009347C2 /* VZListViewDataSource.m in Sources */,
 				45CE94CB1AF67BFD00144AA4 /* VZTimelineListItem.m in Sources */,
 				4529DD361ABA99B3009347C2 /* VZListViewController.m in Sources */,
+				456BE9561AFF6DBF0064FBB6 /* VZHTTPURLConnectionOperation.m in Sources */,
 				4529DD511ABA99B3009347C2 /* VZListItem.m in Sources */,
 				45CE94CC1AF67BFD00144AA4 /* VZTimelineListModel.m in Sources */,
+				456BE95A1AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.m in Sources */,
 				4529DD521ABA99B3009347C2 /* VZModel.m in Sources */,
 				4529DD4D1ABA99B3009347C2 /* VZHTTPModel.m in Sources */,
+				456BE9531AFF6DBF0064FBB6 /* VZHTTPRequestGenerator.m in Sources */,
 				4529DD351ABA99B3009347C2 /* VZAFRequest.m in Sources */,
+				456BE9521AFF6DBF0064FBB6 /* VZHTTPNetworkSecurity.m in Sources */,
+				456BE9511AFF6DBF0064FBB6 /* VZHTTPNetworkAgent.m in Sources */,
 				45CE94C21AF67BFD00144AA4 /* BXFriendsListViewDelegate.m in Sources */,
 				4529DD501ABA99B3009347C2 /* VZListDefaultTextItem.m in Sources */,
+				456BE9571AFF6DBF0064FBB6 /* VZHTTPURLResponseCache.m in Sources */,
 				45CE94BE1AF67BFD00144AA4 /* BXFriendsListCell.m in Sources */,
 				4529DD551ABA99B3009347C2 /* VZListDefaultErrorCell.m in Sources */,
 				4529DD541ABA99B3009347C2 /* VZListCell.m in Sources */,
 				45CE94C81AF67BFD00144AA4 /* VZTimelineListViewController.m in Sources */,
+				459B245C1B170F22009BB189 /* VZHTTPResponseCache.m in Sources */,
 				45CE94CA1AF67BFD00144AA4 /* VZTimelineListViewDelegate.m in Sources */,
+				456BE9541AFF6DBF0064FBB6 /* VZHTTPResponseParser.m in Sources */,
 				4529DD391ABA99B3009347C2 /* VZViewController.m in Sources */,
 				AFD37AA019D83F8F0077CE06 /* AppDelegate.m in Sources */,
 				4529DD531ABA99B3009347C2 /* VZFooterViewFactory.m in Sources */,
@@ -667,6 +737,7 @@
 				4529DD571ABA99B3009347C2 /* VZListDefaultTextCell.m in Sources */,
 				45CE94C01AF67BFD00144AA4 /* BXFriendsListViewController.m in Sources */,
 				45CE94C91AF67BFD00144AA4 /* VZTimelineListViewDataSource.m in Sources */,
+				456BE9551AFF6DBF0064FBB6 /* VZHTTPRunloopOperation.m in Sources */,
 				AFD37A9D19D83F8F0077CE06 /* main.m in Sources */,
 				4529DD4E1ABA99B3009347C2 /* VZHTTPRequest.m in Sources */,
 				45CE94C61AF67BFD00144AA4 /* VZTimelineListCell.m in Sources */,
@@ -677,6 +748,7 @@
 				45CE94C51AF67BFD00144AA4 /* BXHTTPRequest.m in Sources */,
 				45CE94CE1AF67BFD00144AA4 /* VZTimelineSubView.m in Sources */,
 				45CE94C31AF67BFD00144AA4 /* BXFriendsListItem.m in Sources */,
+				456BE9501AFF6DBF0064FBB6 /* VZHTTPConnectionOperation.m in Sources */,
 				4529DD561ABA99B3009347C2 /* VZListDefaultLoadingCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

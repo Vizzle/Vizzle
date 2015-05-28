@@ -61,15 +61,7 @@
  *  @param key     不同参数类型对应的key
  */
 - (void)addHeaderParams:(NSDictionary* )params;
-/**
- *  增加HTTP的POST请求参数
- *
- *   v = VZMV* : 1.2
- *
- *   @param aData POST请求的BODY数据
- *   @param key 对应的key
- */
-- (void)addBodyData:(NSDictionary* )aData forKey:(NSString* )key;
+
 /**
  *  发起请求
  */

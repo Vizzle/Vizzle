@@ -248,6 +248,7 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
 @implementation  VZListDefaultPullRefreshView
 {
     PullRefreshState _state;
+    UIActivityIndicatorView* _indicator;
     UILabel* _textLabel;
 }
 
@@ -259,13 +260,24 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
         
         _state = kIsIdle;
         
-        _textLabel                 = [[UILabel alloc]initWithFrame:CGRectMake(80, 18, 160, 16)];
-        _textLabel.font            = [UIFont systemFontOfSize:16.0f];
+        int w = frame.size.width;
+        int h = frame.size.height;
+        
+        int orix = (w-100)/2;
+        
+        _textLabel                 = [[UILabel alloc]initWithFrame:CGRectMake(orix, 15, 100, 14)];
+        _textLabel.font            = [UIFont systemFontOfSize:14.0f];
         _textLabel.textAlignment   = NSTextAlignmentCenter;
-        _textLabel.textColor       = [UIColor redColor];
+        _textLabel.textColor       = [UIColor lightGrayColor];
         _textLabel.backgroundColor = [UIColor clearColor];
         _textLabel.text            = @"下拉刷新";
         [self addSubview:_textLabel];
+        
+        
+        _indicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(orix - 30, (h-20)/2, 20, 20)];
+        _indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+        _indicator.hidden = YES;
+        [self addSubview:_indicator];
         
     }
     return self;
@@ -287,6 +299,15 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
     {
         CGFloat visibleHeight = MAX ( -scrollview.contentOffset.y - scrollview.contentInset.top, 0 );
         self.progress = MIN(MAX(visibleHeight/44, 0.0f),1.0f);
+        
+        if(self.progress >= 1.0)
+        {
+            _textLabel.text = @"松开刷新";
+        }
+        else
+        {
+            _textLabel.text = @"下拉刷新";
+        }
     }
     
 
@@ -332,7 +353,8 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
     if (!self.bRefreshing) {
         
         _bRefreshing = YES;
-        _textLabel.text = @"刷新中...";
+        _textLabel.text = @"努力加载中";
+        [_indicator startAnimating];
         [UIView animateWithDuration:0.3 animations:^{
             
             UIEdgeInsets inset = scrollView.contentInset;
@@ -363,6 +385,7 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
             [self stopAnimation];
             _bRefreshing = NO;
             _textLabel.text = @"下拉刷新";
+            [_indicator stopAnimating];
             
         }];
         

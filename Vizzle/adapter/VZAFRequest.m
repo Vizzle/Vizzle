@@ -80,6 +80,7 @@
 
 #else
     
+    NSAssert(true, @"No AFNetworking Class can be found");
      [self requestDidFailWithError:[NSError errorWithDomain:VZErrorDomain code:kAFNetworkingError userInfo:@{NSLocalizedDescriptionKey : @"Did not find AFNetworking!"}]];
     
 #endif
@@ -108,10 +109,6 @@
 #endif
 
 }
-- (void)addBodyData:(NSDictionary *)aData forKey:(NSString *)key
-{
-    
-}
 - (void)load
 {
     
@@ -122,9 +119,7 @@
     
     NSMutableURLRequest *request = [self.afClient.requestSerializer requestWithMethod:type URLString:self.url parameters:self.queries error:nil];
     self.requestURL = request.URL.absoluteString;
-    
-    //NSString* bodyString = [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding];
-    
+
     [self requestDidStart];
     
     
