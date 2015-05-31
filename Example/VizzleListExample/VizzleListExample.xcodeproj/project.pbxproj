@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2BAD68904E344FB7BFC8FC63 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77AC2DD27F2B45EF9409DA36 /* libPods.a */; };
+		45028A631B1862A600417606 /* VZHTTPURLResponseDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028A621B1862A600417606 /* VZHTTPURLResponseDataCache.m */; };
 		4529DD351ABA99B3009347C2 /* VZAFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCE21ABA99B3009347C2 /* VZAFRequest.m */; };
 		4529DD361ABA99B3009347C2 /* VZListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCE51ABA99B3009347C2 /* VZListViewController.m */; };
 		4529DD371ABA99B3009347C2 /* VZListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529DCE71ABA99B3009347C2 /* VZListViewDataSource.m */; };
@@ -34,7 +35,6 @@
 		456BE9561AFF6DBF0064FBB6 /* VZHTTPURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE94C1AFF6DBF0064FBB6 /* VZHTTPURLConnectionOperation.m */; };
 		456BE9571AFF6DBF0064FBB6 /* VZHTTPURLResponseCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE94E1AFF6DBF0064FBB6 /* VZHTTPURLResponseCache.m */; };
 		456BE95A1AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE9591AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.m */; };
-		459B245C1B170F22009BB189 /* VZHTTPResponseCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B245B1B170F22009BB189 /* VZHTTPResponseCache.m */; };
 		45CE94BE1AF67BFD00144AA4 /* BXFriendsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CE948D1AF67BFD00144AA4 /* BXFriendsListCell.m */; };
 		45CE94BF1AF67BFD00144AA4 /* friends_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45CE94901AF67BFD00144AA4 /* friends_meta.json */; };
 		45CE94C01AF67BFD00144AA4 /* BXFriendsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CE94931AF67BFD00144AA4 /* BXFriendsListViewController.m */; };
@@ -72,6 +72,10 @@
 
 /* Begin PBXFileReference section */
 		344875739C2F42ABA5319A72 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		45028A611B1862A600417606 /* VZHTTPURLResponseDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPURLResponseDataCache.h; sourceTree = "<group>"; };
+		45028A621B1862A600417606 /* VZHTTPURLResponseDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPURLResponseDataCache.m; sourceTree = "<group>"; };
+		45028A651B188F0200417606 /* VZHTTPRequestInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPRequestInterface.h; sourceTree = "<group>"; };
+		45028A661B18989F00417606 /* VZHTTPNetworkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPNetworkConfig.h; sourceTree = "<group>"; };
 		4529DCE11ABA99B3009347C2 /* VZAFRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZAFRequest.h; sourceTree = "<group>"; };
 		4529DCE21ABA99B3009347C2 /* VZAFRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZAFRequest.m; sourceTree = "<group>"; };
 		4529DCE41ABA99B3009347C2 /* VZListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewController.h; sourceTree = "<group>"; };
@@ -126,9 +130,6 @@
 		456BE94E1AFF6DBF0064FBB6 /* VZHTTPURLResponseCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPURLResponseCache.m; sourceTree = "<group>"; };
 		456BE9581AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+VZHTTPNetworkUtil.h"; sourceTree = "<group>"; };
 		456BE9591AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+VZHTTPNetworkUtil.m"; sourceTree = "<group>"; };
-		459B24591B170F22009BB189 /* VZHTTPNetworkAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPNetworkAssert.h; sourceTree = "<group>"; };
-		459B245A1B170F22009BB189 /* VZHTTPResponseCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseCache.h; sourceTree = "<group>"; };
-		459B245B1B170F22009BB189 /* VZHTTPResponseCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPResponseCache.m; sourceTree = "<group>"; };
 		45CE948C1AF67BFD00144AA4 /* BXFriendsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXFriendsListCell.h; sourceTree = "<group>"; };
 		45CE948D1AF67BFD00144AA4 /* BXFriendsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXFriendsListCell.m; sourceTree = "<group>"; };
 		45CE948F1AF67BFD00144AA4 /* BXFriendsConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXFriendsConfig.h; sourceTree = "<group>"; };
@@ -206,6 +207,7 @@
 		4529DCDF1ABA99B3009347C2 /* Vizzle */ = {
 			isa = PBXGroup;
 			children = (
+				459B245D1B171250009BB189 /* core */,
 				4529DCE01ABA99B3009347C2 /* adapter */,
 				4529DCE31ABA99B3009347C2 /* controller */,
 				4529DD111ABA99B3009347C2 /* model */,
@@ -244,6 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				456BE93A1AFF6DBF0064FBB6 /* VZNetwork */,
+				45028A661B18989F00417606 /* VZHTTPNetworkConfig.h */,
+				45028A651B188F0200417606 /* VZHTTPRequestInterface.h */,
 				4529DD121ABA99B3009347C2 /* VZHTTPListModel.h */,
 				4529DD131ABA99B3009347C2 /* VZHTTPListModel.m */,
 				4529DD141ABA99B3009347C2 /* VZHTTPModel.h */,
@@ -290,9 +294,8 @@
 		456BE93A1AFF6DBF0064FBB6 /* VZNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				459B24591B170F22009BB189 /* VZHTTPNetworkAssert.h */,
-				459B245A1B170F22009BB189 /* VZHTTPResponseCache.h */,
-				459B245B1B170F22009BB189 /* VZHTTPResponseCache.m */,
+				45028A611B1862A600417606 /* VZHTTPURLResponseDataCache.h */,
+				45028A621B1862A600417606 /* VZHTTPURLResponseDataCache.m */,
 				456BE9581AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.h */,
 				456BE9591AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.m */,
 				456BE93E1AFF6DBF0064FBB6 /* VZHTTPConnectionOperation.h */,
@@ -314,6 +317,13 @@
 				456BE94E1AFF6DBF0064FBB6 /* VZHTTPURLResponseCache.m */,
 			);
 			path = VZNetwork;
+			sourceTree = "<group>";
+		};
+		459B245D1B171250009BB189 /* core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = core;
 			sourceTree = "<group>";
 		};
 		45CE948A1AF67BFD00144AA4 /* Friends */ = {
@@ -727,7 +737,6 @@
 				4529DD551ABA99B3009347C2 /* VZListDefaultErrorCell.m in Sources */,
 				4529DD541ABA99B3009347C2 /* VZListCell.m in Sources */,
 				45CE94C81AF67BFD00144AA4 /* VZTimelineListViewController.m in Sources */,
-				459B245C1B170F22009BB189 /* VZHTTPResponseCache.m in Sources */,
 				45CE94CA1AF67BFD00144AA4 /* VZTimelineListViewDelegate.m in Sources */,
 				456BE9541AFF6DBF0064FBB6 /* VZHTTPResponseParser.m in Sources */,
 				4529DD391ABA99B3009347C2 /* VZViewController.m in Sources */,
@@ -742,6 +751,7 @@
 				4529DD4E1ABA99B3009347C2 /* VZHTTPRequest.m in Sources */,
 				45CE94C61AF67BFD00144AA4 /* VZTimelineListCell.m in Sources */,
 				4529DD381ABA99B3009347C2 /* VZListViewDelegate.m in Sources */,
+				45028A631B1862A600417606 /* VZHTTPURLResponseDataCache.m in Sources */,
 				45CE94C11AF67BFD00144AA4 /* BXFriendsListViewDataSource.m in Sources */,
 				45CE94C41AF67BFD00144AA4 /* BXFriendsListModel.m in Sources */,
 				4529DD4F1ABA99B3009347C2 /* VZItem.m in Sources */,

@@ -8,27 +8,29 @@
 
 #import "VZHTTPRequest.h"
 #import "VZHTTPNetwork.h"
-#import "VZHTTPNetworkAssert.h"
+#import "VZHTTPNetworkConfig.h"
 
 @interface VZHTTPRequest()
 
 @property(nonatomic,strong) VZHTTPNetworkAgent* networkAgent;
+@property(nonatomic,strong) VZHTTPRequestGenerator* requestGenerator;
+@property(nonatomic,strong) NSMutableURLRequest* request;
+@property(nonatomic,strong) NSMutableDictionary* bodyQueries;
+@property(nonatomic,strong) NSMutableDictionary* headerQueries;
+@property(nonatomic,strong) VZHTTPConnectionOperation* operation;
 
 @end
 
 @implementation VZHTTPRequest
 
+@synthesize config          = _config;
 @synthesize delegate        = _delegate;
-@synthesize isPost          = _isPost;
 @synthesize requestURL      = _requestURL;
-@synthesize stringEncoding = _stringEncoding;
-@synthesize timeoutSeconds = _timeoutSeconds;
 @synthesize responseObject = _responseObject;
 @synthesize responseString = _responseString;
 @synthesize responseError  = _responseError;
 
-
-- (void)initRequestWithBaseURL:(NSString*)url
+- (void)initRequestWithBaseURL:(NSString*)url Config:(VZHTTPRequestConfig)config
 {
     NSParameterAssert(url);
 
@@ -36,40 +38,78 @@
         [self requestDidFailWithError:[NSError errorWithDomain:VZErrorDomain code:kMethodNameError userInfo:@{NSLocalizedDescriptionKey : @"kMethodNameError"}]];
         return;
     }
-    _requestURL = url;
     
-    self.networkAgent = [VZHTTPNetworkAgent sharedInstance];
+    _config           = config;
+    _requestURL       = url;
+    _headerQueries    = [NSMutableDictionary new];
+    _bodyQueries      = [NSMutableDictionary new];
+    
+    _requestGenerator = [VZHTTPRequestGenerator generator];
+  
 }
 
 - (void)addHeaderParams:(NSDictionary *)params
 {
-   // self.configuration.HTTPAdditionalHeaders = [params copy];
+    if (!params) {
+        return;
+    }
+    [self.requestGenerator addHeaderParams:params ToRequest:self.request];
 }
 
 - (void)addQueries:(NSDictionary *)queries
 {
-    
+    if (!queries) {
+        return;
+    }
+    [self.requestGenerator addQueryParams:queries EncodingType:self.config.stringEncoding ToRequest:self.request];
 }
+
+
 - (void)load
 {
-    VZHTTPRequestConfig reqConfig = vz_defaultHTTPRequestConfig();
-    VZHTTPResponseConfig respConfig = vz_defaultHTTPResponseConfig();
     
-    [[VZHTTPNetworkAgent sharedInstance] HTTP:self.requestURL requestConfig:reqConfig responseConfig:respConfig params:nil completionHandler:^(VZHTTPConnectionOperation *connection, NSString *responseString, id responseObj, NSError *error) {
+    NSURLRequest* request = [self.requestGenerator generateRequestWithConfig:self.config URLString:self.requestURL Params:nil];
+    self.request = [request mutableCopy];
+
+    _operation = [[VZHTTPConnectionOperation alloc]initWithRequest:_request];
+    
+    [self requestDidStart];
+    
+    __weak typeof(self) weakSelf = self;
+    [_operation setCompletionHandler:^(VZHTTPConnectionOperation *op, NSString *responseString, id responseObj, NSError *error) {
+       
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         
+        if (strongSelf) {
+                
+            strongSelf -> _responseString = [responseString copy];
+            strongSelf -> _responseObject = responseObj;
+            strongSelf -> _responseError = error;
+
+        }
+        
+        if (!error) {
+            [weakSelf requestDidFinish:responseObj];
+        }
+        else
+            [weakSelf requestDidFailWithError:error];
     }];
+
 
 }
 
 - (void)cancel
 {
-
+    [self.operation cancel];
 }
 
 
 - (void)dealloc
 {
     [self cancel];
+    _delegate = nil;
+    _request = nil;
+    _operation = nil;
 }
 
 - (void)requestDidStart

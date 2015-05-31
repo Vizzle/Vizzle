@@ -7,72 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-
-
-
-@protocol VZHTTPRequestInterface;
-@protocol VZHTTPRequestDelegate <NSObject>
-
-@required
-
-- (void)requestDidStart:(id<VZHTTPRequestInterface>)request;
-- (void)requestDidFinish:(id)JSON;
-- (void)requestDidFailWithError:(NSError *)error;
-
-@end
-
-@protocol VZHTTPRequestInterface <NSObject>
-
-@property (nonatomic,strong) NSString* requestURL;
-@property (nonatomic,assign) NSTimeInterval timeoutSeconds;
-@property (nonatomic,assign) NSStringEncoding stringEncoding;
-@property (nonatomic) BOOL isPost;
-@property (nonatomic,weak) id<VZHTTPRequestDelegate> delegate;
-
-/**
- *
- *  增加返回的response string/obj
- *
- *  v = VZMV* : 1.2
- */
-@property (nonatomic,strong,readonly) NSString* responseString;
-@property(nonatomic,strong,readonly) id responseObject;
-@property(nonatomic,strong,retain) NSError* responseError;
-
-/**
- *  创建请求的request
- *
- *  @param url
- */
-- (void)initRequestWithBaseURL:(NSString*)url;
-/**
- *  增加HTTP GET请求参数
- *
- *  @param query 参数
- *  @param key     不同参数类型对应的key
- */
-- (void)addQueries:(NSDictionary* )queries;
-
-/**
- *  增加HTTP Header参数
- *
- *  @param param 参数
- *  @param key     不同参数类型对应的key
- */
-- (void)addHeaderParams:(NSDictionary* )params;
-
-/**
- *  发起请求
- */
-- (void)load;
-/**
- *  取消请求
- */
-- (void)cancel;
-
-
-@end
+#import "VZHTTPRequestInterface.h"
 
 @interface VZHTTPRequest : NSObject<VZHTTPRequestInterface>
 

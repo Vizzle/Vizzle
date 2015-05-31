@@ -9,7 +9,7 @@
 #ifndef VZHTTPNetwork_h
 #define VZHTTPNetwork_h
 
-#import "VZHTTPNetworkAssert.h"
+#import "VZHTTPNetworkConfig.h"
 #import "VZHTTPNetworkSecurity.h"
 #import "VZHTTPResponseParser.h"
 #import "VZHTTPRunloopOperation.h"

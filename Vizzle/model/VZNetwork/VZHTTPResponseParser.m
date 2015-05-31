@@ -7,7 +7,7 @@
 //
 
 #import "VZHTTPResponseParser.h"
-#import "VZHTTPNetworkAssert.h"
+#import "VZHTTPNetworkConfig.h"
 @implementation VZHTTPResponseParser
 
 

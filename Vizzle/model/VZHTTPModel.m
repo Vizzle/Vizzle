@@ -106,10 +106,6 @@
     if (self.requestType == VZModelDefault) {
         clz = @"VZNSURLRequest";
     }
-    else if (self.requestType == VZModelAFNetworking)
-    {
-        clz = @"VZAFRequest";
-    }
     else if (self.requestType == VZModelCustom)
     {
         clz = [self customRequestClassName];
@@ -121,13 +117,12 @@
     else
         clz = @"VZHTTPRequest";
     
-    self.request = [NSClassFromString(clz) new];
+    VZHTTPRequestConfig config = [self requestConfig];
+    self.request             = [NSClassFromString(clz) new];
     self.request.delegate    = self;
-    self.request.isPost     = [self isPost];
-    
     
     //3, init request
-    [self.request initRequestWithBaseURL:[self methodName]];
+    [self.request initRequestWithBaseURL:[self methodName] Config:config];
     
     
     //4, add request data
@@ -159,17 +154,10 @@
     
     return YES;
 }
-- (BOOL)useCache {
-    return NO;
-}
 
-- (BOOL)isPost{
-    return NO;
-}
-
-- (NSDictionary*)bodyData
+- (VZHTTPRequestConfig)requestConfig
 {
-    return nil;
+    return vz_defaultHTTPRequestConfig();
 }
 
 - (NSString* )customRequestClassName

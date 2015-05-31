@@ -50,17 +50,15 @@
 
 @implementation VZAFRequest
 
-@synthesize isPost = _isPost;
+@synthesize config = _config;
 @synthesize delegate = _delegate;
 @synthesize requestURL     = _requestURL;
-@synthesize stringEncoding = _stringEncoding;
-@synthesize timeoutSeconds = _timeoutSeconds;
 @synthesize responseObject = _responseObject;
 @synthesize responseString = _responseString;
 @synthesize responseError  = _responseError;
 
 
-- (void)initRequestWithBaseURL:(NSString*)url
+- (void)initRequestWithBaseURL:(NSString*)url Config:(VZHTTPRequestConfig)config
 {
 #ifdef _AFNETWORKING_
     
@@ -70,13 +68,11 @@
         [self requestDidFailWithError:[NSError errorWithDomain:VZErrorDomain code:kMethodNameError userInfo:@{NSLocalizedDescriptionKey : @"kMethodNameError"}]];
         return;
     }
-    
-    self.timeoutSeconds = 10.0f;
-    self.stringEncoding = NSUTF8StringEncoding;
+
     self.url = url;
 
     self.afClient = [VZAFClient sharedClient];
-    self.afClient.session.configuration.timeoutIntervalForRequest = self.timeoutSeconds;
+    self.afClient.session.configuration.timeoutIntervalForRequest = config.requestTimeoutSeconds;
 
 #else
     
@@ -115,7 +111,7 @@
 #ifdef _AFNETWORKING_
     
     
-    NSString* type = self.isPost?@"POST":@"GET";
+    NSString* type = vz_httpMethod(self.config.requestMethod);
     
     NSMutableURLRequest *request = [self.afClient.requestSerializer requestWithMethod:type URLString:self.url parameters:self.queries error:nil];
     self.requestURL = request.URL.absoluteString;
@@ -124,9 +120,8 @@
     
     
     __weak typeof(self) weakSelf = self;
-    if (self.isPost)
+    if ([type isEqualToString:@"POST"])
     {
-        type = @"POST";
         self.currentTask = [self.afClient POST:self.url parameters:self.queries success:^(NSURLSessionDataTask *task, id responseObject) {
             
             __strong typeof (weakSelf) strongSelf = weakSelf;
@@ -153,7 +148,6 @@
     }
     else
     {
-        type = @"GET";
         self.currentTask = [self.afClient GET:self.url parameters:self.queries success:^(NSURLSessionDataTask *task, id responseObject) {
             
             __strong typeof (weakSelf) strongSelf = weakSelf;

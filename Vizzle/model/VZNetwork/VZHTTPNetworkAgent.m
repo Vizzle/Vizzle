@@ -12,7 +12,6 @@
 #import "VZHTTPResponseParser.h"
 #import "VZHTTPURLResponseCache.h"
 
-
 //////////////////////////////////////////////////////////////////////////////////////////
 // global constants
 NSString* const kVZHTTPNetworkAgentThreadRunLoopName = @"VZHTTPNetworkAgentRunloopThread";
@@ -58,6 +57,8 @@ float const kVZHTTPNetworkAgentThreadRunLoopPriority = 0.3;
         
         _operationQueue = [NSOperationQueue new];
         _operationQueue.name = kVZHTTPNetworkAgentOperationQueueName;
+        
+        [VZHTTPURLResponseCache sharedCache];
     
     }
     return  self;
@@ -90,11 +91,6 @@ float const kVZHTTPNetworkAgentThreadRunLoopPriority = 0.3;
 {
     [self.operationQueue cancelAllOperations];
 }
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - public HTTP methods
 
 //GET
 - (VZHTTPConnectionOperation* )HTTP:(NSString*)aURlString
@@ -134,8 +130,8 @@ float const kVZHTTPNetworkAgentThreadRunLoopPriority = 0.3;
     else
     {
         //2, create request
-        NSURLRequest* requset = [[VZHTTPRequestGenerator new] generateRequestWithConfig:requestConfig URLString:aURlString Params:aParams];
-        VZHTTPConnectionOperation* op = [[VZHTTPConnectionOperation alloc]initWithRequest:requset];
+        NSURLRequest* request = [[VZHTTPRequestGenerator new] generateRequestWithConfig:requestConfig URLString:aURlString Params:aParams];
+        VZHTTPConnectionOperation* op = [[VZHTTPConnectionOperation alloc]initWithRequest:request];
         op.responseParser = [VZHTTPResponseParser parserWithConfig:responseConfig];
         [op setCompletionHandler:^(VZHTTPConnectionOperation *op, NSString* responseString,id responseObj, NSError *error) {
             
@@ -148,8 +144,9 @@ float const kVZHTTPNetworkAgentThreadRunLoopPriority = 0.3;
         
         return op;
     }
-
 }
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - private methods

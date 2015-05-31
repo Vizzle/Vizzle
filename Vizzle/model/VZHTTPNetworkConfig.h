@@ -45,6 +45,7 @@ typedef NS_ENUM(int, VZHTTPRequestMethod)
 typedef struct requestConfig
 {
     bool isHTTPs;
+    NSStringEncoding stringEncoding;
     NSTimeInterval requestTimeoutSeconds;
     VZHTTPNetworkURLCachePolicy cachePolicy;
     VZHTTPNetworkURLCacheTime cacheTime;
@@ -64,6 +65,7 @@ static inline VZHTTPRequestConfig vz_defaultHTTPRequestConfig()
     return (VZHTTPRequestConfig)
     {
         .isHTTPs = false,
+        .stringEncoding = NSUTF8StringEncoding,
         .requestTimeoutSeconds = 15,
         .cachePolicy = VZHTTPNetworkURLCachePolicyNone,
         .cacheTime = VZHTTPNetworkURLCacheTimeNone,
@@ -113,28 +115,5 @@ static inline NSString* vz_httpMethod(VZHTTPRequestMethod method)
     return ret;
 }
 
-//dispatch_queue_t vz_dispatch_serialQueue()
-//{
-//    static dispatch_queue_t s;
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        
-//        s = dispatch_queue_create("com.vizzle.serialQueue", DISPATCH_QUEUE_SERIAL);
-//    });
-//    
-//    return s;
-//}
-//
-//dispatch_queue_t vz_dispatch_concurrentQueue()
-//{
-//    static dispatch_queue_t s;
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        
-//        s = dispatch_queue_create("com.vizzle.concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
-//    });
-//    
-//    return s;
-//}
 
 #endif

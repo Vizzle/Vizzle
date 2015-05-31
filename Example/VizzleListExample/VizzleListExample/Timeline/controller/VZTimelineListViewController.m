@@ -39,7 +39,6 @@
     if (!_timelineListModel) {
         _timelineListModel = [VZTimelineListModel new];
         _timelineListModel.key = @"__VZTimelineListModel__";
-        _timelineListModel.requestType = VZModelAFNetworking;
     }
     return _timelineListModel;
 }

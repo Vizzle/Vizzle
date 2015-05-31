@@ -8,7 +8,7 @@
 
 #import "VZHTTPRequestGenerator.h"
 #import "NSString+VZHTTPNetworkUtil.h"
-#import "VZHTTPNetworkAssert.h"
+#import "VZHTTPNetworkConfig.h"
 
 
 @interface VZHTTPRequestQueryStringPair : NSObject
@@ -57,6 +57,7 @@
 
 @interface VZHTTPRequestGenerator()
 
+@property(nonatomic,assign) NSStringEncoding stringEncoding;
 @property (readwrite, nonatomic, strong) NSMutableDictionary *requestHeaders;
 @property (nonatomic,strong) NSSet* needEncodingMethods;
 
@@ -107,7 +108,7 @@
         *stop = q <= 0.5f;
     }];
     //add to header
-    [self setValue:[acceptLanguagesComponents componentsJoinedByString:@","] forHTTPHederField:@"Accept-Language"];
+    [self setValue:[acceptLanguagesComponents componentsJoinedByString:@","] forHTTPHeaderField:@"Accept-Language"];
     
     /**
      * User-Agent
@@ -116,14 +117,15 @@
      */
     NSString* userAgent = [NSString stringWithFormat:@"%@/%@ (%@; iOS %@; Scale/%0.2f)", [[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleExecutableKey] ?: [[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleIdentifierKey], (__bridge id)CFBundleGetValueForInfoDictionaryKey(CFBundleGetMainBundle(), kCFBundleVersionKey) ?: [[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleVersionKey], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] ? [[UIScreen mainScreen] scale] : 1.0f)];
     
-    if (userAgent) {
+    if (userAgent)
+    {
         if (![userAgent canBeConvertedToEncoding:NSASCIIStringEncoding]) {
             NSMutableString *mutableUserAgent = [userAgent mutableCopy];
             CFStringTransform((__bridge CFMutableStringRef)(mutableUserAgent), NULL, kCFStringTransformToLatin, false);
             userAgent = mutableUserAgent;
         }
         //add to header
-        [self setValue:userAgent forHTTPHederField:@"User-Agent"];
+        [self setValue:userAgent forHTTPHeaderField:@"User-Agent"];
     }
 }
 
@@ -131,16 +133,74 @@
 {
     NSString *basicAuthCredentials = [NSString stringWithFormat:@"%@:%@", aName, aPassword];
     NSString* base64 = [basicAuthCredentials VZHTTP_base64Encoding];
-    [self setValue:[NSString stringWithFormat:@"Basic %@",base64] forHTTPHederField:@"Authorization"];
+    [self setValue:[NSString stringWithFormat:@"Basic %@",base64] forHTTPHeaderField:@"Authorization"];
 }
 
 - (void)setAuthHeaderFieldWithToken:(NSString *)token {
-    [self setValue:[NSString stringWithFormat:@"Token token=\"%@\"", token] forHTTPHederField:@"Authorization"];
+    [self setValue:[NSString stringWithFormat:@"Token token=\"%@\"", token] forHTTPHeaderField:@"Authorization"];
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - public methods
+
+//add header params
+- (void)addHeaderParams:(NSDictionary* )params ToRequest:(NSMutableURLRequest* )request
+{
+    if (!params || !request) {
+        return;
+    }
+    
+    [params enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [request setValue:obj forHTTPHeaderField:key];
+    }];
+}
+
+//add body params
+- (void)addQueryParams:(NSDictionary* )params EncodingType:(NSStringEncoding)encoding ToRequest:(NSMutableURLRequest* )request
+{
+    if (!params || !request) {
+        return;
+    }
+    
+    if (!encoding) {
+        encoding = NSUTF8StringEncoding;
+    }
+    
+    NSString* query = nil;
+    if (self.requestStringGenerator) {
+        query = self.requestStringGenerator(request,params,nil);
+    }
+    else
+    {
+        //use default generator
+        query = [self queryStringFromParams:params WithEncoding:encoding];
+    }
+    
+    //add query string
+    [self addQueryString:query EncodingType:encoding ToRequest:request];
+    
+
+}
+
+- (void)addAuthHeaderWithUserName:(NSString *)aName Password:(NSString *)aPassword ToRequest:(NSMutableURLRequest *)request
+{
+    if (!request || aName != nil || aPassword != nil) {
+        return;
+    }
+    
+    NSString *basicAuthCredentials = [NSString stringWithFormat:@"%@:%@", aName, aPassword];
+    NSString* base64 = [basicAuthCredentials VZHTTP_base64Encoding];
+    [request setValue:[NSString stringWithFormat:@"Basic %@",base64] forHTTPHeaderField:@"Authorization"];
+}
+
+- (void)addAuthHeaderWithToken:(NSString *)token toRequest:(NSMutableURLRequest *)request
+{
+    if (!token || !request) {
+        return;
+    }
+    [request setValue:[NSString stringWithFormat:@"Token token=\"%@\"", token] forHTTPHeaderField:@"Authorization"];
+}
 
 - (NSURLRequest *)generateRequestWithConfig:(VZHTTPRequestConfig) config
                                   URLString:(NSString *)aURLString
@@ -152,6 +212,8 @@
     NSMutableURLRequest *mutableRequest = [[NSMutableURLRequest alloc] initWithURL:url];
     NSString* method = vz_httpMethod(config.requestMethod);
     NSParameterAssert(method);
+    
+    self.stringEncoding = config.stringEncoding; //default is utf-8
     
     [mutableRequest setHTTPMethod:method];
     [mutableRequest setTimeoutInterval:config.requestTimeoutSeconds];
@@ -183,6 +245,15 @@
         query = [self queryStringFromParams:aParam WithEncoding:self.stringEncoding];
     }
     
+    //add query string
+    [self addQueryString:query EncodingType:self.stringEncoding ToRequest:mutableRequest];
+    
+    return mutableRequest;
+    
+}
+
+- (void)addQueryString:(NSString *)query EncodingType:(NSStringEncoding)encoding ToRequest:(NSMutableURLRequest *)aRequest
+{
     NSString* httpMethod = [[aRequest HTTPMethod] uppercaseString];
     //包含"GET,HEAD,DELETE"
     if ([self.needEncodingMethods containsObject:httpMethod]) {
@@ -190,21 +261,18 @@
         NSString* hasQuery = [NSString stringWithFormat:@"&%@",query];
         NSString* noQuery = [NSString stringWithFormat:@"?%@",query];
         
-        NSString* queryString = [[mutableRequest.URL absoluteString] stringByAppendingString:mutableRequest.URL.query ? hasQuery : noQuery];
+        NSString* queryString = [[aRequest.URL absoluteString] stringByAppendingString:aRequest.URL.query ? hasQuery : noQuery];
         
-        mutableRequest.URL = [NSURL URLWithString:queryString];
-    
+        aRequest.URL = [NSURL URLWithString:queryString];
+        
     }
-    else
+    else //post
     {
         NSString *charset = (__bridge NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(self.stringEncoding));
-        [mutableRequest setValue:[NSString stringWithFormat:@"application/x-www-form-urlencoded; charset=%@", charset] forHTTPHeaderField:@"Content-Type"];
-        [mutableRequest setHTTPBody:[query dataUsingEncoding:self.stringEncoding]];
-    
+        [aRequest setValue:[NSString stringWithFormat:@"application/x-www-form-urlencoded; charset=%@", charset] forHTTPHeaderField:@"Content-Type"];
+        [aRequest setHTTPBody:[query dataUsingEncoding:self.stringEncoding]];
+        
     }
-    
-    return mutableRequest;
-    
 }
 
 
@@ -212,7 +280,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - private tool methods
 
-- (void)setValue:(NSString* )value forHTTPHederField:(NSString* )field
+
+- (void)setValue:(NSString* )value forHTTPHeaderField:(NSString* )field
 {
     [self.requestHeaders setObject:value forKey:field];
 }

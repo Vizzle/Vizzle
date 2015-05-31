@@ -7,6 +7,7 @@
 //
 
 #import "VZModel.h"
+#import "VZHTTPNetworkConfig.h"
 
 /**
  *  model的http请求类型
@@ -17,10 +18,6 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
      *  默认HTTP请求，使用VZHTTPRequest
      */
     VZModelDefault = 0,
-    /**
-     *  普通HTTP请求，使用VZAFRequest
-     */
-    VZModelAFNetworking = 1,
     /**
      *  使用第三方request，需要实现<VZHTTPRequestInterface>
      */
@@ -65,11 +62,9 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
 @optional
 
 /**
- *  是否使用Cache，默认NO
- *
- *  @return BOOL
+ * 网络请求Config，特殊的请求覆盖这个方法，默认返回vz_httpConfigDefault()
  */
-- (BOOL)useCache;
+- (VZHTTPRequestConfig) requestConfig;
 /**
  *  如果requestType指定为custom，则这个方法要返回第三方request的类名
  *
@@ -78,21 +73,7 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
  *  @return 第三方request的类名
  */
 - (NSString* )customRequestClassName;
-/**
- *  POST 请求的body参数
- *
- *  v = VZModel : 1.2
- *
- *  @return {key => NSString,文件名，需要后缀 : data => NSData，上传的文件}
- */
-- (NSDictionary* )bodyData;
 
-/**
- *  是否是POST请求
- *
- *  v = VZModel : 1.2
- */
-- (BOOL)isPost;
 
 @end
 

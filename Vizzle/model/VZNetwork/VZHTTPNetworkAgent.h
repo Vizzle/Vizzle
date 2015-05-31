@@ -8,7 +8,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VZHTTPNetworkAssert.h"
+#import "VZHTTPNetworkConfig.h"
 
 @class VZHTTPConnectionOperation;
 @class VZHTTPURLResponseCache;
@@ -26,30 +26,23 @@
  */
 + (instancetype)sharedInstance;
 
-- (VZHTTPConnectionOperation* )operationForTagString:(NSString* )tagString;
+- (VZHTTPConnectionOperation* )HTTP:(NSString*)aURlString
+                  completionHandler:(void(^)(VZHTTPConnectionOperation* connection, NSString* responseString,id responseObj, NSError* error))aCallback;
+
+- (VZHTTPConnectionOperation* )HTTP:(NSString*)aURlString
+                             params:(NSDictionary*)aParams
+                  completionHandler:(void(^)(VZHTTPConnectionOperation* connection, NSString* responseString, id responseObj, NSError* error))aCallback;
+
+
+- (VZHTTPConnectionOperation* )HTTP:(NSString*)aURlString
+                      requestConfig:(VZHTTPRequestConfig) requestConfig
+                     responseConfig:(VZHTTPResponseConfig) responseConfig
+                             params:(NSDictionary*)aParams
+                  completionHandler:(void(^)(VZHTTPConnectionOperation* connection,NSString* responseString,id responseObj, NSError* error))aCallback;
 
 - (void)cancelByTagString:(NSString* )tagString;
 
 - (void)cancelAll;
-
-@end
-
-
-@interface VZHTTPNetworkAgent(GET)
-
-- (VZHTTPConnectionOperation* )HTTP:(NSString*)aURlString
-completionHandler:(void(^)(VZHTTPConnectionOperation* connection, NSString* responseString,id responseObj, NSError* error))aCallback;
-
-- (VZHTTPConnectionOperation* )HTTP:(NSString*)aURlString
-      params:(NSDictionary*)aParams
-completionHandler:(void(^)(VZHTTPConnectionOperation* connection, NSString* responseString, id responseObj, NSError* error))aCallback;
-
-
-- (VZHTTPConnectionOperation* )HTTP:(NSString*)aURlString
-          requestConfig:(VZHTTPRequestConfig) requestConfig
-         responseConfig:(VZHTTPResponseConfig) responseConfig
-                 params:(NSDictionary*)aParams
-      completionHandler:(void(^)(VZHTTPConnectionOperation* connection,NSString* responseString,id responseObj, NSError* error))aCallback;
 
 @end
 

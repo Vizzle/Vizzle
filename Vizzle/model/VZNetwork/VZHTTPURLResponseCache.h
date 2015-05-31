@@ -1,33 +1,21 @@
 //
-//  VZHTTPURLResponseCache.h
-//  ETLibSDK
+//  VZHTTPResponseCache.h
+//  VZNetworkTest
 //
-//  Created by moxin.xt on 12-12-18.
-//  Copyright (c) 2013年 VizLab. All rights reserved.
+//  Created by moxin on 15/5/28.
+//  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
+static const NSUInteger kVZDefaultHTTPResponseMemoryCacheSize = 3*1024*1024;
+static const NSUInteger kVZDefaultHTTPResponseFileCacheSize = 10*1024*1024;
+static const NSString* kVZDefaultHTTPResponseEtag = @"ETag";
+@interface VZHTTPURLResponseCache : NSURLCache
 
-@interface VZHTTPURLResponseItem : NSObject<NSCoding>
++(VZHTTPURLResponseCache* )sharedCache;
 
-@property(nonatomic,strong) NSDate*        triggerDate;
-@property(nonatomic,assign) NSTimeInterval expireInterval;
-@property(nonatomic,strong) NSString*      identifier;
-@property(nonatomic,strong) id             response;
-@property(nonatomic,strong) NSString*      responseStr;
-
-@end
-
-extern const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue;
-
-@interface VZHTTPURLResponseCache : NSObject
-
-+ (instancetype) sharedInstance;
-
-- (void)cachedResponseForUrlString:(NSString*)identifier completion:(void(^)(NSError* err, id object))aCallback;
-
-- (void)saveResponse:(id)data WithUrlString:(NSString*)identifier ExpireTime:(NSTimeInterval)timeInterval;
+- (NSString *)ETagForRequest:(NSURLRequest *)request;
 
 
 @end
