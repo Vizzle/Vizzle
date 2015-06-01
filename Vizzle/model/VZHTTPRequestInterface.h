@@ -25,15 +25,9 @@
 @protocol VZHTTPRequestInterface <NSObject>
 
 @property (nonatomic,strong) NSString* requestURL;
-@property (nonatomic,assign) VZHTTPRequestConfig config;
+@property (nonatomic,assign) VZHTTPRequestConfig requestConfig;
+@property (nonatomic,assign) VZHTTPResponseConfig responseConfig;
 @property (nonatomic,weak) id<VZHTTPRequestDelegate> delegate;
-
-/**
- *
- *  增加返回的response string/obj
- *
- *  v = VZMV* : 1.2
- */
 @property (nonatomic,strong,readonly) NSString* responseString;
 @property (nonatomic,strong,readonly) id responseObject;
 @property (nonatomic,strong,readonly) NSError* responseError;
@@ -43,7 +37,7 @@
  *
  *  @param url
  */
-- (void)initRequestWithBaseURL:(NSString*)url Config:(VZHTTPRequestConfig)config;
+- (void)initWithBaseURL:(NSString*)url RequestConfig:(VZHTTPRequestConfig)config ResponseConfig:(VZHTTPResponseConfig)responseConfig;
 /**
  *  增加HTTP GET请求参数
  *

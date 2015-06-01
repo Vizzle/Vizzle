@@ -50,15 +50,16 @@
 
 @implementation VZAFRequest
 
-@synthesize config = _config;
-@synthesize delegate = _delegate;
+@synthesize requestConfig  = _requestConfig;
+@synthesize responseConfig = _responseConfig;
+@synthesize delegate       = _delegate;
 @synthesize requestURL     = _requestURL;
 @synthesize responseObject = _responseObject;
 @synthesize responseString = _responseString;
 @synthesize responseError  = _responseError;
 
 
-- (void)initRequestWithBaseURL:(NSString*)url Config:(VZHTTPRequestConfig)config
+- (void)initWithBaseURL:(NSString *)url RequestConfig:(VZHTTPRequestConfig)requestConfig ResponseConfig:(VZHTTPResponseConfig)responseConfig
 {
 #ifdef _AFNETWORKING_
     
@@ -70,9 +71,10 @@
     }
 
     self.url = url;
-
+    self.requestConfig = requestConfig;
+    self.responseConfig = responseConfig;
     self.afClient = [VZAFClient sharedClient];
-    self.afClient.session.configuration.timeoutIntervalForRequest = config.requestTimeoutSeconds;
+    self.afClient.session.configuration.timeoutIntervalForRequest = requestConfig.requestTimeoutSeconds;
 
 #else
     
@@ -109,9 +111,7 @@
 {
     
 #ifdef _AFNETWORKING_
-    
-    
-    NSString* type = vz_httpMethod(self.config.requestMethod);
+    NSString* type = vz_httpMethod(self.requestConfig.requestMethod);
     
     NSMutableURLRequest *request = [self.afClient.requestSerializer requestWithMethod:type URLString:self.url parameters:self.queries error:nil];
     self.requestURL = request.URL.absoluteString;

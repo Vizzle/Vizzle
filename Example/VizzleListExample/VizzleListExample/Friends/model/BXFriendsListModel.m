@@ -25,10 +25,10 @@
 - (NSDictionary *)dataParams {
     
  
-    return @{@"owneruid":@"21",
+    return @{@"owneruid":@"419",
              @"page":@(self.currentPageIndex+1).stringValue,
              @"status":@"1",
-             @"accesstoken":@"201504240019318738639"};
+             @"accesstoken":@"201506010942218053987"};
 }
 
 - (NSString *)methodName {
@@ -36,16 +36,14 @@
     return [@"http://121.40.184.9/beixinmei/appapi/" stringByAppendingString:@"ListFriend"];
 }
 
-- (BOOL)isPost
-{
-    return true;
-}
 
-- (NSString* )customRequestClassName
+- (VZHTTPRequestConfig)requestConfig
 {
-    return @"BXHTTPRequest";
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
+    
 }
-
 - (NSMutableArray* )responseObjects:(id)JSON
 {
     if(!JSON || JSON == [NSNull null])
@@ -53,7 +51,7 @@
     
     NSMutableArray* ret = [NSMutableArray new];
     
-    NSArray* list = JSON;
+    NSArray* list = JSON[@"result"];
     
     for (NSDictionary* json in list) {
         

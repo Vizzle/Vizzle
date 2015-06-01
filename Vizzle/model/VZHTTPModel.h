@@ -65,6 +65,11 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
  * 网络请求Config，特殊的请求覆盖这个方法，默认返回vz_httpConfigDefault()
  */
 - (VZHTTPRequestConfig) requestConfig;
+
+/**
+ * 解析Response所用到的参数,特殊的请求覆盖这个方法，默认返回vz_httpConfigDefault()
+ */
+- (VZHTTPResponseConfig) responseConfig;
 /**
  *  如果requestType指定为custom，则这个方法要返回第三方request的类名
  *

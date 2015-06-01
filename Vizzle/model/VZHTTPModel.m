@@ -8,7 +8,8 @@
 
 #import "VZHTTPModel.h"
 #import "VZHTTPRequest.h"
-#import "Vizzle.h"
+#import "VZHTTPNetworkConfig.h"
+
 
 
 @interface VZHTTPModel()<VZHTTPRequestDelegate>
@@ -102,27 +103,25 @@
 - (void)loadInternal {
     
     //2, create request
-    NSString* clz = @"";
-    if (self.requestType == VZModelDefault) {
-        clz = @"VZNSURLRequest";
-    }
-    else if (self.requestType == VZModelCustom)
+    Class clz = [VZHTTPRequest class];
+
+    if (self.requestType == VZModelCustom)
     {
-        clz = [self customRequestClassName];
+        NSString* clzName = [self customRequestClassName];
         
-        if (!clz ||clz.length == 0) {
-            clz = @"VZHTTPRequest";
+        if (clzName.length > 0) {
+            clz= NSClassFromString(clzName);
         }
     }
-    else
-        clz = @"VZHTTPRequest";
-    
-    VZHTTPRequestConfig config = [self requestConfig];
-    self.request             = [NSClassFromString(clz) new];
+
+
+    self.request             = [clz new];
     self.request.delegate    = self;
     
     //3, init request
-    [self.request initRequestWithBaseURL:[self methodName] Config:config];
+    [self.request initWithBaseURL:[self methodName]
+                    RequestConfig:[self requestConfig]
+                   ResponseConfig:[self responseConfig]];
     
     
     //4, add request data
@@ -158,6 +157,11 @@
 - (VZHTTPRequestConfig)requestConfig
 {
     return vz_defaultHTTPRequestConfig();
+}
+
+- (VZHTTPResponseConfig)responseConfig
+{
+    return vz_defaultHTTPResponseConfig();
 }
 
 - (NSString* )customRequestClassName

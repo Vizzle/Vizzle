@@ -14,23 +14,23 @@
 
 @property(nonatomic,strong) VZHTTPNetworkAgent* networkAgent;
 @property(nonatomic,strong) VZHTTPRequestGenerator* requestGenerator;
+@property(nonatomic,strong) VZHTTPResponseParser* responseParser;
 @property(nonatomic,strong) NSMutableURLRequest* request;
-@property(nonatomic,strong) NSMutableDictionary* bodyQueries;
-@property(nonatomic,strong) NSMutableDictionary* headerQueries;
 @property(nonatomic,strong) VZHTTPConnectionOperation* operation;
 
 @end
 
 @implementation VZHTTPRequest
 
-@synthesize config          = _config;
+@synthesize requestConfig          = _requestConfig;
+@synthesize responseConfig         = _responseConfig;
 @synthesize delegate        = _delegate;
 @synthesize requestURL      = _requestURL;
 @synthesize responseObject = _responseObject;
 @synthesize responseString = _responseString;
 @synthesize responseError  = _responseError;
 
-- (void)initRequestWithBaseURL:(NSString*)url Config:(VZHTTPRequestConfig)config
+- (void)initWithBaseURL:(NSString*)url RequestConfig:(VZHTTPRequestConfig)requestConfig ResponseConfig:(VZHTTPResponseConfig)responseConfig;
 {
     NSParameterAssert(url);
 
@@ -39,12 +39,14 @@
         return;
     }
     
-    _config           = config;
+    _responseConfig   = responseConfig;
+    _requestConfig    = requestConfig;
     _requestURL       = url;
-    _headerQueries    = [NSMutableDictionary new];
-    _bodyQueries      = [NSMutableDictionary new];
-    
     _requestGenerator = [VZHTTPRequestGenerator generator];
+    _responseParser   = [VZHTTPResponseParser parserWithConfig:responseConfig];
+    _request          = [[_requestGenerator generateRequestWithConfig:requestConfig URLString:url Params:nil] mutableCopy];
+    _operation        = [[VZHTTPConnectionOperation alloc]initWithRequest:_request];
+    _operation.responseParser = _responseParser;
   
 }
 
@@ -61,18 +63,12 @@
     if (!queries) {
         return;
     }
-    [self.requestGenerator addQueryParams:queries EncodingType:self.config.stringEncoding ToRequest:self.request];
+    [self.requestGenerator addQueryParams:queries EncodingType:self.requestConfig.stringEncoding ToRequest:self.request];
 }
 
 
 - (void)load
 {
-    
-    NSURLRequest* request = [self.requestGenerator generateRequestWithConfig:self.config URLString:self.requestURL Params:nil];
-    self.request = [request mutableCopy];
-
-    _operation = [[VZHTTPConnectionOperation alloc]initWithRequest:_request];
-    
     [self requestDidStart];
     
     __weak typeof(self) weakSelf = self;
@@ -94,8 +90,8 @@
         else
             [weakSelf requestDidFailWithError:error];
     }];
-
-
+    
+    [[VZHTTPNetworkAgent sharedInstance].operationQueue addOperation:_operation];
 }
 
 - (void)cancel
@@ -114,11 +110,9 @@
 
 - (void)requestDidStart
 {
-    
     if ([self.delegate respondsToSelector:@selector(requestDidStart:)]) {
         [self.delegate requestDidStart:self];
     }
-    
 }
 
 - (void)requestDidFinish:(id)JSON
@@ -133,7 +127,6 @@
     if ([self.delegate respondsToSelector:@selector(requestDidFailWithError:)]) {
         [self.delegate requestDidFailWithError:error];
     }
-    
 }
 
 
