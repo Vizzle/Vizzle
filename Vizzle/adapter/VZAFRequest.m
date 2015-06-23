@@ -66,7 +66,7 @@
     NSParameterAssert(url);
     
     if (url.length == 0) {
-        [self requestDidFailWithError:[NSError errorWithDomain:VZErrorDomain code:kMethodNameError userInfo:@{NSLocalizedDescriptionKey : @"kMethodNameError"}]];
+        [self requestDidFailWithError:[NSError errorWithDomain:@"VZErrorDomain" code:1 userInfo:@{NSLocalizedDescriptionKey : @"kMethodNameError"}]];
         return;
     }
 

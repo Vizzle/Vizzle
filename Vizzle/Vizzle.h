@@ -31,23 +31,4 @@
 #import "VZListDefaultTextItem.h"
 #import "VZFooterViewFactory.h"
 
-
-#ifdef _AFNETWORKING_
-#import "VZAFRequest.h"
-#endif
-
-
-
-#undef	VZLog
-#define VZLog(fmt,...)\
-NSLog(@"[VZ]-->" fmt, ## __VA_ARGS__); \
-
-#define VZErrorDomain @"TVZErrorDomain"
-
-#define kMethodNameError 999
-#define kParseJSONError 998
-#define kLoginError 997
-#define kRequestTimeout 996
-#define kAFNetworkingError 995
-
 #endif

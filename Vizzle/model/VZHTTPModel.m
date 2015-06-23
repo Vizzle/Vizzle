@@ -55,8 +55,9 @@
     {
         NSString *method = [self methodName];
         
-        if (!method || method.length == 0) {
-            [self requestDidFailWithError:[NSError errorWithDomain:VZErrorDomain code:kMethodNameError userInfo:@{NSLocalizedDescriptionKey:@"Missing Request API"}]];
+        if (!method || method.length == 0)
+        {
+            [self requestDidFailWithError:[NSError errorWithDomain:@"VZErrorDomain" code:1 userInfo:@{NSLocalizedDescriptionKey:@"Missing Request API"}]];
             return NO;
         }
         else
@@ -200,7 +201,7 @@
         }
         else
         {
-            NSError* err = [NSError errorWithDomain:VZErrorDomain code:kParseJSONError userInfo:@{NSLocalizedDescriptionKey:@"Parse JSON Error"}];
+            NSError* err = [NSError errorWithDomain:@"VZErrorDomain" code:2 userInfo:@{NSLocalizedDescriptionKey:@"Parse JSON Error"}];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self didFailWithError:err];

@@ -234,17 +234,15 @@ typedef NS_ENUM(int , ENCODE_TYPE)
 //////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - KVC hooks
 
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
-    VZLog(@"WARNING: Set value for undefiend key %s", [key UTF8String]);
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
 }
 
 - (void)setNilValueForKey:(NSString *)key
 {
-    VZLog(@"WARNING: Set nil value for key %s",  [key UTF8String]);
 }
 
 - (id)valueForUndefinedKey:(NSString *)key {
-    VZLog(@"WARNING: Get value for undefiend key %s", [key UTF8String]);
     return nil;
 }
 @end
