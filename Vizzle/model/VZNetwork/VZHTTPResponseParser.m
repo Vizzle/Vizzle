@@ -7,26 +7,19 @@
 //
 
 #import "VZHTTPResponseParser.h"
-#import "VZHTTPNetworkConfig.h"
+
+
+@interface VZHTTPResponseParser()
+
+@property (nonatomic, strong) NSIndexSet *validStatusCode;
+@property (nonatomic, strong) NSSet *validContentTypes;
+@end
+
 @implementation VZHTTPResponseParser
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - life cycle
-
-+ (instancetype) parserWithConfig:(VZHTTPResponseConfig)config
-{
-    if (config.responseType == VZHTTPNetworkResponseTypeJSON)
-    {
-        return [VZHTTPJSONResponseParser new];
-    }
-    else if(config.responseType == VZHTTPNetworkResponseTypeXML)
-    {
-        return [VZHTTPXMLResponseParser new];
-    }
-    else
-        return [[self class] new];
-}
 
 - (instancetype) init
 {

@@ -11,19 +11,19 @@
 
 
 typedef NSString* (^VZHTTPRequestStringGeneratorBlcok)(NSURLRequest* request,NSDictionary* params,NSError *__autoreleasing *error);
-struct requestConfig;
-typedef struct requestConfig VZHTTPRequestConfig;
+
 
 @interface VZHTTPRequestGenerator : NSObject
 
-+(instancetype) generator;
 
+@property(nonatomic,assign) NSStringEncoding stringEncoding;
 @property(nonatomic,copy) VZHTTPRequestStringGeneratorBlcok requestStringGenerator;
 
 //生成requet
-- (NSURLRequest *)generateRequestWithConfig:(VZHTTPRequestConfig) config
-                                         URLString:(NSString *)aURLString
-                                            Params:(NSDictionary *)aParams;
+- (NSURLRequest *)generateRequestWithURLString:(NSString *)aURLString
+                                        Params:(NSDictionary *)aParams
+                                    HTTPMethod:(NSString* )httpMethod
+                               TimeoutInterval:(NSTimeInterval)timeoutInterval;
 
 //add header params
 - (void)addHeaderParams:(NSDictionary* )params ToRequest:(NSMutableURLRequest* )request;

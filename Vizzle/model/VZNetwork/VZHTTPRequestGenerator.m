@@ -8,8 +8,6 @@
 
 #import "VZHTTPRequestGenerator.h"
 #import "NSString+VZHTTPNetworkUtil.h"
-#import "VZHTTPNetworkConfig.h"
-
 
 @interface VZHTTPRequestQueryStringPair : NSObject
 
@@ -57,7 +55,7 @@
 
 @interface VZHTTPRequestGenerator()
 
-@property(nonatomic,assign) NSStringEncoding stringEncoding;
+
 @property (readwrite, nonatomic, strong) NSMutableDictionary *requestHeaders;
 @property (nonatomic,strong) NSSet* needEncodingMethods;
 
@@ -202,23 +200,20 @@
     [request setValue:[NSString stringWithFormat:@"Token token=\"%@\"", token] forHTTPHeaderField:@"Authorization"];
 }
 
-- (NSURLRequest *)generateRequestWithConfig:(VZHTTPRequestConfig) config
-                                  URLString:(NSString *)aURLString
-                                     Params:(NSDictionary *)aParams
+- (NSURLRequest *)generateRequestWithURLString:(NSString *)aURLString
+                                        Params:(NSDictionary *)aParams
+                                    HTTPMethod:(NSString* )httpMethod
+                               TimeoutInterval:(NSTimeInterval)timeoutInterval
 {
     NSParameterAssert(aURLString);
     NSURL *url = [NSURL URLWithString:aURLString];
-    NSParameterAssert(url);
     NSMutableURLRequest *mutableRequest = [[NSMutableURLRequest alloc] initWithURL:url];
-    NSString* method = vz_httpMethod(config.requestMethod);
-    NSParameterAssert(method);
-    
-    self.stringEncoding = config.stringEncoding; //default is utf-8
-    
+    NSString* method = httpMethod.length == 0?@"GET":httpMethod;
     [mutableRequest setHTTPMethod:method];
-    [mutableRequest setTimeoutInterval:config.requestTimeoutSeconds];
+    NSTimeInterval t = timeoutInterval ==0 ? 15:timeoutInterval;
+    [mutableRequest setTimeoutInterval:t];
     
-     return[[self generateRequest:mutableRequest withParams:aParams error:nil]mutableCopy];
+    return[[self generateRequest:mutableRequest withParams:aParams error:nil]mutableCopy];
 }
 
 - (NSURLRequest*)generateRequest:(NSMutableURLRequest *)aRequest withParams:(NSDictionary *)aParam error:(NSError *__autoreleasing *)aError

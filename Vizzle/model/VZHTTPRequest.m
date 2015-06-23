@@ -42,9 +42,19 @@
     _responseConfig   = responseConfig;
     _requestConfig    = requestConfig;
     _requestURL       = url;
-    _requestGenerator = [VZHTTPRequestGenerator generator];
-    _responseParser   = [VZHTTPResponseParser parserWithConfig:responseConfig];
-    _request          = [[_requestGenerator generateRequestWithConfig:requestConfig URLString:url Params:nil] mutableCopy];
+    
+    if(responseConfig.responseType == VZHTTPNetworkResponseTypeJSON)
+        _responseParser = [VZHTTPJSONResponseParser new];
+    else if (responseConfig.responseType == VZHTTPNetworkResponseTypeXML)
+        _responseParser = [VZHTTPXMLResponseParser new];
+    else
+        _responseParser = [VZHTTPResponseParser new];
+    
+    _requestGenerator = [VZHTTPRequestGenerator new];
+    _requestGenerator.stringEncoding = requestConfig.stringEncoding;
+    _request = [[_requestGenerator generateRequestWithURLString:url
+                                                        Params:nil
+                                                    HTTPMethod:vz_httpMethod(requestConfig.requestMethod) TimeoutInterval:requestConfig.requestTimeoutSeconds] mutableCopy];
     _operation        = [[VZHTTPConnectionOperation alloc]initWithRequest:_request];
     _operation.responseParser = _responseParser;
   
