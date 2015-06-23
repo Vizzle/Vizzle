@@ -42,21 +42,36 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    return [super initWithCoder:aDecoder];
+    self =  [super initWithCoder:aDecoder];
+    
+    if (self) {
+        
+        _modelDictInternal = [NSMutableDictionary new];
+        _states = [NSMutableDictionary new];
+        _lock = OS_SPINLOCK_INIT;
+        _uuid = [[NSUUID UUID] UUIDString];
+    }
+    return self;
 
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-}
-
-- (id)init {
-    if (self = [super init]) {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    if (self) {
+        
         _modelDictInternal = [NSMutableDictionary new];
         _states = [NSMutableDictionary new];
         _lock = OS_SPINLOCK_INIT;
         _uuid = [[NSUUID UUID] UUIDString];
+    }
+    return self;
+}
+
+- (id)init {
+    if (self = [super init]) {
+
         
     }
     return self;
