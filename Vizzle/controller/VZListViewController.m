@@ -130,6 +130,13 @@
     return self;
 }
 
+- (void)dealloc
+{
+    _tableView.delegate = nil;
+    _tableView.dataSource = nil;
+    _delegate = nil;
+    _dataSource = nil;
+}
 
 - (void)loadView
 {

@@ -17,9 +17,11 @@
  */
 @protocol VZListPullToRefreshViewDelegate <NSObject>
 
-@required
+@optional
 - (void)scrollviewDidScroll:(UIScrollView*)scrollview;
 - (void)scrollviewDidEndDragging:(UIScrollView*)scrollview;
+
+@required
 - (void)startRefreshing;
 - (void)stopRefreshing;
 @end
