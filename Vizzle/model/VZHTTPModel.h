@@ -102,7 +102,12 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
  *  VZModel=>1.2
  */
 @property(nonatomic,strong,readonly) NSString* responseString;
-
+/**
+ * 返回的response object是否是从cache中获取的
+ *
+ */
+@property(nonatomic,assign,readonly) BOOL isResponseObjectFromCache;
+ 
 
 
 @end
@@ -115,5 +120,4 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
 - (void)loadInternal;
 
 @end
-
 

@@ -171,16 +171,12 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
             id response = nil;
             
             VZHTTPURLResponseItem* cacheUrlItem = (VZHTTPURLResponseItem*)object;
-            
-            // check if the timeout
+
             if(cacheUrlItem)
             {
                 //校验时间，如果cache的时间策略为none，则不校验
                 
                 if (cacheUrlItem.expireInterval == 0) {
-                    
-                    NSLog(@"read from cache:%@",identifier);
-                    
                     response =  cacheUrlItem.response;
                 }
                 else
@@ -195,7 +191,6 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
                     NSTimeInterval now=[currdate timeIntervalSince1970]*1;
                     
                     NSTimeInterval cha=now-last;
-                    
                     
                     //not timeout
                     if(cha < cacheUrlItem.expireInterval)
@@ -244,15 +239,24 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
 
 - (BOOL)hasCache:(id<VZHTTPRequestInterface>)request
 {
-    //todo
-    return false;
+    NSString* cachedKey = [self cachedKeyForVZHTTPRequest:request];
+    NSString* key = [self keyForURLString:cachedKey];
+    if ([_memCache objectForKey:key]) {
+        return true;
+    }
+    else if ([_cachePlist objectForKey:key])
+    {
+        return true;
+    }
+    else
+        return false;
 }
 
 - (NSString* )cachedKeyForVZHTTPRequest:(id<VZHTTPRequestInterface>)request
 {
     NSString* urlString = request.requestURL;
-    return urlString;
-    
+    NSDictionary* queries = request.queries;
+    return [urlString stringByAppendingString:queries?[queries description]:@""];
 }
 
 
@@ -266,7 +270,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
 {
     NSString* key = [self keyForURLString : identifier];
    
-    [_memCache setObject:data forKey:identifier];
+    [_memCache setObject:data forKey:key];
 
     [self saveResponse:data forKey:key];
 
@@ -324,7 +328,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
         
         if ([_cachePlist objectForKey:key]) {
                 
-                [self deleteResponseForKey:key];
+            [self deleteResponseForKey:key];
         }
     });
 }
@@ -343,9 +347,6 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
             [self deleteResponseForKey:key];
         }
     });
-    
-
-
 }
 
 
@@ -363,7 +364,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
     
     const char *cStr = [urlStr UTF8String];
     unsigned char digest[16];
-    CC_MD5( cStr, strlen(cStr), digest ); // This is the md5 call
+    CC_MD5( cStr, (CC_LONG)strlen(cStr), digest ); // This is the md5 call
     
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
     
@@ -396,7 +397,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
         
         //update plist
         [_cachePlist setObject:[NSDate date] forKey:key];
-        [_cachePlist writeToFile:[self cachePathForKey:@"ETUrlCache.plist"] atomically:YES];
+        [_cachePlist writeToFile:[self cachePathForKey:@"VZUrlCache.plist"] atomically:YES];
         
     });
 
@@ -418,7 +419,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
     dispatch_barrier_async(_barrierQueue, ^{
         
         [_cachePlist removeObjectForKey:key];
-        [_cachePlist writeToFile:[self cachePathForKey:@"ETUrlCache.plist"] atomically:YES];
+        [_cachePlist writeToFile:[self cachePathForKey:@"VZUrlCache.plist"] atomically:YES];
         
         [[NSFileManager defaultManager] removeItemAtPath:[self cachePathForKey:key] error:nil];
    

@@ -58,5 +58,12 @@
     return ret;
 }
 
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.cachePolicy=VZHTTPNetworkURLCachePolicyDefault;
+    return config;
+}
+
 @end
 

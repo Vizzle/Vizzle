@@ -54,7 +54,7 @@
         NSString *method = [self methodName];
         
         if (!method || method.length == 0) {
-            [self requestDidFailWithError:[NSError errorWithDomain:@"VZErrorDomain" code:1 userInfo:@{NSLocalizedDescriptionKey:@"Missing Request API"}]];
+            [self request:self.request DidFailWithError:[NSError errorWithDomain:@"VZErrorDomain" code:1 userInfo:@{NSLocalizedDescriptionKey:@"Missing Request API"}]];
             return NO;
         }
         else
@@ -187,18 +187,19 @@
 
 - (void)requestDidStart:(id<VZHTTPRequestInterface>)request
 {
-   // NSLog(@"[%@]-->REQUEST_START:%@",self.class,request.requestURL);
+    NSLog(@"[%@]-->REQUEST_START:%@",self.class,request.requestURL);
     
     [self didStartLoading];
 }
 
 
-- (void)requestDidFinish:(id)JSON
+- (void)request:(id<VZHTTPRequestInterface>) request DidFinish:(id)JSON
 {
-    _responseString = self.request.responseString;
-    _responseObject = self.request.responseObject;
+    _responseString = request.responseString;
+    _responseObject = request.responseObject;
+    _isResponseObjectFromCache = request.isCachedResponse;
     
-   // NSLog(@"[%@]-->REQUEST_FINISH:%@",self.class,JSON);
+    NSLog(@"[%@]-->REQUEST_FINISH:%@",self.class,JSON);
 
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -221,13 +222,13 @@
         }
     });
 }
-- (void)requestDidFailWithError:(NSError *)error
+- (void)request:(id<VZHTTPRequestInterface>) request DidFailWithError:(NSError *)error
 {
-    //NSLog(@"[%@]-->REQUEST_FAILED:%@",self.class,error);
+    NSLog(@"[%@]-->REQUEST_FAILED:%@",self.class,error);
     
     
-    _responseString = self.request.responseString;
-    _responseObject = self.request.responseObject;
+    _responseString = request.responseString;
+    _responseObject = request.responseObject;
 
     [self didFailWithError:error];
 }

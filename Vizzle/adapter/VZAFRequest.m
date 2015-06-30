@@ -200,15 +200,15 @@
 
 - (void)requestDidFinish:(id)JSON
 {
-    if ([self.delegate respondsToSelector:@selector(requestDidFinish:)]) {
-        [self.delegate requestDidFinish:JSON];
+    if ([self.delegate respondsToSelector:@selector(request:DidFinish:)]) {
+        [self.delegate request:self DidFinish:JSON];
     }
 }
 
 - (void)requestDidFailWithError:(NSError* )error
 {
     if ([self.delegate respondsToSelector:@selector(requestDidFailWithError:)]) {
-        [self.delegate requestDidFailWithError:error];
+        [self.delegate request:self DidFailWithError:error];
     }
 
 }

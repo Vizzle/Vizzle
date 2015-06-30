@@ -9,7 +9,7 @@
 #ifndef VZNetworkTest_VZHTTPNetworkAssert_h
 #define VZNetworkTest_VZHTTPNetworkAssert_h
 
-typedef NS_ENUM (int, VZHTTPNetworkURLCachePolicy)
+typedef NS_ENUM (NSUInteger, VZHTTPNetworkURLCachePolicy)
 {
     VZHTTPNetworkURLCachePolicyNone = 0,
     VZHTTPNetworkURLCachePolicyDefault = 1,
@@ -17,7 +17,7 @@ typedef NS_ENUM (int, VZHTTPNetworkURLCachePolicy)
     VZHTTPNetworkURLCachePolicyOnlyWriting=3
 };
 
-typedef NS_ENUM (int, VZHTTPNetworkURLCacheTime)
+typedef NS_ENUM (NSUInteger, VZHTTPNetworkURLCacheTime)
 {
     VZHTTPNetworkURLCacheTimeNone = 0,
     VZHTTPNetworkURLCacheTime30Sec = 30,

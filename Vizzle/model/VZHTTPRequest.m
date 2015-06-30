@@ -34,6 +34,7 @@
 @synthesize responseObject = _responseObject;
 @synthesize responseString = _responseString;
 @synthesize responseError  = _responseError;
+@synthesize isCachedResponse = _isCachedResponse;
 
 - (void)initWithBaseURL:(NSString*)url RequestConfig:(VZHTTPRequestConfig)requestConfig ResponseConfig:(VZHTTPResponseConfig)responseConfig;
 {
@@ -87,14 +88,12 @@
 - (void)load
 {
     [self requestDidStart];
-    
-    //add cache logic
-    [self loadHTTP];
-    
+    [self checkCache];
 }
 
 - (void)loadHTTP
 {
+    _isCachedResponse = NO;
     __weak typeof(self) weakSelf = self;
     [_operation setCompletionHandler:^(VZHTTPConnectionOperation *op, NSString *responseString, id responseObj, NSError *error) {
         
@@ -110,6 +109,7 @@
         
         if (!error) {
             [weakSelf requestDidFinish:responseObj];
+            [weakSelf saveCache:responseObj];
         }
         else
             [weakSelf requestDidFailWithError:error];
@@ -121,6 +121,61 @@
 - (void)cancel
 {
     [self.operation cancel];
+}
+
+- (void)checkCache
+{
+    VZHTTPRequestConfig config = [self requestConfig];
+    if (config.cachePolicy == VZHTTPNetworkURLCachePolicyOnlyReading ||
+        config.cachePolicy == VZHTTPNetworkURLCachePolicyDefault)
+    {
+        
+        id<VZHTTPResponseDataCacheInterface> cache = [self globalCache];
+        
+        NSString* key = [cache cachedKeyForVZHTTPRequest:self];
+        
+        if ([cache hasCache:key]) {
+            
+            [cache cachedResponseForUrlString:key completion:^(NSError *err, id object) {
+                
+                if (!err) {
+                    
+                    _isCachedResponse = YES;
+                    [self requestDidFinish:object];
+                    
+                    if (config.cachePolicy == VZHTTPNetworkURLCachePolicyDefault) {
+                        
+                        [self loadHTTP];
+                    }
+                }
+                else
+                {
+                    [self loadHTTP];
+                }
+                
+            }];
+        }
+        else
+        {
+            [self loadHTTP];
+        }
+        
+    }
+}
+
+- (void)saveCache:(id)object
+{
+    //save cache
+    VZHTTPRequestConfig config = [self requestConfig];
+    if (config.cachePolicy == VZHTTPNetworkURLCachePolicyOnlyWriting ||
+        config.cachePolicy == VZHTTPNetworkURLCachePolicyDefault) {
+    
+        NSTimeInterval t = config.cacheTime;
+        id<VZHTTPResponseDataCacheInterface> cache = [self globalCache];
+        NSString* cachedKey = [cache cachedKeyForVZHTTPRequest:self];
+        [cache saveResponse:object WithUrlString:cachedKey ExpireTime:t];
+    
+    }
 }
 
 - (id<VZHTTPResponseDataCacheInterface>)globalCache
@@ -146,15 +201,15 @@
 
 - (void)requestDidFinish:(id)JSON
 {
-    if ([self.delegate respondsToSelector:@selector(requestDidFinish:)]) {
-        [self.delegate requestDidFinish:JSON];
+    if ([self.delegate respondsToSelector:@selector(request:DidFinish:)]) {
+        [self.delegate request:self DidFinish:JSON];
     }
 }
 
 - (void)requestDidFailWithError:(NSError* )error
 {
-    if ([self.delegate respondsToSelector:@selector(requestDidFailWithError:)]) {
-        [self.delegate requestDidFailWithError:error];
+    if ([self.delegate respondsToSelector:@selector(request:DidFailWithError:)]) {
+        [self.delegate request:self DidFailWithError:error];
     }
 }
 
