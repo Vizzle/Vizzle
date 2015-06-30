@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "VZHTTPNetworkConfig.h"
-
+#import "VZHTTPResponseDataCacheInterface.h"
 
 @protocol VZHTTPRequestInterface;
 
@@ -25,12 +25,15 @@
 @protocol VZHTTPRequestInterface <NSObject>
 
 @property (nonatomic,strong) NSString* requestURL;
+@property (nonatomic,strong) NSDictionary* queries;
+@property (nonatomic,strong) NSDictionary* headerParams;
 @property (nonatomic,assign) VZHTTPRequestConfig requestConfig;
 @property (nonatomic,assign) VZHTTPResponseConfig responseConfig;
 @property (nonatomic,weak) id<VZHTTPRequestDelegate> delegate;
 @property (nonatomic,strong,readonly) NSString* responseString;
 @property (nonatomic,strong,readonly) id responseObject;
 @property (nonatomic,strong,readonly) NSError* responseError;
+
 
 /**
  *  创建请求的request
@@ -62,6 +65,11 @@
  *  取消请求
  */
 - (void)cancel;
+/**
+ *  HTTP缓存
+ */
+- (id<VZHTTPResponseDataCacheInterface>)globalCache;
+
 
 @end
 

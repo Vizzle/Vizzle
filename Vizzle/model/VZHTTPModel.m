@@ -10,8 +10,6 @@
 #import "VZHTTPRequest.h"
 #import "VZHTTPNetworkConfig.h"
 
-
-
 @interface VZHTTPModel()<VZHTTPRequestDelegate>
 
 @property(nonatomic,strong) id<VZHTTPRequestInterface> request;
@@ -55,8 +53,7 @@
     {
         NSString *method = [self methodName];
         
-        if (!method || method.length == 0)
-        {
+        if (!method || method.length == 0) {
             [self requestDidFailWithError:[NSError errorWithDomain:@"VZErrorDomain" code:1 userInfo:@{NSLocalizedDescriptionKey:@"Missing Request API"}]];
             return NO;
         }
@@ -85,38 +82,36 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - public methods
 
-- (void)setRequestParam:(id)value forKey:(id <NSCopying>)key;
-{
-    if (value && key) {
-        [self.requestParams setObject:value forKey:key];
-    }
-}
-- (void)removeRequestParamForKey:(id <NSCopying>)key
-{
-    if (key) {
-        [self.requestParams removeObjectForKey:key];
-    }
-}
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - private methods
 
 - (void)loadInternal {
     
-    //2, create request
-    Class clz = [VZHTTPRequest class];
-
     if (self.requestType == VZModelCustom)
     {
         NSString* clzName = [self customRequestClassName];
         
         if (clzName.length > 0) {
-            clz= NSClassFromString(clzName);
+            self.request = [[NSClassFromString(clzName) alloc]init];
+        }
+        else
+        {
+            self.request = [[VZHTTPRequest alloc]init];
         }
     }
-
-
-    self.request             = [clz new];
+    else
+    {
+        self.request = [self createRequest];
+    }
+    
+    
+    //1, prepareRequest
+    [self prepareRequest];
+    
+    
+    //2, set delegate
     self.request.delegate    = self;
     
     //3, init request
@@ -128,10 +123,9 @@
     //4, add request data
     [self.request addHeaderParams:[self headerParams]];
     [self.request addQueries:[self dataParams]];
-
-    //5, start loading
+    
+    //5, load data
     [self.request load];
- 
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -170,13 +164,30 @@
     return @"VZHTTPRequest";
 }
 
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - subclassing hooks
+
+- (id<VZHTTPRequestInterface>)createRequest
+{
+    return [VZHTTPRequest new];
+}
+
+
+- (void)prepareRequest
+{
+    
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - request callback
 
 
 - (void)requestDidStart:(id<VZHTTPRequestInterface>)request
 {
-    NSLog(@"[%@]-->REQUEST_START:%@",self.class,request.requestURL);
+   // NSLog(@"[%@]-->REQUEST_START:%@",self.class,request.requestURL);
     
     [self didStartLoading];
 }
@@ -187,13 +198,13 @@
     _responseString = self.request.responseString;
     _responseObject = self.request.responseObject;
     
-    NSLog(@"[%@]-->REQUEST_FINISH:%@",self.class,JSON);
+   // NSLog(@"[%@]-->REQUEST_FINISH:%@",self.class,JSON);
 
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
        
         if ([self parseResponse:JSON]) {
-            
+        
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self didFinishLoading];
             });
@@ -212,7 +223,7 @@
 }
 - (void)requestDidFailWithError:(NSError *)error
 {
-    NSLog(@"[%@]-->REQUEST_FAILED:%@",self.class,error);
+    //NSLog(@"[%@]-->REQUEST_FAILED:%@",self.class,error);
     
     
     _responseString = self.request.responseString;

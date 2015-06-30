@@ -6,9 +6,18 @@
 //  Copyright (c) 2013年 etao. All rights reserved.
 //
 
-#import "VZHTTPURLResponseDataCache.h"
+#import "VZHTTPResponseDataCache.h"
 #import <CommonCrypto/CommonCrypto.h>
 
+@interface VZHTTPURLResponseItem : NSObject<NSCoding>
+
+@property(nonatomic,strong) NSDate*        triggerDate;
+@property(nonatomic,assign) NSTimeInterval expireInterval;
+@property(nonatomic,strong) NSString*      identifier;
+@property(nonatomic,strong) id             response;
+@property(nonatomic,strong) NSString*      responseStr;
+
+@end
 
 @implementation VZHTTPURLResponseItem
 
@@ -46,7 +55,7 @@
 
 const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
 
-@interface VZHTTPURLResponseDataCache() <NSCacheDelegate>
+@interface VZHTTPResponseDataCache() <NSCacheDelegate>
 {
     dispatch_queue_t _barrierQueue;
 }
@@ -58,15 +67,15 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
 
 @end
 
-@implementation VZHTTPURLResponseDataCache
+@implementation VZHTTPResponseDataCache
 
 + (instancetype) sharedInstance
 {
-    static VZHTTPURLResponseDataCache* urlCache = nil;
+    static VZHTTPResponseDataCache* urlCache = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        urlCache = [VZHTTPURLResponseDataCache new];
+        urlCache = [VZHTTPResponseDataCache new];
     });
     return urlCache;
 }
@@ -230,6 +239,20 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
     
     //序列化
     [self cacheData:cacheItem forUrlString:identifier];
+}
+
+
+- (BOOL)hasCache:(id<VZHTTPRequestInterface>)request
+{
+    //todo
+    return false;
+}
+
+- (NSString* )cachedKeyForVZHTTPRequest:(id<VZHTTPRequestInterface>)request
+{
+    NSString* urlString = request.requestURL;
+    return urlString;
+    
 }
 
 

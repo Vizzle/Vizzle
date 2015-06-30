@@ -20,8 +20,12 @@
 @property(nonatomic,assign) float progress;
 @end
 
+@interface VZListRefreshControl : UIRefreshControl<VZListPullToRefreshViewDelegate>
+@property(nonatomic,weak) VZListViewController* controller;
+@end
+
 @interface VZListViewDelegate()
-@property(nonatomic,strong) VZListDefaultPullRefreshView* pullRefreshViewInternal;
+@property(nonatomic,strong) VZListRefreshControl* pullRefreshViewInternal;
 @end
 
 
@@ -44,13 +48,12 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - getters
 
-- (VZListDefaultPullRefreshView*)pullRefreshViewInternal
+- (VZListRefreshControl*)pullRefreshViewInternal
 {
     if (!_pullRefreshViewInternal) {
-        
-        CGRect bounds = self.controller.tableView.bounds;
-        _pullRefreshViewInternal=  [[VZListDefaultPullRefreshView alloc]initWithFrame:CGRectMake(0, -44, bounds.size.width, 44)];
-        _pullRefreshViewInternal.backgroundColor = self.controller.tableView.backgroundColor;
+        _pullRefreshViewInternal=  [[VZListRefreshControl alloc]init];
+        // 如果设置背景色，位置将会随着下拉改变，否则定在原地
+//        _pullRefreshViewInternal.backgroundColor = self.controller.tableView.backgroundColor;
         _pullRefreshViewInternal.controller = self.controller;
         [self.controller.tableView addSubview:_pullRefreshViewInternal];
     }
@@ -190,7 +193,7 @@
 - (void)scrollViewDidEndDragging:(UIScrollView*)scrollView willDecelerate:(BOOL)decelerate
 {
     //下拉刷新
-    if (self.controller.needPullRefresh) {
+    if (self.controller.needPullRefresh && [self.pullRefreshView respondsToSelector:@selector(scrollviewDidEndDragging:)]) {
         [self.pullRefreshView scrollviewDidEndDragging:scrollView];
         
     }
@@ -200,12 +203,16 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView*)scrollView
 {
+    if (self.controller.needPullRefresh && [self.pullRefreshView respondsToSelector:@selector(scrollViewDidEndDecelerating:)]) {
+        [self.pullRefreshView scrollViewDidEndDecelerating:scrollView];
+    }
+    
     [self.controller scrollViewDidEndDecelerating:scrollView];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (self.controller.needPullRefresh) {
+    if (self.controller.needPullRefresh && [self.pullRefreshView respondsToSelector:@selector(scrollviewDidScroll:)]) {
         [self.pullRefreshView scrollviewDidScroll:scrollView];
     }
     
@@ -407,5 +414,48 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
 {
 }
 
+
+@end
+
+
+@implementation VZListRefreshControl
+
+// Make sure to be called in every init method
+- (void)initialize {
+    self.tintColor = [UIColor grayColor];
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self initialize];
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self initialize];
+    }
+    return self;
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollview {
+    if (self.isRefreshing) {
+            //通知controller
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+        [self.controller performSelector:@selector(pullRefreshDidTrigger) withObject:nil];
+#pragma clang diagnostic pop
+    }
+}
+
+- (void)startRefreshing {
+    [self beginRefreshing];
+}
+
+- (void)stopRefreshing {
+    [self endRefreshing];
+}
 
 @end

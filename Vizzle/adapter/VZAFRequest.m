@@ -41,7 +41,6 @@
 #endif
 
 @property(nonatomic,strong) NSString* url;
-@property(nonatomic,copy) NSDictionary* queries;
 #ifdef _AFNETWORKING_
 @property(nonatomic,strong) NSURLSessionTask* currentTask;
 #endif
@@ -54,6 +53,8 @@
 @synthesize responseConfig = _responseConfig;
 @synthesize delegate       = _delegate;
 @synthesize requestURL     = _requestURL;
+@synthesize queries        = _queries;
+@synthesize headerParams   = _headerParams;
 @synthesize responseObject = _responseObject;
 @synthesize responseString = _responseString;
 @synthesize responseError  = _responseError;

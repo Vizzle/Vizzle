@@ -178,14 +178,15 @@
    
         if (self.pageMode == VZPageModePageDefault) {
             _hasMore = list.count > 0;
-            
         }
         else if (self.pageMode == VZPageModePageReturnCount){
             _hasMore = list.count == self.pageSize;
         }
-        else{
+        else if(self.pageMode == VZPageModePageCustomize){
             _hasMore = self.pageSize*self.currentPageIndex < self.totalCount;
         }
+        else
+            _hasMore = NO;
         
         if (list.count > 0) {
             [self.objects addObjectsFromArray:list];

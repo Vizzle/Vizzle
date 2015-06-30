@@ -8,7 +8,7 @@
 
 #import "VZModel.h"
 #import "VZHTTPNetworkConfig.h"
-
+#import "VZHTTPResponseDataCacheInterface.h"
 /**
  *  model的http请求类型
  */
@@ -84,9 +84,6 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
 
 
 @interface VZHTTPModel : VZModel<VZHTTPModel>
-
-
-
 /**
  *  model的请求类型
  *
@@ -106,20 +103,6 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
  */
 @property(nonatomic,strong,readonly) NSString* responseString;
 
-/**
- *  增加model的请求参数
- *
- *  VZModel => 1.4
- *
- */
-- (void)setRequestParam:(id)value forKey:(id <NSCopying>)key;
-/**
- *  去掉model的参数
- *
- *  VZModel => 1.4
- *
- */
-- (void)removeRequestParamForKey:(id <NSCopying>)key;
 
 
 @end
@@ -132,3 +115,5 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
 - (void)loadInternal;
 
 @end
+
+

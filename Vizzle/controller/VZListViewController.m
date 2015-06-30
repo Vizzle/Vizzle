@@ -153,6 +153,12 @@
 }
 - (void)viewDidUnload
 {
+    _tableView.delegate  =nil;
+    _tableView.dataSource = nil;
+    _tableView.tableFooterView = nil;
+    _tableView.tableHeaderView = nil;
+    _tableView = nil;
+    
     [super viewDidUnload];
     
     
@@ -281,7 +287,11 @@
         
         if (model.sectionNumber == [self.tableView.dataSource numberOfSectionsInTableView:self.tableView]-1) {
          
-            self.tableView.tableFooterView =  [VZFooterViewFactory loadingFooterView:CGRectMake(0, 0,CGRectGetWidth(self.tableView.bounds), 44) Text:@"努力加载中..."];
+            if (self.footerViewLoading) {
+                self.tableView.tableFooterView = self.footerViewLoading;
+            }
+            else
+                self.tableView.tableFooterView =  [VZFooterViewFactory loadingFooterView:CGRectMake(0, 0,CGRectGetWidth(self.tableView.bounds), 44) Text:@"努力加载中..."];
         }
         else{
             
@@ -317,8 +327,7 @@
     [self reloadTableView];
     
     //VZMV* => 1.1 : reset footer view
-    self.tableView.tableFooterView = [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 1) Text:@""];
-    
+    [self showComplete:model];
   
     [self endRefreshing];
     
@@ -333,7 +342,10 @@
     if (model == _keyModel) {
         
         //VZMV* => 1.1 : 翻页出错的时候底部展示错误内容
-        self.tableView.tableFooterView =  [VZFooterViewFactory errorFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 44) Text:@"加载失败"];
+        if(self.footerViewError)
+            self.tableView.tableFooterView = self.footerViewError;
+        else
+            self.tableView.tableFooterView =  [VZFooterViewFactory errorFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 44) Text:@"加载失败"];
         
     }
     else
@@ -398,6 +410,9 @@
         VZHTTPListModel* model = (VZHTTPListModel*)obj;
         
         if ([key isEqualToString : targetKey]) {
+            
+            [self.dataSource removeAllItems];
+            [self reloadTableView];
             [model load];
         }
     }];
@@ -436,7 +451,12 @@
     
     
     if (model == _keyModel) {
-        self.tableView.tableFooterView = [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 44) Text:@"没有结果"];
+        
+        if (self.footerViewNoResult) {
+            self.tableView.tableFooterView = self.footerViewNoResult;
+        }
+        else
+            self.tableView.tableFooterView = [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 44) Text:@"没有结果"];
     }
     else
     {
@@ -458,9 +478,13 @@
 - (void)showComplete:(VZHTTPListModel *)model
 {
     NSLog(@"[%@]-->showComplete:{section:%ld}",[self class],(long)model.sectionNumber);
-    
+
     if (model == _keyModel) {
-        self.tableView.tableFooterView =  [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 1) Text:@""];
+        
+        if(self.footerViewComplete)
+            self.tableView.tableFooterView = self.footerViewComplete;
+        else
+            self.tableView.tableFooterView = [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 1) Text:@""];
     }
     else
     {

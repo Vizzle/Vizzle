@@ -9,9 +9,12 @@
 #import "VZHTTPRequest.h"
 #import "VZHTTPNetwork.h"
 #import "VZHTTPNetworkConfig.h"
+#import "VZHTTPResponseDataCache.h"
 
 @interface VZHTTPRequest()
+{
 
+}
 @property(nonatomic,strong) VZHTTPNetworkAgent* networkAgent;
 @property(nonatomic,strong) VZHTTPRequestGenerator* requestGenerator;
 @property(nonatomic,strong) VZHTTPResponseParser* responseParser;
@@ -24,6 +27,8 @@
 
 @synthesize requestConfig          = _requestConfig;
 @synthesize responseConfig         = _responseConfig;
+@synthesize queries         = _queries;
+@synthesize headerParams    = _headerParams;
 @synthesize delegate        = _delegate;
 @synthesize requestURL      = _requestURL;
 @synthesize responseObject = _responseObject;
@@ -65,6 +70,7 @@
     if (!params) {
         return;
     }
+    _headerParams = [params copy];
     [self.requestGenerator addHeaderParams:params ToRequest:self.request];
 }
 
@@ -73,6 +79,7 @@
     if (!queries) {
         return;
     }
+    _queries = [queries copy];
     [self.requestGenerator addQueryParams:queries EncodingType:self.requestConfig.stringEncoding ToRequest:self.request];
 }
 
@@ -81,17 +88,24 @@
 {
     [self requestDidStart];
     
+    //add cache logic
+    [self loadHTTP];
+    
+}
+
+- (void)loadHTTP
+{
     __weak typeof(self) weakSelf = self;
     [_operation setCompletionHandler:^(VZHTTPConnectionOperation *op, NSString *responseString, id responseObj, NSError *error) {
-       
+        
         __strong typeof(weakSelf) strongSelf = weakSelf;
         
         if (strongSelf) {
-                
+            
             strongSelf -> _responseString = [responseString copy];
             strongSelf -> _responseObject = responseObj;
             strongSelf -> _responseError = error;
-
+            
         }
         
         if (!error) {
@@ -107,6 +121,11 @@
 - (void)cancel
 {
     [self.operation cancel];
+}
+
+- (id<VZHTTPResponseDataCacheInterface>)globalCache
+{
+    return [VZHTTPResponseDataCache sharedInstance];
 }
 
 

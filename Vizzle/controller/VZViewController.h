@@ -14,8 +14,7 @@
 {
 @protected
     NSMutableDictionary* _modelDictInternal;
-@protected
-    BOOL _receiveMemoryWarning;
+
 }
 
 /**

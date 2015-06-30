@@ -24,6 +24,13 @@
 @property(nonatomic,strong) VZListViewDataSource* dataSource;
 @property(nonatomic,strong) VZListViewDelegate*   delegate;
 /**
+ * 自定义的footerView
+ */
+@property(nonatomic,strong)UIView* footerViewLoading;
+@property(nonatomic,strong)UIView* footerViewComplete;
+@property(nonatomic,strong)UIView* footerViewError;
+@property(nonatomic,strong)UIView* footerViewNoResult;
+/**
  *  keyModel:@REQUIRED : 用来翻页的model，必须不为空
  */
 @property(nonatomic,strong) VZHTTPListModel* keyModel;
@@ -43,6 +50,8 @@
  *  model reload的时候是否清空当前数据,默认为YES
  */
 @property(nonatomic,assign) BOOL clearItemsWhenModelReload;
+
+
 
 /**
  *  加载更多Model数据，例如下一页

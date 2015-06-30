@@ -63,7 +63,7 @@ typedef NS_ENUM(int , ENCODE_TYPE)
 + (NSSet* )propertyNames
 {
     NSSet *cachedKeys = objc_getAssociatedObject(self, VZItemCachedPropertyKeysKey);
-	if (cachedKeys != nil) return cachedKeys;
+	if (cachedKeys.count > 0 ) return cachedKeys;
     
     NSMutableSet* set = [NSMutableSet new];
     unsigned int outCount, i;
@@ -157,8 +157,22 @@ typedef NS_ENUM(int , ENCODE_TYPE)
         
     }
     free(properties);
+}
+
+- (void)autoMapTo:(id)object
+{
+    NSSet* set = [[self class] propertyNames];
     
+    for (NSString* propertyName in set) {
+        
+        id val = [object valueForKey:propertyName];
     
+        if ([val isEqual:[NSNull null]]) {
+            continue;
+        }
+        
+        [self setValue:val forKey:propertyName];
+    }
 }
 
 - (NSDictionary* )toDictionary
@@ -234,12 +248,13 @@ typedef NS_ENUM(int , ENCODE_TYPE)
 //////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - KVC hooks
 
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key
-{
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+   
 }
 
 - (void)setNilValueForKey:(NSString *)key
 {
+
 }
 
 - (id)valueForUndefinedKey:(NSString *)key {
