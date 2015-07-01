@@ -6,23 +6,33 @@
 	<dict>
 		<key>Pods-AFNetworking.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-VZInspector.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2F65D05FC2884EDDA157DF57</key>
+		<key>113579A76739E2E47BDF5B00</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>822571C8B896472DB0AC8B5B</key>
+		<key>3D8DBEC2719616F7B84C3DA2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E201C307719A3BE12EBCF0F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

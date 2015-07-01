@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import <VZInspector/VZInspector.h>
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    [VZInspector setClassPrefixName:@"VZ"];
+    [VZInspector setShouldHandleCrash:true];
+    [VZInspector setShouldHookNetworkRequest:true];
+    [VZInspector showOnStatusBar];
+    
     return YES;
 }
 
