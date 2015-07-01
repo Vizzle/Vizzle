@@ -89,5 +89,12 @@
     return titleLabel;
 }
 
++ (UIView* )emptyFooterView
+{
+    UIView* v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 1)];
+    v.backgroundColor = [UIColor clearColor];
+    return v;
+}
+
 
 @end

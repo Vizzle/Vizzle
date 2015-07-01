@@ -167,14 +167,14 @@
 }
 
 
-- (BOOL)parseResponse:(id)JSON
+- (BOOL)parseResponse:(id)response
 {
-    if (![super parseResponse:JSON]) {
+    if (![super parseResponse:response]) {
         return NO;
     }
     else
     {
-        NSArray* list = [self responseObjects:JSON];
+        NSArray* list = [self responseObjects:response];
    
         if (self.pageMode == VZPageModePageDefault) {
             _hasMore = list.count > 0;
@@ -198,7 +198,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - protocol methods
 
-- (NSMutableArray* )responseObjects:(id)JSON
+- (NSMutableArray* )responseObjects:(id)response
 {
     return nil;
 }

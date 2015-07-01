@@ -31,7 +31,7 @@ typedef NS_OPTIONS(NSUInteger, VZPageMode) {
 @protocol VZHTTPListModel <VZHTTPModel>
 
 @optional
-- (NSMutableArray* )responseObjects:(id)JSON;
+- (NSMutableArray* )responseObjects:(id)response;
 
 @end
 

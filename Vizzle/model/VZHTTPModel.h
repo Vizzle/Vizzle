@@ -29,7 +29,6 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
 @protocol VZHTTPModel <NSObject>
 
 @required
-
 /**
  *  querys
  *
@@ -49,15 +48,16 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
  */
 - (NSString *)methodName;
 /**
- *  解析JSON RESPONSE，并返回结果给Model来处理
- *  如果解析JSON错误，请设置error，并返回nil
+ *  解析返回的response
  *
- *  @param JSON 请求返回的JSON结果
- *  @param error 如果解析JSON错误，请设置error
+ *  @param response 可以是任意类型，可能是JSON，XML，或某个具体的对象
  *
- *  @return NSArray
+ *  @return 解析成功或失败
+ * 
+ *  @notice:这个方法在子线程执行，使用主线程API要注意
+ *
  */
-- (BOOL)parseResponse:(id)JSON;
+- (BOOL)parseResponse:(id)response;
 
 @optional
 
@@ -103,7 +103,9 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
  */
 @property(nonatomic,strong,readonly) NSString* responseString;
 /**
- * 返回的response object是否是从cache中获取的
+ *  返回的response object是否是从cache中获取的
+ *
+ *  default is no
  *
  */
 @property(nonatomic,assign,readonly) BOOL isResponseObjectFromCache;

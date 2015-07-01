@@ -15,8 +15,6 @@
 
 
 @interface VZListDefaultPullRefreshView : UIView<VZListPullToRefreshViewDelegate>
-
-@property(nonatomic,assign) BOOL bRefreshing;
 @property(nonatomic,assign) float progress;
 @end
 
@@ -86,6 +84,12 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - public
+
+- (BOOL)isRefreshing
+{
+    return [self.pullRefreshView isRefreshing];
+}
+
 
 - (void)beginRefreshing
 {
@@ -263,6 +267,7 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
     UILabel* _textLabel;
 }
 
+@synthesize isRefreshing = _isRefreshing;
 @synthesize pullRefreshDidTrigger = _pullRefreshDidTrigger;
 
 - (id)initWithFrame:(CGRect)frame
@@ -301,7 +306,7 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
 - (void)scrollviewDidScroll:(UIScrollView *)scrollview
 {
     //fix section header problem
-    if(self.bRefreshing)
+    if(self.isRefreshing)
     {
         if( scrollview.contentOffset.y >= 0 )
             scrollview.contentInset = UIEdgeInsetsZero;
@@ -330,13 +335,13 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
 {
     if (self.progress >= 1.0) {
         
-        if (!self.bRefreshing) {
+        if (!self.isRefreshing) {
             
             [self startRefreshing];
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 //通知controller
-    
+                _isRefreshing = YES;
                 if (self.pullRefreshDidTrigger) {
                     self.pullRefreshDidTrigger();
                 }
@@ -347,8 +352,6 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
         {
       
         }
-        
-        
     }
     else
     {
@@ -359,30 +362,30 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
 
 - (void)startRefreshing
 {
-    UIScrollView *scrollView = (UIScrollView *)self.superview;
-    if (!self.bRefreshing) {
-        
-        _bRefreshing = YES;
-        _textLabel.text = @"努力加载中";
-        [_indicator startAnimating];
-        [UIView animateWithDuration:0.3 animations:^{
-            
-            UIEdgeInsets inset = scrollView.contentInset;
-            inset.top = 44;
-            scrollView.contentInset = inset;
-            
-        } completion:^(BOOL finished) {
-            
-            [self startAnimation];
-        }];
-        
+    if (self.isRefreshing) {
+        return;
     }
+    
+    UIScrollView *scrollView = (UIScrollView *)self.superview;
+    _isRefreshing = YES;
+    _textLabel.text = @"努力加载中";
+    [_indicator startAnimating];
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        UIEdgeInsets inset = scrollView.contentInset;
+        inset.top = 44;
+        scrollView.contentInset = inset;
+        
+    } completion:^(BOOL finished) {
+        
+        [self startAnimation];
+    }];
 }
 
 - (void)stopRefreshing
 {
     UIScrollView *scrollView = (UIScrollView *)self.superview;
-    if (self.bRefreshing)
+    if (self.isRefreshing)
     {
         [UIView animateWithDuration:0.3 animations:^{
             
@@ -393,7 +396,7 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
         } completion:^(BOOL finished) {
             
             [self stopAnimation];
-            _bRefreshing = NO;
+            _isRefreshing = NO;
             _textLabel.text = @"下拉刷新";
             [_indicator stopAnimating];
             
@@ -423,6 +426,7 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
 
 @implementation VZListRefreshControl
 
+@synthesize isRefreshing = _isRefreshing;
 @synthesize pullRefreshDidTrigger = _pullRefreshDidTrigger;
 // Make sure to be called in every init method
 - (void)initialize {
@@ -446,19 +450,28 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollview {
     
-    if (self.isRefreshing)
+    if (!self.isRefreshing)
     {
+        _isRefreshing = YES;
         if (self.pullRefreshDidTrigger) {
             self.pullRefreshDidTrigger();
         }
     }
 }
 
-- (void)startRefreshing {
+- (void)startRefreshing
+{
+    if (self.isRefreshing)
+        return;
+    
+    _isRefreshing = true;
     [self beginRefreshing];
+    
 }
 
-- (void)stopRefreshing {
+- (void)stopRefreshing
+{
+    _isRefreshing = false;
     [self endRefreshing];
 }
 
