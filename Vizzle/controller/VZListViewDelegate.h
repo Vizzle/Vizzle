@@ -31,8 +31,21 @@
 @end
 
 
+typedef NS_ENUM(NSUInteger, VZListViewPullToRefreshType)
+{
+    /**
+     *  默认使用系统的UIRefreshControl
+     */
+    kSystemStyle = 0,
+    /**
+     *  使用自定义的样式，默认显示“努力加载中”
+     */
+    kCustomized = 1
+};
+
 @interface VZListViewDelegate : NSObject<VZListViewDelegate>
 
+@property(nonatomic,assign)VZListViewPullToRefreshType type;
 /**
  *  pull-2-refresh view 处于刷新状态
  */

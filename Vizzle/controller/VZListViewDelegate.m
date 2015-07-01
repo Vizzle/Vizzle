@@ -14,17 +14,21 @@
 #import "VZListViewController.h"
 
 
+
 @interface VZListDefaultPullRefreshView : UIView<VZListPullToRefreshViewDelegate>
 @property(nonatomic,assign) float progress;
 @end
 
+
 @interface VZListRefreshControl : UIRefreshControl<VZListPullToRefreshViewDelegate>
 @end
 
-@interface VZListViewDelegate()
-@property(nonatomic,strong) VZListRefreshControl* pullRefreshViewInternal;
-@end
 
+
+
+@interface VZListViewDelegate()
+@property(nonatomic,strong) id<VZListPullToRefreshViewDelegate> pullRefreshViewInternal;
+@end
 
 @implementation VZListViewDelegate
 
@@ -45,18 +49,23 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - getters
 
-- (VZListRefreshControl*)pullRefreshViewInternal
+- (id<VZListPullToRefreshViewDelegate>)pullRefreshViewInternal
 {
     if (!_pullRefreshViewInternal) {
-        _pullRefreshViewInternal=  [[VZListRefreshControl alloc]init];
-        // 如果设置背景色，位置将会随着下拉改变，否则定在原地
-//        _pullRefreshViewInternal.backgroundColor = self.controller.tableView.backgroundColor;
         
+        if (self.type == kSystemStyle) {
+            _pullRefreshViewInternal=  [[VZListRefreshControl alloc]init];
+            // _pullRefreshViewInternal.backgroundColor = self.controller.tableView.backgroundColor;
+            // 如果设置背景色，位置将会随着下拉改变，否则定在原地
+        }
+        else
+            _pullRefreshViewInternal = [[VZListDefaultPullRefreshView alloc]init];
+
         __weak typeof(self)weakSelf = self;
         _pullRefreshViewInternal.pullRefreshDidTrigger = ^(void){
             [weakSelf.controller performSelector:@selector(pullRefreshDidTrigger) withObject:nil];
         };
-        [self.controller.tableView addSubview:_pullRefreshViewInternal];
+        [self.controller.tableView addSubview:(UIView* )_pullRefreshViewInternal];
         
     }
     return _pullRefreshViewInternal;
