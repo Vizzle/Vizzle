@@ -15,13 +15,12 @@
 
 
 @interface VZListDefaultPullRefreshView : UIView<VZListPullToRefreshViewDelegate>
-@property(nonatomic,weak) VZListViewController* controller;
+
 @property(nonatomic,assign) BOOL bRefreshing;
 @property(nonatomic,assign) float progress;
 @end
 
 @interface VZListRefreshControl : UIRefreshControl<VZListPullToRefreshViewDelegate>
-@property(nonatomic,weak) VZListViewController* controller;
 @end
 
 @interface VZListViewDelegate()
@@ -54,8 +53,13 @@
         _pullRefreshViewInternal=  [[VZListRefreshControl alloc]init];
         // 如果设置背景色，位置将会随着下拉改变，否则定在原地
 //        _pullRefreshViewInternal.backgroundColor = self.controller.tableView.backgroundColor;
-        _pullRefreshViewInternal.controller = self.controller;
+        
+        __weak typeof(self)weakSelf = self;
+        _pullRefreshViewInternal.pullRefreshDidTrigger = ^(void){
+            [weakSelf.controller performSelector:@selector(pullRefreshDidTrigger) withObject:nil];
+        };
         [self.controller.tableView addSubview:_pullRefreshViewInternal];
+        
     }
     return _pullRefreshViewInternal;
 }
@@ -259,6 +263,8 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
     UILabel* _textLabel;
 }
 
+@synthesize pullRefreshDidTrigger = _pullRefreshDidTrigger;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -328,17 +334,14 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
             
             [self startRefreshing];
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 //通知controller
     
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-                [self.controller performSelector:@selector(pullRefreshDidTrigger) withObject:nil afterDelay:1.0f];
-#pragma clang diagnostic pop
+                if (self.pullRefreshDidTrigger) {
+                    self.pullRefreshDidTrigger();
+                }
                 
             });
-            
-            
         }
         else
         {
@@ -420,6 +423,7 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
 
 @implementation VZListRefreshControl
 
+@synthesize pullRefreshDidTrigger = _pullRefreshDidTrigger;
 // Make sure to be called in every init method
 - (void)initialize {
     self.tintColor = [UIColor grayColor];
@@ -441,12 +445,12 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
     return self;
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollview {
-    if (self.isRefreshing) {
-            //通知controller
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-        [self.controller performSelector:@selector(pullRefreshDidTrigger) withObject:nil];
-#pragma clang diagnostic pop
+    
+    if (self.isRefreshing)
+    {
+        if (self.pullRefreshDidTrigger) {
+            self.pullRefreshDidTrigger();
+        }
     }
 }
 

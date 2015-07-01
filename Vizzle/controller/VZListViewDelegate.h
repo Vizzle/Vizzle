@@ -17,7 +17,7 @@
  */
 @protocol VZListPullToRefreshViewDelegate <NSObject>
 
-@property(nonatomic,weak) VZListViewController* controller;
+@property(nonatomic,copy) void(^pullRefreshDidTrigger)(void);
 
 @optional
 - (void)scrollviewDidScroll:(UIScrollView*)scrollview;
