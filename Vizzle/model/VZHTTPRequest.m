@@ -29,6 +29,7 @@
 @synthesize responseConfig         = _responseConfig;
 @synthesize queries         = _queries;
 @synthesize headerParams    = _headerParams;
+@synthesize cachedKey       = _cachedKey;
 @synthesize delegate        = _delegate;
 @synthesize requestURL      = _requestURL;
 @synthesize responseObject = _responseObject;
@@ -126,9 +127,7 @@
     {
         
         id<VZHTTPResponseDataCacheInterface> cache = [self globalCache];
-        
-        NSString* key = [cache cachedKeyForVZHTTPRequest:self];
-        
+        NSString* key = self.cachedKey?:[cache cachedKeyForVZHTTPRequest:self];
         if ([cache hasCache:key]) {
             
             [cache cachedResponseForUrlString:key completion:^(id object) {
@@ -170,7 +169,7 @@
     
         NSTimeInterval t = config.cacheTime;
         id<VZHTTPResponseDataCacheInterface> cache = [self globalCache];
-        NSString* cachedKey = [cache cachedKeyForVZHTTPRequest:self];
+        NSString* cachedKey = self.cachedKey?:[cache cachedKeyForVZHTTPRequest:self];
         [cache saveResponse:object WithUrlString:cachedKey ExpireTime:t];
     
     }

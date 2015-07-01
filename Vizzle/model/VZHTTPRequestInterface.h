@@ -29,6 +29,7 @@
 @property (nonatomic,strong) NSDictionary* headerParams;
 @property (nonatomic,assign) VZHTTPRequestConfig requestConfig;
 @property (nonatomic,assign) VZHTTPResponseConfig responseConfig;
+@property (nonatomic,strong) NSString* cachedKey;
 @property (nonatomic,weak) id<VZHTTPRequestDelegate> delegate;
 @property (nonatomic,strong,readonly) NSString* responseString;
 @property (nonatomic,strong,readonly) id responseObject;
@@ -65,8 +66,6 @@
  *  取消请求
  */
 - (void)cancel;
-
-
 /**
  *  HTTP缓存
  */

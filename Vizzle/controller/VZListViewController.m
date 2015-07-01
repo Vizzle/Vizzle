@@ -284,7 +284,7 @@
     
     if (model == _keyModel) {
         
-        
+        //如果下拉刷新在转菊花，不显示loading的footerView
         if (!self.delegate.isRefreshing) {
             
             if (model.sectionNumber == [self.tableView.dataSource numberOfSectionsInTableView:self.tableView]-1) {
@@ -297,7 +297,7 @@
             }
             else{
                 
-                self.tableView.tableFooterView = [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 1) Text:@""];
+                self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
             }
         }
 
@@ -459,7 +459,7 @@
             self.tableView.tableFooterView = self.footerViewNoResult;
         }
         else
-            self.tableView.tableFooterView = [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 44) Text:@"没有结果"];
+            self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
     }
     else
     {
@@ -487,7 +487,7 @@
         if(self.footerViewComplete)
             self.tableView.tableFooterView = self.footerViewComplete;
         else
-            self.tableView.tableFooterView = [VZFooterViewFactory normalFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 1) Text:@""];
+            self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
     }
     else
     {

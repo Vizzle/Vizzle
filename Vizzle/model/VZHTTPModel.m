@@ -105,6 +105,7 @@
     //4, add request data
     [self.request addHeaderParams:[self headerParams]];
     [self.request addQueries:[self dataParams]];
+    self.request.cachedKey = [self cacheKey];
     
     //5, load data
     [self.request load];
@@ -144,6 +145,23 @@
 - (NSString* )customRequestClassName
 {
     return @"VZHTTPRequest";
+}
+
+- (NSString* )cacheKey
+{
+    NSString* method = [self methodName];
+    NSMutableArray* list = [NSMutableArray new];
+    [self.dataParams enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+       
+        NSString* str = [NSString stringWithFormat:@"%@:%@",key,obj];
+        [list addObject:str];
+    }];
+    
+    NSString* cachedKey  = method;
+    for (NSString* key in list) {
+        [cachedKey stringByAppendingString:key];
+    }
+    return cachedKey;
 }
 
 

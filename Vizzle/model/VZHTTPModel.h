@@ -79,6 +79,13 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
  */
 - (NSString* )customRequestClassName;
 
+/**
+ *  返回model对应的缓存Id
+ *
+ *  @return 默认为url+参数
+ */
+- (NSString* )cacheKey;
+
 
 @end
 
