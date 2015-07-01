@@ -12,8 +12,8 @@
 
 @interface VZHTTPModel()<VZHTTPRequestDelegate>
 
+@property(nonatomic,assign) BOOL ignoreCache;
 @property(nonatomic,strong) id<VZHTTPRequestInterface> request;
-@property(nonatomic,strong)NSMutableDictionary* requestParams;
 
 @end
 
@@ -22,14 +22,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - getters
 
-- (NSMutableDictionary* )requestParams
-{
-    if (!_requestParams) {
-        
-        _requestParams =[ NSMutableDictionary new ];
-    }
-    return _requestParams;
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - life cycle
@@ -49,6 +41,17 @@
 {
     [super load];
     [self loadInternal];
+}
+
+- (void)reload
+{
+    if ([self ignoreCachePolicyWhenModelReload]) {
+        self.ignoreCache = true;
+    }
+    else
+        self.ignoreCache=  false;
+
+    [super reload];
 }
 
 - (void)cancel
@@ -80,7 +83,7 @@
         }
         else
         {
-            self.request = [[VZHTTPRequest alloc]init];
+            self.request = [self createRequest];
         }
     }
     else
@@ -105,9 +108,12 @@
     //4, add request data
     [self.request addHeaderParams:[self headerParams]];
     [self.request addQueries:[self dataParams]];
-    self.request.cachedKey = [self cacheKey];
     
-    //5, load data
+    //5, cache
+    self.request.cachedKey = [self cacheKey];
+    self.request.ignoreCachePolicy = [self ignoreCache];
+    
+    //6, load data
     [self.request load];
 }
 
@@ -115,8 +121,7 @@
 #pragma mark - subclassing methods
 
 - (NSDictionary *)dataParams {
-    
-    return self.requestParams;
+    return nil;
 }
 
 - (NSDictionary* )headerParams{
@@ -164,7 +169,10 @@
     return cachedKey;
 }
 
-
+- (BOOL)ignoreCachePolicyWhenModelReload
+{
+    return YES;
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - subclassing hooks

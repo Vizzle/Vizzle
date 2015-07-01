@@ -164,17 +164,34 @@
 
 - (void)load {
     
-    //解决遍历dictionary的时候，调用方调用unregister方法
+
+    OSSpinLockLock(&_lock);
     [_modelDictInternal  enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         VZHTTPModel *model = (VZHTTPModel*)obj;
         
+        //解决遍历dictionary的时候，调用方调用unregister方法
         //to the next runloop
         dispatch_async(dispatch_get_main_queue(), ^{
             [model load];
         });
     }];
+    OSSpinLockUnlock(&_lock);
 }
 
+- (void)reload
+{
+    OSSpinLockLock(&_lock);
+    [_modelDictInternal  enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        VZHTTPModel *model = (VZHTTPModel*)obj;
+        
+        //解决遍历dictionary的时候，调用方调用unregister方法
+        //to the next runloop
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [model reload];
+        });
+    }];
+    OSSpinLockUnlock(&_lock);
+}
 
 
 ////////////////////////////////////////////////////////////////////////

@@ -23,6 +23,12 @@
         //noop.
     }
 }
+
+- (void)reload
+{
+    [self load];
+}
+
 - (void)cancel
 {
     _state = VZModelStateReady;
@@ -42,6 +48,14 @@
     [self load];
 }
 
+- (void)reloadWithCompletion:(VZModelCallback)aCallback
+{
+    if (aCallback) {
+        self.requestCallback = aCallback;
+    }
+    [self reload];
+
+}
 
 @end
 

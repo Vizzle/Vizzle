@@ -14,8 +14,9 @@
 #import "VZListCell.h"
 #import "VZListItem.h"
 #import "VZFooterViewFactory.h"
+#import "VZListViewControllerPrivate.h"
 
-@interface VZListViewController ()
+@interface VZListViewController ()<VZListViewFooterView>
 {
     //state,bad
     NSInteger _loadMoreSection;
@@ -31,6 +32,10 @@
 
 @synthesize dataSource = _dataSource;
 @synthesize delegate   = _delegate;
+@synthesize footerViewLoading = _footerViewLoading;
+@synthesize footerViewComplete = _footerViewComplete;
+@synthesize footerViewNoResult = _footerViewNoResult;
+@synthesize footerViewError = _footerViewError;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - setters
@@ -177,7 +182,6 @@
 - (void)registerModel:(VZModel *)model
 {
     NSAssert([model isKindOfClass:[VZHTTPListModel class]], @"model类型不正确");
-    
     return [super registerModel:model];
 }
 
@@ -189,10 +193,8 @@
 
 - (void)loadMore
 {
+    NSAssert(_keyModel != nil, @"至少需要指定一个keymodel");
     if (self.needLoadMore) {
-        
-        NSAssert(_keyModel != nil, @"至少需要指定一个keymodel");
-        
         if ([self.keyModel hasMore]) {
             
             if (self.loadmoreAutomatically) {
@@ -439,7 +441,7 @@
  */
 - (void)pullRefreshDidTrigger
 {
-    [self load];
+    [self reload];
 }
 
 @end

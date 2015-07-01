@@ -86,11 +86,22 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
  */
 - (NSString* )cacheKey;
 
+/**
+ *  当model reload的时候会忽略Model的cache策略，它的优先级高于
+ *  VZHTTPResponseConfig.cachePolicy
+ *
+ *  比如model下拉刷新时，cache策略会失效
+ *
+ *  默认返回 YES
+ */
+- (BOOL)ignoreCachePolicyWhenModelReload;
+
 
 @end
 
 
 @interface VZHTTPModel : VZModel<VZHTTPModel>
+
 /**
  *  model的请求类型
  *
@@ -116,7 +127,7 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
  *
  */
 @property(nonatomic,assign,readonly) BOOL isResponseObjectFromCache;
- 
+
 
 
 @end

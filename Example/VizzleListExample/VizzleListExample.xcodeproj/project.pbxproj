@@ -101,6 +101,7 @@
 		4529DD2A1ABA99B3009347C2 /* VZListDefaultTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultTextCell.h; sourceTree = "<group>"; };
 		4529DD2B1ABA99B3009347C2 /* VZListDefaultTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultTextCell.m; sourceTree = "<group>"; };
 		4529DD321ABA99B3009347C2 /* Vizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vizzle.h; sourceTree = "<group>"; };
+		456AB1621B444F1D00ADB6F5 /* VZListViewControllerPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VZListViewControllerPrivate.h; sourceTree = "<group>"; };
 		456BE93E1AFF6DBF0064FBB6 /* VZHTTPConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPConnectionOperation.h; sourceTree = "<group>"; };
 		456BE93F1AFF6DBF0064FBB6 /* VZHTTPConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPConnectionOperation.m; sourceTree = "<group>"; };
 		456BE9401AFF6DBF0064FBB6 /* VZHTTPNetworkAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPNetworkAgent.h; sourceTree = "<group>"; };
@@ -217,6 +218,7 @@
 		4529DCE31ABA99B3009347C2 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				456AB1621B444F1D00ADB6F5 /* VZListViewControllerPrivate.h */,
 				4529DCE41ABA99B3009347C2 /* VZListViewController.h */,
 				4529DCE51ABA99B3009347C2 /* VZListViewController.m */,
 				4529DCE61ABA99B3009347C2 /* VZListViewDataSource.h */,

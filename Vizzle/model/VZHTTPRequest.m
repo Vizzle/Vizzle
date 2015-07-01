@@ -31,6 +31,7 @@
 @synthesize headerParams    = _headerParams;
 @synthesize cachedKey       = _cachedKey;
 @synthesize delegate        = _delegate;
+@synthesize ignoreCachePolicy = _ignoreCachePolicy;
 @synthesize requestURL      = _requestURL;
 @synthesize responseObject = _responseObject;
 @synthesize responseString = _responseString;
@@ -84,7 +85,12 @@
 - (void)load
 {
     [self requestDidStart];
-    [self checkCache];
+    
+    if (self.ignoreCachePolicy) {
+        [self loadHTTP];
+    }
+    else
+        [self checkCache];
 }
 
 - (void)loadHTTP

@@ -7,6 +7,7 @@
 //
 
 #import "VZViewController.h"
+#import "VZListViewControllerPrivate.h"
 
 @class VZHTTPListModel;
 @class VZListViewDataSource;
@@ -23,13 +24,6 @@
  */
 @property(nonatomic,strong) VZListViewDataSource* dataSource;
 @property(nonatomic,strong) VZListViewDelegate*   delegate;
-/**
- * 自定义的footerView
- */
-@property(nonatomic,strong)UIView* footerViewLoading;
-@property(nonatomic,strong)UIView* footerViewComplete;
-@property(nonatomic,strong)UIView* footerViewError;
-@property(nonatomic,strong)UIView* footerViewNoResult;
 /**
  *  keyModel:@REQUIRED : 用来翻页的model，必须不为空
  */
@@ -50,9 +44,6 @@
  *  model reload的时候是否清空当前数据,默认为YES
  */
 @property(nonatomic,assign) BOOL clearItemsWhenModelReload;
-
-
-
 /**
  *  加载更多Model数据，例如下一页
  */
@@ -71,7 +62,6 @@
  *  @param key
  */
 - (void)loadModelByKey:(NSString* )key;
-
 /**
  * 显示下拉刷新
  */
@@ -117,6 +107,7 @@
 @end
 
 @interface VZListViewController(FooterView)
+
 
 /**
  *  展示没有数据的footerview状态

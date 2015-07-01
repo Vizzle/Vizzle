@@ -59,9 +59,13 @@ typedef void(^VZModelCallback) (VZModel* model, NSError* error);
  */
 @property(nonatomic,strong) NSString* key;
 /**
- *  model的请求操作，回调使用delegate
+ *  用于第一次model请求，回调使用delegate
  */
 - (void)load;
+/**
+ *  model重新请求数据，会重置model的状态，回调使用delegate
+ */
+- (void)reload;
 /**
  * model的请求操作，回调使用block
  *
@@ -73,6 +77,17 @@ typedef void(^VZModelCallback) (VZModel* model, NSError* error);
  *
  */
 - (void)loadWithCompletion:(VZModelCallback)aCallback;
+/**
+ * model的重新请求操作，回调使用block
+ *
+ * VZModel=>1.1
+ *
+ * 使用这个方法需要注意：
+ * model的状态不会和controller耦合，对界面的更新放到回调中执行
+ * 注意block中使用__weak，避免循环引用！
+ *
+ */
+- (void)reloadWithCompletion:(VZModelCallback)aCallback;
 /**
  *  取消model请求
  */

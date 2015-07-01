@@ -47,12 +47,17 @@
  *  加载Model数据
  */
 - (void)load;
+/**
+ *  重新加载model的数据
+ */
+- (void)reload;
 
 
 @end
 
 
 @interface VZViewController(Subclassing)
+
 
 - (void)didLoadModel:(VZModel*)model;
 
