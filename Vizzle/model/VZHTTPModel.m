@@ -44,24 +44,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods
 
-- (BOOL)shouldLoad
-{
-    if (![super shouldLoad]) {
-        return NO;
-    }
-    else
-    {
-        NSString *method = [self methodName];
-        
-        if (!method || method.length == 0) {
-            [self request:self.request DidFailWithError:[NSError errorWithDomain:@"VZErrorDomain" code:1 userInfo:@{NSLocalizedDescriptionKey:@"Missing Request API"}]];
-            return NO;
-        }
-        else
-            return YES;
-    }
-    
-}
 
 - (void)load
 {
@@ -213,7 +195,7 @@
         }
         else
         {
-            NSError* err = [NSError errorWithDomain:@"VZErrorDomain" code:2 userInfo:@{NSLocalizedDescriptionKey:@"Parse JSON Error"}];
+            NSError* err = [NSError errorWithDomain:VZHTTPErrorDomain code:kVZHTTPParseResponseError userInfo:@{NSLocalizedDescriptionKey:@"Parse Response Error"}];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self didFailWithError:err];

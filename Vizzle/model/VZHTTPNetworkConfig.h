@@ -116,4 +116,11 @@ static inline NSString* vz_httpMethod(VZHTTPRequestMethod method)
 }
 
 
+#define VZHTTPErrorDomain @"VZHTTPErrorDomain"
+typedef NS_ENUM(NSUInteger, VZHTTPErrorCode)
+{
+    kVZHTTPNetworkError = 0,
+    kVZHTTPParseResponseError = 1
+};
+
 #endif

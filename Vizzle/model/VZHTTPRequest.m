@@ -40,11 +40,6 @@
 {
     NSParameterAssert(url);
 
-    if (url.length == 0) {
-        [self requestDidFailWithError:[NSError errorWithDomain:@"VZErrorDomain" code:1 userInfo:@{NSLocalizedDescriptionKey : @"kMethodNameError"}]];
-        return;
-    }
-    
     _responseConfig   = responseConfig;
     _requestConfig    = requestConfig;
     _requestURL       = url;
@@ -136,9 +131,9 @@
         
         if ([cache hasCache:key]) {
             
-            [cache cachedResponseForUrlString:key completion:^(NSError *err, id object) {
+            [cache cachedResponseForUrlString:key completion:^(id object) {
                 
-                if (!err) {
+                if (object) {
                     
                     _isCachedResponse = YES;
                     [self requestDidFinish:object];

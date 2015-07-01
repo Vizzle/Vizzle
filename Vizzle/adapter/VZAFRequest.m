@@ -66,10 +66,6 @@
     
     NSParameterAssert(url);
     
-    if (url.length == 0) {
-        [self requestDidFailWithError:[NSError errorWithDomain:@"VZErrorDomain" code:1 userInfo:@{NSLocalizedDescriptionKey : @"kMethodNameError"}]];
-        return;
-    }
 
     self.url = url;
     self.requestConfig = requestConfig;
@@ -80,7 +76,6 @@
 #else
     
     NSAssert(true, @"No AFNetworking Class can be found");
-     [self requestDidFailWithError:[NSError errorWithDomain:VZErrorDomain code:kAFNetworkingError userInfo:@{NSLocalizedDescriptionKey : @"Did not find AFNetworking!"}]];
     
 #endif
     

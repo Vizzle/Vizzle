@@ -14,7 +14,7 @@
 
 - (BOOL)hasCache:(NSString* )identifier;
 - (NSString* )cachedKeyForVZHTTPRequest:(id<VZHTTPRequestInterface>) request;
-- (void)cachedResponseForUrlString:(NSString*)identifier completion:(void(^)(NSError* err, id object))aCallback;
+- (void)cachedResponseForUrlString:(NSString*)identifier completion:(void(^)(id object))aCallback;
 - (void)saveResponse:(id)data WithUrlString:(NSString *)identifier ExpireTime:(NSTimeInterval)timeInterval;
 
 @end

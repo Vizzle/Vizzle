@@ -12,7 +12,6 @@
 
 
 static  NSString* const kVZHTTPOperationLockName      = @"com.VZHTTPOperation.lock.www";
-NSString * const kVZHTTPNetworkErrorDomain            = @"VZHTTPNetworkingErrorDomain";
 NSString * const kVZHTTPNetworkRequestFailedErrorKey  = @"VZHTTPNetworkRequestFailedErrorKey";
 NSString * const kVZHTTPNetworkResponseFailedErrorKey = @"VZHTTPNetworkResponseFailedErrorKey";
 

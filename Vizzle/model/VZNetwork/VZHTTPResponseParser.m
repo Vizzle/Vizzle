@@ -56,7 +56,7 @@
     {
         bStatusCode = false;
         if (error) {
-            * error = [NSError errorWithDomain:@"VZHTTPNetworkingErrorDomain" code:NSURLErrorBadServerResponse userInfo:nil];
+            * error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorBadServerResponse userInfo:nil];
         }
     }
     
@@ -70,7 +70,7 @@
     {
         bContentType = false;
         if (error) {
-            * error = [NSError errorWithDomain:@"VZHTTPNetworkingErrorDomain" code:NSURLErrorCannotDecodeContentData userInfo:nil];
+            * error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorCannotDecodeContentData userInfo:nil];
         }
     }
     
@@ -131,7 +131,7 @@
         else
         {
             if (aError) {
-                *aError = [[NSError alloc] initWithDomain:@"VZHTTPNetworkingErrorDomain" code:NSURLErrorCannotDecodeContentData userInfo:nil];
+                *aError = [[NSError alloc] initWithDomain:NSURLErrorDomain code:NSURLErrorCannotDecodeContentData userInfo:nil];
             }
         }
     }
