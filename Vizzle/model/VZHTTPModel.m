@@ -114,7 +114,7 @@
     self.request.ignoreCachePolicy = [self ignoreCache];
     
     //6, load data
-    [self.request load];
+    [self.request loadRequest];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -205,6 +205,7 @@
 {
     _responseString = request.responseString;
     _responseObject = request.responseObject;
+    _isResponseObjectFromCache = fromCache;
 
     NSLog(@"[%@]-->REQUEST_FINISH:%@",self.class,responseObject);
 

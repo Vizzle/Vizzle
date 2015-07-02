@@ -93,7 +93,7 @@
 /**
  *  发起请求
  */
-- (void)load;
+- (void)loadRequest;
 /**
  *  取消请求
  */

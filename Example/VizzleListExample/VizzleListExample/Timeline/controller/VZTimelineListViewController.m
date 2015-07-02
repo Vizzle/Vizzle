@@ -95,7 +95,7 @@
     self.tableView.separatorStyle = YES;
     
     //2,set some properties:下拉刷新，自动翻页
-    self.needLoadMore = NO;
+    self.needLoadMore = YES;
     //self.needLoadAll = YES;
     self.needPullRefresh = YES;
 
@@ -155,6 +155,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController
+
+- (void)showModel:(VZHTTPListModel *)model
+{
+    [super showModel:model];
+    
+    NSLog(@"!!!Model:FromCache:%d!!!",model.isResponseObjectFromCache);
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZListViewController
