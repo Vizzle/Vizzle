@@ -54,11 +54,13 @@
 @synthesize delegate       = _delegate;
 @synthesize requestURL     = _requestURL;
 @synthesize queries        = _queries;
+@synthesize cachedKey      = _cachedKey;
+@synthesize ignoreCachePolicy = _ignoreCachePolicy;
 @synthesize headerParams   = _headerParams;
 @synthesize responseObject = _responseObject;
 @synthesize responseString = _responseString;
 @synthesize responseError  = _responseError;
-
+@synthesize isCachedResponse = _isCachedResponse;
 
 - (void)initWithBaseURL:(NSString *)url RequestConfig:(VZHTTPRequestConfig)requestConfig ResponseConfig:(VZHTTPResponseConfig)responseConfig
 {
@@ -183,6 +185,10 @@
 #endif
 }
 
+- (id<VZHTTPResponseDataCacheInterface>)globalCache
+{
+    return nil;
+}
 
 - (void)requestDidStart
 {

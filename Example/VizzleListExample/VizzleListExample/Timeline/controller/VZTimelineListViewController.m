@@ -156,16 +156,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController
 
-
-- (void)showModel:(VZHTTPListModel *)model
-{
-    [super showModel:model];
-    
-    NSLog(@"!!!ShowModel:isCached:%d",model.isResponseObjectFromCache);
-    
-    
-}
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZListViewController
 
