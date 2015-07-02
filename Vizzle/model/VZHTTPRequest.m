@@ -36,7 +36,6 @@
 @synthesize responseObject = _responseObject;
 @synthesize responseString = _responseString;
 @synthesize responseError  = _responseError;
-@synthesize isCachedResponse = _isCachedResponse;
 
 - (void)initWithBaseURL:(NSString*)url RequestConfig:(VZHTTPRequestConfig)requestConfig ResponseConfig:(VZHTTPResponseConfig)responseConfig;
 {
@@ -95,7 +94,6 @@
 
 - (void)loadHTTP
 {
-    _isCachedResponse = NO;
     __weak typeof(self) weakSelf = self;
     [_operation setCompletionHandler:^(VZHTTPConnectionOperation *op, NSString *responseString, id responseObj, NSError *error) {
         
@@ -110,7 +108,7 @@
         }
         
         if (!error) {
-            [weakSelf requestDidFinish:responseObj];
+            [weakSelf requestDidFinish:responseObj FromCache:NO];
             [weakSelf saveCache:responseObj];
         }
         else
@@ -139,17 +137,8 @@
             [cache cachedResponseForUrlString:key completion:^(id object) {
                 
                 if (object) {
-                    
-                    _isCachedResponse = YES;
-                    [self requestDidFinish:object];
-                    
-                    if (config.cachePolicy == VZHTTPNetworkURLCachePolicyDefault) {
-                        
-                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                            [self loadHTTP];
-                        });
-                    
-                    }
+                
+                    [self requestDidFinish:object FromCache:YES];
                 }
                 else
                 {
@@ -164,6 +153,8 @@
         }
         
     }
+    else
+        [self loadHTTP];
 }
 
 - (void)saveCache:(id)object
@@ -202,10 +193,10 @@
     }
 }
 
-- (void)requestDidFinish:(id)JSON
+- (void)requestDidFinish:(id)responseObject FromCache:(BOOL)fromCache
 {
-    if ([self.delegate respondsToSelector:@selector(request:DidFinish:)]) {
-        [self.delegate request:self DidFinish:JSON];
+    if ([self.delegate respondsToSelector:@selector(request:DidFinish:FromCache:)]) {
+        [self.delegate request:self DidFinish:responseObject FromCache:fromCache];
     }
 }
 

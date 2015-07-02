@@ -18,6 +18,7 @@
 @protocol VZListPullToRefreshViewDelegate <NSObject>
 
 @property(nonatomic,assign,readonly) BOOL isRefreshing;
+@property(nonatomic,assign,readonly) float progress;
 @property(nonatomic,copy) void(^pullRefreshDidTrigger)(void);
 
 @optional

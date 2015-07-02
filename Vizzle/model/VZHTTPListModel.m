@@ -39,6 +39,11 @@
 
 - (void)loadMore
 {
+    //如果当前数据是缓存数据，则不翻页
+    if (self.isResponseObjectFromCache) {
+        return;
+    }
+    
     if (self.hasMore) {
         self.currentPageIndex += 1;
         [self loadInternal];

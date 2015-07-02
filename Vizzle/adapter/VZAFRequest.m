@@ -60,7 +60,6 @@
 @synthesize responseObject = _responseObject;
 @synthesize responseString = _responseString;
 @synthesize responseError  = _responseError;
-@synthesize isCachedResponse = _isCachedResponse;
 
 - (void)initWithBaseURL:(NSString *)url RequestConfig:(VZHTTPRequestConfig)requestConfig ResponseConfig:(VZHTTPResponseConfig)responseConfig
 {
@@ -201,8 +200,8 @@
 
 - (void)requestDidFinish:(id)JSON
 {
-    if ([self.delegate respondsToSelector:@selector(request:DidFinish:)]) {
-        [self.delegate request:self DidFinish:JSON];
+    if ([self.delegate respondsToSelector:@selector(request:DidFinish:FromCache:)]) {
+        [self.delegate request:self DidFinish:JSON FromCache:NO ];
     }
 }
 

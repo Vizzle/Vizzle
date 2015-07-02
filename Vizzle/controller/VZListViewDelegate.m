@@ -16,7 +16,6 @@
 
 
 @interface VZListDefaultPullRefreshView : UIView<VZListPullToRefreshViewDelegate>
-@property(nonatomic,assign) float progress;
 @end
 
 
@@ -277,6 +276,7 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
 }
 
 @synthesize isRefreshing = _isRefreshing;
+@synthesize progress     = _progress;
 @synthesize pullRefreshDidTrigger = _pullRefreshDidTrigger;
 
 - (id)initWithFrame:(CGRect)frame
@@ -325,7 +325,7 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
     else
     {
         CGFloat visibleHeight = MAX ( -scrollview.contentOffset.y - scrollview.contentInset.top, 0 );
-        self.progress = MIN(MAX(visibleHeight/44, 0.0f),1.0f);
+        _progress = MIN(MAX(visibleHeight/44, 0.0f),1.0f);
         
         if(self.progress >= 1.0)
         {
@@ -436,6 +436,7 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
 @implementation VZListRefreshControl
 
 @synthesize isRefreshing = _isRefreshing;
+@synthesize progress     = _progress;
 @synthesize pullRefreshDidTrigger = _pullRefreshDidTrigger;
 // Make sure to be called in every init method
 - (void)initialize {
@@ -457,15 +458,26 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
     }
     return self;
 }
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollview {
+
+- (void)scrollviewDidEndDragging:(UIScrollView *)scrollview{
     
-    if (!self.isRefreshing)
-    {
-        _isRefreshing = YES;
-        if (self.pullRefreshDidTrigger) {
-            self.pullRefreshDidTrigger();
+   if (_progress >= 1.0) {
+        
+        if (!self.isRefreshing)
+        {
+            _isRefreshing = YES;
+            if (self.pullRefreshDidTrigger) {
+                self.pullRefreshDidTrigger();
+            }
         }
     }
+
+}
+
+- (void)scrollviewDidScroll:(UIScrollView *)scrollview
+{
+    CGFloat visibleHeight = MAX ( -scrollview.contentOffset.y - scrollview.contentInset.top, 0 );
+    _progress = MIN(MAX(visibleHeight/60, 0.0f),1.0f);
 }
 
 - (void)startRefreshing

@@ -132,7 +132,7 @@
     return nil;
 }
 
-- (BOOL)parseResponse:(id)JSON{
+- (BOOL)parseResponse:(id)responseObject{
     
     return YES;
 }
@@ -201,21 +201,30 @@
 }
 
 
-- (void)request:(id<VZHTTPRequestInterface>) request DidFinish:(id)JSON
+- (void)request:(id<VZHTTPRequestInterface>) request DidFinish:(id)responseObject FromCache:(BOOL)fromCache
 {
     _responseString = request.responseString;
     _responseObject = request.responseObject;
-    _isResponseObjectFromCache = request.isCachedResponse;
-    
-    NSLog(@"[%@]-->REQUEST_FINISH:%@",self.class,JSON);
+
+    NSLog(@"[%@]-->REQUEST_FINISH:%@",self.class,responseObject);
 
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
        
-        if ([self parseResponse:JSON]) {
+        if ([self parseResponse:responseObject]) {
         
             dispatch_async(dispatch_get_main_queue(), ^{
+                
                 [self didFinishLoading];
+                
+                //如果回来的数据是来自cache，那么自动更新数据
+                if (fromCache) {
+                    
+                    if ([self requestConfig].cachePolicy == VZHTTPNetworkURLCachePolicyDefault) {
+                        [self reload];
+                    }
+                }
+                
             });
         
         }

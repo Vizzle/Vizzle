@@ -17,7 +17,7 @@
 @required
 
 - (void)requestDidStart:(id<VZHTTPRequestInterface>)request;
-- (void)request:(id<VZHTTPRequestInterface>)request DidFinish:(id)JSON;
+- (void)request:(id<VZHTTPRequestInterface>)request DidFinish:(id)responseObject FromCache:(BOOL)fromCache;
 - (void)request:(id<VZHTTPRequestInterface>)request DidFailWithError:(NSError *)error;
 
 @end
@@ -68,11 +68,6 @@
  *  本次请求返回的错误
  */
 @property (nonatomic,strong,readonly) NSError* responseError;
-/**
- *  标识本次请求数据是否是来自缓存
- */
-@property(nonatomic,assign,readonly) BOOL isCachedResponse;
-
 /**
  *  创建请求的request
  *
