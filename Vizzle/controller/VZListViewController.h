@@ -7,7 +7,6 @@
 //
 
 #import "VZViewController.h"
-#import "VZListViewControllerPrivate.h"
 
 @class VZHTTPListModel;
 @class VZListViewDataSource;
@@ -15,10 +14,15 @@
 
 @interface VZListViewController : VZViewController
 
+
 /**
  *  tablview
  */
 @property(nonatomic,strong) UITableView* tableView;
+@property(nonatomic,strong)UIView* footerViewLoading;
+@property(nonatomic,strong)UIView* footerViewComplete;
+@property(nonatomic,strong)UIView* footerViewError;
+@property(nonatomic,strong)UIView* footerViewNoResult;
 /**
  *  tablview的delegate和datasource
  */

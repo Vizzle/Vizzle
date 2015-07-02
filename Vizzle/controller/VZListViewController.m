@@ -14,17 +14,12 @@
 #import "VZListCell.h"
 #import "VZListItem.h"
 #import "VZFooterViewFactory.h"
-#import "VZListViewControllerPrivate.h"
 
-@interface VZListViewController ()<VZListViewFooterView>
+@interface VZListViewController ()
 {
     //state,bad
     NSInteger _loadMoreSection;
 }
-
-
-
-
 
 @end
 
