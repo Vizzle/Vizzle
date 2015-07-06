@@ -137,9 +137,9 @@
 		45CE94BC1AF67BFD00144AA4 /* VZTimelineSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTimelineSubView.h; sourceTree = "<group>"; };
 		45CE94BD1AF67BFD00144AA4 /* VZTimelineSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTimelineSubView.m; sourceTree = "<group>"; };
 		45CE94CF1AF67C0A00144AA4 /* VizzleListExampleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VizzleListExampleTests.m; sourceTree = "<group>"; };
-		45F4FE5B1B42D0C800EC6B98 /* VZHTTPResponseDataCacheInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VZHTTPResponseDataCacheInterface.h; path = ../../../../proj/O2O_0901/O2O/Sources/O2OVizzle/model/VZHTTPResponseDataCacheInterface.h; sourceTree = "<group>"; };
 		45F73EDA1B4A8AD700477595 /* VZHTTPResponseDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseDataCache.h; sourceTree = "<group>"; };
 		45F73EDB1B4A8AD700477595 /* VZHTTPResponseDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPResponseDataCache.m; sourceTree = "<group>"; };
+		45F73EFC1B4A990200477595 /* VZHTTPResponseDataCacheInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseDataCacheInterface.h; sourceTree = "<group>"; };
 		77AC2DD27F2B45EF9409DA36 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD37A9719D83F8F0077CE06 /* VizzleListExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VizzleListExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD37A9B19D83F8F0077CE06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -232,8 +232,8 @@
 		4529DD111ABA99B3009347C2 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				45F73EFC1B4A990200477595 /* VZHTTPResponseDataCacheInterface.h */,
 				456BE93A1AFF6DBF0064FBB6 /* VZNetwork */,
-				45F4FE5B1B42D0C800EC6B98 /* VZHTTPResponseDataCacheInterface.h */,
 				45F73EDA1B4A8AD700477595 /* VZHTTPResponseDataCache.h */,
 				45F73EDB1B4A8AD700477595 /* VZHTTPResponseDataCache.m */,
 				45028A661B18989F00417606 /* VZHTTPNetworkConfig.h */,
