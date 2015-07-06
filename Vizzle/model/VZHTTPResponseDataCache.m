@@ -100,7 +100,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
         // hashmap of the ".plist"
         // key is the url's hash
         // value is the date
-		NSDictionary* dict = [NSDictionary dictionaryWithContentsOfFile:[_cachePath stringByAppendingPathComponent:@"ETUrlCache.plist"]];
+		NSDictionary* dict = [NSDictionary dictionaryWithContentsOfFile:[_cachePath stringByAppendingPathComponent:@"VZUrlCache.plist"]];
 		
         //if the plist exist
 		if([dict isKindOfClass:[NSDictionary class]])
@@ -160,7 +160,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
 ///////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - public file method
 
-- (void)cachedResponseForUrlString:(NSString*)identifier completion:(void(^)(NSError* err, id object))aCallback
+- (void)cachedResponseForUrlString:(NSString*)identifier completion:(void(^)(id object))aCallback
 {
 
     [self fetchCachedDataForUrlString:identifier completion:^(id object) {
@@ -201,20 +201,20 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
                 }
                 
                 if (aCallback) {
-                    aCallback(nil,response);
+                    aCallback(response);
                 }
             }
             else
             {
                 if (aCallback) {
-                    aCallback([NSError errorWithDomain:@"VZHTTPNetworkingErrorDomain" code:700 userInfo:nil],nil);
+                    aCallback(nil);
                 }
             }
         }
         else
         {
             if (aCallback) {
-                aCallback([NSError errorWithDomain:@"VZHTTPNetworkingErrorDomain" code:-1 userInfo:nil],nil);
+                aCallback(nil);
             }
         }
         

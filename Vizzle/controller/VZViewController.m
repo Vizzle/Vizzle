@@ -7,6 +7,7 @@
 #import "VZViewController.h"
 #import "VZHTTPModel.h"
 #import <libkern/OSAtomic.h>
+#import "VZAssert.h"
 
 @interface VZViewController ()
 {
@@ -69,62 +70,6 @@
     return self;
 }
 
-- (id)init {
-    if (self = [super init]) {
-
-        
-    }
-    return self;
-}
-
-- (void)loadView
-{
-    [super loadView];
-    
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-  
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-
-}
-
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-}
-
-- (void)didReceiveMemoryWarning {
-    
-    [super didReceiveMemoryWarning];
-
-}
-
 -(void)dealloc {
     
     NSLog(@"[%@]-->dealloc",self.class);
@@ -141,6 +86,8 @@
 
 - (void)registerModel:(VZModel *)model{
     
+    VZAssertMainThread();
+    
     model.delegate = self;
     
     NSAssert(model.key != nil, @"model must have a key");
@@ -153,7 +100,9 @@
 
 - (void)unRegisterModel:(VZModel *)model{
     
-     NSAssert(model.key != nil, @"model must have a key");
+    VZAssertMainThread();
+    
+    NSAssert(model.key != nil, @"model must have a key");
     
     OSSpinLockLock(&_lock);
     [_modelDictInternal removeObjectForKey:model.key];
@@ -164,7 +113,8 @@
 
 - (void)load {
     
-
+    VZAssertMainThread();
+    
     OSSpinLockLock(&_lock);
     [_modelDictInternal  enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         VZHTTPModel *model = (VZHTTPModel*)obj;
@@ -180,6 +130,8 @@
 
 - (void)reload
 {
+    VZAssertMainThread();
+    
     OSSpinLockLock(&_lock);
     [_modelDictInternal  enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         VZHTTPModel *model = (VZHTTPModel*)obj;
@@ -227,19 +179,14 @@
     [self updateState:@"error" withKey:model.key];
 }
 
-////////////////////////////////////////////////////////////////////////
-#pragma mark - logic action callback
-
-- (void)onControllerShouldPerformAction:(int)type args:(NSDictionary* )dict
-{
-    
-}
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - private 
 
 - (void)updateState:(id) status withKey:(NSString* )key
 {
+    VZAssertMainThread();
+    
     if (status && key) {
         
         OSSpinLockLock(&_lock);

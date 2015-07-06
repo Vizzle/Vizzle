@@ -140,6 +140,7 @@
 		45F73EDA1B4A8AD700477595 /* VZHTTPResponseDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseDataCache.h; sourceTree = "<group>"; };
 		45F73EDB1B4A8AD700477595 /* VZHTTPResponseDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPResponseDataCache.m; sourceTree = "<group>"; };
 		45F73EFC1B4A990200477595 /* VZHTTPResponseDataCacheInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseDataCacheInterface.h; sourceTree = "<group>"; };
+		45F73EFF1B4A9BAD00477595 /* VZAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZAssert.h; sourceTree = "<group>"; };
 		77AC2DD27F2B45EF9409DA36 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD37A9719D83F8F0077CE06 /* VizzleListExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VizzleListExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD37A9B19D83F8F0077CE06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -194,7 +195,7 @@
 		4529DCDF1ABA99B3009347C2 /* Vizzle */ = {
 			isa = PBXGroup;
 			children = (
-				459B245D1B171250009BB189 /* core */,
+				45F73EFE1B4A9BAD00477595 /* core */,
 				4529DCE01ABA99B3009347C2 /* adapter */,
 				4529DCE31ABA99B3009347C2 /* controller */,
 				4529DD111ABA99B3009347C2 /* model */,
@@ -232,8 +233,8 @@
 		4529DD111ABA99B3009347C2 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				45F73EFC1B4A990200477595 /* VZHTTPResponseDataCacheInterface.h */,
 				456BE93A1AFF6DBF0064FBB6 /* VZNetwork */,
+				45F73EFC1B4A990200477595 /* VZHTTPResponseDataCacheInterface.h */,
 				45F73EDA1B4A8AD700477595 /* VZHTTPResponseDataCache.h */,
 				45F73EDB1B4A8AD700477595 /* VZHTTPResponseDataCache.m */,
 				45028A661B18989F00417606 /* VZHTTPNetworkConfig.h */,
@@ -305,13 +306,6 @@
 				456BE94E1AFF6DBF0064FBB6 /* VZHTTPURLResponseCache.m */,
 			);
 			path = VZNetwork;
-			sourceTree = "<group>";
-		};
-		459B245D1B171250009BB189 /* core */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = core;
 			sourceTree = "<group>";
 		};
 		45CE94A41AF67BFD00144AA4 /* Timeline */ = {
@@ -407,6 +401,14 @@
 				45CE94BD1AF67BFD00144AA4 /* VZTimelineSubView.m */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		45F73EFE1B4A9BAD00477595 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				45F73EFF1B4A9BAD00477595 /* VZAssert.h */,
+			);
+			path = core;
 			sourceTree = "<group>";
 		};
 		AFD37A8E19D83F8F0077CE06 = {

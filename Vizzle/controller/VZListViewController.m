@@ -14,6 +14,7 @@
 #import "VZListCell.h"
 #import "VZListItem.h"
 #import "VZFooterViewFactory.h"
+#import "VZAssert.h"
 
 @interface VZListViewController ()
 {
@@ -122,7 +123,7 @@
     
     if (self) {
         
-        _clearItemsWhenModelReload = YES;
+        _clearItemsWhenModelReload = NO;
         _loadmoreAutomatically = YES;
         _needPullRefresh      = NO;
         _needLoadMore         = NO;
@@ -297,6 +298,8 @@
                 self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
             }
         }
+        else
+            self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
 
     }
     else
@@ -381,11 +384,9 @@
 ////////////////////////////////////////////////////////////////////
 #pragma mark - public
 
-/**
- * 加载某个section的model
- */
 - (void)loadModelForSection:(NSInteger)section
 {
+    VZAssertMainThread();
     //load model
     [_modelDictInternal enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         
@@ -396,24 +397,56 @@
         }
     }];
 }
-/**
- *  根据model的key来加载model
- *
- *  VZMV* => 1.1
- *
- *  @param key
- */
+
+- (void)reloadModelForSection:(NSInteger)section
+{
+    VZAssertMainThread();
+    
+    //reload model
+    [_modelDictInternal enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        
+        VZHTTPListModel* model = (VZHTTPListModel*)obj;
+        
+        if (section == model.sectionNumber) {
+            
+            if (self.clearItemsWhenModelReload) {
+                [self.dataSource removeAllItems];
+                [self.tableView reloadData];
+            }
+            [model reload];
+        }
+    }];
+}
+
 - (void)loadModelByKey:(NSString* )targetKey
 {
+    VZAssertMainThread();
+    
     [_modelDictInternal enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         
         VZHTTPListModel* model = (VZHTTPListModel*)obj;
         
         if ([key isEqualToString : targetKey]) {
-            
-            [self.dataSource removeAllItems];
-            [self reloadTableView];
             [model load];
+        }
+    }];
+}
+
+- (void)reloadModelByKey:(NSString *)key
+{
+    VZAssertMainThread();
+    
+    [_modelDictInternal enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        
+        VZHTTPListModel* model = (VZHTTPListModel*)obj;
+        
+        if ([key isEqualToString : key]) {
+            
+            if (self.clearItemsWhenModelReload) {
+                [self.dataSource removeAllItems];
+                [self reloadTableView];
+            }
+            [model reload];
         }
     }];
 }
@@ -436,6 +469,10 @@
  */
 - (void)pullRefreshDidTrigger
 {
+    if (self.clearItemsWhenModelReload) {
+        [self.dataSource removeAllItems];
+        [self reloadTableView];
+    }
     [self reload];
 }
 

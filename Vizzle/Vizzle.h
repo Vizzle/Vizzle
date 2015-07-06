@@ -9,6 +9,7 @@
 #ifndef Vizzle_VizzleConfig_h
 #define Vizzle_VizzleConfig_h
 
+#import "VZAssert.h"
 #import "VZHTTPNetwork.h"
 #import "VZListViewDelegate.h"
 #import "VZListViewDataSource.h"

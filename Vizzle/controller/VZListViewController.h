@@ -48,24 +48,38 @@
  *  model reload的时候是否清空当前数据,默认为YES
  */
 @property(nonatomic,assign) BOOL clearItemsWhenModelReload;
+
 /**
- *  加载更多Model数据，例如下一页
+ *  翻页加载
+ *
+ *  @discussion：
+ *
+ *  列表只缓存第一页数据，当第一页数据为缓存时，loadMore不会执行
+ *
  */
 - (void)loadMore;
 /**
- * 加载某个section对应的model
+ * 加载某个section对应的model，保留cache策略
  */
 - (void)loadModelForSection:(NSInteger)section;
 /**
- *  根据model的key来加载model
+ *  reload section对应的model，忽略cache策略
  *
- *  适用：多个model对应一个section，tab切换的场景
- *
- *  v = VZMV* => 1.1
+ *  @param section 对应的section
+ */
+- (void)reloadModelForSection:(NSInteger)section;
+/**
+ *  根据model的key来加载model，保留cache策略
  *
  *  @param key
  */
 - (void)loadModelByKey:(NSString* )key;
+/**
+ *  根据model的key来加载model，忽略cache策略
+ *
+ *  @param key
+ */
+- (void)reloadModelByKey:(NSString* )key;
 /**
  * 显示下拉刷新
  */

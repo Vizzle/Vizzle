@@ -15,6 +15,7 @@
 #import "VZListDefaultErrorCell.h"
 #import "VZListDefaultTextCell.h"
 #import "VZHTTPListModel.h"
+#import "VZAssert.h"
 
 @interface VZListViewDataSource()
 {
@@ -67,6 +68,8 @@
 
 - (NSArray *)itemsForSection:(NSInteger)section
 {
+    VZAssertMainThread();
+    
     if (section < [_itemsForSectionInternal count])
     {
         return _itemsForSectionInternal[@(section)];
@@ -77,6 +80,8 @@
 
 - (BOOL)insertItem:(VZListItem* )item AtIndexPath:(NSIndexPath* )indexPath
 {
+    VZAssertMainThread();
+    
     if([item isKindOfClass:[VZListItem class]])
     {
         if(indexPath.section < _itemsForSectionInternal.count)
@@ -95,6 +100,8 @@
 
 - (BOOL)replaceItem:(VZListItem* )item AtIndexPath:(NSIndexPath* )indexPath
 {
+    VZAssertMainThread();
+    
     if([item isKindOfClass:[VZListItem class]])
     {
         if(indexPath.section < _itemsForSectionInternal.count)
@@ -116,6 +123,8 @@
 
 - (BOOL)setItems:(NSArray*)items ForSection:(NSInteger)n
 {
+    VZAssertMainThread();
+    
     if (n >= 0)
     {
         if ([items isKindOfClass:[NSArray class]]) {
@@ -128,6 +137,8 @@
 
 - (BOOL)removeItemAtIndexPath:(NSIndexPath* )indexPath
 {
+    VZAssertMainThread();
+    
     if(indexPath.section < _itemsForSectionInternal.count)
     {
         NSMutableArray* list = [_itemsForSectionInternal objectForKey:@(indexPath.section)];
@@ -144,6 +155,8 @@
 
 - (BOOL)removeItemsForSection:(NSInteger)n
 {
+    VZAssertMainThread();
+    
     if (n>=0 && n < _itemsForSectionInternal.count) {
         [_itemsForSectionInternal removeObjectForKey:@(n)];
         return YES;
@@ -152,6 +165,8 @@
 }
 - (void)removeAllItems
 {
+    VZAssertMainThread();
+    
     [_itemsForSectionInternal removeAllObjects];
     
 }
