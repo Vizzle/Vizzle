@@ -163,15 +163,33 @@ typedef NS_ENUM(int , ENCODE_TYPE)
 {
     NSSet* set = [[self class] propertyNames];
     
+    NSMutableSet* objectProperties = [NSMutableSet new];
+    unsigned int outCount, i;
+    objc_property_t *properties = class_copyPropertyList([object class], &outCount);
+    
+    for(i = 0; i < outCount; i++)
+    {
+        objc_property_t property = properties[i];
+        
+        //get property name
+        const char *propName = property_getName(property);
+        
+        //chect value for key is not nil!!
+        NSString *propertyName = @(propName);
+        
+        [objectProperties addObject:propertyName];
+        
+    }
+    
     for (NSString* propertyName in set) {
         
-        id val = [object valueForKey:propertyName];
-    
-        if ([val isEqual:[NSNull null]]) {
-            continue;
+        if ([objectProperties containsObject:propertyName]) {
+            
+            id val = [object valueForKey:propertyName];
+            [self setValue:val forKey:propertyName];
         }
-        
-        [self setValue:val forKey:propertyName];
+        else
+            [self setValue:nil forKey:propertyName];
     }
 }
 

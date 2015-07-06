@@ -38,40 +38,61 @@
  * section到列表数据的映射
  */
 @property(nonatomic,strong)  NSDictionary* itemsForSection;
-/**
- * <k:NSInterger v:section>
- * section到列表数据总数的映射
- */
-//@property(nonatomic,strong)  NSDictionary* totalCountForSection;
 
 /**
- *  根据section为datasource赋值
+ *  在datasource中插入item
  *
- *  @param items 被赋值的数据
+ *  @param item      待插入的item
+ *  @param indexPath 位置
+ *
+ *  @return 操作是否成功
+ */
+- (BOOL)insertItem:(VZListItem* )item AtIndexPath:(NSIndexPath* )indexPath;
+
+/**
+ *  替换datasource中的item
+ *
+ *  @param item      待替换的item
+ *  @param indexPath item所在indexPath
+ *
+ *  @return 是否替换成功
+ */
+- (BOOL)replaceItem:(VZListItem* )item AtIndexPath:(NSIndexPath* )indexPath;
+/**
+ *  更新某个section的数据
+ *
+ *  @param items 待更新的数据列表
  *  @param n     section
+ *
+ *  @return 操作是否成功
  */
-- (void)setItems:(NSArray*)items ForSection:(NSInteger)n; //增
+- (BOOL)setItems:(NSArray*)items ForSection:(NSInteger)n; //增
 
 /**
- *  获取datasource中的数据
+ *  返回某个section对应的items
  *
- *  @param n 获取的section
+ *  @param section 数据对应的section
+ *
+ *  @return 该section的所有item
  */
-- (NSArray *)itemsForSection:(int)section;
+- (NSArray *)itemsForSection:(NSInteger)section;
 
 /**
- *  清除datasource中section部分的object
+ *  根据indexpath删除某条数据
  *
- *  @param n 查找的的section
- *  @object  待清楚的object
+ *  @param indexPath 待删除item的indexpath
+ *
+ *  @return 操作是否成功
  */
-- (BOOL)removeItem:(VZListItem* )item FromSection:(NSInteger)n; //删
+- (BOOL)removeItemAtIndexPath:(NSIndexPath* )indexPath;
 /**
- *  清除datasource中的数据
+ *  删除某个section中的数据
  *
- *  @param n 待清除的section
+ *  @param n section
+ *
+ *  @return 操作是否成功
  */
-- (void)removeItemsFromSection:(NSInteger)n;
+- (BOOL)removeItemsForSection:(NSInteger)n;
 /**
  *  清除datasource所有数据
  */

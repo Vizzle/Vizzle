@@ -237,10 +237,9 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
 }
 
 
-- (BOOL)hasCache:(id<VZHTTPRequestInterface>)request
+- (BOOL)hasCache:(NSString* )identifier
 {
-    NSString* cachedKey = [self cachedKeyForVZHTTPRequest:request];
-    NSString* key = [self keyForURLString:cachedKey];
+    NSString* key = [self keyForURLString:identifier];
     if ([_memCache objectForKey:key]) {
         return true;
     }

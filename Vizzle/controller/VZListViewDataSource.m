@@ -65,24 +65,27 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - public
 
-- (void)setItems:(NSArray*)items ForSection:(NSInteger)n
+- (NSArray *)itemsForSection:(NSInteger)section
 {
-    if(n>=0) {
-        if (![items isKindOfClass:[NSMutableArray class]]) {
-            [_itemsForSectionInternal setObject:[NSMutableArray arrayWithArray:items] forKey:@(n)];
-        }
-        else {
-            [_itemsForSectionInternal setObject:items forKey:@(n)];
-        }
+    if (section < [_itemsForSectionInternal count])
+    {
+        return _itemsForSectionInternal[@(section)];
     }
+    else
+        return nil;
 }
 
-- (BOOL)removeItem:(VZListItem*)object FromSection:(NSInteger)n {
-    if (n >= 0 && n < _itemsForSectionInternal.count) {
-        NSMutableArray *array = [_itemsForSectionInternal objectForKey:@(n)];
-        for (id anyobject in array) {
-            if (anyobject == object) {
-                [array removeObject:anyobject];
+- (BOOL)insertItem:(VZListItem* )item atIndexPath:(NSIndexPath* )indexPath
+{
+    if([item isKindOfClass:[VZListItem class]])
+    {
+        if(indexPath.section < _itemsForSectionInternal.count)
+        {
+            NSMutableArray* list = [_itemsForSectionInternal objectForKey:@(indexPath.section)];
+            
+            if (list.count > 0 && indexPath.row < list.count) {
+                
+                [list insertObject:item atIndex:indexPath.row];
                 return YES;
             }
         }
@@ -90,18 +93,62 @@
     return NO;
 }
 
-- (NSArray *)itemsForSection:(int)section {
-    if (section < [_itemsForSectionInternal count]) {
-        return _itemsForSectionInternal[@(section)];
+- (BOOL)replaceItem:(VZListItem* )item AtIndexPath:(NSIndexPath* )indexPath
+{
+    if([item isKindOfClass:[VZListItem class]])
+    {
+        if(indexPath.section < _itemsForSectionInternal.count)
+        {
+            NSMutableArray* list = [_itemsForSectionInternal objectForKey:@(indexPath.section)];
+            
+            if (list.count > 0 && indexPath.row < list.count) {
+                
+                if ([list objectAtIndex:indexPath.row]) {
+                    
+                    [list replaceObjectAtIndex:indexPath.row withObject:item];
+                    return YES;
+                }
+            }
+        }
     }
-    return nil;
+    return NO;
 }
 
-- (void)removeItemsFromSection:(NSInteger)n
+- (BOOL)setItems:(NSArray*)items ForSection:(NSInteger)n
 {
-    if (n>=0) {
-        [_itemsForSectionInternal removeObjectForKey:@(n)];
+    if (n >= 0)
+    {
+        if ([items isKindOfClass:[NSArray class]]) {
+           [_itemsForSectionInternal setObject:[NSMutableArray arrayWithArray:items] forKey:@(n)];
+            return YES;
+        }
     }
+    return NO;
+}
+
+- (BOOL)removeItemAtIndexPath:(NSIndexPath* )indexPath
+{
+    if(indexPath.section < _itemsForSectionInternal.count)
+    {
+        NSMutableArray* list = [_itemsForSectionInternal objectForKey:@(indexPath.section)];
+        
+        if (list.count > 0 && indexPath.row < list.count) {
+            
+            [list removeObjectAtIndex:indexPath.row];
+            return YES;
+        }
+    }
+    return NO;
+}
+
+
+- (BOOL)removeItemsForSection:(NSInteger)n
+{
+    if (n>=0 && n < _itemsForSectionInternal.count) {
+        [_itemsForSectionInternal removeObjectForKey:@(n)];
+        return YES;
+    }
+    return NO;
 }
 - (void)removeAllItems
 {
@@ -182,6 +229,8 @@
         {
             //为cell,item绑定index
             item.indexPath = indexPath;
+            NSInteger count = [[self itemsForSection:indexPath.section] count];
+            item.isLast = indexPath.row == count - 1 ? YES:NO;
             [(VZListCell *)cell setItem:item];
         }
         else

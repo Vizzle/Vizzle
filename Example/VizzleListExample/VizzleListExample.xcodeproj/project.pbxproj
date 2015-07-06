@@ -44,7 +44,7 @@
 		45CE94CD1AF67BFD00144AA4 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CE94BA1AF67BFD00144AA4 /* placeholder@2x.png */; };
 		45CE94CE1AF67BFD00144AA4 /* VZTimelineSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CE94BD1AF67BFD00144AA4 /* VZTimelineSubView.m */; };
 		45CE94D01AF67C0A00144AA4 /* VizzleListExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CE94CF1AF67C0A00144AA4 /* VizzleListExampleTests.m */; };
-		45F4FE5C1B42D0C800EC6B98 /* VZHTTPResponseDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F4FE5A1B42D0C800EC6B98 /* VZHTTPResponseDataCache.m */; };
+		45F73EDD1B4A8AD700477595 /* VZHTTPResponseDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F73EDB1B4A8AD700477595 /* VZHTTPResponseDataCache.m */; };
 		AFD37A9D19D83F8F0077CE06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37A9C19D83F8F0077CE06 /* main.m */; };
 		AFD37AA019D83F8F0077CE06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37A9F19D83F8F0077CE06 /* AppDelegate.m */; };
 		AFD37AA619D83F8F0077CE06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFD37AA419D83F8F0077CE06 /* Main.storyboard */; };
@@ -137,9 +137,9 @@
 		45CE94BC1AF67BFD00144AA4 /* VZTimelineSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTimelineSubView.h; sourceTree = "<group>"; };
 		45CE94BD1AF67BFD00144AA4 /* VZTimelineSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTimelineSubView.m; sourceTree = "<group>"; };
 		45CE94CF1AF67C0A00144AA4 /* VizzleListExampleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VizzleListExampleTests.m; sourceTree = "<group>"; };
-		45F4FE591B42D0C800EC6B98 /* VZHTTPResponseDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VZHTTPResponseDataCache.h; path = ../../../../proj/O2O_0901/O2O/Sources/O2OVizzle/model/VZHTTPResponseDataCache.h; sourceTree = "<group>"; };
-		45F4FE5A1B42D0C800EC6B98 /* VZHTTPResponseDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VZHTTPResponseDataCache.m; path = ../../../../proj/O2O_0901/O2O/Sources/O2OVizzle/model/VZHTTPResponseDataCache.m; sourceTree = "<group>"; };
 		45F4FE5B1B42D0C800EC6B98 /* VZHTTPResponseDataCacheInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VZHTTPResponseDataCacheInterface.h; path = ../../../../proj/O2O_0901/O2O/Sources/O2OVizzle/model/VZHTTPResponseDataCacheInterface.h; sourceTree = "<group>"; };
+		45F73EDA1B4A8AD700477595 /* VZHTTPResponseDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseDataCache.h; sourceTree = "<group>"; };
+		45F73EDB1B4A8AD700477595 /* VZHTTPResponseDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPResponseDataCache.m; sourceTree = "<group>"; };
 		77AC2DD27F2B45EF9409DA36 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD37A9719D83F8F0077CE06 /* VizzleListExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VizzleListExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD37A9B19D83F8F0077CE06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -233,9 +233,9 @@
 			isa = PBXGroup;
 			children = (
 				456BE93A1AFF6DBF0064FBB6 /* VZNetwork */,
-				45F4FE591B42D0C800EC6B98 /* VZHTTPResponseDataCache.h */,
-				45F4FE5A1B42D0C800EC6B98 /* VZHTTPResponseDataCache.m */,
 				45F4FE5B1B42D0C800EC6B98 /* VZHTTPResponseDataCacheInterface.h */,
+				45F73EDA1B4A8AD700477595 /* VZHTTPResponseDataCache.h */,
+				45F73EDB1B4A8AD700477595 /* VZHTTPResponseDataCache.m */,
 				45028A661B18989F00417606 /* VZHTTPNetworkConfig.h */,
 				45028A651B188F0200417606 /* VZHTTPRequestInterface.h */,
 				4529DD121ABA99B3009347C2 /* VZHTTPListModel.h */,
@@ -617,7 +617,7 @@
 				456BE95A1AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.m in Sources */,
 				4529DD521ABA99B3009347C2 /* VZModel.m in Sources */,
 				4529DD4D1ABA99B3009347C2 /* VZHTTPModel.m in Sources */,
-				45F4FE5C1B42D0C800EC6B98 /* VZHTTPResponseDataCache.m in Sources */,
+				45F73EDD1B4A8AD700477595 /* VZHTTPResponseDataCache.m in Sources */,
 				456BE9531AFF6DBF0064FBB6 /* VZHTTPRequestGenerator.m in Sources */,
 				4529DD351ABA99B3009347C2 /* VZAFRequest.m in Sources */,
 				456BE9521AFF6DBF0064FBB6 /* VZHTTPNetworkSecurity.m in Sources */,

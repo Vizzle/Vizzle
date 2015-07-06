@@ -39,6 +39,10 @@ typedef NS_ENUM(int, VZListItemType)
  */
 @property (nonatomic,strong) NSIndexPath* indexPath;
 /**
+ *  是否是当前section最后一个数据
+ */
+@property (nonatomic,assign) BOOL isLast;
+/**
  *  @optional
  *  item的高度，建议在model请求完成后赋值
  */
