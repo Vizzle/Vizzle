@@ -75,7 +75,7 @@
         return nil;
 }
 
-- (BOOL)insertItem:(VZListItem* )item atIndexPath:(NSIndexPath* )indexPath
+- (BOOL)insertItem:(VZListItem* )item AtIndexPath:(NSIndexPath* )indexPath
 {
     if([item isKindOfClass:[VZListItem class]])
     {
