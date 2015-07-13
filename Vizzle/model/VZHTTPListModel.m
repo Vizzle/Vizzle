@@ -188,7 +188,13 @@
             _hasMore = list.count == self.pageSize;
         }
         else if(self.pageMode == VZPageModePageCustomize){
-            _hasMore = self.pageSize*self.currentPageIndex < self.totalCount;
+            
+            NSInteger currentCount = self.objects.count + list.count;
+            if (currentCount < self.totalCount) {
+                _hasMore = YES;
+            }
+            else
+                _hasMore = NO;
         }
         else
             _hasMore = NO;
