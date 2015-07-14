@@ -37,14 +37,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - setters
 
-- (void)setPullRefreshView:(id<VZListPullToRefreshViewDelegate>)pullRefreshView
-{
-    _pullRefreshView = pullRefreshView;
-    [self.controller.tableView addSubview:(UIView*)_pullRefreshView];
-}
-
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - getters
 
@@ -58,13 +50,17 @@
             // 如果设置背景色，位置将会随着下拉改变，否则定在原地
         }
         else
-            _pullRefreshViewInternal = [[VZListDefaultPullRefreshView alloc]init];
+            _pullRefreshViewInternal = [[VZListDefaultPullRefreshView alloc]initWithFrame:CGRectMake(0, -44, self.controller.tableView.frame.size.width, 44)];
 
         __weak typeof(self)weakSelf = self;
         _pullRefreshViewInternal.pullRefreshDidTrigger = ^(void){
             [weakSelf.controller performSelector:@selector(pullRefreshDidTrigger) withObject:nil];
         };
-        [self.controller.tableView addSubview:(UIView* )_pullRefreshViewInternal];
+        
+        if (self.controller.needPullRefresh) {
+            [self.controller.tableView addSubview:(UIView* )_pullRefreshViewInternal];
+        }
+      
         
     }
     return _pullRefreshViewInternal;
@@ -435,7 +431,6 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
 
 @implementation VZListRefreshControl
 
-@synthesize isRefreshing = _isRefreshing;
 @synthesize progress     = _progress;
 @synthesize pullRefreshDidTrigger = _pullRefreshDidTrigger;
 // Make sure to be called in every init method
@@ -459,41 +454,29 @@ typedef NS_ENUM(NSInteger, PullRefreshState)
     return self;
 }
 
-- (void)scrollviewDidEndDragging:(UIScrollView *)scrollview{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollview{
     
-   if (_progress >= 1.0) {
-        
-        if (!self.isRefreshing)
-        {
-            _isRefreshing = YES;
-            if (self.pullRefreshDidTrigger) {
-                self.pullRefreshDidTrigger();
-            }
-        }
-    }
-
+   if (self.isRefreshing) {
+       if (self.pullRefreshDidTrigger) {
+           self.pullRefreshDidTrigger();
+       }
+   }
 }
 
 - (void)scrollviewDidScroll:(UIScrollView *)scrollview
 {
     CGFloat visibleHeight = MAX ( -scrollview.contentOffset.y - scrollview.contentInset.top, 0 );
-    _progress = MIN(MAX(visibleHeight/60, 0.0f),1.0f);
+    _progress = MIN(MAX(visibleHeight/80, 0.0f),1.0f);
 }
 
 - (void)startRefreshing
 {
-    if (self.isRefreshing)
-        return;
-    
-    _isRefreshing = true;
     [self beginRefreshing];
-    
 }
 
 - (void)stopRefreshing
 {
-    _isRefreshing = false;
-    [self endRefreshing];
+    [self performSelector:@selector(endRefreshing) withObject:nil afterDelay:0.1];
 }
 
 @end

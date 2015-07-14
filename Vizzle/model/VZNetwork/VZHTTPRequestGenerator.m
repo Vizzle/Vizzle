@@ -172,7 +172,7 @@
     else
     {
         //use default generator
-        query = [self queryStringFromParams:params WithEncoding:encoding];
+        query = [self queryStringFromParams:params WithHTTPMethod:request.HTTPMethod StringEncoding:encoding];
     }
     
     //add query string
@@ -237,7 +237,7 @@
     else
     {
         //use default generator
-        query = [self queryStringFromParams:aParam WithEncoding:self.stringEncoding];
+        query = [self queryStringFromParams:aParam WithHTTPMethod:mutableRequest.HTTPMethod StringEncoding:self.stringEncoding];
     }
     
     //add query string
@@ -263,10 +263,10 @@
     }
     else //post
     {
-        NSString *charset = (__bridge NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(self.stringEncoding));
-        [aRequest setValue:[NSString stringWithFormat:@"application/x-www-form-urlencoded; charset=%@", charset] forHTTPHeaderField:@"Content-Type"];
+        if (![aRequest valueForHTTPHeaderField:@"Content-Type"]) {
+            [aRequest setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+        }
         [aRequest setHTTPBody:[query dataUsingEncoding:self.stringEncoding]];
-        
     }
 }
 
@@ -287,17 +287,31 @@
 }
 
 
-- (NSString*)queryStringFromParams:(NSDictionary* )params WithEncoding:(NSStringEncoding) stringEncoding
+- (NSString*)queryStringFromParams:(NSDictionary* )params WithHTTPMethod:(NSString* )method StringEncoding:(NSStringEncoding) stringEncoding
 {
-    NSMutableArray *mutablePairs = [NSMutableArray array];
-    
-    NSArray* pairs = [self queryStringPairsFromKey:nil Value:params];
-    
-    for (VZHTTPRequestQueryStringPair *pair in pairs) {
-        [mutablePairs addObject:[pair encodedStringValueWithEncoding:stringEncoding]];
+    if ([method isEqualToString:@"POST"]) {
+        
+        NSError* jsonError=nil;
+        NSData* data = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:&jsonError];
+        if (jsonError) {
+            NSAssert(jsonError != nil, @"JSON Encoding Error");
+            return @"";
+        }
+        else
+        {
+            return [[NSString alloc]initWithData:data encoding:stringEncoding];
+        }
     }
-    
-    return [mutablePairs componentsJoinedByString:@"&"];
+    else
+    {
+        NSMutableArray *mutablePairs = [NSMutableArray array];
+        NSArray* pairs = [self queryStringPairsFromKey:nil Value:params];
+        for (VZHTTPRequestQueryStringPair *pair in pairs) {
+            [mutablePairs addObject:[pair encodedStringValueWithEncoding:stringEncoding]];
+        }
+        
+        return [mutablePairs componentsJoinedByString:@"&"];
+    }
 }
 
 

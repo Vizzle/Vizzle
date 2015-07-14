@@ -1,0 +1,98 @@
+{
+  "controller": [
+    {
+      "class": "BXTWTripListViewController",
+      "superclass": "VZListViewController",
+      "model": [
+        {
+          "name": "tWTripListModel",
+          "class": "BXTWTripListModel",
+          "superclass": "VZHTTPListModel"
+        }
+      ],
+      "datasource": {
+        "name": "ds",
+        "class": "BXTWTripListViewDataSource",
+        "superclass": "VZListViewDataSource"
+      },
+      "delegate": {
+        "name": "dl",
+        "class": "BXTWTripListViewDelegate",
+        "superclass": "VZListViewDelegate"
+      },
+      "tpath": "./template/vizzle/template_listviewcontroller.rb",
+      "namespace": "T_ListViewController",
+      "filepath": "./TWTrip/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "BXTWTripListModel",
+      "superclass": "VZHTTPListModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httplistmodel.rb",
+      "namespace": "T_HTTPListModel",
+      "filepath": "./TWTrip/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "BXTWTripListModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "BXTWTripListModel",
+      "modelsuperclass": "VZHTTPListModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./TWTrip/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "BXTWTripListItem",
+      "superclass": "VZListItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_listItem.rb",
+      "namespace": "T_ListItem",
+      "filepath": "./TWTrip/item/"
+    }
+  ],
+  "cell": [
+    {
+      "class": "BXTWTripListCell",
+      "superclass": "VZListCell",
+      "itemclass": "BXTWTripListItem",
+      "height": "44",
+      "tpath": "./template/vizzle/template_listcell.rb",
+      "namespace": "T_ListCell",
+      "filepath": "./TWTrip/cell/"
+    }
+  ],
+  "datasource": [
+    {
+      "class": "BXTWTripListViewDataSource",
+      "superclass": "VZListViewDataSource",
+      "cellclass": "BXTWTripListCell",
+      "tpath": "./template/vizzle/template_listviewdatasource.rb",
+      "namespace": "T_ListViewDataSource",
+      "filepath": "./TWTrip/datasource/"
+    }
+  ],
+  "delegate": [
+    {
+      "class": "BXTWTripListViewDelegate",
+      "superclass": "VZListViewDelegate",
+      "tpath": "./template/vizzle/template_listviewdelegate.rb",
+      "namespace": "T_ListViewDelegate",
+      "filepath": "./TWTrip/delegate/"
+    }
+  ],
+  "config": {
+    "class": "BXTWTripConfig",
+    "proj": "BX",
+    "package_name": "TWTrip",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./TWTrip/config/"
+  }
+}

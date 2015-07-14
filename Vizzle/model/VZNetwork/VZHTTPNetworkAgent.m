@@ -92,7 +92,7 @@ float const kVZHTTPNetworkAgentThreadRunLoopPriority = 0.3;
     [self.operationQueue cancelAllOperations];
 }
 
-//GET
+
 - (VZHTTPConnectionOperation* )HTTP:(NSString*)aURlString
                   completionHandler:(void(^)(VZHTTPConnectionOperation* connection,  NSString* responseString,id responseObj, NSError* error))aCallback
 {
@@ -102,7 +102,7 @@ float const kVZHTTPNetworkAgentThreadRunLoopPriority = 0.3;
 }
 
 
-//GET
+
 - (VZHTTPConnectionOperation* )HTTP:(NSString*)aURlString
                              params:(NSDictionary*)aParams
                   completionHandler:(void(^)(VZHTTPConnectionOperation* connection,  NSString* responseString,id responseObj, NSError* error))aCallback
@@ -115,7 +115,7 @@ float const kVZHTTPNetworkAgentThreadRunLoopPriority = 0.3;
 
 }
 
-// GET
+
 - (VZHTTPConnectionOperation* )HTTP:(NSString*)aURlString
                       requestConfig:(VZHTTPRequestConfig) requestConfig
                      responseConfig:(VZHTTPResponseConfig) responseConfig
