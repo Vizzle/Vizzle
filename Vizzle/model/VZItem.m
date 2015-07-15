@@ -8,7 +8,7 @@
 
 #import "VZItem.h"
 #include <objc/runtime.h>
-#import "Vizzle.h"
+#import "VZListItem.h"
 
 //cached property keys
 static void *VZItemCachedPropertyKeysKey = &VZItemCachedPropertyKeysKey;
@@ -19,8 +19,12 @@ typedef NS_ENUM(int , ENCODE_TYPE)
     kValue=0,
     kStruct,
     kUnion,
-    kPointer,
-    kObject
+    kPointer,//^
+    kObject, //@
+    kVoid, //v
+    kClass, //#
+    kSEL, //:
+    KCharacterString //*
 };
 
 @implementation VZItem
@@ -62,126 +66,100 @@ typedef NS_ENUM(int , ENCODE_TYPE)
  */
 + (NSSet* )propertyNames
 {
-    NSSet *cachedKeys = objc_getAssociatedObject(self, VZItemCachedPropertyKeysKey);
-	if (cachedKeys.count > 0 ) return cachedKeys;
-    
-    NSMutableSet* set = [NSMutableSet new];
-    unsigned int outCount, i;
-    objc_property_t *properties = class_copyPropertyList([self class], &outCount);
-    
-    for(i = 0; i < outCount; i++)
-    {
-        objc_property_t property = properties[i];
-        
-        //get property name
-        const char *propName = property_getName(property);
-        
-        //chect value for key is not nil!!
-        NSString *propertyName = @(propName);
-        
-        [set addObject:propertyName];
-        
-    }
-    
-    //cache sets
-	objc_setAssociatedObject(self, VZItemCachedPropertyKeysKey, set, OBJC_ASSOCIATION_COPY);
-    
-    
-    free(properties);
-    
-    return set;
+    return [self propertyNamesInternal:[self class]];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - public  API
 
-
+static inline ENCODE_TYPE getEncodeType(const char* typeStr);
 - (void)autoKVCBinding:(NSDictionary* )dictionary
 {
-    //test value for key != nil
-    unsigned int outCount, i;
-    objc_property_t *properties = class_copyPropertyList([self class], &outCount);
+    Class clz = [self class];
     
-    for(i = 0; i < outCount; i++)
+    while (clz != [VZItem class])
     {
-        objc_property_t property = properties[i];
+        unsigned int outCount, i;
+        objc_property_t *properties = class_copyPropertyList([clz class], &outCount);
         
-        //get property name
-        const char *propName = property_getName(property);
-        
-        //chect value for key is not nil!!
-        NSString *propertyName = [NSString stringWithUTF8String:propName];
-        
-        //get propertyClass
-        Class propertyClass = nil;
-        
-        const char* attr = property_getAttributes(property);
-        NSString* propAttr = [NSString stringWithUTF8String:attr];
-        
-        //remove "T"
-        propAttr = [propAttr substringFromIndex:1];
-        
-        //get @encode(),@property,V_
-        NSArray * attributes = [propAttr componentsSeparatedByString:@","];
-        
-        //get @encode()
-        NSString* typeAttr = attributes[0];
-        
-        ENCODE_TYPE encodeType = [self encodeType:typeAttr];
-        
-        
-        //只对object赋值
-        if (encodeType == kObject) {
-            
-            NSString* tmp = [typeAttr substringWithRange:NSMakeRange(2, typeAttr.length-3)];
-            propertyClass = NSClassFromString(tmp);
-        }
-        else
+        for(i = 0; i < outCount; i++)
         {
-            [self setValue:nil forKey:propertyName];
-        }
-        if (!propertyClass) {
-            continue;
-        }
-        
-        //get value from dictionary
-        id val = dictionary[propertyName];
-        
-        if (val && [val isKindOfClass:propertyClass]) {
+            objc_property_t property = properties[i];
             
-            [self setValue:val forKey:propertyName];
+            //get property name
+            const char *propName = property_getName(property);
+            
+            //heap allocation
+            NSString *propertyName = [NSString stringWithUTF8String:propName];
+            
+            //get propertyClass
+            Class propertyClass = nil;
+            const char* attr = property_getAttributes(property);
+
+            size_t attr_len = strlen(attr);
+            char attrWithoutT[attr_len];
+            memset(attrWithoutT, 0, sizeof(attrWithoutT));
+            attrWithoutT[attr_len-1] = '\0';
+            strncpy(attrWithoutT, attr+1, attr_len-1);
+
+            //faster than using NSString
+            char* firstAttr = strtok(attrWithoutT, ",");
+
+            ENCODE_TYPE encodeType = getEncodeType(firstAttr);
+            
+            //只处理object类型
+            if (encodeType == kObject) {
+
+                size_t l = strlen(firstAttr);
+                l -= 3;
+                char classStr[l+1];
+                memset(classStr, 0, l);
+                classStr[l]='\0';
+                strncpy(classStr, firstAttr+2, l);
+
+                //heap allocation
+                NSString* tmp = [NSString stringWithCString:classStr encoding:NSUTF8StringEncoding];
+                propertyClass = NSClassFromString(tmp);
+                
+                if (!propertyClass) {
+                    continue;
+                }
+                else
+                {
+                    //get value from dictionary
+                    id val = dictionary[propertyName];
+                    
+                    if (val && [val isKindOfClass:propertyClass]) {
+                        
+                        [self setValue:val forKey:propertyName];
+                        
+                    }
+                    else
+                    {
+                        [self setValue:nil forKey:propertyName];
+                    }
+                }
+            }
+            else
+            {
+                [self setValue:nil forKey:propertyName];
+            }
+            
             
         }
-        else
-            [self setValue:nil forKey:propertyName];
+        free(properties);
         
+        //递归父类
+        clz = [clz superclass];
     }
-    free(properties);
 }
 
 - (void)autoMapTo:(id)object
 {
-    NSSet* set = [[self class] propertyNames];
+    NSSet* itemProperties = [[self class] propertyNamesInternal:[self class]];
+    NSSet* objectProperties = [[ self class] propertyNamesInternal:[object class]];
     
-    NSMutableSet* objectProperties = [NSMutableSet new];
-    unsigned int outCount, i;
-    objc_property_t *properties = class_copyPropertyList([object class], &outCount);
-    
-    for(i = 0; i < outCount; i++)
-    {
-        objc_property_t property = properties[i];
-        
-        //get property name
-        const char *propName = property_getName(property);
-        
-        //chect value for key is not nil!!
-        NSString *propertyName = @(propName);
-        
-        [objectProperties addObject:propertyName];
-        
-    }
-    
-    for (NSString* propertyName in set) {
+    for (NSString* propertyName in itemProperties) {
         
         if ([objectProperties containsObject:propertyName]) {
             
@@ -205,8 +183,10 @@ typedef NS_ENUM(int , ENCODE_TYPE)
 
 
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - private tool  API
+
 /**
  *  确定@encode的类型
  *
@@ -214,53 +194,98 @@ typedef NS_ENUM(int , ENCODE_TYPE)
  *
  *  @return @encode的返回值
  */
-- (ENCODE_TYPE)encodeType:(NSString* )type
+static inline ENCODE_TYPE getEncodeType(const char* typeStr)
 {
-    //char,double,int/enum/signed,float,long,unsigned
-    NSArray* values = @[@"c",@"d",@"i",@"f",@"l",@"I"];
-    
     ENCODE_TYPE ret = KUnknown;
+    char type = typeStr[0];
     
-    
-    NSString* firstChar = [type substringToIndex:1];
-    
-    
-    //value
-    if ([values containsObject:firstChar]) {
-        
-        if ([values containsObject:type]) {
-            ret = kValue;
-        }
+    //values
+    if (type == 'c' || type == 'C' ||
+        type == 'd' ||
+        type == 'l' || type == 'L' ||
+        type == 's' || type == 'S' ||
+        type == 'b' || type == 'B' ||
+        type == 'i' || type == 'I' ||
+        type == 'q' || type == 'Q' ||
+        type == 'f'
+        )
+    {
+        ret = kValue;
     }
     
     //struct
-    else if ([firstChar isEqualToString:@"{"])
-    {
+    if (type == '{') {
         ret = kStruct;
     }
     
     //union
-    else if ([firstChar isEqualToString:@"("])
-    {
+    else if (type == '('){
         ret = kUnion;
-        
     }
     
     //pointer
-    else if([firstChar isEqualToString:@"^"])
-    {
+    else if (type == '^'){
         ret = kPointer;
     }
-    
     //object
-    else if ([firstChar isEqualToString:@"@"])
+    else if (type == '@')
     {
         ret = kObject;
     }
+    else if(type == '#')
+    {
+        ret = kClass;
+    }
+    else if (type == 'v')
+    {
+        ret = kVoid;
+    }
+    else if (type == ':')
+    {
+        ret = kSEL;
+    }
+    else if (type == '*')
+    {
+        ret =  KCharacterString;
+    }
     else
-        ret = -1;
+        ret = KUnknown;
     
     return ret;
+    
+}
+
++ (NSSet* )propertyNamesInternal:(Class) class
+{
+    NSSet *cachedKeys = objc_getAssociatedObject(class, VZItemCachedPropertyKeysKey);
+    if (cachedKeys.count > 0 )
+        return cachedKeys;
+    
+    NSMutableSet* set = [NSMutableSet new];
+    unsigned int outCount, i;
+    objc_property_t *properties = class_copyPropertyList([class class], &outCount);
+    
+    for(i = 0; i < outCount; i++)
+    {
+        objc_property_t property = properties[i];
+        
+        //get property name
+        const char *propName = property_getName(property);
+        
+        //chect value for key is not nil!!
+        NSString *propertyName = @(propName);
+        
+        [set addObject:propertyName];
+        
+    }
+    
+    //cache sets
+    objc_setAssociatedObject(class, VZItemCachedPropertyKeysKey, set, OBJC_ASSOCIATION_COPY);
+    
+    
+    free(properties);
+    
+    return set;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
