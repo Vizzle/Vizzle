@@ -47,14 +47,14 @@ static inline BOOL vz_isOperationStateTransationValid(VZHTTPOperationState fromS
                 case VZHTTPOperationPauseState:
                 case VZHTTPOperationExecutingState:
                 {
-                    NSLog(@"[VZHTTPRunloopOperation]-->[valid state trans: %@-->%@]",f,t);
+                    //NSLog(@"[VZHTTPRunloopOperation]-->[valid state trans: %@-->%@]",f,t);
                     return YES;
                 }
                 case VZHTTPOperationFinishedState:
                     return isCancelled;
                 default:
                 {
-                    NSLog(@"[VZHTTPRunloopOperation]-->[Invalid state trans: %@-->%@]",f,t);
+                    //NSLog(@"[VZHTTPRunloopOperation]-->[Invalid state trans: %@-->%@]",f,t);
                     return NO;
                 }
             }
@@ -63,18 +63,18 @@ static inline BOOL vz_isOperationStateTransationValid(VZHTTPOperationState fromS
                 case VZHTTPOperationPauseState:
                 case VZHTTPOperationFinishedState:
                 {
-                     NSLog(@"[VZHTTPRunloopOperation]-->[valid state trans: %@-->%@]",f,t);
+                     //NSLog(@"[VZHTTPRunloopOperation]-->[valid state trans: %@-->%@]",f,t);
                     return YES;
                 }
                 default:
                 {
-                    NSLog(@"[VZHTTPRunloopOperation]-->[Invalid state trans: %@-->%@]",f,t);
+                    //NSLog(@"[VZHTTPRunloopOperation]-->[Invalid state trans: %@-->%@]",f,t);
                     return NO;
                 }
             }
         case VZHTTPOperationFinishedState:
         {
-             NSLog(@"[VZHTTPRunloopOperation]-->[Invalid state trans: %@-->%@]",f,t);
+             //NSLog(@"[VZHTTPRunloopOperation]-->[Invalid state trans: %@-->%@]",f,t);
             return NO;
         }
         case VZHTTPOperationPauseState:

@@ -195,7 +195,7 @@
 
 - (void)requestDidStart:(id<VZHTTPRequestInterface>)request
 {
-    NSLog(@"[%@]-->REQUEST_START:%@",self.class,request.requestURL);
+    //NSLog(@"[%@]-->REQUEST_START:%@",self.class,request.requestURL);
     
     [self didStartLoading];
 }
@@ -207,7 +207,7 @@
     _responseObject = request.responseObject;
     _isResponseObjectFromCache = fromCache;
 
-    NSLog(@"[%@]-->REQUEST_FINISH:%@",self.class,responseObject);
+    //NSLog(@"[%@]-->REQUEST_FINISH:%@",self.class,responseObject);
 
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -242,7 +242,7 @@
 }
 - (void)request:(id<VZHTTPRequestInterface>) request DidFailWithError:(NSError *)error
 {
-    NSLog(@"[%@]-->REQUEST_FAILED:%@",self.class,error);
+    //NSLog(@"[%@]-->REQUEST_FAILED:%@",self.class,error);
     
     
     _responseString = request.responseString;

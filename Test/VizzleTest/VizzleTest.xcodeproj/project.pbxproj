@@ -7,14 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		45B82D2E1B579DF40053D51C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D2D1B579DF40053D51C /* main.m */; };
-		45B82D311B579DF40053D51C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D301B579DF40053D51C /* AppDelegate.m */; };
-		45B82D341B579DF40053D51C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D331B579DF40053D51C /* ViewController.m */; };
-		45B82D371B579DF40053D51C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B82D351B579DF40053D51C /* Main.storyboard */; };
-		45B82D391B579DF40053D51C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B82D381B579DF40053D51C /* Images.xcassets */; };
-		45B82D3C1B579DF40053D51C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B82D3A1B579DF40053D51C /* LaunchScreen.xib */; };
 		45B82D551B579E740053D51C /* VZControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D521B579E740053D51C /* VZControllerTests.m */; };
-		45B82D561B579E740053D51C /* VZModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D541B579E740053D51C /* VZModelTests.m */; };
+		45B82D561B579E740053D51C /* VZModelStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D541B579E740053D51C /* VZModelStateTests.m */; };
 		45B82D9B1B579E9C0053D51C /* VZAFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D5A1B579E9C0053D51C /* VZAFRequest.m */; };
 		45B82D9C1B579E9C0053D51C /* VZListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D5D1B579E9C0053D51C /* VZListViewController.m */; };
 		45B82D9D1B579E9C0053D51C /* VZListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D5F1B579E9C0053D51C /* VZListViewDataSource.m */; };
@@ -42,33 +36,14 @@
 		45B82DB31B579E9C0053D51C /* VZListDefaultErrorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D951B579E9C0053D51C /* VZListDefaultErrorCell.m */; };
 		45B82DB41B579E9C0053D51C /* VZListDefaultLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D971B579E9C0053D51C /* VZListDefaultLoadingCell.m */; };
 		45B82DB51B579E9C0053D51C /* VZListDefaultTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D991B579E9C0053D51C /* VZListDefaultTextCell.m */; };
+		45B82DB71B57A4DB0053D51C /* VZHTTPModelAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82DB61B57A4DB0053D51C /* VZHTTPModelAPITests.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		45B82D421B579DF40053D51C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45B82D201B579DF40053D51C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45B82D271B579DF40053D51C;
-			remoteInfo = VizzleTest;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		45B82D281B579DF40053D51C /* VizzleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VizzleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		45B82D2C1B579DF40053D51C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		45B82D2D1B579DF40053D51C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		45B82D2F1B579DF40053D51C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		45B82D301B579DF40053D51C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		45B82D321B579DF40053D51C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		45B82D331B579DF40053D51C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		45B82D361B579DF40053D51C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		45B82D381B579DF40053D51C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		45B82D3B1B579DF40053D51C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		45B82D411B579DF40053D51C /* VizzleTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VizzleTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B82D461B579DF40053D51C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B82D521B579E740053D51C /* VZControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZControllerTests.m; sourceTree = "<group>"; };
-		45B82D541B579E740053D51C /* VZModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZModelTests.m; sourceTree = "<group>"; };
+		45B82D541B579E740053D51C /* VZModelStateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZModelStateTests.m; sourceTree = "<group>"; };
 		45B82D591B579E9C0053D51C /* VZAFRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZAFRequest.h; sourceTree = "<group>"; };
 		45B82D5A1B579E9C0053D51C /* VZAFRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZAFRequest.m; sourceTree = "<group>"; };
 		45B82D5C1B579E9C0053D51C /* VZListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewController.h; sourceTree = "<group>"; };
@@ -129,16 +104,10 @@
 		45B82D981B579E9C0053D51C /* VZListDefaultTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultTextCell.h; sourceTree = "<group>"; };
 		45B82D991B579E9C0053D51C /* VZListDefaultTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultTextCell.m; sourceTree = "<group>"; };
 		45B82D9A1B579E9C0053D51C /* Vizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vizzle.h; sourceTree = "<group>"; };
+		45B82DB61B57A4DB0053D51C /* VZHTTPModelAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelAPITests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		45B82D251B579DF40053D51C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		45B82D3E1B579DF40053D51C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,7 +121,6 @@
 		45B82D1F1B579DF40053D51C = {
 			isa = PBXGroup;
 			children = (
-				45B82D2A1B579DF40053D51C /* VizzleTest */,
 				45B82D441B579DF40053D51C /* VizzleTestTests */,
 				45B82D291B579DF40053D51C /* Products */,
 			);
@@ -161,34 +129,9 @@
 		45B82D291B579DF40053D51C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				45B82D281B579DF40053D51C /* VizzleTest.app */,
 				45B82D411B579DF40053D51C /* VizzleTestTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		45B82D2A1B579DF40053D51C /* VizzleTest */ = {
-			isa = PBXGroup;
-			children = (
-				45B82D2F1B579DF40053D51C /* AppDelegate.h */,
-				45B82D301B579DF40053D51C /* AppDelegate.m */,
-				45B82D321B579DF40053D51C /* ViewController.h */,
-				45B82D331B579DF40053D51C /* ViewController.m */,
-				45B82D351B579DF40053D51C /* Main.storyboard */,
-				45B82D381B579DF40053D51C /* Images.xcassets */,
-				45B82D3A1B579DF40053D51C /* LaunchScreen.xib */,
-				45B82D2B1B579DF40053D51C /* Supporting Files */,
-			);
-			path = VizzleTest;
-			sourceTree = "<group>";
-		};
-		45B82D2B1B579DF40053D51C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				45B82D2C1B579DF40053D51C /* Info.plist */,
-				45B82D2D1B579DF40053D51C /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		45B82D441B579DF40053D51C /* VizzleTestTests */ = {
@@ -222,7 +165,8 @@
 		45B82D531B579E740053D51C /* model */ = {
 			isa = PBXGroup;
 			children = (
-				45B82D541B579E740053D51C /* VZModelTests.m */,
+				45B82D541B579E740053D51C /* VZModelStateTests.m */,
+				45B82DB61B57A4DB0053D51C /* VZHTTPModelAPITests.m */,
 			);
 			name = model;
 			path = ../../model;
@@ -355,23 +299,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		45B82D271B579DF40053D51C /* VizzleTest */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 45B82D4B1B579DF50053D51C /* Build configuration list for PBXNativeTarget "VizzleTest" */;
-			buildPhases = (
-				45B82D241B579DF40053D51C /* Sources */,
-				45B82D251B579DF40053D51C /* Frameworks */,
-				45B82D261B579DF40053D51C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = VizzleTest;
-			productName = VizzleTest;
-			productReference = 45B82D281B579DF40053D51C /* VizzleTest.app */;
-			productType = "com.apple.product-type.application";
-		};
 		45B82D401B579DF40053D51C /* VizzleTestTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B82D4E1B579DF50053D51C /* Build configuration list for PBXNativeTarget "VizzleTestTests" */;
@@ -383,7 +310,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				45B82D431B579DF40053D51C /* PBXTargetDependency */,
 			);
 			name = VizzleTestTests;
 			productName = VizzleTestTests;
@@ -399,9 +325,6 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = VizLab;
 				TargetAttributes = {
-					45B82D271B579DF40053D51C = {
-						CreatedOnToolsVersion = 6.3.2;
-					};
 					45B82D401B579DF40053D51C = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = 45B82D271B579DF40053D51C;
@@ -421,23 +344,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				45B82D271B579DF40053D51C /* VizzleTest */,
 				45B82D401B579DF40053D51C /* VizzleTestTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		45B82D261B579DF40053D51C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45B82D371B579DF40053D51C /* Main.storyboard in Resources */,
-				45B82D3C1B579DF40053D51C /* LaunchScreen.xib in Resources */,
-				45B82D391B579DF40053D51C /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		45B82D3F1B579DF40053D51C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -448,16 +360,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		45B82D241B579DF40053D51C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45B82D341B579DF40053D51C /* ViewController.m in Sources */,
-				45B82D311B579DF40053D51C /* AppDelegate.m in Sources */,
-				45B82D2E1B579DF40053D51C /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		45B82D3D1B579DF40053D51C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -482,6 +384,7 @@
 				45B82DA81B579E9C0053D51C /* NSString+VZHTTPNetworkUtil.m in Sources */,
 				45B82DB31B579E9C0053D51C /* VZListDefaultErrorCell.m in Sources */,
 				45B82DA31B579E9C0053D51C /* VZHTTPResponseDataCache.m in Sources */,
+				45B82DB71B57A4DB0053D51C /* VZHTTPModelAPITests.m in Sources */,
 				45B82DA61B579E9C0053D51C /* VZListItem.m in Sources */,
 				45B82DB51B579E9C0053D51C /* VZListDefaultTextCell.m in Sources */,
 				45B82DAD1B579E9C0053D51C /* VZHTTPResponseParser.m in Sources */,
@@ -489,39 +392,12 @@
 				45B82DA41B579E9C0053D51C /* VZItem.m in Sources */,
 				45B82DAB1B579E9C0053D51C /* VZHTTPNetworkSecurity.m in Sources */,
 				45B82D551B579E740053D51C /* VZControllerTests.m in Sources */,
-				45B82D561B579E740053D51C /* VZModelTests.m in Sources */,
+				45B82D561B579E740053D51C /* VZModelStateTests.m in Sources */,
 				45B82DA51B579E9C0053D51C /* VZListDefaultTextItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		45B82D431B579DF40053D51C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45B82D271B579DF40053D51C /* VizzleTest */;
-			targetProxy = 45B82D421B579DF40053D51C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		45B82D351B579DF40053D51C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45B82D361B579DF40053D51C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		45B82D3A1B579DF40053D51C /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45B82D3B1B579DF40053D51C /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		45B82D491B579DF50053D51C /* Debug */ = {
@@ -606,26 +482,6 @@
 			};
 			name = Release;
 		};
-		45B82D4C1B579DF50053D51C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = VizzleTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		45B82D4D1B579DF50053D51C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = VizzleTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		45B82D4F1B579DF50053D51C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -668,15 +524,6 @@
 			buildConfigurations = (
 				45B82D491B579DF50053D51C /* Debug */,
 				45B82D4A1B579DF50053D51C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		45B82D4B1B579DF50053D51C /* Build configuration list for PBXNativeTarget "VizzleTest" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				45B82D4C1B579DF50053D51C /* Debug */,
-				45B82D4D1B579DF50053D51C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
