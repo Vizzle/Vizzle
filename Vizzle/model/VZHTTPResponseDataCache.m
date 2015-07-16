@@ -7,6 +7,7 @@
 //
 
 #import "VZHTTPResponseDataCache.h"
+#import "VZHTTPRequestInterface.h"
 #import <CommonCrypto/CommonCrypto.h>
 
 @interface VZHTTPURLResponseItem : NSObject<NSCoding>
