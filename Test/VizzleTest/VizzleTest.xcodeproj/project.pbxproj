@@ -37,6 +37,9 @@
 		45B82DB41B579E9C0053D51C /* VZListDefaultLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D971B579E9C0053D51C /* VZListDefaultLoadingCell.m */; };
 		45B82DB51B579E9C0053D51C /* VZListDefaultTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D991B579E9C0053D51C /* VZListDefaultTextCell.m */; };
 		45B82DB71B57A4DB0053D51C /* VZHTTPModelAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82DB61B57A4DB0053D51C /* VZHTTPModelAPITests.m */; };
+		45B82DBB1B58DC990053D51C /* VZHTTPListModelAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82DBA1B58DC990053D51C /* VZHTTPListModelAPITests.m */; };
+		45BEAEA71B58DE6800B396AE /* BXTWTripListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BEAEA61B58DE6800B396AE /* BXTWTripListItem.m */; };
+		45BEAEAA1B58DEA600B396AE /* BXTWTripListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BEAEA91B58DEA600B396AE /* BXTWTripListModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +108,11 @@
 		45B82D991B579E9C0053D51C /* VZListDefaultTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultTextCell.m; sourceTree = "<group>"; };
 		45B82D9A1B579E9C0053D51C /* Vizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vizzle.h; sourceTree = "<group>"; };
 		45B82DB61B57A4DB0053D51C /* VZHTTPModelAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelAPITests.m; sourceTree = "<group>"; };
+		45B82DBA1B58DC990053D51C /* VZHTTPListModelAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPListModelAPITests.m; sourceTree = "<group>"; };
+		45BEAEA51B58DE6800B396AE /* BXTWTripListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripListItem.h; sourceTree = "<group>"; };
+		45BEAEA61B58DE6800B396AE /* BXTWTripListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripListItem.m; sourceTree = "<group>"; };
+		45BEAEA81B58DEA600B396AE /* BXTWTripListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripListModel.h; sourceTree = "<group>"; };
+		45BEAEA91B58DEA600B396AE /* BXTWTripListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripListModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,8 +173,10 @@
 		45B82D531B579E740053D51C /* model */ = {
 			isa = PBXGroup;
 			children = (
+				45B82DBC1B58DDAD0053D51C /* mock */,
 				45B82D541B579E740053D51C /* VZModelStateTests.m */,
 				45B82DB61B57A4DB0053D51C /* VZHTTPModelAPITests.m */,
+				45B82DBA1B58DC990053D51C /* VZHTTPListModelAPITests.m */,
 			);
 			name = model;
 			path = ../../model;
@@ -296,6 +306,17 @@
 			path = list;
 			sourceTree = "<group>";
 		};
+		45B82DBC1B58DDAD0053D51C /* mock */ = {
+			isa = PBXGroup;
+			children = (
+				45BEAEA81B58DEA600B396AE /* BXTWTripListModel.h */,
+				45BEAEA91B58DEA600B396AE /* BXTWTripListModel.m */,
+				45BEAEA51B58DE6800B396AE /* BXTWTripListItem.h */,
+				45BEAEA61B58DE6800B396AE /* BXTWTripListItem.m */,
+			);
+			path = mock;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -367,6 +388,7 @@
 				45B82DB21B579E9C0053D51C /* VZListCell.m in Sources */,
 				45B82D9C1B579E9C0053D51C /* VZListViewController.m in Sources */,
 				45B82DB01B579E9C0053D51C /* VZHTTPURLResponseCache.m in Sources */,
+				45B82DBB1B58DC990053D51C /* VZHTTPListModelAPITests.m in Sources */,
 				45B82D9E1B579E9C0053D51C /* VZListViewDelegate.m in Sources */,
 				45B82DAE1B579E9C0053D51C /* VZHTTPRunloopOperation.m in Sources */,
 				45B82DB11B579E9C0053D51C /* VZFooterViewFactory.m in Sources */,
@@ -375,6 +397,7 @@
 				45B82DAF1B579E9C0053D51C /* VZHTTPURLConnectionOperation.m in Sources */,
 				45B82DA71B579E9C0053D51C /* VZModel.m in Sources */,
 				45B82DB41B579E9C0053D51C /* VZListDefaultLoadingCell.m in Sources */,
+				45BEAEAA1B58DEA600B396AE /* BXTWTripListModel.m in Sources */,
 				45B82DA01B579E9C0053D51C /* VZHTTPListModel.m in Sources */,
 				45B82DA11B579E9C0053D51C /* VZHTTPModel.m in Sources */,
 				45B82D9F1B579E9C0053D51C /* VZViewController.m in Sources */,
@@ -391,6 +414,7 @@
 				45B82DAC1B579E9C0053D51C /* VZHTTPRequestGenerator.m in Sources */,
 				45B82DA41B579E9C0053D51C /* VZItem.m in Sources */,
 				45B82DAB1B579E9C0053D51C /* VZHTTPNetworkSecurity.m in Sources */,
+				45BEAEA71B58DE6800B396AE /* BXTWTripListItem.m in Sources */,
 				45B82D551B579E740053D51C /* VZControllerTests.m in Sources */,
 				45B82D561B579E740053D51C /* VZModelStateTests.m in Sources */,
 				45B82DA51B579E9C0053D51C /* VZListDefaultTextItem.m in Sources */,

@@ -44,6 +44,10 @@
         return;
     }
     
+    if (self.state == VZModelStateLoading) {
+        return;
+    }
+    
     if (self.hasMore) {
         self.currentPageIndex += 1;
         [self loadInternal];
