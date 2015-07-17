@@ -5,12 +5,149 @@
 // 
 
 #import "VZModel.h"
+#import <libkern/OSAtomic.h>
+
+static inline NSString * vz_descForModelState(VZModelState state) {
+    switch (state) {
+        case VZModelStateReady:
+            return @"isReady";
+        case VZModelStateLoading:
+            return @"isLoading";
+        case VZModelStateFinished:
+            return @"isFinished";
+        case VZModelStateError:
+            return @"isError";
+        default:
+            return @"unKnown state";
+    }
+}
+
+static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZModelState toState, BOOL isCancelled)
+{
+    
+    NSString* f = vz_descForModelState(fromState);
+    NSString* t = vz_descForModelState(toState);
+    
+    switch (fromState) {
+            
+        case VZModelStateReady:
+            switch (toState) {
+                case VZModelStateReady:
+                case VZModelStateLoading:
+                {
+                    NSLog(@"\xE2\x9C\x85[VZModelState]-->[%@-->%@]",f,t);
+                    return YES;
+                }
+                default:
+                {
+                     NSLog(@"\xE2\x9C\x8C[VZModelState]-->[%@-->%@]",f,t);
+                    return NO;
+                }
+            }
+        case VZModelStateLoading:
+            switch (toState) {
+                case VZModelStateFinished:
+                case VZModelStateError:
+                {
+                    NSLog(@"\xE2\x9C\x85[VZModelState]-->[%@-->%@]",f,t);
+                    return YES;
+                }
+                default:
+                {
+                    NSLog(@"\xE2\x9C\x8C[VZModelState]-->[trans: %@-->%@]",f,t);
+                    return NO;
+                }
+            }
+        case VZModelStateFinished:
+        {
+            switch (toState) {
+                case VZModelStateReady:
+                {
+                    NSLog(@"\xE2\x9C\x85[VZModelState]-->[%@-->%@]",f,t);
+                    return YES;
+                }
+                default:
+                {
+                    NSLog(@"\xE2\x9C\x8C[VZModelState]-->[trans: %@-->%@]",f,t);
+                    return NO;
+                }
+            }
+        }
+        case VZModelStateError:
+        {
+            switch (toState) {
+                case VZModelStateReady:
+                {
+                    NSLog(@"\xE2\x9C\x85[VZModelState]-->[%@-->%@]",f,t);
+                    return YES;
+                }
+                default:
+                {
+                    NSLog(@"\xE2\x9C\x8C[VZModelState]-->[trans: %@-->%@]",f,t);
+                    return NO;
+                }
+            }
+        }
+        default:
+            return NO;
+    }
+}
 
 @interface VZModel()
+
 @property(nonatomic,copy) VZModelCallback requestCallback;
+@property(nonatomic,assign,readwrite) VZModelState state;
+@property(nonatomic,assign) BOOL isCancelled;
+
 @end
 
 @implementation VZModel
+{
+    OSSpinLock _lock;
+}
+
+////////////////////////////////////////////////////////////////
+#pragma mark - setters
+
+- (void)setState:(VZModelState)state
+{
+    OSSpinLockLock(& _lock);
+    if (vz_isModelStateTransationValid(self.state, state, [self isCancelled]))
+    {
+        NSString *oldStateKey = vz_descForModelState(self.state);
+        NSString *newStateKey = vz_descForModelState(state);
+        
+        [self willChangeValueForKey:newStateKey];
+        [self willChangeValueForKey:oldStateKey];
+        _state = state;
+        [self didChangeValueForKey:oldStateKey];
+        [self didChangeValueForKey:newStateKey];
+    }
+    OSSpinLockUnlock(& _lock);
+}
+
+////////////////////////////////////////////////////////////////
+#pragma mark - getters
+
+- (BOOL)isReady {
+    return self.state == VZModelStateReady;
+}
+
+- (BOOL)isLoading {
+    return self.state == VZModelStateLoading;
+}
+
+- (BOOL)isFinished {
+    return self.state == VZModelStateFinished;
+}
+
+- (BOOL)isError{
+    return self.state == VZModelStateError;
+}
+
+
+////////////////////////////////////////////////////////////////
+#pragma mark - public API
 
 - (void)load
 {
@@ -31,7 +168,10 @@
 
 - (void)cancel
 {
-    _state = VZModelStateReady;
+    if (![self isFinished] && !self.isCancelled ) {
+        _state = VZModelStateReady;
+    }
+    
 }
 
 - (void)reset
@@ -65,7 +205,7 @@
 
 - (void)didStartLoading
 {
-    _state = VZModelStateLoading;
+    self.state = VZModelStateLoading;
     
     if ([self.delegate respondsToSelector:@selector(modelDidStart:)]) {
         [self.delegate modelDidStart:self];
@@ -74,7 +214,7 @@
 }
 - (void)didFinishLoading
 {
-    _state = VZModelStateFinished;
+    self.state = VZModelStateFinished;
     
     if ([self.delegate respondsToSelector:@selector(modelDidFinish:)]) {
         [self.delegate modelDidFinish:self];
@@ -87,7 +227,7 @@
 }
 - (void)didFailWithError:(NSError* )error
 {
-    _state = VZModelStateError;
+    self.state = VZModelStateError;
     _error = error;
     
     if ([self.delegate respondsToSelector:@selector(modelDidFail:withError:)]) {

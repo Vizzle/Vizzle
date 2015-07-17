@@ -37,19 +37,21 @@
 
 @implementation VZHTTPModelAPITests
 {
-   
+    XCTestExpectation* _expecation;
 }
 
 - (void)setUp {
     
     [super setUp];
     self.model = [VZHTTPTestModel new];
+    [self.model addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial context:nil];
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
     
+    [_model removeObserver:self forKeyPath:@"state" context:nil];
     _model = nil;
 }
 
@@ -61,17 +63,32 @@
  */
 - (void)testLoad
 {
+    
+    _expecation = [self expectationWithName:NSStringFromSelector(_cmd)];
     self.model.delegate = self;
     [self.model load];
     NSTimeInterval timeoutValue = self.model.requestConfig.requestTimeoutSeconds;
-    [self delay:timeoutValue completion:^{
-        XCTFail(@"Timeout!");
+    [self waitForExpectationsWithTimeout:timeoutValue handler:^(NSError *error) {
+        
+        if (error) {
+             XCTFail(@"\xE2\x9D\x8C[Timeout]:%@",error.userInfo[NSLocalizedDescriptionKey]);
+        }
+        else
+        {
+            NSLog(@"\xE2\x9C\x85[Test]-->Succeed");
+        }
+       
     }];
 }
-
+/**
+ *  测试API:loadWithCompletion,使用block
+ */
 - (void)testLoadWithCompletion
 {
+    _expecation = [self expectationWithName:NSStringFromSelector(_cmd)];
     self.model.delegate = nil;
+    
+    __weak typeof(self) weakSelf = self;
     [self.model loadWithCompletion:^(VZModel *model, NSError *error) {
        
         if (!error) {
@@ -84,34 +101,80 @@
             XCTAssertEqual(model.state, VZModelStateError);
             
         }
+        if (weakSelf) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf->_expecation fulfill];
+        }
+        
     }];
     NSTimeInterval timeoutValue = self.model.requestConfig.requestTimeoutSeconds;
-    [self delay:timeoutValue completion:^{
-        XCTFail(@"Timeout!");
+    [self waitForExpectationsWithTimeout:timeoutValue handler:^(NSError *error) {
+        
+        if (error) {
+            XCTFail(@"\xE2\x9D\x8C[Timeout]");
+        }
+        else
+        {
+            NSLog(@"\xE2\x9C\x85[Test]-->Succeed");
+        }
+        
     }];
 
 }
 
 - (void)testReloadWithCompletion
 {
+    _expecation = [self expectationWithName:NSStringFromSelector(_cmd)];
+    self.model.delegate = nil;
     
+    __weak typeof(self) weakSelf = self;
+    [self.model reloadWithCompletion:^(VZModel *model, NSError *error) {
+        
+        if (!error) {
+            
+            XCTAssertEqual(model.state, VZModelStateFinished);
+            
+        }
+        else
+        {
+            XCTAssertEqual(model.state, VZModelStateError);
+            
+        }
+        if (weakSelf) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf->_expecation fulfill];
+        }
+        
+    }];
+    NSTimeInterval timeoutValue = self.model.requestConfig.requestTimeoutSeconds;
+    [self waitForExpectationsWithTimeout:timeoutValue handler:^(NSError *error) {
+        
+        if (error) {
+            XCTFail(@"\xE2\x9D\x8C[Timeout]");
+        }
+        else
+        {
+            NSLog(@"\xE2\x9C\x85[Test]-->Succeed");
+        }
+        
+    }];
     
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-#pragma mark - test timeout
+#pragma mark - kvo
 
-
-
-- (void)testLoadSucceed
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-
+    if ([keyPath isEqualToString:@"state"]) {
+        
+        NSLog(@"%@",change);
+    }
 }
 
-- (void)testLoadFailed
-{
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - callback
 
-}
 
 - (void)modelDidStart:(VZModel *)model
 {
@@ -120,14 +183,14 @@
 
 - (void)modelDidFinish:(VZModel *)model
 {
-    NSLog(@"!!!%ld!!!",(long)model.state);
     XCTAssertEqual(model.state, VZModelStateFinished);
+    [_expecation fulfill];
 }
 
 - (void)modelDidFail:(VZModel *)model withError:(NSError *)error
 {
-    NSLog(@"!!!%ld!!!",(long)model.state);
     XCTAssertEqual(model.state, VZModelStateError);
+    [_expecation fulfill];
 }
 
 
@@ -144,6 +207,11 @@
     if (block) {
         block();
     }
+}
+
+- (XCTestExpectation* )expectationWithName:(NSString* )name
+{
+    return [self expectationWithDescription:name];
 }
 
 @end

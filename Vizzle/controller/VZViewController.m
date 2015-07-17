@@ -6,7 +6,6 @@
 
 #import "VZViewController.h"
 #import "VZHTTPModel.h"
-#import <libkern/OSAtomic.h>
 #import "VZAssert.h"
 
 @interface VZViewController ()
@@ -14,9 +13,6 @@
 
     //VZMV* => 1.4 Internal states of viewcontroller
     NSMutableDictionary* _states; //<key:model's key, value>
-    
-    //lock here
-    OSSpinLock _lock;
 }
 
 @end
@@ -49,7 +45,6 @@
         
         _modelDictInternal = [NSMutableDictionary new];
         _states = [NSMutableDictionary new];
-        _lock = OS_SPINLOCK_INIT;
         _uuid = [[NSUUID UUID] UUIDString];
     }
     return self;
@@ -64,7 +59,6 @@
         
         _modelDictInternal = [NSMutableDictionary new];
         _states = [NSMutableDictionary new];
-        _lock = OS_SPINLOCK_INIT;
         _uuid = [[NSUUID UUID] UUIDString];
     }
     return self;
@@ -74,10 +68,9 @@
     
     NSLog(@"[%@]-->dealloc",self.class);
     
-    OSSpinLockLock(&_lock);
+    VZAssertMainThread();
     [_modelDictInternal removeAllObjects];
     [_states removeAllObjects];
-    OSSpinLockUnlock(&_lock);
     
 }
 
@@ -91,11 +84,9 @@
     model.delegate = self;
     
     NSAssert(model.key != nil, @"model must have a key");
-    
-    OSSpinLockLock(&_lock);
+
     [_modelDictInternal setObject:model forKey:model.key];
     [_states setObject:@"ready" forKey:model.key];
-    OSSpinLockUnlock(&_lock);
 }
 
 - (void)unRegisterModel:(VZModel *)model{
@@ -103,19 +94,15 @@
     VZAssertMainThread();
     
     NSAssert(model.key != nil, @"model must have a key");
-    
-    OSSpinLockLock(&_lock);
+
     [_modelDictInternal removeObjectForKey:model.key];
     [_states removeObjectForKey:model.key];
-    OSSpinLockUnlock(&_lock);
 }
 
 
 - (void)load {
     
     VZAssertMainThread();
-    
-    OSSpinLockLock(&_lock);
     [_modelDictInternal  enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         VZHTTPModel *model = (VZHTTPModel*)obj;
         
@@ -125,14 +112,12 @@
             [model load];
         });
     }];
-    OSSpinLockUnlock(&_lock);
 }
 
 - (void)reload
 {
     VZAssertMainThread();
-    
-    OSSpinLockLock(&_lock);
+
     [_modelDictInternal  enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         VZHTTPModel *model = (VZHTTPModel*)obj;
         
@@ -142,7 +127,6 @@
             [model reload];
         });
     }];
-    OSSpinLockUnlock(&_lock);
 }
 
 
@@ -188,13 +172,8 @@
     VZAssertMainThread();
     
     if (status && key) {
-        
-        OSSpinLockLock(&_lock);
-        
         _states[key] = status;
         NSLog(@"[%@]-->status:%@",self.class,_states);
-        
-        OSSpinLockUnlock(&_lock);
     }
 }
 

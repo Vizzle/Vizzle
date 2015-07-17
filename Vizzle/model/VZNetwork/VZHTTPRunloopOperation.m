@@ -37,9 +37,9 @@ static inline NSString * vz_keyForOperationState(VZHTTPOperationState state) {
 
 static inline BOOL vz_isOperationStateTransationValid(VZHTTPOperationState fromState, VZHTTPOperationState toState, BOOL isCancelled) {
     
-    NSString* f = vz_keyForOperationState(fromState);
-    NSString* t = vz_keyForOperationState(toState);
-    
+//    NSString* f = vz_keyForOperationState(fromState);
+//    NSString* t = vz_keyForOperationState(toState);
+//    
     switch (fromState) {
            
         case VZHTTPOperationReadyState:
