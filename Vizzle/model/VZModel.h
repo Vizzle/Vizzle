@@ -25,14 +25,35 @@ typedef NS_OPTIONS(NSInteger, VZModelState) {
 
 @class VZModel;
 
-
+/**
+ *  Model请求结果的回调
+ *
+ *  @param model 当前model
+ *  @param error 错误信息
+ */
 typedef void(^VZModelCallback) (VZModel* model, NSError* error);
 
 @protocol VZModelDelegate <NSObject>
 
 @optional
+/**
+ *  model开始请求
+ *
+ *  @param model 当前model
+ */
 - (void)modelDidStart:(VZModel *)model;
+/**
+ *  model结束请求
+ *
+ *  @param model 当前model
+ */
 - (void)modelDidFinish:(VZModel *)model;
+/**
+ *  model请求失败
+ *
+ *  @param model 当前model
+ *  @param error 错误
+ */
 - (void)modelDidFail:(VZModel *)model withError:(NSError *)error;
 
 @end
@@ -106,6 +127,7 @@ typedef void(^VZModelCallback) (VZModel* model, NSError* error);
 - (void)didStartLoading;
 - (void)didFinishLoading;
 - (void)didFailWithError:(NSError* )error;
+
 
 @end
 

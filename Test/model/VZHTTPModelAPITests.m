@@ -122,6 +122,9 @@
 
 }
 
+/**
+ *  测试 API: reloadWithCompletion
+ */
 - (void)testReloadWithCompletion
 {
     _expecation = [self expectationWithName:NSStringFromSelector(_cmd)];
@@ -161,6 +164,63 @@
     
 }
 
+/**
+ *  测试 API: cancel
+ */
+- (void)testCancel1
+{
+    [self.model load];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.model cancel];
+    });
+    NSTimeInterval timeoutValue = 2.0f;
+    [self delay:timeoutValue completion:^{
+        
+        XCTAssertEqual(self.model.state, VZModelStateReady);
+    }];
+
+
+}
+
+- (void)testCancel2
+{
+    self.model.delegate = nil;
+    [self.model loadWithCompletion:^(VZModel *model, NSError *error) {
+        
+        //noop
+    }];
+    NSTimeInterval timeoutValue = 2.0f;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.model cancel];
+        [self.model cancel];
+    });
+    [self delay:timeoutValue completion:^{
+       
+        XCTAssertEqual(self.model.state, VZModelStateReady);
+    }];
+
+}
+
+- (void)testCancel3
+{
+    self.model.delegate = nil;
+    [self.model reloadWithCompletion:^(VZModel *model, NSError *error) {
+        
+        //noop
+    }];
+    NSTimeInterval timeoutValue = 2.0f;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.model cancel];
+    });
+    [self delay:timeoutValue completion:^{
+        
+        XCTAssertEqual(self.model.state, VZModelStateReady);
+    }];
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - kvo
 
@@ -193,6 +253,11 @@
     [_expecation fulfill];
 }
 
+- (void)modelDidCancel:(VZModel *)model
+{
+    XCTAssertEqual(model.state, VZModelStateReady);
+    [_expecation fulfill];
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - tool

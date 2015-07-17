@@ -52,9 +52,22 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
                     NSLog(@"\xE2\x9C\x85[VZModelState]-->[%@-->%@]",f,t);
                     return YES;
                 }
+                case VZModelStateReady:
+                {
+                    if (isCancelled) {
+                        NSLog(@"\xE2\x9C\x85[VZModelState]-->[%@-->%@]",f,t);
+                        return YES;
+                    }
+                    else
+                    {
+                        NSLog(@"\xE2\x9C\x85[VZModelState]-->[%@-->%@]",f,t);
+                        return NO;
+                    }
+
+                }
                 default:
                 {
-                    NSLog(@"\xE2\x9C\x8C[VZModelState]-->[trans: %@-->%@]",f,t);
+                    NSLog(@"\xE2\x9D\x8C[VZModelState]-->[trans: %@-->%@]",f,t);
                     return NO;
                 }
             }
@@ -112,7 +125,7 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
 - (void)setState:(VZModelState)state
 {
     OSSpinLockLock(& _lock);
-    if (vz_isModelStateTransationValid(self.state, state, [self isCancelled]))
+    if (vz_isModelStateTransationValid(self.state, state, self.isCancelled))
     {
         NSString *oldStateKey = vz_descForModelState(self.state);
         NSString *newStateKey = vz_descForModelState(state);
@@ -145,14 +158,29 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
     return self.state == VZModelStateError;
 }
 
+////////////////////////////////////////////////////////////////
+#pragma mark - life cycle API
+
+- (void)dealloc {
+    
+    if ([self isLoading]) {
+        [self cancel];
+    }
+
+    NSLog(@"[%@]--->dealloc", self.class);
+}
+
 
 ////////////////////////////////////////////////////////////////
 #pragma mark - public API
 
 - (void)load
 {
+    if ([self isLoading]) {
+        [self cancel];
+    }
+    
     if ([self shouldLoad]) {
-        _error = nil;
         [self reset];
     }
     else
@@ -168,15 +196,14 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
 
 - (void)cancel
 {
-    if (![self isFinished] && !self.isCancelled ) {
-        _state = VZModelStateReady;
-    }
-    
+    _isCancelled = true;
+    self.state = VZModelStateReady;
 }
 
 - (void)reset
 {
-    [self cancel];
+    _error = nil;
+    _isCancelled = false;
 }
 
 
@@ -239,6 +266,7 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
         self.requestCallback = nil;
     }
 }
+
 
 @end
 
