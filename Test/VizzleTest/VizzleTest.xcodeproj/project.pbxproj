@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45559FAC1B596572009BD1AA /* VZHTTPModelCacheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45559FAB1B596572009BD1AA /* VZHTTPModelCacheTests.m */; };
 		45B82D551B579E740053D51C /* VZControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D521B579E740053D51C /* VZControllerTests.m */; };
 		45B82D561B579E740053D51C /* VZModelStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D541B579E740053D51C /* VZModelStateTests.m */; };
 		45B82D9B1B579E9C0053D51C /* VZAFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D5A1B579E9C0053D51C /* VZAFRequest.m */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45559FAB1B596572009BD1AA /* VZHTTPModelCacheTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelCacheTests.m; sourceTree = "<group>"; };
 		45B82D411B579DF40053D51C /* VizzleTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VizzleTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B82D461B579DF40053D51C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B82D521B579E740053D51C /* VZControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZControllerTests.m; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				45B82D541B579E740053D51C /* VZModelStateTests.m */,
 				45B82DB61B57A4DB0053D51C /* VZHTTPModelAPITests.m */,
 				45B82DBA1B58DC990053D51C /* VZHTTPListModelAPITests.m */,
+				45559FAB1B596572009BD1AA /* VZHTTPModelCacheTests.m */,
 			);
 			name = model;
 			path = ../../model;
@@ -413,6 +416,7 @@
 				45B82DAD1B579E9C0053D51C /* VZHTTPResponseParser.m in Sources */,
 				45B82DAC1B579E9C0053D51C /* VZHTTPRequestGenerator.m in Sources */,
 				45B82DA41B579E9C0053D51C /* VZItem.m in Sources */,
+				45559FAC1B596572009BD1AA /* VZHTTPModelCacheTests.m in Sources */,
 				45B82DAB1B579E9C0053D51C /* VZHTTPNetworkSecurity.m in Sources */,
 				45BEAEA71B58DE6800B396AE /* BXTWTripListItem.m in Sources */,
 				45B82D551B579E740053D51C /* VZControllerTests.m in Sources */,

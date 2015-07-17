@@ -45,7 +45,10 @@
     }
     
     if (self.state == VZModelStateLoading) {
-        return;
+        
+        if (!_isLoadingAll) {
+            return;
+        }
     }
     
     if (self.hasMore) {
@@ -66,8 +69,6 @@
 - (void)loadAll
 {
     _isLoadingAll = true;
-    
-    [self reset];
     
     [super didStartLoading];
     
