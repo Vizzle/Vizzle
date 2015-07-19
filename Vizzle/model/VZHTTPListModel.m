@@ -50,17 +50,13 @@
         self.willLoadMore = YES;
         __weak typeof(self)weakSelf = self;
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [self loadWithCompletion:^(VZModel *model, NSError *error) {
+        [self loadWithCompletion:^(VZModel *model, NSError *error) {
                 weakSelf.willLoadMore = NO;
                 if (callBack) {
                     callBack(weakSelf,error);
                 }
                 
             }];
-        });
-
     }
     else
     {
@@ -111,9 +107,8 @@
             {
                 weakSelf.willLoadMore = YES;
                 weakSelf.currentPageIndex += 1;
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [weakSelf loadAllWithCompletion:aCallback];
-                });
+                [weakSelf loadAllWithCompletion:aCallback];
+                
             }
             else
             {

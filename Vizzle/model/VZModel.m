@@ -209,18 +209,24 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
 
 - (void)loadWithCompletion:(VZModelCallback)aCallback
 {
-    if (aCallback) {
-        self.requestCallback = aCallback;
-    }
-    [self load];
+    dispatch_async(dispatch_get_main_queue(), ^{
+   
+        if (aCallback) {
+            self.requestCallback = aCallback;
+        }
+        [self load];
+    });
 }
 
 - (void)reloadWithCompletion:(VZModelCallback)aCallback
 {
-    if (aCallback) {
-        self.requestCallback = aCallback;
-    }
-    [self reload];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        if (aCallback) {
+            self.requestCallback = aCallback;
+        }
+        [self reload];
+    });
 
 }
 

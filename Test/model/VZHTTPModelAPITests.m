@@ -8,30 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "VZHTTPModel.h"
+#import "BXTWTripListModel.h"
 
-@interface VZHTTPTestModel : VZHTTPModel
-
-@end
-
-@implementation VZHTTPTestModel
-
-- (NSString* )methodName
-{
-    return @"https://api.app.net/stream/0/posts/stream/global";
-}
-
-- (BOOL)parseResponse:(id)response
-{
-    return true;
-}
-
-
-@end
 
 @interface VZHTTPModelAPITests : XCTestCase<VZModelDelegate>
 
-@property(nonatomic,strong)VZHTTPTestModel* model;
+@property(nonatomic,strong)BXTWTripListModel* model;
 
 @end
 
@@ -43,7 +25,7 @@
 - (void)setUp {
     
     [super setUp];
-    self.model = [VZHTTPTestModel new];
+    self.model = [BXTWTripListModel new];
     [self.model addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial context:nil];
 }
 
@@ -123,6 +105,93 @@
 }
 
 /**
+ *  测试在loadWithCompletion的回调里调用load
+ */
+- (void)testNestedLoad
+{
+    _expecation = [self expectationWithName:NSStringFromSelector(_cmd)];
+    self.model.delegate = self;
+    
+    __weak typeof(self) weakSelf = self;
+    [self.model loadWithCompletion:^(VZModel *model, NSError *error) {
+        
+        if (!error) {
+            
+            XCTAssertEqual(model.state, VZModelStateFinished);
+            [weakSelf.model load];
+            
+        }
+        else
+        {
+            
+            XCTAssertEqual(model.state, VZModelStateError);
+            
+        }
+    }];
+    NSTimeInterval timeoutValue = self.model.requestConfig.requestTimeoutSeconds;
+    [self waitForExpectationsWithTimeout:timeoutValue handler:^(NSError *error) {
+        
+        if (error) {
+            XCTFail(@"\xE2\x9D\x8C[Timeout]");
+        }
+        else
+        {
+            NSLog(@"\xE2\x9C\x85[Test]-->Succeed");
+        }
+        
+    }];
+
+}
+
+/**
+ *  测试loadWithCompletion嵌套调用的情况
+ */
+- (void)testNestedLoadWithCompletion
+{
+    _expecation = [self expectationWithName:NSStringFromSelector(_cmd)];
+    self.model.delegate = nil;
+    
+    __weak typeof(self) weakSelf = self;
+    [self.model loadWithCompletion:^(VZModel *model, NSError *error) {
+        
+        if (!error) {
+            
+            XCTAssertEqual(model.state, VZModelStateFinished);
+            
+            [weakSelf.model loadWithCompletion:^(VZModel *model1, NSError *error1) {
+                
+                if (weakSelf) {
+                    __strong typeof(weakSelf) strongSelf = weakSelf;
+                    [strongSelf->_expecation fulfill];
+                }
+                
+            }];
+            
+        }
+        else
+        {
+            
+            XCTAssertEqual(model.state, VZModelStateError);
+            
+        }
+    }];
+    NSTimeInterval timeoutValue = self.model.requestConfig.requestTimeoutSeconds;
+    [self waitForExpectationsWithTimeout:timeoutValue handler:^(NSError *error) {
+        
+        if (error) {
+            XCTFail(@"\xE2\x9D\x8C[Timeout]");
+        }
+        else
+        {
+            NSLog(@"\xE2\x9C\x85[Test]-->Succeed");
+        }
+        
+    }];
+
+}
+
+
+/**
  *  测试 API: reloadWithCompletion
  */
 - (void)testReloadWithCompletion
@@ -181,14 +250,13 @@
 
 
 }
-
+/**
+ *  测试连续cancel
+ */
 - (void)testCancel2
 {
     self.model.delegate = nil;
-    [self.model loadWithCompletion:^(VZModel *model, NSError *error) {
-        
-        //noop
-    }];
+    [self.model loadWithCompletion:nil];
     NSTimeInterval timeoutValue = 2.0f;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -201,26 +269,6 @@
     }];
 
 }
-
-- (void)testCancel3
-{
-    self.model.delegate = nil;
-    [self.model reloadWithCompletion:^(VZModel *model, NSError *error) {
-        
-        //noop
-    }];
-    NSTimeInterval timeoutValue = 2.0f;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.model cancel];
-    });
-    [self delay:timeoutValue completion:^{
-        
-        XCTAssertEqual(self.model.state, VZModelStateReady);
-    }];
-}
-
-
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - kvo
@@ -251,12 +299,6 @@
 - (void)modelDidFail:(VZModel *)model withError:(NSError *)error
 {
     XCTAssertEqual(model.state, VZModelStateError);
-    [_expecation fulfill];
-}
-
-- (void)modelDidCancel:(VZModel *)model
-{
-    XCTAssertEqual(model.state, VZModelStateReady);
     [_expecation fulfill];
 }
 
