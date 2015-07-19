@@ -134,14 +134,16 @@
         NSString* key = self.cachedKey?:[cache cachedKeyForVZHTTPRequest:self];
         if ([cache hasCache:key]) {
             
-            [cache cachedResponseForUrlString:key completion:^(id object) {
+            [cache cachedResponseForKey:key completion:^(id object) {
                 
                 if (object) {
-                
+
+                    NSLog(@"\xE2\x9C\x85  [%@] --> Fetch Cached Response Succeed!",self);
                     [self requestDidFinish:object FromCache:YES];
                 }
                 else
                 {
+                     NSLog(@"\xE2\x9D\x8E [%@] --> Fetch Cached Response Failed!",self);
                     [self loadHTTP];
                 }
                 
@@ -167,7 +169,17 @@
         NSTimeInterval t = config.cacheTime;
         id<VZHTTPResponseDataCacheInterface> cache = [self globalCache];
         NSString* cachedKey = self.cachedKey?:[cache cachedKeyForVZHTTPRequest:self];
-        [cache saveResponse:object WithUrlString:cachedKey ExpireTime:t];
+        [cache saveResponse:object ForKey:cachedKey ExpireTime:t Completion:^(BOOL b) {
+         
+            if (b) {
+                NSLog(@"\xE2\x9C\x85 [%@] --> Cache Response Succeed!",[self class]);
+            }
+            else
+            {
+                NSLog(@"\xE2\x9D\x8E [%@] --> Cache Response Failed!",[self class]);
+            }
+            
+        }];
     
     }
 }

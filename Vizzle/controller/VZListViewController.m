@@ -191,15 +191,25 @@
 {
     NSAssert(_keyModel != nil, @"至少需要指定一个keymodel");
     if (self.needLoadMore) {
-        if ([self.keyModel hasMore]) {
-            
-            if (self.loadmoreAutomatically) {
-                [self.keyModel loadMore];
-            }
-            else
-                [self showLoadMoreFooterView];
-            
+        
+        //如果当前页是缓存数据，则不进行翻页
+        if (self.keyModel.isResponseObjectFromCache) {
+            return;
         }
+        else
+        {
+            if ([self.keyModel hasMore]) {
+                
+                if (self.loadmoreAutomatically) {
+                    [self.keyModel loadMore];
+                }
+                else
+                    [self showLoadMoreFooterView];
+                
+            }
+        }
+        
+
     }
 }
 

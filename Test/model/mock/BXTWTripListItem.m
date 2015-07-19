@@ -17,11 +17,9 @@
 
 @implementation BXTWTripListItem
 
-- (void)autoKVCBinding:(NSDictionary *)dictionary
+- (void)dealloc
 {
-    [super autoKVCBinding:dictionary];
     
-    //todo...
 }
 
 @end

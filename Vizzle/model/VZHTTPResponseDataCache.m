@@ -161,7 +161,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
 ///////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - public file method
 
-- (void)cachedResponseForUrlString:(NSString*)identifier completion:(void(^)(id object))aCallback
+- (void)cachedResponseForKey:(NSString*)identifier completion:(void(^)(id object))aCallback
 {
 
     [self fetchCachedDataForUrlString:identifier completion:^(id object) {
@@ -196,7 +196,6 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
                     //not timeout
                     if(cha < cacheUrlItem.expireInterval)
                     {
-                        NSLog(@"[%@]-->read from cache:%@",[self class],identifier);
                         response =  cacheUrlItem.response;
                     }
                 }
@@ -222,10 +221,8 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
     }];
 }
 
-- (void)saveResponse:(id)data WithUrlString:(NSString *)identifier ExpireTime:(NSTimeInterval)timeInterval
+- (void)saveResponse:(id)data ForKey:(NSString *)identifier ExpireTime:(NSTimeInterval)timeInterval Completion:(void (^)(BOOL))completion
 {
-    NSLog(@"[%@]-->enter cache:%@",[self class],identifier);
-    
     //save cache item
     VZHTTPURLResponseItem* cacheItem = [[VZHTTPURLResponseItem alloc]init];
     cacheItem.expireInterval = timeInterval;
@@ -234,7 +231,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
     cacheItem.triggerDate    = [NSDate date];
     
     //序列化
-    [self cacheData:cacheItem forUrlString:identifier];
+    [self cacheData:cacheItem forUrlString:identifier completion:completion];
 }
 
 
@@ -256,9 +253,39 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
 {
     NSString* urlString = request.requestURL;
     NSDictionary* queries = request.queries;
-    return [urlString stringByAppendingString:queries?[queries description]:@""];
+    return [[urlString stringByAppendingString:@"/"] stringByAppendingString:queries?[queries description]:@""];
 }
 
+- (void)deleteCachedResponseForKey:(NSString *)key Completion:(void (^)(BOOL))completion
+{
+    if (key.length > 0) {
+        
+        if ([self hasCache:key]) {
+            
+            [self removeCachedDataForKey:key completion:completion];
+
+        }
+        else
+        {
+            if (completion) {
+                completion(false);
+            }
+        }
+    }
+    else
+    {
+        if (completion) {
+            completion(false);
+        }
+    }
+}
+
+
+- (void)cleanAllCachedResponse
+{
+    [self cleanCachedDataInMemory];
+    [self cleanCachedDataOnDisk];
+}
 
 
 
@@ -266,13 +293,13 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
 #pragma mark - private file method
 
 
-- (void)cacheData:(id)data forUrlString:(NSString*)identifier
+- (void)cacheData:(id)data forUrlString:(NSString*)identifier completion:(void(^)(bool b))callback
 {
     NSString* key = [self keyForURLString : identifier];
    
     [_memCache setObject:data forKey:key];
 
-    [self saveResponse:data forKey:key];
+    [self saveResponse:data forKey:key completion:callback];
 
 }
 
@@ -317,7 +344,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
     }
 }
 
-- (void)removeCachedDataForKey:(NSString*)identifier
+- (void)removeCachedDataForKey:(NSString*)identifier completion:(void(^)(bool b))callback
 {
     if (identifier == nil)
         return ;
@@ -328,7 +355,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
         
         if ([_cachePlist objectForKey:key]) {
                 
-            [self deleteResponseForKey:key];
+            [self deleteResponseForKey:key withCompletion:callback];
         }
     });
 }
@@ -344,7 +371,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
         
         for (NSString* key in _cachePlist) {
             
-            [self deleteResponseForKey:key];
+            [self deleteResponseForKey:key withCompletion:nil];
         }
     });
 }
@@ -378,7 +405,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
 
 
 //thread safe
-- (void)saveResponse:(NSData *)data forKey:(NSString *)key
+- (void)saveResponse:(NSData *)data forKey:(NSString *)key completion:(void(^)(BOOL b))completion
 {
 
     dispatch_barrier_async(_barrierQueue, ^{
@@ -388,16 +415,24 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
         //wirte to file
         NSString *filePath = [ _cachePath stringByAppendingPathComponent:key];
         
-        if ([rawUrlList writeToFile:filePath atomically:YES]){
-            NSLog(@"【cache response succeed】");
-        }
-        else{
-            NSLog(@"【cache response failed】");
-        }
+        BOOL ret = [rawUrlList writeToFile:filePath atomically:YES];
         
-        //update plist
-        [_cachePlist setObject:[NSDate date] forKey:key];
-        [_cachePlist writeToFile:[self cachePathForKey:@"VZUrlCache.plist"] atomically:YES];
+        if (ret) {
+            
+            //update plist
+            [_cachePlist setObject:[NSDate date] forKey:key];
+            ret = [_cachePlist writeToFile:[self cachePathForKey:@"VZUrlCache.plist"] atomically:YES];
+            if (completion) {
+                completion(ret);
+            }
+        }
+        else
+        {
+            if (completion) {
+                completion(NO);
+            }
+        }
+
         
     });
 
@@ -414,14 +449,24 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
     
 }
 
-- (void)deleteResponseForKey:(NSString*)key
+- (void)deleteResponseForKey:(NSString*)key withCompletion:(void(^)(BOOL b))completion
 {
     dispatch_barrier_async(_barrierQueue, ^{
         
         [_cachePlist removeObjectForKey:key];
-        [_cachePlist writeToFile:[self cachePathForKey:@"VZUrlCache.plist"] atomically:YES];
+        BOOL ret = [_cachePlist writeToFile:[self cachePathForKey:@"VZUrlCache.plist"] atomically:YES];
         
-        [[NSFileManager defaultManager] removeItemAtPath:[self cachePathForKey:key] error:nil];
+        if (ret)
+        {
+            ret = [[NSFileManager defaultManager] removeItemAtPath:[self cachePathForKey:key] error:nil];
+            if (completion) {
+                completion(ret);
+            }
+        }
+        else
+        {
+            if (completion) {completion(false);}
+        }
    
     });
 }

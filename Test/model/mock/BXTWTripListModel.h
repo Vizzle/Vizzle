@@ -13,5 +13,9 @@
 
 @interface BXTWTripListModel : VZHTTPListModel
 
+//mock：
+@property(nonatomic,assign)VZHTTPNetworkURLCachePolicy cachePolicy;
+@property(nonatomic,assign)VZHTTPNetworkURLCacheTime cacheTime;
+
 @end
 

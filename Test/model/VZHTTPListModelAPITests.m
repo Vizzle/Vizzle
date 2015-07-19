@@ -44,7 +44,7 @@
     NSTimeInterval t = self.model.requestConfig.requestTimeoutSeconds;
     [self waitForExpectationsWithTimeout:t handler:^(NSError *error) {
         if (error) {
-            XCTFail(@"\xE2\x9D\x8C[Timeout]:%@",error.userInfo[NSLocalizedDescriptionKey]);
+            XCTFail(@"\xE2\x9D\x8C[Timeout]");
         }
         else
         {
@@ -55,23 +55,32 @@
 
 - (void)testLoadAllWithCompletion
 {
+    _expecation = [self expectationWithDescription:NSStringFromSelector(_cmd)];
     self.model.delegate=nil;
+    
+    __weak typeof(self)weakSelf = self;
     [self.model loadAllWithCompletion:^(VZModel *model, NSError *error) {
         
-    }];
-    NSTimeInterval t = 10.0f;
-    [self delay:t completion:^{
-       
-        if (self.model.error) {
-            XCTAssertEqual(self.model.state, VZModelStateError);
+        if (model.error) {
+            XCTAssertEqual(model.state, VZModelStateError);
         }
         else
         {
-            XCTAssertEqual(self.model.state, VZModelStateFinished);
-            XCTAssertEqual(self.model.hasMore, NO);
+            XCTAssertEqual(model.state, VZModelStateFinished);
+            XCTAssertEqual(((VZHTTPListModel*)model).hasMore, NO);
         }
         
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (strongSelf) {
+            [strongSelf ->_expecation fulfill];
+        }
     }];
+    //NSTimeInterval t = self.model.requestConfig.requestTimeoutSeconds;
+    [self waitForExpectationsWithTimeout:120 handler:^(NSError *error) {
+       
+        
+    }];
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////

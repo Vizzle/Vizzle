@@ -17,7 +17,7 @@
  *
  *  @return cache是否存在
  */
-- (BOOL)hasCache:(NSString* )identifier;
+- (BOOL)hasCache:(NSString* )key;
 /**
  *  根据request生成cache key
  *
@@ -32,7 +32,7 @@
  *  @param identifier cache key
  *  @param aCallback  回调block
  */
-- (void)cachedResponseForUrlString:(NSString*)identifier completion:(void(^)(id object))aCallback;
+- (void)cachedResponseForKey:(NSString*)identifier completion:(void(^)(id object))aCallback;
 /**
  *  根据cache key 存response
  *
@@ -40,6 +40,18 @@
  *  @param identifier   cache key
  *  @param timeInterval 过期时间
  */
-- (void)saveResponse:(id)data WithUrlString:(NSString *)identifier ExpireTime:(NSTimeInterval)timeInterval;
+- (void)saveResponse:(id)data ForKey:(NSString *)identifier ExpireTime:(NSTimeInterval)timeInterval Completion:(void(^)(BOOL b))completion;
+/**
+ *  根据cache key删除response
+ *
+ *  @param key
+ *  @param completion
+ */
+- (void)deleteCachedResponseForKey:(NSString* )key Completion:(void(^)(BOOL bSucceed))completion;
+
+/**
+ *  清空所有缓存
+ */
+- (void)cleanAllCachedResponse;
 
 @end

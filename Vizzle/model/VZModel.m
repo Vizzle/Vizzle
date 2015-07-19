@@ -243,27 +243,33 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
 {
     self.state = VZModelStateFinished;
     
-    if ([self.delegate respondsToSelector:@selector(modelDidFinish:)]) {
-        [self.delegate modelDidFinish:self];
-    }
-
+    //优先block方式回调
     if (self.requestCallback) {
         self.requestCallback(self,nil);
         self.requestCallback = nil;
+    }
+    else
+    {
+        if ([self.delegate respondsToSelector:@selector(modelDidFinish:)]) {
+            [self.delegate modelDidFinish:self];
+        }
     }
 }
 - (void)didFailWithError:(NSError* )error
 {
     self.state = VZModelStateError;
     _error = error;
-    
-    if ([self.delegate respondsToSelector:@selector(modelDidFail:withError:)]) {
-        [self.delegate modelDidFail:self withError:error];
-    }
-    
+
+    //优先block方式回调
     if (self.requestCallback) {
         self.requestCallback(self,error);
         self.requestCallback = nil;
+    }
+    else
+    {
+        if ([self.delegate respondsToSelector:@selector(modelDidFail:withError:)]) {
+            [self.delegate modelDidFail:self withError:error];
+        }
     }
 }
 

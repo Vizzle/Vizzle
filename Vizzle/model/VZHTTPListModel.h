@@ -79,6 +79,13 @@ typedef NS_OPTIONS(NSUInteger, VZPageMode) {
 - (void)loadMore;
 
 /**
+ *  model加载更多的请求，使用block回调
+ *
+ *  @param callBack 回调block
+ */
+- (void)loadMoreWithCompletion:(VZModelCallback)callBack;
+
+/**
  * 翻页数据持续加载完成
  */
 - (void)loadAll;
@@ -86,6 +93,6 @@ typedef NS_OPTIONS(NSUInteger, VZPageMode) {
 /**
  * 翻页数据持续加载完成，使用block做回调
  */
-- (void)loadAllWithCompletion:(VZModelCallback)aCallback;
+- (void)loadAllWithCompletion:(VZModelCallback)callBack;
 
 @end

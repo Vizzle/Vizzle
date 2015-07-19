@@ -9,14 +9,8 @@
 #import "VZHTTPListModel.h"
 
 @interface VZHTTPListModel()
-{
-    //state,bad
-    BOOL _isLoadingAll;
-}
 
-@property(nonatomic,copy) VZModelCallback requestCallbackInternal;
-
-
+@property(nonatomic,assign) BOOL willLoadMore;
 
 @end
 
@@ -39,21 +33,33 @@
 
 - (void)loadMore
 {
-    //如果当前数据是缓存数据，则不翻页
-    if (self.isResponseObjectFromCache) {
-        return;
-    }
-    
     if (self.state == VZModelStateLoading) {
-        
-        if (!_isLoadingAll) {
-            return;
-        }
+        return;
     }
     
     if (self.hasMore) {
         self.currentPageIndex += 1;
         [self loadInternal];
+    }
+}
+
+- (void)loadMoreWithCompletion:(VZModelCallback)callBack
+{
+    if (self.hasMore) {
+        self.currentPageIndex +=1;
+        self.willLoadMore = YES;
+        __weak typeof(self)weakSelf = self;
+        [self loadWithCompletion:^(VZModel *model, NSError *error) {
+            weakSelf.willLoadMore = NO;
+            if (callBack) {
+                callBack(weakSelf,error);
+            }
+            
+        }];
+    }
+    else
+    {
+        self.willLoadMore = NO;
     }
 }
 
@@ -68,54 +74,51 @@
 
 - (void)loadAll
 {
-    _isLoadingAll = true;
-    
-    [super didStartLoading];
-    
-    __weak typeof(self) weakSelf = self;
- 
     [self loadAllWithCompletion:^(VZModel *model, NSError *error) {
-       
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        
-        if (strongSelf) {
-            strongSelf ->_isLoadingAll = false;
-        }
-        
         if (!error) {
-            [super didFinishLoading];
+            if ([self.delegate respondsToSelector:@selector(modelDidFinish:)]) {
+                [self.delegate modelDidFinish:self];
+            }
         }
         else
-            [super didFailWithError:error];
+        {
+            if ([self.delegate respondsToSelector:@selector(modelDidFail:withError:)]) {
+                [self.delegate modelDidFail:self withError:error];
+            }
+        }
     }];
 }
 
 - (void)loadAllWithCompletion:(VZModelCallback)aCallback
 {
-    [self reset];
-    
     __weak typeof(self) weakSelf = self;
- 
     [self loadWithCompletion:^(VZModel *model, NSError *error) {
        
-        VZHTTPListModel* listModel = (VZHTTPListModel* )model;
-        
-        if(listModel.hasMore)
-        {
-            [listModel loadMore];
+        if (error) {
+            weakSelf.willLoadMore = NO;
+            if (aCallback) {
+                aCallback(weakSelf,error);
+            }
         }
         else
         {
-            if (aCallback)
+            if(weakSelf.hasMore)
             {
-                aCallback(model,error);
-                
-                __strong typeof(weakSelf) strongSelf = weakSelf;
-                strongSelf -> _requestCallbackInternal = nil;
+                weakSelf.willLoadMore = YES;
+                weakSelf.currentPageIndex += 1;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf loadAllWithCompletion:aCallback];
+                });
+            }
+            else
+            {
+                weakSelf.willLoadMore = NO;
+                if (aCallback)
+                {
+                    aCallback(model,error);
+                }
             }
         }
-        
-  
     }];
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -123,58 +126,19 @@
 
 - (void)reset
 {
-    self.currentPageIndex = 0;
-    [self.objects removeAllObjects];
     [super reset];
-}
-
-- (void)didStartLoading
-{
-    if (!_isLoadingAll) {
-       
-        [super didStartLoading];
-    }
-    else
-    {
-        //noop
-    }
-}
-
-- (void)didFinishLoading
-{
-    if (!_isLoadingAll) {
-     
-        [super didFinishLoading];
-    }
     
-    if (_requestCallbackInternal) {
-        _requestCallbackInternal(self,nil);
-    }
-}
-
-- (void)didFailWithError:(NSError *)error
-{
-    if (!_isLoadingAll) {
+    if (!_willLoadMore) {
         
-        [super didFailWithError:error];
-    }
+        self.currentPageIndex = 0;
+        [self.objects removeAllObjects];
     
-    if (_requestCallbackInternal)
-    {
-        _requestCallbackInternal(self,error);
     }
+
 }
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZHTTPModel
-
-
-- (void)loadWithCompletion:(VZModelCallback)aCallback
-{
-    if (aCallback) {
-        _requestCallbackInternal = aCallback;
-    }
-    [self loadInternal];
-}
 
 
 - (BOOL)parseResponse:(id)response
