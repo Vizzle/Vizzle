@@ -36,10 +36,52 @@
     _expecation = nil;
 }
 
+- (void)testLoadMore
+{
+    _expecation = [self expectationWithDescription:NSStringFromSelector(_cmd)];
+    self.model.delegate = self;
+    self.model.key = NSStringFromSelector(_cmd);
+    [self.model load];
+    [self waitForExpectationsWithTimeout:120 handler:nil];
+}
+
+- (void)testLoadMoreWithCompletion
+{
+    _expecation = [self expectationWithDescription:NSStringFromSelector(_cmd)];
+    self.model.delegate=nil;
+    
+    __weak typeof(self)weakSelf = self;
+    [self.model loadWithCompletion:^(VZModel *model, NSError *error) {
+        
+        if (!error) {
+            [weakSelf.model loadMoreWithCompletion:^(VZModel *model1, NSError *error1) {
+               
+                if (error1) {
+                    
+                }
+                else
+                {
+                    XCTAssertEqual(weakSelf.model.currentPageIndex, 1);
+                
+                }
+                __strong typeof(weakSelf) strongSelf = weakSelf;
+                if (strongSelf) {
+                    [strongSelf ->_expecation fulfill];
+                }
+
+                
+            }];
+        }
+
+    }];
+    [self waitForExpectationsWithTimeout:120 handler:nil];
+}
+
 - (void)testLoadAll
 {
     _expecation = [self expectationWithDescription:NSStringFromSelector(_cmd)];
     self.model.delegate = self;
+    self.model.key = NSStringFromSelector(_cmd);
     [self.model loadAll];
     NSTimeInterval t = self.model.requestConfig.requestTimeoutSeconds;
     [self waitForExpectationsWithTimeout:t handler:^(NSError *error) {
@@ -94,9 +136,24 @@
 
 - (void)modelDidFinish:(VZHTTPListModel *)model
 {
-    XCTAssertEqual(model.state, VZModelStateFinished);
-    XCTAssertEqual(model.hasMore , NO);
-    [_expecation fulfill];
+    if ([model.key isEqualToString:@"testLoadMore"]) {
+        
+        if (model.currentPageIndex == 0) {
+             [model loadMore];
+        }
+        else
+        {
+            XCTAssertEqual(model.currentPageIndex, 1);
+            [_expecation fulfill];
+        }
+    }
+    if ([model.key isEqualToString:@"testLoadAll"]) {
+        
+        XCTAssertEqual(model.hasMore, NO);
+        [_expecation fulfill];
+        
+    }
+
 }
 
 - (void)modelDidFail:(VZModel *)model withError:(NSError *)error

@@ -39,10 +39,10 @@
 {
 
     VZHTTPNetworkURLCachePolicy defaultPolicy = VZHTTPNetworkURLCachePolicyDefault;
-    [self testCacheBehaviorWithLoad:defaultPolicy];
-    [self testCacheBehaviorWithLoad:defaultPolicy];
+//    [self testCacheBehaviorWithLoad:defaultPolicy];
+//    [self testCacheBehaviorWithLoadWithCompletion:defaultPolicy];
     [self testCacheBehaviorWithLoadMoreWithCompletion:defaultPolicy];
-    [self testCacheBehaviorWithLoadALLWithCompletion:defaultPolicy];
+//    [self testCacheBehaviorWithLoadALLWithCompletion:defaultPolicy];
 }
 
 - (void)testOnlyReadCachePolicy
@@ -79,6 +79,7 @@
 
 - (void)testCacheBehaviorWithLoad:(VZHTTPNetworkURLCachePolicy)policy
 {
+    NSLog(@"///////BeginTesting【Load】///////////");
     _expecation = [self expectationWithDescription:NSStringFromSelector(_cmd)];
     self.model.delegate = self;
     self.model.cachePolicy = policy;
@@ -97,7 +98,7 @@
 
 - (void)testCacheBehaviorWithLoadWithCompletion:(VZHTTPNetworkURLCachePolicy)policy
 {
-
+    NSLog(@"///////BeginTesting【LoadWithCompletion】///////////");
     self.model.cachePolicy = policy;
     self.model.cacheTime = 0;
     self.model.delegate = nil;
@@ -126,7 +127,7 @@
  */
 - (void)testCacheBehaviorWithLoadALLWithCompletion:(VZHTTPNetworkURLCachePolicy)policy
 {
-    
+    NSLog(@"///////BeginTesting【LoadAllWithCompletion】///////////");
     self.model.cachePolicy = policy;
     self.model.cacheTime = 0;
     self.model.delegate = nil;
@@ -154,7 +155,7 @@
 
 - (void)testCacheBehaviorWithLoadMoreWithCompletion:(VZHTTPNetworkURLCachePolicy)policy
 {
-    
+     NSLog(@"///////BeginTesting【LoadMoreWithCompletion】///////////");
     self.model.cachePolicy = policy;
     self.model.cacheTime = 0;
     self.model.delegate = nil;

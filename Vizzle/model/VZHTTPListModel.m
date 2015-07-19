@@ -49,13 +49,18 @@
         self.currentPageIndex +=1;
         self.willLoadMore = YES;
         __weak typeof(self)weakSelf = self;
-        [self loadWithCompletion:^(VZModel *model, NSError *error) {
-            weakSelf.willLoadMore = NO;
-            if (callBack) {
-                callBack(weakSelf,error);
-            }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
             
-        }];
+            [self loadWithCompletion:^(VZModel *model, NSError *error) {
+                weakSelf.willLoadMore = NO;
+                if (callBack) {
+                    callBack(weakSelf,error);
+                }
+                
+            }];
+        });
+
     }
     else
     {
