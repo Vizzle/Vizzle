@@ -118,10 +118,18 @@ static inline Class getPropertyClass(objc_property_t property);
 
 - (void)autoMapTo:(id)object
 {
+   
+    NSMutableSet* sets = [NSMutableSet new];
+    Class objectClz = [object class];
+    while (objectClz != [NSObject class])
+    {
+        NSSet* objectPropertyNames = [[ self class] propertyNamesInternal:objectClz];
+        [sets addObjectsFromArray:[objectPropertyNames allObjects]];
+        objectClz = [objectClz superclass];
+    }
+
+    
     Class clz = [self class];
-    
-    NSSet* objectPropertyNames = [[ self class] propertyNamesInternal:[object class]];
-    
     while (clz != [VZItem class])
     {
         NSArray* properties = [[self class] properties:clz];
@@ -143,7 +151,7 @@ static inline Class getPropertyClass(objc_property_t property);
                 const char* propertyNameStr = property_getName(property);
                 NSString* propertyName = [NSString stringWithCString:propertyNameStr  encoding:NSUTF8StringEncoding];
                
-                if ([objectPropertyNames containsObject:propertyName]) {
+                if ([sets containsObject:propertyName]) {
                     
                     id val = [object valueForKey:propertyName];
                     

@@ -1,0 +1,13 @@
+
+{   "sid": "89",
+    "userNick": "天天",
+    "servicePicUrl": "http://cuitrip.oss-cn-shenzhen.aliyuncs.com/162_1437321292521_0",
+    "headPic": "http://cuitrip.oss-cn-shenzhen.aliyuncs.com/162_1437321568112_1",
+    "serviceAddress": "木栅",
+    "serviceName": "木栅动物园一日游",
+    "serviceSiteList":["a","b","c"],
+    "serviceInfo":{"info":"abcd"},
+    "serviceCount":3,
+    "isAvailable":true,
+    "maxCount":12
+}

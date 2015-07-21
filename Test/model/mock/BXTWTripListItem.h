@@ -10,16 +10,16 @@
 
 
 #import "VZListItem.h"
+#import "BXTWTripItem.h"
 
-@interface BXTWTripListItem : VZListItem
+@interface BXTWTripListItem : BXTWTripItem
 
+@property(nonatomic,strong)NSArray* serviceSiteList;
+@property(nonatomic,strong)NSDictionary* serviceInfo;
+@property(nonatomic,assign)BOOL isAvailable;
+@property(nonatomic,strong)NSNumber* serviceCount;
+@property(nonatomic,assign)NSString* maxCount;
 
-@property(nonatomic,strong)NSString *serviceAddress;
-@property(nonatomic,strong)NSString *sid;
-@property(nonatomic,strong)NSString *serviceName;
-@property(nonatomic,strong)NSString *headPic;
-@property(nonatomic,strong)NSString *userNick;
-@property(nonatomic,strong)NSString *servicePicUrl;
 
 @end
 

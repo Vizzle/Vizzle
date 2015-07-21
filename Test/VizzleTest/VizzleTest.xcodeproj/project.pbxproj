@@ -13,6 +13,9 @@
 		45B097101B5E0CA0008B8B60 /* VZItemAPITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B0970F1B5E0CA0008B8B60 /* VZItemAPITest.m */; };
 		45B097131B5E0CE3008B8B60 /* BXTWTripItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B097121B5E0CE3008B8B60 /* BXTWTripItem.m */; };
 		45B097151B5E0D3D008B8B60 /* tripItem.json in Resources */ = {isa = PBXBuildFile; fileRef = 45B097141B5E0D3D008B8B60 /* tripItem.json */; };
+		45B097171B5E1748008B8B60 /* mock.sh in Resources */ = {isa = PBXBuildFile; fileRef = 45B097161B5E1748008B8B60 /* mock.sh */; };
+		45B0971A1B5E20B6008B8B60 /* BXTWMockListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B097191B5E20B6008B8B60 /* BXTWMockListItem.m */; };
+		45B0971D1B5E24A4008B8B60 /* BXTWMockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B0971C1B5E24A4008B8B60 /* BXTWMockItem.m */; };
 		45B82D551B579E740053D51C /* VZControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D521B579E740053D51C /* VZControllerTests.m */; };
 		45B82D561B579E740053D51C /* VZModelStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D541B579E740053D51C /* VZModelStateTests.m */; };
 		45B82D9B1B579E9C0053D51C /* VZAFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D5A1B579E9C0053D51C /* VZAFRequest.m */; };
@@ -56,6 +59,11 @@
 		45B097111B5E0CE3008B8B60 /* BXTWTripItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripItem.h; sourceTree = "<group>"; };
 		45B097121B5E0CE3008B8B60 /* BXTWTripItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripItem.m; sourceTree = "<group>"; };
 		45B097141B5E0D3D008B8B60 /* tripItem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tripItem.json; sourceTree = "<group>"; };
+		45B097161B5E1748008B8B60 /* mock.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = mock.sh; sourceTree = "<group>"; };
+		45B097181B5E20B6008B8B60 /* BXTWMockListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWMockListItem.h; sourceTree = "<group>"; };
+		45B097191B5E20B6008B8B60 /* BXTWMockListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWMockListItem.m; sourceTree = "<group>"; };
+		45B0971B1B5E24A4008B8B60 /* BXTWMockItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWMockItem.h; sourceTree = "<group>"; };
+		45B0971C1B5E24A4008B8B60 /* BXTWMockItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWMockItem.m; sourceTree = "<group>"; };
 		45B82D411B579DF40053D51C /* VizzleTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VizzleTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B82D461B579DF40053D51C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B82D521B579E740053D51C /* VZControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZControllerTests.m; sourceTree = "<group>"; };
@@ -326,6 +334,7 @@
 		45B82DBC1B58DDAD0053D51C /* mock */ = {
 			isa = PBXGroup;
 			children = (
+				45B097161B5E1748008B8B60 /* mock.sh */,
 				45BEAEA81B58DEA600B396AE /* BXTWTripListModel.h */,
 				45BEAEA91B58DEA600B396AE /* BXTWTripListModel.m */,
 				45BEAEA51B58DE6800B396AE /* BXTWTripListItem.h */,
@@ -333,6 +342,10 @@
 				45B097111B5E0CE3008B8B60 /* BXTWTripItem.h */,
 				45B097121B5E0CE3008B8B60 /* BXTWTripItem.m */,
 				45B097141B5E0D3D008B8B60 /* tripItem.json */,
+				45B097181B5E20B6008B8B60 /* BXTWMockListItem.h */,
+				45B097191B5E20B6008B8B60 /* BXTWMockListItem.m */,
+				45B0971B1B5E24A4008B8B60 /* BXTWMockItem.h */,
+				45B0971C1B5E24A4008B8B60 /* BXTWMockItem.m */,
 			);
 			path = mock;
 			sourceTree = "<group>";
@@ -395,6 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B097171B5E1748008B8B60 /* mock.sh in Resources */,
 				45B097151B5E0D3D008B8B60 /* tripItem.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,6 +420,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B0971A1B5E20B6008B8B60 /* BXTWMockListItem.m in Sources */,
 				45B82DB21B579E9C0053D51C /* VZListCell.m in Sources */,
 				45B82D9C1B579E9C0053D51C /* VZListViewController.m in Sources */,
 				45B82DB01B579E9C0053D51C /* VZHTTPURLResponseCache.m in Sources */,
@@ -436,6 +451,7 @@
 				45B82DB51B579E9C0053D51C /* VZListDefaultTextCell.m in Sources */,
 				45B82DAD1B579E9C0053D51C /* VZHTTPResponseParser.m in Sources */,
 				45B82DAC1B579E9C0053D51C /* VZHTTPRequestGenerator.m in Sources */,
+				45B0971D1B5E24A4008B8B60 /* BXTWMockItem.m in Sources */,
 				45B82DA41B579E9C0053D51C /* VZItem.m in Sources */,
 				45559FAC1B596572009BD1AA /* VZHTTPModelCachePolicyTests.m in Sources */,
 				45B097131B5E0CE3008B8B60 /* BXTWTripItem.m in Sources */,
