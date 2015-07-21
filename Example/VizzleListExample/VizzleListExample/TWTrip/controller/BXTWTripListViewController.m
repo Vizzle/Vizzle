@@ -147,6 +147,16 @@
 #pragma mark - @override methods - VZViewController
 
 
+- (void)showModel:(BXTWTripListModel *)model
+{
+    [super showModel:model];
+    
+    //如果第一页是缓存数据，那么重新加载
+    if (model.isResponseObjectFromCache && model.currentPageIndex == 0) {
+        [self reload];
+    }
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZListViewController
 

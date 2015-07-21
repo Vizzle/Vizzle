@@ -39,14 +39,20 @@
 {
     VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
     config.requestMethod = VZHTTPMethodPOST;
+    config.cachePolicy = VZHTTPNetworkURLCachePolicyDefault;
     return config;
 }
 
+- (NSString* )cacheKey
+{
+    return [[[self methodName] stringByAppendingString:@"/"]stringByAppendingString:[NSString stringWithFormat:@"%d",self.currentPageIndex]];
+}
 
 - (NSString *)methodName {
     
     return @"http://42.121.16.186:9999/baseservice/getRecommendList";
 }
+
 
 - (NSMutableArray* )responseObjects:(id)JSON
 {
