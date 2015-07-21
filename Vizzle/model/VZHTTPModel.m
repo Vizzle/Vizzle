@@ -110,7 +110,7 @@
     self.request.ignoreCachePolicy = [self ignoreCache];
     
     //6, load data
-    [self.request loadRequest];
+    [self.request load];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

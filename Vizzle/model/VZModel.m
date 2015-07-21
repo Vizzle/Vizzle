@@ -79,6 +79,19 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
                     NSLog(@"\xE2\x9C\x85 [VZModelState]-->[%@-->%@]",f,t);
                     return YES;
                 }
+                case VZModelStateReady:
+                {
+                    if (isCancelled) {
+                        NSLog(@"\xE2\x9C\x85[VZModelState]-->[%@-->%@]",f,t);
+                        return YES;
+                    }
+                    else
+                    {
+                        NSLog(@"\xE2\x9D\x8C [VZModelState]-->[%@-->%@]",f,t);
+                        return NO;
+                    }
+                
+                }
                 default:
                 {
                     NSLog(@"\xE2\x9D\x8C [VZModelState]-->[trans: %@-->%@]",f,t);
@@ -93,6 +106,18 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
                 {
                     NSLog(@"\xE2\x9C\x85 [VZModelState]-->[%@-->%@]",f,t);
                     return YES;
+                }
+                case VZModelStateReady:
+                {
+                    if (isCancelled) {
+                        NSLog(@"\xE2\x9C\x85[VZModelState]-->[%@-->%@]",f,t);
+                        return YES;
+                    }
+                    else
+                    {
+                        NSLog(@"\xE2\x9D\x8C [VZModelState]-->[%@-->%@]",f,t);
+                        return NO;
+                    }
                 }
                 default:
                 {

@@ -15,12 +15,12 @@
 @interface VZModelStateTests : XCTestCase<VZModelDelegate>
 
 @property(nonatomic,strong)BXTWTripListModel* model;
-
+@property(nonatomic,strong)XCTestExpectation* expecation;
 @end
 
 @implementation VZModelStateTests
 {
-    XCTestExpectation* _expecation;
+   
 }
 
 - (void)setUp {
@@ -110,6 +110,28 @@
         }];
         
     }];
+
+}
+
+/**
+ *  model状态: isFinished/isError -> isReady
+ */
+- (void)test1_3
+{
+    self.expecation = [self expectationWithName:NSStringFromSelector(_cmd)];
+    __weak typeof(self)weakSelf=self;
+    self.model.delegate = nil;
+    [self.model loadWithCompletion:^(VZModel *model, NSError *error) {
+        
+        [weakSelf.model cancel];
+        
+        XCTAssertEqual(weakSelf.model.state, VZModelStateReady);
+        
+        [weakSelf.expecation fulfill];
+        
+        
+    }];
+    [self waitForExpectationsWithTimeout:self.model.requestConfig.requestTimeoutSeconds handler:nil];
 
 }
 

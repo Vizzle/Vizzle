@@ -74,7 +74,7 @@ typedef NS_OPTIONS(NSUInteger, VZPageMode) {
 @property(nonatomic, assign) NSInteger totalCount;
 
 /**
- *  分页个数，默认20
+ *  分页个数，默认0
  */
 @property(nonatomic, assign) NSInteger pageSize;
 /**

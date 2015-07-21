@@ -81,7 +81,7 @@
 }
 
 
-- (void)loadRequest
+- (void)load
 {
     [self requestDidStart];
     
