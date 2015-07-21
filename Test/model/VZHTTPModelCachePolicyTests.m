@@ -39,12 +39,22 @@
 - (void)testDefaultCachePolicy
 {
     VZHTTPNetworkURLCachePolicy defaultPolicy = VZHTTPNetworkURLCachePolicyDefault;
+    
+    //load/reload
     [self testCacheBehaviorWithLoad:defaultPolicy isReload:false];
     [self testCacheBehaviorWithLoad:defaultPolicy isReload:true];
+    
+    //load/reload withCompletion
     [self testCacheBehaviorWithLoadWithCompletion:defaultPolicy isReload:false];
     [self testCacheBehaviorWithLoadWithCompletion:defaultPolicy isReload:true];
+    
+    //loadMore
     [self testCacheBehaviorWithLoadmore:defaultPolicy];
     [self testCacheBehaviorWithLoadmoreWithCompletion:defaultPolicy];
+    
+    //loadAll;
+    [self testCacheBehaviorWithLoadAll:defaultPolicy];
+    [self testCacheBehaviorWithLoadAllWithCompletion:defaultPolicy];
 }
 
 /**
@@ -54,12 +64,23 @@
 {
     
     VZHTTPNetworkURLCachePolicy defaultPolicy = VZHTTPNetworkURLCachePolicyOnlyReading;
+    
+    //load/reload
     [self testCacheBehaviorWithLoad:defaultPolicy isReload:false];
     [self testCacheBehaviorWithLoad:defaultPolicy isReload:true];
+    
+    //load/reload withCompletion
     [self testCacheBehaviorWithLoadWithCompletion:defaultPolicy isReload:false];
     [self testCacheBehaviorWithLoadWithCompletion:defaultPolicy isReload:true];
+    
+    //loadMore
     [self testCacheBehaviorWithLoadmore:defaultPolicy];
     [self testCacheBehaviorWithLoadmoreWithCompletion:defaultPolicy];
+    
+    //loadAll;
+    [self testCacheBehaviorWithLoadAll:defaultPolicy];
+    [self testCacheBehaviorWithLoadAllWithCompletion:defaultPolicy];
+
 }
 
 /**
@@ -69,14 +90,22 @@
 {
     
     VZHTTPNetworkURLCachePolicy defaultPolicy = VZHTTPNetworkURLCachePolicyOnlyWriting;
+    
+    //load/reload
     [self testCacheBehaviorWithLoad:defaultPolicy isReload:false];
     [self testCacheBehaviorWithLoad:defaultPolicy isReload:true];
+    
+    //load/reload withCompletion
     [self testCacheBehaviorWithLoadWithCompletion:defaultPolicy isReload:false];
     [self testCacheBehaviorWithLoadWithCompletion:defaultPolicy isReload:true];
+    
+    //loadMore
     [self testCacheBehaviorWithLoadmore:defaultPolicy];
     [self testCacheBehaviorWithLoadmoreWithCompletion:defaultPolicy];
-    [self testCacheBehaviorWithLoadmore:defaultPolicy];
-    [self testCacheBehaviorWithLoadmoreWithCompletion:defaultPolicy];
+    
+    //loadAll;
+    [self testCacheBehaviorWithLoadAll:defaultPolicy];
+    [self testCacheBehaviorWithLoadAllWithCompletion:defaultPolicy];
 }
 
 /**
@@ -86,12 +115,23 @@
 {
     
     VZHTTPNetworkURLCachePolicy defaultPolicy = VZHTTPNetworkURLCachePolicyNone;
+    
+    //load/reload
     [self testCacheBehaviorWithLoad:defaultPolicy isReload:false];
     [self testCacheBehaviorWithLoad:defaultPolicy isReload:true];
+    
+    //load/reload withCompletion
     [self testCacheBehaviorWithLoadWithCompletion:defaultPolicy isReload:false];
     [self testCacheBehaviorWithLoadWithCompletion:defaultPolicy isReload:true];
+    
+    //loadMore
     [self testCacheBehaviorWithLoadmore:defaultPolicy];
     [self testCacheBehaviorWithLoadmoreWithCompletion:defaultPolicy];
+    
+    //loadAll;
+    [self testCacheBehaviorWithLoadAll:defaultPolicy];
+    [self testCacheBehaviorWithLoadAllWithCompletion:defaultPolicy];
+    
 }
 
 
@@ -269,12 +309,41 @@
 
 - (void)testCacheBehaviorWithLoadAll:(VZHTTPNetworkURLCachePolicy)policy
 {
-    
+    NSLog(@"///////BeginTesting【testCacheBehaviorWithLoadAll】///////////");
+    self.expecation = [self expectationWithDescription:NSStringFromSelector(_cmd)];
+    self.model.delegate = self;
+    self.model.key = NSStringFromSelector(_cmd);
+    self.model.cachePolicy = policy;
+    self.model.cacheTime = 0;
+    [self.model loadAll];
+    [self waitForExpectationsWithTimeout:self.model.requestConfig.requestTimeoutSeconds handler:nil];
+
     
 }
 
 - (void)testCacheBehaviorWithLoadAllWithCompletion:(VZHTTPNetworkURLCachePolicy)policy
 {
+    NSLog(@"///////BeginTesting【testCacheBehaviorWithLoadmoreWithCompletion】///////////");
+    self.expecation = [self expectationWithDescription:NSStringFromSelector(_cmd)];
+    self.model.key = NSStringFromSelector(_cmd);
+    self.model.cachePolicy = policy;
+    self.model.cacheTime = 0;
+    
+    __weak typeof(self) weakSelf = self;
+    [self.model loadAllWithCompletion:^(VZModel *model, NSError *error) {
+        
+        if (weakSelf.model.isResponseObjectFromCache) {
+            NSLog(@"\xE2\x9C\x85 --> [Response From Cache]");
+        }
+        else
+            NSLog(@"\xE2\x9C\x85 --> [Response From Network]");
+        
+        
+        [weakSelf.expecation fulfill];
+
+        
+    }];
+    [self waitForExpectationsWithTimeout:self.model.requestConfig.requestTimeoutSeconds handler:nil];
     
 }
 
@@ -288,7 +357,23 @@
 
 - (void)modelDidFinish:(VZHTTPListModel *)model
 {
-    if ([model.key isEqualToString:@"testCacheBehaviorWithLoadmore:"]) {
+    
+    if ([model.key isEqualToString:@"testCacheBehaviorWithLoadAll:"]) {
+     
+        if (model.isResponseObjectFromCache) {
+            
+            NSLog(@"\xE2\x9C\x85 --> [Response From Cache]");
+
+        }
+        else
+        {
+            NSLog(@"\xE2\x9C\x85 --> [Response From Network]");
+        }
+        
+        XCTAssertEqual(model.hasMore, NO);
+        [self.expecation fulfill];
+    }
+    else if ([model.key isEqualToString:@"testCacheBehaviorWithLoadmore:"]) {
         
         if (model.isResponseObjectFromCache) {
             

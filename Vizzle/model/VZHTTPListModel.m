@@ -124,12 +124,12 @@
         {
             if(weakSelf.hasMore)
             {
-                if ([weakSelf canLoadMore]) {
+               // if ([weakSelf canLoadMore]) {
                     
                     weakSelf.willLoadMore = YES;
                     weakSelf.currentPageIndex += 1;
                     [weakSelf loadAllWithCompletion:aCallback];
-                }
+               // }
             }
             else
             {
