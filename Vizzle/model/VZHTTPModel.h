@@ -80,7 +80,7 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
 - (NSString* )customRequestClassName;
 
 /**
- *  返回model对应的缓存Id
+ *  返回model请求返回的Response对应的缓存Id
  *
  *  @return 默认为url+参数
  */
@@ -90,7 +90,7 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
  *  当model reload的时候会忽略Model的cache策略，它的优先级高于
  *  VZHTTPResponseConfig.cachePolicy
  *
- *  比如model下拉刷新时，cache策略会失效
+ *  比如页面进行下拉刷新时，cache策略会失效
  *
  *  默认返回 YES
  */

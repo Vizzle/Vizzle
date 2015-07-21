@@ -31,37 +31,56 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - public methods
 
-- (void)loadMore
+- (BOOL)loadMore
 {
     if (self.state == VZModelStateLoading) {
-        return;
+        return NO;
     }
     
+    BOOL ret = NO;
     if (self.hasMore) {
-        self.currentPageIndex += 1;
-        [self loadInternal];
+        
+        if ([self canLoadMore]) {
+            self.currentPageIndex += 1;
+            [self loadInternal];
+            ret = YES;
+        }
     }
+    return ret;
 }
 
-- (void)loadMoreWithCompletion:(VZModelCallback)callBack
+- (BOOL)loadMoreWithCompletion:(VZModelCallback)callBack
 {
+    if (self.state == VZModelStateLoading) {
+        return NO;
+    }
+    
+    BOOL ret = NO;
     if (self.hasMore) {
-        self.currentPageIndex +=1;
-        self.willLoadMore = YES;
-        __weak typeof(self)weakSelf = self;
         
-        [self loadWithCompletion:^(VZModel *model, NSError *error) {
+        if ([self canLoadMore]) {
+            
+            ret = YES;
+            self.currentPageIndex +=1;
+            self.willLoadMore = YES;
+            __weak typeof(self)weakSelf = self;
+            
+            [self loadWithCompletion:^(VZModel *model, NSError *error) {
                 weakSelf.willLoadMore = NO;
                 if (callBack) {
                     callBack(weakSelf,error);
                 }
                 
             }];
+        }
+
     }
     else
     {
         self.willLoadMore = NO;
     }
+    
+    return ret;
 }
 
 - (void)load
@@ -105,10 +124,12 @@
         {
             if(weakSelf.hasMore)
             {
-                weakSelf.willLoadMore = YES;
-                weakSelf.currentPageIndex += 1;
-                [weakSelf loadAllWithCompletion:aCallback];
-                
+                if ([weakSelf canLoadMore]) {
+                    
+                    weakSelf.willLoadMore = YES;
+                    weakSelf.currentPageIndex += 1;
+                    [weakSelf loadAllWithCompletion:aCallback];
+                }
             }
             else
             {
@@ -181,6 +202,26 @@
 - (NSMutableArray* )responseObjects:(id)response
 {
     return nil;
+}
+
+- (BOOL)canLoadMore
+{
+    BOOL ret;
+    //如果当前是cache数据,默认是不允许翻页的
+    if(self.isResponseObjectFromCache)
+    {
+        if (self.requestConfig.cachePolicy == VZHTTPNetworkURLCachePolicyOnlyReading) {
+            ret = YES;
+        }
+        else
+            ret = NO;
+    }
+    else
+    {
+        ret = YES;
+    }
+    
+    return ret;
 }
 
 

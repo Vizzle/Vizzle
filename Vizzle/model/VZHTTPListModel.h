@@ -31,7 +31,24 @@ typedef NS_OPTIONS(NSUInteger, VZPageMode) {
 @protocol VZHTTPListModel <VZHTTPModel>
 
 @optional
+
+/**
+ *  根据返回的response，生成list数据
+ *
+ *  @param response
+ *
+ *  @return list数据
+ */
 - (NSMutableArray* )responseObjects:(id)response;
+
+/**
+ *  当model loadmore前会调用这个方法。
+ *  对某些特殊场景，这个方法应该返回False，比如当cache策略为default时，
+ *  返回页数据来自缓存在某些场景会有问题。
+ *  默认返回 YES
+ */
+- (BOOL)canLoadMore;
+
 
 @end
 
@@ -73,25 +90,36 @@ typedef NS_OPTIONS(NSUInteger, VZPageMode) {
  */
 @property(nonatomic,assign) BOOL needLoadAll;
 
-/**
- *  model加载更多的请求
- */
-- (void)loadMore;
 
 /**
- *  model加载更多的请求，使用block回调
+ *  model加载更多的请求，如果当前也面是缓存数据，
+ *  则会根据canLoadMore方法的返回值来判断是否可以翻页
  *
- *  @param callBack 回调block
+ *  @return loadMore是否被允许执行
  */
-- (void)loadMoreWithCompletion:(VZModelCallback)callBack;
+- (BOOL)loadMore;
+
+/**
+ *  model加载更多的请求，如果当前也面是缓存数据，
+ *  则会根据canLoadMore方法的返回值来判断是否可以翻页
+ *
+ *  @param callBack 回调
+ *
+ *  @return loadMore是否被允许执行
+ */
+- (BOOL)loadMoreWithCompletion:(VZModelCallback)callBack;
 
 /**
  * 翻页数据持续加载完成
+ *  model加载更多的请求，如果当前也面是缓存数据，
+ *  则会根据canLoadMore方法的返回值来判断是否可以翻页
  */
 - (void)loadAll;
 
 /**
  * 翻页数据持续加载完成，使用block做回调
+ *  model加载更多的请求，如果当前也面是缓存数据，
+ *  则会根据canLoadMore方法的返回值来判断是否可以翻页
  */
 - (void)loadAllWithCompletion:(VZModelCallback)callBack;
 

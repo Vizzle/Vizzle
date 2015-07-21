@@ -215,12 +215,12 @@
                 [self didFinishLoading];
                 
                 //如果回来的数据是来自cache，那么自动更新数据
-                if (fromCache) {
-                    
-                    if ([self requestConfig].cachePolicy == VZHTTPNetworkURLCachePolicyDefault) {
-                        [self reload];
-                    }
-                }
+//                if (fromCache) {
+//                    
+//                    if ([self requestConfig].cachePolicy == VZHTTPNetworkURLCachePolicyDefault) {
+//                        [self reload];
+//                    }
+//                }
                 
             });
         

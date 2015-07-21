@@ -14,7 +14,8 @@ typedef NS_ENUM (NSUInteger, VZHTTPNetworkURLCachePolicy)
     VZHTTPNetworkURLCachePolicyNone = 0,
     VZHTTPNetworkURLCachePolicyDefault = 1,
     VZHTTPNetworkURLCachePolicyOnlyReading=2,
-    VZHTTPNetworkURLCachePolicyOnlyWriting=3
+    VZHTTPNetworkURLCachePolicyOnlyWriting=3,
+    VZHTTPNetworkURLCachePolicyList = 4 
 };
 
 typedef NS_ENUM (NSUInteger, VZHTTPNetworkURLCacheTime)
