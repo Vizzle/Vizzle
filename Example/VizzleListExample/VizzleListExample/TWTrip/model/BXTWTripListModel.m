@@ -45,7 +45,7 @@
 
 - (NSString* )cacheKey
 {
-    return [[[self methodName] stringByAppendingString:@"/"]stringByAppendingString:[NSString stringWithFormat:@"%d",self.currentPageIndex]];
+    return [[[self methodName] stringByAppendingString:@"/"]stringByAppendingString:[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex]];
 }
 
 - (NSString *)methodName {
