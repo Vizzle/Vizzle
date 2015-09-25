@@ -8,14 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		45559FAC1B596572009BD1AA /* VZHTTPModelCachePolicyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45559FAB1B596572009BD1AA /* VZHTTPModelCachePolicyTests.m */; };
+		4563A0581BA17C5100A2F72B /* VZControllerStateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4563A0571BA17C5100A2F72B /* VZControllerStateTest.m */; };
+		4563A0671BA17E4500A2F72B /* BXTWMockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4563A05B1BA17E4500A2F72B /* BXTWMockItem.m */; };
+		4563A0681BA17E4500A2F72B /* BXTWMockListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4563A05D1BA17E4500A2F72B /* BXTWMockListItem.m */; };
+		4563A0691BA17E4500A2F72B /* BXTWTripItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4563A05F1BA17E4500A2F72B /* BXTWTripItem.m */; };
+		4563A06A1BA17E4500A2F72B /* BXTWTripListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4563A0611BA17E4500A2F72B /* BXTWTripListItem.m */; };
+		4563A06B1BA17E4500A2F72B /* BXTWTripListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4563A0631BA17E4500A2F72B /* BXTWTripListModel.m */; };
+		4563A06C1BA17E4500A2F72B /* mock.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4563A0641BA17E4500A2F72B /* mock.sh */; };
+		4563A06D1BA17E4500A2F72B /* mock_result.json in Resources */ = {isa = PBXBuildFile; fileRef = 4563A0651BA17E4500A2F72B /* mock_result.json */; };
+		4563A06E1BA17E4500A2F72B /* tripItem.json in Resources */ = {isa = PBXBuildFile; fileRef = 4563A0661BA17E4500A2F72B /* tripItem.json */; };
 		45B0970C1B5BB88A008B8B60 /* VZHTTPModelCacheTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B0970B1B5BB88A008B8B60 /* VZHTTPModelCacheTimeTests.m */; };
 		45B0970E1B5BB89E008B8B60 /* VZHTTPModelConcurencyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B0970D1B5BB89E008B8B60 /* VZHTTPModelConcurencyTests.m */; };
 		45B097101B5E0CA0008B8B60 /* VZItemAPITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B0970F1B5E0CA0008B8B60 /* VZItemAPITest.m */; };
-		45B097131B5E0CE3008B8B60 /* BXTWTripItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B097121B5E0CE3008B8B60 /* BXTWTripItem.m */; };
-		45B097151B5E0D3D008B8B60 /* tripItem.json in Resources */ = {isa = PBXBuildFile; fileRef = 45B097141B5E0D3D008B8B60 /* tripItem.json */; };
-		45B097171B5E1748008B8B60 /* mock.sh in Resources */ = {isa = PBXBuildFile; fileRef = 45B097161B5E1748008B8B60 /* mock.sh */; };
-		45B0971A1B5E20B6008B8B60 /* BXTWMockListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B097191B5E20B6008B8B60 /* BXTWMockListItem.m */; };
-		45B0971D1B5E24A4008B8B60 /* BXTWMockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B0971C1B5E24A4008B8B60 /* BXTWMockItem.m */; };
 		45B82D551B579E740053D51C /* VZControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D521B579E740053D51C /* VZControllerTests.m */; };
 		45B82D561B579E740053D51C /* VZModelStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D541B579E740053D51C /* VZModelStateTests.m */; };
 		45B82D9B1B579E9C0053D51C /* VZAFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D5A1B579E9C0053D51C /* VZAFRequest.m */; };
@@ -47,23 +51,27 @@
 		45B82DB51B579E9C0053D51C /* VZListDefaultTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D991B579E9C0053D51C /* VZListDefaultTextCell.m */; };
 		45B82DB71B57A4DB0053D51C /* VZHTTPModelAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82DB61B57A4DB0053D51C /* VZHTTPModelAPITests.m */; };
 		45B82DBB1B58DC990053D51C /* VZHTTPListModelAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82DBA1B58DC990053D51C /* VZHTTPListModelAPITests.m */; };
-		45BEAEA71B58DE6800B396AE /* BXTWTripListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BEAEA61B58DE6800B396AE /* BXTWTripListItem.m */; };
-		45BEAEAA1B58DEA600B396AE /* BXTWTripListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BEAEA91B58DEA600B396AE /* BXTWTripListModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		45559FAB1B596572009BD1AA /* VZHTTPModelCachePolicyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelCachePolicyTests.m; sourceTree = "<group>"; };
+		4563A0571BA17C5100A2F72B /* VZControllerStateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZControllerStateTest.m; sourceTree = "<group>"; };
+		4563A05A1BA17E4500A2F72B /* BXTWMockItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWMockItem.h; sourceTree = "<group>"; };
+		4563A05B1BA17E4500A2F72B /* BXTWMockItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWMockItem.m; sourceTree = "<group>"; };
+		4563A05C1BA17E4500A2F72B /* BXTWMockListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWMockListItem.h; sourceTree = "<group>"; };
+		4563A05D1BA17E4500A2F72B /* BXTWMockListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWMockListItem.m; sourceTree = "<group>"; };
+		4563A05E1BA17E4500A2F72B /* BXTWTripItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripItem.h; sourceTree = "<group>"; };
+		4563A05F1BA17E4500A2F72B /* BXTWTripItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripItem.m; sourceTree = "<group>"; };
+		4563A0601BA17E4500A2F72B /* BXTWTripListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripListItem.h; sourceTree = "<group>"; };
+		4563A0611BA17E4500A2F72B /* BXTWTripListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripListItem.m; sourceTree = "<group>"; };
+		4563A0621BA17E4500A2F72B /* BXTWTripListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripListModel.h; sourceTree = "<group>"; };
+		4563A0631BA17E4500A2F72B /* BXTWTripListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripListModel.m; sourceTree = "<group>"; };
+		4563A0641BA17E4500A2F72B /* mock.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = mock.sh; sourceTree = "<group>"; };
+		4563A0651BA17E4500A2F72B /* mock_result.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock_result.json; sourceTree = "<group>"; };
+		4563A0661BA17E4500A2F72B /* tripItem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tripItem.json; sourceTree = "<group>"; };
 		45B0970B1B5BB88A008B8B60 /* VZHTTPModelCacheTimeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelCacheTimeTests.m; sourceTree = "<group>"; };
 		45B0970D1B5BB89E008B8B60 /* VZHTTPModelConcurencyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelConcurencyTests.m; sourceTree = "<group>"; };
 		45B0970F1B5E0CA0008B8B60 /* VZItemAPITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZItemAPITest.m; sourceTree = "<group>"; };
-		45B097111B5E0CE3008B8B60 /* BXTWTripItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripItem.h; sourceTree = "<group>"; };
-		45B097121B5E0CE3008B8B60 /* BXTWTripItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripItem.m; sourceTree = "<group>"; };
-		45B097141B5E0D3D008B8B60 /* tripItem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tripItem.json; sourceTree = "<group>"; };
-		45B097161B5E1748008B8B60 /* mock.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = mock.sh; sourceTree = "<group>"; };
-		45B097181B5E20B6008B8B60 /* BXTWMockListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWMockListItem.h; sourceTree = "<group>"; };
-		45B097191B5E20B6008B8B60 /* BXTWMockListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWMockListItem.m; sourceTree = "<group>"; };
-		45B0971B1B5E24A4008B8B60 /* BXTWMockItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWMockItem.h; sourceTree = "<group>"; };
-		45B0971C1B5E24A4008B8B60 /* BXTWMockItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWMockItem.m; sourceTree = "<group>"; };
 		45B82D411B579DF40053D51C /* VizzleTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VizzleTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B82D461B579DF40053D51C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B82D521B579E740053D51C /* VZControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZControllerTests.m; sourceTree = "<group>"; };
@@ -130,10 +138,6 @@
 		45B82D9A1B579E9C0053D51C /* Vizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vizzle.h; sourceTree = "<group>"; };
 		45B82DB61B57A4DB0053D51C /* VZHTTPModelAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelAPITests.m; sourceTree = "<group>"; };
 		45B82DBA1B58DC990053D51C /* VZHTTPListModelAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPListModelAPITests.m; sourceTree = "<group>"; };
-		45BEAEA51B58DE6800B396AE /* BXTWTripListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripListItem.h; sourceTree = "<group>"; };
-		45BEAEA61B58DE6800B396AE /* BXTWTripListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripListItem.m; sourceTree = "<group>"; };
-		45BEAEA81B58DEA600B396AE /* BXTWTripListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripListModel.h; sourceTree = "<group>"; };
-		45BEAEA91B58DEA600B396AE /* BXTWTripListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripListModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4563A0591BA17E4500A2F72B /* mock */ = {
+			isa = PBXGroup;
+			children = (
+				4563A05A1BA17E4500A2F72B /* BXTWMockItem.h */,
+				4563A05B1BA17E4500A2F72B /* BXTWMockItem.m */,
+				4563A05C1BA17E4500A2F72B /* BXTWMockListItem.h */,
+				4563A05D1BA17E4500A2F72B /* BXTWMockListItem.m */,
+				4563A05E1BA17E4500A2F72B /* BXTWTripItem.h */,
+				4563A05F1BA17E4500A2F72B /* BXTWTripItem.m */,
+				4563A0601BA17E4500A2F72B /* BXTWTripListItem.h */,
+				4563A0611BA17E4500A2F72B /* BXTWTripListItem.m */,
+				4563A0621BA17E4500A2F72B /* BXTWTripListModel.h */,
+				4563A0631BA17E4500A2F72B /* BXTWTripListModel.m */,
+				4563A0641BA17E4500A2F72B /* mock.sh */,
+				4563A0651BA17E4500A2F72B /* mock_result.json */,
+				4563A0661BA17E4500A2F72B /* tripItem.json */,
+			);
+			path = mock;
+			sourceTree = "<group>";
+		};
 		45B82D1F1B579DF40053D51C = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +190,7 @@
 		45B82D441B579DF40053D51C /* VizzleTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				4563A0591BA17E4500A2F72B /* mock */,
 				45B82D571B579E9C0053D51C /* Vizzle */,
 				45B82D511B579E740053D51C /* controller */,
 				45B82D531B579E740053D51C /* model */,
@@ -186,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				45B82D521B579E740053D51C /* VZControllerTests.m */,
+				4563A0571BA17C5100A2F72B /* VZControllerStateTest.m */,
 			);
 			name = controller;
 			path = ../../controller;
@@ -194,7 +220,6 @@
 		45B82D531B579E740053D51C /* model */ = {
 			isa = PBXGroup;
 			children = (
-				45B82DBC1B58DDAD0053D51C /* mock */,
 				45B82D541B579E740053D51C /* VZModelStateTests.m */,
 				45B82DB61B57A4DB0053D51C /* VZHTTPModelAPITests.m */,
 				45B82DBA1B58DC990053D51C /* VZHTTPListModelAPITests.m */,
@@ -331,25 +356,6 @@
 			path = list;
 			sourceTree = "<group>";
 		};
-		45B82DBC1B58DDAD0053D51C /* mock */ = {
-			isa = PBXGroup;
-			children = (
-				45B097161B5E1748008B8B60 /* mock.sh */,
-				45BEAEA81B58DEA600B396AE /* BXTWTripListModel.h */,
-				45BEAEA91B58DEA600B396AE /* BXTWTripListModel.m */,
-				45BEAEA51B58DE6800B396AE /* BXTWTripListItem.h */,
-				45BEAEA61B58DE6800B396AE /* BXTWTripListItem.m */,
-				45B097111B5E0CE3008B8B60 /* BXTWTripItem.h */,
-				45B097121B5E0CE3008B8B60 /* BXTWTripItem.m */,
-				45B097141B5E0D3D008B8B60 /* tripItem.json */,
-				45B097181B5E20B6008B8B60 /* BXTWMockListItem.h */,
-				45B097191B5E20B6008B8B60 /* BXTWMockListItem.m */,
-				45B0971B1B5E24A4008B8B60 /* BXTWMockItem.h */,
-				45B0971C1B5E24A4008B8B60 /* BXTWMockItem.m */,
-			);
-			path = mock;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -408,8 +414,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45B097171B5E1748008B8B60 /* mock.sh in Resources */,
-				45B097151B5E0D3D008B8B60 /* tripItem.json in Resources */,
+				4563A06D1BA17E4500A2F72B /* mock_result.json in Resources */,
+				4563A06C1BA17E4500A2F72B /* mock.sh in Resources */,
+				4563A06E1BA17E4500A2F72B /* tripItem.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +427,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45B0971A1B5E20B6008B8B60 /* BXTWMockListItem.m in Sources */,
 				45B82DB21B579E9C0053D51C /* VZListCell.m in Sources */,
 				45B82D9C1B579E9C0053D51C /* VZListViewController.m in Sources */,
 				45B82DB01B579E9C0053D51C /* VZHTTPURLResponseCache.m in Sources */,
@@ -432,15 +438,18 @@
 				45B097101B5E0CA0008B8B60 /* VZItemAPITest.m in Sources */,
 				45B82D9B1B579E9C0053D51C /* VZAFRequest.m in Sources */,
 				45B82DAF1B579E9C0053D51C /* VZHTTPURLConnectionOperation.m in Sources */,
+				4563A0681BA17E4500A2F72B /* BXTWMockListItem.m in Sources */,
 				45B82DA71B579E9C0053D51C /* VZModel.m in Sources */,
+				4563A0671BA17E4500A2F72B /* BXTWMockItem.m in Sources */,
 				45B82DB41B579E9C0053D51C /* VZListDefaultLoadingCell.m in Sources */,
 				45B0970E1B5BB89E008B8B60 /* VZHTTPModelConcurencyTests.m in Sources */,
-				45BEAEAA1B58DEA600B396AE /* BXTWTripListModel.m in Sources */,
 				45B82DA01B579E9C0053D51C /* VZHTTPListModel.m in Sources */,
 				45B82DA11B579E9C0053D51C /* VZHTTPModel.m in Sources */,
 				45B82D9F1B579E9C0053D51C /* VZViewController.m in Sources */,
 				45B82DA91B579E9C0053D51C /* VZHTTPConnectionOperation.m in Sources */,
+				4563A06A1BA17E4500A2F72B /* BXTWTripListItem.m in Sources */,
 				45B82DAA1B579E9C0053D51C /* VZHTTPNetworkAgent.m in Sources */,
+				4563A0691BA17E4500A2F72B /* BXTWTripItem.m in Sources */,
 				45B82D9D1B579E9C0053D51C /* VZListViewDataSource.m in Sources */,
 				45B82DA81B579E9C0053D51C /* NSString+VZHTTPNetworkUtil.m in Sources */,
 				45B82DB31B579E9C0053D51C /* VZListDefaultErrorCell.m in Sources */,
@@ -451,14 +460,13 @@
 				45B82DB51B579E9C0053D51C /* VZListDefaultTextCell.m in Sources */,
 				45B82DAD1B579E9C0053D51C /* VZHTTPResponseParser.m in Sources */,
 				45B82DAC1B579E9C0053D51C /* VZHTTPRequestGenerator.m in Sources */,
-				45B0971D1B5E24A4008B8B60 /* BXTWMockItem.m in Sources */,
+				4563A0581BA17C5100A2F72B /* VZControllerStateTest.m in Sources */,
 				45B82DA41B579E9C0053D51C /* VZItem.m in Sources */,
 				45559FAC1B596572009BD1AA /* VZHTTPModelCachePolicyTests.m in Sources */,
-				45B097131B5E0CE3008B8B60 /* BXTWTripItem.m in Sources */,
 				45B82DAB1B579E9C0053D51C /* VZHTTPNetworkSecurity.m in Sources */,
-				45BEAEA71B58DE6800B396AE /* BXTWTripListItem.m in Sources */,
 				45B82D551B579E740053D51C /* VZControllerTests.m in Sources */,
 				45B82D561B579E740053D51C /* VZModelStateTests.m in Sources */,
+				4563A06B1BA17E4500A2F72B /* BXTWTripListModel.m in Sources */,
 				45B82DA51B579E9C0053D51C /* VZListDefaultTextItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,7 +19,6 @@
 
 @interface VZListViewDataSource()
 {
-    //CFMutableDictionaryRef _modelMap;
     NSMutableDictionary* _itemsForSectionInternal;
 }
 
@@ -37,7 +36,7 @@
 
 - (NSDictionary*)itemsForSection
 {
-    return [_itemsForSectionInternal copy];
+    return _itemsForSectionInternal;
 }
 
 
@@ -66,9 +65,64 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - public
 
+- (BOOL)insertSectionAtIndex:(NSInteger)sectionIndex withItems:(NSArray* )items
+{
+    VZAssertMainThread();
+    
+    NSUInteger numberOfSection = _itemsForSectionInternal.count;
+    
+    VZAssertTrue(sectionIndex >= 0 && sectionIndex < numberOfSection && items && [items isKindOfClass:[NSArray class]]);
+    
+    if (sectionIndex >= 0 && sectionIndex < numberOfSection)
+    {
+        
+        for (int i=0; i<[[_itemsForSectionInternal allKeys]count]; i++)
+        {
+            if (i == sectionIndex) {
+                
+                _itemsForSectionInternal[@(i+1)] = _itemsForSectionInternal[@(i)];
+            }
+        }
+        _itemsForSectionInternal[@(sectionIndex)] = [NSMutableArray arrayWithArray:items];
+        
+        return YES;
+        
+    }
+
+    return NO;
+}
+
+- (BOOL)removeSectionByIndex:(NSInteger)sectionIndex
+{
+    VZAssertMainThread();
+    
+    NSUInteger numberOfSection = _itemsForSectionInternal.count;
+    
+    VZAssertTrue(sectionIndex >= 0 && sectionIndex < numberOfSection);
+    
+    if (sectionIndex >= 0 && sectionIndex < numberOfSection)
+    {
+        for (int i=0; i<[[_itemsForSectionInternal allKeys]count]; i++)
+        {
+            if (i == sectionIndex) {
+                
+                _itemsForSectionInternal[@(i)] = _itemsForSectionInternal[@(i++)];
+            }
+        }
+        [_itemsForSectionInternal removeObjectForKey:@(numberOfSection-1)];
+        
+        return YES;
+        
+    }
+    
+    return NO;
+
+}
+
 - (NSArray *)itemsForSection:(NSInteger)section
 {
     VZAssertMainThread();
+    VZAssertTrue(section >=0 && section < [_itemsForSectionInternal count]);
     
     if (section < [_itemsForSectionInternal count])
     {
@@ -81,6 +135,7 @@
 - (BOOL)insertItem:(VZListItem* )item AtIndexPath:(NSIndexPath* )indexPath
 {
     VZAssertMainThread();
+    VZAssertTrue(item && indexPath.section < _itemsForSectionInternal.count);
     
     if([item isKindOfClass:[VZListItem class]])
     {
@@ -101,6 +156,7 @@
 - (BOOL)replaceItem:(VZListItem* )item AtIndexPath:(NSIndexPath* )indexPath
 {
     VZAssertMainThread();
+    VZAssertTrue(item && indexPath.section < _itemsForSectionInternal.count);
     
     if([item isKindOfClass:[VZListItem class]])
     {
@@ -124,13 +180,13 @@
 - (BOOL)setItems:(NSArray*)items ForSection:(NSInteger)n
 {
     VZAssertMainThread();
+    VZAssertTrue(items && [items isKindOfClass:[NSArray class]]  && n>=0);
     
-    if (n >= 0)
+    if ( items && [items isKindOfClass:[NSArray class]]  && n>=0 )
     {
-        if ([items isKindOfClass:[NSArray class]]) {
-           [_itemsForSectionInternal setObject:[NSMutableArray arrayWithArray:items] forKey:@(n)];
-            return YES;
-        }
+        [_itemsForSectionInternal setObject:[NSMutableArray arrayWithArray:items] forKey:@(n)];
+        return YES;
+        
     }
     return NO;
 }
@@ -177,7 +233,7 @@
 //子类重载
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 0;
+    return _itemsForSectionInternal.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -187,11 +243,11 @@
 }
 
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 0;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 0;
@@ -283,7 +339,9 @@
 // item for index
 - (VZListItem*)itemForCellAtIndexPath:(NSIndexPath*)indexPath
 {
+    VZAssertMainThread();
     NSArray* items = _itemsForSectionInternal[@(indexPath.section)];
+    VZAssertTrue(items);
     
     VZListItem* item = nil;
     
@@ -301,6 +359,8 @@
 // cell for index
 - (Class)cellClassForItem:(VZListItem*)item AtIndex:(NSIndexPath *)indexPath
 {
+    VZAssertMainThread();
+    
     if (item.itemType == kItem_Normal) {
         return [VZListCell class];
     }
@@ -319,11 +379,11 @@
         return [VZListCell class];
 }
 // bind model
-- (void)tableViewControllerDidLoadModel:(VZHTTPListModel*)model ForSection:(NSInteger)section
+- (void)tableViewControllerDidLoadModel:(VZHTTPListModel*)model
 {
     // set data
     NSMutableArray* items = [model.objects mutableCopy];
-    [self setItems:items ForSection:section];
+    [self setItems:items ForSection:model.sectionNumber];
     
 }
 

@@ -222,12 +222,12 @@
         
         //只处理key model带回来的数据
         if (model == self.keyModel ) {
-            [self.dataSource tableViewControllerDidLoadModel:model ForSection:model.sectionNumber];
+            [self.dataSource tableViewControllerDidLoadModel:model];
         }
 
     }
     else
-        [self.dataSource tableViewControllerDidLoadModel:model ForSection:model.sectionNumber];
+        [self.dataSource tableViewControllerDidLoadModel:model];
     
     
 }

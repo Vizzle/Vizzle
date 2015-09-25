@@ -18,29 +18,13 @@
 
 @implementation BXTWTripListViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-
-    //default:
-    return 1; 
-
-}
-
 - (Class)cellClassForItem:(id)item AtIndex:(NSIndexPath *)indexPath{
 
-    //@REQUIRED:
-    
     return [BXTWTripListCell class];
     
-
 }
 
-//@optional:
-//- (VZListItem* )itemForCellAtIndexPath:(NSIndexPath*)indexPath{
 
-    //default:
-    //return [super itemForCellAtIndexPath:indexPath]; 
-
-//}
 
 
 @end  

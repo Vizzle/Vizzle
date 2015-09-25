@@ -24,7 +24,7 @@
 /**
  *绑定items和model
  */
-- (void)tableViewControllerDidLoadModel:(VZHTTPListModel*)model ForSection:(NSInteger)section;
+- (void)tableViewControllerDidLoadModel:(VZHTTPListModel*)model;
 
 @end
 
@@ -37,8 +37,47 @@
  * <k:NSArray v:section>
  * section到列表数据的映射
  */
-@property(nonatomic,strong)  NSDictionary* itemsForSection;
+@property(nonatomic,strong, readonly)  NSDictionary* itemsForSection;
 
+#pragma mark - sections
+
+/**
+ *  更新某个section的数据
+ *
+ *  @param items 待更新的数据列表
+ *  @param n     section
+ *
+ *  @return 操作是否成功
+ */
+- (BOOL)setItems:(NSArray*)items ForSection:(NSInteger)n; //增
+
+/**
+ *  返回某个section对应的items
+ *
+ *  @param section 数据对应的section
+ *
+ *  @return 该section的所有item
+ */
+- (NSArray *)itemsForSection:(NSInteger)section;
+/**
+ *  向datasource中插入一个section数据
+ *
+ *  @param sectionIndex：插入的section位置，sectionIndex >= 0 && sectionIndex < numberOfSections
+ *  @param items
+ *
+ *  @return 操作是否成功
+ */
+- (BOOL)insertSectionAtIndex:(NSInteger)sectionIndex withItems:(NSArray* )items;
+/**
+ *  删除某个section数据
+ *
+ *  @param sectionIndex：sectionIndex >= 0 && sectionIndex < numberOfSections
+ *
+ *  @return 操作是否成功
+ */
+- (BOOL)removeSectionByIndex:(NSInteger)section;
+
+#pragma mark - items
 /**
  *  在datasource中插入item
  *
@@ -58,24 +97,6 @@
  *  @return 是否替换成功
  */
 - (BOOL)replaceItem:(VZListItem* )item AtIndexPath:(NSIndexPath* )indexPath;
-/**
- *  更新某个section的数据
- *
- *  @param items 待更新的数据列表
- *  @param n     section
- *
- *  @return 操作是否成功
- */
-- (BOOL)setItems:(NSArray*)items ForSection:(NSInteger)n; //增
-
-/**
- *  返回某个section对应的items
- *
- *  @param section 数据对应的section
- *
- *  @return 该section的所有item
- */
-- (NSArray *)itemsForSection:(NSInteger)section;
 
 /**
  *  根据indexpath删除某条数据
