@@ -17,6 +17,7 @@
 		4563A06C1BA17E4500A2F72B /* mock.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4563A0641BA17E4500A2F72B /* mock.sh */; };
 		4563A06D1BA17E4500A2F72B /* mock_result.json in Resources */ = {isa = PBXBuildFile; fileRef = 4563A0651BA17E4500A2F72B /* mock_result.json */; };
 		4563A06E1BA17E4500A2F72B /* tripItem.json in Resources */ = {isa = PBXBuildFile; fileRef = 4563A0661BA17E4500A2F72B /* tripItem.json */; };
+		458B569C1BB5634300782A12 /* VZListDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 458B569B1BB5634300782A12 /* VZListDataSourceTest.m */; settings = {ASSET_TAGS = (); }; };
 		45B0970C1B5BB88A008B8B60 /* VZHTTPModelCacheTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B0970B1B5BB88A008B8B60 /* VZHTTPModelCacheTimeTests.m */; };
 		45B0970E1B5BB89E008B8B60 /* VZHTTPModelConcurencyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B0970D1B5BB89E008B8B60 /* VZHTTPModelConcurencyTests.m */; };
 		45B097101B5E0CA0008B8B60 /* VZItemAPITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B0970F1B5E0CA0008B8B60 /* VZItemAPITest.m */; };
@@ -69,6 +70,7 @@
 		4563A0641BA17E4500A2F72B /* mock.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = mock.sh; sourceTree = "<group>"; };
 		4563A0651BA17E4500A2F72B /* mock_result.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock_result.json; sourceTree = "<group>"; };
 		4563A0661BA17E4500A2F72B /* tripItem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tripItem.json; sourceTree = "<group>"; };
+		458B569B1BB5634300782A12 /* VZListDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDataSourceTest.m; sourceTree = "<group>"; };
 		45B0970B1B5BB88A008B8B60 /* VZHTTPModelCacheTimeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelCacheTimeTests.m; sourceTree = "<group>"; };
 		45B0970D1B5BB89E008B8B60 /* VZHTTPModelConcurencyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelConcurencyTests.m; sourceTree = "<group>"; };
 		45B0970F1B5E0CA0008B8B60 /* VZItemAPITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZItemAPITest.m; sourceTree = "<group>"; };
@@ -171,6 +173,14 @@
 			path = mock;
 			sourceTree = "<group>";
 		};
+		458B569A1BB5626500782A12 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				458B569B1BB5634300782A12 /* VZListDataSourceTest.m */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
 		45B82D1F1B579DF40053D51C = {
 			isa = PBXGroup;
 			children = (
@@ -190,8 +200,9 @@
 		45B82D441B579DF40053D51C /* VizzleTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				4563A0591BA17E4500A2F72B /* mock */,
 				45B82D571B579E9C0053D51C /* Vizzle */,
+				4563A0591BA17E4500A2F72B /* mock */,
+				458B569A1BB5626500782A12 /* datasource */,
 				45B82D511B579E740053D51C /* controller */,
 				45B82D531B579E740053D51C /* model */,
 				45B82D451B579DF40053D51C /* Supporting Files */,
@@ -453,6 +464,7 @@
 				45B82D9D1B579E9C0053D51C /* VZListViewDataSource.m in Sources */,
 				45B82DA81B579E9C0053D51C /* NSString+VZHTTPNetworkUtil.m in Sources */,
 				45B82DB31B579E9C0053D51C /* VZListDefaultErrorCell.m in Sources */,
+				458B569C1BB5634300782A12 /* VZListDataSourceTest.m in Sources */,
 				45B82DA31B579E9C0053D51C /* VZHTTPResponseDataCache.m in Sources */,
 				45B82DB71B57A4DB0053D51C /* VZHTTPModelAPITests.m in Sources */,
 				45B0970C1B5BB88A008B8B60 /* VZHTTPModelCacheTimeTests.m in Sources */,
