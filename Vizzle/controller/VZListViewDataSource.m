@@ -69,24 +69,36 @@
 {
     VZAssertMainThread();
     
+    VZAssertTrue(items && [items isKindOfClass:[NSArray class]]);
+    
     NSUInteger numberOfSection = _itemsForSectionInternal.count;
     
-    VZAssertTrue(sectionIndex >= 0 && sectionIndex < numberOfSection && items && [items isKindOfClass:[NSArray class]]);
+    VZAssertTrue(sectionIndex >= 0 && sectionIndex <= numberOfSection);
     
+    //insert at bottom
+    if (sectionIndex == numberOfSection) {
+        
+        _itemsForSectionInternal[@(sectionIndex)] = [items mutableCopy];
+        return YES;
+    }
+    
+    //inseret at top & middle
     if (sectionIndex >= 0 && sectionIndex < numberOfSection)
     {
         
-        for (int i=0; i<[[_itemsForSectionInternal allKeys]count]; i++)
+        for (int i=0; i<numberOfSection; i++)
         {
             if (i == sectionIndex) {
                 
-                _itemsForSectionInternal[@(i+1)] = _itemsForSectionInternal[@(i)];
+                for (int j = (int)numberOfSection-1; j >= i; j--){
+                    _itemsForSectionInternal[@(j+1)] = _itemsForSectionInternal[@(j)];
+                }
+                _itemsForSectionInternal[@(sectionIndex)] = [items mutableCopy];
+                break;
             }
         }
-        _itemsForSectionInternal[@(sectionIndex)] = [NSMutableArray arrayWithArray:items];
-        
+  
         return YES;
-        
     }
 
     return NO;
@@ -102,21 +114,21 @@
     
     if (sectionIndex >= 0 && sectionIndex < numberOfSection)
     {
-        for (int i=0; i<[[_itemsForSectionInternal allKeys]count]; i++)
+        for (int i=0; i<numberOfSection; i++)
         {
             if (i == sectionIndex) {
                 
-                _itemsForSectionInternal[@(i)] = _itemsForSectionInternal[@(i++)];
+                for (int j=i; j<= numberOfSection-i; j++) {
+                  _itemsForSectionInternal[@(j)] = _itemsForSectionInternal[@(j+1)];
+                }
+                //[_itemsForSectionInternal removeObjectForKey:@(numberOfSection-1)];
+                break;
             }
         }
-        [_itemsForSectionInternal removeObjectForKey:@(numberOfSection-1)];
-        
         return YES;
-        
     }
     
     return NO;
-
 }
 
 - (NSArray *)itemsForSection:(NSInteger)section
@@ -135,7 +147,8 @@
 - (BOOL)insertItem:(VZListItem* )item AtIndexPath:(NSIndexPath* )indexPath
 {
     VZAssertMainThread();
-    VZAssertTrue(item && indexPath.section < _itemsForSectionInternal.count);
+    VZAssertTrue(item && [item isKindOfClass:[VZListItem class]]);
+    VZAssertTrue(indexPath.section < _itemsForSectionInternal.count);
     
     if([item isKindOfClass:[VZListItem class]])
     {
@@ -156,7 +169,8 @@
 - (BOOL)replaceItem:(VZListItem* )item AtIndexPath:(NSIndexPath* )indexPath
 {
     VZAssertMainThread();
-    VZAssertTrue(item && indexPath.section < _itemsForSectionInternal.count);
+    VZAssertTrue(item && [item isKindOfClass:[VZListItem class]]);
+    VZAssertTrue(indexPath.section < _itemsForSectionInternal.count);
     
     if([item isKindOfClass:[VZListItem class]])
     {
@@ -180,11 +194,16 @@
 - (BOOL)setItems:(NSArray*)items ForSection:(NSInteger)n
 {
     VZAssertMainThread();
-    VZAssertTrue(items && [items isKindOfClass:[NSArray class]]  && n>=0);
+    VZAssertTrue(items && [items isKindOfClass:[NSArray class]]);
+    VZAssertTrue(n>=0);
     
-    if ( items && [items isKindOfClass:[NSArray class]]  && n>=0 )
+    if (n < 0) {
+        return NO;
+    }
+    
+    if ( items && [items isKindOfClass:[NSArray class]])
     {
-        [_itemsForSectionInternal setObject:[NSMutableArray arrayWithArray:items] forKey:@(n)];
+        [_itemsForSectionInternal setObject:[items mutableCopy] forKey:@(n)];
         return YES;
         
     }
@@ -194,6 +213,7 @@
 - (BOOL)removeItemAtIndexPath:(NSIndexPath* )indexPath
 {
     VZAssertMainThread();
+    VZAssertTrue(indexPath.section < _itemsForSectionInternal.count);
     
     if(indexPath.section < _itemsForSectionInternal.count)
     {
