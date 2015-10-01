@@ -156,7 +156,7 @@
         {
             NSMutableArray* list = [_itemsForSectionInternal objectForKey:@(indexPath.section)];
             
-            if (list.count > 0 && indexPath.row < list.count) {
+            if (list.count > 0 && indexPath.row <= list.count) {
                 
                 [list insertObject:item atIndex:indexPath.row];
                 return YES;
