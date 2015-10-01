@@ -212,7 +212,72 @@
 }
 
 
+- (void)testRemoveItem
+{
+    //remove top item
+    [self prepareDataSourceForItems];
+    [self.ds removeItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    XCTAssertEqual([self.ds itemsForSection:0][0], @"b");
+    XCTAssertEqual([self.ds itemsForSection:0][1], @"c");
+    
+    //remove bottom item
+    [self prepareDataSourceForItems];
+    [self.ds removeItemAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+    XCTAssertEqual([self.ds itemsForSection:0][0], @"a");
+    XCTAssertEqual([self.ds itemsForSection:0][1], @"b");
+    
+    
+    //remove item at middle
+    [self prepareDataSourceForItems];
+    [self.ds removeItemAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    XCTAssertEqual([self.ds itemsForSection:0][0], @"a");
+    XCTAssertEqual([self.ds itemsForSection:0][1], @"c");
 
+}
+
+- (void)testReplaceItem
+{
+    //replace top item
+    [self prepareDataSourceForItems];
+    [self.ds replaceItem:[VZListItem new] AtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    XCTAssertEqual([[self.ds itemsForSection:0][0] class], [VZListItem class]);
+    XCTAssertEqual([self.ds itemsForSection:0][1], @"b");
+    XCTAssertEqual([self.ds itemsForSection:0][2], @"c");
+    
+    //replace bottom item
+    [self prepareDataSourceForItems];
+    [self.ds replaceItem:[VZListItem new] AtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+    XCTAssertEqual([[self.ds itemsForSection:0][2] class], [VZListItem class]);
+    XCTAssertEqual([self.ds itemsForSection:0][0], @"a");
+    XCTAssertEqual([self.ds itemsForSection:0][1], @"b");
+    
+    //replace middle item
+    [self prepareDataSourceForItems];
+    [self.ds replaceItem:[VZListItem new] AtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    XCTAssertEqual([[self.ds itemsForSection:0][1] class], [VZListItem class]);
+    XCTAssertEqual([self.ds itemsForSection:0][0], @"a");
+    XCTAssertEqual([self.ds itemsForSection:0][2], @"c");
+}
+
+- (void)testItemForCell
+{
+    [self prepareDataSourceForItems];
+    
+    XCTAssertEqual((NSString* )[self.ds itemForCellAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]],@"a");
+    XCTAssertEqual((NSString* )[self.ds itemForCellAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]],@"b");
+    XCTAssertEqual((NSString* )[self.ds itemForCellAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]],@"c");
+    XCTAssertEqual((NSString* )[self.ds itemForCellAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]],@"1");
+    XCTAssertEqual((NSString* )[self.ds itemForCellAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]],@"2");
+    XCTAssertEqual((NSString* )[self.ds itemForCellAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:1]],@"3");
+    
+    [self.ds removeItemsForSection:1];
+    [self.ds setItems:@[@"1",@"2",@"3"] ForSection:2];
+    
+    XCTAssertFalse([self.ds itemForCellAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]]);
+    XCTAssertFalse([self.ds itemForCellAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]]);
+    XCTAssertFalse([self.ds itemForCellAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:1]]);
+    
+}
 
 - (void)prepareDataSourceForInsertSection
 {
