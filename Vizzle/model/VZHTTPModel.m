@@ -206,21 +206,13 @@
     //NSLog(@"[%@]-->REQUEST_FINISH:%@",self.class,responseObject);
 
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async([self sharedQueue], ^{
        
         if ([self parseResponse:responseObject]) {
         
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 [self didFinishLoading];
-                
-                //如果回来的数据是来自cache，那么自动更新数据
-//                if (fromCache) {
-//                    
-//                    if ([self requestConfig].cachePolicy == VZHTTPNetworkURLCachePolicyDefault) {
-//                        [self reload];
-//                    }
-//                }
                 
             });
         
@@ -245,6 +237,23 @@
     _responseObject = request.responseObject;
 
     [self didFailWithError:error];
+}
+
+static dispatch_queue_t _vzResponseProcessinglQueue = NULL;
+- (dispatch_queue_t)sharedQueue
+{
+    if (_vzResponseProcessinglQueue == NULL) {
+        
+        static dispatch_once_t onceToken = 0;
+        dispatch_once(&onceToken, ^{
+            
+            _vzResponseProcessinglQueue = dispatch_queue_create("com.vizlab.vizzle.httpmodel", DISPATCH_QUEUE_SERIAL);
+            
+        });
+    }
+
+
+    return _vzResponseProcessinglQueue;
 }
 
 
