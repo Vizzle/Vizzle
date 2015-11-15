@@ -20,14 +20,14 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - VZInspector (0.0.6)
+  - VZInspector (0.0.8)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
-  - VZInspector
+  - VZInspector (~> 0.0.8)
 
 SPEC CHECKSUMS:
   AFNetworking: 41d45d2c14219af0fa5addf3cfd433a002c13c9f
-  VZInspector: 76335cdc69b73d6bfd6c79f27d81ed547800dc3c
+  VZInspector: 4f98c5e158a5cdbd3e3fff699a6e3f987fc37329
 
 COCOAPODS: 0.37.2

@@ -7,651 +7,699 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		000583875282848ABDE79638 /* UIWindow+VZInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A620C2C278B3BC0AB143565 /* UIWindow+VZInspector.h */; };
-		095F70171996E7745568F197 /* VZInspectorHeapObjectGraphicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 077A1E732383B75C2ED3F817 /* VZInspectorHeapObjectGraphicView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		0B4EBA9A25BD7221DFAA97EA /* VZRevealInspectorNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECE62CD40D5F4F84BC192D8 /* VZRevealInspectorNode.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		0DCCE184955F4801409C469B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51E612475017C54AFB65FF6 /* Foundation.framework */; };
-		0E4B9C5543972EAB9F915A27 /* VZCrashInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = D97815F4797034A10F3ADADA /* VZCrashInspector.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		0FCF5ADF2964C695C4E5F1D4 /* VZInspectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F6976ECEF0A968BA087BF4 /* VZInspectorView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		10C2993FED53AE6C3F5804F6 /* VZInspectorConsoleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B7F2E15F23CF22D6893345 /* VZInspectorConsoleView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		12C7372FF55DEEECEF4A2ED6 /* VZInspectorLogView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A8287993F3F10877E8DAD7 /* VZInspectorLogView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		130BD64B8032FF29432CE52A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8009E1513216DB60319B8DB3 /* SystemConfiguration.framework */; };
-		1331AD6E3A7118CDB74C998A /* VZInspectorToolboxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C7271CB74BB168AAAAE2EB /* VZInspectorToolboxView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		14475DF7B12B6AB1710DD646 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 70E9C4BD4C8057DF06B5BC7B /* UIProgressView+AFNetworking.h */; };
-		1B28A678A50F4AF1EE85FC51 /* VZInspectorNetworkDetailView.h in Headers */ = {isa = PBXBuildFile; fileRef = B59640661A80CC5C8C6C32E2 /* VZInspectorNetworkDetailView.h */; };
-		1D122FF935CAAE8768D2049D /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E750D3EBAFAF648CC8F66DD /* AFURLRequestSerialization.h */; };
-		2244F95D55794F61A41D7651 /* VZOverviewInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = D27B97C48083307EB5ADDEA8 /* VZOverviewInspector.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		23A05FE2C87AEC26AAA25932 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D3A20C25BA9ABC3C38BF88 /* UIActivityIndicatorView+AFNetworking.m */; };
-		2762A2C299878A950398C4E2 /* VZCPUInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 630F986B821C09C9B3DFF431 /* VZCPUInspector.h */; };
-		29936E62E08CC4F94F251325 /* VZInspectorCrashRootView.h in Headers */ = {isa = PBXBuildFile; fileRef = 51B6CF14C90CA883EE0778D9 /* VZInspectorCrashRootView.h */; };
-		2BB0AD97B365942BB966A74C /* VZMemoryInspectorOverView.h in Headers */ = {isa = PBXBuildFile; fileRef = 04FD5A062568FFA2C4D15244 /* VZMemoryInspectorOverView.h */; };
-		2D78A2A168F60467AB77B4CA /* VZInspectorResource.h in Headers */ = {isa = PBXBuildFile; fileRef = F58BEF5F045A9C682E71EE2F /* VZInspectorResource.h */; };
-		2DA17783C896493A3F2F352E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA63CD2371423E316883977 /* CoreGraphics.framework */; };
-		2FF5E2F682F280E20FD911BA /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C91FFBA27E130B7909D86 /* AFHTTPSessionManager.m */; };
-		33F0E940F832D89F4000DBDA /* VZNetworkObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 6651116E56CC8B1A27FC634E /* VZNetworkObserver.h */; };
-		37F1035269B684704FA804E6 /* VZCPUInspectorOverView.h in Headers */ = {isa = PBXBuildFile; fileRef = 364BCE033F24B366FA3DA482 /* VZCPUInspectorOverView.h */; };
-		392304B73FADDAB7498DC280 /* VZInspectorSandBoxRootView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB146D9C60E1BCFC82CCE66A /* VZInspectorSandBoxRootView.h */; };
-		3ADBD3C115F214D091FFB448 /* VZInspectorPlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D5493391550EDBDD5B62AD /* VZInspectorPlotView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		3CD228A35B3FAF34FDCD1F33 /* VZInspectorRevealView.h in Headers */ = {isa = PBXBuildFile; fileRef = 916CDE0ED85D95F639BE19ED /* VZInspectorRevealView.h */; };
-		3D4F3E8AE347586AF9AABC4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59D334EA70DF7E571099C3C /* UIKit.framework */; };
-		3F93F6A2CE366F71946E3BD8 /* VZNetworkInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = F483283859FEBF1ABB9AB67D /* VZNetworkInspector.h */; };
-		42146540B3EE609D13C12304 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F39A263415696B6EB43BC5 /* UIButton+AFNetworking.m */; };
-		426539AADA06BE9BC745B615 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 48B8558F20A4009F8048CB48 /* UIKit+AFNetworking.h */; };
-		454E6A6260303587617F655F /* VZRevealInspectorNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D438218A7031EE28F211113 /* VZRevealInspectorNode.h */; };
-		46E935BB34FB934A83D44B03 /* VZInspectorCrashView.h in Headers */ = {isa = PBXBuildFile; fileRef = 64C49D8C2999D5260C5969BE /* VZInspectorCrashView.h */; };
-		4BB8CB70DFC21610670D61A3 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D791E68E6A21AC6A59B162DB /* AFNetworkActivityIndicatorManager.m */; };
-		4C9D35BE9DAB8B6374E8AE1F /* VZInspectorSandBoxSubView.h in Headers */ = {isa = PBXBuildFile; fileRef = 70749FDCE038F934AB4D73B7 /* VZInspectorSandBoxSubView.h */; };
-		4D2F1DD96AE23F7B61C694DD /* VZCPUInspectorOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F95B11E06FA619281745599 /* VZCPUInspectorOverView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		4D6678D2871A6F3C42D10706 /* VZInspectorHeapObjectGraphicView.h in Headers */ = {isa = PBXBuildFile; fileRef = A50039019575D5B735B1DB51 /* VZInspectorHeapObjectGraphicView.h */; };
-		4FF25FC994548EA81CAD8030 /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6512D4B2A1F3E83A6F5DEC2E /* AFURLConnectionOperation.h */; };
-		5255FF419FBF0D8CBC9F3BC3 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B925FA5779636FCB61496B6 /* UIAlertView+AFNetworking.m */; };
-		5280B7B095C9D78086EE5D74 /* VZInspectorConsoleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 041A188EF73498D6D0C0B43C /* VZInspectorConsoleView.h */; };
-		52D9C0F91B67C6E81773B8A7 /* VZInspectorSandBoxRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D35B96E00EEEC40FDBFDAF68 /* VZInspectorSandBoxRootView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		56B3AA180E3592076C59071F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3922721A5D5B787B810A805 /* Security.framework */; };
-		5708B81579CA53CC8372A62A /* VZLogInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = B241D70E3BF08D24ED328EBC /* VZLogInspector.h */; };
-		57C3E7A04EC8A1E620F06AE6 /* VZMemoryInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 451C8C124F499E48459C9329 /* VZMemoryInspector.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		57D70A5B39B4323CBEDCDEC2 /* VZCrashInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D3EAA23BC1640A0C7461E9C /* VZCrashInspector.h */; };
-		57DBE26810FDF96E83CAB4F3 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E9E6A3FEBBF87F8EC6184F /* AFNetworkReachabilityManager.m */; };
-		59C9890B759F7D9028AB84F5 /* VZInspectorHeapSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCADD5A4D749C5543B14FC2 /* VZInspectorHeapSubView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		5B146F333C8DFC5BBBFA5A02 /* VZInspectorRevealView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA94D45EF75209CFF3F8851 /* VZInspectorRevealView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		5BBB2D4999EA25C45CE21F51 /* VZHeapInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = FE763DD9DE5F7BA0529A4508 /* VZHeapInspector.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		5F4290F465946D6F8049D451 /* NSObject+VZInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CC77692CE49C46839C57142 /* NSObject+VZInspector.h */; };
-		63DF584DD0462B291FAEEED4 /* VZInspectorGridView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8005A17F592CE0F24F40ABDA /* VZInspectorGridView.h */; };
-		671A0612388A69BAA6BC062A /* VZInspectorHeapListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 92B529F9B7193BA91A6EDC29 /* VZInspectorHeapListView.h */; };
-		69C6497E0FE5F0CB11D53A40 /* VZNetworkObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = E30A1D650EB90B718E417C87 /* VZNetworkObserver.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6AE879A6793AA464F4FDE0F9 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C68C1BF352860EF69B04F478 /* AFURLSessionManager.m */; };
-		6C13D54B17032C57715DE445 /* VZLogInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F456230A7A0DF05AC433DF /* VZLogInspector.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6E7667011FA4B11FAA703FCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51E612475017C54AFB65FF6 /* Foundation.framework */; };
-		70FAF5E64882370FC8058B87 /* VZHeapInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = B1FDCBB4A71A96F800B1ECB6 /* VZHeapInspector.h */; };
-		726916ACF3558ACE5FFFCF2E /* VZInspectorHeapRootView.h in Headers */ = {isa = PBXBuildFile; fileRef = B10378D54B3634631F904BFD /* VZInspectorHeapRootView.h */; };
-		74D3C19198FA5EC2293B52D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA63CD2371423E316883977 /* CoreGraphics.framework */; };
-		79DFA4A59DC479AD6217031B /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 96BEDF6C2DE72E71D7CB3499 /* UIRefreshControl+AFNetworking.h */; };
-		7B057D0CA2A3622A035E36E0 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C458D6102416389912D982 /* UIImageView+AFNetworking.m */; };
-		7DDACB91E5211053566C7FA7 /* VZInspectorTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D10DF313DA5815C6F47A2E58 /* VZInspectorTimer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		7E63CFEA0808F6504745B90F /* VZRevealInspectorAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = 16A0BEFDA1F423D7235E95AD /* VZRevealInspectorAssert.h */; };
-		7EA864AE7D6167A8AF06E0AE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4065D0BFE477B631F4413A9 /* MobileCoreServices.framework */; };
-		82D2641E4BADA2DA79C86DD2 /* VZBorderInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 382D4C67FEDB947792E7E49F /* VZBorderInspector.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		84D32F10937F78676244A4EC /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4387293553AD7A8E63FD498B /* AFSecurityPolicy.m */; };
-		89304976E1F2FBC696315912 /* VZInspectorTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9440EC93D4B36E4803FED31C /* VZInspectorTimer.h */; };
-		89D10940C3F030718750B49D /* VZNetworkTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F778A9A1C0EE0437D914927 /* VZNetworkTransaction.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		8A43A3069F9560CA52D65F05 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 47223B62AC39FDFF3F631540 /* UIActivityIndicatorView+AFNetworking.h */; };
-		8AF5431F4B725A4BCA7EA036 /* VZInspectorNetworkHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 460A8AD46245B82B98A082A0 /* VZInspectorNetworkHistoryView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		8BA34FC3F784029E3D258678 /* VZInspectorOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7023693E89DE6F96AA01F284 /* VZInspectorOverlay.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		8E5E660F25C85F70569A520E /* VZSettingInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 02269819375FA1C33E22C4DC /* VZSettingInspector.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		8E9D1DBCC120897A09AA7410 /* NSObject+VZInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = A30D1EBFA92FFD610DC97FF7 /* NSObject+VZInspector.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		91B133829A6F24E07ADB137E /* VZInspectorThread.h in Headers */ = {isa = PBXBuildFile; fileRef = FE38E54AFA10D16AEF542701 /* VZInspectorThread.h */; };
-		9237199ABE70E06E956A1309 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE26DE65DF9AF6950624311 /* QuartzCore.framework */; };
-		92BBBE3E5F5D66CFA0009131 /* VZInspectorHeapObjectView.h in Headers */ = {isa = PBXBuildFile; fileRef = F40E72233E8EE8C600056A33 /* VZInspectorHeapObjectView.h */; };
-		92C5B60926B08DDF74FD43BD /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A89DC9EACFAE2AB4605653 /* AFURLResponseSerialization.m */; };
-		96631EB06E467C8F55C42202 /* VZInspectorHeapListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 368D03CADE5B7C62C6E65C19 /* VZInspectorHeapListView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		9A073F631E1EEF96479CDA37 /* VZRevealInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B1380FB915B0B06BAA6D727 /* VZRevealInspector.h */; };
-		9AFB5284445B8C71B81954EA /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 081D745851C0E2ED6D678113 /* AFURLRequestSerialization.m */; };
-		9BAB7BB0C4F8420663658BA5 /* VZInspectController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D4F3C7948BCFDD34EDACD70 /* VZInspectController.h */; };
-		9C815D8182891E0C380098C6 /* VZInspectorGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 880B090D9FDCDC0081E51DEA /* VZInspectorGridView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		9CA4A461FAB20F8D5136E494 /* VZInspectorPlotView.h in Headers */ = {isa = PBXBuildFile; fileRef = C2970F3ECF4CB6C815E9CB36 /* VZInspectorPlotView.h */; };
-		A87BC72C3B8778A1DA9396CC /* VZInspectController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE470E97A240E3BB38EA31B /* VZInspectController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A91ABA5C8E040297A05BB4A0 /* VZInspectorOverview.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE931143A0EC3DC9C60C51 /* VZInspectorOverview.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		AAE43568BC72364B27206C2E /* VZInspectorResource.m in Sources */ = {isa = PBXBuildFile; fileRef = ED486BF135E69554E7F99319 /* VZInspectorResource.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		AB79582808BDB52F00ADEC4B /* VZBorderInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = B051F19023A9F531A6D8B389 /* VZBorderInspector.h */; };
-		AF1A40B4CDAC4E5BC29B76B3 /* VZOverviewInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F043D9AD8FD4B204AF7C316 /* VZOverviewInspector.h */; };
-		B10542E37112AFB9477173D3 /* VZNetworkInspectorOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5074EE9FDA404CB4DDB4C617 /* VZNetworkInspectorOverView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		B16C94C9A5D1D4BA2DEC850B /* VZInspectorWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EB06180D8D44524E40175A4 /* VZInspectorWindow.h */; };
-		B20649F228BFCA33CBD2947D /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DF078DD9C367546C4546FD /* AFHTTPRequestOperationManager.m */; };
-		B21ABC94A900602BC5C026AD /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E5BD2D18CF1B2B68FC59C826 /* UIImageView+AFNetworking.h */; };
-		B2B804FC08001969D4E078B0 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1FF84F1E64384DADA31A50 /* AFNetworking.h */; };
-		B544763757F5BC20820E0CA0 /* VZSettingInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 6332615EEEA086F21060EF4E /* VZSettingInspector.h */; };
-		B714389426F9B2F896E4679B /* VZInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C81B91C6BADDF7C5A0E299 /* VZInspector.h */; };
-		BB41C147A968DDB8794B220E /* VZNetworkRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = D447F6CEC2FF6C0B9D89E1B3 /* VZNetworkRecorder.h */; };
-		BC5043EC3788F3ACFFFD4DFD /* VZInspectorOverview.h in Headers */ = {isa = PBXBuildFile; fileRef = 74BAA2A372AEC2DE492BF3C6 /* VZInspectorOverview.h */; };
-		BC7B4016048106A81B5C04AB /* VZNetworkRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 338A26DBA305E01A93E5E24D /* VZNetworkRecorder.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		C002DCAB2467626A9F67A66D /* VZInspectorNetworkHistoryView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9414938EE7C331ECD6AB8324 /* VZInspectorNetworkHistoryView.h */; };
-		C45C8874A5516DEC3CC87956 /* VZNetworkInspectorOverView.h in Headers */ = {isa = PBXBuildFile; fileRef = 95510B8168D6415524F8F6D4 /* VZNetworkInspectorOverView.h */; };
-		C584B018055C3BC6AB52E163 /* Pods-VZInspector-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D9A9E0AC296996A5B15319 /* Pods-VZInspector-dummy.m */; };
-		C6338CD924ECE895FAE24284 /* Pods-AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E3B9188D2CB3B39229B1A /* Pods-AFNetworking-dummy.m */; };
-		C84562B1CE3C001DFD6BBA6E /* VZInspectorOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 74E50316C2308AF986B66C25 /* VZInspectorOverlay.h */; };
-		C84CA32A7BE7ED3E51B746BD /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BDC49F75C6134F5558D4A8B8 /* UIWebView+AFNetworking.m */; };
-		CA5A67A7DCB200ACCB36897F /* VZInspectorView.h in Headers */ = {isa = PBXBuildFile; fileRef = F00973C3E8E39E0B19BD0E29 /* VZInspectorView.h */; };
-		CB0A712A3B058DC0C4857949 /* VZNetworkInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 9134F25933C5202E9E54EA88 /* VZNetworkInspector.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		CFE3292B4D6F50BF74ED92D8 /* VZInspectorSandBoxSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = A15567B87227CC7894BED933 /* VZInspectorSandBoxSubView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		D335E901B5EFD921C88111F0 /* VZNetworkTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = FBE3FBE26B972BFB2821DDE0 /* VZNetworkTransaction.h */; };
-		D391C4DDABBD613AB101C9A6 /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AA15E9CE127C0FBC170E1218 /* AFHTTPRequestOperationManager.h */; };
-		D7DB52848DDE623CE31B6FF8 /* VZInspectorLogView.h in Headers */ = {isa = PBXBuildFile; fileRef = ABA7A2DCFD171C4D0BD4A1DF /* VZInspectorLogView.h */; };
-		D816CE41E4449C1BCBFDECC9 /* VZInspectorToolboxView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E18A4611F230303CB4F8599 /* VZInspectorToolboxView.h */; };
-		DA2B781CF3BD367F4B26A7D3 /* VZInspectorCrashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C13F98E5BB922C0C68F345B /* VZInspectorCrashView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		DA5618BB89CE3449E5E17B72 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA86291F352ED1D82BC44C0 /* UIProgressView+AFNetworking.m */; };
-		DD89572C1CF1756652ADCF3A /* VZInspectorHeapObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = C491B6F47ABF7DE5D0545D96 /* VZInspectorHeapObjectView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		DF8679884DEC25CBAA917C4A /* VZInspectorNetworkDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 637B4EF9EED90C4BD5080155 /* VZInspectorNetworkDetailView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E061E7E03C16363E3D9ED16B /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE0639B4322FA2404A8CD5 /* AFURLConnectionOperation.m */; };
-		E0EEC6EA672C4904FD6BB32E /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DA4DFA2C6EF478ABC8B1534 /* AFURLResponseSerialization.h */; };
-		E141D95877433636051F4FB1 /* VZInspectorSettingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 45AF0AF97BFDB984E9F75172 /* VZInspectorSettingView.h */; };
-		E17EE4FFCE12327B803B6D48 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CC828C21200DFFF8803284CB /* AFHTTPRequestOperation.h */; };
-		E1C8DEABB1654A976555A4FD /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F2949F5AD98DD746207883 /* UIRefreshControl+AFNetworking.m */; };
-		E1CCE0082CB80421AAB8BB23 /* VZInspectorCrashRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFE6F7C745E92D426F42C10 /* VZInspectorCrashRootView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E5B8DF4EF5CDEE7C3698C9B6 /* VZMemoryInspectorOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = B391DD4555FC89E842729EA8 /* VZMemoryInspectorOverView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E6F22DC4681D0F1A166E5CEB /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 68B8B75D63AD4796DBC39FE3 /* AFHTTPSessionManager.h */; };
-		EB57DE9C4EECF0B12FA1848C /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F90AECD813AFC9DEC7C14A2 /* AFHTTPRequestOperation.m */; };
-		EBF51C287B96DD1CD9C44C88 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC3562BDD38D24870240321 /* UIWebView+AFNetworking.h */; };
-		ECDEB4BA786084605A7ACD81 /* VZInspectorSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B40DD7398DF758100D42818 /* VZInspectorSettingView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		EE49377F60232F6451CE755F /* UIWindow+VZInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2525FF7B6B7E4BF39D7BDA9D /* UIWindow+VZInspector.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		EEEFC9CBF1D1311972FA6637 /* UIAlertView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 70201DE8DFD2CA884EE969DD /* UIAlertView+AFNetworking.h */; };
-		EFE2C21B28681F0E6D63DECD /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4323D8977AFB2BD280FAF503 /* AFURLSessionManager.h */; };
-		F208855F310688B783BDF8A9 /* VZInspectorUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFBE81B77133E5EE8E19837 /* VZInspectorUtility.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		F3F0EC1BB2402E0B70F2096E /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = ADF75AB45932FC38F1E775CD /* UIButton+AFNetworking.h */; };
-		F3FA71851C14606084A7DD8C /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAC43010986890723B1694C /* Pods-dummy.m */; };
-		F7E196B8A0F5E0068E01A1FB /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 569317747C3F429359C9C941 /* AFNetworkReachabilityManager.h */; };
-		F9E20EFE18000ACF033655C5 /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A183D831844A888DBFB7A130 /* AFNetworkActivityIndicatorManager.h */; };
-		F9FBA3C520438D741B03E69E /* VZInspectorAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BC0F8B0654FB4B37E7B39EB /* VZInspectorAssert.h */; };
-		FAB9AF3A58C34E56D56BC51D /* VZMemoryInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 71DB0E6519BDFFB9A5D8FE83 /* VZMemoryInspector.h */; };
-		FAFE5CA2575FBB15F6C8A1D2 /* VZInspectorHeapSubView.h in Headers */ = {isa = PBXBuildFile; fileRef = 54B87AB2A25ECB834CAAF82C /* VZInspectorHeapSubView.h */; };
-		FC6F837BF941702E84F01D5F /* VZInspectorUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 11F77C79605A167531350667 /* VZInspectorUtility.h */; };
-		FD9DC7D02BBDB452158894B3 /* VZInspectorWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 87166C473E70AB6874301155 /* VZInspectorWindow.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FE02E5320667F3A3A721309F /* VZCPUInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = B27D007785865E56BA5A0260 /* VZCPUInspector.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FE65D0450C70BDB465DCD67D /* VZInspectorHeapRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBB0DFF6CFCE9D870DA5B92 /* VZInspectorHeapRootView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FEECA6F069E8C1D6C12A9325 /* VZInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F61D70E1814E3CCAEFCD5D /* VZInspector.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FEFFFF5DFD7905AC9EE300AF /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 867A6E7111959D8CD8E5571D /* AFSecurityPolicy.h */; };
-		FF547BDAA7C6A542837AF1C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51E612475017C54AFB65FF6 /* Foundation.framework */; };
+		00B4E3DB356A156C5E195FE9 /* VZInspectorHeapSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 558C8680621A94768CA933C7 /* VZInspectorHeapSubView.m */; };
+		041DE9AD9892BE50456CFB92 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CF89570213B89BC5F2179C5E /* UIAlertView+AFNetworking.m */; };
+		05F321686F8B0ABB413E2C24 /* VZInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F56DE148D795DCB57AFB825 /* VZInspector.m */; };
+		05FB1433AB384C935681DF61 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA8DD829D54FDC1EEC99A00 /* AFSecurityPolicy.m */; };
+		06A315338DBD2BE2AB23C7C3 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = D92299D9FD9848BDF6DBBB5D /* AFSecurityPolicy.h */; };
+		0722C5A54036F5BBCB5E8147 /* VZDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B7B282F98289FA978BB5D16 /* VZDefine.h */; };
+		0727C0E6049369DF164A78EF /* VZOverviewInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 864552DA033DE1FD923E9050 /* VZOverviewInspector.m */; };
+		08757D71C0858FF9D2B066A2 /* VZInspectorResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5799EA9660A144EB5C81D1 /* VZInspectorResource.m */; };
+		0C80ADB347E3F8548F035041 /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2217DA0011172D17FE6C60EB /* AFHTTPRequestOperationManager.h */; };
+		0D8ACB195A7742346240710E /* VZNetworkInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = A84D87E4A761B671EA214AA9 /* VZNetworkInspector.h */; };
+		1083FA86E90DB445DC3FF2C2 /* CLLocationManager+FLFake.m in Sources */ = {isa = PBXBuildFile; fileRef = DC328489B9C55D3EF157444F /* CLLocationManager+FLFake.m */; };
+		1236122CA987DC0F054C41B6 /* VZInspectorHeapRootView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D8D625EA4AEE318CB31FB89 /* VZInspectorHeapRootView.h */; };
+		144D09FD626ACB0A49A2DD0F /* VZNetworkInspectorOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2287A76A55859259AD4C35A0 /* VZNetworkInspectorOverView.m */; };
+		17E12076A46C696962FC52F7 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B69A94B667F45D661ABBB0F7 /* UIProgressView+AFNetworking.m */; };
+		18087B1D550B255F1B48D60D /* VZCrashInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4491F9216B6C352AC96BFB /* VZCrashInspector.m */; };
+		187C9AFD6EB9813BE93147D8 /* VZInspectorSandBoxRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B65971613536286AF11670C /* VZInspectorSandBoxRootView.m */; };
+		1AAE22BCDD9CA156346184BC /* VZCrashInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 27A235ADE2AEB79D678F2C79 /* VZCrashInspector.h */; };
+		1CB784FA38EB4877FAB87226 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C37AA2B7506E1AFE452FA152 /* AFHTTPSessionManager.h */; };
+		1D16FEB6A4060059D6D1DF4C /* VZRevealInspectorAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B4470383DB380B1C20E671E /* VZRevealInspectorAssert.h */; };
+		1F3FDED80CF671CC51DE96AA /* VZInspectorGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A5F10785408A15264B921E /* VZInspectorGridView.m */; };
+		1FDF5B6C826C9C58E1C1C954 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BBBE24E594130634D232F7F /* AFHTTPRequestOperation.h */; };
+		20FC58D2B59BF6EB14991682 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 40632CE640B356DE40F75DFD /* UIButton+AFNetworking.m */; };
+		2150908CC86F5DDD21C34CBC /* VZInspectorView.h in Headers */ = {isa = PBXBuildFile; fileRef = E47F680F924B2F4F2F71F9AD /* VZInspectorView.h */; };
+		216E1CE28D12B3CD06BDEC09 /* VZInspectorOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A8420D692640F8A4342989 /* VZInspectorOverlay.m */; };
+		263FF588F09F493282F45BDF /* VZInspectorHeapObjectView.h in Headers */ = {isa = PBXBuildFile; fileRef = E2E5E0007BEEB52CB1AA2754 /* VZInspectorHeapObjectView.h */; };
+		26C293D318C89F116AEA3633 /* VZInspectorWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 927AE82BC79AD3867B86369E /* VZInspectorWindow.h */; };
+		280E3459B8D62FC673031D23 /* VZLogInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = F59A6AC9152A8FC13E49627F /* VZLogInspector.m */; };
+		28E408BFDECA96FCCBB61902 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AC86BB8205AF8591508F5F /* SystemConfiguration.framework */; };
+		2B42EAEABDCD3CD6686F3815 /* VZHeapInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA17CA30948BF383BE7FA04 /* VZHeapInspector.h */; };
+		2B4F6A735CF66C4B93231DE9 /* CLLocationManager+FLFake.h in Headers */ = {isa = PBXBuildFile; fileRef = FF7BBF62FCAE3714D6CC095B /* CLLocationManager+FLFake.h */; };
+		2E64BE33A599F36F3441E25E /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 059307AE27D8A6B11F878224 /* AFNetworkReachabilityManager.h */; };
+		3187B43748AFC2A9285B4687 /* VZInspectorRevealView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0AB321F903BC15860D6E378 /* VZInspectorRevealView.h */; };
+		3262C1561EBF6CDD17732C16 /* VZInspectorConsoleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3414DE00F99FC43F1555E207 /* VZInspectorConsoleView.h */; };
+		32D07617D856B4392DEA9DD2 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B75BDB7F1082D19A0EB603 /* AFURLResponseSerialization.m */; };
+		33FC51925DF283CA4635C8E9 /* VZInspectorNetworkDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EC7AE7E858369BF2B68C41 /* VZInspectorNetworkDetailView.m */; };
+		3585FDCAB8948E331B2C262B /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2DB05F097912B61F680541 /* UIRefreshControl+AFNetworking.h */; };
+		36AFBA2F092E24A4F437908C /* VZNetworkObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E00AD2261EFF10CDA121C5 /* VZNetworkObserver.m */; };
+		38D09C6D2C360C4573410E60 /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E58D5ED58CB24563CBD5DB56 /* AFURLConnectionOperation.h */; };
+		3A2EC3AD5A9A85E6A91A3F56 /* VZInspectorCrashRootView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E42CF17C51BF9F5552897BD /* VZInspectorCrashRootView.h */; };
+		3AC1836DA31CF3A59A641E72 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB74444415DE6A6573A6833 /* AFNetworkActivityIndicatorManager.m */; };
+		49F1352EF90CAADB6B518B33 /* VZLogInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F132B8A877CAF9307018C48 /* VZLogInspector.h */; };
+		4B3DD12299A26AB2F8C6135F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF06B3B3C885DD09D93CD73 /* MobileCoreServices.framework */; };
+		4CC0FB9A0971243CF0D92338 /* VZNetworkTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0A2991D878E689F98055DA /* VZNetworkTransaction.m */; };
+		4DF2CC6E7A4CBC362D52D018 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7AFD54898E7238C9268A65 /* Foundation.framework */; };
+		5074AE5D7AB6C21C49343D7D /* VZInspectorToolboxView.h in Headers */ = {isa = PBXBuildFile; fileRef = 95593B432338371E57069630 /* VZInspectorToolboxView.h */; };
+		524ECD3D5513CDF54161A74D /* VZInspectorRevealView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D06C8C5D6595DAA45F3AFDA /* VZInspectorRevealView.m */; };
+		533F93AFA06E01F7C04C436E /* VZInspectorLocationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 281879A7A626C0A40EB50FBC /* VZInspectorLocationView.h */; };
+		53B287D719D8654389D355D9 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F6610EE32056ACF80110E896 /* AFNetworkReachabilityManager.m */; };
+		5663524D244F7BCFA7DFE997 /* VZInspectorLogView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AFAC05C84A63155769E859 /* VZInspectorLogView.m */; };
+		57D14B667913B28702F6B06C /* VZMemoryInspectorOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5298C6AB9EC7B8EF66FFAD4 /* VZMemoryInspectorOverView.m */; };
+		5A90D6BC6FAC97E86F4991D1 /* VZInspectorWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5DC28F6D7DC93BDAF2C90 /* VZInspectorWindow.m */; };
+		5C494E7AC9F3AA5BF49D7F2F /* VZSettingInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = A20D003CED51F1C52C03E5D6 /* VZSettingInspector.m */; };
+		5D2289ACD23E308DA0B4B842 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFC98C69FBC92DA2784C08 /* AFURLSessionManager.m */; };
+		5D9799DD7011502472D34B6C /* VZInspectorToolboxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F2215411DD9B74CE7EED7 /* VZInspectorToolboxView.m */; };
+		5E7BBB85EF56E3E2D4D9365F /* NSObject+VZInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 83FB304C8ED5E8887A9C769A /* NSObject+VZInspector.h */; };
+		61E438D9A7E0FE55141CAA6C /* VZInspectorDeviceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0B24C7CA3F286F2781DF02 /* VZInspectorDeviceView.m */; };
+		621FF6EDD13F3232AB1B2A72 /* VZBorderInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C34C4904217EEBF4ADAE71 /* VZBorderInspector.m */; };
+		623E2AFF625A61253CA3E8BC /* VZInspectorPlotView.h in Headers */ = {isa = PBXBuildFile; fileRef = BB9901F43D18A03E2E22F9CD /* VZInspectorPlotView.h */; };
+		63BF4220DBA20689BB1D10F5 /* VZNetworkObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CF28A6B5EFB45474D6C6953 /* VZNetworkObserver.h */; };
+		66A30171AB4A1C0F5585B794 /* VZInspectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A2F6D58DDA30A0D3CD1F70 /* VZInspectController.m */; };
+		683E869F92694C11FA402045 /* VZInspectorHeapListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE704E7DF1EB785517111DA /* VZInspectorHeapListView.m */; };
+		6882FF49E08B761699BB5BC5 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E9CD77F5F064129D61944D78 /* UIKit+AFNetworking.h */; };
+		68BC9837A01C0F24BA4A8918 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4322B51735272C2470C7A6DB /* AFURLSessionManager.h */; };
+		68D4D8B29CD71F4E16CDDE1B /* VZDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = A3ECD6FDE5908D705CA68ACD /* VZDevice.h */; };
+		690EC807924CC5DF13023BE2 /* VZRevealInspectorNode.h in Headers */ = {isa = PBXBuildFile; fileRef = BF47A856FB88F1A2521202D6 /* VZRevealInspectorNode.h */; };
+		6BCA8E1D8157D1C90E2894E6 /* VZInspectorPlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 930790F187F725B61ECAADAC /* VZInspectorPlotView.m */; };
+		6D31CC6E816A974802388536 /* VZInspectorOverview.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EEC4495526803830FDFBA5A /* VZInspectorOverview.h */; };
+		6E597856673093DD88F4E235 /* VZRevealInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 692D3CB2920D73FDFCA54E5D /* VZRevealInspector.h */; };
+		702011C57D8ED1F5830CE14D /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 77924E899130877C0E123747 /* UIProgressView+AFNetworking.h */; };
+		7157597ACD2B9B3DABC53263 /* VZMemoryInspectorOverView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EFD4D10999F695C1D13B5B9 /* VZMemoryInspectorOverView.h */; };
+		727C14FC49437B4E7D1128AD /* VZOverviewInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 6103F44529BA07072CFD0D9C /* VZOverviewInspector.h */; };
+		72AB9F0F0F5353A033BF02EE /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A78B61CCC2B9CD3066524E1C /* UIImageView+AFNetworking.h */; };
+		73E8996B171160799DD585AD /* VZInspectorHeapObjectGraphicView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D63D55F4DB03135FA71EE7 /* VZInspectorHeapObjectGraphicView.m */; };
+		78A4B10742AFF857FD0DF9C9 /* VZInspectorUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 57F7A4A70B85A2AF78E44555 /* VZInspectorUtility.h */; };
+		79ECC77745CCD7948198C571 /* VZHeapInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C2940438358700719C90A0 /* VZHeapInspector.m */; };
+		7A708ABC88DF86EE0B0692E6 /* VZInspectorDeviceView.h in Headers */ = {isa = PBXBuildFile; fileRef = D3C880F3592278B0D230763D /* VZInspectorDeviceView.h */; };
+		7AC55A834620EC5E609FBA50 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FC4A108F65BE1207D251796 /* AFURLResponseSerialization.h */; };
+		7CB78879F11657FD0FCE2161 /* VZMemoryInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7A9454D6A44FA6AD03AD9C /* VZMemoryInspector.m */; };
+		7CF3E0EB177F4E44D5A20DB4 /* VZCPUInspectorOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F57EF2C43B4B96C9A58DCB1 /* VZCPUInspectorOverView.m */; };
+		7E1B0ACF11DFB438FB989A99 /* VZImageInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 454D5C4B675E50CCE749DC15 /* VZImageInspector.h */; };
+		7E4CF790B0927CDAB185ACAF /* VZInspectorLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA28BBD16629613D0DA4A2C /* VZInspectorLocationView.m */; };
+		7E7EA0500672C61ABED39985 /* VZRevealInspector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 17716580938B9E1A1D59F859 /* VZRevealInspector.mm */; };
+		7EF4FEE0E0037C7C5129C2B4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBFA8EE31044F08F90963A1 /* CoreGraphics.framework */; };
+		80A00F1B563770DB4E2F4418 /* VZInspectorNetworkDetailView.h in Headers */ = {isa = PBXBuildFile; fileRef = C9A02E46A8FB9238BB028773 /* VZInspectorNetworkDetailView.h */; };
+		80EB5FD97FCDC02D2098AB31 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBFA8EE31044F08F90963A1 /* CoreGraphics.framework */; };
+		81DCE58D3351F4D48170BCEB /* VZInspectorCrashRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C58F7A2C0D0A6D2738ACA9 /* VZInspectorCrashRootView.m */; };
+		8488E66B2E04C379CAE76D9F /* VZInspectorOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AA1831CA1171C769E738BCC /* VZInspectorOverlay.h */; };
+		86B3AD531A15827C9D5A3768 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE64ACC39130A23CC0E58F6A /* UIKit.framework */; };
+		8B0045ADEE743D54AD564481 /* VZInspectorCrashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00947131002C4AFA246B9118 /* VZInspectorCrashView.m */; };
+		8C1887800D83709AE4C7B3F8 /* VZInspectorResource.h in Headers */ = {isa = PBXBuildFile; fileRef = F43A158BC394AA8FFA6CC7DD /* VZInspectorResource.h */; };
+		8C5E4325EB7594D1E9861C01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7AFD54898E7238C9268A65 /* Foundation.framework */; };
+		90A95D09D36B83AC32B577A3 /* Pods-VZInspector-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAFDDCC861EDC552A527ED0 /* Pods-VZInspector-dummy.m */; };
+		913B68F12621306AF65C4E61 /* NSObject+VZInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7888206AC6FD75C1404BE9B9 /* NSObject+VZInspector.m */; };
+		92155C8A6BCC3801007E475A /* VZInspectorHeapRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AECC649961E9ECB052AEFCA /* VZInspectorHeapRootView.m */; };
+		932EB9734A3D7D943706E967 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B364554D1BE89078FBAD8E /* UIWebView+AFNetworking.m */; };
+		980796241AB3DE47CB03ACF6 /* VZInspectorNetworkHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA8A8FBAF352DDE6CA0CC03 /* VZInspectorNetworkHistoryView.m */; };
+		98E2FE7D007BEB7442460C05 /* VZNetworkInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 093EA3EFA7822D8B6933AFE0 /* VZNetworkInspector.m */; };
+		9A5AF573B352C812AB9BC033 /* VZImageInspector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 41C359DCE4DBF587F0100D9F /* VZImageInspector.mm */; };
+		9C7D18D591B63FC83A387FF6 /* VZInspectorSandBoxSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5B7C3E600C978DF3C02C47 /* VZInspectorSandBoxSubView.m */; };
+		A3DB3A5E99F2BD156F301A11 /* VZInspectController.h in Headers */ = {isa = PBXBuildFile; fileRef = DF209EA22B0C7FE196F016A7 /* VZInspectController.h */; };
+		A437F720CA92AA4099484D52 /* FLFakeConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A949D194174D214B30656 /* FLFakeConfig.m */; };
+		A4D82E66F011E5FE344D296F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D76FB7B34EBD1F5ECDD65BA /* QuartzCore.framework */; };
+		A52A55D86729DA5B22153537 /* VZSettingInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 90596E47658CA338132F1D0F /* VZSettingInspector.h */; };
+		A67154E64E75F9A305F7DD59 /* VZNetworkTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2F5CBA11086B183CA5AA7D /* VZNetworkTransaction.h */; };
+		AA5470BDBA41654AD7192649 /* VZInspectorUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = D5569C136ADD2E3673DC0418 /* VZInspectorUtility.m */; };
+		AAB68E867A12AA0D6AF622E0 /* VZInspectorLogView.h in Headers */ = {isa = PBXBuildFile; fileRef = DA94E2BC426FB7F63BC720BB /* VZInspectorLogView.h */; };
+		AB5C9830DB15A5137E3079C9 /* VZDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 209097869C447D2B0237DFD8 /* VZDevice.m */; };
+		ADE5726262B874BD31AD0493 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 34EA2D3A43B409896ED5501D /* AFNetworking.h */; };
+		AF0BE6985A5D2CC65A5104D1 /* VZInspectorSettingView.h in Headers */ = {isa = PBXBuildFile; fileRef = BE64EE1A5A36154B4FAEDBCB /* VZInspectorSettingView.h */; };
+		AF0DF8EEB673F245489B69EB /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48774F7C4592CE52C416A769 /* AFURLConnectionOperation.m */; };
+		AFC9B61BF3DABBAA86114AB0 /* VZInspectorHeapListView.h in Headers */ = {isa = PBXBuildFile; fileRef = A206C1F4579F4E59C7050806 /* VZInspectorHeapListView.h */; };
+		AFFC271F50562F29881E97D3 /* VZInspectorTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5121E461B6EA6AC9E1019527 /* VZInspectorTimer.h */; };
+		B057ACDD005D3A993E6ADBBE /* VZInspectorSandBoxRootView.h in Headers */ = {isa = PBXBuildFile; fileRef = B37CD5709DB8DACD4EEDA2E8 /* VZInspectorSandBoxRootView.h */; };
+		B17F6E6E8B1D8354C021FE77 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD13977532E020D8C34D165 /* UIRefreshControl+AFNetworking.m */; };
+		B273A714A5D96B1263E27F0A /* VZInspectorNetworkHistoryView.h in Headers */ = {isa = PBXBuildFile; fileRef = 06670813C24C9EF0D78F1E77 /* VZInspectorNetworkHistoryView.h */; };
+		B423684BC799D36636576F59 /* VZInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 5582F03944C60D461B9568BE /* VZInspector.h */; };
+		BB49F99596EDCB451C20A1B1 /* VZCPUInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = BFB8600492DB9D9F9707411A /* VZCPUInspector.h */; };
+		BBF65C6314D1DD386B447D69 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 30998CA884258B06A5FD09A6 /* UIActivityIndicatorView+AFNetworking.h */; };
+		BCC2D9B1AE3463F3BDA3233E /* VZCPUInspectorOverView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F30B17C46F7AED1FC440BC1 /* VZCPUInspectorOverView.h */; };
+		BCD89B04B5F9E5628A21A26C /* VZInspectorHeapObjectGraphicView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1145E9899AEEF9808B3588C6 /* VZInspectorHeapObjectGraphicView.h */; };
+		BCDB4163830D1640CCEF31B1 /* VZNetworkRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 013F50495FFED9DCE6AB3FED /* VZNetworkRecorder.m */; };
+		BE151293B49945FE38B87E44 /* VZInspectorOverview.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEDD1F6E999F811995A14AF /* VZInspectorOverview.m */; };
+		BE548A8B4F7F9125FB9C4F30 /* VZNetworkInspectorOverView.h in Headers */ = {isa = PBXBuildFile; fileRef = 999A3E6CC36494E84962D1BE /* VZNetworkInspectorOverView.h */; };
+		C0E1C525C473E1E0B874375E /* VZInspectorSandBoxSubView.h in Headers */ = {isa = PBXBuildFile; fileRef = B56A5B0F1C4C0F5372C03E92 /* VZInspectorSandBoxSubView.h */; };
+		C364B3C3DCE532C087451442 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DA51D738F79FD1E18CC1F9 /* AFHTTPRequestOperationManager.m */; };
+		C3DEEB376920BC149DAF5D73 /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FA4F58F0C235B64AD3F195A8 /* AFNetworkActivityIndicatorManager.h */; };
+		C644DE1E6C86BBDB957912E8 /* VZInspectorAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = 56BCC281814002010DCC9DAC /* VZInspectorAssert.h */; };
+		C6CE2EA91E6764DD305EE8F1 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F9ACE18974E86C2FA1AEC00D /* AFHTTPRequestOperation.m */; };
+		C77347960DBBDCC4E3073086 /* VZInspectorCrashView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB28C100034E628738BA89F /* VZInspectorCrashView.h */; };
+		C8BDF094F170994675803AC9 /* VZFrameRateOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC2ECE9C2191745C0ABC417 /* VZFrameRateOverlay.m */; };
+		C9BA7427286A555375F0B222 /* VZInspectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F0EE573B7E96103B4A0E1A /* VZInspectorView.m */; };
+		CA6016595DC9A7D0B79A6D4D /* VZRevealInspectorNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 64940B56594B52A4697ED207 /* VZRevealInspectorNode.m */; };
+		CC3F202B79311F4508AA16F0 /* Pods-AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F90AA6BFEC3818EE224BA /* Pods-AFNetworking-dummy.m */; };
+		CC71E1CEF6FB9BC02983A9BE /* VZInspectorConsoleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2D87AE42CDC8F193EB21E2 /* VZInspectorConsoleView.m */; };
+		CD1A86CD6FEA151D5FCEA4FF /* VZInspectorTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83018A7A65F4B070CE0637D5 /* VZInspectorTimer.m */; };
+		D3B6C6B34C1C09EF6A682A6F /* UIAlertView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DA7A9C7BFDEA3E4A3CC50B /* UIAlertView+AFNetworking.h */; };
+		D5435497897BAD040BA6744A /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A789A88408CEDBED6EFDF3F8 /* UIActivityIndicatorView+AFNetworking.m */; };
+		D574D8BF522003441705F77A /* VZInspectorSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAB4703169285E5CD7E4230 /* VZInspectorSettingView.m */; };
+		D6C9EB06D6735ECB5F0FD6FC /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6CD59C26AE782BD67AD89F /* AFHTTPSessionManager.m */; };
+		D7AFF2F30DA32DA3581174E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B0C3174955769560E46697 /* Security.framework */; };
+		D8DA317A767041AF3A9B3A7F /* UIWindow+VZInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = F385746E7C3CA16E7D4BD7AE /* UIWindow+VZInspector.h */; };
+		DA5A87AADB904EF90182FEFF /* VZBorderInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 82BFFE7093BB316D4E9FB63A /* VZBorderInspector.h */; };
+		DCC507979078E1292906EA09 /* VZInspectorHeapObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D53E6C2FF8FECF515A96D7 /* VZInspectorHeapObjectView.m */; };
+		DE617FFFC56A0D611CA20F36 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9FFDDDA7E8B8F3E2F46107 /* Pods-dummy.m */; };
+		DFB03EFFA1A2CD6FAC947645 /* VZInspectorThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 93963ADB97F9F356021BF5B5 /* VZInspectorThread.h */; };
+		E33D22F5D3DC9E3DDBE2AD27 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 95DD6D1BFA204E28C3592253 /* UIWebView+AFNetworking.h */; };
+		E39B3485ECACCBF5DF52119D /* VZCPUInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 8073B0CFD1CB40A8DB104EAA /* VZCPUInspector.m */; };
+		E4853A0AFB0C223176E1504B /* VZInspectorGridView.h in Headers */ = {isa = PBXBuildFile; fileRef = A899A342F55FDDD851CCA179 /* VZInspectorGridView.h */; };
+		E5292FC0DC49BC4228F31706 /* VZInspectorHeapSubView.h in Headers */ = {isa = PBXBuildFile; fileRef = 42D92D00E603A85B31304004 /* VZInspectorHeapSubView.h */; };
+		EC6367B3DBD669F4D2AD243B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7AFD54898E7238C9268A65 /* Foundation.framework */; };
+		ECF878AAF2775CBF605D95AE /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7B47622E621BC2CFE5BF9E /* AFURLRequestSerialization.m */; };
+		EF67D010B932A26AF827789D /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F43F692FB8BEE869543E791 /* UIButton+AFNetworking.h */; };
+		F31A9951C266370A46C34067 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CBF026F18E2CCC5109EF56 /* UIImageView+AFNetworking.m */; };
+		F686A84574F5F077C58A2016 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FBB37F241C0263F79BD330E /* AFURLRequestSerialization.h */; };
+		F7B6A94BD148251BB1C3061E /* VZNetworkRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2867E41A5E50D5D8BEB5C83F /* VZNetworkRecorder.h */; };
+		F9AAFC5435832535641BFF8F /* VZFrameRateOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = F7192F1AEB05909F982A8C41 /* VZFrameRateOverlay.h */; };
+		FB80DD287FFA62146B499645 /* VZMemoryInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = D0AB1AA65D93138EAC3AFF11 /* VZMemoryInspector.h */; };
+		FD3614001EE2A4FB19C96203 /* UIWindow+VZInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CB662FBE6EE5C4465D9E44 /* UIWindow+VZInspector.m */; };
+		FE2A28CFF5F1AEB5677BD77B /* FLFakeConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A2E4206A7852067F8F10315 /* FLFakeConfig.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C7D16AD01D77CA87E1AE74AC /* PBXContainerItemProxy */ = {
+		2AD74F3B2A8244840D7F8DDB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 560A3ECF259DF1D550B42FD9 /* Project object */;
+			containerPortal = 7192F713AA9857A9EDDE8993 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E201C307719A3BE12EBCF0F1;
-			remoteInfo = "Pods-AFNetworking";
-		};
-		DDB3CCB40B798BCE05AB3954 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 560A3ECF259DF1D550B42FD9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 113579A76739E2E47BDF5B00;
+			remoteGlobalIDString = 3DFC0BCF6B91EE5A4C1EDDCC;
 			remoteInfo = "Pods-VZInspector";
+		};
+		5639803E9B077DD53460BF97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7192F713AA9857A9EDDE8993 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB755669DD320944C7F65023;
+			remoteInfo = "Pods-AFNetworking";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		015E4B1301C08FD0F8CFC630 /* libPods-AFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AFNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		02269819375FA1C33E22C4DC /* VZSettingInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZSettingInspector.m; path = VZInspector/env/VZSettingInspector.m; sourceTree = "<group>"; };
-		041A188EF73498D6D0C0B43C /* VZInspectorConsoleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorConsoleView.h; path = VZInspector/console/VZInspectorConsoleView.h; sourceTree = "<group>"; };
-		04FD5A062568FFA2C4D15244 /* VZMemoryInspectorOverView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZMemoryInspectorOverView.h; path = VZInspector/memory/VZMemoryInspectorOverView.h; sourceTree = "<group>"; };
-		066856C5ED82D4BF8BB594DE /* Pods-AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AFNetworking-prefix.pch"; sourceTree = "<group>"; };
-		077A1E732383B75C2ED3F817 /* VZInspectorHeapObjectGraphicView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorHeapObjectGraphicView.m; path = VZInspector/heap/VZInspectorHeapObjectGraphicView.m; sourceTree = "<group>"; };
-		081D745851C0E2ED6D678113 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
-		09C81B91C6BADDF7C5A0E299 /* VZInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspector.h; path = VZInspector/VZInspector.h; sourceTree = "<group>"; };
-		0C13F98E5BB922C0C68F345B /* VZInspectorCrashView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorCrashView.m; path = VZInspector/crash/VZInspectorCrashView.m; sourceTree = "<group>"; };
-		0F4EA87DD409A58994AAE6F8 /* Pods-VZInspector-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VZInspector-prefix.pch"; sourceTree = "<group>"; };
-		10F39A263415696B6EB43BC5 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
-		11F77C79605A167531350667 /* VZInspectorUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorUtility.h; path = VZInspector/core/VZInspectorUtility.h; sourceTree = "<group>"; };
-		16A0BEFDA1F423D7235E95AD /* VZRevealInspectorAssert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZRevealInspectorAssert.h; path = VZInspector/reveal/VZRevealInspectorAssert.h; sourceTree = "<group>"; };
-		187A406C0A5B7DB5ACC10AC4 /* Pods-VZInspector.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VZInspector.xcconfig"; sourceTree = "<group>"; };
-		1BFE6F7C745E92D426F42C10 /* VZInspectorCrashRootView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorCrashRootView.m; path = VZInspector/crash/VZInspectorCrashRootView.m; sourceTree = "<group>"; };
-		1D438218A7031EE28F211113 /* VZRevealInspectorNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZRevealInspectorNode.h; path = VZInspector/reveal/VZRevealInspectorNode.h; sourceTree = "<group>"; };
-		1F3B5187BB6736D61C1C9ED2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2525FF7B6B7E4BF39D7BDA9D /* UIWindow+VZInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWindow+VZInspector.m"; path = "VZInspector/UI/UIWindow+VZInspector.m"; sourceTree = "<group>"; };
-		27DF078DD9C367546C4546FD /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = AFNetworking/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
-		2A620C2C278B3BC0AB143565 /* UIWindow+VZInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWindow+VZInspector.h"; path = "VZInspector/UI/UIWindow+VZInspector.h"; sourceTree = "<group>"; };
-		2BCADD5A4D749C5543B14FC2 /* VZInspectorHeapSubView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorHeapSubView.m; path = VZInspector/heap/VZInspectorHeapSubView.m; sourceTree = "<group>"; };
-		2CC3562BDD38D24870240321 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
-		2F90AECD813AFC9DEC7C14A2 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		30E9E6A3FEBBF87F8EC6184F /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
-		338A26DBA305E01A93E5E24D /* VZNetworkRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZNetworkRecorder.m; path = VZInspector/network/VZNetworkRecorder.m; sourceTree = "<group>"; };
-		364BCE033F24B366FA3DA482 /* VZCPUInspectorOverView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZCPUInspectorOverView.h; path = VZInspector/cpu/VZCPUInspectorOverView.h; sourceTree = "<group>"; };
-		368D03CADE5B7C62C6E65C19 /* VZInspectorHeapListView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorHeapListView.m; path = VZInspector/heap/VZInspectorHeapListView.m; sourceTree = "<group>"; };
-		382D4C67FEDB947792E7E49F /* VZBorderInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZBorderInspector.m; path = VZInspector/border/VZBorderInspector.m; sourceTree = "<group>"; };
-		3CC77692CE49C46839C57142 /* NSObject+VZInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+VZInspector.h"; path = "VZInspector/core/NSObject+VZInspector.h"; sourceTree = "<group>"; };
-		3D4F3C7948BCFDD34EDACD70 /* VZInspectController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectController.h; path = VZInspector/core/VZInspectController.h; sourceTree = "<group>"; };
-		3E18A4611F230303CB4F8599 /* VZInspectorToolboxView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorToolboxView.h; path = VZInspector/toolbox/VZInspectorToolboxView.h; sourceTree = "<group>"; };
-		3E750D3EBAFAF648CC8F66DD /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
-		3EB06180D8D44524E40175A4 /* VZInspectorWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorWindow.h; path = VZInspector/core/VZInspectorWindow.h; sourceTree = "<group>"; };
-		3F95B11E06FA619281745599 /* VZCPUInspectorOverView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZCPUInspectorOverView.m; path = VZInspector/cpu/VZCPUInspectorOverView.m; sourceTree = "<group>"; };
-		4323D8977AFB2BD280FAF503 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
-		4387293553AD7A8E63FD498B /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
-		44C6E1E05D3E3D305B0D1B2D /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		451C8C124F499E48459C9329 /* VZMemoryInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZMemoryInspector.m; path = VZInspector/memory/VZMemoryInspector.m; sourceTree = "<group>"; };
-		45AF0AF97BFDB984E9F75172 /* VZInspectorSettingView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorSettingView.h; path = VZInspector/env/VZInspectorSettingView.h; sourceTree = "<group>"; };
-		460A8AD46245B82B98A082A0 /* VZInspectorNetworkHistoryView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorNetworkHistoryView.m; path = VZInspector/network/VZInspectorNetworkHistoryView.m; sourceTree = "<group>"; };
-		47223B62AC39FDFF3F631540 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
-		48B8558F20A4009F8048CB48 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
-		4D3EAA23BC1640A0C7461E9C /* VZCrashInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZCrashInspector.h; path = VZInspector/crash/VZCrashInspector.h; sourceTree = "<group>"; };
-		4E1FF84F1E64384DADA31A50 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
-		4EFBE81B77133E5EE8E19837 /* VZInspectorUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorUtility.m; path = VZInspector/core/VZInspectorUtility.m; sourceTree = "<group>"; };
-		5074EE9FDA404CB4DDB4C617 /* VZNetworkInspectorOverView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZNetworkInspectorOverView.m; path = VZInspector/network/VZNetworkInspectorOverView.m; sourceTree = "<group>"; };
-		51B6CF14C90CA883EE0778D9 /* VZInspectorCrashRootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorCrashRootView.h; path = VZInspector/crash/VZInspectorCrashRootView.h; sourceTree = "<group>"; };
-		54B87AB2A25ECB834CAAF82C /* VZInspectorHeapSubView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorHeapSubView.h; path = VZInspector/heap/VZInspectorHeapSubView.h; sourceTree = "<group>"; };
-		569317747C3F429359C9C941 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		5AAE931143A0EC3DC9C60C51 /* VZInspectorOverview.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorOverview.m; path = VZInspector/overview/VZInspectorOverview.m; sourceTree = "<group>"; };
-		5B40DD7398DF758100D42818 /* VZInspectorSettingView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorSettingView.m; path = VZInspector/env/VZInspectorSettingView.m; sourceTree = "<group>"; };
-		630F986B821C09C9B3DFF431 /* VZCPUInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZCPUInspector.h; path = VZInspector/cpu/VZCPUInspector.h; sourceTree = "<group>"; };
-		6332615EEEA086F21060EF4E /* VZSettingInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZSettingInspector.h; path = VZInspector/env/VZSettingInspector.h; sourceTree = "<group>"; };
-		637B4EF9EED90C4BD5080155 /* VZInspectorNetworkDetailView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorNetworkDetailView.m; path = VZInspector/network/VZInspectorNetworkDetailView.m; sourceTree = "<group>"; };
-		64C49D8C2999D5260C5969BE /* VZInspectorCrashView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorCrashView.h; path = VZInspector/crash/VZInspectorCrashView.h; sourceTree = "<group>"; };
-		6512D4B2A1F3E83A6F5DEC2E /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		6651116E56CC8B1A27FC634E /* VZNetworkObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZNetworkObserver.h; path = VZInspector/network/VZNetworkObserver.h; sourceTree = "<group>"; };
-		68B8B75D63AD4796DBC39FE3 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		6AF7B61508FF155443EB5A4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		70201DE8DFD2CA884EE969DD /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
-		7023693E89DE6F96AA01F284 /* VZInspectorOverlay.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorOverlay.m; path = VZInspector/core/VZInspectorOverlay.m; sourceTree = "<group>"; };
-		70749FDCE038F934AB4D73B7 /* VZInspectorSandBoxSubView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorSandBoxSubView.h; path = VZInspector/sandbox/VZInspectorSandBoxSubView.h; sourceTree = "<group>"; };
-		70E9C4BD4C8057DF06B5BC7B /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
-		70F61D70E1814E3CCAEFCD5D /* VZInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspector.m; path = VZInspector/VZInspector.m; sourceTree = "<group>"; };
-		71DB0E6519BDFFB9A5D8FE83 /* VZMemoryInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZMemoryInspector.h; path = VZInspector/memory/VZMemoryInspector.h; sourceTree = "<group>"; };
-		74BAA2A372AEC2DE492BF3C6 /* VZInspectorOverview.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorOverview.h; path = VZInspector/overview/VZInspectorOverview.h; sourceTree = "<group>"; };
-		74E50316C2308AF986B66C25 /* VZInspectorOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorOverlay.h; path = VZInspector/core/VZInspectorOverlay.h; sourceTree = "<group>"; };
-		75AB57EB43DABD357311DDAE /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
-		79D9A9E0AC296996A5B15319 /* Pods-VZInspector-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VZInspector-dummy.m"; sourceTree = "<group>"; };
-		7B193741AB7DC91E9F596323 /* Pods-VZInspector-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VZInspector-Private.xcconfig"; sourceTree = "<group>"; };
-		7F043D9AD8FD4B204AF7C316 /* VZOverviewInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZOverviewInspector.h; path = VZInspector/overview/VZOverviewInspector.h; sourceTree = "<group>"; };
-		8005A17F592CE0F24F40ABDA /* VZInspectorGridView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorGridView.h; path = VZInspector/UI/VZInspectorGridView.h; sourceTree = "<group>"; };
-		8009E1513216DB60319B8DB3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		867A6E7111959D8CD8E5571D /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
-		87166C473E70AB6874301155 /* VZInspectorWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorWindow.m; path = VZInspector/core/VZInspectorWindow.m; sourceTree = "<group>"; };
-		880B090D9FDCDC0081E51DEA /* VZInspectorGridView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorGridView.m; path = VZInspector/UI/VZInspectorGridView.m; sourceTree = "<group>"; };
-		8B1380FB915B0B06BAA6D727 /* VZRevealInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZRevealInspector.h; path = VZInspector/reveal/VZRevealInspector.h; sourceTree = "<group>"; };
-		8B925FA5779636FCB61496B6 /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
-		8FB84C2325149DF51827921F /* Pods-AFNetworking-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AFNetworking-Private.xcconfig"; sourceTree = "<group>"; };
-		9134F25933C5202E9E54EA88 /* VZNetworkInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZNetworkInspector.m; path = VZInspector/network/VZNetworkInspector.m; sourceTree = "<group>"; };
-		916CDE0ED85D95F639BE19ED /* VZInspectorRevealView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorRevealView.h; path = VZInspector/reveal/VZInspectorRevealView.h; sourceTree = "<group>"; };
-		92B529F9B7193BA91A6EDC29 /* VZInspectorHeapListView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorHeapListView.h; path = VZInspector/heap/VZInspectorHeapListView.h; sourceTree = "<group>"; };
-		9372F58CA2081F6B53911A6E /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9414938EE7C331ECD6AB8324 /* VZInspectorNetworkHistoryView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorNetworkHistoryView.h; path = VZInspector/network/VZInspectorNetworkHistoryView.h; sourceTree = "<group>"; };
-		9440EC93D4B36E4803FED31C /* VZInspectorTimer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorTimer.h; path = VZInspector/core/VZInspectorTimer.h; sourceTree = "<group>"; };
-		95510B8168D6415524F8F6D4 /* VZNetworkInspectorOverView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZNetworkInspectorOverView.h; path = VZInspector/network/VZNetworkInspectorOverView.h; sourceTree = "<group>"; };
-		95C7271CB74BB168AAAAE2EB /* VZInspectorToolboxView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorToolboxView.m; path = VZInspector/toolbox/VZInspectorToolboxView.m; sourceTree = "<group>"; };
-		96BEDF6C2DE72E71D7CB3499 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
-		9BC0F8B0654FB4B37E7B39EB /* VZInspectorAssert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorAssert.h; path = VZInspector/core/VZInspectorAssert.h; sourceTree = "<group>"; };
-		9D7C91FFBA27E130B7909D86 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
-		9DA4DFA2C6EF478ABC8B1534 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
-		9ECE62CD40D5F4F84BC192D8 /* VZRevealInspectorNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZRevealInspectorNode.m; path = VZInspector/reveal/VZRevealInspectorNode.m; sourceTree = "<group>"; };
-		9EE26DE65DF9AF6950624311 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		9F778A9A1C0EE0437D914927 /* VZNetworkTransaction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZNetworkTransaction.m; path = VZInspector/network/VZNetworkTransaction.m; sourceTree = "<group>"; };
-		A15567B87227CC7894BED933 /* VZInspectorSandBoxSubView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorSandBoxSubView.m; path = VZInspector/sandbox/VZInspectorSandBoxSubView.m; sourceTree = "<group>"; };
-		A183D831844A888DBFB7A130 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
-		A30D1EBFA92FFD610DC97FF7 /* NSObject+VZInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+VZInspector.m"; path = "VZInspector/core/NSObject+VZInspector.m"; sourceTree = "<group>"; };
-		A50039019575D5B735B1DB51 /* VZInspectorHeapObjectGraphicView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorHeapObjectGraphicView.h; path = VZInspector/heap/VZInspectorHeapObjectGraphicView.h; sourceTree = "<group>"; };
-		A7F6976ECEF0A968BA087BF4 /* VZInspectorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorView.m; path = VZInspector/core/VZInspectorView.m; sourceTree = "<group>"; };
-		A8C458D6102416389912D982 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		AA15E9CE127C0FBC170E1218 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
-		ABA7A2DCFD171C4D0BD4A1DF /* VZInspectorLogView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorLogView.h; path = VZInspector/log/VZInspectorLogView.h; sourceTree = "<group>"; };
-		ADF75AB45932FC38F1E775CD /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
-		AEBB0DFF6CFCE9D870DA5B92 /* VZInspectorHeapRootView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorHeapRootView.m; path = VZInspector/heap/VZInspectorHeapRootView.m; sourceTree = "<group>"; };
-		B051F19023A9F531A6D8B389 /* VZBorderInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZBorderInspector.h; path = VZInspector/border/VZBorderInspector.h; sourceTree = "<group>"; };
-		B10378D54B3634631F904BFD /* VZInspectorHeapRootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorHeapRootView.h; path = VZInspector/heap/VZInspectorHeapRootView.h; sourceTree = "<group>"; };
-		B1FDCBB4A71A96F800B1ECB6 /* VZHeapInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZHeapInspector.h; path = VZInspector/heap/VZHeapInspector.h; sourceTree = "<group>"; };
-		B241D70E3BF08D24ED328EBC /* VZLogInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZLogInspector.h; path = VZInspector/log/VZLogInspector.h; sourceTree = "<group>"; };
-		B27D007785865E56BA5A0260 /* VZCPUInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZCPUInspector.m; path = VZInspector/cpu/VZCPUInspector.m; sourceTree = "<group>"; };
-		B391DD4555FC89E842729EA8 /* VZMemoryInspectorOverView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZMemoryInspectorOverView.m; path = VZInspector/memory/VZMemoryInspectorOverView.m; sourceTree = "<group>"; };
-		B3D5493391550EDBDD5B62AD /* VZInspectorPlotView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorPlotView.m; path = VZInspector/core/VZInspectorPlotView.m; sourceTree = "<group>"; };
-		B4F5C0390DD77F14D8E3970D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		B59640661A80CC5C8C6C32E2 /* VZInspectorNetworkDetailView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorNetworkDetailView.h; path = VZInspector/network/VZInspectorNetworkDetailView.h; sourceTree = "<group>"; };
-		BDC49F75C6134F5558D4A8B8 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		C0A8287993F3F10877E8DAD7 /* VZInspectorLogView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorLogView.m; path = VZInspector/log/VZInspectorLogView.m; sourceTree = "<group>"; };
-		C2970F3ECF4CB6C815E9CB36 /* VZInspectorPlotView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorPlotView.h; path = VZInspector/core/VZInspectorPlotView.h; sourceTree = "<group>"; };
-		C2CE0639B4322FA2404A8CD5 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		C491B6F47ABF7DE5D0545D96 /* VZInspectorHeapObjectView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorHeapObjectView.m; path = VZInspector/heap/VZInspectorHeapObjectView.m; sourceTree = "<group>"; };
-		C68C1BF352860EF69B04F478 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
-		C8A89DC9EACFAE2AB4605653 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
-		CC828C21200DFFF8803284CB /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		CFE470E97A240E3BB38EA31B /* VZInspectController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectController.m; path = VZInspector/core/VZInspectController.m; sourceTree = "<group>"; };
-		D10DF313DA5815C6F47A2E58 /* VZInspectorTimer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorTimer.m; path = VZInspector/core/VZInspectorTimer.m; sourceTree = "<group>"; };
-		D27B97C48083307EB5ADDEA8 /* VZOverviewInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZOverviewInspector.m; path = VZInspector/overview/VZOverviewInspector.m; sourceTree = "<group>"; };
-		D35B96E00EEEC40FDBFDAF68 /* VZInspectorSandBoxRootView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorSandBoxRootView.m; path = VZInspector/sandbox/VZInspectorSandBoxRootView.m; sourceTree = "<group>"; };
-		D447F6CEC2FF6C0B9D89E1B3 /* VZNetworkRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZNetworkRecorder.h; path = VZInspector/network/VZNetworkRecorder.h; sourceTree = "<group>"; };
-		D51E612475017C54AFB65FF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D5E5AD3DF4230D53B86A1AF9 /* libPods-VZInspector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VZInspector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D791E68E6A21AC6A59B162DB /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
-		D97815F4797034A10F3ADADA /* VZCrashInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZCrashInspector.m; path = VZInspector/crash/VZCrashInspector.m; sourceTree = "<group>"; };
-		D9D3A20C25BA9ABC3C38BF88 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
-		D9F456230A7A0DF05AC433DF /* VZLogInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZLogInspector.m; path = VZInspector/log/VZLogInspector.m; sourceTree = "<group>"; };
-		DB146D9C60E1BCFC82CCE66A /* VZInspectorSandBoxRootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorSandBoxRootView.h; path = VZInspector/sandbox/VZInspectorSandBoxRootView.h; sourceTree = "<group>"; };
-		DC0B19571460F23141D9ECA6 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		DC3DC385ABC23BBF4E833F8A /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		E30A1D650EB90B718E417C87 /* VZNetworkObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZNetworkObserver.m; path = VZInspector/network/VZNetworkObserver.m; sourceTree = "<group>"; };
-		E5BD2D18CF1B2B68FC59C826 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		EAA94D45EF75209CFF3F8851 /* VZInspectorRevealView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorRevealView.m; path = VZInspector/reveal/VZInspectorRevealView.m; sourceTree = "<group>"; };
-		EBA63CD2371423E316883977 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		ED486BF135E69554E7F99319 /* VZInspectorResource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorResource.m; path = VZInspector/core/VZInspectorResource.m; sourceTree = "<group>"; };
-		F00973C3E8E39E0B19BD0E29 /* VZInspectorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorView.h; path = VZInspector/core/VZInspectorView.h; sourceTree = "<group>"; };
-		F2F2949F5AD98DD746207883 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
-		F3922721A5D5B787B810A805 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		F4065D0BFE477B631F4413A9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		F40E72233E8EE8C600056A33 /* VZInspectorHeapObjectView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorHeapObjectView.h; path = VZInspector/heap/VZInspectorHeapObjectView.h; sourceTree = "<group>"; };
-		F483283859FEBF1ABB9AB67D /* VZNetworkInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZNetworkInspector.h; path = VZInspector/network/VZNetworkInspector.h; sourceTree = "<group>"; };
-		F58BEF5F045A9C682E71EE2F /* VZInspectorResource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorResource.h; path = VZInspector/core/VZInspectorResource.h; sourceTree = "<group>"; };
-		F59D334EA70DF7E571099C3C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		F5B7F2E15F23CF22D6893345 /* VZInspectorConsoleView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorConsoleView.m; path = VZInspector/console/VZInspectorConsoleView.m; sourceTree = "<group>"; };
-		FAAC43010986890723B1694C /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		FB9E3B9188D2CB3B39229B1A /* Pods-AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AFNetworking-dummy.m"; sourceTree = "<group>"; };
-		FBA86291F352ED1D82BC44C0 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
-		FBE3FBE26B972BFB2821DDE0 /* VZNetworkTransaction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZNetworkTransaction.h; path = VZInspector/network/VZNetworkTransaction.h; sourceTree = "<group>"; };
-		FD7C565AD10B1C304C20512D /* Pods-AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AFNetworking.xcconfig"; sourceTree = "<group>"; };
-		FE38E54AFA10D16AEF542701 /* VZInspectorThread.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorThread.h; path = VZInspector/VZInspectorThread.h; sourceTree = "<group>"; };
-		FE763DD9DE5F7BA0529A4508 /* VZHeapInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZHeapInspector.m; path = VZInspector/heap/VZHeapInspector.m; sourceTree = "<group>"; };
+		00947131002C4AFA246B9118 /* VZInspectorCrashView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorCrashView.m; path = VZInspector/crash/VZInspectorCrashView.m; sourceTree = "<group>"; };
+		013F50495FFED9DCE6AB3FED /* VZNetworkRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZNetworkRecorder.m; path = VZInspector/network/VZNetworkRecorder.m; sourceTree = "<group>"; };
+		059307AE27D8A6B11F878224 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		06670813C24C9EF0D78F1E77 /* VZInspectorNetworkHistoryView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorNetworkHistoryView.h; path = VZInspector/network/VZInspectorNetworkHistoryView.h; sourceTree = "<group>"; };
+		07A27DB63498A0B6F57F1693 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		08B75BDB7F1082D19A0EB603 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		08C58F7A2C0D0A6D2738ACA9 /* VZInspectorCrashRootView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorCrashRootView.m; path = VZInspector/crash/VZInspectorCrashRootView.m; sourceTree = "<group>"; };
+		093EA3EFA7822D8B6933AFE0 /* VZNetworkInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZNetworkInspector.m; path = VZInspector/network/VZNetworkInspector.m; sourceTree = "<group>"; };
+		09CE56E48CE3996AF724FA14 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0A2F5CBA11086B183CA5AA7D /* VZNetworkTransaction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZNetworkTransaction.h; path = VZInspector/network/VZNetworkTransaction.h; sourceTree = "<group>"; };
+		0B7B282F98289FA978BB5D16 /* VZDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZDefine.h; path = VZInspector/VZDefine.h; sourceTree = "<group>"; };
+		0D7B47622E621BC2CFE5BF9E /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		0F5B7C3E600C978DF3C02C47 /* VZInspectorSandBoxSubView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorSandBoxSubView.m; path = VZInspector/sandbox/VZInspectorSandBoxSubView.m; sourceTree = "<group>"; };
+		0FA8DD829D54FDC1EEC99A00 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
+		0FB74444415DE6A6573A6833 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
+		1145E9899AEEF9808B3588C6 /* VZInspectorHeapObjectGraphicView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorHeapObjectGraphicView.h; path = VZInspector/heap/VZInspectorHeapObjectGraphicView.h; sourceTree = "<group>"; };
+		17716580938B9E1A1D59F859 /* VZRevealInspector.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = VZRevealInspector.mm; path = VZInspector/reveal/VZRevealInspector.mm; sourceTree = "<group>"; };
+		182F90AA6BFEC3818EE224BA /* Pods-AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		1AA1831CA1171C769E738BCC /* VZInspectorOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorOverlay.h; path = VZInspector/core/VZInspectorOverlay.h; sourceTree = "<group>"; };
+		1BD2B79241DCBC0E03D4291E /* libPods-VZInspector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VZInspector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D8D625EA4AEE318CB31FB89 /* VZInspectorHeapRootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorHeapRootView.h; path = VZInspector/heap/VZInspectorHeapRootView.h; sourceTree = "<group>"; };
+		1EFD4D10999F695C1D13B5B9 /* VZMemoryInspectorOverView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZMemoryInspectorOverView.h; path = VZInspector/memory/VZMemoryInspectorOverView.h; sourceTree = "<group>"; };
+		1F56DE148D795DCB57AFB825 /* VZInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspector.m; path = VZInspector/VZInspector.m; sourceTree = "<group>"; };
+		209097869C447D2B0237DFD8 /* VZDevice.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZDevice.m; path = VZInspector/device/VZDevice.m; sourceTree = "<group>"; };
+		2217DA0011172D17FE6C60EB /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		2287A76A55859259AD4C35A0 /* VZNetworkInspectorOverView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZNetworkInspectorOverView.m; path = VZInspector/network/VZNetworkInspectorOverView.m; sourceTree = "<group>"; };
+		23B7F3773A4712201530421F /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		27A235ADE2AEB79D678F2C79 /* VZCrashInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZCrashInspector.h; path = VZInspector/crash/VZCrashInspector.h; sourceTree = "<group>"; };
+		281879A7A626C0A40EB50FBC /* VZInspectorLocationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorLocationView.h; path = VZInspector/location/VZInspectorLocationView.h; sourceTree = "<group>"; };
+		2867E41A5E50D5D8BEB5C83F /* VZNetworkRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZNetworkRecorder.h; path = VZInspector/network/VZNetworkRecorder.h; sourceTree = "<group>"; };
+		2A2E4206A7852067F8F10315 /* FLFakeConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLFakeConfig.h; path = VZInspector/location/FLFakeConfig.h; sourceTree = "<group>"; };
+		2B65971613536286AF11670C /* VZInspectorSandBoxRootView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorSandBoxRootView.m; path = VZInspector/sandbox/VZInspectorSandBoxRootView.m; sourceTree = "<group>"; };
+		2C5799EA9660A144EB5C81D1 /* VZInspectorResource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorResource.m; path = VZInspector/core/VZInspectorResource.m; sourceTree = "<group>"; };
+		2D2DB05F097912B61F680541 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		2D4491F9216B6C352AC96BFB /* VZCrashInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZCrashInspector.m; path = VZInspector/crash/VZCrashInspector.m; sourceTree = "<group>"; };
+		2F132B8A877CAF9307018C48 /* VZLogInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZLogInspector.h; path = VZInspector/log/VZLogInspector.h; sourceTree = "<group>"; };
+		30998CA884258B06A5FD09A6 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		31A5F10785408A15264B921E /* VZInspectorGridView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorGridView.m; path = VZInspector/UI/VZInspectorGridView.m; sourceTree = "<group>"; };
+		31AC86BB8205AF8591508F5F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		3414DE00F99FC43F1555E207 /* VZInspectorConsoleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorConsoleView.h; path = VZInspector/console/VZInspectorConsoleView.h; sourceTree = "<group>"; };
+		34EA2D3A43B409896ED5501D /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		37D75D7BF55FAAF8639E953A /* Pods-AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AFNetworking.xcconfig"; sourceTree = "<group>"; };
+		3F30B17C46F7AED1FC440BC1 /* VZCPUInspectorOverView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZCPUInspectorOverView.h; path = VZInspector/cpu/VZCPUInspectorOverView.h; sourceTree = "<group>"; };
+		40632CE640B356DE40F75DFD /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		41C359DCE4DBF587F0100D9F /* VZImageInspector.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = VZImageInspector.mm; path = VZInspector/image/VZImageInspector.mm; sourceTree = "<group>"; };
+		42D92D00E603A85B31304004 /* VZInspectorHeapSubView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorHeapSubView.h; path = VZInspector/heap/VZInspectorHeapSubView.h; sourceTree = "<group>"; };
+		4322B51735272C2470C7A6DB /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		44A5DC28F6D7DC93BDAF2C90 /* VZInspectorWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorWindow.m; path = VZInspector/core/VZInspectorWindow.m; sourceTree = "<group>"; };
+		454D5C4B675E50CCE749DC15 /* VZImageInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZImageInspector.h; path = VZInspector/image/VZImageInspector.h; sourceTree = "<group>"; };
+		45AFA285CB1B862681B29350 /* Pods-VZInspector.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VZInspector.xcconfig"; sourceTree = "<group>"; };
+		46A8420D692640F8A4342989 /* VZInspectorOverlay.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorOverlay.m; path = VZInspector/core/VZInspectorOverlay.m; sourceTree = "<group>"; };
+		48774F7C4592CE52C416A769 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		4AECC649961E9ECB052AEFCA /* VZInspectorHeapRootView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorHeapRootView.m; path = VZInspector/heap/VZInspectorHeapRootView.m; sourceTree = "<group>"; };
+		4C0F2215411DD9B74CE7EED7 /* VZInspectorToolboxView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorToolboxView.m; path = VZInspector/toolbox/VZInspectorToolboxView.m; sourceTree = "<group>"; };
+		4CA17CA30948BF383BE7FA04 /* VZHeapInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZHeapInspector.h; path = VZInspector/heap/VZHeapInspector.h; sourceTree = "<group>"; };
+		4F57EF2C43B4B96C9A58DCB1 /* VZCPUInspectorOverView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZCPUInspectorOverView.m; path = VZInspector/cpu/VZCPUInspectorOverView.m; sourceTree = "<group>"; };
+		4FBB37F241C0263F79BD330E /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		5121E461B6EA6AC9E1019527 /* VZInspectorTimer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorTimer.h; path = VZInspector/core/VZInspectorTimer.h; sourceTree = "<group>"; };
+		51F0EE573B7E96103B4A0E1A /* VZInspectorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorView.m; path = VZInspector/core/VZInspectorView.m; sourceTree = "<group>"; };
+		5582F03944C60D461B9568BE /* VZInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspector.h; path = VZInspector/VZInspector.h; sourceTree = "<group>"; };
+		558C8680621A94768CA933C7 /* VZInspectorHeapSubView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorHeapSubView.m; path = VZInspector/heap/VZInspectorHeapSubView.m; sourceTree = "<group>"; };
+		56BCC281814002010DCC9DAC /* VZInspectorAssert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorAssert.h; path = VZInspector/core/VZInspectorAssert.h; sourceTree = "<group>"; };
+		5701C432D9910523E0DDD7D9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		57F7A4A70B85A2AF78E44555 /* VZInspectorUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorUtility.h; path = VZInspector/core/VZInspectorUtility.h; sourceTree = "<group>"; };
+		5ABA3C34091AF0A28B7544E4 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5D76FB7B34EBD1F5ECDD65BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		5F0A2991D878E689F98055DA /* VZNetworkTransaction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZNetworkTransaction.m; path = VZInspector/network/VZNetworkTransaction.m; sourceTree = "<group>"; };
+		6103F44529BA07072CFD0D9C /* VZOverviewInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZOverviewInspector.h; path = VZInspector/overview/VZOverviewInspector.h; sourceTree = "<group>"; };
+		62CBF026F18E2CCC5109EF56 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		64940B56594B52A4697ED207 /* VZRevealInspectorNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZRevealInspectorNode.m; path = VZInspector/reveal/VZRevealInspectorNode.m; sourceTree = "<group>"; };
+		6540A919DDFE46B2AC1418E0 /* Pods-VZInspector-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VZInspector-prefix.pch"; sourceTree = "<group>"; };
+		67CB662FBE6EE5C4465D9E44 /* UIWindow+VZInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWindow+VZInspector.m"; path = "VZInspector/UI/UIWindow+VZInspector.m"; sourceTree = "<group>"; };
+		692D3CB2920D73FDFCA54E5D /* VZRevealInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZRevealInspector.h; path = VZInspector/reveal/VZRevealInspector.h; sourceTree = "<group>"; };
+		6AD13977532E020D8C34D165 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		6BB28C100034E628738BA89F /* VZInspectorCrashView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorCrashView.h; path = VZInspector/crash/VZInspectorCrashView.h; sourceTree = "<group>"; };
+		6BBBE24E594130634D232F7F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		6CA28BBD16629613D0DA4A2C /* VZInspectorLocationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorLocationView.m; path = VZInspector/location/VZInspectorLocationView.m; sourceTree = "<group>"; };
+		6CAFDDCC861EDC552A527ED0 /* Pods-VZInspector-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VZInspector-dummy.m"; sourceTree = "<group>"; };
+		6CBFA8EE31044F08F90963A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		6E0B24C7CA3F286F2781DF02 /* VZInspectorDeviceView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorDeviceView.m; path = VZInspector/device/VZInspectorDeviceView.m; sourceTree = "<group>"; };
+		6E42CF17C51BF9F5552897BD /* VZInspectorCrashRootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorCrashRootView.h; path = VZInspector/crash/VZInspectorCrashRootView.h; sourceTree = "<group>"; };
+		7201F551F94B770605402BF6 /* Pods-AFNetworking-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AFNetworking-Private.xcconfig"; sourceTree = "<group>"; };
+		77597C07B32D9ADF2FF5EA8C /* libPods-AFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AFNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77924E899130877C0E123747 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		77DA7A9C7BFDEA3E4A3CC50B /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
+		7888206AC6FD75C1404BE9B9 /* NSObject+VZInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+VZInspector.m"; path = "VZInspector/core/NSObject+VZInspector.m"; sourceTree = "<group>"; };
+		7B4470383DB380B1C20E671E /* VZRevealInspectorAssert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZRevealInspectorAssert.h; path = VZInspector/reveal/VZRevealInspectorAssert.h; sourceTree = "<group>"; };
+		7CF28A6B5EFB45474D6C6953 /* VZNetworkObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZNetworkObserver.h; path = VZInspector/network/VZNetworkObserver.h; sourceTree = "<group>"; };
+		7EEC4495526803830FDFBA5A /* VZInspectorOverview.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorOverview.h; path = VZInspector/overview/VZInspectorOverview.h; sourceTree = "<group>"; };
+		8073B0CFD1CB40A8DB104EAA /* VZCPUInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZCPUInspector.m; path = VZInspector/cpu/VZCPUInspector.m; sourceTree = "<group>"; };
+		81D53E6C2FF8FECF515A96D7 /* VZInspectorHeapObjectView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorHeapObjectView.m; path = VZInspector/heap/VZInspectorHeapObjectView.m; sourceTree = "<group>"; };
+		82BFFE7093BB316D4E9FB63A /* VZBorderInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZBorderInspector.h; path = VZInspector/border/VZBorderInspector.h; sourceTree = "<group>"; };
+		83018A7A65F4B070CE0637D5 /* VZInspectorTimer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorTimer.m; path = VZInspector/core/VZInspectorTimer.m; sourceTree = "<group>"; };
+		83FB304C8ED5E8887A9C769A /* NSObject+VZInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+VZInspector.h"; path = "VZInspector/core/NSObject+VZInspector.h"; sourceTree = "<group>"; };
+		864552DA033DE1FD923E9050 /* VZOverviewInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZOverviewInspector.m; path = VZInspector/overview/VZOverviewInspector.m; sourceTree = "<group>"; };
+		86A2F6D58DDA30A0D3CD1F70 /* VZInspectController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectController.m; path = VZInspector/core/VZInspectController.m; sourceTree = "<group>"; };
+		8B3A949D194174D214B30656 /* FLFakeConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FLFakeConfig.m; path = VZInspector/location/FLFakeConfig.m; sourceTree = "<group>"; };
+		8CEDD1F6E999F811995A14AF /* VZInspectorOverview.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorOverview.m; path = VZInspector/overview/VZInspectorOverview.m; sourceTree = "<group>"; };
+		8FC4A108F65BE1207D251796 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		90596E47658CA338132F1D0F /* VZSettingInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZSettingInspector.h; path = VZInspector/env/VZSettingInspector.h; sourceTree = "<group>"; };
+		927AE82BC79AD3867B86369E /* VZInspectorWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorWindow.h; path = VZInspector/core/VZInspectorWindow.h; sourceTree = "<group>"; };
+		930790F187F725B61ECAADAC /* VZInspectorPlotView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorPlotView.m; path = VZInspector/core/VZInspectorPlotView.m; sourceTree = "<group>"; };
+		93963ADB97F9F356021BF5B5 /* VZInspectorThread.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorThread.h; path = VZInspector/VZInspectorThread.h; sourceTree = "<group>"; };
+		95593B432338371E57069630 /* VZInspectorToolboxView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorToolboxView.h; path = VZInspector/toolbox/VZInspectorToolboxView.h; sourceTree = "<group>"; };
+		95DD6D1BFA204E28C3592253 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		999A3E6CC36494E84962D1BE /* VZNetworkInspectorOverView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZNetworkInspectorOverView.h; path = VZInspector/network/VZNetworkInspectorOverView.h; sourceTree = "<group>"; };
+		9B9FFDDDA7E8B8F3E2F46107 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		9CC2ECE9C2191745C0ABC417 /* VZFrameRateOverlay.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZFrameRateOverlay.m; path = VZInspector/framerate/VZFrameRateOverlay.m; sourceTree = "<group>"; };
+		9CE704E7DF1EB785517111DA /* VZInspectorHeapListView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorHeapListView.m; path = VZInspector/heap/VZInspectorHeapListView.m; sourceTree = "<group>"; };
+		9D06C8C5D6595DAA45F3AFDA /* VZInspectorRevealView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorRevealView.m; path = VZInspector/reveal/VZInspectorRevealView.m; sourceTree = "<group>"; };
+		9DF06B3B3C885DD09D93CD73 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		9F43F692FB8BEE869543E791 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		9F5A1763CC4FF23C1A3959B5 /* Pods-AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AFNetworking-prefix.pch"; sourceTree = "<group>"; };
+		A206C1F4579F4E59C7050806 /* VZInspectorHeapListView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorHeapListView.h; path = VZInspector/heap/VZInspectorHeapListView.h; sourceTree = "<group>"; };
+		A20D003CED51F1C52C03E5D6 /* VZSettingInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZSettingInspector.m; path = VZInspector/env/VZSettingInspector.m; sourceTree = "<group>"; };
+		A2B364554D1BE89078FBAD8E /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		A3ECD6FDE5908D705CA68ACD /* VZDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZDevice.h; path = VZInspector/device/VZDevice.h; sourceTree = "<group>"; };
+		A789A88408CEDBED6EFDF3F8 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		A78B61CCC2B9CD3066524E1C /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		A7C34C4904217EEBF4ADAE71 /* VZBorderInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZBorderInspector.m; path = VZInspector/border/VZBorderInspector.m; sourceTree = "<group>"; };
+		A84D87E4A761B671EA214AA9 /* VZNetworkInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZNetworkInspector.h; path = VZInspector/network/VZNetworkInspector.h; sourceTree = "<group>"; };
+		A899A342F55FDDD851CCA179 /* VZInspectorGridView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorGridView.h; path = VZInspector/UI/VZInspectorGridView.h; sourceTree = "<group>"; };
+		AB7AFD54898E7238C9268A65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		ADB102B54B1B07655A94F215 /* Pods-VZInspector-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VZInspector-Private.xcconfig"; sourceTree = "<group>"; };
+		B37CD5709DB8DACD4EEDA2E8 /* VZInspectorSandBoxRootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorSandBoxRootView.h; path = VZInspector/sandbox/VZInspectorSandBoxRootView.h; sourceTree = "<group>"; };
+		B56A5B0F1C4C0F5372C03E92 /* VZInspectorSandBoxSubView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorSandBoxSubView.h; path = VZInspector/sandbox/VZInspectorSandBoxSubView.h; sourceTree = "<group>"; };
+		B5D63D55F4DB03135FA71EE7 /* VZInspectorHeapObjectGraphicView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorHeapObjectGraphicView.m; path = VZInspector/heap/VZInspectorHeapObjectGraphicView.m; sourceTree = "<group>"; };
+		B69A94B667F45D661ABBB0F7 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		BB9901F43D18A03E2E22F9CD /* VZInspectorPlotView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorPlotView.h; path = VZInspector/core/VZInspectorPlotView.h; sourceTree = "<group>"; };
+		BE64EE1A5A36154B4FAEDBCB /* VZInspectorSettingView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorSettingView.h; path = VZInspector/env/VZInspectorSettingView.h; sourceTree = "<group>"; };
+		BF2D87AE42CDC8F193EB21E2 /* VZInspectorConsoleView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorConsoleView.m; path = VZInspector/console/VZInspectorConsoleView.m; sourceTree = "<group>"; };
+		BF47A856FB88F1A2521202D6 /* VZRevealInspectorNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZRevealInspectorNode.h; path = VZInspector/reveal/VZRevealInspectorNode.h; sourceTree = "<group>"; };
+		BFB8600492DB9D9F9707411A /* VZCPUInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZCPUInspector.h; path = VZInspector/cpu/VZCPUInspector.h; sourceTree = "<group>"; };
+		C37AA2B7506E1AFE452FA152 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		C9A02E46A8FB9238BB028773 /* VZInspectorNetworkDetailView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorNetworkDetailView.h; path = VZInspector/network/VZInspectorNetworkDetailView.h; sourceTree = "<group>"; };
+		CC7A9454D6A44FA6AD03AD9C /* VZMemoryInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZMemoryInspector.m; path = VZInspector/memory/VZMemoryInspector.m; sourceTree = "<group>"; };
+		CCB21DDC551F64A15E6A6B38 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		CF89570213B89BC5F2179C5E /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
+		D0AB1AA65D93138EAC3AFF11 /* VZMemoryInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZMemoryInspector.h; path = VZInspector/memory/VZMemoryInspector.h; sourceTree = "<group>"; };
+		D0AB321F903BC15860D6E378 /* VZInspectorRevealView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorRevealView.h; path = VZInspector/reveal/VZInspectorRevealView.h; sourceTree = "<group>"; };
+		D0C2940438358700719C90A0 /* VZHeapInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZHeapInspector.m; path = VZInspector/heap/VZHeapInspector.m; sourceTree = "<group>"; };
+		D2EC7AE7E858369BF2B68C41 /* VZInspectorNetworkDetailView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorNetworkDetailView.m; path = VZInspector/network/VZInspectorNetworkDetailView.m; sourceTree = "<group>"; };
+		D3C880F3592278B0D230763D /* VZInspectorDeviceView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorDeviceView.h; path = VZInspector/device/VZInspectorDeviceView.h; sourceTree = "<group>"; };
+		D5569C136ADD2E3673DC0418 /* VZInspectorUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorUtility.m; path = VZInspector/core/VZInspectorUtility.m; sourceTree = "<group>"; };
+		D92299D9FD9848BDF6DBBB5D /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
+		DA94E2BC426FB7F63BC720BB /* VZInspectorLogView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorLogView.h; path = VZInspector/log/VZInspectorLogView.h; sourceTree = "<group>"; };
+		DC328489B9C55D3EF157444F /* CLLocationManager+FLFake.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CLLocationManager+FLFake.m"; path = "VZInspector/location/CLLocationManager+FLFake.m"; sourceTree = "<group>"; };
+		DDA8A8FBAF352DDE6CA0CC03 /* VZInspectorNetworkHistoryView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorNetworkHistoryView.m; path = VZInspector/network/VZInspectorNetworkHistoryView.m; sourceTree = "<group>"; };
+		DE64ACC39130A23CC0E58F6A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		DF209EA22B0C7FE196F016A7 /* VZInspectController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectController.h; path = VZInspector/core/VZInspectController.h; sourceTree = "<group>"; };
+		DF2D6F56B78089F481FEE824 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		E0E00AD2261EFF10CDA121C5 /* VZNetworkObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZNetworkObserver.m; path = VZInspector/network/VZNetworkObserver.m; sourceTree = "<group>"; };
+		E2E5E0007BEEB52CB1AA2754 /* VZInspectorHeapObjectView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorHeapObjectView.h; path = VZInspector/heap/VZInspectorHeapObjectView.h; sourceTree = "<group>"; };
+		E3B0C3174955769560E46697 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		E47F680F924B2F4F2F71F9AD /* VZInspectorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorView.h; path = VZInspector/core/VZInspectorView.h; sourceTree = "<group>"; };
+		E4F7E95E0EFEE936E997A199 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		E5298C6AB9EC7B8EF66FFAD4 /* VZMemoryInspectorOverView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZMemoryInspectorOverView.m; path = VZInspector/memory/VZMemoryInspectorOverView.m; sourceTree = "<group>"; };
+		E58D5ED58CB24563CBD5DB56 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		E9BFC98C69FBC92DA2784C08 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		E9CD77F5F064129D61944D78 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		ED6CD59C26AE782BD67AD89F /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		F1AFAC05C84A63155769E859 /* VZInspectorLogView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorLogView.m; path = VZInspector/log/VZInspectorLogView.m; sourceTree = "<group>"; };
+		F385746E7C3CA16E7D4BD7AE /* UIWindow+VZInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWindow+VZInspector.h"; path = "VZInspector/UI/UIWindow+VZInspector.h"; sourceTree = "<group>"; };
+		F43A158BC394AA8FFA6CC7DD /* VZInspectorResource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZInspectorResource.h; path = VZInspector/core/VZInspectorResource.h; sourceTree = "<group>"; };
+		F59A6AC9152A8FC13E49627F /* VZLogInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZLogInspector.m; path = VZInspector/log/VZLogInspector.m; sourceTree = "<group>"; };
+		F6610EE32056ACF80110E896 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		F7192F1AEB05909F982A8C41 /* VZFrameRateOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VZFrameRateOverlay.h; path = VZInspector/framerate/VZFrameRateOverlay.h; sourceTree = "<group>"; };
+		F7DA51D738F79FD1E18CC1F9 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = AFNetworking/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		F9ACE18974E86C2FA1AEC00D /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		FA4F58F0C235B64AD3F195A8 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
+		FAAB4703169285E5CD7E4230 /* VZInspectorSettingView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VZInspectorSettingView.m; path = VZInspector/env/VZInspectorSettingView.m; sourceTree = "<group>"; };
+		FF7BBF62FCAE3714D6CC095B /* CLLocationManager+FLFake.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CLLocationManager+FLFake.h"; path = "VZInspector/location/CLLocationManager+FLFake.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		816BF88F659568D9C2FC9E09 /* Frameworks */ = {
+		43804C30DD4360FD335E1F37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF547BDAA7C6A542837AF1C4 /* Foundation.framework in Frameworks */,
+				7EF4FEE0E0037C7C5129C2B4 /* CoreGraphics.framework in Frameworks */,
+				8C5E4325EB7594D1E9861C01 /* Foundation.framework in Frameworks */,
+				4B3DD12299A26AB2F8C6135F /* MobileCoreServices.framework in Frameworks */,
+				D7AFF2F30DA32DA3581174E4 /* Security.framework in Frameworks */,
+				28E408BFDECA96FCCBB61902 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F5073B8E2BBA343CAEC1928C /* Frameworks */ = {
+		A327E0C44CF8953FBB728CFD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74D3C19198FA5EC2293B52D4 /* CoreGraphics.framework in Frameworks */,
-				0DCCE184955F4801409C469B /* Foundation.framework in Frameworks */,
-				7EA864AE7D6167A8AF06E0AE /* MobileCoreServices.framework in Frameworks */,
-				56B3AA180E3592076C59071F /* Security.framework in Frameworks */,
-				130BD64B8032FF29432CE52A /* SystemConfiguration.framework in Frameworks */,
+				80EB5FD97FCDC02D2098AB31 /* CoreGraphics.framework in Frameworks */,
+				EC6367B3DBD669F4D2AD243B /* Foundation.framework in Frameworks */,
+				A4D82E66F011E5FE344D296F /* QuartzCore.framework in Frameworks */,
+				86B3AD531A15827C9D5A3768 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FF771F3F0D98F8FAF5842081 /* Frameworks */ = {
+		D1691E90D7EA04A1A6341FEA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DA17783C896493A3F2F352E /* CoreGraphics.framework in Frameworks */,
-				6E7667011FA4B11FAA703FCE /* Foundation.framework in Frameworks */,
-				9237199ABE70E06E956A1309 /* QuartzCore.framework in Frameworks */,
-				3D4F3E8AE347586AF9AABC4C /* UIKit.framework in Frameworks */,
+				4DF2CC6E7A4CBC362D52D018 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B55D77AD67821DBEEC274A4 /* Support Files */ = {
+		1F7EEA6548A2C149791F04AB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				FD7C565AD10B1C304C20512D /* Pods-AFNetworking.xcconfig */,
-				8FB84C2325149DF51827921F /* Pods-AFNetworking-Private.xcconfig */,
-				FB9E3B9188D2CB3B39229B1A /* Pods-AFNetworking-dummy.m */,
-				066856C5ED82D4BF8BB594DE /* Pods-AFNetworking-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-AFNetworking";
-			sourceTree = "<group>";
-		};
-		458F8B383170C7CCCE74BC0A /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				A183D831844A888DBFB7A130 /* AFNetworkActivityIndicatorManager.h */,
-				D791E68E6A21AC6A59B162DB /* AFNetworkActivityIndicatorManager.m */,
-				47223B62AC39FDFF3F631540 /* UIActivityIndicatorView+AFNetworking.h */,
-				D9D3A20C25BA9ABC3C38BF88 /* UIActivityIndicatorView+AFNetworking.m */,
-				70201DE8DFD2CA884EE969DD /* UIAlertView+AFNetworking.h */,
-				8B925FA5779636FCB61496B6 /* UIAlertView+AFNetworking.m */,
-				ADF75AB45932FC38F1E775CD /* UIButton+AFNetworking.h */,
-				10F39A263415696B6EB43BC5 /* UIButton+AFNetworking.m */,
-				E5BD2D18CF1B2B68FC59C826 /* UIImageView+AFNetworking.h */,
-				A8C458D6102416389912D982 /* UIImageView+AFNetworking.m */,
-				48B8558F20A4009F8048CB48 /* UIKit+AFNetworking.h */,
-				70E9C4BD4C8057DF06B5BC7B /* UIProgressView+AFNetworking.h */,
-				FBA86291F352ED1D82BC44C0 /* UIProgressView+AFNetworking.m */,
-				96BEDF6C2DE72E71D7CB3499 /* UIRefreshControl+AFNetworking.h */,
-				F2F2949F5AD98DD746207883 /* UIRefreshControl+AFNetworking.m */,
-				2CC3562BDD38D24870240321 /* UIWebView+AFNetworking.h */,
-				BDC49F75C6134F5558D4A8B8 /* UIWebView+AFNetworking.m */,
-			);
-			name = UIKit;
-			sourceTree = "<group>";
-		};
-		4A74EA2A8268CFE230172FFF /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				187A406C0A5B7DB5ACC10AC4 /* Pods-VZInspector.xcconfig */,
-				7B193741AB7DC91E9F596323 /* Pods-VZInspector-Private.xcconfig */,
-				79D9A9E0AC296996A5B15319 /* Pods-VZInspector-dummy.m */,
-				0F4EA87DD409A58994AAE6F8 /* Pods-VZInspector-prefix.pch */,
+				45AFA285CB1B862681B29350 /* Pods-VZInspector.xcconfig */,
+				ADB102B54B1B07655A94F215 /* Pods-VZInspector-Private.xcconfig */,
+				6CAFDDCC861EDC552A527ED0 /* Pods-VZInspector-dummy.m */,
+				6540A919DDFE46B2AC1418E0 /* Pods-VZInspector-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-VZInspector";
 			sourceTree = "<group>";
 		};
-		8041AC69D759FFA022F89D3F /* Targets Support Files */ = {
+		23428DFA0780EEBF55503085 /* VZInspector */ = {
 			isa = PBXGroup;
 			children = (
-				E469024907BB7ADFA4C753DF /* Pods */,
+				FF7BBF62FCAE3714D6CC095B /* CLLocationManager+FLFake.h */,
+				DC328489B9C55D3EF157444F /* CLLocationManager+FLFake.m */,
+				2A2E4206A7852067F8F10315 /* FLFakeConfig.h */,
+				8B3A949D194174D214B30656 /* FLFakeConfig.m */,
+				83FB304C8ED5E8887A9C769A /* NSObject+VZInspector.h */,
+				7888206AC6FD75C1404BE9B9 /* NSObject+VZInspector.m */,
+				F385746E7C3CA16E7D4BD7AE /* UIWindow+VZInspector.h */,
+				67CB662FBE6EE5C4465D9E44 /* UIWindow+VZInspector.m */,
+				82BFFE7093BB316D4E9FB63A /* VZBorderInspector.h */,
+				A7C34C4904217EEBF4ADAE71 /* VZBorderInspector.m */,
+				BFB8600492DB9D9F9707411A /* VZCPUInspector.h */,
+				8073B0CFD1CB40A8DB104EAA /* VZCPUInspector.m */,
+				3F30B17C46F7AED1FC440BC1 /* VZCPUInspectorOverView.h */,
+				4F57EF2C43B4B96C9A58DCB1 /* VZCPUInspectorOverView.m */,
+				27A235ADE2AEB79D678F2C79 /* VZCrashInspector.h */,
+				2D4491F9216B6C352AC96BFB /* VZCrashInspector.m */,
+				0B7B282F98289FA978BB5D16 /* VZDefine.h */,
+				A3ECD6FDE5908D705CA68ACD /* VZDevice.h */,
+				209097869C447D2B0237DFD8 /* VZDevice.m */,
+				F7192F1AEB05909F982A8C41 /* VZFrameRateOverlay.h */,
+				9CC2ECE9C2191745C0ABC417 /* VZFrameRateOverlay.m */,
+				4CA17CA30948BF383BE7FA04 /* VZHeapInspector.h */,
+				D0C2940438358700719C90A0 /* VZHeapInspector.m */,
+				454D5C4B675E50CCE749DC15 /* VZImageInspector.h */,
+				41C359DCE4DBF587F0100D9F /* VZImageInspector.mm */,
+				DF209EA22B0C7FE196F016A7 /* VZInspectController.h */,
+				86A2F6D58DDA30A0D3CD1F70 /* VZInspectController.m */,
+				5582F03944C60D461B9568BE /* VZInspector.h */,
+				1F56DE148D795DCB57AFB825 /* VZInspector.m */,
+				56BCC281814002010DCC9DAC /* VZInspectorAssert.h */,
+				3414DE00F99FC43F1555E207 /* VZInspectorConsoleView.h */,
+				BF2D87AE42CDC8F193EB21E2 /* VZInspectorConsoleView.m */,
+				6E42CF17C51BF9F5552897BD /* VZInspectorCrashRootView.h */,
+				08C58F7A2C0D0A6D2738ACA9 /* VZInspectorCrashRootView.m */,
+				6BB28C100034E628738BA89F /* VZInspectorCrashView.h */,
+				00947131002C4AFA246B9118 /* VZInspectorCrashView.m */,
+				D3C880F3592278B0D230763D /* VZInspectorDeviceView.h */,
+				6E0B24C7CA3F286F2781DF02 /* VZInspectorDeviceView.m */,
+				A899A342F55FDDD851CCA179 /* VZInspectorGridView.h */,
+				31A5F10785408A15264B921E /* VZInspectorGridView.m */,
+				A206C1F4579F4E59C7050806 /* VZInspectorHeapListView.h */,
+				9CE704E7DF1EB785517111DA /* VZInspectorHeapListView.m */,
+				1145E9899AEEF9808B3588C6 /* VZInspectorHeapObjectGraphicView.h */,
+				B5D63D55F4DB03135FA71EE7 /* VZInspectorHeapObjectGraphicView.m */,
+				E2E5E0007BEEB52CB1AA2754 /* VZInspectorHeapObjectView.h */,
+				81D53E6C2FF8FECF515A96D7 /* VZInspectorHeapObjectView.m */,
+				1D8D625EA4AEE318CB31FB89 /* VZInspectorHeapRootView.h */,
+				4AECC649961E9ECB052AEFCA /* VZInspectorHeapRootView.m */,
+				42D92D00E603A85B31304004 /* VZInspectorHeapSubView.h */,
+				558C8680621A94768CA933C7 /* VZInspectorHeapSubView.m */,
+				281879A7A626C0A40EB50FBC /* VZInspectorLocationView.h */,
+				6CA28BBD16629613D0DA4A2C /* VZInspectorLocationView.m */,
+				DA94E2BC426FB7F63BC720BB /* VZInspectorLogView.h */,
+				F1AFAC05C84A63155769E859 /* VZInspectorLogView.m */,
+				C9A02E46A8FB9238BB028773 /* VZInspectorNetworkDetailView.h */,
+				D2EC7AE7E858369BF2B68C41 /* VZInspectorNetworkDetailView.m */,
+				06670813C24C9EF0D78F1E77 /* VZInspectorNetworkHistoryView.h */,
+				DDA8A8FBAF352DDE6CA0CC03 /* VZInspectorNetworkHistoryView.m */,
+				1AA1831CA1171C769E738BCC /* VZInspectorOverlay.h */,
+				46A8420D692640F8A4342989 /* VZInspectorOverlay.m */,
+				7EEC4495526803830FDFBA5A /* VZInspectorOverview.h */,
+				8CEDD1F6E999F811995A14AF /* VZInspectorOverview.m */,
+				BB9901F43D18A03E2E22F9CD /* VZInspectorPlotView.h */,
+				930790F187F725B61ECAADAC /* VZInspectorPlotView.m */,
+				F43A158BC394AA8FFA6CC7DD /* VZInspectorResource.h */,
+				2C5799EA9660A144EB5C81D1 /* VZInspectorResource.m */,
+				D0AB321F903BC15860D6E378 /* VZInspectorRevealView.h */,
+				9D06C8C5D6595DAA45F3AFDA /* VZInspectorRevealView.m */,
+				B37CD5709DB8DACD4EEDA2E8 /* VZInspectorSandBoxRootView.h */,
+				2B65971613536286AF11670C /* VZInspectorSandBoxRootView.m */,
+				B56A5B0F1C4C0F5372C03E92 /* VZInspectorSandBoxSubView.h */,
+				0F5B7C3E600C978DF3C02C47 /* VZInspectorSandBoxSubView.m */,
+				BE64EE1A5A36154B4FAEDBCB /* VZInspectorSettingView.h */,
+				FAAB4703169285E5CD7E4230 /* VZInspectorSettingView.m */,
+				93963ADB97F9F356021BF5B5 /* VZInspectorThread.h */,
+				5121E461B6EA6AC9E1019527 /* VZInspectorTimer.h */,
+				83018A7A65F4B070CE0637D5 /* VZInspectorTimer.m */,
+				95593B432338371E57069630 /* VZInspectorToolboxView.h */,
+				4C0F2215411DD9B74CE7EED7 /* VZInspectorToolboxView.m */,
+				57F7A4A70B85A2AF78E44555 /* VZInspectorUtility.h */,
+				D5569C136ADD2E3673DC0418 /* VZInspectorUtility.m */,
+				E47F680F924B2F4F2F71F9AD /* VZInspectorView.h */,
+				51F0EE573B7E96103B4A0E1A /* VZInspectorView.m */,
+				927AE82BC79AD3867B86369E /* VZInspectorWindow.h */,
+				44A5DC28F6D7DC93BDAF2C90 /* VZInspectorWindow.m */,
+				2F132B8A877CAF9307018C48 /* VZLogInspector.h */,
+				F59A6AC9152A8FC13E49627F /* VZLogInspector.m */,
+				D0AB1AA65D93138EAC3AFF11 /* VZMemoryInspector.h */,
+				CC7A9454D6A44FA6AD03AD9C /* VZMemoryInspector.m */,
+				1EFD4D10999F695C1D13B5B9 /* VZMemoryInspectorOverView.h */,
+				E5298C6AB9EC7B8EF66FFAD4 /* VZMemoryInspectorOverView.m */,
+				A84D87E4A761B671EA214AA9 /* VZNetworkInspector.h */,
+				093EA3EFA7822D8B6933AFE0 /* VZNetworkInspector.m */,
+				999A3E6CC36494E84962D1BE /* VZNetworkInspectorOverView.h */,
+				2287A76A55859259AD4C35A0 /* VZNetworkInspectorOverView.m */,
+				7CF28A6B5EFB45474D6C6953 /* VZNetworkObserver.h */,
+				E0E00AD2261EFF10CDA121C5 /* VZNetworkObserver.m */,
+				2867E41A5E50D5D8BEB5C83F /* VZNetworkRecorder.h */,
+				013F50495FFED9DCE6AB3FED /* VZNetworkRecorder.m */,
+				0A2F5CBA11086B183CA5AA7D /* VZNetworkTransaction.h */,
+				5F0A2991D878E689F98055DA /* VZNetworkTransaction.m */,
+				6103F44529BA07072CFD0D9C /* VZOverviewInspector.h */,
+				864552DA033DE1FD923E9050 /* VZOverviewInspector.m */,
+				692D3CB2920D73FDFCA54E5D /* VZRevealInspector.h */,
+				17716580938B9E1A1D59F859 /* VZRevealInspector.mm */,
+				7B4470383DB380B1C20E671E /* VZRevealInspectorAssert.h */,
+				BF47A856FB88F1A2521202D6 /* VZRevealInspectorNode.h */,
+				64940B56594B52A4697ED207 /* VZRevealInspectorNode.m */,
+				90596E47658CA338132F1D0F /* VZSettingInspector.h */,
+				A20D003CED51F1C52C03E5D6 /* VZSettingInspector.m */,
+				1F7EEA6548A2C149791F04AB /* Support Files */,
 			);
-			name = "Targets Support Files";
+			path = VZInspector;
 			sourceTree = "<group>";
 		};
-		8340B26751EC3B06ED233C00 = {
+		311993D7FD09D98BEA7BFB89 /* NSURLSession */ = {
 			isa = PBXGroup;
 			children = (
-				44C6E1E05D3E3D305B0D1B2D /* Podfile */,
-				ED5032BEE7034873D68AE3BC /* Frameworks */,
-				B6A5EF1E084A75EAC99BE1A4 /* Pods */,
-				DB8F6F5C9403A1319C773276 /* Products */,
-				8041AC69D759FFA022F89D3F /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		8371CFF4337C469ED88D7B03 /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				569317747C3F429359C9C941 /* AFNetworkReachabilityManager.h */,
-				30E9E6A3FEBBF87F8EC6184F /* AFNetworkReachabilityManager.m */,
-			);
-			name = Reachability;
-			sourceTree = "<group>";
-		};
-		9889765F75E79DE721B78E32 /* Serialization */ = {
-			isa = PBXGroup;
-			children = (
-				3E750D3EBAFAF648CC8F66DD /* AFURLRequestSerialization.h */,
-				081D745851C0E2ED6D678113 /* AFURLRequestSerialization.m */,
-				9DA4DFA2C6EF478ABC8B1534 /* AFURLResponseSerialization.h */,
-				C8A89DC9EACFAE2AB4605653 /* AFURLResponseSerialization.m */,
-			);
-			name = Serialization;
-			sourceTree = "<group>";
-		};
-		9A2DD900F83C0185A28BE47A /* NSURLSession */ = {
-			isa = PBXGroup;
-			children = (
-				68B8B75D63AD4796DBC39FE3 /* AFHTTPSessionManager.h */,
-				9D7C91FFBA27E130B7909D86 /* AFHTTPSessionManager.m */,
-				4323D8977AFB2BD280FAF503 /* AFURLSessionManager.h */,
-				C68C1BF352860EF69B04F478 /* AFURLSessionManager.m */,
+				C37AA2B7506E1AFE452FA152 /* AFHTTPSessionManager.h */,
+				ED6CD59C26AE782BD67AD89F /* AFHTTPSessionManager.m */,
+				4322B51735272C2470C7A6DB /* AFURLSessionManager.h */,
+				E9BFC98C69FBC92DA2784C08 /* AFURLSessionManager.m */,
 			);
 			name = NSURLSession;
 			sourceTree = "<group>";
 		};
-		A13ABFAE0C9486CBF5E7EE12 /* NSURLConnection */ = {
+		37C9BCCDDBEABF6AA958536B /* NSURLConnection */ = {
 			isa = PBXGroup;
 			children = (
-				CC828C21200DFFF8803284CB /* AFHTTPRequestOperation.h */,
-				2F90AECD813AFC9DEC7C14A2 /* AFHTTPRequestOperation.m */,
-				AA15E9CE127C0FBC170E1218 /* AFHTTPRequestOperationManager.h */,
-				27DF078DD9C367546C4546FD /* AFHTTPRequestOperationManager.m */,
-				6512D4B2A1F3E83A6F5DEC2E /* AFURLConnectionOperation.h */,
-				C2CE0639B4322FA2404A8CD5 /* AFURLConnectionOperation.m */,
+				6BBBE24E594130634D232F7F /* AFHTTPRequestOperation.h */,
+				F9ACE18974E86C2FA1AEC00D /* AFHTTPRequestOperation.m */,
+				2217DA0011172D17FE6C60EB /* AFHTTPRequestOperationManager.h */,
+				F7DA51D738F79FD1E18CC1F9 /* AFHTTPRequestOperationManager.m */,
+				E58D5ED58CB24563CBD5DB56 /* AFURLConnectionOperation.h */,
+				48774F7C4592CE52C416A769 /* AFURLConnectionOperation.m */,
 			);
 			name = NSURLConnection;
 			sourceTree = "<group>";
 		};
-		B6A5EF1E084A75EAC99BE1A4 /* Pods */ = {
+		3816ADA32377BBD40ED6552E /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				D4B0A0AAC5D8E7179F512F03 /* AFNetworking */,
-				E63AB2BD1C4F1900C9944817 /* VZInspector */,
+				FA4F58F0C235B64AD3F195A8 /* AFNetworkActivityIndicatorManager.h */,
+				0FB74444415DE6A6573A6833 /* AFNetworkActivityIndicatorManager.m */,
+				30998CA884258B06A5FD09A6 /* UIActivityIndicatorView+AFNetworking.h */,
+				A789A88408CEDBED6EFDF3F8 /* UIActivityIndicatorView+AFNetworking.m */,
+				77DA7A9C7BFDEA3E4A3CC50B /* UIAlertView+AFNetworking.h */,
+				CF89570213B89BC5F2179C5E /* UIAlertView+AFNetworking.m */,
+				9F43F692FB8BEE869543E791 /* UIButton+AFNetworking.h */,
+				40632CE640B356DE40F75DFD /* UIButton+AFNetworking.m */,
+				A78B61CCC2B9CD3066524E1C /* UIImageView+AFNetworking.h */,
+				62CBF026F18E2CCC5109EF56 /* UIImageView+AFNetworking.m */,
+				E9CD77F5F064129D61944D78 /* UIKit+AFNetworking.h */,
+				77924E899130877C0E123747 /* UIProgressView+AFNetworking.h */,
+				B69A94B667F45D661ABBB0F7 /* UIProgressView+AFNetworking.m */,
+				2D2DB05F097912B61F680541 /* UIRefreshControl+AFNetworking.h */,
+				6AD13977532E020D8C34D165 /* UIRefreshControl+AFNetworking.m */,
+				95DD6D1BFA204E28C3592253 /* UIWebView+AFNetworking.h */,
+				A2B364554D1BE89078FBAD8E /* UIWebView+AFNetworking.m */,
 			);
-			name = Pods;
+			name = UIKit;
 			sourceTree = "<group>";
 		};
-		D4B0A0AAC5D8E7179F512F03 /* AFNetworking */ = {
+		4CF532415E7FD875DB4139D1 /* Serialization */ = {
 			isa = PBXGroup;
 			children = (
-				4E1FF84F1E64384DADA31A50 /* AFNetworking.h */,
-				A13ABFAE0C9486CBF5E7EE12 /* NSURLConnection */,
-				9A2DD900F83C0185A28BE47A /* NSURLSession */,
-				8371CFF4337C469ED88D7B03 /* Reachability */,
-				F3F19F08CE534668C93594CD /* Security */,
-				9889765F75E79DE721B78E32 /* Serialization */,
-				0B55D77AD67821DBEEC274A4 /* Support Files */,
-				458F8B383170C7CCCE74BC0A /* UIKit */,
+				4FBB37F241C0263F79BD330E /* AFURLRequestSerialization.h */,
+				0D7B47622E621BC2CFE5BF9E /* AFURLRequestSerialization.m */,
+				8FC4A108F65BE1207D251796 /* AFURLResponseSerialization.h */,
+				08B75BDB7F1082D19A0EB603 /* AFURLResponseSerialization.m */,
+			);
+			name = Serialization;
+			sourceTree = "<group>";
+		};
+		5CA56289CB675922C50CEB7A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				37D75D7BF55FAAF8639E953A /* Pods-AFNetworking.xcconfig */,
+				7201F551F94B770605402BF6 /* Pods-AFNetworking-Private.xcconfig */,
+				182F90AA6BFEC3818EE224BA /* Pods-AFNetworking-dummy.m */,
+				9F5A1763CC4FF23C1A3959B5 /* Pods-AFNetworking-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-AFNetworking";
+			sourceTree = "<group>";
+		};
+		69E945D588FB8CB552CCFEF8 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				34EA2D3A43B409896ED5501D /* AFNetworking.h */,
+				37C9BCCDDBEABF6AA958536B /* NSURLConnection */,
+				311993D7FD09D98BEA7BFB89 /* NSURLSession */,
+				BD32C6E6E551DDE33FC5E974 /* Reachability */,
+				D055F4C103153C5977596225 /* Security */,
+				4CF532415E7FD875DB4139D1 /* Serialization */,
+				5CA56289CB675922C50CEB7A /* Support Files */,
+				3816ADA32377BBD40ED6552E /* UIKit */,
 			);
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
-		DB8F6F5C9403A1319C773276 /* Products */ = {
+		6F303323D5B8E2BF53277B02 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1F3B5187BB6736D61C1C9ED2 /* libPods.a */,
-				015E4B1301C08FD0F8CFC630 /* libPods-AFNetworking.a */,
-				D5E5AD3DF4230D53B86A1AF9 /* libPods-VZInspector.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		E469024907BB7ADFA4C753DF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9372F58CA2081F6B53911A6E /* Pods-acknowledgements.markdown */,
-				DC0B19571460F23141D9ECA6 /* Pods-acknowledgements.plist */,
-				FAAC43010986890723B1694C /* Pods-dummy.m */,
-				75AB57EB43DABD357311DDAE /* Pods-environment.h */,
-				DC3DC385ABC23BBF4E833F8A /* Pods-resources.sh */,
-				B4F5C0390DD77F14D8E3970D /* Pods.debug.xcconfig */,
-				6AF7B61508FF155443EB5A4C /* Pods.release.xcconfig */,
+				09CE56E48CE3996AF724FA14 /* Pods-acknowledgements.markdown */,
+				23B7F3773A4712201530421F /* Pods-acknowledgements.plist */,
+				9B9FFDDDA7E8B8F3E2F46107 /* Pods-dummy.m */,
+				07A27DB63498A0B6F57F1693 /* Pods-environment.h */,
+				DF2D6F56B78089F481FEE824 /* Pods-resources.sh */,
+				E4F7E95E0EFEE936E997A199 /* Pods.debug.xcconfig */,
+				CCB21DDC551F64A15E6A6B38 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
-		E63AB2BD1C4F1900C9944817 /* VZInspector */ = {
+		71764F0A9F54A713BA58B805 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3CC77692CE49C46839C57142 /* NSObject+VZInspector.h */,
-				A30D1EBFA92FFD610DC97FF7 /* NSObject+VZInspector.m */,
-				2A620C2C278B3BC0AB143565 /* UIWindow+VZInspector.h */,
-				2525FF7B6B7E4BF39D7BDA9D /* UIWindow+VZInspector.m */,
-				B051F19023A9F531A6D8B389 /* VZBorderInspector.h */,
-				382D4C67FEDB947792E7E49F /* VZBorderInspector.m */,
-				630F986B821C09C9B3DFF431 /* VZCPUInspector.h */,
-				B27D007785865E56BA5A0260 /* VZCPUInspector.m */,
-				364BCE033F24B366FA3DA482 /* VZCPUInspectorOverView.h */,
-				3F95B11E06FA619281745599 /* VZCPUInspectorOverView.m */,
-				4D3EAA23BC1640A0C7461E9C /* VZCrashInspector.h */,
-				D97815F4797034A10F3ADADA /* VZCrashInspector.m */,
-				B1FDCBB4A71A96F800B1ECB6 /* VZHeapInspector.h */,
-				FE763DD9DE5F7BA0529A4508 /* VZHeapInspector.m */,
-				3D4F3C7948BCFDD34EDACD70 /* VZInspectController.h */,
-				CFE470E97A240E3BB38EA31B /* VZInspectController.m */,
-				09C81B91C6BADDF7C5A0E299 /* VZInspector.h */,
-				70F61D70E1814E3CCAEFCD5D /* VZInspector.m */,
-				9BC0F8B0654FB4B37E7B39EB /* VZInspectorAssert.h */,
-				041A188EF73498D6D0C0B43C /* VZInspectorConsoleView.h */,
-				F5B7F2E15F23CF22D6893345 /* VZInspectorConsoleView.m */,
-				51B6CF14C90CA883EE0778D9 /* VZInspectorCrashRootView.h */,
-				1BFE6F7C745E92D426F42C10 /* VZInspectorCrashRootView.m */,
-				64C49D8C2999D5260C5969BE /* VZInspectorCrashView.h */,
-				0C13F98E5BB922C0C68F345B /* VZInspectorCrashView.m */,
-				8005A17F592CE0F24F40ABDA /* VZInspectorGridView.h */,
-				880B090D9FDCDC0081E51DEA /* VZInspectorGridView.m */,
-				92B529F9B7193BA91A6EDC29 /* VZInspectorHeapListView.h */,
-				368D03CADE5B7C62C6E65C19 /* VZInspectorHeapListView.m */,
-				A50039019575D5B735B1DB51 /* VZInspectorHeapObjectGraphicView.h */,
-				077A1E732383B75C2ED3F817 /* VZInspectorHeapObjectGraphicView.m */,
-				F40E72233E8EE8C600056A33 /* VZInspectorHeapObjectView.h */,
-				C491B6F47ABF7DE5D0545D96 /* VZInspectorHeapObjectView.m */,
-				B10378D54B3634631F904BFD /* VZInspectorHeapRootView.h */,
-				AEBB0DFF6CFCE9D870DA5B92 /* VZInspectorHeapRootView.m */,
-				54B87AB2A25ECB834CAAF82C /* VZInspectorHeapSubView.h */,
-				2BCADD5A4D749C5543B14FC2 /* VZInspectorHeapSubView.m */,
-				ABA7A2DCFD171C4D0BD4A1DF /* VZInspectorLogView.h */,
-				C0A8287993F3F10877E8DAD7 /* VZInspectorLogView.m */,
-				B59640661A80CC5C8C6C32E2 /* VZInspectorNetworkDetailView.h */,
-				637B4EF9EED90C4BD5080155 /* VZInspectorNetworkDetailView.m */,
-				9414938EE7C331ECD6AB8324 /* VZInspectorNetworkHistoryView.h */,
-				460A8AD46245B82B98A082A0 /* VZInspectorNetworkHistoryView.m */,
-				74E50316C2308AF986B66C25 /* VZInspectorOverlay.h */,
-				7023693E89DE6F96AA01F284 /* VZInspectorOverlay.m */,
-				74BAA2A372AEC2DE492BF3C6 /* VZInspectorOverview.h */,
-				5AAE931143A0EC3DC9C60C51 /* VZInspectorOverview.m */,
-				C2970F3ECF4CB6C815E9CB36 /* VZInspectorPlotView.h */,
-				B3D5493391550EDBDD5B62AD /* VZInspectorPlotView.m */,
-				F58BEF5F045A9C682E71EE2F /* VZInspectorResource.h */,
-				ED486BF135E69554E7F99319 /* VZInspectorResource.m */,
-				916CDE0ED85D95F639BE19ED /* VZInspectorRevealView.h */,
-				EAA94D45EF75209CFF3F8851 /* VZInspectorRevealView.m */,
-				DB146D9C60E1BCFC82CCE66A /* VZInspectorSandBoxRootView.h */,
-				D35B96E00EEEC40FDBFDAF68 /* VZInspectorSandBoxRootView.m */,
-				70749FDCE038F934AB4D73B7 /* VZInspectorSandBoxSubView.h */,
-				A15567B87227CC7894BED933 /* VZInspectorSandBoxSubView.m */,
-				45AF0AF97BFDB984E9F75172 /* VZInspectorSettingView.h */,
-				5B40DD7398DF758100D42818 /* VZInspectorSettingView.m */,
-				FE38E54AFA10D16AEF542701 /* VZInspectorThread.h */,
-				9440EC93D4B36E4803FED31C /* VZInspectorTimer.h */,
-				D10DF313DA5815C6F47A2E58 /* VZInspectorTimer.m */,
-				3E18A4611F230303CB4F8599 /* VZInspectorToolboxView.h */,
-				95C7271CB74BB168AAAAE2EB /* VZInspectorToolboxView.m */,
-				11F77C79605A167531350667 /* VZInspectorUtility.h */,
-				4EFBE81B77133E5EE8E19837 /* VZInspectorUtility.m */,
-				F00973C3E8E39E0B19BD0E29 /* VZInspectorView.h */,
-				A7F6976ECEF0A968BA087BF4 /* VZInspectorView.m */,
-				3EB06180D8D44524E40175A4 /* VZInspectorWindow.h */,
-				87166C473E70AB6874301155 /* VZInspectorWindow.m */,
-				B241D70E3BF08D24ED328EBC /* VZLogInspector.h */,
-				D9F456230A7A0DF05AC433DF /* VZLogInspector.m */,
-				71DB0E6519BDFFB9A5D8FE83 /* VZMemoryInspector.h */,
-				451C8C124F499E48459C9329 /* VZMemoryInspector.m */,
-				04FD5A062568FFA2C4D15244 /* VZMemoryInspectorOverView.h */,
-				B391DD4555FC89E842729EA8 /* VZMemoryInspectorOverView.m */,
-				F483283859FEBF1ABB9AB67D /* VZNetworkInspector.h */,
-				9134F25933C5202E9E54EA88 /* VZNetworkInspector.m */,
-				95510B8168D6415524F8F6D4 /* VZNetworkInspectorOverView.h */,
-				5074EE9FDA404CB4DDB4C617 /* VZNetworkInspectorOverView.m */,
-				6651116E56CC8B1A27FC634E /* VZNetworkObserver.h */,
-				E30A1D650EB90B718E417C87 /* VZNetworkObserver.m */,
-				D447F6CEC2FF6C0B9D89E1B3 /* VZNetworkRecorder.h */,
-				338A26DBA305E01A93E5E24D /* VZNetworkRecorder.m */,
-				FBE3FBE26B972BFB2821DDE0 /* VZNetworkTransaction.h */,
-				9F778A9A1C0EE0437D914927 /* VZNetworkTransaction.m */,
-				7F043D9AD8FD4B204AF7C316 /* VZOverviewInspector.h */,
-				D27B97C48083307EB5ADDEA8 /* VZOverviewInspector.m */,
-				8B1380FB915B0B06BAA6D727 /* VZRevealInspector.h */,
-				16A0BEFDA1F423D7235E95AD /* VZRevealInspectorAssert.h */,
-				1D438218A7031EE28F211113 /* VZRevealInspectorNode.h */,
-				9ECE62CD40D5F4F84BC192D8 /* VZRevealInspectorNode.m */,
-				6332615EEEA086F21060EF4E /* VZSettingInspector.h */,
-				02269819375FA1C33E22C4DC /* VZSettingInspector.m */,
-				4A74EA2A8268CFE230172FFF /* Support Files */,
+				69E945D588FB8CB552CCFEF8 /* AFNetworking */,
+				23428DFA0780EEBF55503085 /* VZInspector */,
 			);
-			path = VZInspector;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		ED5032BEE7034873D68AE3BC /* Frameworks */ = {
+		820F5D4AD10842717D930947 = {
 			isa = PBXGroup;
 			children = (
-				FF80A6E7E5B2814B22A327CA /* iOS */,
+				5ABA3C34091AF0A28B7544E4 /* Podfile */,
+				8796ED5A013EC7083687B6E5 /* Frameworks */,
+				71764F0A9F54A713BA58B805 /* Pods */,
+				9BBB931D8904228B796DFDAE /* Products */,
+				BA8BF19EADAFE99BFE8AC308 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8796ED5A013EC7083687B6E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D77CAAC09C8B8806B439E7E0 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F3F19F08CE534668C93594CD /* Security */ = {
+		9BBB931D8904228B796DFDAE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				867A6E7111959D8CD8E5571D /* AFSecurityPolicy.h */,
-				4387293553AD7A8E63FD498B /* AFSecurityPolicy.m */,
+				5701C432D9910523E0DDD7D9 /* libPods.a */,
+				77597C07B32D9ADF2FF5EA8C /* libPods-AFNetworking.a */,
+				1BD2B79241DCBC0E03D4291E /* libPods-VZInspector.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA8BF19EADAFE99BFE8AC308 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6F303323D5B8E2BF53277B02 /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BD32C6E6E551DDE33FC5E974 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				059307AE27D8A6B11F878224 /* AFNetworkReachabilityManager.h */,
+				F6610EE32056ACF80110E896 /* AFNetworkReachabilityManager.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		D055F4C103153C5977596225 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				D92299D9FD9848BDF6DBBB5D /* AFSecurityPolicy.h */,
+				0FA8DD829D54FDC1EEC99A00 /* AFSecurityPolicy.m */,
 			);
 			name = Security;
 			sourceTree = "<group>";
 		};
-		FF80A6E7E5B2814B22A327CA /* iOS */ = {
+		D77CAAC09C8B8806B439E7E0 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				EBA63CD2371423E316883977 /* CoreGraphics.framework */,
-				D51E612475017C54AFB65FF6 /* Foundation.framework */,
-				F4065D0BFE477B631F4413A9 /* MobileCoreServices.framework */,
-				9EE26DE65DF9AF6950624311 /* QuartzCore.framework */,
-				F3922721A5D5B787B810A805 /* Security.framework */,
-				8009E1513216DB60319B8DB3 /* SystemConfiguration.framework */,
-				F59D334EA70DF7E571099C3C /* UIKit.framework */,
+				6CBFA8EE31044F08F90963A1 /* CoreGraphics.framework */,
+				AB7AFD54898E7238C9268A65 /* Foundation.framework */,
+				9DF06B3B3C885DD09D93CD73 /* MobileCoreServices.framework */,
+				5D76FB7B34EBD1F5ECDD65BA /* QuartzCore.framework */,
+				E3B0C3174955769560E46697 /* Security.framework */,
+				31AC86BB8205AF8591508F5F /* SystemConfiguration.framework */,
+				DE64ACC39130A23CC0E58F6A /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -659,98 +707,106 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		06E79F409DF505C5E0E0AFF6 /* Headers */ = {
+		6B7959414526FF02FE9CCE76 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E17EE4FFCE12327B803B6D48 /* AFHTTPRequestOperation.h in Headers */,
-				D391C4DDABBD613AB101C9A6 /* AFHTTPRequestOperationManager.h in Headers */,
-				E6F22DC4681D0F1A166E5CEB /* AFHTTPSessionManager.h in Headers */,
-				F9E20EFE18000ACF033655C5 /* AFNetworkActivityIndicatorManager.h in Headers */,
-				F7E196B8A0F5E0068E01A1FB /* AFNetworkReachabilityManager.h in Headers */,
-				B2B804FC08001969D4E078B0 /* AFNetworking.h in Headers */,
-				FEFFFF5DFD7905AC9EE300AF /* AFSecurityPolicy.h in Headers */,
-				4FF25FC994548EA81CAD8030 /* AFURLConnectionOperation.h in Headers */,
-				1D122FF935CAAE8768D2049D /* AFURLRequestSerialization.h in Headers */,
-				E0EEC6EA672C4904FD6BB32E /* AFURLResponseSerialization.h in Headers */,
-				EFE2C21B28681F0E6D63DECD /* AFURLSessionManager.h in Headers */,
-				8A43A3069F9560CA52D65F05 /* UIActivityIndicatorView+AFNetworking.h in Headers */,
-				EEEFC9CBF1D1311972FA6637 /* UIAlertView+AFNetworking.h in Headers */,
-				F3F0EC1BB2402E0B70F2096E /* UIButton+AFNetworking.h in Headers */,
-				B21ABC94A900602BC5C026AD /* UIImageView+AFNetworking.h in Headers */,
-				426539AADA06BE9BC745B615 /* UIKit+AFNetworking.h in Headers */,
-				14475DF7B12B6AB1710DD646 /* UIProgressView+AFNetworking.h in Headers */,
-				79DFA4A59DC479AD6217031B /* UIRefreshControl+AFNetworking.h in Headers */,
-				EBF51C287B96DD1CD9C44C88 /* UIWebView+AFNetworking.h in Headers */,
+				1FDF5B6C826C9C58E1C1C954 /* AFHTTPRequestOperation.h in Headers */,
+				0C80ADB347E3F8548F035041 /* AFHTTPRequestOperationManager.h in Headers */,
+				1CB784FA38EB4877FAB87226 /* AFHTTPSessionManager.h in Headers */,
+				C3DEEB376920BC149DAF5D73 /* AFNetworkActivityIndicatorManager.h in Headers */,
+				2E64BE33A599F36F3441E25E /* AFNetworkReachabilityManager.h in Headers */,
+				ADE5726262B874BD31AD0493 /* AFNetworking.h in Headers */,
+				06A315338DBD2BE2AB23C7C3 /* AFSecurityPolicy.h in Headers */,
+				38D09C6D2C360C4573410E60 /* AFURLConnectionOperation.h in Headers */,
+				F686A84574F5F077C58A2016 /* AFURLRequestSerialization.h in Headers */,
+				7AC55A834620EC5E609FBA50 /* AFURLResponseSerialization.h in Headers */,
+				68BC9837A01C0F24BA4A8918 /* AFURLSessionManager.h in Headers */,
+				BBF65C6314D1DD386B447D69 /* UIActivityIndicatorView+AFNetworking.h in Headers */,
+				D3B6C6B34C1C09EF6A682A6F /* UIAlertView+AFNetworking.h in Headers */,
+				EF67D010B932A26AF827789D /* UIButton+AFNetworking.h in Headers */,
+				72AB9F0F0F5353A033BF02EE /* UIImageView+AFNetworking.h in Headers */,
+				6882FF49E08B761699BB5BC5 /* UIKit+AFNetworking.h in Headers */,
+				702011C57D8ED1F5830CE14D /* UIProgressView+AFNetworking.h in Headers */,
+				3585FDCAB8948E331B2C262B /* UIRefreshControl+AFNetworking.h in Headers */,
+				E33D22F5D3DC9E3DDBE2AD27 /* UIWebView+AFNetworking.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		839A3D687F6E4BBA655E9D01 /* Headers */ = {
+		8A09503AA4E01D265D879C7F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F4290F465946D6F8049D451 /* NSObject+VZInspector.h in Headers */,
-				000583875282848ABDE79638 /* UIWindow+VZInspector.h in Headers */,
-				AB79582808BDB52F00ADEC4B /* VZBorderInspector.h in Headers */,
-				2762A2C299878A950398C4E2 /* VZCPUInspector.h in Headers */,
-				37F1035269B684704FA804E6 /* VZCPUInspectorOverView.h in Headers */,
-				57D70A5B39B4323CBEDCDEC2 /* VZCrashInspector.h in Headers */,
-				70FAF5E64882370FC8058B87 /* VZHeapInspector.h in Headers */,
-				9BAB7BB0C4F8420663658BA5 /* VZInspectController.h in Headers */,
-				B714389426F9B2F896E4679B /* VZInspector.h in Headers */,
-				F9FBA3C520438D741B03E69E /* VZInspectorAssert.h in Headers */,
-				5280B7B095C9D78086EE5D74 /* VZInspectorConsoleView.h in Headers */,
-				29936E62E08CC4F94F251325 /* VZInspectorCrashRootView.h in Headers */,
-				46E935BB34FB934A83D44B03 /* VZInspectorCrashView.h in Headers */,
-				63DF584DD0462B291FAEEED4 /* VZInspectorGridView.h in Headers */,
-				671A0612388A69BAA6BC062A /* VZInspectorHeapListView.h in Headers */,
-				4D6678D2871A6F3C42D10706 /* VZInspectorHeapObjectGraphicView.h in Headers */,
-				92BBBE3E5F5D66CFA0009131 /* VZInspectorHeapObjectView.h in Headers */,
-				726916ACF3558ACE5FFFCF2E /* VZInspectorHeapRootView.h in Headers */,
-				FAFE5CA2575FBB15F6C8A1D2 /* VZInspectorHeapSubView.h in Headers */,
-				D7DB52848DDE623CE31B6FF8 /* VZInspectorLogView.h in Headers */,
-				1B28A678A50F4AF1EE85FC51 /* VZInspectorNetworkDetailView.h in Headers */,
-				C002DCAB2467626A9F67A66D /* VZInspectorNetworkHistoryView.h in Headers */,
-				C84562B1CE3C001DFD6BBA6E /* VZInspectorOverlay.h in Headers */,
-				BC5043EC3788F3ACFFFD4DFD /* VZInspectorOverview.h in Headers */,
-				9CA4A461FAB20F8D5136E494 /* VZInspectorPlotView.h in Headers */,
-				2D78A2A168F60467AB77B4CA /* VZInspectorResource.h in Headers */,
-				3CD228A35B3FAF34FDCD1F33 /* VZInspectorRevealView.h in Headers */,
-				392304B73FADDAB7498DC280 /* VZInspectorSandBoxRootView.h in Headers */,
-				4C9D35BE9DAB8B6374E8AE1F /* VZInspectorSandBoxSubView.h in Headers */,
-				E141D95877433636051F4FB1 /* VZInspectorSettingView.h in Headers */,
-				91B133829A6F24E07ADB137E /* VZInspectorThread.h in Headers */,
-				89304976E1F2FBC696315912 /* VZInspectorTimer.h in Headers */,
-				D816CE41E4449C1BCBFDECC9 /* VZInspectorToolboxView.h in Headers */,
-				FC6F837BF941702E84F01D5F /* VZInspectorUtility.h in Headers */,
-				CA5A67A7DCB200ACCB36897F /* VZInspectorView.h in Headers */,
-				B16C94C9A5D1D4BA2DEC850B /* VZInspectorWindow.h in Headers */,
-				5708B81579CA53CC8372A62A /* VZLogInspector.h in Headers */,
-				FAB9AF3A58C34E56D56BC51D /* VZMemoryInspector.h in Headers */,
-				2BB0AD97B365942BB966A74C /* VZMemoryInspectorOverView.h in Headers */,
-				3F93F6A2CE366F71946E3BD8 /* VZNetworkInspector.h in Headers */,
-				C45C8874A5516DEC3CC87956 /* VZNetworkInspectorOverView.h in Headers */,
-				33F0E940F832D89F4000DBDA /* VZNetworkObserver.h in Headers */,
-				BB41C147A968DDB8794B220E /* VZNetworkRecorder.h in Headers */,
-				D335E901B5EFD921C88111F0 /* VZNetworkTransaction.h in Headers */,
-				AF1A40B4CDAC4E5BC29B76B3 /* VZOverviewInspector.h in Headers */,
-				9A073F631E1EEF96479CDA37 /* VZRevealInspector.h in Headers */,
-				7E63CFEA0808F6504745B90F /* VZRevealInspectorAssert.h in Headers */,
-				454E6A6260303587617F655F /* VZRevealInspectorNode.h in Headers */,
-				B544763757F5BC20820E0CA0 /* VZSettingInspector.h in Headers */,
+				2B4F6A735CF66C4B93231DE9 /* CLLocationManager+FLFake.h in Headers */,
+				FE2A28CFF5F1AEB5677BD77B /* FLFakeConfig.h in Headers */,
+				5E7BBB85EF56E3E2D4D9365F /* NSObject+VZInspector.h in Headers */,
+				D8DA317A767041AF3A9B3A7F /* UIWindow+VZInspector.h in Headers */,
+				DA5A87AADB904EF90182FEFF /* VZBorderInspector.h in Headers */,
+				BB49F99596EDCB451C20A1B1 /* VZCPUInspector.h in Headers */,
+				BCC2D9B1AE3463F3BDA3233E /* VZCPUInspectorOverView.h in Headers */,
+				1AAE22BCDD9CA156346184BC /* VZCrashInspector.h in Headers */,
+				0722C5A54036F5BBCB5E8147 /* VZDefine.h in Headers */,
+				68D4D8B29CD71F4E16CDDE1B /* VZDevice.h in Headers */,
+				F9AAFC5435832535641BFF8F /* VZFrameRateOverlay.h in Headers */,
+				2B42EAEABDCD3CD6686F3815 /* VZHeapInspector.h in Headers */,
+				7E1B0ACF11DFB438FB989A99 /* VZImageInspector.h in Headers */,
+				A3DB3A5E99F2BD156F301A11 /* VZInspectController.h in Headers */,
+				B423684BC799D36636576F59 /* VZInspector.h in Headers */,
+				C644DE1E6C86BBDB957912E8 /* VZInspectorAssert.h in Headers */,
+				3262C1561EBF6CDD17732C16 /* VZInspectorConsoleView.h in Headers */,
+				3A2EC3AD5A9A85E6A91A3F56 /* VZInspectorCrashRootView.h in Headers */,
+				C77347960DBBDCC4E3073086 /* VZInspectorCrashView.h in Headers */,
+				7A708ABC88DF86EE0B0692E6 /* VZInspectorDeviceView.h in Headers */,
+				E4853A0AFB0C223176E1504B /* VZInspectorGridView.h in Headers */,
+				AFC9B61BF3DABBAA86114AB0 /* VZInspectorHeapListView.h in Headers */,
+				BCD89B04B5F9E5628A21A26C /* VZInspectorHeapObjectGraphicView.h in Headers */,
+				263FF588F09F493282F45BDF /* VZInspectorHeapObjectView.h in Headers */,
+				1236122CA987DC0F054C41B6 /* VZInspectorHeapRootView.h in Headers */,
+				E5292FC0DC49BC4228F31706 /* VZInspectorHeapSubView.h in Headers */,
+				533F93AFA06E01F7C04C436E /* VZInspectorLocationView.h in Headers */,
+				AAB68E867A12AA0D6AF622E0 /* VZInspectorLogView.h in Headers */,
+				80A00F1B563770DB4E2F4418 /* VZInspectorNetworkDetailView.h in Headers */,
+				B273A714A5D96B1263E27F0A /* VZInspectorNetworkHistoryView.h in Headers */,
+				8488E66B2E04C379CAE76D9F /* VZInspectorOverlay.h in Headers */,
+				6D31CC6E816A974802388536 /* VZInspectorOverview.h in Headers */,
+				623E2AFF625A61253CA3E8BC /* VZInspectorPlotView.h in Headers */,
+				8C1887800D83709AE4C7B3F8 /* VZInspectorResource.h in Headers */,
+				3187B43748AFC2A9285B4687 /* VZInspectorRevealView.h in Headers */,
+				B057ACDD005D3A993E6ADBBE /* VZInspectorSandBoxRootView.h in Headers */,
+				C0E1C525C473E1E0B874375E /* VZInspectorSandBoxSubView.h in Headers */,
+				AF0BE6985A5D2CC65A5104D1 /* VZInspectorSettingView.h in Headers */,
+				DFB03EFFA1A2CD6FAC947645 /* VZInspectorThread.h in Headers */,
+				AFFC271F50562F29881E97D3 /* VZInspectorTimer.h in Headers */,
+				5074AE5D7AB6C21C49343D7D /* VZInspectorToolboxView.h in Headers */,
+				78A4B10742AFF857FD0DF9C9 /* VZInspectorUtility.h in Headers */,
+				2150908CC86F5DDD21C34CBC /* VZInspectorView.h in Headers */,
+				26C293D318C89F116AEA3633 /* VZInspectorWindow.h in Headers */,
+				49F1352EF90CAADB6B518B33 /* VZLogInspector.h in Headers */,
+				FB80DD287FFA62146B499645 /* VZMemoryInspector.h in Headers */,
+				7157597ACD2B9B3DABC53263 /* VZMemoryInspectorOverView.h in Headers */,
+				0D8ACB195A7742346240710E /* VZNetworkInspector.h in Headers */,
+				BE548A8B4F7F9125FB9C4F30 /* VZNetworkInspectorOverView.h in Headers */,
+				63BF4220DBA20689BB1D10F5 /* VZNetworkObserver.h in Headers */,
+				F7B6A94BD148251BB1C3061E /* VZNetworkRecorder.h in Headers */,
+				A67154E64E75F9A305F7DD59 /* VZNetworkTransaction.h in Headers */,
+				727C14FC49437B4E7D1128AD /* VZOverviewInspector.h in Headers */,
+				6E597856673093DD88F4E235 /* VZRevealInspector.h in Headers */,
+				1D16FEB6A4060059D6D1DF4C /* VZRevealInspectorAssert.h in Headers */,
+				690EC807924CC5DF13023BE2 /* VZRevealInspectorNode.h in Headers */,
+				A52A55D86729DA5B22153537 /* VZSettingInspector.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		113579A76739E2E47BDF5B00 /* Pods-VZInspector */ = {
+		3DFC0BCF6B91EE5A4C1EDDCC /* Pods-VZInspector */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A1F7AA82DEECF9AE9A7920A /* Build configuration list for PBXNativeTarget "Pods-VZInspector" */;
+			buildConfigurationList = A5C1F6FA7BEB58BE891A16DE /* Build configuration list for PBXNativeTarget "Pods-VZInspector" */;
 			buildPhases = (
-				A5BB5D12000B5B3AD3DF3CC3 /* Sources */,
-				FF771F3F0D98F8FAF5842081 /* Frameworks */,
-				839A3D687F6E4BBA655E9D01 /* Headers */,
+				75E1325AC1F5003545DA3750 /* Sources */,
+				A327E0C44CF8953FBB728CFD /* Frameworks */,
+				8A09503AA4E01D265D879C7F /* Headers */,
 			);
 			buildRules = (
 			);
@@ -758,34 +814,34 @@
 			);
 			name = "Pods-VZInspector";
 			productName = "Pods-VZInspector";
-			productReference = D5E5AD3DF4230D53B86A1AF9 /* libPods-VZInspector.a */;
+			productReference = 1BD2B79241DCBC0E03D4291E /* libPods-VZInspector.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		3D8DBEC2719616F7B84C3DA2 /* Pods */ = {
+		4EDB8605A3FB909187D7CD58 /* Pods */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 805783F85F5B2B7768D29B63 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = 9D57B68A5BF9F38597D0562A /* Build configuration list for PBXNativeTarget "Pods" */;
 			buildPhases = (
-				7FE87588490B40BCA911C960 /* Sources */,
-				816BF88F659568D9C2FC9E09 /* Frameworks */,
+				6E1805689F88A3E07342757D /* Sources */,
+				D1691E90D7EA04A1A6341FEA /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EC1CA6372A31A988AD2D797C /* PBXTargetDependency */,
-				61D1AB1FD1854B1F888E4278 /* PBXTargetDependency */,
+				CEC59CFB6585943A60B83CF6 /* PBXTargetDependency */,
+				336EEB9718CCCCEFD23CC729 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
-			productReference = 1F3B5187BB6736D61C1C9ED2 /* libPods.a */;
+			productReference = 5701C432D9910523E0DDD7D9 /* libPods.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		E201C307719A3BE12EBCF0F1 /* Pods-AFNetworking */ = {
+		CB755669DD320944C7F65023 /* Pods-AFNetworking */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD1DEBB05FFA9E5A85C7ED91 /* Build configuration list for PBXNativeTarget "Pods-AFNetworking" */;
+			buildConfigurationList = 2C8619FF524F552EF6CBE134 /* Build configuration list for PBXNativeTarget "Pods-AFNetworking" */;
 			buildPhases = (
-				B11CA0179E87D6126E5227D9 /* Sources */,
-				F5073B8E2BBA343CAEC1928C /* Frameworks */,
-				06E79F409DF505C5E0E0AFF6 /* Headers */,
+				EC90C03BCB720E61B29FD3E0 /* Sources */,
+				43804C30DD4360FD335E1F37 /* Frameworks */,
+				6B7959414526FF02FE9CCE76 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -793,208 +849,152 @@
 			);
 			name = "Pods-AFNetworking";
 			productName = "Pods-AFNetworking";
-			productReference = 015E4B1301C08FD0F8CFC630 /* libPods-AFNetworking.a */;
+			productReference = 77597C07B32D9ADF2FF5EA8C /* libPods-AFNetworking.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		560A3ECF259DF1D550B42FD9 /* Project object */ = {
+		7192F713AA9857A9EDDE8993 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 4ACE05ED4297EF1A6E64165A /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 279B55BAC393DB361C226703 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 8340B26751EC3B06ED233C00;
-			productRefGroup = DB8F6F5C9403A1319C773276 /* Products */;
+			mainGroup = 820F5D4AD10842717D930947;
+			productRefGroup = 9BBB931D8904228B796DFDAE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3D8DBEC2719616F7B84C3DA2 /* Pods */,
-				E201C307719A3BE12EBCF0F1 /* Pods-AFNetworking */,
-				113579A76739E2E47BDF5B00 /* Pods-VZInspector */,
+				4EDB8605A3FB909187D7CD58 /* Pods */,
+				CB755669DD320944C7F65023 /* Pods-AFNetworking */,
+				3DFC0BCF6B91EE5A4C1EDDCC /* Pods-VZInspector */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7FE87588490B40BCA911C960 /* Sources */ = {
+		6E1805689F88A3E07342757D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3FA71851C14606084A7DD8C /* Pods-dummy.m in Sources */,
+				DE617FFFC56A0D611CA20F36 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5BB5D12000B5B3AD3DF3CC3 /* Sources */ = {
+		75E1325AC1F5003545DA3750 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E9D1DBCC120897A09AA7410 /* NSObject+VZInspector.m in Sources */,
-				C584B018055C3BC6AB52E163 /* Pods-VZInspector-dummy.m in Sources */,
-				EE49377F60232F6451CE755F /* UIWindow+VZInspector.m in Sources */,
-				82D2641E4BADA2DA79C86DD2 /* VZBorderInspector.m in Sources */,
-				FE02E5320667F3A3A721309F /* VZCPUInspector.m in Sources */,
-				4D2F1DD96AE23F7B61C694DD /* VZCPUInspectorOverView.m in Sources */,
-				0E4B9C5543972EAB9F915A27 /* VZCrashInspector.m in Sources */,
-				5BBB2D4999EA25C45CE21F51 /* VZHeapInspector.m in Sources */,
-				A87BC72C3B8778A1DA9396CC /* VZInspectController.m in Sources */,
-				FEECA6F069E8C1D6C12A9325 /* VZInspector.m in Sources */,
-				10C2993FED53AE6C3F5804F6 /* VZInspectorConsoleView.m in Sources */,
-				E1CCE0082CB80421AAB8BB23 /* VZInspectorCrashRootView.m in Sources */,
-				DA2B781CF3BD367F4B26A7D3 /* VZInspectorCrashView.m in Sources */,
-				9C815D8182891E0C380098C6 /* VZInspectorGridView.m in Sources */,
-				96631EB06E467C8F55C42202 /* VZInspectorHeapListView.m in Sources */,
-				095F70171996E7745568F197 /* VZInspectorHeapObjectGraphicView.m in Sources */,
-				DD89572C1CF1756652ADCF3A /* VZInspectorHeapObjectView.m in Sources */,
-				FE65D0450C70BDB465DCD67D /* VZInspectorHeapRootView.m in Sources */,
-				59C9890B759F7D9028AB84F5 /* VZInspectorHeapSubView.m in Sources */,
-				12C7372FF55DEEECEF4A2ED6 /* VZInspectorLogView.m in Sources */,
-				DF8679884DEC25CBAA917C4A /* VZInspectorNetworkDetailView.m in Sources */,
-				8AF5431F4B725A4BCA7EA036 /* VZInspectorNetworkHistoryView.m in Sources */,
-				8BA34FC3F784029E3D258678 /* VZInspectorOverlay.m in Sources */,
-				A91ABA5C8E040297A05BB4A0 /* VZInspectorOverview.m in Sources */,
-				3ADBD3C115F214D091FFB448 /* VZInspectorPlotView.m in Sources */,
-				AAE43568BC72364B27206C2E /* VZInspectorResource.m in Sources */,
-				5B146F333C8DFC5BBBFA5A02 /* VZInspectorRevealView.m in Sources */,
-				52D9C0F91B67C6E81773B8A7 /* VZInspectorSandBoxRootView.m in Sources */,
-				CFE3292B4D6F50BF74ED92D8 /* VZInspectorSandBoxSubView.m in Sources */,
-				ECDEB4BA786084605A7ACD81 /* VZInspectorSettingView.m in Sources */,
-				7DDACB91E5211053566C7FA7 /* VZInspectorTimer.m in Sources */,
-				1331AD6E3A7118CDB74C998A /* VZInspectorToolboxView.m in Sources */,
-				F208855F310688B783BDF8A9 /* VZInspectorUtility.m in Sources */,
-				0FCF5ADF2964C695C4E5F1D4 /* VZInspectorView.m in Sources */,
-				FD9DC7D02BBDB452158894B3 /* VZInspectorWindow.m in Sources */,
-				6C13D54B17032C57715DE445 /* VZLogInspector.m in Sources */,
-				57C3E7A04EC8A1E620F06AE6 /* VZMemoryInspector.m in Sources */,
-				E5B8DF4EF5CDEE7C3698C9B6 /* VZMemoryInspectorOverView.m in Sources */,
-				CB0A712A3B058DC0C4857949 /* VZNetworkInspector.m in Sources */,
-				B10542E37112AFB9477173D3 /* VZNetworkInspectorOverView.m in Sources */,
-				69C6497E0FE5F0CB11D53A40 /* VZNetworkObserver.m in Sources */,
-				BC7B4016048106A81B5C04AB /* VZNetworkRecorder.m in Sources */,
-				89D10940C3F030718750B49D /* VZNetworkTransaction.m in Sources */,
-				2244F95D55794F61A41D7651 /* VZOverviewInspector.m in Sources */,
-				0B4EBA9A25BD7221DFAA97EA /* VZRevealInspectorNode.m in Sources */,
-				8E5E660F25C85F70569A520E /* VZSettingInspector.m in Sources */,
+				1083FA86E90DB445DC3FF2C2 /* CLLocationManager+FLFake.m in Sources */,
+				A437F720CA92AA4099484D52 /* FLFakeConfig.m in Sources */,
+				913B68F12621306AF65C4E61 /* NSObject+VZInspector.m in Sources */,
+				90A95D09D36B83AC32B577A3 /* Pods-VZInspector-dummy.m in Sources */,
+				FD3614001EE2A4FB19C96203 /* UIWindow+VZInspector.m in Sources */,
+				621FF6EDD13F3232AB1B2A72 /* VZBorderInspector.m in Sources */,
+				E39B3485ECACCBF5DF52119D /* VZCPUInspector.m in Sources */,
+				7CF3E0EB177F4E44D5A20DB4 /* VZCPUInspectorOverView.m in Sources */,
+				18087B1D550B255F1B48D60D /* VZCrashInspector.m in Sources */,
+				AB5C9830DB15A5137E3079C9 /* VZDevice.m in Sources */,
+				C8BDF094F170994675803AC9 /* VZFrameRateOverlay.m in Sources */,
+				79ECC77745CCD7948198C571 /* VZHeapInspector.m in Sources */,
+				9A5AF573B352C812AB9BC033 /* VZImageInspector.mm in Sources */,
+				66A30171AB4A1C0F5585B794 /* VZInspectController.m in Sources */,
+				05F321686F8B0ABB413E2C24 /* VZInspector.m in Sources */,
+				CC71E1CEF6FB9BC02983A9BE /* VZInspectorConsoleView.m in Sources */,
+				81DCE58D3351F4D48170BCEB /* VZInspectorCrashRootView.m in Sources */,
+				8B0045ADEE743D54AD564481 /* VZInspectorCrashView.m in Sources */,
+				61E438D9A7E0FE55141CAA6C /* VZInspectorDeviceView.m in Sources */,
+				1F3FDED80CF671CC51DE96AA /* VZInspectorGridView.m in Sources */,
+				683E869F92694C11FA402045 /* VZInspectorHeapListView.m in Sources */,
+				73E8996B171160799DD585AD /* VZInspectorHeapObjectGraphicView.m in Sources */,
+				DCC507979078E1292906EA09 /* VZInspectorHeapObjectView.m in Sources */,
+				92155C8A6BCC3801007E475A /* VZInspectorHeapRootView.m in Sources */,
+				00B4E3DB356A156C5E195FE9 /* VZInspectorHeapSubView.m in Sources */,
+				7E4CF790B0927CDAB185ACAF /* VZInspectorLocationView.m in Sources */,
+				5663524D244F7BCFA7DFE997 /* VZInspectorLogView.m in Sources */,
+				33FC51925DF283CA4635C8E9 /* VZInspectorNetworkDetailView.m in Sources */,
+				980796241AB3DE47CB03ACF6 /* VZInspectorNetworkHistoryView.m in Sources */,
+				216E1CE28D12B3CD06BDEC09 /* VZInspectorOverlay.m in Sources */,
+				BE151293B49945FE38B87E44 /* VZInspectorOverview.m in Sources */,
+				6BCA8E1D8157D1C90E2894E6 /* VZInspectorPlotView.m in Sources */,
+				08757D71C0858FF9D2B066A2 /* VZInspectorResource.m in Sources */,
+				524ECD3D5513CDF54161A74D /* VZInspectorRevealView.m in Sources */,
+				187C9AFD6EB9813BE93147D8 /* VZInspectorSandBoxRootView.m in Sources */,
+				9C7D18D591B63FC83A387FF6 /* VZInspectorSandBoxSubView.m in Sources */,
+				D574D8BF522003441705F77A /* VZInspectorSettingView.m in Sources */,
+				CD1A86CD6FEA151D5FCEA4FF /* VZInspectorTimer.m in Sources */,
+				5D9799DD7011502472D34B6C /* VZInspectorToolboxView.m in Sources */,
+				AA5470BDBA41654AD7192649 /* VZInspectorUtility.m in Sources */,
+				C9BA7427286A555375F0B222 /* VZInspectorView.m in Sources */,
+				5A90D6BC6FAC97E86F4991D1 /* VZInspectorWindow.m in Sources */,
+				280E3459B8D62FC673031D23 /* VZLogInspector.m in Sources */,
+				7CB78879F11657FD0FCE2161 /* VZMemoryInspector.m in Sources */,
+				57D14B667913B28702F6B06C /* VZMemoryInspectorOverView.m in Sources */,
+				98E2FE7D007BEB7442460C05 /* VZNetworkInspector.m in Sources */,
+				144D09FD626ACB0A49A2DD0F /* VZNetworkInspectorOverView.m in Sources */,
+				36AFBA2F092E24A4F437908C /* VZNetworkObserver.m in Sources */,
+				BCDB4163830D1640CCEF31B1 /* VZNetworkRecorder.m in Sources */,
+				4CC0FB9A0971243CF0D92338 /* VZNetworkTransaction.m in Sources */,
+				0727C0E6049369DF164A78EF /* VZOverviewInspector.m in Sources */,
+				7E7EA0500672C61ABED39985 /* VZRevealInspector.mm in Sources */,
+				CA6016595DC9A7D0B79A6D4D /* VZRevealInspectorNode.m in Sources */,
+				5C494E7AC9F3AA5BF49D7F2F /* VZSettingInspector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B11CA0179E87D6126E5227D9 /* Sources */ = {
+		EC90C03BCB720E61B29FD3E0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB57DE9C4EECF0B12FA1848C /* AFHTTPRequestOperation.m in Sources */,
-				B20649F228BFCA33CBD2947D /* AFHTTPRequestOperationManager.m in Sources */,
-				2FF5E2F682F280E20FD911BA /* AFHTTPSessionManager.m in Sources */,
-				4BB8CB70DFC21610670D61A3 /* AFNetworkActivityIndicatorManager.m in Sources */,
-				57DBE26810FDF96E83CAB4F3 /* AFNetworkReachabilityManager.m in Sources */,
-				84D32F10937F78676244A4EC /* AFSecurityPolicy.m in Sources */,
-				E061E7E03C16363E3D9ED16B /* AFURLConnectionOperation.m in Sources */,
-				9AFB5284445B8C71B81954EA /* AFURLRequestSerialization.m in Sources */,
-				92C5B60926B08DDF74FD43BD /* AFURLResponseSerialization.m in Sources */,
-				6AE879A6793AA464F4FDE0F9 /* AFURLSessionManager.m in Sources */,
-				C6338CD924ECE895FAE24284 /* Pods-AFNetworking-dummy.m in Sources */,
-				23A05FE2C87AEC26AAA25932 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
-				5255FF419FBF0D8CBC9F3BC3 /* UIAlertView+AFNetworking.m in Sources */,
-				42146540B3EE609D13C12304 /* UIButton+AFNetworking.m in Sources */,
-				7B057D0CA2A3622A035E36E0 /* UIImageView+AFNetworking.m in Sources */,
-				DA5618BB89CE3449E5E17B72 /* UIProgressView+AFNetworking.m in Sources */,
-				E1C8DEABB1654A976555A4FD /* UIRefreshControl+AFNetworking.m in Sources */,
-				C84CA32A7BE7ED3E51B746BD /* UIWebView+AFNetworking.m in Sources */,
+				C6CE2EA91E6764DD305EE8F1 /* AFHTTPRequestOperation.m in Sources */,
+				C364B3C3DCE532C087451442 /* AFHTTPRequestOperationManager.m in Sources */,
+				D6C9EB06D6735ECB5F0FD6FC /* AFHTTPSessionManager.m in Sources */,
+				3AC1836DA31CF3A59A641E72 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				53B287D719D8654389D355D9 /* AFNetworkReachabilityManager.m in Sources */,
+				05FB1433AB384C935681DF61 /* AFSecurityPolicy.m in Sources */,
+				AF0DF8EEB673F245489B69EB /* AFURLConnectionOperation.m in Sources */,
+				ECF878AAF2775CBF605D95AE /* AFURLRequestSerialization.m in Sources */,
+				32D07617D856B4392DEA9DD2 /* AFURLResponseSerialization.m in Sources */,
+				5D2289ACD23E308DA0B4B842 /* AFURLSessionManager.m in Sources */,
+				CC3F202B79311F4508AA16F0 /* Pods-AFNetworking-dummy.m in Sources */,
+				D5435497897BAD040BA6744A /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				041DE9AD9892BE50456CFB92 /* UIAlertView+AFNetworking.m in Sources */,
+				20FC58D2B59BF6EB14991682 /* UIButton+AFNetworking.m in Sources */,
+				F31A9951C266370A46C34067 /* UIImageView+AFNetworking.m in Sources */,
+				17E12076A46C696962FC52F7 /* UIProgressView+AFNetworking.m in Sources */,
+				B17F6E6E8B1D8354C021FE77 /* UIRefreshControl+AFNetworking.m in Sources */,
+				932EB9734A3D7D943706E967 /* UIWebView+AFNetworking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		61D1AB1FD1854B1F888E4278 /* PBXTargetDependency */ = {
+		336EEB9718CCCCEFD23CC729 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-VZInspector";
-			target = 113579A76739E2E47BDF5B00 /* Pods-VZInspector */;
-			targetProxy = DDB3CCB40B798BCE05AB3954 /* PBXContainerItemProxy */;
+			target = 3DFC0BCF6B91EE5A4C1EDDCC /* Pods-VZInspector */;
+			targetProxy = 2AD74F3B2A8244840D7F8DDB /* PBXContainerItemProxy */;
 		};
-		EC1CA6372A31A988AD2D797C /* PBXTargetDependency */ = {
+		CEC59CFB6585943A60B83CF6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-AFNetworking";
-			target = E201C307719A3BE12EBCF0F1 /* Pods-AFNetworking */;
-			targetProxy = C7D16AD01D77CA87E1AE74AC /* PBXContainerItemProxy */;
+			target = CB755669DD320944C7F65023 /* Pods-AFNetworking */;
+			targetProxy = 5639803E9B077DD53460BF97 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		05B978348EFA8BD27F8F5940 /* Release */ = {
+		0E66957CD9E324C21ACF2C31 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6AF7B61508FF155443EB5A4C /* Pods.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		097F0F78F7F83B4DEC9A9FB9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B193741AB7DC91E9F596323 /* Pods-VZInspector-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-VZInspector/Pods-VZInspector-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		36910703749B32CC34F909E3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FB84C2325149DF51827921F /* Pods-AFNetworking-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-AFNetworking/Pods-AFNetworking-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		47D1B224DD0F17643AC037CF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FB84C2325149DF51827921F /* Pods-AFNetworking-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-AFNetworking/Pods-AFNetworking-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		6D15A7AA67FDD49D72E682A2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4F5C0390DD77F14D8E3970D /* Pods.debug.xcconfig */;
+			baseConfigurationReference = E4F7E95E0EFEE936E997A199 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -1008,41 +1008,7 @@
 			};
 			name = Debug;
 		};
-		9116F4DCE4559E0780AE110B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		E8442C92699BF7D0E3A1D42C /* Debug */ = {
+		5AD53C94D6FD5C02C86A843B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1081,9 +1047,41 @@
 			};
 			name = Debug;
 		};
-		E875BF5E2292A2FAC738A3B6 /* Debug */ = {
+		883F16810871D5136D8CA437 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B193741AB7DC91E9F596323 /* Pods-VZInspector-Private.xcconfig */;
+			baseConfigurationReference = ADB102B54B1B07655A94F215 /* Pods-VZInspector-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VZInspector/Pods-VZInspector-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		ABD0DC9F911BFEBBDB47002B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7201F551F94B770605402BF6 /* Pods-AFNetworking-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-AFNetworking/Pods-AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B8A4BD980E1519ED53E5019B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADB102B54B1B07655A94F215 /* Pods-VZInspector-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-VZInspector/Pods-VZInspector-prefix.pch";
@@ -1097,46 +1095,112 @@
 			};
 			name = Debug;
 		};
+		CBB5E4556859C9E598D0C958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECB686141028D4DBF4CEA350 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCB21DDC551F64A15E6A6B38 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		EF6BB832572ECF8DEC4137AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7201F551F94B770605402BF6 /* Pods-AFNetworking-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-AFNetworking/Pods-AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4ACE05ED4297EF1A6E64165A /* Build configuration list for PBXProject "Pods" */ = {
+		279B55BAC393DB361C226703 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E8442C92699BF7D0E3A1D42C /* Debug */,
-				9116F4DCE4559E0780AE110B /* Release */,
+				5AD53C94D6FD5C02C86A843B /* Debug */,
+				CBB5E4556859C9E598D0C958 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A1F7AA82DEECF9AE9A7920A /* Build configuration list for PBXNativeTarget "Pods-VZInspector" */ = {
+		2C8619FF524F552EF6CBE134 /* Build configuration list for PBXNativeTarget "Pods-AFNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E875BF5E2292A2FAC738A3B6 /* Debug */,
-				097F0F78F7F83B4DEC9A9FB9 /* Release */,
+				EF6BB832572ECF8DEC4137AE /* Debug */,
+				ABD0DC9F911BFEBBDB47002B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		805783F85F5B2B7768D29B63 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		9D57B68A5BF9F38597D0562A /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6D15A7AA67FDD49D72E682A2 /* Debug */,
-				05B978348EFA8BD27F8F5940 /* Release */,
+				0E66957CD9E324C21ACF2C31 /* Debug */,
+				ECB686141028D4DBF4CEA350 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD1DEBB05FFA9E5A85C7ED91 /* Build configuration list for PBXNativeTarget "Pods-AFNetworking" */ = {
+		A5C1F6FA7BEB58BE891A16DE /* Build configuration list for PBXNativeTarget "Pods-VZInspector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				36910703749B32CC34F909E3 /* Debug */,
-				47D1B224DD0F17643AC037CF /* Release */,
+				B8A4BD980E1519ED53E5019B /* Debug */,
+				883F16810871D5136D8CA437 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 560A3ECF259DF1D550B42FD9 /* Project object */;
+	rootObject = 7192F713AA9857A9EDDE8993 /* Project object */;
 }

@@ -1,2 +1,2 @@
 pod 'AFNetworking', '~> 2.0'
-pod 'VZInspector'
+pod 'VZInspector','~> 0.0.8'
