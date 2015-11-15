@@ -6,8 +6,11 @@
 //  Copyright © 2015年 VizLab. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface VZCollectionViewDelegate : NSObject
+@class VZCollectionViewController;
+@interface VZCollectionViewDelegate : NSObject<UICollectionViewDelegate>
+
+@property(nonatomic,weak)VZCollectionViewController* controller;
 
 @end

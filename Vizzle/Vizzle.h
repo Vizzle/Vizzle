@@ -27,5 +27,13 @@
 #import "VZListItem.h"
 #import "VZListDefaultTextItem.h"
 #import "VZFooterViewFactory.h"
+#import "VZCollectionViewController.h"
+#import "VZCollectionViewDataSource.h"
+#import "VZCollectionViewDelegate.h"
+#import "VZCollectionCell.h"
+#import "VZCollectionItem.h"
+#import "VZCollectionViewLayout.h"
+#import "VZCollectionViewLayoutInterface.h"
+
 
 #endif

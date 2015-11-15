@@ -6,8 +6,8 @@
 //  Copyright © 2015年 VizLab. All rights reserved.
 //
 
-#import "VZCollectionViewItem.h"
+#import "VZCollectionItem.h"
 
-@implementation VZCollectionViewItem
+@implementation VZCollectionItem
 
 @end

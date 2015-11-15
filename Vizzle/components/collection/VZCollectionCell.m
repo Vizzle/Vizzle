@@ -10,4 +10,25 @@
 
 @implementation VZCollectionCell
 
+////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - life cycle
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    NSLog(@"[%@]-->dealloc",self.class);
+    
+    _item = nil;
+    _delegate = nil;
+}
+
 @end
