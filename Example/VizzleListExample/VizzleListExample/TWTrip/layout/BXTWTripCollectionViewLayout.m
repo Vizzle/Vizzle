@@ -10,4 +10,20 @@
 
 @implementation BXTWTripCollectionViewLayout
 
+
+- (NSInteger)lineSpacingForSection:(NSInteger)section
+{
+    return 20;
+}
+
+- (NSInteger)itemSpaceingForSection:(NSInteger)section
+{
+    return 20;
+}
+
+- (UIEdgeInsets)insectForSection:(NSInteger)section
+{
+    return UIEdgeInsetsMake(20, 20, 20, 20);
+}
+
 @end

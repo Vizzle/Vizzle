@@ -10,7 +10,7 @@
 
 
 #import "BXTWTripListViewDataSource.h"
-#import "BXTWTripListCell.h"
+#import "BXTWTripCollectionCell.h"
 
 @interface BXTWTripListViewDataSource()
 
@@ -20,8 +20,13 @@
 
 - (Class)cellClassForItem:(id)item AtIndex:(NSIndexPath *)indexPath{
 
-    return [BXTWTripListCell class];
+    return [BXTWTripCollectionCell class];
     
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
 }
 
 

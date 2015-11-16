@@ -25,7 +25,7 @@
         
         self.icon = [[UIImageView alloc]initWithFrame:CGRectZero];
         self.icon.layer.borderColor = [UIColor redColor].CGColor;
-        self.icon.layer.borderWidth = 5.0f;
+        self.icon.layer.borderWidth = 2.0f;
         [self.contentView addSubview:self.icon];
     }
     return self;
