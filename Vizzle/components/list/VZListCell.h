@@ -7,19 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VZCellActionInterface.h"
 
 @class VZItem;
-
-/**
- * cell的deleagte，如果cell上有UI元素需要点击传递给controller，使用这个delegate回调
- */
-@protocol VZListCellDelegate<NSObject>
-
-@optional
-- (void)onCellComponentClickedAtIndex:(NSIndexPath*)indexPath Bundle:(NSDictionary*)extra;
-
-@end
-
 @interface VZListCell : UITableViewCell
 
 /**
@@ -33,7 +23,7 @@
 /**
  *  cell的delegate
  */
-@property (nonatomic,weak) id<VZListCellDelegate> delegate;
+@property (nonatomic,weak) id<VZCellActionInterface> delegate;
 
 /**
  *  cell高度计算

@@ -9,7 +9,7 @@
 #import "VZCollectionViewDataSource.h"
 #import "VZCollectionItem.h"
 #import "VZCollectionCell.h"
-
+#import "VZCellActionInterface.h"
 
 @interface VZCollectionViewDataSource()
 {
@@ -273,7 +273,7 @@
     {
         VZCollectionCell* customCell = (VZCollectionCell*)cell;
         customCell.indexPath = indexPath;
-        customCell.delegate  = (id<VZCollectionCellDelegate>)collectionView.delegate;
+        customCell.delegate  = (id<VZCellActionInterface>)collectionView.delegate;
         
         if (item)
         {

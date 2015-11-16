@@ -9,6 +9,7 @@
 #import "VZListViewDataSource.h"
 #import "VZListViewDelegate.h"
 #import "VZListViewController.h"
+#import "VZCellActionInterface.h"
 #import "VZListCell.h"
 #import "VZListItem.h"
 #import "VZListDefaultLoadingCell.h"
@@ -314,7 +315,7 @@
     {
         VZListCell* customCell = (VZListCell*)cell;
         customCell.indexPath = indexPath;
-        customCell.delegate  = (id<VZListCellDelegate>)tableView.delegate;
+        customCell.delegate  = (id<VZCellActionInterface>)tableView.delegate;
         
         if (item)
         {

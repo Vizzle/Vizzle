@@ -8,9 +8,40 @@
 
 #import "VZCollectionViewDelegate.h"
 #import "VZCollectionViewController.h"
+#import "VZPullToRefreshControl.h"
+#import "VZCollectionCell.h"
+#import "VZCollectionItem.h"
+
+@interface VZCollectionViewDelegate()<VZCellActionInterface>
+
+@property(nonatomic,strong) VZPullToRefreshControl* pullRefreshView;
+
+@end
 
 @implementation VZCollectionViewDelegate
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - getters
+
+- (VZPullToRefreshControl* )pullRefreshView
+{
+    if (!_pullRefreshView) {
+        _pullRefreshView = [[VZPullToRefreshControl alloc]init];
+        // _pullRefreshViewInternal.backgroundColor = self.controller.tableView.backgroundColor;
+        // 如果设置背景色，位置将会随着下拉改变，否则定在原地
+        __weak typeof(self)weakSelf = self;
+        _pullRefreshView.pullRefreshDidTrigger = ^(void){
+            [weakSelf.controller performSelector:@selector(pullRefreshDidTrigger) withObject:nil];
+        };
+        
+        if (self.controller.needPullRefresh) {
+            [self.controller.collectionView addSubview:(UIView* )_pullRefreshView];
+        }
+        
+        
+    }
+    return _pullRefreshView;
+}
 
 // Methods for notification of selection/deselection and highlight/unhighlight events.
 // The sequence of calls leading to selection from a user touch is:
@@ -82,6 +113,57 @@
 - (UICollectionViewTransitionLayout *)collectionView:(UICollectionView *)collectionView transitionLayoutForOldLayout:(UICollectionViewLayout *)fromLayout newLayout:(UICollectionViewLayout *)toLayout
 {
     return nil;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - scrollview 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - scrollview's delegate
+
+
+- (void)scrollViewDidEndDragging:(UIScrollView*)scrollView willDecelerate:(BOOL)decelerate
+{
+    //下拉刷新
+    if (self.controller.needPullRefresh && [self.pullRefreshView respondsToSelector:@selector(scrollviewDidEndDragging:)]) {
+        [self.pullRefreshView scrollviewDidEndDragging:scrollView];
+        
+    }
+    
+    [self.controller scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView*)scrollView
+{
+    if (self.controller.needPullRefresh && [self.pullRefreshView respondsToSelector:@selector(scrollViewDidEndDecelerating:)]) {
+        [self.pullRefreshView scrollViewDidEndDecelerating:scrollView];
+    }
+    
+    [self.controller scrollViewDidEndDecelerating:scrollView];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (self.controller.needPullRefresh && [self.pullRefreshView respondsToSelector:@selector(scrollviewDidScroll:)]) {
+        [self.pullRefreshView scrollviewDidScroll:scrollView];
+    }
+    
+    [self.controller scrollViewDidScroll:scrollView];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    
+    [self.controller scrollViewWillBeginDragging:scrollView];
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - cell delegate
+
+- (void)onCellComponentClickedAtIndex:(NSIndexPath *)indexPath Bundle:(NSDictionary *)extra
+{
+//    self.controller col
 }
 
 /////////////////////////////////////////////////////////////////////////////////////

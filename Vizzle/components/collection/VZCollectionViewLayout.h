@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "VZCollectionViewLayoutInterface.h"
 
 typedef struct
 {
@@ -23,8 +23,6 @@ typedef struct
 
 @class VZCollectionItem;
 @class VZCollectionViewController;
-@protocol VZCollectionViewLayoutInterface;
-
 @interface VZCollectionViewLayout : UICollectionViewLayout<VZCollectionViewLayoutInterface>
 
 @property(nonatomic,weak)VZCollectionViewController* controller;

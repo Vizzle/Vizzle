@@ -8,10 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@class VZUICollectionViewController;
+@class VZCollectionViewController;
 @protocol VZCollectionViewLayoutInterface <NSObject>
-
-@property (nonatomic,weak)VZUICollectionViewController* controller;
 
 @optional
 - (CGSize)scrollViewContentSize;

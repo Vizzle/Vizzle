@@ -7,20 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol VZCollectionCellDelegate<NSObject>
-
-@optional
-- (void)onCellComponentClickedAtIndex:(NSIndexPath*)indexPath Bundle:(NSDictionary*)extra;
-
-@end
+#import "VZCellActionInterface.h"
 
 @class VZCollectionItem;
 @interface VZCollectionCell : UICollectionViewCell
 
 @property(nonatomic,strong)NSIndexPath* indexPath;
 @property(nonatomic,strong)VZCollectionItem* item;
-@property(nonatomic,weak) id<VZCollectionCellDelegate> delegate;
+@property(nonatomic,weak) id<VZCellActionInterface> delegate;
 
 
 @end

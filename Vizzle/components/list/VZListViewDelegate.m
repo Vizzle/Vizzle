@@ -8,25 +8,19 @@
 
 #import "VZListViewDelegate.h"
 #import "VZListViewDataSource.h"
+#import "VZCellActionInterface.h"
 #import "VZListCell.h"
 #import "VZListItem.h"
 #import "VZHTTPListModel.h"
 #import "VZListViewController.h"
+#import "VZPullToRefreshControl.h"
+#import "VZPullToRefreshControlInterface.h"
+#import "VZPullToRefreshControl.h"
 
+@interface VZListViewDelegate()<VZCellActionInterface>
 
+@property(nonatomic,strong) VZPullToRefreshControl* pullRefreshView;
 
-@interface VZListDefaultPullRefreshView : UIView<VZListPullToRefreshViewDelegate>
-@end
-
-
-@interface VZListRefreshControl : UIRefreshControl<VZListPullToRefreshViewDelegate>
-@end
-
-
-
-
-@interface VZListViewDelegate()
-@property(nonatomic,strong) id<VZListPullToRefreshViewDelegate> pullRefreshViewInternal;
 @end
 
 @implementation VZListViewDelegate
@@ -40,39 +34,24 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - getters
 
-- (id<VZListPullToRefreshViewDelegate>)pullRefreshViewInternal
+- (VZPullToRefreshControl* )pullRefreshView
 {
-    if (!_pullRefreshViewInternal) {
-        
-        if (self.type == kSystemStyle) {
-            _pullRefreshViewInternal=  [[VZListRefreshControl alloc]init];
+    if (!_pullRefreshView) {
+        _pullRefreshView = [[VZPullToRefreshControl alloc]init];
             // _pullRefreshViewInternal.backgroundColor = self.controller.tableView.backgroundColor;
             // 如果设置背景色，位置将会随着下拉改变，否则定在原地
-        }
-        else
-            _pullRefreshViewInternal = [[VZListDefaultPullRefreshView alloc]initWithFrame:CGRectMake(0, -44, self.controller.tableView.frame.size.width, 44)];
-
         __weak typeof(self)weakSelf = self;
-        _pullRefreshViewInternal.pullRefreshDidTrigger = ^(void){
+        _pullRefreshView.pullRefreshDidTrigger = ^(void){
             [weakSelf.controller performSelector:@selector(pullRefreshDidTrigger) withObject:nil];
         };
         
         if (self.controller.needPullRefresh) {
-            [self.controller.tableView addSubview:(UIView* )_pullRefreshViewInternal];
+            [self.controller.tableView addSubview:(UIView* )_pullRefreshView];
         }
       
         
     }
-    return _pullRefreshViewInternal;
-}
-
-- (id<VZListPullToRefreshViewDelegate>)pullRefreshView
-{
-    if (_pullRefreshView) {
-        return _pullRefreshView;
-    }
-    else
-        return self.pullRefreshViewInternal;
+    return _pullRefreshView;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -255,228 +234,5 @@
 
 @end
 
-#define kRefreshViewHeight          44
-
-typedef NS_ENUM(NSInteger, PullRefreshState)
-{
-    kIsIdle    = 0,
-    kIsPulling,
-    kIsLoading
-};
-
-@implementation  VZListDefaultPullRefreshView
-{
-    PullRefreshState _state;
-    UIActivityIndicatorView* _indicator;
-    UILabel* _textLabel;
-}
-
-@synthesize isRefreshing = _isRefreshing;
-@synthesize progress     = _progress;
-@synthesize pullRefreshDidTrigger = _pullRefreshDidTrigger;
-
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    
-    if (self) {
-        
-        _state = kIsIdle;
-        
-        int w = frame.size.width;
-        int h = frame.size.height;
-        
-        int orix = (w-100)/2;
-        
-        _textLabel                 = [[UILabel alloc]initWithFrame:CGRectMake(orix, 15, 100, 14)];
-        _textLabel.font            = [UIFont systemFontOfSize:14.0f];
-        _textLabel.textAlignment   = NSTextAlignmentCenter;
-        _textLabel.textColor       = [UIColor lightGrayColor];
-        _textLabel.backgroundColor = [UIColor clearColor];
-        _textLabel.text            = @"下拉刷新";
-        [self addSubview:_textLabel];
-        
-        
-        _indicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(orix - 30, (h-20)/2, 20, 20)];
-        _indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-        _indicator.hidden = YES;
-        [self addSubview:_indicator];
-        
-    }
-    return self;
-}
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)scrollviewDidScroll:(UIScrollView *)scrollview
-{
-    //fix section header problem
-    if(self.isRefreshing)
-    {
-        if( scrollview.contentOffset.y >= 0 )
-            scrollview.contentInset = UIEdgeInsetsZero;
-        else
-            scrollview.contentInset = UIEdgeInsetsMake( MIN( -scrollview.contentOffset.y, kRefreshViewHeight ), 0, 0, 0 );
-    }
-    else
-    {
-        CGFloat visibleHeight = MAX ( -scrollview.contentOffset.y - scrollview.contentInset.top, 0 );
-        _progress = MIN(MAX(visibleHeight/44, 0.0f),1.0f);
-        
-        if(self.progress >= 1.0)
-        {
-            _textLabel.text = @"松开刷新";
-        }
-        else
-        {
-            _textLabel.text = @"下拉刷新";
-        }
-    }
-    
-
-}
-
-- (void)scrollviewDidEndDragging:(UIScrollView *)scrollview
-{
-    if (self.progress >= 1.0) {
-        
-        if (!self.isRefreshing) {
-            
-            [self startRefreshing];
-            
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                //通知controller
-                _isRefreshing = YES;
-                if (self.pullRefreshDidTrigger) {
-                    self.pullRefreshDidTrigger();
-                }
-                
-            });
-        }
-        else
-        {
-      
-        }
-    }
-    else
-    {
-        //noop..
-    }
-
-}
-
-- (void)startRefreshing
-{
-    if (self.isRefreshing) {
-        return;
-    }
-    
-    UIScrollView *scrollView = (UIScrollView *)self.superview;
-    _isRefreshing = YES;
-    _textLabel.text = @"努力加载中";
-    [_indicator startAnimating];
-    [UIView animateWithDuration:0.3 animations:^{
-        
-        UIEdgeInsets inset = scrollView.contentInset;
-        inset.top = 44;
-        scrollView.contentInset = inset;
-        
-    } completion:^(BOOL finished) {
-        
-        [self startAnimation];
-    }];
-}
-
-- (void)stopRefreshing
-{
-    UIScrollView *scrollView = (UIScrollView *)self.superview;
-    if (self.isRefreshing)
-    {
-        [UIView animateWithDuration:0.3 animations:^{
-            
-            UIEdgeInsets inset = scrollView.contentInset;
-            inset.top = 0;
-            scrollView.contentInset = inset;
-            
-        } completion:^(BOOL finished) {
-            
-            [self stopAnimation];
-            _isRefreshing = NO;
-            _textLabel.text = @"下拉刷新";
-            [_indicator stopAnimating];
-            
-        }];
-        
-    }
-    else
-    {
-        UIEdgeInsets inset = scrollView.contentInset;
-        inset.top = 0;
-        scrollView.contentInset = inset;
-    }
-}
-
-- (void)startAnimation
-{
-
-}
-
-- (void)stopAnimation
-{
-}
-
-
-@end
-
-
-@implementation VZListRefreshControl
-
-@synthesize progress     = _progress;
-@synthesize pullRefreshDidTrigger = _pullRefreshDidTrigger;
-// Make sure to be called in every init method
-- (void)initialize {
-    self.tintColor = [UIColor grayColor];
-}
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self initialize];
-    }
-    return self;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self initialize];
-    }
-    return self;
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollview{
-    
-   if (self.isRefreshing) {
-       if (self.pullRefreshDidTrigger) {
-           self.pullRefreshDidTrigger();
-       }
-   }
-}
-
-- (void)scrollviewDidScroll:(UIScrollView *)scrollview
-{
-    CGFloat visibleHeight = MAX ( -scrollview.contentOffset.y - scrollview.contentInset.top, 0 );
-    _progress = MIN(MAX(visibleHeight/80, 0.0f),1.0f);
-}
-
-- (void)startRefreshing
-{
-    [self beginRefreshing];
-}
-
-- (void)stopRefreshing
-{
-    [self performSelector:@selector(endRefreshing) withObject:nil afterDelay:0.1];
-}
-
-@end
