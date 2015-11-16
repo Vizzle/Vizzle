@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @class VZCollectionViewController;
+
 @protocol VZCollectionViewLayoutInterface <NSObject>
+
+@property(nonatomic,weak)VZCollectionViewController* controller;
 
 @optional
 - (CGSize)scrollViewContentSize;
-
 
 @end

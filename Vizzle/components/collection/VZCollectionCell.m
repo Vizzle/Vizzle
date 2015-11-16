@@ -13,15 +13,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - life cycle
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (void)setItem:(VZCollectionItem *)item
 {
-    self = [super initWithFrame:frame];
-    
-    if (self) {
-        
-    }
-    return self;
+    _item = item;
 }
+
 
 - (void)dealloc
 {

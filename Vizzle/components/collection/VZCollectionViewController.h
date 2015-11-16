@@ -12,13 +12,13 @@
 @class VZCollectionViewDelegate;
 @class VZCollectionViewLayout;
 @class VZHTTPListModel;
-
+@protocol VZCollectionViewLayoutInterface;
 @interface VZCollectionViewController : VZViewController
 
 @property(nonatomic,strong) UICollectionView* collectionView;
 @property(nonatomic,strong) VZCollectionViewDataSource* dataSource;
 @property(nonatomic,strong) VZCollectionViewDelegate* delegate;
-@property(nonatomic,strong) VZCollectionViewLayout* layout;
+@property(nonatomic,strong) id<VZCollectionViewLayoutInterface> layout;
 @property(nonatomic,strong) UIView* footerViewLoading;
 @property(nonatomic,strong) UIView* footerViewComplete;
 @property(nonatomic,strong) UIView* footerViewError;

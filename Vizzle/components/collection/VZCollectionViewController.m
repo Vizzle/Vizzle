@@ -9,7 +9,7 @@
 #import "VZCollectionViewController.h"
 #import "VZCollectionViewDataSource.h"
 #import "VZCollectionViewDelegate.h"
-#import "VZCollectionViewLayout.h"
+#import "VZCollectionViewLayoutInterface.h"
 
 @interface VZCollectionViewController()
 
@@ -48,7 +48,7 @@
     _delegate.controller = self;
 }
 
-- (void)setLayout:(VZCollectionViewLayout* )layout
+- (void)setLayout:(id<VZCollectionViewLayoutInterface> )layout
 {
     _layout = layout;
     self.collectionView.collectionViewLayout = (UICollectionViewLayout* )layout;
@@ -102,10 +102,13 @@
     return _delegate;
 }
 
-- (VZCollectionViewLayout* )layout
+- (id<VZCollectionViewLayoutInterface> )layout
 {
     if (!_layout) {
+        
+        //默认为普通layout
         _layout = [VZCollectionViewLayout new];
+        _layout.controller = self;
     }
     return _layout;
 }

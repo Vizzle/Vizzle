@@ -17,6 +17,8 @@
 
 @implementation VZCollectionViewLayout
 
+@synthesize controller = _controller;
+
 //--hooks:
 
 //--prepareLayout
@@ -49,6 +51,7 @@
     //add cell
     NSMutableArray *layoutAttributes = [NSMutableArray array];
     
+    
     [self.controller.dataSource.itemsForSection enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         
         NSNumber* sectionNum = (NSNumber* )key;
@@ -57,15 +60,11 @@
         [list enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             
             NSIndexPath* index  = [NSIndexPath indexPathForItem:idx inSection:sectionNum.intValue];
-            
             [layoutAttributes addObject:[self layoutAttributesForItemAtIndexPath:index]];
             
         }];
     }];
-    
-    //add supplementary views
-    
-    
+
     return layoutAttributes;
 }
 

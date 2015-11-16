@@ -25,8 +25,6 @@ typedef struct
 @class VZCollectionViewController;
 @interface VZCollectionViewLayout : UICollectionViewLayout<VZCollectionViewLayoutInterface>
 
-@property(nonatomic,weak)VZCollectionViewController* controller;
-
 @end
 
 @interface VZCollectionViewLayout(attributes)

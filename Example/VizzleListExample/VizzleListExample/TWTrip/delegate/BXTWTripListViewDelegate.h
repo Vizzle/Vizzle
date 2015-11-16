@@ -9,9 +9,9 @@
 
 
   
-#import "VZListViewDelegate.h"
+#import "VZCollectionViewDelegate.h"
 
-@interface BXTWTripListViewDelegate : VZListViewDelegate
+@interface BXTWTripListViewDelegate : VZCollectionViewDelegate
 
 @end
   

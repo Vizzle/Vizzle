@@ -10,4 +10,6 @@
 
 @interface VZCollectionItem : VZListItem
 
+@property(nonatomic,assign)float itemWidth;
+
 @end

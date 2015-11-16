@@ -9,9 +9,9 @@
 
 
   
-#import "VZListCell.h"
+#import "VZCollectionCell.h"
 
-@interface BXTWTripListCell : VZListCell
+@interface BXTWTripListCell : VZCollectionCell
 
 @end
   

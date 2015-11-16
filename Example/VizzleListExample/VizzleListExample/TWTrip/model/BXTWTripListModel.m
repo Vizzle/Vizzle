@@ -63,12 +63,21 @@
     for (NSDictionary* dict in result) {
         
         BXTWTripListItem* item =  [BXTWTripListItem new];
+        item.itemWidth  = [UIScreen mainScreen].bounds.size.width / 2;;
+        item.itemHeight = [self randomHeight];
         [item autoKVCBinding:dict];
         [list addObject:item];
     }
     
     
     return list;
+}
+
+
+- (CGFloat)randomHeight
+{
+    int value = arc4random() % 100 + 60;
+    return value;
 }
 
 @end

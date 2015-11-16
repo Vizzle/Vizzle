@@ -56,6 +56,54 @@
 }
 
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - protocol VZCollectionViewDataSource
+
+/*
+ * 指定cell的类型
+ */
+- (Class)cellClassForItem:(VZCollectionItem*)item AtIndex:(NSIndexPath *)indexPath
+{
+    VZAssertMainThread();
+    
+    //for temperary use
+    return [VZCollectionCell class];
+    
+}
+/**
+ 指定返回的item
+ */
+- (VZCollectionItem*)itemForCellAtIndexPath:(NSIndexPath*)indexPath
+{
+    VZAssertMainThread();
+    NSArray* items = _itemsForSectionInternal[@(indexPath.section)];
+    VZAssertTrue(items);
+    
+    VZCollectionItem* item = nil;
+    
+    if (indexPath.row < items.count) {
+        
+        item = items[indexPath.row];
+    }
+    else
+    {
+        item = [VZCollectionItem new];
+    }
+    return item;
+}
+/**
+ 绑定items和model
+ */
+- (void)collectionViewControllerDidLoadModel:(VZHTTPListModel*)model
+{
+    // set data
+    NSMutableArray* items = [model.objects mutableCopy];
+    [self setItems:items ForSection:model.sectionNumber];
+
+}
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - public
 
@@ -352,5 +400,9 @@
     
     return view;
 }
+
+
+
+
 @end
 

@@ -9,9 +9,9 @@
 
 
   
-#import "VZListViewDataSource.h"
+#import "VZCollectionViewDataSource.h"
 
-@interface BXTWTripListViewDataSource : VZListViewDataSource
+@interface BXTWTripListViewDataSource : VZCollectionViewDataSource
 
 @end
   

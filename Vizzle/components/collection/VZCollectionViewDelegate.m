@@ -11,6 +11,7 @@
 #import "VZPullToRefreshControl.h"
 #import "VZCollectionCell.h"
 #import "VZCollectionItem.h"
+#import "VZCollectionViewLayout.h"
 
 @interface VZCollectionViewDelegate()<VZCellActionInterface>
 
@@ -42,6 +43,34 @@
     }
     return _pullRefreshView;
 }
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - public
+
+- (BOOL)isRefreshing
+{
+    return [self.pullRefreshView isRefreshing];
+}
+
+
+- (void)beginRefreshing
+{
+    if (self.controller.needPullRefresh) {
+        [self.pullRefreshView startRefreshing];
+    }
+}
+- (void)endRefreshing
+{
+    if (self.controller.needPullRefresh) {
+        [self.pullRefreshView stopRefreshing];
+    }
+    
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - protocol collectionview delegate
 
 // Methods for notification of selection/deselection and highlight/unhighlight events.
 // The sequence of calls leading to selection from a user touch is:
@@ -168,6 +197,7 @@
 
 /////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - message forwarding
+//将layout相关的callback转发给VZCollectionViewLayout
 
 - (BOOL) respondsToSelector:(SEL)aSelector
 {
@@ -178,7 +208,7 @@
     else
     {
         UICollectionViewLayout* layout = self.controller.collectionView.collectionViewLayout;
-        if ([layout isKindOfClass:[UICollectionViewFlowLayout class]]) {
+        if ([layout isKindOfClass:[VZCollectionViewLayout class]]) {
             
             if ([layout respondsToSelector:aSelector]) {
                 return YES;
@@ -195,7 +225,7 @@
     if (!signature) {
         
         UICollectionViewLayout* layout = self.controller.collectionView.collectionViewLayout;
-        if ([layout isKindOfClass:[UICollectionViewFlowLayout class]]) {
+        if ([layout isKindOfClass:[VZCollectionViewLayout class]]) {
             signature = [layout methodSignatureForSelector:selector];
         }
     }
@@ -205,7 +235,7 @@
 - (void)forwardInvocation:(NSInvocation *)anInvocation
 {
     UICollectionViewLayout* layout = self.controller.collectionView.collectionViewLayout;
-    if ([layout isKindOfClass:[UICollectionViewFlowLayout class]])
+    if ([layout isKindOfClass:[VZCollectionViewLayout class]])
     {
         if ([layout respondsToSelector:[anInvocation selector]]) {
             

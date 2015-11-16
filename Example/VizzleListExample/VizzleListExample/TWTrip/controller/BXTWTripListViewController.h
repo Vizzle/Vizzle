@@ -9,9 +9,9 @@
 
 
   
-#import "VZListViewController.h"
+#import "VZCollectionViewController.h"
 
-@interface BXTWTripListViewController : VZListViewController
+@interface BXTWTripListViewController : VZCollectionViewController
 
 @end
   

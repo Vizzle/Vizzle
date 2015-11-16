@@ -9,9 +9,9 @@
 
 
 
-#import "VZListItem.h"
+#import "VZCollectionItem.h"
 
-@interface BXTWTripListItem : VZListItem
+@interface BXTWTripListItem : VZCollectionItem
 
 
 @property(nonatomic,strong)NSString *serviceAddress;
