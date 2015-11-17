@@ -89,7 +89,7 @@
     
     //1,config your tableview
     self.collectionView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    self.collectionView.backgroundColor = [UIColor colorWithRed:189.0/255.0 green:247/255.0 blue:251/255.0 alpha:1];
+   // self.collectionView.backgroundColor = [UIColor colorWithRed:189.0/255.0 green:247/255.0 blue:251/255.0 alpha:1];
     self.collectionView.showsVerticalScrollIndicator = YES;
    // self.collectionView.separatorStyle = YES;
     

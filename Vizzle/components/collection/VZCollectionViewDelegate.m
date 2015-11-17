@@ -11,7 +11,9 @@
 #import "VZPullToRefreshControl.h"
 #import "VZCollectionCell.h"
 #import "VZCollectionItem.h"
+#import "VZCollectionViewLayoutInterface.h"
 #import "VZCollectionViewLayout.h"
+#import "VZCollectionViewFlowLayout.h"
 
 @interface VZCollectionViewDelegate()<VZCellActionInterface>
 
@@ -196,57 +198,70 @@
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - message forwarding
-//将layout相关的callback转发给VZCollectionViewLayout
+#pragma mark - flow layout forwarding
 
-- (BOOL) respondsToSelector:(SEL)aSelector
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([super respondsToSelector:aSelector])
-    {
-        return YES;
-    }
-    else
-    {
-        UICollectionViewLayout* layout = self.controller.collectionView.collectionViewLayout;
-        if ([layout isKindOfClass:[VZCollectionViewLayout class]]) {
-            
-            if ([layout respondsToSelector:aSelector]) {
-                return YES;
-            }
-            else
-                return NO;
-        }
-        return NO;
-    }
-}
-- (NSMethodSignature*)methodSignatureForSelector:(SEL)selector
-{
-    NSMethodSignature* signature = [super methodSignatureForSelector:selector];
-    if (!signature) {
+    id<VZCollectionViewLayoutInterface> layout = self.controller.layout;
+    if ([layout isKindOfClass:[VZCollectionViewFlowLayout class]]) {
+        VZCollectionViewFlowLayout* flowLayout = (VZCollectionViewFlowLayout* )layout;
         
-        UICollectionViewLayout* layout = self.controller.collectionView.collectionViewLayout;
-        if ([layout isKindOfClass:[VZCollectionViewLayout class]]) {
-            signature = [layout methodSignatureForSelector:selector];
-        }
+        return [flowLayout sizeOfCellAtIndexPath:indexPath];
     }
-    return signature;
-}
-
-- (void)forwardInvocation:(NSInvocation *)anInvocation
-{
-    UICollectionViewLayout* layout = self.controller.collectionView.collectionViewLayout;
-    if ([layout isKindOfClass:[VZCollectionViewLayout class]])
-    {
-        if ([layout respondsToSelector:[anInvocation selector]]) {
-            
-            [anInvocation invokeWithTarget:layout];
-        }
-        else
-            [super forwardInvocation:anInvocation];
-    }
-    else
-        [super forwardInvocation:anInvocation];
+    return CGSizeZero;
     
+}
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    id<VZCollectionViewLayoutInterface> layout = self.controller.layout;
+    if ([layout isKindOfClass:[VZCollectionViewFlowLayout class]]) {
+        VZCollectionViewFlowLayout* flowLayout = (VZCollectionViewFlowLayout* )layout;
+        
+        return [flowLayout insectForSection:section];
+    }
+    return UIEdgeInsetsZero;
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    id<VZCollectionViewLayoutInterface> layout = self.controller.layout;
+    if ([layout isKindOfClass:[VZCollectionViewFlowLayout class]]) {
+        VZCollectionViewFlowLayout* flowLayout = (VZCollectionViewFlowLayout* )layout;
+        
+        return [flowLayout lineSpacingForSection:section];
+    }
+    return 0.0f;
+    
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    id<VZCollectionViewLayoutInterface> layout = self.controller.layout;
+    if ([layout isKindOfClass:[VZCollectionViewFlowLayout class]]) {
+        VZCollectionViewFlowLayout* flowLayout = (VZCollectionViewFlowLayout* )layout;
+        
+        return [flowLayout itemSpaceingForSection:section];
+    }
+    return 0.0f;
+}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+
+    id<VZCollectionViewLayoutInterface> layout = self.controller.layout;
+    if ([layout isKindOfClass:[VZCollectionViewFlowLayout class]]) {
+        VZCollectionViewFlowLayout* flowLayout = (VZCollectionViewFlowLayout* )layout;
+        
+        return [flowLayout headerReferenceSize];
+    }
+    return CGSizeZero;
+}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
+{
+    id<VZCollectionViewLayoutInterface> layout = self.controller.layout;
+    if ([layout isKindOfClass:[VZCollectionViewFlowLayout class]]) {
+        VZCollectionViewFlowLayout* flowLayout = (VZCollectionViewFlowLayout* )layout;
+        
+        return [flowLayout footerReferenceSize];
+    }
+    return CGSizeZero;
 }
 
 

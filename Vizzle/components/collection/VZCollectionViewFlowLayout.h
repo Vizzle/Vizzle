@@ -13,7 +13,7 @@
 
 @property(nonatomic,weak)VZCollectionViewController* controller;
 
-- (CGSize) sizeOfCellWithItem:(VZCollectionItem* )item AtIndexPath:(NSIndexPath* )indexPath;
+- (CGSize) sizeOfCellAtIndexPath:(NSIndexPath* )indexPath;
 
 - (UIEdgeInsets) insectForSection:(NSInteger)section;
 

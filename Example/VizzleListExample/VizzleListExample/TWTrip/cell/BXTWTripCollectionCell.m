@@ -35,7 +35,7 @@
 {
     [super setItem:item];
     
-    [self.icon setImageWithURL:[NSURL URLWithString:item.servicePicUrl] placeholderImage:[UIImage imageNamed:@"default_list.jpg"]];
+   // [self.icon setImageWithURL:[NSURL URLWithString:item.servicePicUrl] placeholderImage:[UIImage imageNamed:@"default_list.jpg"]];
 }
 
 
