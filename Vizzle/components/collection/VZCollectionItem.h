@@ -10,6 +10,8 @@
 
 @interface VZCollectionItem : VZListItem
 
-@property(nonatomic,assign)float itemWidth;
+@property(nonatomic,assign)CGFloat x;
+@property(nonatomic,assign)CGFloat y;
+@property(nonatomic,assign)CGFloat itemWidth;
 
 @end

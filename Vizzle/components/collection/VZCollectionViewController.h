@@ -93,6 +93,8 @@
 
 - (void)changeLayout:(VZCollectionViewLayout* ) layout Animate:(BOOL)aAnimate withCompletionBlock:(BOOL(^)(void))aBlock;
 
+- (void)calculateLayoutContentSize:(VZHTTPListModel* )model;
+
 @end
 
 
@@ -132,7 +134,7 @@
 @end
 
 
-@interface VZCollectionViewController(FooterView)
+@interface VZCollectionViewController(State)
 
 
 /**

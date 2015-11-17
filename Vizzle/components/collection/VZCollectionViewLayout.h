@@ -12,8 +12,6 @@
 typedef struct
 {
     CGRect frame;
-    CGPoint center;
-    CGSize size;
     CATransform3D transform3D;
     CGAffineTransform tranform2D;
     CGFloat alpha;

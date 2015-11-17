@@ -13,5 +13,7 @@
 
 @interface BXTWTripListModel : VZHTTPListModel
 
+@property(nonatomic,assign,readonly)CGFloat contentHeight;
+
 @end
 

@@ -10,4 +10,6 @@
 
 @implementation BXTWTripListViewLayout
 
+@synthesize scrollViewContentSize = _scrollViewContentSize;
+
 @end

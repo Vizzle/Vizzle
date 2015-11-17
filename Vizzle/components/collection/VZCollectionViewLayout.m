@@ -18,6 +18,8 @@
 @implementation VZCollectionViewLayout
 
 @synthesize controller = _controller;
+@synthesize scrollViewContentSize = _scrollViewContentSize;
+
 
 //--hooks:
 
@@ -36,7 +38,8 @@
  */
 - (CGSize)collectionViewContentSize
 {
-    return [self scrollViewContentSize];
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+    return self.scrollViewContentSize;
 }
 /**
  *  返回当前scrollview可见区域内，所有item的attribute对象
@@ -47,7 +50,7 @@
  */
 - (NSArray* )layoutAttributesForElementsInRect:(CGRect)rect
 {
-    
+      NSLog(@"%s",__PRETTY_FUNCTION__);
     //add cell
     NSMutableArray *layoutAttributes = [NSMutableArray array];
     
@@ -70,6 +73,7 @@
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+      NSLog(@"%s",__PRETTY_FUNCTION__);
     NSArray* items = self.controller.dataSource.itemsForSection[@(indexPath.section)];
     VZCollectionItem* item = items[indexPath.item];
     
@@ -77,8 +81,8 @@
     
     VZCollectionLayoutAttributes attr = [self layoutAttributesForCellWithItem:item AtIndexPath:indexPath];
     attributes.frame = attr.frame;
-    attributes.center = attr.center;
-    attributes.size = attr.size;
+    attributes.center = CGPointMake(attr.frame.origin.x + 0.5*CGRectGetWidth(attr.frame), attr.frame.origin.y+0.5*CGRectGetHeight(attr.frame));
+    attributes.size = CGSizeMake(attr.frame.size.width, attr.frame.size.height);
     attributes.transform = attr.tranform2D;
     attributes.transform3D = attr.transform3D;
     attributes.alpha = attr.alpha;
@@ -90,13 +94,15 @@
 }
 - (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
+      NSLog(@"%s",__PRETTY_FUNCTION__);
+    
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:kind withIndexPath:indexPath];
     
     VZCollectionLayoutAttributes attr = [self layoutAttributesForHeaderView:kind AtSectionIndex:indexPath.section];
     
     attributes.frame = attr.frame;
-    attributes.center = attr.center;
-    attributes.size = attr.size;
+    attributes.center = CGPointMake(attr.frame.origin.x + 0.5*CGRectGetWidth(attr.frame), attr.frame.origin.y+0.5*CGRectGetHeight(attr.frame));
+    attributes.size = CGSizeMake(attr.frame.size.width, attr.frame.size.height);
     attributes.transform = attr.tranform2D;
     attributes.transform3D = attr.transform3D;
     attributes.alpha = attr.alpha;
@@ -109,6 +115,7 @@
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:decorationViewKind withIndexPath:indexPath];
     
     //todo:/...
+      NSLog(@"%s",__PRETTY_FUNCTION__);
     
     
     return attributes;
@@ -120,29 +127,25 @@
 }
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - subclass methods
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-- (CGSize)scrollViewContentSize
-{
-    return CGSizeZero;
-}
+#pragma mark - subclass methods
 
 - (VZCollectionLayoutAttributes) layoutAttributesForCellWithItem:(VZCollectionItem* )item AtIndexPath:(NSIndexPath* ) indexPath
 {
-    VZCollectionLayoutAttributes attr = {CGRectZero,CGPointZero,CGSizeZero,CATransform3DIdentity,CGAffineTransformIdentity,1,0};
+    VZCollectionLayoutAttributes attr = {CGRectZero,CATransform3DIdentity,CGAffineTransformIdentity,1,0};
     
     return attr;
 }
 - (VZCollectionLayoutAttributes) layoutAttributesForHeaderView:(NSString* )kind AtSectionIndex:(NSInteger) section
 {
-    VZCollectionLayoutAttributes attr = {CGRectZero,CGPointZero,CGSizeZero,CATransform3DIdentity,CGAffineTransformIdentity,1,0};
+    VZCollectionLayoutAttributes attr = {CGRectZero,CATransform3DIdentity,CGAffineTransformIdentity,1,0};
     
     return attr;
 }
 - (VZCollectionLayoutAttributes) layoutAttributesForFooterView:(NSString* )kind AtSectionIndex:(NSInteger) section
 {
-    VZCollectionLayoutAttributes attr = {CGRectZero,CGPointZero,CGSizeZero,CATransform3DIdentity,CGAffineTransformIdentity,1,0};
+    VZCollectionLayoutAttributes attr = {CGRectZero,CATransform3DIdentity,CGAffineTransformIdentity,1,0};
     
     return attr;
     

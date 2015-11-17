@@ -25,7 +25,7 @@
         
         self.icon = [[UIImageView alloc]initWithFrame:CGRectZero];
         self.icon.layer.borderColor = [UIColor redColor].CGColor;
-        self.icon.layer.borderWidth = 2.0f;
+        self.icon.layer.borderWidth = 0.5f;
         [self.contentView addSubview:self.icon];
     }
     return self;
@@ -35,7 +35,7 @@
 {
     [super setItem:item];
     
-   // [self.icon setImageWithURL:[NSURL URLWithString:item.servicePicUrl] placeholderImage:[UIImage imageNamed:@"default_list.jpg"]];
+    [self.icon setImageWithURL:[NSURL URLWithString:item.servicePicUrl] placeholderImage:[UIImage imageNamed:@"default_list.jpg"]];
 }
 
 

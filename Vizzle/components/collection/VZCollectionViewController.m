@@ -237,6 +237,7 @@
 
 - (void)didLoadModel:(VZHTTPListModel *)model
 {
+    
     //VZMV* => 1.1 : 多个model注册同一个section，只有keymodel才能被加载
     NSInteger section = self.keyModel.sectionNumber;
     
@@ -249,9 +250,18 @@
         
     }
     else
+    {
         [self.dataSource collectionViewControllerDidLoadModel:model];
+    }
     
-    
+    //计算layout，放到这里，看看合不合是
+    if (_layout) {
+        [self calculateLayoutContentSize:model];
+    }
+    else
+    {
+        VZAssert(!_layout, @"layout 不能为空!");
+    }
 }
 
 - (BOOL)canShowModel:(VZHTTPListModel *)model
@@ -350,7 +360,7 @@
             item.itemType = kItem_Loading;
             item.itemHeight = 44;
             [self.dataSource setItems:@[item] ForSection:section];
-            [self reloadTableView];
+            [self reloadCollectionView];
         }
         
     }
@@ -363,7 +373,7 @@
     [super showModel:model];
     
     //VZMV* => 1.1:
-    [self reloadTableView];
+    [self reloadCollectionView];
     
     //VZMV* => 1.1 : reset footer view
     [self showComplete:model];
@@ -404,7 +414,7 @@
             item.text = error.localizedDescription;
             item.itemHeight = 44;
             [self.dataSource setItems:@[item] ForSection:section];
-            [self reloadTableView];
+            [self reloadCollectionView];
         }
     }
     
@@ -412,11 +422,11 @@
 ////////////////////////////////////////////////////////////////////
 #pragma mark - private
 
-- (void)reloadTableView
+- (void)reloadCollectionView
 {
     self.collectionView.dataSource = self.dataSource;
     self.collectionView.delegate   = self.delegate;
-    self.collectionView.collectionViewLayout = self.layout;
+    self.collectionView.collectionViewLayout = (UICollectionViewLayout* )self.layout;
     [self.collectionView reloadData];
     
 }
@@ -485,7 +495,7 @@
             
             if (self.clearItemsWhenModelReload) {
                 [self.dataSource removeAllItems];
-                [self reloadTableView];
+                [self reloadCollectionView];
             }
             [model reload];
         }
@@ -512,7 +522,7 @@
 {
     if (self.clearItemsWhenModelReload) {
         [self.dataSource removeAllItems];
-        [self reloadTableView];
+        [self reloadCollectionView];
     }
     [self reload];
 }
@@ -538,6 +548,11 @@
         
     }];
     
+}
+
+- (void)calculateLayoutContentSize:(VZHTTPListModel *)model
+{
+    //noop;
 }
 
 
@@ -575,7 +590,7 @@
             item.text = @"没有结果";
             item.itemHeight = 44;
             [self.dataSource setItems:@[item] ForSection:section];
-            [self reloadTableView];
+            [self reloadCollectionView];
         }
     }
     

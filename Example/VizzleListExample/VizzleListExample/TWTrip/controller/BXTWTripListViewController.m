@@ -183,6 +183,14 @@
 
 }
 
+- (void)calculateLayoutContentSize:(VZHTTPListModel *)model
+{
+    //noop;
+    BXTWTripListModel* listModel = (BXTWTripListModel* )model;
+    self.layout.scrollViewContentSize = CGSizeMake(CGRectGetWidth(self.collectionView.frame), listModel.contentHeight);
+}
+
+
 //////////////////////////////////////////////////////////// 
 #pragma mark - public method 
 

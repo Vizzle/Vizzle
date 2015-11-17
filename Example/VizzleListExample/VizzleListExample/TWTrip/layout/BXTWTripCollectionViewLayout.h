@@ -6,8 +6,8 @@
 //  Copyright © 2015年 VizLab. All rights reserved.
 //
 
-#import "VZCollectionViewFlowLayout.h"
+#import "VZCollectionViewLayout.h"
 
-@interface BXTWTripCollectionViewLayout : VZCollectionViewFlowLayout
+@interface BXTWTripCollectionViewLayout : VZCollectionViewLayout
 
 @end
