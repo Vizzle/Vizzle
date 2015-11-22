@@ -93,7 +93,6 @@
 @interface VZCollectionViewController(layout)
 
 - (void)changeLayout:(id<VZCollectionViewLayoutInterface> ) layout;
-- (void)calculateLayoutContentSize;
 
 @end
 

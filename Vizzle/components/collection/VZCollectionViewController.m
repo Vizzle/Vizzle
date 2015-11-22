@@ -253,9 +253,6 @@
     {
         [self.dataSource collectionViewControllerDidLoadModel:model];
     }
-    
-    //计算layout，放到这里，看看合不合是
-    [self calculateLayoutContentSize];
 
 }
 
@@ -528,9 +525,7 @@
 #pragma mark - layout 
 
 - (void)changeLayout:(id<VZCollectionViewLayoutInterface>) layout{
-    
-    
-    [self calculateLayoutContentSize];
+
     self.layout = layout;
     [self.collectionView setCollectionViewLayout:(UICollectionViewLayout* )layout animated:YES];
 //    self.collectionView.collectionViewLayout = (UICollectionViewLayout* )layout;
@@ -540,11 +535,6 @@
 
    
     //[self reloadCollectionView];
-}
-
-- (void)calculateLayoutContentSize
-{
-    //noop;
 }
 
 

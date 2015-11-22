@@ -16,14 +16,8 @@
 #import "BXTWTripListViewDataSource.h"
 #import "BXTWTripListViewDelegate.h"
 #import "BXTWTripListItem.h"
+#import "BXTWTripConfig.h"
 
-
-typedef NS_ENUM(NSUInteger,LAYOUT)
-{
-    kList = 0,
-    kWaterflow = 1
-    
-};
 
 
 @interface BXTWTripListViewController()
@@ -53,6 +47,7 @@ typedef NS_ENUM(NSUInteger,LAYOUT)
     if (!_tWTripListModel) {
         _tWTripListModel = [BXTWTripListModel new];
         _tWTripListModel.key = @"__BXTWTripListModel__";
+        _tWTripListModel.layoutType = self.layoutType;
     }
     return _tWTripListModel;
 }
@@ -154,62 +149,11 @@ typedef NS_ENUM(NSUInteger,LAYOUT)
 #pragma mark - @override methods - VZListViewController
 
 
-- (void)calculateLayoutContentSize
+- (void)reload
 {
-    int i=0;
-    int topl = 0;
-    int topr = 0;
-    int w = CGRectGetWidth(self.collectionView.frame);
-    int h = 0;
-    NSArray* items = [self.ds itemsForSection:0];
-    
-    for (BXTWTripListItem* item in items) {
-    
-        if (item.itemHeight == 0)
-        {
-            item.itemHeight = arc4random() % 100 + 160;
-        }
-        
-        if (self.layoutType == kList)
-        {
-            item.itemWidth = w;
-        }
-        else
-        {
-            item.itemWidth = 0.5*w;
-            item.x = i%2 * w*0.5 ;
-            
-            //left
-            if (i%2 == 0)
-            {
-                item.y = topl;
-                topl += item.itemHeight;
-            }
-            //right
-            else
-            {
-                item.y = topr;
-                topr += item.itemHeight;
-            }
-        }
-        
-        h += item.itemHeight;
-        i++;
-        
-        NSLog(@"{x:%.1f,y:%.1f,w:%.1f,h:%.1f}",item.x,item.y,item.itemWidth,item.itemHeight);
-    }
-    
-    if (self.layoutType == kWaterflow) {
-        
-        self.layout.scrollViewContentSize = CGSizeMake(w, MAX(topl, topr));
-    }
-    else
-    {
-        self.layout.scrollViewContentSize = CGSizeMake(w, h);
-    
-    }
+    self.tWTripListModel.layoutType = self.layoutType;
+    [super reload];
 }
-
 
 //////////////////////////////////////////////////////////// 
 #pragma mark - public method 
@@ -224,15 +168,19 @@ typedef NS_ENUM(NSUInteger,LAYOUT)
     if (self.layoutType == kWaterflow) {
         
         self.layoutType = kList;
+        [self.ds fitLayout:self.layoutType];
         [self changeLayout:self.listViewLayout];
        
     }
     else{
     
         self.layoutType = kWaterflow;
+        [self.ds fitLayout:self.layoutType];
         [self changeLayout:self.waterFlowLayout];
     }
 }
+
+
 
 
 @end

@@ -19,7 +19,6 @@
 @implementation VZCollectionViewLayout
 
 @synthesize controller = _controller;
-@synthesize scrollViewContentSize = _scrollViewContentSize;
 
 - (NSMutableArray* )attrs
 {
@@ -80,7 +79,8 @@
 - (CGSize)collectionViewContentSize
 {
     CGRect frame = self.collectionView.frame;
-    return CGSizeMake(fmaxf(frame.size.width, self.scrollViewContentSize.width),fmaxf(frame.size.height, self.scrollViewContentSize.height));
+    CGSize sz = [self calculateScrollViewContentSize];
+    return CGSizeMake(MAX(frame.size.width, sz.width),MAX(frame.size.height, sz.height));
 }
 /**
  *  返回当前scrollview可见区域内，所有item的attribute对象
@@ -169,7 +169,10 @@
     VZCollectionLayoutAttributes attr = {CGRectZero,CATransform3DIdentity,CGAffineTransformIdentity,1,0};
     
     return attr;
-    
+}
+- (CGSize)calculateScrollViewContentSize
+{
+    return CGSizeZero;
 }
 
 

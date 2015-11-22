@@ -13,6 +13,7 @@
 @protocol VZCollectionViewLayoutInterface <NSObject>
 
 @property(nonatomic,weak)VZCollectionViewController* controller;
-@property(nonatomic,assign)CGSize scrollViewContentSize;
+
+- (CGSize)calculateScrollViewContentSize;
 
 @end

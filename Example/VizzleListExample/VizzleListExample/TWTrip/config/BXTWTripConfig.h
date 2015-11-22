@@ -12,6 +12,13 @@
 #ifndef BX_TWTrip_h
 #define BX_TWTrip_h
 
+typedef NS_ENUM(NSUInteger,LAYOUT)
+{
+    kList = 0,
+    kWaterflow = 1
+    
+};
+
 
 #endif
   

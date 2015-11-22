@@ -10,8 +10,11 @@
 
   
 #import "VZCollectionViewDataSource.h"
+#import "BXTWTripConfig.h"
 
 @interface BXTWTripListViewDataSource : VZCollectionViewDataSource
+
+- (void)fitLayout:(LAYOUT)type;
 
 @end
   

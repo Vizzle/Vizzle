@@ -17,8 +17,6 @@
 @implementation VZCollectionViewFlowLayout
 
 @synthesize controller = _controller;
-@synthesize scrollViewContentSize = _scrollViewContentSize;
-
 
 - (CGSize) sizeOfCellAtIndexPath:(NSIndexPath* )indexPath
 {
@@ -59,6 +57,12 @@
 
 - (CGSize) sizeForFooterViewAtSectionIndex:(NSInteger)height
 {
+    return CGSizeZero;
+}
+
+- (CGSize)calculateScrollViewContentSize
+{
+    //don't need
     return CGSizeZero;
 }
 

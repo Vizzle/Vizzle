@@ -60,10 +60,45 @@
     NSMutableArray* list = [NSMutableArray new];
     NSArray* result = JSON[@"result"][@"lists"];
 
+    int w = [UIScreen mainScreen].bounds.size.width;
+    int i=0;
+    int topl = 0;
+    int topr = 0;
+    
     for (NSDictionary* dict in result) {
         
         BXTWTripListItem* item =  [BXTWTripListItem new];
         [item autoKVCBinding:dict];
+        
+    
+        item.itemHeight = arc4random() % 100 + 160;
+        
+        if (self.layoutType == kWaterflow) {
+         
+            item.itemWidth = 0.5*w;
+ 
+        }
+        else{
+            item.itemWidth = w;
+        }
+        
+        item.x = i%2 * w*0.5 ;
+        
+        //left
+        if (i%2 == 0)
+        {
+            item.y = topl;
+            topl += item.itemHeight;
+        }
+        //right
+        else
+        {
+            item.y = topr;
+            topr += item.itemHeight;
+        }
+        
+        
+        i ++;
         [list addObject:item];
     }
 

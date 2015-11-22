@@ -29,6 +29,24 @@
     return 1;
 }
 
+- (void)fitLayout:(LAYOUT)type
+{
+    int w = [UIScreen mainScreen].bounds.size.width;
+    NSArray* items = [self itemsForSection:0];
+    for (VZCollectionItem* item in items) {
+        
+        if (type == kWaterflow) {
+            item.itemWidth = 0.5*w;
+        }
+        else
+        {
+            item.itemWidth = w;
+        }
+    }
+    
+
+}
+
 
 
 

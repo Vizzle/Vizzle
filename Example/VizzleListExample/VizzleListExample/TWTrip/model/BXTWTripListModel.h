@@ -10,10 +10,12 @@
 
   
 #import "VZHTTPListModel.h"
+#import "BXTWTripConfig.h"
 
 @interface BXTWTripListModel : VZHTTPListModel
 
 @property(nonatomic,assign,readonly)CGFloat contentHeight;
+@property(nonatomic,assign)LAYOUT layoutType;
 
 @end
 
