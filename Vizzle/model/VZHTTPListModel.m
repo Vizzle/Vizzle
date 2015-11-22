@@ -192,6 +192,9 @@
         if (list.count > 0) {
             [self.objects addObjectsFromArray:list];
             
+            //处理当前model中的数据
+            [self processCurrentObjects];
+            
         }
         return YES;
     }

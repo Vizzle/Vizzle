@@ -345,6 +345,19 @@
             item.indexPath = indexPath;
             [(VZCollectionCell *)cell setItem:item];
         }
+        
+        
+        //iOS7不支持willdisplaycell的API：
+        //- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(8_0);
+        //因此翻页逻辑在这个方法中实现
+        
+        NSInteger numberOfSections = [self numberOfSectionsInCollectionView:collectionView];
+        if ( indexPath.section == numberOfSections - 1)
+        {
+            NSArray* items = [self itemsForSection:indexPath.section];
+            if (indexPath.row  == items.count - 1 )
+                [self.controller loadMore];
+        }
     }
     
     return cell;

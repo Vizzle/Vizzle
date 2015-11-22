@@ -49,6 +49,14 @@ typedef NS_OPTIONS(NSUInteger, VZPageMode) {
  */
 - (BOOL)canLoadMore;
 
+/**
+ *  处理当前model中的数据
+ *
+ *  @notice:这个方法在model请求完成时调用，并且在异步线程执行
+ *
+ */
+- (void)processCurrentObjects;
+
 
 @end
 

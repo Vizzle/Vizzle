@@ -155,6 +155,12 @@
     [super reload];
 }
 
+- (void)loadMore
+{
+    self.tWTripListModel.layoutType = self.layoutType;
+    [super loadMore];
+}
+
 //////////////////////////////////////////////////////////// 
 #pragma mark - public method 
 

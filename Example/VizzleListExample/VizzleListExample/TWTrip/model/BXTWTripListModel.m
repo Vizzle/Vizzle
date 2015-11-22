@@ -13,6 +13,8 @@
 #import "BXTWTripListItem.h"
 
 @interface BXTWTripListModel()
+{
+}
 
 @end
 
@@ -59,24 +61,33 @@
 
     NSMutableArray* list = [NSMutableArray new];
     NSArray* result = JSON[@"result"][@"lists"];
-
-    int w = [UIScreen mainScreen].bounds.size.width;
-    int i=0;
-    int topl = 0;
-    int topr = 0;
     
     for (NSDictionary* dict in result) {
         
         BXTWTripListItem* item =  [BXTWTripListItem new];
         [item autoKVCBinding:dict];
+        [list addObject:item];
         
+    }
     
+    return list;
+}
+
+- (void)processCurrentObjects
+{
+    int w = [UIScreen mainScreen].bounds.size.width;
+    int i=0;
+    int topl = 0;
+    int topr = 0;
+    
+    for(BXTWTripListItem* item in self.objects)
+    {
         item.itemHeight = arc4random() % 100 + 160;
         
         if (self.layoutType == kWaterflow) {
-         
+            
             item.itemWidth = 0.5*w;
- 
+            
         }
         else{
             item.itemWidth = w;
@@ -96,13 +107,8 @@
             item.y = topr;
             topr += item.itemHeight;
         }
-        
-        
         i ++;
-        [list addObject:item];
     }
-
-    return list;
 }
 
 
