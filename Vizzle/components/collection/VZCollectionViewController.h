@@ -87,13 +87,13 @@
 - (void)endRefreshing;
 
 
+
 @end
 
 @interface VZCollectionViewController(layout)
 
-- (void)changeLayout:(VZCollectionViewLayout* ) layout Animate:(BOOL)aAnimate withCompletionBlock:(BOOL(^)(void))aBlock;
-
-- (void)calculateLayoutContentSize:(VZHTTPListModel* )model;
+- (void)changeLayout:(id<VZCollectionViewLayoutInterface> ) layout;
+- (void)calculateLayoutContentSize;
 
 @end
 

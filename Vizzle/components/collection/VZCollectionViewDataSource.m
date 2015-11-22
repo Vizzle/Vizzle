@@ -293,7 +293,6 @@
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    
     NSArray* items = _itemsForSectionInternal[@(section)];
     return items.count;
 }
@@ -361,6 +360,8 @@
 // The view that is returned must be retrieved from a call to -dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
+ 
+    
     UICollectionReusableView* view = nil;
     
     NSLog(@"kind:%@",kind);

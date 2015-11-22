@@ -27,7 +27,10 @@ typedef struct
 
 @interface VZCollectionViewLayout(attributes)
 
-- (VZCollectionLayoutAttributes) layoutAttributesForCellWithItem:(VZCollectionItem* )item AtIndexPath:(NSIndexPath* ) indexPath;
+- (VZCollectionLayoutAttributes) layoutAttributesForCellWithItem:(VZCollectionItem* )item;
+
+
+//todo:没想好，这个方法该怎么抽象
 - (VZCollectionLayoutAttributes) layoutAttributesForHeaderView:(NSString* )kind AtSectionIndex:(NSInteger) section;
 - (VZCollectionLayoutAttributes) layoutAttributesForFooterView:(NSString* )kind AtSectionIndex:(NSInteger) section;
 

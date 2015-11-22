@@ -15,7 +15,7 @@
 #import "VZCollectionViewLayout.h"
 #import "VZCollectionViewFlowLayout.h"
 
-@interface VZCollectionViewDelegate()<VZCellActionInterface>
+@interface VZCollectionViewDelegate()<VZCellActionInterface,UICollectionViewDelegateFlowLayout>
 
 @property(nonatomic,strong) VZPullToRefreshControl* pullRefreshView;
 
@@ -249,7 +249,7 @@
     if ([layout isKindOfClass:[VZCollectionViewFlowLayout class]]) {
         VZCollectionViewFlowLayout* flowLayout = (VZCollectionViewFlowLayout* )layout;
         
-        return [flowLayout headerReferenceSize];
+        return [flowLayout sizeForHeaderViewAtSectionIndex:section];
     }
     return CGSizeZero;
 }
@@ -259,7 +259,7 @@
     if ([layout isKindOfClass:[VZCollectionViewFlowLayout class]]) {
         VZCollectionViewFlowLayout* flowLayout = (VZCollectionViewFlowLayout* )layout;
         
-        return [flowLayout footerReferenceSize];
+        return [flowLayout sizeForFooterViewAtSectionIndex:section];
     }
     return CGSizeZero;
 }

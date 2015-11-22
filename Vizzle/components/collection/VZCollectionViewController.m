@@ -37,22 +37,22 @@
 - (void)setDataSource:(VZCollectionViewDataSource*)dataSource
 {
     _dataSource = dataSource;
-    self.collectionView.dataSource = dataSource;
     _dataSource.controller = self;
+    self.collectionView.dataSource = dataSource;
 }
 
 - (void)setDelegate:(VZCollectionViewDelegate*)delegate
 {
     _delegate = delegate;
-    self.collectionView.delegate = delegate;
     _delegate.controller = self;
+    self.collectionView.delegate = delegate;
 }
 
 - (void)setLayout:(id<VZCollectionViewLayoutInterface> )layout
 {
     _layout = layout;
-    self.collectionView.collectionViewLayout = (UICollectionViewLayout* )layout;
     _layout.controller = self;
+    //self.collectionView.collectionViewLayout = (UICollectionViewLayout* )layout;
 }
 
 - (void)setKeyModel:(VZHTTPListModel *)keyModel
@@ -255,13 +255,8 @@
     }
     
     //计算layout，放到这里，看看合不合是
-    if (_layout) {
-        [self calculateLayoutContentSize:model];
-    }
-    else
-    {
-        VZAssert(!_layout, @"layout 不能为空!");
-    }
+    [self calculateLayoutContentSize];
+
 }
 
 - (BOOL)canShowModel:(VZHTTPListModel *)model
@@ -532,25 +527,22 @@
 /////////////////////////////////////
 #pragma mark - layout 
 
-- (void)changeLayout:(VZCollectionViewLayout* ) layout Animate:(BOOL)aAnimate withCompletionBlock:(BOOL(^)(void))aBlock
-{
-    _layout = layout;
-    _layout.controller = self;
+- (void)changeLayout:(id<VZCollectionViewLayoutInterface>) layout{
     
-    // __weak typeof (self) weakSelf = self;
-    [self.collectionView setCollectionViewLayout:(UICollectionViewLayout* )layout animated:aAnimate completion:^(BOOL finished) {
-        
-        //weakSelf.collectionView.collectionViewLayout = (UICollectionViewLayout* )layout;
-        
-        if (aBlock) {
-            aBlock();
-        }
-        
-    }];
     
+    [self calculateLayoutContentSize];
+    self.layout = layout;
+    [self.collectionView setCollectionViewLayout:(UICollectionViewLayout* )layout animated:YES];
+//    self.collectionView.collectionViewLayout = (UICollectionViewLayout* )layout;
+//    [self.collectionView setCollectionViewLayout:(UICollectionViewLayout* )layout animated:NO];
+//    [self.collectionView.collectionViewLayout invalidateLayout];
+    [self.collectionView reloadData];
+
+   
+    //[self reloadCollectionView];
 }
 
-- (void)calculateLayoutContentSize:(VZHTTPListModel *)model
+- (void)calculateLayoutContentSize
 {
     //noop;
 }

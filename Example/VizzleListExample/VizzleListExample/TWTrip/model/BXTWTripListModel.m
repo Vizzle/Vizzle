@@ -59,49 +59,17 @@
 
     NSMutableArray* list = [NSMutableArray new];
     NSArray* result = JSON[@"result"][@"lists"];
-    
-    int i=0;
-    int topl = 0;
-    int topr = 0;
-    int w = [UIScreen mainScreen].bounds.size.width/2 ;
+
     for (NSDictionary* dict in result) {
         
         BXTWTripListItem* item =  [BXTWTripListItem new];
-        item.itemWidth  = w;
-        item.itemHeight = [self randomHeight];
-        
-        item.x = i%2 * w ;
-        
-        //left
-        if (i%2 == 0)
-        {
-            item.y = topl;
-            topl += item.itemHeight;
-        }
-        //right
-        else
-        {
-            item.y = topr;
-            topr += item.itemHeight;
-        }
-        
-
         [item autoKVCBinding:dict];
         [list addObject:item];
-        i ++;
     }
-    
-    _contentHeight = MAX(topl, topr);
 
     return list;
 }
 
-
-- (CGFloat)randomHeight
-{
-    int value = arc4random() % 100 + 160;
-    return value;
-}
 
 @end
 

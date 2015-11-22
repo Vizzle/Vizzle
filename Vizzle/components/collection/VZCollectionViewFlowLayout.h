@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "VZCollectionViewLayoutInterface.h"
 @class VZCollectionItem;
-@interface VZCollectionViewFlowLayout : UICollectionViewFlowLayout<VZCollectionViewLayoutInterface,UICollectionViewDelegateFlowLayout>
+@interface VZCollectionViewFlowLayout : UICollectionViewFlowLayout<VZCollectionViewLayoutInterface>
 
 @property(nonatomic,weak)VZCollectionViewController* controller;
 

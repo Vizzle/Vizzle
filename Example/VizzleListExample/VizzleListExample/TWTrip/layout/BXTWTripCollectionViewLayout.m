@@ -7,17 +7,17 @@
 //
 
 #import "BXTWTripCollectionViewLayout.h"
+#import "BXTWTripListItem.h"
 
 @implementation BXTWTripCollectionViewLayout
 
 @synthesize scrollViewContentSize = _scrollViewContentSize;
 
 
-- (VZCollectionLayoutAttributes) layoutAttributesForCellWithItem:(VZCollectionItem* )item AtIndexPath:(NSIndexPath* ) indexPath
+- (VZCollectionLayoutAttributes) layoutAttributesForCellWithItem:(BXTWTripListItem* )item
 {
     
     VZCollectionLayoutAttributes attr;
-    
     attr.frame = CGRectMake(item.x, item.y, item.itemWidth, item.itemHeight);
     attr.transform3D = CATransform3DIdentity;
     attr.tranform2D = CGAffineTransformIdentity;

@@ -12,16 +12,28 @@
 #import "BXTWTripListViewController.h"
 #import "BXTWTripListModel.h" 
 #import "BXTWTripCollectionViewLayout.h"
+#import "BXTWTripListViewLayout.h"
 #import "BXTWTripListViewDataSource.h"
 #import "BXTWTripListViewDelegate.h"
+#import "BXTWTripListItem.h"
+
+
+typedef NS_ENUM(NSUInteger,LAYOUT)
+{
+    kList = 0,
+    kWaterflow = 1
+    
+};
+
 
 @interface BXTWTripListViewController()
 
- 
+@property(nonatomic,assign)LAYOUT layoutType;
 @property(nonatomic,strong)BXTWTripListModel *tWTripListModel; 
 @property(nonatomic,strong)BXTWTripListViewDataSource *ds;
 @property(nonatomic,strong)BXTWTripListViewDelegate *dl;
 @property(nonatomic,strong)BXTWTripCollectionViewLayout* waterFlowLayout;
+@property(nonatomic,strong)BXTWTripListViewLayout* listViewLayout;
 
 @end
 
@@ -71,6 +83,14 @@
     return _waterFlowLayout;
 }
 
+- (BXTWTripListViewLayout* )listViewLayout
+{
+    if (!_listViewLayout) {
+        _listViewLayout = [BXTWTripListViewLayout new];
+    }
+    return _listViewLayout;
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - life cycle methods
@@ -87,11 +107,13 @@
 {
     [super viewDidLoad];
     
+    self.layoutType = kWaterflow;
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(onLayoutChanged:)];
+    
     //1,config your tableview
     self.collectionView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-   // self.collectionView.backgroundColor = [UIColor colorWithRed:189.0/255.0 green:247/255.0 blue:251/255.0 alpha:1];
     self.collectionView.showsVerticalScrollIndicator = YES;
-   // self.collectionView.separatorStyle = YES;
     
     //2,set some properties:下拉刷新，自动翻页
     self.needLoadMore = YES;
@@ -114,45 +136,6 @@
     [self load];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    //todo..
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    //todo..
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    
-    //todo..
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    
-    //todo..
-}
-
-- (void)didReceiveMemoryWarning {
-    
-    [super didReceiveMemoryWarning];
-    
-}
-
--(void)dealloc {
-    
-    //todo..
-}
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController
 
@@ -170,24 +153,61 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZListViewController
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  
-  //todo...
-  
-}
 
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath component:(NSDictionary *)bundle{
-
-  //todo:... 
-
-}
-
-- (void)calculateLayoutContentSize:(VZHTTPListModel *)model
+- (void)calculateLayoutContentSize
 {
-    //noop;
-    BXTWTripListModel* listModel = (BXTWTripListModel* )model;
-    self.layout.scrollViewContentSize = CGSizeMake(CGRectGetWidth(self.collectionView.frame), listModel.contentHeight);
+    int i=0;
+    int topl = 0;
+    int topr = 0;
+    int w = CGRectGetWidth(self.collectionView.frame);
+    int h = 0;
+    NSArray* items = [self.ds itemsForSection:0];
+    
+    for (BXTWTripListItem* item in items) {
+    
+        if (item.itemHeight == 0)
+        {
+            item.itemHeight = arc4random() % 100 + 160;
+        }
+        
+        if (self.layoutType == kList)
+        {
+            item.itemWidth = w;
+        }
+        else
+        {
+            item.itemWidth = 0.5*w;
+            item.x = i%2 * w*0.5 ;
+            
+            //left
+            if (i%2 == 0)
+            {
+                item.y = topl;
+                topl += item.itemHeight;
+            }
+            //right
+            else
+            {
+                item.y = topr;
+                topr += item.itemHeight;
+            }
+        }
+        
+        h += item.itemHeight;
+        i++;
+        
+        NSLog(@"{x:%.1f,y:%.1f,w:%.1f,h:%.1f}",item.x,item.y,item.itemWidth,item.itemHeight);
+    }
+    
+    if (self.layoutType == kWaterflow) {
+        
+        self.layout.scrollViewContentSize = CGSizeMake(w, MAX(topl, topr));
+    }
+    else
+    {
+        self.layout.scrollViewContentSize = CGSizeMake(w, h);
+    
+    }
 }
 
 
@@ -199,6 +219,20 @@
 //////////////////////////////////////////////////////////// 
 #pragma mark - private callback method 
 
+- (void)onLayoutChanged:(id)sender
+{
+    if (self.layoutType == kWaterflow) {
+        
+        self.layoutType = kList;
+        [self changeLayout:self.listViewLayout];
+       
+    }
+    else{
+    
+        self.layoutType = kWaterflow;
+        [self changeLayout:self.waterFlowLayout];
+    }
+}
 
 
 @end

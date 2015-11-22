@@ -7,9 +7,10 @@
 //
 
 #import "BXTWTripListViewLayout.h"
+#import "BXTWTripListItem.h"
 
 @implementation BXTWTripListViewLayout
 
-@synthesize scrollViewContentSize = _scrollViewContentSize;
+
 
 @end

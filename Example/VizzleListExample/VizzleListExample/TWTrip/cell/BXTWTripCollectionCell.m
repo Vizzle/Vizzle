@@ -43,8 +43,7 @@
 {
     [super layoutSubviews];
     
-    BXTWTripListItem* item = (BXTWTripListItem* )self.item;
-    
+    BXTWTripListItem* item = (BXTWTripListItem* )self.item;    
     self.icon.frame = CGRectMake(0, 0, item.itemWidth, item.itemHeight);
     
     
