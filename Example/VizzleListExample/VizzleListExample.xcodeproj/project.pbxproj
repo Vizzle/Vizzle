@@ -201,6 +201,7 @@
 		45CE94BC1AF67BFD00144AA4 /* VZTimelineSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTimelineSubView.h; sourceTree = "<group>"; };
 		45CE94BD1AF67BFD00144AA4 /* VZTimelineSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTimelineSubView.m; sourceTree = "<group>"; };
 		45CE94CF1AF67C0A00144AA4 /* VizzleListExampleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VizzleListExampleTests.m; sourceTree = "<group>"; };
+		45D78B981C02B699001C5918 /* VZCollectionViewConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VZCollectionViewConfig.h; sourceTree = "<group>"; };
 		45F73EDA1B4A8AD700477595 /* VZHTTPResponseDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseDataCache.h; sourceTree = "<group>"; };
 		45F73EDB1B4A8AD700477595 /* VZHTTPResponseDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPResponseDataCache.m; sourceTree = "<group>"; };
 		45F73EFC1B4A990200477595 /* VZHTTPResponseDataCacheInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseDataCacheInterface.h; sourceTree = "<group>"; };
@@ -334,6 +335,7 @@
 				454883871BF8248E00A2426D /* VZCollectionViewLayout.m */,
 				458E0DA81BF9854B00D8E704 /* VZCollectionViewFlowLayout.h */,
 				458E0DA91BF9854B00D8E704 /* VZCollectionViewFlowLayout.m */,
+				45D78B981C02B699001C5918 /* VZCollectionViewConfig.h */,
 			);
 			path = collection;
 			sourceTree = "<group>";

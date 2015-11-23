@@ -92,7 +92,7 @@
 
 @interface VZCollectionViewController(layout)
 
-- (void)changeLayout:(id<VZCollectionViewLayoutInterface> ) layout;
+- (void)changeLayout:(id<VZCollectionViewLayoutInterface> ) layout animated:(BOOL)b;
 
 @end
 

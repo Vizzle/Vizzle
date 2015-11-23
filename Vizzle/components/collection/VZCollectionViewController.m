@@ -10,6 +10,7 @@
 #import "VZCollectionViewDataSource.h"
 #import "VZCollectionViewDelegate.h"
 #import "VZCollectionViewLayoutInterface.h"
+#import "VZCollectionViewConfig.h"
 
 @interface VZCollectionViewController()
 
@@ -179,7 +180,9 @@
 {
     [super viewDidLoad];
     
-    
+    //register header view for section
+//    [self.collectionView registerClass:[UIView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withReuseIdentifier:kSupplementaryViewKindOfSectionHeader];
+//    [self.collectionView registerClass:[UIView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionFooter" withReuseIdentifier:kSupplementaryViewKindOfSecionFooter];
 }
 
 - (void)viewDidUnload
@@ -322,6 +325,7 @@
             if (model.sectionNumber == [self.collectionView.dataSource numberOfSectionsInCollectionView:self.collectionView]-1) {
                 
                 if (self.footerViewLoading) {
+                
                    // self.collectionView. = self.footerViewLoading;
                 }
                 else
@@ -524,17 +528,11 @@
 /////////////////////////////////////
 #pragma mark - layout 
 
-- (void)changeLayout:(id<VZCollectionViewLayoutInterface>) layout{
+- (void)changeLayout:(id<VZCollectionViewLayoutInterface> ) layout animated:(BOOL)b{
 
     self.layout = layout;
-    [self.collectionView setCollectionViewLayout:(UICollectionViewLayout* )layout animated:YES];
-//    self.collectionView.collectionViewLayout = (UICollectionViewLayout* )layout;
-//    [self.collectionView setCollectionViewLayout:(UICollectionViewLayout* )layout animated:NO];
-//    [self.collectionView.collectionViewLayout invalidateLayout];
+    [self.collectionView setCollectionViewLayout:(UICollectionViewLayout* )layout animated:b];
     [self.collectionView reloadData];
-
-   
-    //[self reloadCollectionView];
 }
 
 

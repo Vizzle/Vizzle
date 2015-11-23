@@ -43,8 +43,6 @@
             item.itemWidth = w;
         }
     }
-    
-
 }
 
 

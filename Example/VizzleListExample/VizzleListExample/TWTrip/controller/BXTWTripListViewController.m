@@ -111,7 +111,7 @@
     self.collectionView.showsVerticalScrollIndicator = YES;
     
     //2,set some properties:下拉刷新，自动翻页
-    self.needLoadMore = YES;
+    //self.needLoadMore = YES;
     self.needPullRefresh = YES;
 
     
@@ -175,14 +175,14 @@
         
         self.layoutType = kList;
         [self.ds fitLayout:self.layoutType];
-        [self changeLayout:self.listViewLayout];
+        [self changeLayout:self.listViewLayout animated:YES];
        
     }
     else{
     
         self.layoutType = kWaterflow;
         [self.ds fitLayout:self.layoutType];
-        [self changeLayout:self.waterFlowLayout];
+        [self changeLayout:self.waterFlowLayout animated:YES];
     }
 }
 
