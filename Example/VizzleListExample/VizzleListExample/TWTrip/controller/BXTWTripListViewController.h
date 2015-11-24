@@ -10,11 +10,12 @@
 
   
 #import "VZCollectionViewController.h"
+#import "BXTWTripConfig.h"
 
 
 @interface BXTWTripListViewController : VZCollectionViewController
 
-
+@property(nonatomic,assign,readonly)LAYOUT layoutType;
 
 @end
   

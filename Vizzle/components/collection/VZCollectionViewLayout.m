@@ -28,8 +28,7 @@
     return _attrs;
 }
 
-//--hooks:
-
+//--调用次序:
 //--prepareLayout
 //--collectionViewContentSize
 //--layoutAttribuetsForElementsInRect
@@ -70,25 +69,13 @@
     }];
 }
 
-/**
- *  自定义collectionview要指定
- *  scrollview的content size
- *
- *  @return contentsize大小
- */
 - (CGSize)collectionViewContentSize
 {
     CGRect frame = self.collectionView.frame;
     CGSize sz = [self calculateScrollViewContentSize];
     return CGSizeMake(MAX(frame.size.width, sz.width),MAX(frame.size.height, sz.height));
 }
-/**
- *  返回当前scrollview可见区域内，所有item的attribute对象
- *
- *  @param rect scrollview可见范围
- *
- *  @return attribute的数组
- */
+
 - (NSArray* )layoutAttributesForElementsInRect:(CGRect)rect
 {
     return self.attrs;
@@ -96,6 +83,8 @@
 
 - (UICollectionViewLayoutAttributes* )layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+ //   UICollectionViewLayoutAttributes* attribuets = [super layoutAttributesForItemAtIndexPath:indexPath];
     NSArray* items = self.controller.dataSource.itemsForSection[@(indexPath.section)];
     VZCollectionItem* item = items[indexPath.item];
     
@@ -113,34 +102,34 @@
     return attributes;
 }
 
-//- (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-//{
-//   //   NSLog(@"%s",__PRETTY_FUNCTION__);
-//    
-//    UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:kind withIndexPath:indexPath];
-//    
-//    VZCollectionLayoutAttributes attr = [self layoutAttributesForHeaderView:kind AtSectionIndex:indexPath.section];
-//    
-//    attributes.frame = attr.frame;
-//    attributes.center = CGPointMake(attr.frame.origin.x + 0.5*CGRectGetWidth(attr.frame), attr.frame.origin.y+0.5*CGRectGetHeight(attr.frame));
-//    attributes.size = CGSizeMake(attr.frame.size.width, attr.frame.size.height);
-//    attributes.transform = attr.tranform2D;
-//    attributes.transform3D = attr.transform3D;
-//    attributes.alpha = attr.alpha;
-//    attributes.zIndex = attr.zIndex;
-//    
-//    return attributes;
-//}
-//- (UICollectionViewLayoutAttributes *)layoutAttributesForDecorationViewOfKind:(NSString*)decorationViewKind atIndexPath:(NSIndexPath *)indexPath
-//{
-//    UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:decorationViewKind withIndexPath:indexPath];
-//    
-//    //todo:/...
-//    //  NSLog(@"%s",__PRETTY_FUNCTION__);
-//    
-//    
-//    return attributes;
-//}
+- (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+   //   NSLog(@"%s",__PRETTY_FUNCTION__);
+    
+    UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:kind withIndexPath:indexPath];
+    
+    VZCollectionLayoutAttributes attr = [self layoutAttributesForHeaderView:kind AtSectionIndex:indexPath.section];
+    
+    attributes.frame = attr.frame;
+    attributes.center = CGPointMake(attr.frame.origin.x + 0.5*CGRectGetWidth(attr.frame), attr.frame.origin.y+0.5*CGRectGetHeight(attr.frame));
+    attributes.size = CGSizeMake(attr.frame.size.width, attr.frame.size.height);
+    attributes.transform = attr.tranform2D;
+    attributes.transform3D = attr.transform3D;
+    attributes.alpha = attr.alpha;
+    attributes.zIndex = attr.zIndex;
+    
+    return attributes;
+}
+
+
+- (UICollectionViewLayoutAttributes *)layoutAttributesForDecorationViewOfKind:(NSString*)decorationViewKind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:decorationViewKind withIndexPath:indexPath];
+    
+    //todo:/...
+    return attributes;
+}
+
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
 {

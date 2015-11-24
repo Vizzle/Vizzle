@@ -291,6 +291,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UICollectionViewDataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 0;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     NSArray* items = _itemsForSectionInternal[@(section)];
@@ -358,6 +364,7 @@
             if (indexPath.row  == items.count - 1 )
                 [self.controller loadMore];
         }
+        
     }
     
     return cell;
@@ -365,10 +372,6 @@
 }
 
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 0;
-}
 
 // The view that is returned must be retrieved from a call to -dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath

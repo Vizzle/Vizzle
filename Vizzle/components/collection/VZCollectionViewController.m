@@ -181,8 +181,8 @@
     [super viewDidLoad];
     
     //register header view for section
-//    [self.collectionView registerClass:[UIView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withReuseIdentifier:kSupplementaryViewKindOfSectionHeader];
-//    [self.collectionView registerClass:[UIView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionFooter" withReuseIdentifier:kSupplementaryViewKindOfSecionFooter];
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withReuseIdentifier:kSupplementaryViewKindOfSectionHeader];
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionFooter" withReuseIdentifier:kSupplementaryViewKindOfSecionFooter];
 }
 
 - (void)viewDidUnload

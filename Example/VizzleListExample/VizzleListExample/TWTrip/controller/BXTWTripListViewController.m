@@ -16,13 +16,11 @@
 #import "BXTWTripListViewDataSource.h"
 #import "BXTWTripListViewDelegate.h"
 #import "BXTWTripListItem.h"
-#import "BXTWTripConfig.h"
-
 
 
 @interface BXTWTripListViewController()
 
-@property(nonatomic,assign)LAYOUT layoutType;
+
 @property(nonatomic,strong)BXTWTripListModel *tWTripListModel; 
 @property(nonatomic,strong)BXTWTripListViewDataSource *ds;
 @property(nonatomic,strong)BXTWTripListViewDelegate *dl;
@@ -47,7 +45,7 @@
     if (!_tWTripListModel) {
         _tWTripListModel = [BXTWTripListModel new];
         _tWTripListModel.key = @"__BXTWTripListModel__";
-        _tWTripListModel.layoutType = self.layoutType;
+        _tWTripListModel.layoutType = _layoutType;
     }
     return _tWTripListModel;
 }
@@ -102,7 +100,7 @@
 {
     [super viewDidLoad];
     
-    self.layoutType = kWaterflow;
+    _layoutType = kWaterflow;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(onLayoutChanged:)];
     
@@ -111,7 +109,7 @@
     self.collectionView.showsVerticalScrollIndicator = YES;
     
     //2,set some properties:下拉刷新，自动翻页
-    //self.needLoadMore = YES;
+    self.needLoadMore = YES;
     self.needPullRefresh = YES;
 
     
@@ -173,14 +171,14 @@
 {
     if (self.layoutType == kWaterflow) {
         
-        self.layoutType = kList;
+        _layoutType = kList;
         [self.ds fitLayout:self.layoutType];
         [self changeLayout:self.listViewLayout animated:YES];
        
     }
     else{
     
-        self.layoutType = kWaterflow;
+        _layoutType = kWaterflow;
         [self.ds fitLayout:self.layoutType];
         [self changeLayout:self.waterFlowLayout animated:YES];
     }

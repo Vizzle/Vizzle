@@ -67,6 +67,7 @@
     {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.opaque  = YES;
+        _tableView.rowHeight = UITableViewAutomaticDimension; 
         _tableView.separatorStyle = NO;
         _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _tableView.dataSource = nil;
@@ -150,7 +151,6 @@
     [super viewDidLoad];
     
     [self.view addSubview:self.tableView];
-
 }
 - (void)viewDidUnload
 {

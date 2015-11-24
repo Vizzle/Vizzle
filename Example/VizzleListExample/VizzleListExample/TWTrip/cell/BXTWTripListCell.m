@@ -75,10 +75,6 @@
     return self;
 }
 
-+ (CGFloat) tableView:(UITableView *)tableView variantRowHeightForItem:(id)item AtIndex:(NSIndexPath *)indexPath
-{
-    return 215;
-}
 
 - (void)setItem:(BXTWTripListItem *)item
 {
