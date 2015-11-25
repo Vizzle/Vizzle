@@ -15,7 +15,8 @@
 {
     
     VZCollectionLayoutAttributes attr;
-    attr.frame = CGRectMake(item.x, item.y, item.itemWidth, item.itemHeight);
+    CGRect itemRect = CGRectMake(item.x, item.y, item.itemWidth, item.itemHeight);
+    attr.frame = CGRectInset(itemRect, 5, 5);
     attr.transform3D = CATransform3DIdentity;
     attr.tranform2D = CGAffineTransformIdentity;
     attr.alpha = 1.0f;

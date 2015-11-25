@@ -83,23 +83,26 @@
 
 - (UICollectionViewLayoutAttributes* )layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (indexPath.item >= self.attrs.count) {
+        return nil;
+    }
+    return self.attrs[indexPath.item];
  //   UICollectionViewLayoutAttributes* attribuets = [super layoutAttributesForItemAtIndexPath:indexPath];
-    NSArray* items = self.controller.dataSource.itemsForSection[@(indexPath.section)];
-    VZCollectionItem* item = items[indexPath.item];
-    
-    UICollectionViewLayoutAttributes* attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-    
-    VZCollectionLayoutAttributes attr = [self layoutAttributesForCellWithItem:item];
-    attributes.frame = attr.frame;
-    attributes.center = CGPointMake(attr.frame.origin.x + 0.5*CGRectGetWidth(attr.frame), attr.frame.origin.y+0.5*CGRectGetHeight(attr.frame));
-    attributes.size = CGSizeMake(attr.frame.size.width, attr.frame.size.height);
-    attributes.transform = attr.tranform2D;
-    attributes.transform3D = attr.transform3D;
-    attributes.alpha = attr.alpha;
-    attributes.zIndex = attr.zIndex;
-    
-    return attributes;
+//    NSArray* items = self.controller.dataSource.itemsForSection[@(indexPath.section)];
+//    VZCollectionItem* item = items[indexPath.item];
+//    
+//    UICollectionViewLayoutAttributes* attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
+//    
+//    VZCollectionLayoutAttributes attr = [self layoutAttributesForCellWithItem:item];
+//    attributes.frame = attr.frame;
+//    attributes.center = CGPointMake(attr.frame.origin.x + 0.5*CGRectGetWidth(attr.frame), attr.frame.origin.y+0.5*CGRectGetHeight(attr.frame));
+//    attributes.size = CGSizeMake(attr.frame.size.width, attr.frame.size.height);
+//    attributes.transform = attr.tranform2D;
+//    attributes.transform3D = attr.transform3D;
+//    attributes.alpha = attr.alpha;
+//    attributes.zIndex = attr.zIndex;
+//    
+//    return attributes;
 }
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
@@ -125,8 +128,16 @@
 - (UICollectionViewLayoutAttributes *)layoutAttributesForDecorationViewOfKind:(NSString*)decorationViewKind atIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:decorationViewKind withIndexPath:indexPath];
+    VZCollectionLayoutAttributes attr = [self layoutAttributesForFooterView:decorationViewKind AtSectionIndex:indexPath.section];
     
-    //todo:/...
+    attributes.frame = attr.frame;
+    attributes.center = CGPointMake(attr.frame.origin.x + 0.5*CGRectGetWidth(attr.frame), attr.frame.origin.y+0.5*CGRectGetHeight(attr.frame));
+    attributes.size = CGSizeMake(attr.frame.size.width, attr.frame.size.height);
+    attributes.transform = attr.tranform2D;
+    attributes.transform3D = attr.transform3D;
+    attributes.alpha = attr.alpha;
+    attributes.zIndex = attr.zIndex;
+    
     return attributes;
 }
 

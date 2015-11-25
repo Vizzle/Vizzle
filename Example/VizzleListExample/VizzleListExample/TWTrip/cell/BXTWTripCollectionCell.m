@@ -8,9 +8,12 @@
 
 #import "BXTWTripCollectionCell.h"
 #import "BXTWTripListItem.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface BXTWTripCollectionCell()
 
+//@property(nonatomic,strong)CALayer* placeholderLayer;
+//
 @property(nonatomic,strong) UIView* containerView;
 @property(nonatomic,strong) UIImageView* poster;
 @property(nonatomic,strong) UIImageView* icon;
@@ -28,7 +31,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor colorWithRed:189.0/255.0 green:247/255.0 blue:251/255.0 alpha:1];;
+        self.backgroundColor = [UIColor colorWithRed:189.0/255.0 green:247/255.0 blue:251/255.0 alpha:1];
+       
         //todo: add some UI code
         self.containerView = [[UIView alloc]initWithFrame:CGRectZero];
         self.containerView.layer.cornerRadius = 5.0f;
@@ -88,9 +92,9 @@
     [super layoutSubviews];
     
     BXTWTripListItem* item = (BXTWTripListItem* )self.item;
+
     CGRect parentRect = CGRectMake(0, 0, item.itemWidth, item.itemHeight);
     
-  
     self.containerView.frame    = CGRectInset(parentRect, 10, 10);
     self.poster.frame           = CGRectMake(0, 0,CGRectGetWidth(parentRect),CGRectGetHeight(parentRect));
     self.icon.frame             = CGRectMake(10, CGRectGetHeight(self.containerView.frame)-36, 30, 30);

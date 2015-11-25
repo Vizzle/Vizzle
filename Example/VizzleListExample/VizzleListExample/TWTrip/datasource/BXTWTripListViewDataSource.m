@@ -14,6 +14,7 @@
 #import "BXTWTripListCell.h"
 #import "BXTWTripConfig.h"
 #import "BXTWTripListViewController.h"
+#import "BXTWTripAsyncCollectionCell.h"
 
 @interface BXTWTripListViewDataSource()
 
@@ -23,14 +24,8 @@
 
 - (Class)cellClassForItem:(id)item AtIndex:(NSIndexPath *)indexPath{
 
-    BXTWTripListViewController* controller = (BXTWTripListViewController* )self.controller;
-    if (controller.layoutType == kList) {
-        return [BXTWTripCollectionCell class];
-    }
-    else
-    {
-        return [BXTWTripCollectionCell class];
-    }
+    return [BXTWTripAsyncCollectionCell class];
+    
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView

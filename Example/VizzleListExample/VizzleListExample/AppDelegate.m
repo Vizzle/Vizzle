@@ -20,8 +20,8 @@
     
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [VZInspector setClassPrefixName:@"VZ"];
-       // [VZInspector setShouldHandleCrash:true];
+        [VZInspector setClassPrefixName:@"BX"];
+        [VZInspector setShouldHandleCrash:true];
         [VZInspector setShouldHookNetworkRequest:true];
         [VZInspector showOnStatusBar];
     });

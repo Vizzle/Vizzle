@@ -65,6 +65,8 @@
 		45CE94CD1AF67BFD00144AA4 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CE94BA1AF67BFD00144AA4 /* placeholder@2x.png */; };
 		45CE94CE1AF67BFD00144AA4 /* VZTimelineSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CE94BD1AF67BFD00144AA4 /* VZTimelineSubView.m */; };
 		45CE94D01AF67C0A00144AA4 /* VizzleListExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CE94CF1AF67C0A00144AA4 /* VizzleListExampleTests.m */; };
+		45D6F80B1C0494C200159418 /* BXTWTripAsyncCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6F80A1C0494C200159418 /* BXTWTripAsyncCollectionCell.m */; };
+		45D6F80F1C05553200159418 /* BXTWAyncImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6F80E1C05553200159418 /* BXTWAyncImageCache.m */; };
 		45F73EDD1B4A8AD700477595 /* VZHTTPResponseDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F73EDB1B4A8AD700477595 /* VZHTTPResponseDataCache.m */; };
 		AFD37A9D19D83F8F0077CE06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37A9C19D83F8F0077CE06 /* main.m */; };
 		AFD37AA019D83F8F0077CE06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37A9F19D83F8F0077CE06 /* AppDelegate.m */; };
@@ -201,6 +203,10 @@
 		45CE94BC1AF67BFD00144AA4 /* VZTimelineSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTimelineSubView.h; sourceTree = "<group>"; };
 		45CE94BD1AF67BFD00144AA4 /* VZTimelineSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTimelineSubView.m; sourceTree = "<group>"; };
 		45CE94CF1AF67C0A00144AA4 /* VizzleListExampleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VizzleListExampleTests.m; sourceTree = "<group>"; };
+		45D6F8091C0494C200159418 /* BXTWTripAsyncCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripAsyncCollectionCell.h; sourceTree = "<group>"; };
+		45D6F80A1C0494C200159418 /* BXTWTripAsyncCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripAsyncCollectionCell.m; sourceTree = "<group>"; };
+		45D6F80D1C05553200159418 /* BXTWAyncImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWAyncImageCache.h; sourceTree = "<group>"; };
+		45D6F80E1C05553200159418 /* BXTWAyncImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWAyncImageCache.m; sourceTree = "<group>"; };
 		45D78B981C02B699001C5918 /* VZCollectionViewConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VZCollectionViewConfig.h; sourceTree = "<group>"; };
 		45F73EDA1B4A8AD700477595 /* VZHTTPResponseDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseDataCache.h; sourceTree = "<group>"; };
 		45F73EDB1B4A8AD700477595 /* VZHTTPResponseDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPResponseDataCache.m; sourceTree = "<group>"; };
@@ -425,6 +431,7 @@
 		45B82CFC1B5546110053D51C /* TWTrip */ = {
 			isa = PBXGroup;
 			children = (
+				45D6F80C1C0554F700159418 /* cache */,
 				458E0DA11BF9836C00D8E704 /* layout */,
 				45B82CFD1B5546110053D51C /* cell */,
 				45B82D001B5546110053D51C /* config */,
@@ -446,6 +453,8 @@
 				45B82CFF1B5546110053D51C /* BXTWTripListCell.m */,
 				458E0DAB1BF9C46100D8E704 /* BXTWTripCollectionCell.h */,
 				458E0DAC1BF9C46100D8E704 /* BXTWTripCollectionCell.m */,
+				45D6F8091C0494C200159418 /* BXTWTripAsyncCollectionCell.h */,
+				45D6F80A1C0494C200159418 /* BXTWTripAsyncCollectionCell.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -615,6 +624,15 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		45D6F80C1C0554F700159418 /* cache */ = {
+			isa = PBXGroup;
+			children = (
+				45D6F80D1C05553200159418 /* BXTWAyncImageCache.h */,
+				45D6F80E1C05553200159418 /* BXTWAyncImageCache.m */,
+			);
+			path = cache;
+			sourceTree = "<group>";
+		};
 		45F73EFE1B4A9BAD00477595 /* core */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,6 +716,7 @@
 				AFD37A9419D83F8F0077CE06 /* Frameworks */,
 				AFD37A9519D83F8F0077CE06 /* Resources */,
 				57F5F0FD27224DFE86A8B4ED /* Copy Pods Resources */,
+				61C8AEB457FF77BE196590C2 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -804,6 +823,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		61C8AEB457FF77BE196590C2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C9BBE2529A92466E95525B8B /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -827,6 +861,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				454883741BF8243A00A2426D /* VZFooterViewFactory.m in Sources */,
+				45D6F80B1C0494C200159418 /* BXTWTripAsyncCollectionCell.m in Sources */,
 				454883761BF8243A00A2426D /* VZListDefaultErrorCell.m in Sources */,
 				454883731BF8243A00A2426D /* VZCollectionViewController.m in Sources */,
 				45CE94CB1AF67BFD00144AA4 /* VZTimelineListItem.m in Sources */,
@@ -847,6 +882,7 @@
 				4548837B1BF8243A00A2426D /* VZListViewDelegate.m in Sources */,
 				4548837A1BF8243A00A2426D /* VZListViewDataSource.m in Sources */,
 				456BE9511AFF6DBF0064FBB6 /* VZHTTPNetworkAgent.m in Sources */,
+				45D6F80F1C05553200159418 /* BXTWAyncImageCache.m in Sources */,
 				45B82D141B5546110053D51C /* BXTWTripListCell.m in Sources */,
 				4529DD501ABA99B3009347C2 /* VZListDefaultTextItem.m in Sources */,
 				458E0DAD1BF9C46100D8E704 /* BXTWTripCollectionCell.m in Sources */,
@@ -1005,6 +1041,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PreComplie.pch;
 				INFOPLIST_FILE = VizzleListExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1018,6 +1055,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PreComplie.pch;
 				INFOPLIST_FILE = VizzleListExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
