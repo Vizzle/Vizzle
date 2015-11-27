@@ -18,18 +18,35 @@
 
 @end
 
+/**
+ *  "xbAllowCache": 4,
+	"clientVersion": "1.4.0",
+	"sort": "sort",
+	"order": "desc",
+	"client": "iOS",
+	"start": "0",
+	"size": "20"
+ */
 @implementation BXTWTripListModel
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods
 - (NSDictionary *)dataParams {
     
-    return @{@"country":@"TW",
-             @"uid":@"",
-             @"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex*self.pageSize],
-             @"size":@"10",
-             @"lat":@"",
-             @"lng":@""};
+    return @{
+             @"keyWord": @"历史",
+             @"sort": @"service_default_rank",
+             @"start": [NSString stringWithFormat:@"%ld",(long)self.currentPageIndex*self.pageSize],
+             @"cityAbbr": @"",
+             @"from": @"app_hotsearch",
+             @"showCurrency": @"CNY",
+             @"size": @"10",
+             @"uid": @"17",
+             @"xbAllowCache": @"4",
+             @"clientVersion": @"1.4.0",
+             @"client": @"iOS"
+             };
+
 }
 
 - (NSInteger)pageSize
@@ -41,7 +58,7 @@
 {
     VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
     config.requestMethod = VZHTTPMethodPOST;
-    config.cachePolicy = VZHTTPNetworkURLCachePolicyDefault;
+//    config.cachePolicy = VZHTTPNetworkURLCachePolicyDefault;
     return config;
 }
 
@@ -52,7 +69,8 @@
 
 - (NSString *)methodName {
     
-    return @"http://42.121.16.186:9999/baseservice/getRecommendList";
+   // return @"http://api.cuitrip.com/baseservice/getHomeCardList";
+    return @"http://api.cuitrip.com/baseservice/serviceSearch";
 }
 
 
@@ -62,14 +80,17 @@
     NSMutableArray* list = [NSMutableArray new];
     NSArray* result = JSON[@"result"][@"lists"];
     
-    for (NSDictionary* dict in result) {
+    if (![result isEqual:[NSNull null]]) {
         
-        BXTWTripListItem* item =  [BXTWTripListItem new];
-        [item autoKVCBinding:dict];
-        [list addObject:item];
-        
+        for (NSDictionary* dict in result) {
+            
+            BXTWTripListItem* item =  [BXTWTripListItem new];
+            [item autoKVCBinding:dict];
+            [list addObject:item];
+            
+        }
     }
-    
+ 
     return list;
 }
 
@@ -82,7 +103,10 @@
     
     for(BXTWTripListItem* item in self.objects)
     {
-        item.itemHeight = arc4random() % 100 + 160;
+        if (item.itemHeight == 0) {
+            item.itemHeight = arc4random() % 100 + 160;
+        }
+
         
         if (self.layoutType == kWaterflow) {
             

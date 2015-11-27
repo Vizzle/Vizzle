@@ -169,6 +169,9 @@
 
 - (void)onLayoutChanged:(id)sender
 {
+    [self.collectionView reloadData];
+    return;
+    
     if (self.layoutType == kWaterflow) {
         
         _layoutType = kList;

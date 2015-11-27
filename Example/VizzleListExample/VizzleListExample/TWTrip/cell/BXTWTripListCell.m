@@ -80,10 +80,10 @@
 {
     [super setItem:item];
     
-    [self.poster setImageWithURL:[NSURL URLWithString:item.servicePicUrl] placeholderImage:[UIImage imageNamed:@"default_list.jpg"]];
-    [self.icon setImageWithURL:[NSURL URLWithString:item.headPic] placeholderImage:[UIImage imageNamed:@"default_icon.jpg"]];
-    self.userNameLabel.text = [NSString stringWithFormat:@"%@ @%@",item.userNick,item.serviceAddress];
-    self.posterNameLabel.text = item.serviceName;
+//    [self.poster setImageWithURL:[NSURL URLWithString:item.servicePicUrl] placeholderImage:[UIImage imageNamed:@"default_list.jpg"]];
+//    [self.icon setImageWithURL:[NSURL URLWithString:item.headPic] placeholderImage:[UIImage imageNamed:@"default_icon.jpg"]];
+//    self.userNameLabel.text = [NSString stringWithFormat:@"%@ @%@",item.userNick,item.serviceAddress];
+//    self.posterNameLabel.text = item.serviceName;
     
 }
 

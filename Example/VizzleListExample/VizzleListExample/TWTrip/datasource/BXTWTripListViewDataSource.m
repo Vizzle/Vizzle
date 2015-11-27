@@ -24,7 +24,7 @@
 
 - (Class)cellClassForItem:(id)item AtIndex:(NSIndexPath *)indexPath{
 
-    return [BXTWTripAsyncCollectionCell class];
+    return [BXTWTripCollectionCell class];
     
 }
 

@@ -8,6 +8,13 @@
 
 #import "VZCollectionCell.h"
 
+/**
+ *  calling sequence:
+ *  - prepareForReuse:
+ *  - setItem:
+ *  - sizeThatFits:
+ *  - layoutSubView
+ */
 @implementation VZCollectionCell
 
 ////////////////////////////////////////////////////////////////////////////////////////////

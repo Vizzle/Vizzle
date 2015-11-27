@@ -1,5 +1,5 @@
 //
-//  BXTWAyncImageCache.h
+//  BXTWAsynImageDownloader.h
 //  VizzleListExample
 //
 //  Created by moxin on 15/11/25.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AsyncDisplayKit/ASImageProtocols.h>
 
-@interface BXTWAyncImageCache : NSObject<ASImageCacheProtocol>
+@interface BXTWAsynImageDownloader : NSObject<ASImageDownloaderProtocol>
 
 + (instancetype)sharedInstance;
 

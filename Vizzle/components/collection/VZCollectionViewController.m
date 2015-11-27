@@ -324,7 +324,11 @@
             
             if (model.sectionNumber == [self.collectionView.dataSource numberOfSectionsInCollectionView:self.collectionView]-1) {
                 
+                CGSize sz = self.collectionView.contentSize;
+                int a = 0;
                 if (self.footerViewLoading) {
+                    
+              
                 
                    // self.collectionView. = self.footerViewLoading;
                 }

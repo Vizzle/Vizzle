@@ -20,6 +20,8 @@
 #import "Vizzle.h"
 #import "AFNetworking.h"
 #import "UIKit+AFNetworking.h"
+#import <SDWebImage/SDImageCache.h>
+#import <SDWebImage/SDWebImageManager.h>
 
 #endif
 

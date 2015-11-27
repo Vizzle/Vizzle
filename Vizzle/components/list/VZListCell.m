@@ -9,7 +9,13 @@
 #import "VZListCell.h"
 #import "VZListItem.h"
 
-
+/**
+ *  calling sequence:
+ *  - prepareForReuse:
+ *  - setItem:
+ *  - sizeThatFits:
+ *  - layoutSubView
+ */
 @implementation VZListCell
 
 ////////////////////////////////////////////////////////////////////////////////////////////

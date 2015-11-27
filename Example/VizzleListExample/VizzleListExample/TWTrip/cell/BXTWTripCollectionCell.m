@@ -31,7 +31,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor colorWithRed:189.0/255.0 green:247/255.0 blue:251/255.0 alpha:1];
+//        self.backgroundColor = [UIColor colorWithRed:189.0/255.0 green:247/255.0 blue:251/255.0 alpha:1];
        
         //todo: add some UI code
         self.containerView = [[UIView alloc]initWithFrame:CGRectZero];
@@ -98,7 +98,11 @@
     self.containerView.frame    = CGRectInset(parentRect, 10, 10);
     self.poster.frame           = CGRectMake(0, 0,CGRectGetWidth(parentRect),CGRectGetHeight(parentRect));
     self.icon.frame             = CGRectMake(10, CGRectGetHeight(self.containerView.frame)-36, 30, 30);
+    
+    [CATransaction begin];
+    [CATransaction setValue:@(true) forKey:kCATransactionDisableActions];
     self.gradientLayer.frame    = CGRectMake(0, CGRectGetHeight(self.containerView.frame)-40, CGRectGetWidth(self.containerView.frame),40);
+    [CATransaction commit];
     
     NSInteger r = self.icon.frame.origin.x+self.icon.frame.size.width;
     self.posterNameLabel.frame  = CGRectMake(r+10, self.icon.frame.origin.y, self.frame.size.width-r-40, 14);

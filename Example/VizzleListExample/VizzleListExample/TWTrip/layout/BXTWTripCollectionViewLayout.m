@@ -13,7 +13,7 @@
 
 - (VZCollectionLayoutAttributes) layoutAttributesForCellWithItem:(BXTWTripListItem* )item
 {
-    
+    NSLog(@"%s",__func__);
     VZCollectionLayoutAttributes attr;
     CGRect itemRect = CGRectMake(item.x, item.y, item.itemWidth, item.itemHeight);
     attr.frame = CGRectInset(itemRect, 5, 5);
@@ -27,7 +27,7 @@
 }
 - (CGSize)calculateScrollViewContentSize
 {
-    NSLog(@"begin calculate layout!");
+    NSLog(@"begin calc ulate layout!");
     int i=0;
     int topl = 0;
     int topr = 0;
@@ -47,8 +47,6 @@
             topr += item.itemHeight;
         }
         i++;
-        
-        NSLog(@"{x:%.1f,y:%.1f,w:%.1f,h:%.1f}",item.x,item.y,item.itemWidth,item.itemHeight);
     }
 
     CGSize sz = CGSizeMake(w, MAX(topl, topr));
