@@ -7,13 +7,17 @@
 //
 
 #import "VZCollectionViewDataSource.h"
+#import "VZCollectionViewController.h"
 #import "VZCollectionItem.h"
 #import "VZCollectionCell.h"
 #import "VZCellActionInterface.h"
+#import "VZCollectionSupplementaryView.h"
+#import "VZCollectionSupplementaryItem.h"
 
 @interface VZCollectionViewDataSource()
 {
     NSMutableDictionary* _itemsForSectionInternal;
+    NSMutableDictionary* _supplementaryItemsForSectionInternal;
 }
 
 @end
@@ -31,6 +35,7 @@
 - (NSDictionary*)itemsForSection
 {
     return _itemsForSectionInternal;
+
 }
 
 
@@ -42,6 +47,7 @@
     
     if (self) {
         _itemsForSectionInternal      = [NSMutableDictionary new];
+        _supplementaryItemsForSectionInternal = [NSMutableDictionary new];
         
     }
     return self;
@@ -51,6 +57,8 @@
     _controller = nil;
     [_itemsForSectionInternal removeAllObjects];
     _itemsForSectionInternal = nil;
+    [_supplementaryItemsForSectionInternal removeAllObjects];
+    _supplementaryItemsForSectionInternal = nil;
     
     NSLog(@"[%@]--->dealloc",self.class);
 }
@@ -289,12 +297,50 @@
     
 }
 
+- (BOOL)setSupplementaryItem:(VZCollectionSupplementaryItem *)item forSection:(NSUInteger)section
+{
+    VZAssertMainThread();
+    if (item && [item isKindOfClass:[VZCollectionSupplementaryItem class]]) {
+        _supplementaryItemsForSectionInternal[@(section)] = item;
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)removeSupplementaryItemForSection:(NSUInteger)section
+{
+    VZAssertMainThread();
+    NSUInteger numberOfSection = [self numberOfSectionsInCollectionView:self.controller.collectionView];
+    if (section < numberOfSection) {
+        [_supplementaryItemsForSectionInternal removeObjectForKey:@(section)];
+    }
+    return NO;
+
+}
+
+- (VZCollectionSupplementaryItem* )supplementaryItemForSection:(NSUInteger)section
+{
+    VZAssertMainThread();
+    NSUInteger numberOfSection = [self numberOfSectionsInCollectionView:self.controller.collectionView];
+    if (section < numberOfSection) {
+        
+        VZCollectionSupplementaryItem* item = _supplementaryItemsForSectionInternal[@(section)];
+        if (item) {
+            return item;
+        }
+        else{
+            return nil;
+        }
+    }
+    return nil;
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 0;
+    return [_itemsForSectionInternal count];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -377,49 +423,13 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
  
-    
-    UICollectionReusableView* view = nil;
-    
-    NSLog(@"kind:%@",kind);
-    
-    if ([kind isEqualToString:@"UICollectionElementKindSectionHeader"]) {
-        
-        NSMutableDictionary* map = [self.controller valueForKey:@"headerViewKeyForSection"];
-        NSString* identifier = map[@(indexPath.section)];
-        
-        if (identifier) {
-            view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:identifier forIndexPath:indexPath];
-        }
-        else
-            view = [UICollectionReusableView new];
-        
-        
-    }
-    else if([kind isEqualToString:@"UICollectionElementKindSectionFooter"])
-    {
-        NSMutableDictionary* map = [self.controller valueForKey:@"footerViewKeyForSection"];
-        NSString* identifier = map[@(indexPath.section)];
-        
-        if (identifier) {
-            
-            view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:identifier forIndexPath:indexPath];
-        }
-        else
-            view = [UICollectionReusableView new];
-        
-    }
-    else
-    {
-        //not supposed to happen...
-        view = [UICollectionReusableView new];
-        
-    }
-    
+    VZCollectionSupplementaryView* view = nil;
+    VZCollectionSupplementaryItem* item = [self supplementaryItemForSection:indexPath.section];
+    NSString* identifier = item.reuseIdentifier;
+    view = [collectionView dequeueReusableSupplementaryViewOfKind:item.type withReuseIdentifier:identifier forIndexPath:indexPath];
+    [view setItem:item];
     return view;
 }
-
-
-
 
 @end
 

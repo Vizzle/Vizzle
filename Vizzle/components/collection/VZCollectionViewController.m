@@ -11,6 +11,7 @@
 #import "VZCollectionViewDelegate.h"
 #import "VZCollectionViewLayoutInterface.h"
 #import "VZCollectionViewConfig.h"
+#import "VZCollectionSupplementaryItem.h"
 
 @interface VZCollectionViewController()
 
@@ -114,21 +115,8 @@
     return _layout;
 }
 
-//- (NSMutableDictionary* )headerViewKeyForSection
-//{
-//    if (!_headerViewKeyForSection) {
-//        _headerViewKeyForSection = [NSMutableDictionary new];
-//    }
-//    return _headerViewKeyForSection;
-//}
-//
-//- (NSMutableDictionary* )footerViewKeyForSection
-//{
-//    if (!_footerViewKeyForSection) {
-//        _footerViewKeyForSection = [NSMutableDictionary new];
-//    }
-//    return _footerViewKeyForSection;
-//}
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - life cycle
@@ -160,6 +148,7 @@
     _loadmoreAutomatically = YES;
     _needPullRefresh      = NO;
     _needLoadMore         = NO;
+
 }
 
 
@@ -172,6 +161,7 @@
     _collectionView.dataSource = nil;
     _delegate             = nil;
     _dataSource           = nil;
+
     
 }
 
@@ -179,10 +169,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //register header view for section
-    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withReuseIdentifier:kSupplementaryViewKindOfSectionHeader];
-    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionFooter" withReuseIdentifier:kSupplementaryViewKindOfSecionFooter];
+
 }
 
 - (void)viewDidUnload
@@ -190,10 +177,9 @@
     _collectionView.delegate  =nil;
     _collectionView.dataSource = nil;
     _collectionView = nil;
+
     
     [super viewDidUnload];
-    
-    
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -325,7 +311,6 @@
             if (model.sectionNumber == [self.collectionView.dataSource numberOfSectionsInCollectionView:self.collectionView]-1) {
                 
                 CGSize sz = self.collectionView.contentSize;
-                int a = 0;
                 if (self.footerViewLoading) {
                     
               
@@ -633,5 +618,35 @@
 {
     
 }
+
+@end
+
+@implementation VZCollectionViewController(SupplymentaryView)
+
+- (void)registerHeaderViewClass:(Class)cls WithKey:(NSString*)key ForSection:(NSInteger)section Configuration:(void (^)(UICollectionReusableView *, id))block
+{
+    VZAssertMainThread();
+    //create a supplmentaryItem:
+    VZCollectionSupplementaryItem* item = [VZCollectionSupplementaryItem new];
+    item.reuseIdentifier = key;
+    item.type = UICollectionElementKindSectionHeader;
+    item.viewConfigurationBlock = block;
+    [self.dataSource setSupplementaryItem:item forSection:section];
+    [self.collectionView registerClass:cls forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:key];
+
+}
+- (void)registerFooterViewClass:(Class)cls WithKey:(NSString*)key ForSection:(NSInteger)section Configuration:(void (^)(UICollectionReusableView *, id))block
+{
+    VZAssertMainThread();
+//    [_footerIdentifierForSection setObject:key forKey:@(section)];
+    //create a supplmentaryItem:
+    VZCollectionSupplementaryItem* item = [VZCollectionSupplementaryItem new];
+    item.reuseIdentifier = key;
+    item.viewConfigurationBlock = block;
+    item.type = UICollectionElementKindSectionFooter;
+    [self.dataSource setSupplementaryItem:item forSection:section];
+    [self.collectionView registerClass:cls forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:key];
+}
+
 
 @end

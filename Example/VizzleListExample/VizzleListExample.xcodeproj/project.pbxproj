@@ -47,6 +47,9 @@
 		458E0DA71BF984CF00D8E704 /* BXTWTripCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 458E0DA61BF984CF00D8E704 /* BXTWTripCollectionViewLayout.m */; };
 		458E0DAA1BF9854B00D8E704 /* VZCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 458E0DA91BF9854B00D8E704 /* VZCollectionViewFlowLayout.m */; };
 		458E0DAD1BF9C46100D8E704 /* BXTWTripCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 458E0DAC1BF9C46100D8E704 /* BXTWTripCollectionCell.m */; };
+		4599420D1C08060700486A1D /* BXTWTripLayoutChangeSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4599420C1C08060700486A1D /* BXTWTripLayoutChangeSegment.m */; };
+		459942331C0B0E4300486A1D /* VZCollectionSupplementaryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 459942321C0B0E4300486A1D /* VZCollectionSupplementaryItem.m */; };
+		459942361C0B0E7B00486A1D /* VZCollectionSupplementaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459942351C0B0E7B00486A1D /* VZCollectionSupplementaryView.m */; };
 		45B82D141B5546110053D51C /* BXTWTripListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82CFF1B5546110053D51C /* BXTWTripListCell.m */; };
 		45B82D151B5546110053D51C /* twtrip_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45B82D021B5546110053D51C /* twtrip_meta.json */; };
 		45B82D161B5546110053D51C /* BXTWTripListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D051B5546110053D51C /* BXTWTripListViewController.m */; };
@@ -175,6 +178,12 @@
 		458E0DA91BF9854B00D8E704 /* VZCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		458E0DAB1BF9C46100D8E704 /* BXTWTripCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripCollectionCell.h; sourceTree = "<group>"; };
 		458E0DAC1BF9C46100D8E704 /* BXTWTripCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripCollectionCell.m; sourceTree = "<group>"; };
+		4599420B1C08060700486A1D /* BXTWTripLayoutChangeSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripLayoutChangeSegment.h; sourceTree = "<group>"; };
+		4599420C1C08060700486A1D /* BXTWTripLayoutChangeSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripLayoutChangeSegment.m; sourceTree = "<group>"; };
+		459942311C0B0E4300486A1D /* VZCollectionSupplementaryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionSupplementaryItem.h; sourceTree = "<group>"; };
+		459942321C0B0E4300486A1D /* VZCollectionSupplementaryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionSupplementaryItem.m; sourceTree = "<group>"; };
+		459942341C0B0E7B00486A1D /* VZCollectionSupplementaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionSupplementaryView.h; sourceTree = "<group>"; };
+		459942351C0B0E7B00486A1D /* VZCollectionSupplementaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionSupplementaryView.m; sourceTree = "<group>"; };
 		45B82CFE1B5546110053D51C /* BXTWTripListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripListCell.h; sourceTree = "<group>"; };
 		45B82CFF1B5546110053D51C /* BXTWTripListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripListCell.m; sourceTree = "<group>"; };
 		45B82D011B5546110053D51C /* BXTWTripConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripConfig.h; sourceTree = "<group>"; };
@@ -339,6 +348,10 @@
 				4548835F1BF8243A00A2426D /* VZCollectionViewController.m */,
 				454883891BF8257800A2426D /* VZCollectionItem.h */,
 				4548838A1BF8257800A2426D /* VZCollectionItem.m */,
+				459942311C0B0E4300486A1D /* VZCollectionSupplementaryItem.h */,
+				459942321C0B0E4300486A1D /* VZCollectionSupplementaryItem.m */,
+				459942341C0B0E7B00486A1D /* VZCollectionSupplementaryView.h */,
+				459942351C0B0E7B00486A1D /* VZCollectionSupplementaryView.m */,
 				4548837D1BF8245200A2426D /* VZCollectionCell.h */,
 				4548837E1BF8245200A2426D /* VZCollectionCell.m */,
 				454883801BF8247400A2426D /* VZCollectionViewDataSource.h */,
@@ -544,6 +557,8 @@
 		45B82D131B5546110053D51C /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4599420B1C08060700486A1D /* BXTWTripLayoutChangeSegment.h */,
+				4599420C1C08060700486A1D /* BXTWTripLayoutChangeSegment.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -920,6 +935,7 @@
 				45CE94CA1AF67BFD00144AA4 /* VZTimelineListViewDelegate.m in Sources */,
 				456BE9541AFF6DBF0064FBB6 /* VZHTTPResponseParser.m in Sources */,
 				454883851BF8248300A2426D /* VZCollectionViewDelegate.m in Sources */,
+				459942361C0B0E7B00486A1D /* VZCollectionSupplementaryView.m in Sources */,
 				458E0DAA1BF9854B00D8E704 /* VZCollectionViewFlowLayout.m in Sources */,
 				AFD37AA019D83F8F0077CE06 /* AppDelegate.m in Sources */,
 				45B82D171B5546110053D51C /* BXTWTripListViewDataSource.m in Sources */,
@@ -940,8 +956,10 @@
 				4548837C1BF8243A00A2426D /* VZViewController.m in Sources */,
 				45B82D161B5546110053D51C /* BXTWTripListViewController.m in Sources */,
 				4529DD4F1ABA99B3009347C2 /* VZItem.m in Sources */,
+				459942331C0B0E4300486A1D /* VZCollectionSupplementaryItem.m in Sources */,
 				45CE94CE1AF67BFD00144AA4 /* VZTimelineSubView.m in Sources */,
 				456BE9501AFF6DBF0064FBB6 /* VZHTTPConnectionOperation.m in Sources */,
+				4599420D1C08060700486A1D /* BXTWTripLayoutChangeSegment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

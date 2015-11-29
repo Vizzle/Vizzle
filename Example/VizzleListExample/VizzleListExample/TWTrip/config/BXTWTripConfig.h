@@ -14,10 +14,12 @@
 
 typedef NS_ENUM(NSUInteger,LAYOUT)
 {
-    kList = 0,
-    kWaterflow = 1
+    kList = 1,
+    kWaterflow = 0
     
 };
+
+#define kSegmentHeaderHeight 44;
 
 
 #endif

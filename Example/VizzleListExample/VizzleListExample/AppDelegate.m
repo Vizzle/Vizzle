@@ -21,7 +21,7 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [VZInspector setClassPrefixName:@"BX"];
-        [VZInspector setShouldHandleCrash:true];
+        [VZInspector setShouldHandleCrash:false];
         [VZInspector setShouldHookNetworkRequest:true];
         [VZInspector showOnStatusBar];
     });

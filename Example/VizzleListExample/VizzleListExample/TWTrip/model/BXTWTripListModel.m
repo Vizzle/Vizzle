@@ -11,6 +11,7 @@
 
 #import "BXTWTripListModel.h"
 #import "BXTWTripListItem.h"
+#import "BXTWTripConfig.h"
 
 @interface BXTWTripListModel()
 {
@@ -98,8 +99,8 @@
 {
     int w = [UIScreen mainScreen].bounds.size.width;
     int i=0;
-    int topl = 0;
-    int topr = 0;
+    int topl = kSegmentHeaderHeight;
+    int topr = kSegmentHeaderHeight;
     
     for(BXTWTripListItem* item in self.objects)
     {

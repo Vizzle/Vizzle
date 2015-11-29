@@ -8,20 +8,16 @@
 
 #import "BXTWTripCollectionViewLayout.h"
 #import "BXTWTripListItem.h"
+#import "BXTWTripConfig.h"
 
 @implementation BXTWTripCollectionViewLayout
 
-- (VZCollectionLayoutAttributes) layoutAttributesForCellWithItem:(BXTWTripListItem* )item
+- (VZCollectionLayoutAttributes) layoutAttributesForCellWithItem:(BXTWTripListItem* )item AtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"%s",__func__);
-    VZCollectionLayoutAttributes attr;
+    VZCollectionLayoutAttributes attr = vz_defaultAttributes();
     CGRect itemRect = CGRectMake(item.x, item.y, item.itemWidth, item.itemHeight);
     attr.frame = CGRectInset(itemRect, 5, 5);
-    attr.transform3D = CATransform3DIdentity;
-    attr.tranform2D = CGAffineTransformIdentity;
-    attr.alpha = 1.0f;
-    attr.zIndex = 0;
-
     return attr;
 
 }
@@ -29,8 +25,8 @@
 {
     NSLog(@"begin calc ulate layout!");
     int i=0;
-    int topl = 0;
-    int topr = 0;
+    int topl = kSegmentHeaderHeight;
+    int topr = kSegmentHeaderHeight;
     int w = CGRectGetWidth(self.collectionView.frame);
     NSArray* items = [self.controller.dataSource itemsForSection:0];
     
@@ -48,11 +44,23 @@
         }
         i++;
     }
-
+    
     CGSize sz = CGSizeMake(w, MAX(topl, topr));
     NSLog(@"end calculate layout:%.1f!",sz.height);
     
     return sz;
+}
+
+- (VZCollectionLayoutAttributes)layoutAttributesForHeaderView:(NSString *)identifier AtSectionIndex:(NSInteger)section
+{
+    VZCollectionLayoutAttributes attr = vz_defaultAttributes();
+    
+    if (section == 0) {
+      
+        attr.frame = CGRectMake(0, 0, CGRectGetWidth(self.controller.collectionView.bounds), 44);
+    }
+    
+    return attr;
 }
 
 

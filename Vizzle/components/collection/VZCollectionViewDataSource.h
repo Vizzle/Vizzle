@@ -10,6 +10,7 @@
 
 @class VZCollectionViewController;
 @class VZCollectionItem;
+@class VZCollectionSupplementaryItem;
 @class VZHTTPListModel;
 
 @protocol VZCollectionViewDataSource <UICollectionViewDataSource>
@@ -120,5 +121,19 @@
  *  清除datasource所有数据
  */
 - (void)removeAllItems;
+
+@end
+
+@interface VZCollectionViewDataSource(SupplymentaryView)
+
+/**
+ *  为section设置SupplementaryItem
+ *
+ *  @param item    <VZCollectionSupplementaryItem>
+ *  @param section section
+ */
+- (BOOL)setSupplementaryItem:(VZCollectionSupplementaryItem* )item forSection:(NSUInteger)section;
+- (BOOL)removeSupplementaryItemForSection:(NSUInteger)section;
+- (VZCollectionSupplementaryItem* )supplementaryItemForSection:(NSUInteger)section;
 
 @end

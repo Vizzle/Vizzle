@@ -66,5 +66,19 @@
     return CGSizeZero;
 }
 
+- (VZCollectionLayoutAttributes) layoutAttributesForCellWithItem:(VZCollectionItem* )item AtIndexPath:(NSIndexPath *)indexPath
+{
+    return vz_defaultAttributes();
+
+}
+- (VZCollectionLayoutAttributes) layoutAttributesForHeaderView:(NSString* )identifier AtSectionIndex:(NSInteger) section
+{
+    return vz_defaultAttributes();
+}
+- (VZCollectionLayoutAttributes) layoutAttributesForFooterView:(NSString* )identifier AtSectionIndex:(NSInteger) section
+{
+    return vz_defaultAttributes();
+}
+
 
 @end

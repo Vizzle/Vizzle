@@ -100,8 +100,9 @@
 
 @interface VZCollectionViewController(SupplymentaryView)
 
-- (void)registerHeaderViewClass:(Class)cls WithKey:(NSString*)key ForSection:(NSInteger)section;
-- (void)registerFooterViewClass:(Class)cls WithKey:(NSString*)key ForSection:(NSInteger)section;
+- (void)registerHeaderViewClass:(Class)cls WithKey:(NSString*)key ForSection:(NSInteger)section Configuration:(void(^)(UICollectionReusableView* view, id data))block;
+- (void)registerFooterViewClass:(Class)cls WithKey:(NSString*)key ForSection:(NSInteger)section Configuration:(void(^)(UICollectionReusableView* view, id data))block;
+
 
 @end
 

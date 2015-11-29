@@ -11,6 +11,20 @@
 
 @implementation BXTWTripListViewLayout
 
+- (CGSize)sizeForHeaderViewAtSectionIndex:(NSInteger)section{
 
+    if (section == 0) {
+        return CGSizeMake(CGRectGetWidth(self.controller.collectionView.bounds), 44);
+    }
+    else
+    {
+        return CGSizeZero;
+    }
+}
+
+- (NSInteger) itemSpaceingForSection:(NSInteger)section
+{
+    return 10;
+}
 
 @end

@@ -16,7 +16,7 @@
 #import "BXTWTripListViewDataSource.h"
 #import "BXTWTripListViewDelegate.h"
 #import "BXTWTripListItem.h"
-
+#import "BXTWTripLayoutChangeSegment.h"
 
 @interface BXTWTripListViewController()
 
@@ -102,8 +102,6 @@
     
     _layoutType = kWaterflow;
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(onLayoutChanged:)];
-    
     //1,config your tableview
     self.collectionView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     self.collectionView.showsVerticalScrollIndicator = YES;
@@ -124,7 +122,27 @@
     
     //5,REQUIRED:register model to parent view controller
     [self registerModel:self.keyModel];
-
+    
+    
+    //register section header
+    __weak typeof (self) weakSelf = self;
+    [self registerHeaderViewClass:[BXTWTripLayoutChangeSegment class] WithKey:@"segmentHeader" ForSection:0 Configuration:^(UICollectionReusableView *view, id data) {
+        
+        if (weakSelf.layoutType == kWaterflow) {
+            
+            _layoutType = kList;
+            [weakSelf.ds fitLayout:self.layoutType];
+            [weakSelf changeLayout:self.listViewLayout animated:YES];
+            
+        }
+        else{
+            
+            _layoutType = kWaterflow;
+            [weakSelf.ds fitLayout:self.layoutType];
+            [weakSelf changeLayout:self.waterFlowLayout animated:YES];
+        }
+    }];
+    
     //6,Load Data
     [self load];
 }
@@ -161,32 +179,6 @@
 
 //////////////////////////////////////////////////////////// 
 #pragma mark - public method 
-
-
-
-//////////////////////////////////////////////////////////// 
-#pragma mark - private callback method 
-
-- (void)onLayoutChanged:(id)sender
-{
-    [self.collectionView reloadData];
-    return;
-    
-    if (self.layoutType == kWaterflow) {
-        
-        _layoutType = kList;
-        [self.ds fitLayout:self.layoutType];
-        [self changeLayout:self.listViewLayout animated:YES];
-       
-    }
-    else{
-    
-        _layoutType = kWaterflow;
-        [self.ds fitLayout:self.layoutType];
-        [self changeLayout:self.waterFlowLayout animated:YES];
-    }
-}
-
 
 
 
