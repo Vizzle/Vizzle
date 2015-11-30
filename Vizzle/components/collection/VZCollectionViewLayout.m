@@ -9,7 +9,7 @@
 #import "VZCollectionViewLayout.h"
 #import "VZCollectionViewController.h"
 #import "VZCollectionItem.h"
-
+#import "VZCollectionViewConfig.h"
 
 @interface VZCollectionViewLayout()
 @property(nonatomic,strong)NSMutableArray* attrs;
@@ -18,6 +18,7 @@
 
 @implementation VZCollectionViewLayout
 
+@synthesize shouldExtendScrollContentSize = _shouldExtendScrollContentSize;
 @synthesize controller = _controller;
 
 - (NSMutableArray* )attrs
@@ -67,23 +68,12 @@
         //add section header & footer
         NSIndexPath* indexPath = [NSIndexPath indexPathForItem:0 inSection:sectionNum.integerValue];
         
-//        UICollectionViewLayoutAttributes* supplementaryHeaderAttr = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:indexPath];
-        
         UICollectionViewLayoutAttributes* supplementaryHeaderAttr = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:indexPath];
         [self.attrs addObject:supplementaryHeaderAttr];
         
         UICollectionViewLayoutAttributes* supplementaryFooterAttr = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter atIndexPath:indexPath];
         [self.attrs addObject:supplementaryFooterAttr];
         
-        
-//        [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:[NSIndexPath indexPathForItem:0 inSection:sectionNum.integerValue]];
-//        supplementaryHeaderAttr.frame = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathForItem:0 inSection:sectionNum.integerValue]].frame;
-//        [self.attrs addObject:supplementaryHeaderAttr];
-        
-//        
-//        UICollectionViewLayoutAttributes* supplementaryFooterAttr = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:[NSIndexPath indexPathForItem:-1 inSection:sectionNum.integerValue]];
-//        [self.attrs addObject:supplementaryFooterAttr];
-
     }];
 }
 
@@ -91,6 +81,12 @@
 {
     CGRect frame = self.collectionView.frame;
     CGSize sz = [self calculateScrollViewContentSize];
+    
+    //为footerview留出44高度
+    if (self.shouldExtendScrollContentSize){
+        sz.height += kVZCollectionViewFooterViewHeight;
+    }
+    
     return CGSizeMake(MAX(frame.size.width, sz.width),MAX(frame.size.height, sz.height));
 }
 
@@ -151,9 +147,17 @@
 }
 
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - subclass methods
+
+
+- (CGSize)calculateScrollViewContentSize
+{
+    return CGSizeZero;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - VZCollectionViewLayoutInterface
 
 - (VZCollectionLayoutAttributes) layoutAttributesForCellWithItem:(VZCollectionItem* )item AtIndexPath:(NSIndexPath *)indexPath
 {
@@ -173,13 +177,10 @@
     
     return attr;
 }
-- (CGSize)calculateScrollViewContentSize
-{
-    return CGSizeZero;
-}
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - subclass methods
+#pragma mark - helper methods
 
 static inline void vz_convertLayoutAttributesToUILayoutAttributes(VZCollectionLayoutAttributes vzAttr, UICollectionViewLayoutAttributes* uiAttr)
 {

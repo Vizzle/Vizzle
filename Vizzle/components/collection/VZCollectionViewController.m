@@ -12,6 +12,7 @@
 #import "VZCollectionViewLayoutInterface.h"
 #import "VZCollectionViewConfig.h"
 #import "VZCollectionSupplementaryItem.h"
+#import "VZCollectionViewConfig.h"
 
 @interface VZCollectionViewController()
 
@@ -28,7 +29,6 @@
 @synthesize delegate   = _delegate;
 @synthesize layout     = _layout;
 @synthesize footerViewLoading  = _footerViewLoading;
-@synthesize footerViewComplete = _footerViewComplete;
 @synthesize footerViewNoResult = _footerViewNoResult;
 @synthesize footerViewError    = _footerViewError;
 
@@ -54,7 +54,6 @@
 {
     _layout = layout;
     _layout.controller = self;
-    //self.collectionView.collectionViewLayout = (UICollectionViewLayout* )layout;
 }
 
 - (void)setKeyModel:(VZHTTPListModel *)keyModel
@@ -295,7 +294,6 @@
     [super showEmpty:model];
     
     [self endRefreshing];
-    [self showNoResult:model];
 }
 
 //默认loading 样式
@@ -303,50 +301,47 @@
 {
     NSLog(@"[%@]-->showLoading:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
     
-    if (model == _keyModel) {
+    if (!self.delegate.isRefreshing) {
         
-        //如果下拉刷新在转菊花，不显示loading的footerView
-        if (!self.delegate.isRefreshing) {
+        //当前页面没有数据:
+        NSUInteger section = self.keyModel.sectionNumber;
+        NSArray* items = [self.dataSource itemsForSection:section];
+        
+        if (items.count == 0) {
             
-            if (model.sectionNumber == [self.collectionView.dataSource numberOfSectionsInCollectionView:self.collectionView]-1) {
+            CGRect collectionFrame = self.collectionView.bounds;
+            
+            if (CGRectEqualToRect(collectionFrame, CGRectZero)) {
                 
-                CGSize sz = self.collectionView.contentSize;
-                if (self.footerViewLoading) {
-                    
-              
-                
-                   // self.collectionView. = self.footerViewLoading;
-                }
-                else
-                {
-                    //self.tableView.tableFooterView =  [VZFooterViewFactory loadingFooterView:CGRectMake(0, 0,CGRectGetWidth(self.tableView.bounds), 44) Text:@"努力加载中..."];
-                }
+                return;
             }
-            else{
-                
-                //self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
+            else
+            {
+                [self showSpinnerOnView:self.collectionView];
             }
         }
-        else
-        {
-            //self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
+        else{
+            
+            //有数据时增加一个footerview
+            [self showLoadingFooterView];
         }
-        
     }
     else
     {
-        //VZMV* => 1.1:解决注册了同一个section的不同model的状态的问题
-        if (model.sectionNumber != _keyModel.sectionNumber) {
-            
-            //show loading for seciton
-            NSInteger section = model.sectionNumber;
-            //创建一个loading item
-            VZListItem* item = [VZListItem new];
-            item.itemType = kItem_Loading;
-            item.itemHeight = 44;
-            [self.dataSource setItems:@[item] ForSection:section];
-            [self reloadCollectionView];
-        }
+        //todo:
+        
+//        //VZMV* => 1.1:解决注册了同一个section的不同model的状态的问题
+//        if (model.sectionNumber != _keyModel.sectionNumber) {
+//            
+//            //show loading for seciton
+//            NSInteger section = model.sectionNumber;
+//            //创建一个loading item
+//            VZListItem* item = [VZListItem new];
+//            item.itemType = kItem_Loading;
+//            item.itemHeight = 44;
+//            [self.dataSource setItems:@[item] ForSection:section];
+//            [self reloadCollectionView];
+//        }
         
     }
 }
@@ -354,17 +349,20 @@
 - (void)showModel:(VZHTTPListModel *)model
 {
     NSLog(@"[%@]-->showModel:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
-    
+
     [super showModel:model];
     
+    //隐掉loading的spinner
+    [self hideSpinner];
+
     //VZMV* => 1.1:
     [self reloadCollectionView];
     
     //VZMV* => 1.1 : reset footer view
-    [self showComplete:model];
+    [self showEmptyFooterView];
     
+    //结束下拉刷新
     [self endRefreshing];
-    
 }
 
 - (void)showError:(NSError *)error withModel:(VZHTTPListModel *)model
@@ -372,6 +370,8 @@
     NSLog(@"[%@]-->showError:{key:%@,section:%ld}",[self class], model.key,(long)model.sectionNumber);
     
     [self endRefreshing];
+    
+    [self hideSpinner];
     
     if (model == _keyModel) {
         
@@ -413,7 +413,6 @@
     self.collectionView.delegate   = self.delegate;
     self.collectionView.collectionViewLayout = (UICollectionViewLayout* )self.layout;
     [self.collectionView reloadData];
-    
 }
 
 
@@ -512,20 +511,142 @@
     [self reload];
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - private methods
 
+
+- (void)showSpinnerOnView:(UIView* )view
+{
+    UIActivityIndicatorView* indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    indicator.tag   = kVZCollectionViewSpinnerViewTag;
+    indicator.color = [UIColor grayColor];
+    CGRect containterRect = view.bounds;
+    indicator.frame = CGRectMake((CGRectGetWidth(containterRect)-22)/2, (CGRectGetHeight(containterRect) -22)/2, 22, 22);
+    [[view viewWithTag:kVZCollectionViewSpinnerViewTag] removeFromSuperview];
+    [view addSubview:indicator];
+    [indicator startAnimating];
+}
+
+- (void)hideSpinner
+{
+    [[self.collectionView viewWithTag:kVZCollectionViewSpinnerViewTag] removeFromSuperview];
+}
+
+
+
+@end
+
+@implementation VZCollectionViewController(State)
+
+- (void)showEmptyFooterView
+{
+    UIScrollView* scrollView = (UIScrollView* )self.collectionView;
+    UIView* footerView = (UIView* )[scrollView viewWithTag:kVZCollectionViewFooterViewTag];
+    [footerView removeFromSuperview];
+    
+    //恢复collectionview的contentsize
+    if (self.layout.shouldExtendScrollContentSize) {
+        self.layout.shouldExtendScrollContentSize = NO;
+        UICollectionViewLayout* layout = (UICollectionViewLayout* )self.layout;
+        [layout invalidateLayout];
+    }
+}
+
+- (void)showLoadingFooterView
+{
+    //扩大collectionview的contentsize
+    [self extendScrollViewContentSize];
+    
+    CGSize sz = self.collectionView.collectionViewLayout.collectionViewContentSize;
+    UIView* footerViewLoading = self.footerViewLoading;
+    if (!footerViewLoading) {
+        footerViewLoading = [VZFooterViewFactory loadingFooterView:CGRectMake(0, sz.height-44, CGRectGetWidth(self.collectionView.bounds), 44) Text:@"努力加载中"];
+    }
+    [self addFooterViewToBottom:footerViewLoading];
+}
+
+- (void)showErrorFooterView
+{
+    //扩大collectionview的contentsize
+    [self extendScrollViewContentSize];
+    
+    CGSize sz = self.collectionView.collectionViewLayout.collectionViewContentSize;
+    UIView* footerViewError = self.footerViewError;
+    if (!footerViewError) {
+        footerViewError =  [VZFooterViewFactory errorFooterView:CGRectMake(0, sz.height-44, CGRectGetWidth(self.collectionView.bounds), 44) Text:@"Error!"];
+    }
+    [self addFooterViewToBottom:footerViewError];
+}
+
+- (void)showNoResultFooterView
+{
+    //扩大collectionview的contentsize
+    [self extendScrollViewContentSize];
+    
+    CGSize sz = self.collectionView.collectionViewLayout.collectionViewContentSize;
+    UIView* footerViewNoResult = self.footerViewNoResult;
+    if (!footerViewNoResult) {
+        footerViewNoResult =  [VZFooterViewFactory normalFooterView:CGRectMake(0, sz.height-44, CGRectGetWidth(self.collectionView.bounds), 44) Text:@"No Results"];
+    }
+    [self addFooterViewToBottom:footerViewNoResult];
+    
+}
+
+- (void)showLoadMoreFooterView
+{
+    //扩大collectionview的contentsize
+    [self extendScrollViewContentSize];
+    
+    CGSize sz = self.collectionView.collectionViewLayout.collectionViewContentSize;
+    UIView* footerView = (UIView* )[self.collectionView viewWithTag:kVZCollectionViewFooterViewTag];
+    [footerView removeFromSuperview];
+    footerView = [VZFooterViewFactory clickableFooterView:CGRectMake(0, sz.height-44, CGRectGetWidth(self.collectionView.bounds), 44) Text:@"Click to load more" Target:self Action:@selector(onLoadMoreClicked:)];
+    footerView.tag = kVZCollectionViewFooterViewTag;
+    [self.collectionView addSubview:footerView];
+}
+
+- (void)onLoadMoreClicked:(id)sender
+{
+    [self.keyModel loadMore];
+}
+
+- (void)extendScrollViewContentSize
+{
+    self.layout.shouldExtendScrollContentSize = YES;
+    UICollectionViewLayout* layout = (UICollectionViewLayout* )self.layout;
+    [layout invalidateLayout];
+}
+
+- (void)addFooterViewToBottom:(UIView* )fv
+{
+    UIView* footerView = (UIView* )[self.collectionView viewWithTag:kVZCollectionViewFooterViewTag];
+    [footerView removeFromSuperview];
+    fv.tag = kVZCollectionViewFooterViewTag;
+    [self.collectionView addSubview:fv];
+}
+
+
+
+
+
+@end
+
+
+
+@implementation VZCollectionViewController(layout)
 
 /////////////////////////////////////
-#pragma mark - layout 
+#pragma mark - layout
 
 - (void)changeLayout:(id<VZCollectionViewLayoutInterface> ) layout animated:(BOOL)b{
-
+    
     self.layout = layout;
     [self.collectionView setCollectionViewLayout:(UICollectionViewLayout* )layout animated:b];
     [self.collectionView reloadData];
 }
 
-
 @end
+
 
 @implementation VZCollectionViewController(Subclassing)
 
@@ -538,14 +659,8 @@
     
     if (model == _keyModel) {
         
-        if (self.footerViewNoResult)
-        {
-          //  self.tableView.tableFooterView = self.footerViewNoResult;
-        }
-        else
-        {
-         //   self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
-        }
+        [self showNoResultFooterView];
+
     }
     else
     {
@@ -567,34 +682,11 @@
 - (void)showComplete:(VZHTTPListModel *)model
 {
     NSLog(@"[%@]-->showComplete:{section:%ld}",[self class],(long)model.sectionNumber);
-    
-    if (model == _keyModel) {
-        
-        if(self.footerViewComplete)
-        {
-           // self.tableView.tableFooterView = self.footerViewComplete;
-        }
-        else
-        {
-           // self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
-        }
-    }
-    else
-    {
-        //todo:
-    }
-}
-- (void)showLoadMoreFooterView
-{
-    NSLog(@"[%@]-->showLoadMoreFooterView",self.class);
-    
-//    self.tableView.tableFooterView = [VZFooterViewFactory clickableFooterView:CGRectMake(0, 0, self.tableView.frame.size.width, 44)Text:@"点一下加载更多" Target:self Action:@selector(onLoadMoreClicked:) ];
+    [self showEmptyFooterView];
 }
 
-- (void)onLoadMoreClicked:(id)sender
-{
-    [self.keyModel loadMore];
-}
+
+
 
 @end
 
@@ -638,14 +730,13 @@
 - (void)registerFooterViewClass:(Class)cls WithKey:(NSString*)key ForSection:(NSInteger)section Configuration:(void (^)(UICollectionReusableView *, id))block
 {
     VZAssertMainThread();
-//    [_footerIdentifierForSection setObject:key forKey:@(section)];
     //create a supplmentaryItem:
     VZCollectionSupplementaryItem* item = [VZCollectionSupplementaryItem new];
     item.reuseIdentifier = key;
     item.viewConfigurationBlock = block;
     item.type = UICollectionElementKindSectionFooter;
     [self.dataSource setSupplementaryItem:item forSection:section];
-    [self.collectionView registerClass:cls forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:key];
+    [self.collectionView registerClass:cls forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:key];
 }
 
 

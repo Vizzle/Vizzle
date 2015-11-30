@@ -133,7 +133,27 @@
  *  @param section section
  */
 - (BOOL)setSupplementaryItem:(VZCollectionSupplementaryItem* )item forSection:(NSUInteger)section;
+/**
+ *  去掉datasource中的supplementaryItem
+ *
+ *  @param section 对应的section
+ *
+ *  @return 操作是否成功
+ */
 - (BOOL)removeSupplementaryItemForSection:(NSUInteger)section;
+/**
+ *  返回一个VZCollectionSupplementaryItem
+ *
+ *  @param section 对应的section
+ *
+ *  @return VZCollectionSupplementaryItem对象
+ */
 - (VZCollectionSupplementaryItem* )supplementaryItemForSection:(NSUInteger)section;
+
+@end
+
+@interface VZCollectionViewDataSource(FooterView)
+
+//- (BOOL)addFooterItem
 
 @end

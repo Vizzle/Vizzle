@@ -6,15 +6,14 @@
 //  Copyright © 2015年 VizLab. All rights reserved.
 //
 
-#import "BXTWTripCollectionViewLayout.h"
+#import "BXTWTripWaterflowLayout.h"
 #import "BXTWTripListItem.h"
 #import "BXTWTripConfig.h"
 
-@implementation BXTWTripCollectionViewLayout
+@implementation BXTWTripWaterflowLayout
 
 - (VZCollectionLayoutAttributes) layoutAttributesForCellWithItem:(BXTWTripListItem* )item AtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%s",__func__);
     VZCollectionLayoutAttributes attr = vz_defaultAttributes();
     CGRect itemRect = CGRectMake(item.x, item.y, item.itemWidth, item.itemHeight);
     attr.frame = CGRectInset(itemRect, 5, 5);
@@ -57,6 +56,18 @@
     
     if (section == 0) {
       
+        attr.frame = CGRectMake(0, 0, CGRectGetWidth(self.controller.collectionView.bounds), 44);
+    }
+    
+    return attr;
+}
+
+- (VZCollectionLayoutAttributes)layoutAttributesForFooterView:(NSString *)identifier AtSectionIndex:(NSInteger)section
+{
+    VZCollectionLayoutAttributes attr = vz_defaultAttributes();
+    
+    if (section == 0) {
+        
         attr.frame = CGRectMake(0, 0, CGRectGetWidth(self.controller.collectionView.bounds), 44);
     }
     

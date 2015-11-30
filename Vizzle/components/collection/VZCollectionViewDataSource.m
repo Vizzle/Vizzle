@@ -184,8 +184,6 @@
 - (NSArray<__kindof VZCollectionItem* > *)itemsForSection:(NSInteger)section;
 {
     VZAssertMainThread();
-    VZAssertTrue(section >=0 && section < [_itemsForSectionInternal count]);
-    
     if (section < [_itemsForSectionInternal count])
     {
         return _itemsForSectionInternal[@(section)];

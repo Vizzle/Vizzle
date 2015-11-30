@@ -11,12 +11,14 @@
 
 #import "BXTWTripListViewController.h"
 #import "BXTWTripListModel.h" 
-#import "BXTWTripCollectionViewLayout.h"
-#import "BXTWTripListViewLayout.h"
+#import "BXTWTripWaterflowLayout.h"
+#import "BXTWTripListLayout.h"
+#import "BXTWTripGridLayout.h"
 #import "BXTWTripListViewDataSource.h"
 #import "BXTWTripListViewDelegate.h"
 #import "BXTWTripListItem.h"
-#import "BXTWTripLayoutChangeSegment.h"
+#import "BXTWTripLayoutSectionHeader.h"
+#import "BXTWTripLayoutSectionFooter.h"
 
 @interface BXTWTripListViewController()
 
@@ -24,8 +26,9 @@
 @property(nonatomic,strong)BXTWTripListModel *tWTripListModel; 
 @property(nonatomic,strong)BXTWTripListViewDataSource *ds;
 @property(nonatomic,strong)BXTWTripListViewDelegate *dl;
-@property(nonatomic,strong)BXTWTripCollectionViewLayout* waterFlowLayout;
-@property(nonatomic,strong)BXTWTripListViewLayout* listViewLayout;
+@property(nonatomic,strong)BXTWTripWaterflowLayout* waterFlowLayout;
+@property(nonatomic,strong)BXTWTripListLayout* listViewLayout;
+@property(nonatomic,strong)BXTWTripGridLayout* gridViewLayout;
 
 @end
 
@@ -68,18 +71,18 @@
    return _dl;
 }
 
-- (BXTWTripCollectionViewLayout* )waterFlowLayout
+- (BXTWTripWaterflowLayout* )waterFlowLayout
 {
     if (!_waterFlowLayout) {
-        _waterFlowLayout = [BXTWTripCollectionViewLayout new];
+        _waterFlowLayout = [BXTWTripWaterflowLayout new];
     }
     return _waterFlowLayout;
 }
 
-- (BXTWTripListViewLayout* )listViewLayout
+- (BXTWTripListLayout* )listViewLayout
 {
     if (!_listViewLayout) {
-        _listViewLayout = [BXTWTripListViewLayout new];
+        _listViewLayout = [BXTWTripListLayout new];
     }
     return _listViewLayout;
 }
@@ -104,7 +107,6 @@
     
     //1,config your tableview
     self.collectionView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    self.collectionView.showsVerticalScrollIndicator = YES;
     
     //2,set some properties:下拉刷新，自动翻页
     self.needLoadMore = YES;
@@ -126,7 +128,7 @@
     
     //register section header
     __weak typeof (self) weakSelf = self;
-    [self registerHeaderViewClass:[BXTWTripLayoutChangeSegment class] WithKey:@"segmentHeader" ForSection:0 Configuration:^(UICollectionReusableView *view, id data) {
+    [self registerHeaderViewClass:[BXTWTripLayoutSectionHeader class] WithKey:@"segmentHeader" ForSection:0 Configuration:^(UICollectionReusableView *view, id data) {
         
         if (weakSelf.layoutType == kWaterflow) {
             

@@ -6,16 +6,16 @@
 //  Copyright © 2015年 VizLab. All rights reserved.
 //
 
-#import "BXTWTripLayoutChangeSegment.h"
+#import "BXTWTripLayoutSectionHeader.h"
 #import "VZCollectionSupplementaryItem.h"
 
-@interface BXTWTripLayoutChangeSegment()
+@interface BXTWTripLayoutSectionHeader()
 
 @property(nonatomic,strong)UISegmentedControl* segmentControl;
 
 @end
 
-@implementation BXTWTripLayoutChangeSegment
+@implementation BXTWTripLayoutSectionHeader
 
 
 - (instancetype)initWithFrame:(CGRect)frame

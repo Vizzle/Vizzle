@@ -19,8 +19,13 @@
 @property(nonatomic,strong) VZCollectionViewDataSource* dataSource;
 @property(nonatomic,strong) VZCollectionViewDelegate* delegate;
 @property(nonatomic,strong) id<VZCollectionViewLayoutInterface> layout;
+
+/**
+ *  自定义collectionview的footerview样式
+ *
+ *  @discussion: 默认样式来自[VZFooterViewFactory]
+ */
 @property(nonatomic,strong) UIView* footerViewLoading;
-@property(nonatomic,strong) UIView* footerViewComplete;
 @property(nonatomic,strong) UIView* footerViewError;
 @property(nonatomic,strong) UIView* footerViewNoResult;
 /**
@@ -92,6 +97,12 @@
 
 @interface VZCollectionViewController(layout)
 
+/**
+ *  切换collectionView布局
+ *
+ *  @param layout 布局对象
+ *  @param b      是否支持动画
+ */
 - (void)changeLayout:(id<VZCollectionViewLayoutInterface> ) layout animated:(BOOL)b;
 
 @end
@@ -100,7 +111,23 @@
 
 @interface VZCollectionViewController(SupplymentaryView)
 
+/**
+ *  设置section header
+ *
+ *  @param cls     HeaderView类型
+ *  @param key     reuseIdentifier
+ *  @param section section number
+ *  @param block   对HeaderView进行配置的block
+ */
 - (void)registerHeaderViewClass:(Class)cls WithKey:(NSString*)key ForSection:(NSInteger)section Configuration:(void(^)(UICollectionReusableView* view, id data))block;
+/**
+ *  设置section footer
+ *
+ *  @param cls     FooterView类型
+ *  @param key     reuseIdentifier
+ *  @param section section number
+ *  @param block   对HeaderView进行配置的block
+ */
 - (void)registerFooterViewClass:(Class)cls WithKey:(NSString*)key ForSection:(NSInteger)section Configuration:(void(^)(UICollectionReusableView* view, id data))block;
 
 
@@ -136,22 +163,10 @@
 
 @interface VZCollectionViewController(State)
 
-
-/**
- *  展示没有数据的footerview状态
- *
- *  @param model 请求完成的model
- */
-- (void)showNoResult:(VZHTTPListModel *)model;
-/**
- *  展示model滚动完成的footerview状态
- *
- *  @param model 请求完成的model
- */
-- (void)showComplete:(VZHTTPListModel *)model;
-/**
- *  展示loadmore的footerview状态，如果loadmoreAutomatically则不会显示这个状态
- */
+- (void)showEmptyFooterView;
+- (void)showLoadingFooterView;
+- (void)showErrorFooterView;
+- (void)showNoResultFooterView;
 - (void)showLoadMoreFooterView;
 
 @end

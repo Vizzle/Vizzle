@@ -9,6 +9,7 @@
 #import "VZCollectionViewFlowLayout.h"
 #import "VZCollectionViewDataSource.h"
 #import "VZCollectionItem.h"
+#import "VZCollectionViewConfig.h"
 
 @interface VZCollectionViewFlowLayout()
 
@@ -17,10 +18,28 @@
 @implementation VZCollectionViewFlowLayout
 
 @synthesize controller = _controller;
+@synthesize shouldExtendScrollContentSize = _shouldExtendScrollContentSizel;
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UICollectionViewLayout
+
+
+- (CGSize)collectionViewContentSize
+{
+    CGSize sz = [super collectionViewContentSize];
+    if (self.shouldExtendScrollContentSize) {
+        return CGSizeMake(sz.width, sz.height+kVZCollectionViewFooterViewHeight);
+    }
+    return sz;
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Subclass Override
 
 - (CGSize) sizeOfCellAtIndexPath:(NSIndexPath* )indexPath
 {
-    
     VZCollectionViewDataSource* ds = (VZCollectionViewDataSource* )self.controller.dataSource;
     NSArray* items = [ds itemsForSection:indexPath.section];
     
@@ -60,25 +79,7 @@
     return CGSizeZero;
 }
 
-- (CGSize)calculateScrollViewContentSize
-{
-    //don't need
-    return CGSizeZero;
-}
 
-- (VZCollectionLayoutAttributes) layoutAttributesForCellWithItem:(VZCollectionItem* )item AtIndexPath:(NSIndexPath *)indexPath
-{
-    return vz_defaultAttributes();
-
-}
-- (VZCollectionLayoutAttributes) layoutAttributesForHeaderView:(NSString* )identifier AtSectionIndex:(NSInteger) section
-{
-    return vz_defaultAttributes();
-}
-- (VZCollectionLayoutAttributes) layoutAttributesForFooterView:(NSString* )identifier AtSectionIndex:(NSInteger) section
-{
-    return vz_defaultAttributes();
-}
 
 
 @end

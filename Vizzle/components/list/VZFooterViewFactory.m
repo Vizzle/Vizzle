@@ -58,7 +58,7 @@
     
     
     UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    activityIndicator.color                    = [UIColor redColor];
+    activityIndicator.color                    = [UIColor grayColor];
     [activityIndicator startAnimating];
     
     if ([text isEqualToString:@""] || !text) {

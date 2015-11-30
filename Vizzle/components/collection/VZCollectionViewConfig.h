@@ -9,7 +9,10 @@
 #ifndef VZCollectionViewConfig_h
 #define VZCollectionViewConfig_h
 
-#define kSupplementaryViewKindOfSectionHeader @"UICollectionElementKindSectionHeader"
-#define kSupplementaryViewKindOfSecionFooter @"UICollectionElementKindSectionFooter"
+#define kVZSupplementaryViewKindOfSectionHeader @"UICollectionElementKindSectionHeader"
+#define kVZSupplementaryViewKindOfSecionFooter @"UICollectionElementKindSectionFooter"
+#define kVZCollectionViewFooterViewHeight   44
+#define kVZCollectionViewFooterViewTag      137
+#define kVZCollectionViewSpinnerViewTag     139
 
 #endif /* VZCollectionViewConfig_h */

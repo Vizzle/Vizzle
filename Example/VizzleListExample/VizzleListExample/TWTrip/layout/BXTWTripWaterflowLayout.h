@@ -8,6 +8,6 @@
 
 #import "VZCollectionViewLayout.h"
 
-@interface BXTWTripCollectionViewLayout : VZCollectionViewLayout
+@interface BXTWTripWaterflowLayout : VZCollectionViewLayout
 
 @end

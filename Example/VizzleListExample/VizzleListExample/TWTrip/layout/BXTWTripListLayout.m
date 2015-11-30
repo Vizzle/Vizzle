@@ -6,10 +6,10 @@
 //  Copyright © 2015年 VizLab. All rights reserved.
 //
 
-#import "BXTWTripListViewLayout.h"
+#import "BXTWTripListLayout.h"
 #import "BXTWTripListItem.h"
 
-@implementation BXTWTripListViewLayout
+@implementation BXTWTripListLayout
 
 - (CGSize)sizeForHeaderViewAtSectionIndex:(NSInteger)section{
 

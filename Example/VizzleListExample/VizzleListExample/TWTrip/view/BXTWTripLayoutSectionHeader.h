@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VZCollectionSupplementaryView.h"
-#import "BXTWTripConfig.h"
 
-@interface BXTWTripLayoutChangeSegment : VZCollectionSupplementaryView
+@interface BXTWTripLayoutSectionHeader : VZCollectionSupplementaryView
 
 @end
