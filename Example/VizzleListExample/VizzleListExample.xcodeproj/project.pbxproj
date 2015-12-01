@@ -32,7 +32,6 @@
 		454883881BF8248E00A2426D /* VZCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 454883871BF8248E00A2426D /* VZCollectionViewLayout.m */; };
 		4548838B1BF8257800A2426D /* VZCollectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4548838A1BF8257800A2426D /* VZCollectionItem.m */; };
 		45666EA11C0C527F0028EC6D /* BXTWTripLayoutSectionFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45666EA01C0C527F0028EC6D /* BXTWTripLayoutSectionFooter.m */; };
-		45666EA41C0C56600028EC6D /* BXTWTripGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 45666EA31C0C56600028EC6D /* BXTWTripGridLayout.m */; };
 		456BE9501AFF6DBF0064FBB6 /* VZHTTPConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE93F1AFF6DBF0064FBB6 /* VZHTTPConnectionOperation.m */; };
 		456BE9511AFF6DBF0064FBB6 /* VZHTTPNetworkAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE9411AFF6DBF0064FBB6 /* VZHTTPNetworkAgent.m */; };
 		456BE9521AFF6DBF0064FBB6 /* VZHTTPNetworkSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE9441AFF6DBF0064FBB6 /* VZHTTPNetworkSecurity.m */; };
@@ -147,8 +146,6 @@
 		4548838C1BF825EF00A2426D /* VZCollectionViewLayoutInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionViewLayoutInterface.h; sourceTree = "<group>"; };
 		45666E9F1C0C527F0028EC6D /* BXTWTripLayoutSectionFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripLayoutSectionFooter.h; sourceTree = "<group>"; };
 		45666EA01C0C527F0028EC6D /* BXTWTripLayoutSectionFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripLayoutSectionFooter.m; sourceTree = "<group>"; };
-		45666EA21C0C56600028EC6D /* BXTWTripGridLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripGridLayout.h; sourceTree = "<group>"; };
-		45666EA31C0C56600028EC6D /* BXTWTripGridLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripGridLayout.m; sourceTree = "<group>"; };
 		456BE93E1AFF6DBF0064FBB6 /* VZHTTPConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPConnectionOperation.h; sourceTree = "<group>"; };
 		456BE93F1AFF6DBF0064FBB6 /* VZHTTPConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPConnectionOperation.m; sourceTree = "<group>"; };
 		456BE9401AFF6DBF0064FBB6 /* VZHTTPNetworkAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPNetworkAgent.h; sourceTree = "<group>"; };
@@ -461,8 +458,6 @@
 				458E0DA31BF9838200D8E704 /* BXTWTripListLayout.m */,
 				458E0DA51BF984CF00D8E704 /* BXTWTripWaterflowLayout.h */,
 				458E0DA61BF984CF00D8E704 /* BXTWTripWaterflowLayout.m */,
-				45666EA21C0C56600028EC6D /* BXTWTripGridLayout.h */,
-				45666EA31C0C56600028EC6D /* BXTWTripGridLayout.m */,
 			);
 			path = layout;
 			sourceTree = "<group>";
@@ -931,7 +926,6 @@
 				454883821BF8247400A2426D /* VZCollectionViewDataSource.m in Sources */,
 				456BE9521AFF6DBF0064FBB6 /* VZHTTPNetworkSecurity.m in Sources */,
 				4548837B1BF8243A00A2426D /* VZListViewDelegate.m in Sources */,
-				45666EA41C0C56600028EC6D /* BXTWTripGridLayout.m in Sources */,
 				4548837A1BF8243A00A2426D /* VZListViewDataSource.m in Sources */,
 				456BE9511AFF6DBF0064FBB6 /* VZHTTPNetworkAgent.m in Sources */,
 				45D6F80F1C05553200159418 /* BXTWAyncImageCache.m in Sources */,

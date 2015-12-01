@@ -13,7 +13,6 @@
 #import "BXTWTripListModel.h" 
 #import "BXTWTripWaterflowLayout.h"
 #import "BXTWTripListLayout.h"
-#import "BXTWTripGridLayout.h"
 #import "BXTWTripListViewDataSource.h"
 #import "BXTWTripListViewDelegate.h"
 #import "BXTWTripListItem.h"
@@ -22,13 +21,11 @@
 
 @interface BXTWTripListViewController()
 
-
-@property(nonatomic,strong)BXTWTripListModel *tWTripListModel; 
+@property(nonatomic,strong)BXTWTripListModel *tWTripListModel;
 @property(nonatomic,strong)BXTWTripListViewDataSource *ds;
 @property(nonatomic,strong)BXTWTripListViewDelegate *dl;
 @property(nonatomic,strong)BXTWTripWaterflowLayout* waterFlowLayout;
 @property(nonatomic,strong)BXTWTripListLayout* listViewLayout;
-@property(nonatomic,strong)BXTWTripGridLayout* gridViewLayout;
 
 @end
 
