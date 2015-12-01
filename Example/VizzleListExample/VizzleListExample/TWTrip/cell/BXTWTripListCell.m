@@ -100,8 +100,9 @@
     self.icon.frame             = CGRectMake(10, self.poster.frame.size.height-23, 45, 45);
     
     [CATransaction begin];
+        [CATransaction setAnimationDuration:0];
     self.gradientLayer.frame    = CGRectMake(0, self.icon.frame.origin.y-20, self.frame.size.width-20, 43);
-    [CATransaction setAnimationDuration:0];
+
     [CATransaction commit];
     
     NSInteger r = self.icon.frame.origin.x+self.icon.frame.size.width;
