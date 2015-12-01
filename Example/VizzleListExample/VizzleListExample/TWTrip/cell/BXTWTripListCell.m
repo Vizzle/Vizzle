@@ -98,7 +98,11 @@
     self.containerView.frame    = CGRectMake(10, 10, self.frame.size.width-20, 205);
     self.poster.frame           = CGRectMake(0, 0, self.contentView.frame.size.width, 175);
     self.icon.frame             = CGRectMake(10, self.poster.frame.size.height-23, 45, 45);
+    
+    [CATransaction begin];
     self.gradientLayer.frame    = CGRectMake(0, self.icon.frame.origin.y-20, self.frame.size.width-20, 43);
+    [CATransaction setAnimationDuration:0];
+    [CATransaction commit];
     
     NSInteger r = self.icon.frame.origin.x+self.icon.frame.size.width;
     self.posterNameLabel.frame  = CGRectMake(r+10, self.icon.frame.origin.y, self.frame.size.width-r-40, 20);
