@@ -256,7 +256,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
     return [[urlString stringByAppendingString:@"/"] stringByAppendingString:queries?[queries description]:@""];
 }
 
-- (void)deleteCachedResponseForKey:(NSString *)key Completion:(void (^)(BOOL))completion
+- (void)deleteCachedResponseForKey:(NSString *)key Completion:(void (^)(BOOL bSucceed))completion
 {
     if (key.length > 0) {
         
@@ -293,7 +293,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
 #pragma mark - private file method
 
 
-- (void)cacheData:(id)data forUrlString:(NSString*)identifier completion:(void(^)(bool b))callback
+- (void)cacheData:(id)data forUrlString:(NSString*)identifier completion:(void(^)(BOOL b))callback
 {
     NSString* key = [self keyForURLString : identifier];
    
@@ -344,7 +344,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
     }
 }
 
-- (void)removeCachedDataForKey:(NSString*)identifier completion:(void(^)(bool b))callback
+- (void)removeCachedDataForKey:(NSString*)identifier completion:(void(^)(BOOL b))callback
 {
     if (identifier == nil)
         return ;

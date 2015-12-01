@@ -4,17 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-AFNetworking.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-VZInspector.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>VZInspector.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3DFC0BCF6B91EE5A4C1EDDCC</key>
+		<key>324DF45DFB0B59D4D5D77BC42C615424</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4EDB8605A3FB909187D7CD58</key>
+		<key>4E63A7468666AF908D6D73A19CF7738D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CB755669DD320944C7F65023</key>
+		<key>E70470663DB0429A95F1514269DD4076</key>
 		<dict>
 			<key>primary</key>
 			<true/>
