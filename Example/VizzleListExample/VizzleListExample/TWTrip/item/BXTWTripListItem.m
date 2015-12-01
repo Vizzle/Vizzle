@@ -1,10 +1,10 @@
   
 //
 //  BXTWTripListItem.m
-//  BX
+//  O2O
 //
-//  Created by Jayson.xu@foxmail.com on 2015-07-14 21:28:18 +0800.
-//  Copyright (c) 2015年 VizLab. All rights reserved.
+//  Created by moxin on 2015-11-26 15:29:41 +0800.
+//  Copyright (c) 2015年 Alipay. All rights reserved.
 //
 
 

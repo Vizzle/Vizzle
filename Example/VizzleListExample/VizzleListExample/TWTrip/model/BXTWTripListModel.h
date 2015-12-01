@@ -10,8 +10,8 @@
 
   
 #import "VZHTTPListModel.h"
-
 @interface BXTWTripListModel : VZHTTPListModel
+
 
 @end
 

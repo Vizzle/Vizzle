@@ -18,6 +18,11 @@
 
 @implementation BXTWTripListViewDataSource
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
 - (Class)cellClassForItem:(id)item AtIndex:(NSIndexPath *)indexPath{
 
     return [BXTWTripListCell class];
