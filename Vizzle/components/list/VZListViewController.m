@@ -250,7 +250,7 @@
     numberOfRows = 0;
     
     for (int i=0; i<numberOfSections; i++) {
-        numberOfRows =  [self.dataSource tableView:self.tableView numberOfRowsInSection:model.sectionNumber];
+        numberOfRows =  [self.dataSource tableView:self.tableView numberOfRowsInSection:i];
         if (numberOfRows > 0) {
             break;
         }
