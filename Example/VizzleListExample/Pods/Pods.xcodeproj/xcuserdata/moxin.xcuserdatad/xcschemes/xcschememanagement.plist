@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFNetworking.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>AsyncDisplayKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,12 +27,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>131713E91F2AD54031A5D24F27274848</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2602F3D0DAC534568B6AD7EEA0DD1959</key>
+		<key>0AAE4C2FEA317193C530776BED6943EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,12 +37,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>371742899AA3401D4BAA1E6BF5221951</key>
+		<key>50EE430DB0DF68BC1F03F6FE23F0F12B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B2D0C967A5BC1B6EF12205DA1363373D</key>
+		<key>6AAFEDF8BBDF3C6990983255DF9B61D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,25 +1,4 @@
 PODS:
-  - AFNetworking (2.4.1):
-    - AFNetworking/NSURLConnection (= 2.4.1)
-    - AFNetworking/NSURLSession (= 2.4.1)
-    - AFNetworking/Reachability (= 2.4.1)
-    - AFNetworking/Security (= 2.4.1)
-    - AFNetworking/Serialization (= 2.4.1)
-    - AFNetworking/UIKit (= 2.4.1)
-  - AFNetworking/NSURLConnection (2.4.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.4.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.4.1)
-  - AFNetworking/Security (2.4.1)
-  - AFNetworking/Serialization (2.4.1)
-  - AFNetworking/UIKit (2.4.1):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
   - AsyncDisplayKit (1.9.1):
     - AsyncDisplayKit/ASDealloc2MainObject (= 1.9.1)
   - AsyncDisplayKit/ASDealloc2MainObject (1.9.1)
@@ -29,13 +8,11 @@ PODS:
   - VZInspector (0.0.8)
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.0)
   - AsyncDisplayKit
   - SDWebImage
   - VZInspector (~> 0.0.8)
 
 SPEC CHECKSUMS:
-  AFNetworking: 41d45d2c14219af0fa5addf3cfd433a002c13c9f
   AsyncDisplayKit: 7bf2b3fa444284f80fd0c1e36655e324549f79d2
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   VZInspector: 4f98c5e158a5cdbd3e3fff699a6e3f987fc37329

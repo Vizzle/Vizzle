@@ -18,10 +18,9 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "Vizzle.h"
-#import "AFNetworking.h"
-#import "UIKit+AFNetworking.h"
 #import <SDWebImage/SDImageCache.h>
 #import <SDWebImage/SDWebImageManager.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #endif
 
