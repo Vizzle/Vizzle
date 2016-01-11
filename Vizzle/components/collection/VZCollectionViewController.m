@@ -16,6 +16,7 @@
 #import "VZHTTPListModel.h"
 #import "VZFooterViewFactory.h"
 #import "VZAssert.h"
+#import "VZCollectionDefaultTextItem.h"
 
 
 @interface VZCollectionViewController()
@@ -398,9 +399,9 @@
             //show loading for seciton
             NSInteger section = model.sectionNumber;
             //创建一个error item
-            VZCollectionItem* item = [VZCollectionItem new];
+            VZCollectionDefaultTextItem* item = [VZCollectionDefaultTextItem new];
             item.itemType = kItem_Error;
-          //  item.text = error.localizedDescription;
+            item.text = error.localizedDescription;
             item.itemHeight = 44;
             [self.dataSource setItems:@[item] ForSection:section];
             [self reloadCollectionView];
@@ -673,9 +674,9 @@
             
             NSInteger section = model.sectionNumber;
             //创建一个customized item
-            VZCollectionItem* item = [VZCollectionItem new];
+            VZCollectionDefaultTextItem* item = [VZCollectionDefaultTextItem new];
             item.itemType = kItem_Customize;
-          //  item.text = @"没有结果";
+            item.text = @"没有结果";
             item.itemHeight = 44;
             [self.dataSource setItems:@[item] ForSection:section];
             [self reloadCollectionView];

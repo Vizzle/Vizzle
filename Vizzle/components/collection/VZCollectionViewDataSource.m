@@ -10,6 +10,9 @@
 #import "VZCollectionViewController.h"
 #import "VZCollectionItem.h"
 #import "VZCollectionCell.h"
+#import "VZCollectionDefaultLoadingCell.h"
+#import "VZCollectionDefaultErrorCell.h"
+#import "VZCollectionDefaultTextCell.h"
 #import "VZCellActionInterface.h"
 #import "VZCollectionSupplementaryView.h"
 #import "VZCollectionSupplementaryItem.h"
@@ -77,8 +80,26 @@
 {
     VZAssertMainThread();
     
-    //for temperary use
-    return [VZCollectionCell class];
+    if (item.itemType == kItem_Normal)
+    {
+        return [VZCollectionCell class];
+    }
+    else if (item.itemType == kItem_Loading)
+    {
+        return [VZCollectionDefaultLoadingCell class];
+    }
+    else if (item.itemType == kItem_Error)
+    {
+        return [VZCollectionDefaultErrorCell class];
+    }
+    else if (item.itemType == kItem_Customize)
+    {
+        return [VZCollectionDefaultTextCell class];
+    }
+    else
+    {
+        return [VZCollectionCell class];
+    }
     
 }
 /**
