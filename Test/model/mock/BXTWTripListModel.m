@@ -22,12 +22,20 @@
 #pragma mark - @override methods
 - (NSDictionary *)dataParams {
     
-    return @{@"country":@"TW",
-             @"uid":@"",
-             @"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex*self.pageSize],
-             @"size":@"10",
-             @"lat":@"",
-             @"lng":@""};
+    return @{
+             @"keyWord": @"历史",
+             @"sort": @"service_default_rank",
+             @"start": [NSString stringWithFormat:@"%ld",(long)self.currentPageIndex*self.pageSize],
+             @"cityAbbr": @"",
+             @"from": @"app_hotsearch",
+             @"showCurrency": @"CNY",
+             @"size": @"10",
+             @"uid": @"17",
+             @"xbAllowCache": @"4",
+             @"clientVersion": @"1.4.0",
+             @"client": @"iOS"
+             };
+    
 }
 
 - (NSInteger)pageSize
@@ -39,39 +47,42 @@
 {
     VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
     config.requestMethod = VZHTTPMethodPOST;
-    config.cachePolicy = self.cachePolicy;
-    config.cacheTime = self.cacheTime;
+    //    config.cachePolicy = VZHTTPNetworkURLCachePolicyDefault;
     return config;
-}
-
-
-- (NSString *)methodName {
-    
-    return @"http://42.121.16.186:9999/baseservice/getRecommendList";
 }
 
 - (NSString* )cacheKey
 {
-    return [[[self methodName] stringByAppendingString:@"/cache/"] stringByAppendingString:[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex]];
+    return [[[self methodName] stringByAppendingString:@"/"]stringByAppendingString:[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex]];
+}
+
+- (NSString *)methodName {
+    
+    // return @"http://api.cuitrip.com/baseservice/getHomeCardList";
+    return @"http://api.cuitrip.com/baseservice/serviceSearch";
 }
 
 
 - (NSMutableArray* )responseObjects:(id)JSON
 {
-
+    
     NSMutableArray* list = [NSMutableArray new];
     NSArray* result = JSON[@"result"][@"lists"];
     
-    for (NSDictionary* dict in result) {
+    if (![result isEqual:[NSNull null]]) {
         
-        BXTWTripListItem* item =  [BXTWTripListItem new];
-        [item autoKVCBinding:dict];
-        [list addObject:item];
+        for (NSDictionary* dict in result) {
+            
+            BXTWTripListItem* item =  [BXTWTripListItem new];
+            [item autoKVCBinding:dict];
+            [list addObject:item];
+            
+        }
     }
-    
     
     return list;
 }
+
 
 @end
 

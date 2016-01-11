@@ -119,12 +119,15 @@
             
             XCTAssertEqual(model.state, VZModelStateFinished);
             [weakSelf.model load];
-            
+
         }
         else
         {
             
             XCTAssertEqual(model.state, VZModelStateError);
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf->_expecation fulfill];
+
             
         }
     }];
@@ -158,19 +161,23 @@
             
             XCTAssertEqual(model.state, VZModelStateFinished);
             
-            [weakSelf.model loadWithCompletion:^(VZModel *model1, NSError *error1) {
-                
-                if (weakSelf) {
-                    __strong typeof(weakSelf) strongSelf = weakSelf;
-                    [strongSelf->_expecation fulfill];
-                }
-                
-            }];
-            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.model loadWithCompletion:^(VZModel *model1, NSError *error1) {
+                    
+                    if (weakSelf) {
+                        __strong typeof(weakSelf) strongSelf = weakSelf;
+                        [strongSelf->_expecation fulfill];
+                    }
+                    
+                }];
+            });
         }
         else
         {
-            
+            if (weakSelf) {
+                __strong typeof(weakSelf) strongSelf = weakSelf;
+                [strongSelf->_expecation fulfill];
+            }
             XCTAssertEqual(model.state, VZModelStateError);
             
         }

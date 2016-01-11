@@ -9,17 +9,18 @@
 
 
 
-#import "VZListItem.h"
 #import "BXTWTripItem.h"
 
 @interface BXTWTripListItem : BXTWTripItem
 
-@property(nonatomic,strong)NSArray* serviceSiteList;
-@property(nonatomic,strong)NSDictionary* serviceInfo;
-@property(nonatomic,assign)BOOL isAvailable;
-@property(nonatomic,strong)NSNumber* serviceCount;
-@property(nonatomic,assign)NSString* maxCount;
-
+@property(nonatomic,strong)NSString *serviceScore;
+@property(nonatomic,strong)NSString *insiderId;
+@property(nonatomic,strong)NSString *priceType;
+@property(nonatomic,strong)NSString *career;
+@property(nonatomic,strong)NSString *showPrice;
+@property(nonatomic,strong)NSString *showCurrency;
+@property(nonatomic,strong)NSNumber *isLike;
+@property(nonatomic,strong)NSString *reviewCount;
 
 @end
 

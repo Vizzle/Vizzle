@@ -54,11 +54,11 @@
     XCTAssertNotNil(self.listItem.servicePicUrl,@"父类数据绑定失败!");
     
     //自身object类型数据是否绑定成功
-    XCTAssertNotNil(self.listItem.serviceInfo,@"子类数据绑定失败!");
-    XCTAssertNotNil(self.listItem.serviceSiteList,@"子类数据绑定失败!");
-    XCTAssertNotNil(self.listItem.serviceCount,@"子类绑定数据失败");
-    XCTAssertFalse(self.listItem.isAvailable,@"类型绑定错误!");
-    XCTAssertNil(self.listItem.maxCount,@"类型绑定错误!");
+    XCTAssertNotNil(self.listItem.serviceScore,@"子类数据绑定失败!");
+    XCTAssertNotNil(self.listItem.insiderId,@"子类数据绑定失败!");
+    XCTAssertNotNil(self.listItem.isLike,@"子类绑定数据失败");
+    XCTAssertFalse(self.listItem.showCurrency,@"类型绑定错误!");
+    XCTAssertNil(self.listItem.reviewCount,@"类型绑定错误!");
     
 }
 
