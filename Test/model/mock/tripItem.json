@@ -1,13 +1,16 @@
-
-{   "sid": "89",
-    "userNick": "天天",
-    "servicePicUrl": "http://cuitrip.oss-cn-shenzhen.aliyuncs.com/162_1437321292521_0",
-    "headPic": "http://cuitrip.oss-cn-shenzhen.aliyuncs.com/162_1437321568112_1",
-    "serviceAddress": "木栅",
-    "serviceName": "木栅动物园一日游",
-    "serviceSiteList":["a","b","c"],
-    "serviceInfo":{"info":"abcd"},
-    "serviceCount":3,
-    "isAvailable":true,
-    "maxCount":12
+{
+    "sid":"157",
+    "serviceScore":"4.0",
+    "insiderId":"445",
+    "userNick":"小爛",
+    "priceType":"1",
+    "career":"电子商务",
+    "showPrice":"150.00",
+    "headPic":"http://pic.tripinsiders.com/445_1447864829172@750w_80Q_100sh",
+    "showCurrency":"CNY",
+    "serviceName":"探秘屏东潮州美食隐藏版块",
+    "isLike":0,
+    "reviewCount":"0",
+    "servicePicUrl":"http://pic.tripinsiders.com/445_1440471278560@750w_80Q_100sh",
+    "serviceAddress":"屏东县"
 }

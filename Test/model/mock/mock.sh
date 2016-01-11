@@ -1,5 +1,5 @@
 #!/bin/sh
 
 curl -H 'Content-Type: application/json' \
-     -X POST http://42.121.16.186:9999/baseservice/getRecommendList \
-     -d '{"country": "TW","start":"0","size":"10"}'
+     -X POST http://api.cuitrip.com/baseservice/serviceSearch \
+     -d '{"KeyWord": "历史","sort":"service_default_rank","start":"0","size":"10"}'

@@ -13,6 +13,11 @@
 #import "VZCollectionViewConfig.h"
 #import "VZCollectionSupplementaryItem.h"
 #import "VZCollectionViewConfig.h"
+#import "VZCollectionViewLayout.h"
+#import "VZHTTPListModel.h"
+#import "VZListDefaultTextItem.h"
+#import "VZFooterViewFactory.h"
+#import "VZAssert.h"
 
 @interface VZCollectionViewController()
 

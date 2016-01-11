@@ -234,6 +234,7 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
 
 - (void)loadWithCompletion:(VZModelCallback)aCallback
 {
+    //防止嵌套调用，将block释放
     dispatch_async(dispatch_get_main_queue(), ^{
    
         if (aCallback) {
@@ -245,7 +246,8 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
 
 - (void)reloadWithCompletion:(VZModelCallback)aCallback
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
+   //防止嵌套调用，将block释放
+   dispatch_async(dispatch_get_main_queue(), ^{
         
         if (aCallback) {
             self.requestCallback = aCallback;

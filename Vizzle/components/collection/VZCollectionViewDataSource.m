@@ -13,6 +13,8 @@
 #import "VZCellActionInterface.h"
 #import "VZCollectionSupplementaryView.h"
 #import "VZCollectionSupplementaryItem.h"
+#import "VZAssert.h"
+#import "VZHTTPListModel.h"
 
 @interface VZCollectionViewDataSource()
 {

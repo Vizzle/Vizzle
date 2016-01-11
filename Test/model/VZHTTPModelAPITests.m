@@ -176,7 +176,7 @@
         }
     }];
     NSTimeInterval timeoutValue = self.model.requestConfig.requestTimeoutSeconds;
-    [self waitForExpectationsWithTimeout:timeoutValue handler:^(NSError *error) {
+    [self waitForExpectationsWithTimeout:500 handler:^(NSError *error) {
         
         if (error) {
             XCTFail(@"\xE2\x9D\x8C[Timeout]");

@@ -8,6 +8,7 @@
 
 #import "VZCollectionViewLayout.h"
 #import "VZCollectionViewController.h"
+#import "VZCollectionViewDataSource.h"
 #import "VZCollectionItem.h"
 #import "VZCollectionViewConfig.h"
 

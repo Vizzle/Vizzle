@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "BXTWTripListModel.h"
-#import "BXTWTripItem.h"
 
 @interface VZHTTPModelCacheTimeTests : XCTestCase
 
