@@ -7,6 +7,7 @@
 //
 
 #import "VZCollectionItem.h"
+#import <UIKit/UIKit.h>
 
 @interface VZCollectionSupplementaryItem : VZCollectionItem
 

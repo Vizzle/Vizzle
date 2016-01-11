@@ -36,6 +36,7 @@ static inline VZCollectionLayoutAttributes vz_defaultAttributes(){
 };
 
 @class VZCollectionViewController;
+@class VZCollectionItem;
 
 @protocol VZCollectionViewLayoutInterface <NSObject>
 /**

@@ -6,7 +6,7 @@
 //  Copyright © 2015年 VizLab. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class VZCollectionViewController;
 @class VZCollectionItem;
@@ -89,7 +89,7 @@
  *
  *  @return 操作是否成功
  */
-- (BOOL)insertItem:(VZListItem* )item AtIndexPath:(NSIndexPath* )indexPath;
+- (BOOL)insertItem:(VZCollectionItem* )item AtIndexPath:(NSIndexPath* )indexPath;
 
 /**
  *  替换datasource中的item
@@ -99,7 +99,7 @@
  *
  *  @return 是否替换成功
  */
-- (BOOL)replaceItem:(VZListItem* )item AtIndexPath:(NSIndexPath* )indexPath;
+- (BOOL)replaceItem:(VZCollectionItem* )item AtIndexPath:(NSIndexPath* )indexPath;
 
 /**
  *  根据indexpath删除某条数据
