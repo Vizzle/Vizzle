@@ -239,21 +239,21 @@
     [self didFailWithError:error];
 }
 
-static dispatch_queue_t _vzResponseProcessinglQueue = NULL;
+
 - (dispatch_queue_t)sharedQueue
 {
-    if (_vzResponseProcessinglQueue == NULL) {
+    static dispatch_queue_t gResponseProcessinglQueue = NULL;
+    if (gResponseProcessinglQueue == NULL) {
         
         static dispatch_once_t onceToken = 0;
         dispatch_once(&onceToken, ^{
             
-            _vzResponseProcessinglQueue = dispatch_queue_create("com.vizlab.vizzle.httpmodel", DISPATCH_QUEUE_SERIAL);
+            gResponseProcessinglQueue = dispatch_queue_create("com.vizlab.vizzle.httpmodel", DISPATCH_QUEUE_SERIAL);
             
         });
     }
 
-
-    return _vzResponseProcessinglQueue;
+    return gResponseProcessinglQueue;
 }
 
 
