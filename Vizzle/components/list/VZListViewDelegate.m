@@ -46,7 +46,8 @@
         };
         
         if (self.controller.needPullRefresh) {
-            [self.controller.tableView addSubview:(UIView* )_pullRefreshView];
+           [self.controller.tableView addSubview:(UIView* )_pullRefreshView];
+            [_pullRefreshView.superview sendSubviewToBack:_pullRefreshView];
         }
       
         
