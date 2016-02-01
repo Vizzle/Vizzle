@@ -106,17 +106,22 @@
  *  @return 操作是否成功
  */
 - (BOOL)removeItemAtIndexPath:(NSIndexPath* )indexPath;
+
 /**
- *  删除某个section中的数据
+ *  更新某个section的item对应的indexpath
  *
- *  @param n section
- *
- *  @return 操作是否成功
+ *  @param section 待操作的section
  */
-- (BOOL)removeItemsForSection:(NSInteger)n;
+- (void)reloadItemsForSection:(NSUInteger)section;
+
 /**
  *  清除datasource所有数据
  */
 - (void)removeAllItems;
+
+/**
+ *  更新所有item的indexpath
+ */
+- (void)reloadAllItems;
 
 @end

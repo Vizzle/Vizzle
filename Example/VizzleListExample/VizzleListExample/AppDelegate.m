@@ -16,15 +16,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [VZInspector setClassPrefixName:@"VZ"];
-        [VZInspector setShouldHandleCrash:true];
-        [VZInspector setShouldHookNetworkRequest:true];
-        [VZInspector showOnStatusBar];
-    });
+    // Override point for customization after application launch.    
+
+    [VZInspector setClassPrefixName:@"VZ"];
+    [VZInspector setShouldHandleCrash:true];
+    [VZInspector setShouldHookNetworkRequest:true];
+    [VZInspector showOnStatusBar];
+
 
     
     return YES;

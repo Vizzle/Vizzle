@@ -9,6 +9,30 @@
 #import <XCTest/XCTest.h>
 #import "BXTWTripListDataSource.h"
 #import "BXTWTripListModel.h"
+#import "VZListItem.h"
+#import <objc/runtime.h>
+
+static const void* kTagKey = &kTagKey;
+@interface VZListItem(Tag)
+
+@property(nonatomic,strong)NSString* tag;
+
+@end
+
+@implementation VZListItem(Tag)
+
+- (NSString* )tag
+{
+    return objc_getAssociatedObject(self, kTagKey);
+}
+
+- (void)setTag:(NSString *)tag{
+    
+    return objc_setAssociatedObject(self, kTagKey, tag, OBJC_ASSOCIATION_RETAIN);
+}
+
+
+@end
 
 
 @interface VZListDataSourceTest : XCTestCase
@@ -19,6 +43,7 @@
 
 @end
 
+
 @implementation VZListDataSourceTest
 
 - (void)setUp {
@@ -26,6 +51,7 @@
     // Put setup code here. This method is called before the invocation of each test method in the class.
     self.ds = [BXTWTripListDataSource new];
     self.model = [BXTWTripListModel new];
+   
 }
 
 - (void)tearDown {
@@ -78,54 +104,66 @@
     
     //insert section at top
     [self prepareDataSource];
-    [self.ds insertSectionAtIndex:0 withItems:@[@"top"]];
-    XCTAssertEqual([self.ds itemsForSection:0][0], @"top");
-    XCTAssertEqual([self.ds itemsForSection:1][0], @"a");
-    XCTAssertEqual([self.ds itemsForSection:2][0], @"b");
-    XCTAssertEqual([self.ds itemsForSection:3][0], @"c");
+    VZListItem* insertedItem = [VZListItem new];
+    insertedItem.tag = @"top";
+    [self.ds insertSectionAtIndex:0 withItems:@[insertedItem]];
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][0]).tag, @"top");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:1][0]).tag, @"a");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:2][0]).tag, @"b");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:3][0]).tag, @"c");
     
     //insert section at bottom
     [self prepareDataSource];
-    [self.ds insertSectionAtIndex:(self.ds.itemsForSection.count) withItems:@[@"bottom"]];
-    XCTAssertEqual([self.ds itemsForSection:0][0], @"a");
-    XCTAssertEqual([self.ds itemsForSection:1][0], @"b");
-    XCTAssertEqual([self.ds itemsForSection:2][0], @"c");
-    XCTAssertEqual([self.ds itemsForSection:3][0], @"bottom");
+    insertedItem.tag = @"bottom";
+    [self.ds insertSectionAtIndex:(self.ds.itemsForSection.count) withItems:@[insertedItem]];
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][0]).tag, @"a");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:1][0]).tag, @"b");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:2][0]).tag, @"c");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:3][0]).tag, @"bottom");
     
     //insert in the middle
     [self prepareDataSource];
-    [self.ds insertSectionAtIndex:1 withItems:@[@"z"]];
-    XCTAssertEqual([self.ds itemsForSection:0][0], @"a");
-    XCTAssertEqual([self.ds itemsForSection:1][0], @"z");
-    XCTAssertEqual([self.ds itemsForSection:2][0], @"b");
-    XCTAssertEqual([self.ds itemsForSection:3][0], @"c");
+    insertedItem.tag = @"z";
+    [self.ds insertSectionAtIndex:1 withItems:@[insertedItem]];
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][0]).tag, @"a");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:1][0]).tag, @"z");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:2][0]).tag, @"b");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:3][0]).tag, @"c");
     
     //insert in the middle
     [self prepareDataSource];
-    [self.ds insertSectionAtIndex:2 withItems:@[@"z"]];
-    XCTAssertEqual([self.ds itemsForSection:0][0], @"a");
-    XCTAssertEqual([self.ds itemsForSection:1][0], @"b");
-    XCTAssertEqual([self.ds itemsForSection:2][0], @"z");
-    XCTAssertEqual([self.ds itemsForSection:3][0], @"c");
+    insertedItem.tag = @"z";
+    [self.ds insertSectionAtIndex:2 withItems:@[insertedItem]];
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][0]).tag, @"a");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:1][0]).tag, @"b");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:2][0]).tag, @"z");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:3][0]).tag, @"c");
     
     //double insert
     [self prepareDataSource];
-    [self.ds insertSectionAtIndex:1 withItems:@[@"x"]];
-    [self.ds insertSectionAtIndex:1 withItems:@[@"y"]];
-    XCTAssertEqual([self.ds itemsForSection:0][0], @"a");
-    XCTAssertEqual([self.ds itemsForSection:1][0], @"y");
-    XCTAssertEqual([self.ds itemsForSection:2][0], @"x");
-    XCTAssertEqual([self.ds itemsForSection:3][0], @"b");
-    XCTAssertEqual([self.ds itemsForSection:4][0], @"c");
+    VZListItem* insertedXItem = [VZListItem new];
+    insertedXItem.tag = @"x";
+    VZListItem* insertedYItem = [VZListItem new];
+    insertedYItem.tag = @"y";
+    
+    [self.ds insertSectionAtIndex:1 withItems:@[insertedXItem]];
+    [self.ds insertSectionAtIndex:1 withItems:@[insertedYItem]];
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][0]).tag, @"a");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:1][0]).tag, @"y");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:2][0]).tag, @"x");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:3][0]).tag, @"b");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:4][0]).tag, @"c");
     
     [self prepareDataSource];
-    [self.ds insertSectionAtIndex:1 withItems:@[@"x"]];
-    [self.ds insertSectionAtIndex:2 withItems:@[@"y"]];
-    XCTAssertEqual([self.ds itemsForSection:0][0], @"a");
-    XCTAssertEqual([self.ds itemsForSection:1][0], @"x");
-    XCTAssertEqual([self.ds itemsForSection:2][0], @"y");
-    XCTAssertEqual([self.ds itemsForSection:3][0], @"b");
-    XCTAssertEqual([self.ds itemsForSection:4][0], @"c");
+    insertedXItem.tag = @"x";
+    insertedYItem.tag = @"y";
+    [self.ds insertSectionAtIndex:1 withItems:@[insertedXItem]];
+    [self.ds insertSectionAtIndex:2 withItems:@[insertedYItem]];
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][0]).tag, @"a");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:1][0]).tag, @"x");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:2][0]).tag, @"y");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:3][0]).tag, @"b");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:4][0]).tag, @"c");
 }
 
 - (void)testRemoveSection
@@ -135,18 +173,98 @@
     [self.ds removeSectionByIndex:0];
     XCTAssertEqual([self.ds itemsForSection:0][0], @"b");
     XCTAssertEqual([self.ds itemsForSection:1][0], @"c");
-    
-    
-    
+}
 
+- (void)testInsertItem{
+    
+    VZListItem* item = [VZListItem new];
+    
+    //头部插入
+    [self perpareDataSourceForItems];
+    [self.ds insertItem:item AtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][0]).indexPath.row,0);
+    
+    //尾部插入
+    [self perpareDataSourceForItems];
+    [self.ds insertItem:item AtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]];
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][4]).indexPath.row,4);
+    
+    //中间插入
+    [self perpareDataSourceForItems];
+    [self.ds insertItem:item AtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][3]).indexPath.row,3);
+}
+
+- (void)testRemoveItem
+{
+    //头部删除
+    [self perpareDataSourceForItems];
+    [self.ds removeItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][1]).indexPath.row,1);
+    
+    //尾部删除
+    [self perpareDataSourceForItems];
+    [self.ds removeItemAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]];
+     XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][1]).indexPath.row,1);
+    
+    //中间删除
+    [self perpareDataSourceForItems];
+    [self.ds removeItemAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][1]).indexPath.row,1);
+}
+
+- (void)testReplaceItem
+{
+    VZListItem* item = [VZListItem new];
+    
+    //头部替换
+    [self perpareDataSourceForItems];
+    [self.ds replaceItem:item AtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][0]).indexPath.row,0);
+    
+    //尾部替换
+    [self perpareDataSourceForItems];
+    [self.ds replaceItem:item AtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]];
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][4]).indexPath.row,4);
+    
+    //中间替换
+    [self perpareDataSourceForItems];
+    [self.ds replaceItem:item AtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][3]).indexPath.row,3);
+    
 }
 
 - (void)prepareDataSource
 {
     [self.ds removeAllItems];
-    [self.ds setItems:@[@"a"] ForSection:0];
-    [self.ds setItems:@[@"b"] ForSection:1];
-    [self.ds setItems:@[@"c"] ForSection:2];
+    
+    VZListItem* l1 = [VZListItem new];
+    l1.tag = @"a";
+
+    VZListItem* l2 = [VZListItem new];
+    l2.tag = @"b";
+    
+    VZListItem* l3 = [VZListItem new];
+    l3.tag = @"c";
+    
+    [self.ds setItems:@[l1] ForSection:0];
+    [self.ds setItems:@[l2] ForSection:1];
+    [self.ds setItems:@[l3] ForSection:2];
+}
+
+
+- (void)perpareDataSourceForItems{
+    
+    [self.ds removeAllItems];
+    
+    NSMutableArray* list = [NSMutableArray new];
+    for (int i=0; i<5; i++) {
+        
+        VZListItem* item = [VZListItem new];
+        item.indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+        [list addObject:item];
+    }
+    [self.ds setItems:[list copy] ForSection:0];
 }
 
 @end

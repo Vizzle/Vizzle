@@ -46,7 +46,7 @@ typedef NS_ENUM(int, VZListItemType)
  *  @optional
  *  item的高度，建议在model请求完成后赋值
  */
-@property (nonatomic,assign) float    itemHeight;
+@property (nonatomic,assign) float itemHeight;
 /**
  *  @optional
  *  item的数据类型

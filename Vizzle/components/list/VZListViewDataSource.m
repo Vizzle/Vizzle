@@ -95,10 +95,15 @@
                     _itemsForSectionInternal[@(j+1)] = _itemsForSectionInternal[@(j)];
                 }
                 _itemsForSectionInternal[@(sectionIndex)] = [items mutableCopy];
+                
+  
                 break;
             }
         }
   
+        //重新绑定items的indexpath
+        [self reloadAllItems];
+        
         return YES;
     }
 
@@ -126,9 +131,35 @@
                 break;
             }
         }
+        
+        //重新绑定items的indexpath
+        [self reloadAllItems];
+        
         return YES;
     }
     
+    return NO;
+}
+
+
+- (BOOL)setItems:(NSArray*)items ForSection:(NSInteger)n
+{
+    VZAssertMainThread();
+    VZAssertTrue(items && [items isKindOfClass:[NSArray class]]);
+    VZAssertTrue(n>=0);
+    
+    if (n < 0) {
+        return NO;
+    }
+    
+    if ( items && [items isKindOfClass:[NSArray class]])
+    {
+        [_itemsForSectionInternal setObject:[items mutableCopy] forKey:@(n)];
+        //重新绑定item的indexpath
+        [self reloadItemsForSection:n];
+        return YES;
+        
+    }
     return NO;
 }
 
@@ -160,6 +191,8 @@
             if (list.count > 0 && indexPath.row <= list.count) {
                 
                 [list insertObject:item atIndex:indexPath.row];
+                //重新绑定item的indexpath
+                [self reloadItemsForSection:indexPath.section];
                 return YES;
             }
         }
@@ -184,6 +217,8 @@
                 if ([list objectAtIndex:indexPath.row]) {
                     
                     [list replaceObjectAtIndex:indexPath.row withObject:item];
+                    //重新绑定item的indexpath
+                    [self reloadItemsForSection:indexPath.section];
                     return YES;
                 }
             }
@@ -192,24 +227,6 @@
     return NO;
 }
 
-- (BOOL)setItems:(NSArray*)items ForSection:(NSInteger)n
-{
-    VZAssertMainThread();
-    VZAssertTrue(items && [items isKindOfClass:[NSArray class]]);
-    VZAssertTrue(n>=0);
-    
-    if (n < 0) {
-        return NO;
-    }
-    
-    if ( items && [items isKindOfClass:[NSArray class]])
-    {
-        [_itemsForSectionInternal setObject:[items mutableCopy] forKey:@(n)];
-        return YES;
-        
-    }
-    return NO;
-}
 
 - (BOOL)removeItemAtIndexPath:(NSIndexPath* )indexPath
 {
@@ -223,23 +240,52 @@
         if (list.count > 0 && indexPath.row < list.count) {
             
             [list removeObjectAtIndex:indexPath.row];
+            //重新绑定item的indexpath
+            [self reloadItemsForSection:indexPath.section];
             return YES;
         }
     }
     return NO;
 }
 
+- (void)reloadItemsForSection:(NSUInteger)section{
+    
+    VZAssertMainThread();
+    NSArray* items = [self itemsForSection:section];
+    for (int i=0; i<items.count; i++) {
+        
+        VZListItem* item = items[i];
+        item.indexPath = [NSIndexPath indexPathForRow:i inSection:section];
+        if(i==items.count-1)
+        {
+            item.isLast = YES;
+        }
+    }
+}
 
-- (BOOL)removeItemsForSection:(NSInteger)n
-{
+//- (BOOL)removeItemsForSection:(NSInteger)n
+//{
+//    VZAssertMainThread();
+//    
+//    if (n>=0 && n < _itemsForSectionInternal.count) {
+//        [_itemsForSectionInternal removeObjectForKey:@(n)];
+//        return YES;
+//    }
+//    return NO;
+//}
+
+- (void)reloadAllItems{
+
     VZAssertMainThread();
     
-    if (n>=0 && n < _itemsForSectionInternal.count) {
-        [_itemsForSectionInternal removeObjectForKey:@(n)];
-        return YES;
+    NSUInteger sections = _itemsForSectionInternal.count;
+    
+    for (int i=0; i<sections; i++) {
+        
+        [self reloadItemsForSection:i];
     }
-    return NO;
 }
+
 - (void)removeAllItems
 {
     VZAssertMainThread();

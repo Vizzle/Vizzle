@@ -2,14 +2,14 @@ PODS:
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
-  - VZInspector (0.0.9)
+  - VZInspector (0.1.0)
 
 DEPENDENCIES:
   - SDWebImage
-  - VZInspector (~> 0.0.9)
+  - VZInspector (= 0.1.0)
 
 SPEC CHECKSUMS:
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
-  VZInspector: 116a3e510a6cbbd44334a56594976f256466d747
+  VZInspector: 224b19e72ad61603fa5cda0d558b6f236c975e9f
 
 COCOAPODS: 0.39.0
