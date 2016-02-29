@@ -200,7 +200,9 @@ static const void* kTagKey = &kTagKey;
     //头部删除
     [self perpareDataSourceForItems];
     [self.ds removeItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][1]).indexPath.row,1);
+    [self.ds removeItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    
+     (((VZListItem* )[self.ds itemsForSection:0][0]).indexPath.row,0);
     
     //尾部删除
     [self perpareDataSourceForItems];
