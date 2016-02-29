@@ -16,7 +16,8 @@
 {
     VZCollectionLayoutAttributes attr = vz_defaultAttributes();
     CGRect itemRect = CGRectMake(item.x, item.y, item.itemWidth, item.itemHeight);
-    attr.frame = CGRectInset(itemRect, 5, 5);
+    attr.frame = itemRect;
+//    attr.frame = CGRectInset(itemRect, 5, 5);
     return attr;
 
 }
@@ -26,17 +27,21 @@
     int i=0;
     int topl = kSegmentHeaderHeight;
     int topr = kSegmentHeaderHeight;
+    int topm = kSegmentHeaderHeight;
     int w = CGRectGetWidth(self.collectionView.frame);
     NSArray* items = [self.controller.dataSource itemsForSection:0];
     
     for (BXTWTripListItem* item in items) {
 
         //left
-        if (i%2 == 0)
+        if (i%3 == 0)
         {
             topl += item.itemHeight;
         }
         //right
+        else if (i%3 == 1){
+            topm += item.itemHeight;
+        }
         else
         {
             topr += item.itemHeight;
@@ -44,7 +49,7 @@
         i++;
     }
     
-    CGSize sz = CGSizeMake(w, MAX(topl, topr));
+    CGSize sz = CGSizeMake(w, MAX(MAX(topl,topm),topr));
     NSLog(@"end calculate layout:%.1f!",sz.height);
     
     return sz;

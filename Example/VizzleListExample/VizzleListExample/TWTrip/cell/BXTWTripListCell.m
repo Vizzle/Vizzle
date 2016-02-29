@@ -91,7 +91,7 @@
 {
     [super layoutSubviews];
     
-    self.containerView.frame    = CGRectMake(10, 10, self.frame.size.width-20, 205);
+    self.containerView.frame    = CGRectMake(0, 0, self.frame.size.width-20, 205);
     self.poster.frame           = CGRectMake(0, 0, self.contentView.frame.size.width, 175);
     self.icon.frame             = CGRectMake(10, self.poster.frame.size.height-23, 45, 45);
     self.gradientLayer.frame    = CGRectMake(0, self.icon.frame.origin.y-20, self.frame.size.width-20, 43);

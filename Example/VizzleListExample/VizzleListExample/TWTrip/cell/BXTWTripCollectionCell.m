@@ -35,8 +35,8 @@
        
         //todo: add some UI code
         self.containerView = [[UIView alloc]initWithFrame:CGRectZero];
-        self.containerView.layer.cornerRadius = 5.0f;
-        self.containerView.layer.masksToBounds = true;
+//        self.containerView.layer.cornerRadius = 5.0f;
+//        self.containerView.layer.masksToBounds = true;
         self.containerView.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:self.containerView];
         
@@ -55,12 +55,12 @@
         
         self.posterNameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         self.posterNameLabel.backgroundColor = [UIColor clearColor];
-        self.posterNameLabel.font = [UIFont systemFontOfSize:14.0f];
+        self.posterNameLabel.font = [UIFont systemFontOfSize:10.0f];
         self.posterNameLabel.textColor = [UIColor whiteColor];
         
         self.userNameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         self.userNameLabel.backgroundColor = [UIColor clearColor];
-        self.userNameLabel.font = [UIFont systemFontOfSize:10.0f ];
+        self.userNameLabel.font = [UIFont systemFontOfSize:8.0f ];
         self.userNameLabel.textColor = [UIColor lightGrayColor];
         
         self.gradientLayer = [CAGradientLayer layer];
@@ -95,7 +95,7 @@
 
     CGRect parentRect = CGRectMake(0, 0, item.itemWidth, item.itemHeight);
     
-    self.containerView.frame    = CGRectInset(parentRect, 10, 10);
+    self.containerView.frame    = CGRectInset(parentRect, 0, 0);
     self.poster.frame           = CGRectMake(0, 0,CGRectGetWidth(parentRect),CGRectGetHeight(parentRect));
     self.icon.frame             = CGRectMake(10, CGRectGetHeight(self.containerView.frame)-36, 30, 30);
     

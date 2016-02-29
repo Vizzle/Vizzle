@@ -40,7 +40,8 @@
     for (VZCollectionItem* item in items) {
         
         if (type == kWaterflow) {
-            item.itemWidth = 0.5*w;
+//            item.itemWidth = 0.5*w;
+            item.itemWidth = w / 3.0f;
         }
         else
         {

@@ -100,6 +100,7 @@
     int w = [UIScreen mainScreen].bounds.size.width;
     int i=0;
     int topl = kSegmentHeaderHeight;
+    int topm = kSegmentHeaderHeight;
     int topr = kSegmentHeaderHeight;
     
     for(BXTWTripListItem* item in self.objects)
@@ -111,20 +112,25 @@
         
         if (self.layoutType == kWaterflow) {
             
-            item.itemWidth = 0.5*w;
-            
+//            item.itemWidth = 0.5*w;
+
+            item.itemWidth = w / 3.0f;
         }
         else{
             item.itemWidth = w;
         }
         
-        item.x = i%2 * w*0.5 ;
+        item.x = i%3 * (w/3.0) ;
         
         //left
-        if (i%2 == 0)
+        if (i%3 == 0)
         {
             item.y = topl;
             topl += item.itemHeight;
+        }
+        else if (i%3 == 1){
+            item.y = topm;
+            topm += item.itemHeight;
         }
         //right
         else
