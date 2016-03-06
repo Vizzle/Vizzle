@@ -48,6 +48,8 @@
         self.ignoreCache=  false;
 
     [super reload];
+    
+    self.ignoreCache = false;
 }
 
 - (void)cancel
