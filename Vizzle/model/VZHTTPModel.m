@@ -47,9 +47,8 @@
     else
         self.ignoreCache=  false;
 
-    [super reload];
-    
-    self.ignoreCache = false;
+    [super load];
+    [self loadInternal];
 }
 
 - (void)cancel
