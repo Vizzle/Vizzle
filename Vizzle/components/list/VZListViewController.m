@@ -187,6 +187,16 @@
     [super load];
 }
 
+- (void)reload{
+
+    NSAssert(_keyModel != nil, @"至少需要指定一个keymodel");
+    if (self.clearItemsWhenModelReload) {
+        [self.dataSource removeAllItems];
+        [self.tableView reloadData];
+    }
+    [super reload];
+}
+
 - (void)loadMore
 {
     NSAssert(_keyModel != nil, @"至少需要指定一个keymodel");
@@ -403,7 +413,9 @@
         VZHTTPListModel* model = (VZHTTPListModel*)obj;
         
         if (section == model.sectionNumber) {
-            [model load];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [model load];
+            });
         }
     }];
 }
@@ -423,7 +435,9 @@
                 [self.dataSource removeAllItems];
                 [self.tableView reloadData];
             }
-            [model reload];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [model reload];
+            });
         }
     }];
 }
@@ -437,7 +451,10 @@
         VZHTTPListModel* model = (VZHTTPListModel*)obj;
         
         if ([key isEqualToString : targetKey]) {
-            [model load];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                  [model load];
+            });
         }
     }];
 }
@@ -456,7 +473,9 @@
                 [self.dataSource removeAllItems];
                 [self reloadTableView];
             }
-            [model reload];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [model reload];
+            });
         }
     }];
 }
