@@ -127,7 +127,7 @@
                 for (int j=i; j<= numberOfSection-i; j++) {
                   _itemsForSectionInternal[@(j)] = _itemsForSectionInternal[@(j+1)];
                 }
-                //[_itemsForSectionInternal removeObjectForKey:@(numberOfSection-1)];
+                [_itemsForSectionInternal removeObjectForKey:@(numberOfSection-1)];
                 break;
             }
         }

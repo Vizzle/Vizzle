@@ -171,8 +171,25 @@ static const void* kTagKey = &kTagKey;
     //remove first section
     [self prepareDataSource];
     [self.ds removeSectionByIndex:0];
-    XCTAssertEqual([self.ds itemsForSection:0][0], @"b");
-    XCTAssertEqual([self.ds itemsForSection:1][0], @"c");
+    XCTAssertEqual([self.ds numberOfSectionsInTableView:nil] , 2);
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][0]).tag, @"b");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:1][0]).tag, @"c");
+    
+    //remove last section
+    [self prepareDataSource];
+    [self.ds removeSectionByIndex:2];
+    XCTAssertEqual([self.ds numberOfSectionsInTableView:nil] , 2);
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][0]).tag, @"a");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:1][0]).tag, @"b");
+
+    
+    //remove middle section
+    [self prepareDataSource];
+    [self.ds removeSectionByIndex:1];
+    XCTAssertEqual([self.ds numberOfSectionsInTableView:nil] , 2);
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:0][0]).tag, @"a");
+    XCTAssertEqual(((VZListItem* )[self.ds itemsForSection:1][0]).tag, @"c");
+    
 }
 
 - (void)testInsertItem{
