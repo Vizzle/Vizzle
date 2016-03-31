@@ -192,7 +192,7 @@
     NSAssert(_keyModel != nil, @"至少需要指定一个keymodel");
     if (self.clearItemsWhenModelReload) {
         [self.dataSource removeAllItems];
-        [self.tableView reloadData];
+        [self reloadTableView];
     }
     [super reload];
 }
@@ -433,7 +433,7 @@
             
             if (self.clearItemsWhenModelReload) {
                 [self.dataSource removeAllItems];
-                [self.tableView reloadData];
+                [self reloadTableView];
             }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [model reload];
@@ -498,10 +498,10 @@
  */
 - (void)pullRefreshDidTrigger
 {
-    if (self.clearItemsWhenModelReload) {
-        [self.dataSource removeAllItems];
-        [self reloadTableView];
-    }
+//    if (self.clearItemsWhenModelReload) {
+//        [self.dataSource removeAllItems];
+//        [self reloadTableView];
+//    }
     [self reload];
 }
 
