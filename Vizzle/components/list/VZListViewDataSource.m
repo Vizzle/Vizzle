@@ -256,9 +256,11 @@
         
         VZListItem* item = items[i];
         item.indexPath = [NSIndexPath indexPathForRow:i inSection:section];
-        if(i==items.count-1)
-        {
+        if(i==items.count-1){
             item.isLast = YES;
+        }
+        else{
+            item.isLast = NO;
         }
     }
 }

@@ -82,7 +82,7 @@
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     self.tableView.backgroundColor = [UIColor colorWithRed:189.0/255.0 green:247/255.0 blue:251/255.0 alpha:1];
     self.tableView.showsVerticalScrollIndicator = YES;
-    self.tableView.separatorStyle = YES;
+    self.tableView.separatorStyle = NO;
     
     //2,set some properties:下拉刷新，自动翻页
     self.needLoadMore = YES;
