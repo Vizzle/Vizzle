@@ -41,6 +41,7 @@
     }
 }
 
+
 - (void)startRefreshing
 {
     [self beginRefreshing];
@@ -48,7 +49,8 @@
 
 - (void)stopRefreshing
 {
-    [self performSelector:@selector(endRefreshing) withObject:nil afterDelay:0.1];
+    [self endRefreshing];
 }
+
 
 @end
