@@ -12,4 +12,6 @@
 
 @interface VZPullToRefreshControl : UIRefreshControl<VZPullToRefreshControlInterface>
 
+- (void)refresh;
+
 @end

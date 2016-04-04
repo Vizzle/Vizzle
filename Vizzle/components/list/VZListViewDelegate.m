@@ -16,6 +16,7 @@
 #import "VZPullToRefreshControl.h"
 #import "VZPullToRefreshControlInterface.h"
 #import "VZPullToRefreshControl.h"
+#import "VZListViewDelegate+UIRefreshControl.h"
 
 @interface VZListViewDelegate()<VZCellActionInterface>
 
@@ -36,8 +37,27 @@
 
 - (VZPullToRefreshControl* )pullRefreshView
 {
+    if (!self.controller.needPullRefresh) {
+        return nil;
+    }
+    
     if (!_pullRefreshView) {
         _pullRefreshView = [[VZPullToRefreshControl alloc]init];
+        
+        
+        //moxi.xt:创建一个假的UITableViewController，解决UIRefreshControl的Bug
+        //see:
+        /*
+         * This initializes a UIRefreshControl with a default height and width.
+         * Once assigned to a UITableViewController, the frame of the control is managed automatically.
+         * When a user has pulled-to-refresh, the UIRefreshControl fires its UIControlEventValueChanged event.
+         *
+         */
+        VZPullToRefreshControl* refreshControl = (VZPullToRefreshControl* )_pullRefreshView;
+        [refreshControl addTarget:refreshControl action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+        self.dummyTableViewController = [[UITableViewController alloc]init];
+        self.dummyTableViewController.tableView = self.controller.tableView;
+        self.dummyTableViewController.refreshControl = refreshControl;
             // _pullRefreshViewInternal.backgroundColor = self.controller.tableView.backgroundColor;
             // 如果设置背景色，位置将会随着下拉改变，否则定在原地
         __weak typeof(self)weakSelf = self;
@@ -45,10 +65,10 @@
             [weakSelf.controller performSelector:@selector(pullRefreshDidTrigger) withObject:nil];
         };
         
-        if (self.controller.needPullRefresh) {
-           [self.controller.tableView addSubview:(UIView* )_pullRefreshView];
-            [_pullRefreshView.superview sendSubviewToBack:_pullRefreshView];
-        }
+//        if (self.controller.needPullRefresh) {
+//           [self.controller.tableView addSubview:(UIView* )_pullRefreshView];
+//            [_pullRefreshView.superview sendSubviewToBack:_pullRefreshView];
+//        }
       
         
     }

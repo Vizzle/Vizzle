@@ -33,19 +33,12 @@
     return self;
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollview{
-    
-    if (self.isRefreshing) {
-        if (self.pullRefreshDidTrigger) {
-            self.pullRefreshDidTrigger();
-        }
-    }
-}
 
-- (void)scrollviewDidScroll:(UIScrollView *)scrollview
-{
-    CGFloat visibleHeight = MAX ( -scrollview.contentOffset.y - scrollview.contentInset.top, 0 );
-    _progress = MIN(MAX(visibleHeight/80, 0.0f),1.0f);
+- (void)refresh{
+
+    if (self.pullRefreshDidTrigger) {
+        self.pullRefreshDidTrigger();
+    }
 }
 
 - (void)startRefreshing
