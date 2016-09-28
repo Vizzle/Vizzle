@@ -14,7 +14,7 @@
 #import "BXTWTripListCell.h"
 #import "BXTWTripConfig.h"
 #import "BXTWTripListViewController.h"
-#import "BXTWTripAsyncCollectionCell.h"
+
 
 @interface BXTWTripListViewDataSource()
 

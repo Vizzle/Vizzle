@@ -1,3 +1,2 @@
 pod 'VZInspector','~> 0.0.8'
-pod 'AsyncDisplayKit'
 pod 'SDWebImage'

@@ -41,7 +41,6 @@
 		456BE9561AFF6DBF0064FBB6 /* VZHTTPURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE94C1AFF6DBF0064FBB6 /* VZHTTPURLConnectionOperation.m */; };
 		456BE9571AFF6DBF0064FBB6 /* VZHTTPURLResponseCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE94E1AFF6DBF0064FBB6 /* VZHTTPURLResponseCache.m */; };
 		456BE95A1AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BE9591AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.m */; };
-		456E13BF1C06D148003A8A44 /* BXTWImageNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 456E13BE1C06D148003A8A44 /* BXTWImageNode.m */; };
 		458E0D991BF96B4500D8E704 /* VZPullToRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 458E0D981BF96B4500D8E704 /* VZPullToRefreshControl.m */; };
 		458E0D9D1BF96CB000D8E704 /* VZPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 458E0D9C1BF96CB000D8E704 /* VZPullToRefreshView.m */; };
 		458E0DA41BF9838200D8E704 /* BXTWTripListLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 458E0DA31BF9838200D8E704 /* BXTWTripListLayout.m */; };
@@ -70,10 +69,6 @@
 		45CE94CD1AF67BFD00144AA4 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CE94BA1AF67BFD00144AA4 /* placeholder@2x.png */; };
 		45CE94CE1AF67BFD00144AA4 /* VZTimelineSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CE94BD1AF67BFD00144AA4 /* VZTimelineSubView.m */; };
 		45CE94D01AF67C0A00144AA4 /* VizzleListExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CE94CF1AF67C0A00144AA4 /* VizzleListExampleTests.m */; };
-		45D6F80B1C0494C200159418 /* BXTWTripAsyncCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6F80A1C0494C200159418 /* BXTWTripAsyncCollectionCell.m */; };
-		45D6F80F1C05553200159418 /* BXTWAyncImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6F80E1C05553200159418 /* BXTWAyncImageCache.m */; };
-		45D6F8121C057C5400159418 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6F8111C057C5400159418 /* UIImage+ImageEffects.m */; };
-		45D6F8181C05838E00159418 /* BXTWAsynImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6F8171C05838E00159418 /* BXTWAsynImageDownloader.m */; };
 		45F73EDD1B4A8AD700477595 /* VZHTTPResponseDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F73EDB1B4A8AD700477595 /* VZHTTPResponseDataCache.m */; };
 		AFD37A9D19D83F8F0077CE06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37A9C19D83F8F0077CE06 /* main.m */; };
 		AFD37AA019D83F8F0077CE06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD37A9F19D83F8F0077CE06 /* AppDelegate.m */; };
@@ -165,8 +160,6 @@
 		456BE94E1AFF6DBF0064FBB6 /* VZHTTPURLResponseCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPURLResponseCache.m; sourceTree = "<group>"; };
 		456BE9581AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+VZHTTPNetworkUtil.h"; sourceTree = "<group>"; };
 		456BE9591AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+VZHTTPNetworkUtil.m"; sourceTree = "<group>"; };
-		456E13BD1C06D148003A8A44 /* BXTWImageNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWImageNode.h; sourceTree = "<group>"; };
-		456E13BE1C06D148003A8A44 /* BXTWImageNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWImageNode.m; sourceTree = "<group>"; };
 		458E0D971BF96B4500D8E704 /* VZPullToRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPullToRefreshControl.h; sourceTree = "<group>"; };
 		458E0D981BF96B4500D8E704 /* VZPullToRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZPullToRefreshControl.m; sourceTree = "<group>"; };
 		458E0D9B1BF96CB000D8E704 /* VZPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPullToRefreshView.h; sourceTree = "<group>"; };
@@ -220,14 +213,6 @@
 		45CE94BC1AF67BFD00144AA4 /* VZTimelineSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTimelineSubView.h; sourceTree = "<group>"; };
 		45CE94BD1AF67BFD00144AA4 /* VZTimelineSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTimelineSubView.m; sourceTree = "<group>"; };
 		45CE94CF1AF67C0A00144AA4 /* VizzleListExampleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VizzleListExampleTests.m; sourceTree = "<group>"; };
-		45D6F8091C0494C200159418 /* BXTWTripAsyncCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripAsyncCollectionCell.h; sourceTree = "<group>"; };
-		45D6F80A1C0494C200159418 /* BXTWTripAsyncCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripAsyncCollectionCell.m; sourceTree = "<group>"; };
-		45D6F80D1C05553200159418 /* BXTWAyncImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWAyncImageCache.h; sourceTree = "<group>"; };
-		45D6F80E1C05553200159418 /* BXTWAyncImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWAyncImageCache.m; sourceTree = "<group>"; };
-		45D6F8101C057C5400159418 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		45D6F8111C057C5400159418 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
-		45D6F8161C05838E00159418 /* BXTWAsynImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWAsynImageDownloader.h; sourceTree = "<group>"; };
-		45D6F8171C05838E00159418 /* BXTWAsynImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWAsynImageDownloader.m; sourceTree = "<group>"; };
 		45D78B981C02B699001C5918 /* VZCollectionViewConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VZCollectionViewConfig.h; sourceTree = "<group>"; };
 		45F73EDA1B4A8AD700477595 /* VZHTTPResponseDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseDataCache.h; sourceTree = "<group>"; };
 		45F73EDB1B4A8AD700477595 /* VZHTTPResponseDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPResponseDataCache.m; sourceTree = "<group>"; };
@@ -422,15 +407,6 @@
 			path = VZNetwork;
 			sourceTree = "<group>";
 		};
-		456E13BC1C06CB0B003A8A44 /* nodes */ = {
-			isa = PBXGroup;
-			children = (
-				456E13BD1C06D148003A8A44 /* BXTWImageNode.h */,
-				456E13BE1C06D148003A8A44 /* BXTWImageNode.m */,
-			);
-			path = nodes;
-			sourceTree = "<group>";
-		};
 		458E0D961BF96B2E00D8E704 /* refresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,8 +441,6 @@
 		45B82CFC1B5546110053D51C /* TWTrip */ = {
 			isa = PBXGroup;
 			children = (
-				456E13BC1C06CB0B003A8A44 /* nodes */,
-				45D6F80C1C0554F700159418 /* cache */,
 				458E0DA11BF9836C00D8E704 /* layout */,
 				45B82CFD1B5546110053D51C /* cell */,
 				45B82D001B5546110053D51C /* config */,
@@ -488,8 +462,6 @@
 				45B82CFF1B5546110053D51C /* BXTWTripListCell.m */,
 				458E0DAB1BF9C46100D8E704 /* BXTWTripCollectionCell.h */,
 				458E0DAC1BF9C46100D8E704 /* BXTWTripCollectionCell.m */,
-				45D6F8091C0494C200159418 /* BXTWTripAsyncCollectionCell.h */,
-				45D6F80A1C0494C200159418 /* BXTWTripAsyncCollectionCell.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -661,19 +633,6 @@
 				45CE94BD1AF67BFD00144AA4 /* VZTimelineSubView.m */,
 			);
 			path = view;
-			sourceTree = "<group>";
-		};
-		45D6F80C1C0554F700159418 /* cache */ = {
-			isa = PBXGroup;
-			children = (
-				45D6F8101C057C5400159418 /* UIImage+ImageEffects.h */,
-				45D6F8111C057C5400159418 /* UIImage+ImageEffects.m */,
-				45D6F80D1C05553200159418 /* BXTWAyncImageCache.h */,
-				45D6F80E1C05553200159418 /* BXTWAyncImageCache.m */,
-				45D6F8161C05838E00159418 /* BXTWAsynImageDownloader.h */,
-				45D6F8171C05838E00159418 /* BXTWAsynImageDownloader.m */,
-			);
-			path = cache;
 			sourceTree = "<group>";
 		};
 		45F73EFE1B4A9BAD00477595 /* core */ = {
@@ -904,8 +863,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				454883741BF8243A00A2426D /* VZFooterViewFactory.m in Sources */,
-				45D6F80B1C0494C200159418 /* BXTWTripAsyncCollectionCell.m in Sources */,
-				45D6F8121C057C5400159418 /* UIImage+ImageEffects.m in Sources */,
 				454883761BF8243A00A2426D /* VZListDefaultErrorCell.m in Sources */,
 				454883731BF8243A00A2426D /* VZCollectionViewController.m in Sources */,
 				45CE94CB1AF67BFD00144AA4 /* VZTimelineListItem.m in Sources */,
@@ -916,7 +873,6 @@
 				45B82D191B5546110053D51C /* BXTWTripListItem.m in Sources */,
 				456BE95A1AFF6FD20064FBB6 /* NSString+VZHTTPNetworkUtil.m in Sources */,
 				4548837F1BF8245200A2426D /* VZCollectionCell.m in Sources */,
-				45D6F8181C05838E00159418 /* BXTWAsynImageDownloader.m in Sources */,
 				4529DD521ABA99B3009347C2 /* VZModel.m in Sources */,
 				4529DD4D1ABA99B3009347C2 /* VZHTTPModel.m in Sources */,
 				45F73EDD1B4A8AD700477595 /* VZHTTPResponseDataCache.m in Sources */,
@@ -928,7 +884,6 @@
 				4548837B1BF8243A00A2426D /* VZListViewDelegate.m in Sources */,
 				4548837A1BF8243A00A2426D /* VZListViewDataSource.m in Sources */,
 				456BE9511AFF6DBF0064FBB6 /* VZHTTPNetworkAgent.m in Sources */,
-				45D6F80F1C05553200159418 /* BXTWAyncImageCache.m in Sources */,
 				45B82D141B5546110053D51C /* BXTWTripListCell.m in Sources */,
 				4529DD501ABA99B3009347C2 /* VZListDefaultTextItem.m in Sources */,
 				458E0DAD1BF9C46100D8E704 /* BXTWTripCollectionCell.m in Sources */,
@@ -952,7 +907,6 @@
 				458E0DA71BF984CF00D8E704 /* BXTWTripWaterflowLayout.m in Sources */,
 				45B82D181B5546110053D51C /* BXTWTripListViewDelegate.m in Sources */,
 				45CE94C91AF67BFD00144AA4 /* VZTimelineListViewDataSource.m in Sources */,
-				456E13BF1C06D148003A8A44 /* BXTWImageNode.m in Sources */,
 				454883751BF8243A00A2426D /* VZListCell.m in Sources */,
 				456BE9551AFF6DBF0064FBB6 /* VZHTTPRunloopOperation.m in Sources */,
 				454883781BF8243A00A2426D /* VZListDefaultTextCell.m in Sources */,
