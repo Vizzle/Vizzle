@@ -7,11 +7,45 @@
 //
 
 #import "VZItem.h"
+#import "NSDictionary+VZItem.h"
+#import "VZValueTransformer.h"
 #include <objc/runtime.h>
 
 //cached property keys
-static void *VZItemCachedPropertyNamesKey = &VZItemCachedPropertyNamesKey;
-static void *VZItemCachedPropertiesKey = &VZItemCachedPropertiesKey;
+static void *VZItemCachedPropertyInfos = &VZItemCachedPropertyInfos;
+
+static id VZValueFromInvocation(id object, SEL selector) {
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[object methodSignatureForSelector:selector]];
+    invocation.target = object;
+    invocation.selector = selector;
+    [invocation invoke];
+    
+    //http://stackoverflow.com/questions/22018272/nsinvocation-returns-value-but-makes-app-crash-with-exc-bad-access
+    __unsafe_unretained id result = nil;
+    [invocation getReturnValue:&result];
+    
+    return result;
+}
+
+//weak check
+static id VZTransformNormalValueForClass(id val, NSString *className) {
+    id ret = val;
+    
+    Class valClass = [val class];
+    Class kls = nil;
+    if (className.length > 0) {
+        kls = NSClassFromString(className);
+    }
+    
+    if (!kls || !valClass) {
+        ret = nil;
+    } else if (![kls isSubclassOfClass:[val class]] &&
+               ![valClass isSubclassOfClass:kls]) {
+        ret = nil;
+    }
+    
+    return ret;
+}
 
 typedef NS_ENUM(int , ENCODE_TYPE)
 {
@@ -27,13 +61,7 @@ typedef NS_ENUM(int , ENCODE_TYPE)
     KCharacterString //*
 };
 
-static inline ENCODE_TYPE getEncodeType(const char* typeStr);
-static inline Class getPropertyClass(objc_property_t property);
-
 @implementation VZItem
-{
-    enum ENCODE_TYPE _encodeType;
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - nscoding
@@ -63,118 +91,129 @@ static inline Class getPropertyClass(objc_property_t property);
 ////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - class API
 
++ (NSDictionary *)propertyInfos
+{
+    return [self propertyInfosInternal:self];
+}
+
 + (NSSet* )propertyNames
 {
     return [self propertyNamesInternal:[self class]];
 }
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    return [NSDictionary dictionaryWithObjects:[[self propertyNames] allObjects]
+                                       forKeys:[[self propertyNames] allObjects]];
+}
+
++ (VZItemProperty *)propertyInfoByPropertyKey:(NSString *)propertyKey
+{
+    return [[self propertyInfos] vz_valueForJSONKeyPath:propertyKey];
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - public  API
 
++ (instancetype)itemWithDictionary:(NSDictionary *)dictionary {
+    VZItem *item = [[self class] new];
+    [item autoKVCBinding:dictionary];
+    
+    return item;
+}
+
++ (NSArray *)itemsWithArray:(NSArray *)array {
+    NSMutableArray *items = @[].mutableCopy;
+    [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [items addObject:[self itemWithDictionary:obj]];
+    }];
+    
+    return [NSArray arrayWithArray:items];
+}
+
 - (void)autoKVCBinding:(NSDictionary* )dictionary
 {
-    Class clz = [self class];
-    
-    while (clz != [VZItem class])
-    {
-        
-        NSArray* properties = [[self class] properties:clz];
-        
-        for (NSValue* value in properties) {
-            
-            objc_property_t property;
-            [value getValue:&property];
-            
-            Class propertyClass = getPropertyClass(property);
-            
-            if (!propertyClass) {
-                continue;
-            }
-            else
-            {
-                //get propertyName
-                const char* propertyNameStr = property_getName(property);
-                NSString* propertyName = [NSString stringWithCString:propertyNameStr  encoding:NSUTF8StringEncoding];
-                id val = dictionary[propertyName];
-                
-                if (val && [val isKindOfClass:propertyClass]) {
-                    
-                    [self setValue:val forKey:propertyName];
-                    
-                }
-                else
-                {
-                    [self setValue:nil forKey:propertyName];
-                }
-
-            }
-            
-
-        }
-        //递归父类
-        clz = [clz superclass];
+    if (![dictionary isKindOfClass:[NSDictionary class]]) {
+        return;
     }
+    
+    NSDictionary *properties = [self.class propertyInfos];
+    
+    NSDictionary *JSONKeyPathsByPropertyKey = [self.class JSONKeyPathsByPropertyKey];
+    
+    [properties enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        VZItemProperty *property = (VZItemProperty *)obj;
+        
+        NSString *propertyName = property.propertyName;
+        NSString *propKeyPath = propertyName;
+        
+        if ([JSONKeyPathsByPropertyKey objectForKey:propertyName]) {
+            propKeyPath = [JSONKeyPathsByPropertyKey objectForKey:propertyName];
+        }
+        
+        //get value from dictionary
+        id val = [dictionary vz_valueForJSONKeyPath:propKeyPath];
+        
+        if (val == nil || val == [NSNull null]) {
+            return;
+        }
+        
+        NSValueTransformer *transformer = [self.class transformerForPropertyName:propertyName];
+        
+        if (transformer) {
+            val = [transformer transformedValue:val];
+        }
+        
+        val = [self.class transformValue:val
+                             forProperty:property];
+        
+        if (val != nil &&
+            val != [NSNull null]) {
+            //the NSNumber will unbox here
+            [self setValue:val forKey:propertyName];
+        }
+        
+    }];
 }
 
 - (void)autoMapTo:(id)object
 {
    
-    NSMutableSet* sets = [NSMutableSet new];
-    Class objectClz = [object class];
-    while (objectClz != [NSObject class])
-    {
-        NSSet* objectPropertyNames = [[ self class] propertyNamesInternal:objectClz];
-        [sets addObjectsFromArray:[objectPropertyNames allObjects]];
-        objectClz = [objectClz superclass];
-    }
+    NSMutableSet *sets = [NSMutableSet new];
+    NSSet *objectPropertyNames = [[self class] propertyNamesInternal:[object class]];
+    [sets addObjectsFromArray:[objectPropertyNames allObjects]];
 
+    NSDictionary *properties = [self.class propertyInfos];
     
-    Class clz = [self class];
-    while (clz != [VZItem class])
-    {
-        NSArray* properties = [[self class] properties:clz];
+    [properties enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        VZItemProperty *property = (VZItemProperty *)obj;
+        NSString *propertyName = property.propertyName;
         
-        for (NSValue* value in properties)
-        {
-            
-            objc_property_t property;
-            [value getValue:&property];
-            
-            Class propertyClass = getPropertyClass(property);
-            
-            if (!propertyClass) {
-                continue;
-            }
-            else
-            {
-                //get propertyName
-                const char* propertyNameStr = property_getName(property);
-                NSString* propertyName = [NSString stringWithCString:propertyNameStr  encoding:NSUTF8StringEncoding];
-               
-                if ([sets containsObject:propertyName]) {
-                    
-                    id val = [object valueForKey:propertyName];
-                    
-                    if (val && [val isKindOfClass:propertyClass]) {
-                        
-                        [self setValue:val forKey:propertyName];
-                    }
-                    else
-                    {
-                        [self setValue:nil forKey:propertyName];
-                    }
-                    
-                }
-                else
-                {
-                    [self setValue:nil forKey:propertyName];
-                }
-                
-            }
+        id val = nil;
+        if ([sets containsObject:propertyName]) {
+            val = [object valueForKey:propertyName];
         }
-    
-        clz = [clz superclass];
-    }
+        
+        if (val == nil ||
+            val == [NSNull null]) {
+            return;
+        }
+        
+        NSValueTransformer *transformer = [self.class transformerForPropertyName:propertyName];
+        
+        if (transformer) {
+            val = [transformer transformedValue:val];
+        }
+        
+        val = [self.class transformValue:val
+                             forProperty:property];
+        
+        if (val != nil &&
+            val != [NSNull null]) {
+            [self setValue:val forKey:propertyName];
+        }
+        
+    }];
 }
 
 - (NSDictionary* )toDictionary
@@ -189,157 +228,152 @@ static inline Class getPropertyClass(objc_property_t property);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - private tool  API
-
-
-static inline Class getPropertyClass(objc_property_t property)
++ (id)transformValue:(id)val
+         forProperty:(VZItemProperty *)property
 {
+    VZItemPropertyType propertyType = property.propertyType;
+    NSString *propertyClassName = property.propertyClass;
     Class propertyClass = nil;
-    const char* attr = property_getAttributes(property);
     
-    size_t attr_len = strlen(attr);
-    char attrWithoutT[attr_len];
-    memset(attrWithoutT, 0, sizeof(attrWithoutT));
-    attrWithoutT[attr_len-1] = '\0';
-    strncpy(attrWithoutT, attr+1, attr_len-1);
+    if (property.propertyClass.length > 0) {
+        propertyClass = NSClassFromString(propertyClassName);
+    }
     
-    //faster than using NSString
-    char* firstAttr = strtok(attrWithoutT, ",");
-
-    //只处理object类型
-    if (getEncodeType(firstAttr) == kObject) {
-        
-        size_t l = strlen(firstAttr);
-        l -= 3;
-        char classStr[l+1];
-        memset(classStr, 0, l);
-        classStr[l]='\0';
-        strncpy(classStr, firstAttr+2, l);
-        
-        //heap allocation
-        NSString* tmp = [NSString stringWithCString:classStr encoding:NSUTF8StringEncoding];
-        propertyClass = NSClassFromString(tmp);
-        return propertyClass;
-        
+    switch (propertyType) {
+        case VZItemPropertyTypeInt:
+        case VZItemPropertyTypeFloat:
+        case VZItemPropertyTypeDouble:
+        case VZItemPropertyTypeBool:
+        {
+            if ([val isKindOfClass:[NSString class]]) {
+                NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+                [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+                val = [numberFormatter numberFromString:val];
+            } else {
+                val = VZTransformNormalValueForClass(val, NSStringFromClass([NSNumber class]));
+            }
+            break;
+        }
+        case VZItemPropertyTypeChar:
+        {
+            if ([val isKindOfClass:[NSString class]]) {
+                char firstCharacter = [val characterAtIndex:0];
+                val = [NSNumber numberWithChar:firstCharacter];
+            } else {
+                val = VZTransformNormalValueForClass(val, NSStringFromClass([NSNumber class]));
+            }
+            break;
+        }
+        case VZItemPropertyTypeString:
+        {
+            if ([val isKindOfClass:[NSNumber class]]) {
+                val = [val stringValue];
+            } else {
+                val = VZTransformNormalValueForClass(val, NSStringFromClass([NSString class]));
+            }
+            break;
+        }
+        case VZItemPropertyTypeNumber:
+        {
+            if ([val isKindOfClass:[NSString class]]) {
+                NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+                [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+                val = [numberFormatter numberFromString:val];
+            } else {
+                val = VZTransformNormalValueForClass(val, NSStringFromClass([NSNumber class]));
+            }
+            break;
+        }
+        case VZItemPropertyTypeData:
+        {
+            val = VZTransformNormalValueForClass(val, NSStringFromClass([NSData class]));
+            break;
+        }
+        case VZItemPropertyTypeAny:
+            break;
+        case VZItemPropertyTypeDate:
+        {
+            val = VZTransformNormalValueForClass(val, NSStringFromClass([NSDate class]));
+            break;
+        }
+        case VZItemPropertyTypeDictionary:
+        {
+            val = VZTransformNormalValueForClass(val, NSStringFromClass([NSDictionary class]));
+            break;
+        }
+        case VZItemPropertyTypeArray:
+        {
+            if (propertyClass && [propertyClass isSubclassOfClass:[VZItem class]]) {
+                val = [propertyClass itemsWithArray:val];
+            } else {
+                val = VZTransformNormalValueForClass(val, NSStringFromClass([NSArray class]));
+            }
+            break;
+        }
+        case VZItemPropertyTypeObject:
+        case VZItemPropertyTypeItem:
+        {
+            if (propertyClass) {
+                if ([propertyClass isSubclassOfClass:[VZItem class]] &&
+                    [val isKindOfClass:[NSDictionary class]]) {
+                    NSDictionary *oldVal = val;
+                    val = [propertyClass new];
+                    [val autoKVCBinding:oldVal];
+                } else {
+                    val = VZTransformNormalValueForClass(val, propertyClassName);
+                }
+            }
+            break;
+        }
+        default:
+            break;
     }
-    else
-    {
-        return nil;
-    }
+    
+    return val;
 }
 
-static inline ENCODE_TYPE getEncodeType(const char* typeStr)
-{
-    ENCODE_TYPE ret = KUnknown;
-    char type = typeStr[0];
++ (NSDictionary *)propertyInfosInternal:(Class)class {
+    NSDictionary *cachedInfos = objc_getAssociatedObject(class, VZItemCachedPropertyInfos);
     
-    //values
-    if (type == 'c' || type == 'C' ||
-        type == 'd' ||
-        type == 'l' || type == 'L' ||
-        type == 's' || type == 'S' ||
-        type == 'b' || type == 'B' ||
-        type == 'i' || type == 'I' ||
-        type == 'q' || type == 'Q' ||
-        type == 'f'
-        )
-    {
-        ret = kValue;
+    if (cachedInfos != nil) {
+        return cachedInfos;
     }
     
-    //struct
-    if (type == '{') {
-        ret = kStruct;
+    NSMutableDictionary *ret = [@{} mutableCopy];
+    
+    unsigned int propertyCount;
+    objc_property_t *properties = class_copyPropertyList([class class], &propertyCount);
+    Class superClass = class_getSuperclass([class class]);
+    
+    if (superClass &&
+        ![NSStringFromClass(superClass) isEqualToString:@"VZItem"]) {
+        NSDictionary *superProperties = [superClass propertyInfos];
+        [ret addEntriesFromDictionary:superProperties];
     }
     
-    //union
-    else if (type == '('){
-        ret = kUnion;
-    }
-    
-    //pointer
-    else if (type == '^'){
-        ret = kPointer;
-    }
-    //object
-    else if (type == '@')
-    {
-        ret = kObject;
-    }
-    else if(type == '#')
-    {
-        ret = kClass;
-    }
-    else if (type == 'v')
-    {
-        ret = kVoid;
-    }
-    else if (type == ':')
-    {
-        ret = kSEL;
-    }
-    else if (type == '*')
-    {
-        ret =  KCharacterString;
-    }
-    else
-        ret = KUnknown;
-    
-    return ret;
-    
-}
-
-+ (NSArray* )properties:(Class)class
-{
-    NSArray* cachedProperties = objc_getAssociatedObject(class,VZItemCachedPropertiesKey);
-    if (cachedProperties) {
-        return cachedProperties;
-    }
-    
-    NSMutableArray* mutableList = [NSMutableArray new];
-    unsigned int outCount, i;
-    objc_property_t *properties = class_copyPropertyList([class class], &outCount);
-    
-    for(i = 0; i < outCount; i++)
-    {
+    for(int i = 0; i < propertyCount; i++) {
         objc_property_t property = properties[i];
-        NSValue* value = [NSValue value:&property withObjCType:@encode(objc_property_t)];
-        [mutableList addObject:value];
+        //get property name
+        const char *propName = property_getName(property);
+        //chect value for key is not nil!!
+        NSString *propertyName = @(propName);
+        
+        VZItemProperty *propertyInfo = [[VZItemProperty alloc] initWithPropertyName:propertyName objcProperty:property];
+        [ret setValue:propertyInfo forKey:propertyName];
     }
-    NSArray* list = [mutableList copy];
-
-    objc_setAssociatedObject(class, VZItemCachedPropertiesKey, list, OBJC_ASSOCIATION_COPY);
     
     free(properties);
     
-    return list;
+    objc_setAssociatedObject(class, VZItemCachedPropertyInfos, ret, OBJC_ASSOCIATION_COPY);
+    
+    return ret;
 }
 
-+ (NSSet* )propertyNamesInternal:(Class) class
++ (NSSet *)propertyNamesInternal:(Class)class
 {
-    NSSet *cachedKeys = objc_getAssociatedObject(class, VZItemCachedPropertyNamesKey);
-    if (cachedKeys.count > 0 )
-        return cachedKeys;
-    
-    NSMutableSet* set = [NSMutableSet new];
-    
-    NSArray* properties = [[self class] properties:class];
-    
-    for (NSValue* value in properties) {
-        
-        objc_property_t property;
-        [value getValue:&property];
-        const char *propName = property_getName(property);
-        NSString *propertyName = @(propName);
-        [set addObject:propertyName];
-        
-    }
-    //cache sets
-    objc_setAssociatedObject(class, VZItemCachedPropertyNamesKey, set, OBJC_ASSOCIATION_COPY);
-
-    return set;
+    NSDictionary *ret = [self propertyInfosInternal:class];
+    return [NSSet setWithArray:[ret allKeys]];
 }
-
-
 
 //////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - KVC hooks
@@ -356,4 +390,17 @@ static inline ENCODE_TYPE getEncodeType(const char* typeStr)
 - (id)valueForUndefinedKey:(NSString *)key {
     return nil;
 }
+
++ (NSValueTransformer *)transformerForPropertyName:(NSString *)propertyName
+{
+    SEL selector = NSSelectorFromString([propertyName stringByAppendingString:@"JSONTransformer"]);
+    
+    NSValueTransformer *transformer = nil;
+    if ([self respondsToSelector:selector]) {
+        transformer = VZValueFromInvocation(self, selector);
+    }
+    
+    return transformer;
+}
+
 @end

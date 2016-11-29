@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		125555C41DEDECBC00471FCB /* NSDictionary+VZItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 125555C31DEDECBC00471FCB /* NSDictionary+VZItem.m */; };
+		125555C71DEDED2F00471FCB /* VZItemProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 125555C61DEDED2F00471FCB /* VZItemProperty.m */; };
+		125555CA1DEDEDFE00471FCB /* VZValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 125555C91DEDEDFE00471FCB /* VZValueTransformer.m */; };
 		456A52BD1C438D1400A79A9E /* VZCollectionDefaultErrorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52BC1C438D1400A79A9E /* VZCollectionDefaultErrorCell.m */; };
 		456A52C01C438D7300A79A9E /* VZCollectionDefaultLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52BF1C438D7300A79A9E /* VZCollectionDefaultLoadingCell.m */; };
 		456A52C61C438DA600A79A9E /* VZCollectionDefaultTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52C51C438DA600A79A9E /* VZCollectionDefaultTextCell.m */; };
@@ -87,6 +90,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		125555C21DEDECBC00471FCB /* NSDictionary+VZItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+VZItem.h"; sourceTree = "<group>"; };
+		125555C31DEDECBC00471FCB /* NSDictionary+VZItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+VZItem.m"; sourceTree = "<group>"; };
+		125555C51DEDED2F00471FCB /* VZItemProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZItemProperty.h; sourceTree = "<group>"; };
+		125555C61DEDED2F00471FCB /* VZItemProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZItemProperty.m; sourceTree = "<group>"; };
+		125555C81DEDEDFE00471FCB /* VZValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZValueTransformer.h; sourceTree = "<group>"; };
+		125555C91DEDEDFE00471FCB /* VZValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZValueTransformer.m; sourceTree = "<group>"; };
 		456A52BB1C438D1400A79A9E /* VZCollectionDefaultErrorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionDefaultErrorCell.h; sourceTree = "<group>"; };
 		456A52BC1C438D1400A79A9E /* VZCollectionDefaultErrorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionDefaultErrorCell.m; sourceTree = "<group>"; };
 		456A52BE1C438D7300A79A9E /* VZCollectionDefaultLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionDefaultLoadingCell.h; sourceTree = "<group>"; };
@@ -389,6 +398,12 @@
 				456DE01A1C0D4A2B00DDBE9B /* VZHTTPResponseDataCacheInterface.h */,
 				456DE01B1C0D4A2B00DDBE9B /* VZItem.h */,
 				456DE01C1C0D4A2B00DDBE9B /* VZItem.m */,
+				125555C51DEDED2F00471FCB /* VZItemProperty.h */,
+				125555C61DEDED2F00471FCB /* VZItemProperty.m */,
+				125555C21DEDECBC00471FCB /* NSDictionary+VZItem.h */,
+				125555C31DEDECBC00471FCB /* NSDictionary+VZItem.m */,
+				125555C81DEDEDFE00471FCB /* VZValueTransformer.h */,
+				125555C91DEDEDFE00471FCB /* VZValueTransformer.m */,
 				456DE0211C0D4A2B00DDBE9B /* VZModel.h */,
 				456DE0221C0D4A2B00DDBE9B /* VZModel.m */,
 				456DE0231C0D4A2B00DDBE9B /* VZNetwork */,
@@ -882,6 +897,7 @@
 				456DE0591C0D4A2B00DDBE9B /* VZHTTPRequestGenerator.m in Sources */,
 				456A52C01C438D7300A79A9E /* VZCollectionDefaultLoadingCell.m in Sources */,
 				456DE05D1C0D4A2B00DDBE9B /* VZHTTPURLResponseCache.m in Sources */,
+				125555C41DEDECBC00471FCB /* NSDictionary+VZItem.m in Sources */,
 				456A52BD1C438D1400A79A9E /* VZCollectionDefaultErrorCell.m in Sources */,
 				456DE0571C0D4A2B00DDBE9B /* VZHTTPNetworkAgent.m in Sources */,
 				45CE94CA1AF67BFD00144AA4 /* VZTimelineListViewDelegate.m in Sources */,
@@ -891,6 +907,7 @@
 				456DE0381C0D4A2B00DDBE9B /* VZAFRequest.m in Sources */,
 				456DE05C1C0D4A2B00DDBE9B /* VZHTTPURLConnectionOperation.m in Sources */,
 				456DE05A1C0D4A2B00DDBE9B /* VZHTTPResponseParser.m in Sources */,
+				125555C71DEDED2F00471FCB /* VZItemProperty.m in Sources */,
 				45B82D1A1B5546110053D51C /* BXTWTripListModel.m in Sources */,
 				45B82D181B5546110053D51C /* BXTWTripListViewDelegate.m in Sources */,
 				45CE94C91AF67BFD00144AA4 /* VZTimelineListViewDataSource.m in Sources */,
@@ -906,6 +923,7 @@
 				456DE05B1C0D4A2B00DDBE9B /* VZHTTPRunloopOperation.m in Sources */,
 				456DE03E1C0D4A2B00DDBE9B /* VZCollectionViewDataSource.m in Sources */,
 				456DE0391C0D4A2B00DDBE9B /* VZCollectionCell.m in Sources */,
+				125555CA1DEDEDFE00471FCB /* VZValueTransformer.m in Sources */,
 				456A52C91C438DF700A79A9E /* VZCollectionDefaultTextItem.m in Sources */,
 				45B82D161B5546110053D51C /* BXTWTripListViewController.m in Sources */,
 				456DE03B1C0D4A2B00DDBE9B /* VZCollectionSupplementaryItem.m in Sources */,
