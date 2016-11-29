@@ -2,10 +2,10 @@
 
 * [+] 增加子类继承，子类实例使用``autoKVCBinding:``时，继承自父类的属性值同样会通过传入的字典绑定；
 
-* [+] 属性值自动转换。属性值的自动转换类型主要指``NSString``到包括``NSInteger``，``CGFloat``以及C语言中的自然类型的转换以及``NSNumber``到``NSString``转换；
+* [+] 属性值自动转换。属性值的自动转换类型主要指``NSString``到包括``NSInteger``、``CGFloat``、C语言中的自然类型的转换以及``NSNumber``到``NSString``转换；
 
-* [+] 属性声明中类型为``VZItem``或其子类时，类实例自动创建并被设置为属性值；
-* [+] 增加类方法``JSONKeyPathsByPropertyKey``，支持与字典的键值映射
+* [+] 属性声明中类型为``VZItem``或其子类时，类实例被自动创建并被设置为其值；
+* [+] 增加类方法``JSONKeyPathsByPropertyKey``，支持对字典的键值映射
 。例如：
 	
 	```
@@ -16,7 +16,7 @@
 	}
 	
 	```
-	需要注意的时，此方法并不会返回父类的键值映射配置，如果需要使用父级，则使用以下方法：
+	需要注意的是，此方法并不会返回父类的键值映射配置，如果需要使用父级的键值映射，则使用以下方法进行合并：
 	
 	```
 	+ (NSDictionary *)JSONKeyPathsByPropertyKey {
@@ -75,4 +75,4 @@
 	@property (nonatomic, strong) NSArray<VZEPublishSKUItem *> <VZEPublishSKUItem> *skus;
 	```
 	
-* 传入字典中如果存在``NSNull``类示例，则属性设置为**空值**；
+* 传入字典中如果存在``NSNull``类实例，则属性设置为**空值**；
