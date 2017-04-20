@@ -3,7 +3,6 @@ cache: cocoapods
 podfile: ./Example/VizzleListExample/Podfile
 osx_image: xcode8.3
 xcode_sdk: iphonesimulator
-before_install: [
+before_install:
   - pod repo update > /dev/null
-],
 script: "xcodebuild -workspace ./Example/VizzleListExample/VizzleListExample.xcworkspace -scheme VizzleListExample -sdk iphonesimulator"
