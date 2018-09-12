@@ -17,7 +17,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "Vizzle.h"
+#import <Vizzle/Vizzle.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #endif
 
