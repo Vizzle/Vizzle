@@ -1,5 +1,10 @@
 ## Vizzle
 
+[![Build Status](https://travis-ci.org/xta0/Vizzle.svg?branch=master)](http://cocoapods.org/pods/Vizzle)
+[![Version](https://img.shields.io/cocoapods/v/Vizzle.svg?style=flat)](http://cocoapods.org/pods/Vizzle)
+[![License](https://img.shields.io/cocoapods/l/Vizzle.svg?style=flat)](http://cocoapods.org/pods/Vizzle)
+[![Platform](https://img.shields.io/cocoapods/p/Vizzle.svg?style=flat)](http://cocoapods.org/pods/Vizzle)
+
 Vizzle is an iOS MVC framework inspired by Ruby on Rails and Three20.
 
 ### Features
