@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Vizzle.podspec"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "An iOS MVC framework"
   s.description  = <<-DESC
                    Vizzle is an iOS MVC frameowrk

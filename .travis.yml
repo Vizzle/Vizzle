@@ -6,4 +6,4 @@ before_install:
 script: 
   - cd Example/VizzleListExample
   - pod install
-  - xcodebuild -workspace VizzleListExample.xcworkspace -scheme VizzleListExample -sdk iphonesimulator
+  - xcodebuild -workspace Example.xcworkspace -scheme Example -sdk iphonesimulator
