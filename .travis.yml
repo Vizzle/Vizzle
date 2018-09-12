@@ -4,6 +4,6 @@ before_install:
   - pod setup --silent
   - pod repo update --silent
 script: 
-  - cd Example/VizzleListExample
+  - cd Example
   - pod install
   - xcodebuild -workspace Example.xcworkspace -scheme Example -sdk iphonesimulator
