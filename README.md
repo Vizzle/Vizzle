@@ -12,7 +12,19 @@ Vizzle is an iOS MVC framework inspired by Ruby on Rails and Three20.
             
 ### How to use 
 
-Vizzle is distri
+Vizzle is distributed using Cocoapods
 
-            
+```shell
+pod 'Vizzle'
+```
 
+To add Vizzle to your project, you can choose to use the umbrella header in `.pch` file
+
+```objc
+//Precompile.pch
+#import <Vizzle/Vizzle.h>
+```
+
+### License
+
+All source code is licensed under the [MIT License](https://raw.githubusercontent.com/rs/SDWebImage/master/LICENSE).

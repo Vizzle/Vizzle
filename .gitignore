@@ -29,3 +29,4 @@ contents.xcworkspacedata
 #
 Pods/*
 Pods
+Podfile.lock
