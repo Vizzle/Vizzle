@@ -1,8 +1,8 @@
 
 Pod::Spec.new do |s|
 
-  s.name         = "Vizzle.podspec"
-  s.version      = "0.0.3"
+  s.name         = "Vizzle"
+  s.version      = "0.0.4"
   s.summary      = "An iOS MVC framework"
   s.description  = <<-DESC
                    Vizzle is an iOS MVC frameowrk
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "8.0"
   s.source       = { :git => "https://github.com/Vizzle/Vizzle.git", :tag => "#{s.version}" }
   s.source_files  = "Vizzle/**/*.{h,m,c,mm}"
-  s.public_header_files = "Vizzle/Vizzle.h"
+  s.frameworks ='Foundation', 'CoreGraphics', 'UIKit'
   s.requires_arc = true
 
   
