@@ -52,5 +52,9 @@
     [self endRefreshing];
 }
 
+- (void)scrollviewDidScroll:(UIScrollView *)scrollview{
+    
+}
+
 
 @end

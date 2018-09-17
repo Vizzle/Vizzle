@@ -13,7 +13,6 @@
 #import "VZListItem.h"
 #import "VZHTTPListModel.h"
 #import "VZListViewController.h"
-#import "VZPullToRefreshControl.h"
 #import "VZPullToRefreshControlInterface.h"
 #import "VZPullToRefreshControl.h"
 #import "VZListViewDelegate+UIRefreshControl.h"
