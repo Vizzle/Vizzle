@@ -17,6 +17,4 @@ extern const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue;
 
 + (instancetype) sharedInstance;
 
-
-
 @end

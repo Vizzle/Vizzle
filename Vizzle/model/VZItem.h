@@ -12,19 +12,11 @@
 
 /**
  *  自动进行KVC绑定,对象为dictionary
- *
- *  VZMV* => 1.1
- *
- *  @param dictionary
  */
 - (void)autoKVCBinding:(NSDictionary* )dictionary;
 
 /**
  *  自动进行KVC绑定,对象为object
- *
- *  VZMV* => 1.1
- *
- *  @param dictionary
  */
 - (void)autoMapTo:(id)object;
 /**

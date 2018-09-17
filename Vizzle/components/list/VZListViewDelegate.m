@@ -65,12 +65,6 @@
             [weakSelf.controller performSelector:@selector(pullRefreshDidTrigger) withObject:nil];
         };
         
-//        if (self.controller.needPullRefresh) {
-//           [self.controller.tableView addSubview:(UIView* )_pullRefreshView];
-//            [_pullRefreshView.superview sendSubviewToBack:_pullRefreshView];
-//        }
-      
-        
     }
     return _pullRefreshView;
 }

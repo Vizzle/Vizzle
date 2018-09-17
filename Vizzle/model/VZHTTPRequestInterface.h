@@ -70,23 +70,15 @@
 @property (nonatomic,strong,readonly) NSError* responseError;
 /**
  *  创建请求的request
- *
- *  @param url
  */
 - (void)initWithBaseURL:(NSString*)url RequestConfig:(VZHTTPRequestConfig)config ResponseConfig:(VZHTTPResponseConfig)responseConfig;
 /**
  *  增加HTTP GET请求参数
- *
- *  @param query 参数
- *  @param key     不同参数类型对应的key
  */
 - (void)addQueries:(NSDictionary* )queries;
 
 /**
  *  增加HTTP Header参数
- *
- *  @param param 参数
- *  @param key     不同参数类型对应的key
  */
 - (void)addHeaderParams:(NSDictionary* )params;
 

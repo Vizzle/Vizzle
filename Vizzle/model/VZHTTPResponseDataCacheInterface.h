@@ -12,9 +12,6 @@
 @protocol VZHTTPResponseDataCacheInterface <NSObject>
 /**
  *  根据identifier查看cache数据是否存在
- *
- *  @param identifier cache key
- *
  *  @return cache是否存在
  */
 - (BOOL)hasCache:(NSString* )key;
@@ -42,12 +39,12 @@
  */
 - (void)saveResponse:(id)data ForKey:(NSString *)identifier ExpireTime:(NSTimeInterval)timeInterval Completion:(void(^)(BOOL b))completion;
 /**
- *  根据cache key删除response
+ *  删除某一条缓存数据
  *
- *  @param key
- *  @param completion
+ *  @param key       cache key
+ *  @param aCallback 是否成功的回调
  */
-- (void)deleteCachedResponseForKey:(NSString* )key Completion:(void(^)(BOOL bSucceed))completion;
+- (void)removeCachedResponseForKey:(NSString* )key completion:(void(^)(BOOL succeed))aCallback;
 
 /**
  *  清空所有缓存

@@ -159,8 +159,12 @@
 
 - (void)modelDidFail:(VZModel *)model withError:(NSError *)error {
     
-    [self showError:error withModel:model];
-    [self updateState:@"error" withKey:model.key];
+    if ( error.code == NSURLErrorCancelled) {
+        [self updateState:@"finished" withKey:model.key];
+    } else {
+        [self showError:error withModel:model];
+        [self updateState:@"error" withKey:model.key];
+    }
 }
 
 

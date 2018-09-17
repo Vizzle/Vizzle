@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VZHTTPRequestInterface.h"
 
+
 @interface VZHTTPRequest : NSObject<VZHTTPRequestInterface>
 
 @end

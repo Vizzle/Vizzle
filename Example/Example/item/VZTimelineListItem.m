@@ -21,7 +21,6 @@
 {
     [super autoKVCBinding:dictionary];
     
-    //todo...
 }
 
 @end

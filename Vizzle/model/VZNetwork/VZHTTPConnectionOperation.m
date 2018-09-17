@@ -80,7 +80,7 @@
         {
             NSError* parseErr;
             id response = [self.responseParser parseResponse:(NSHTTPURLResponse*)self.response data:self.responseData error:&parseErr];
-            _responseObj = response;
+            self->_responseObj = response;
             
             if (parseErr) {
                 self.error = parseErr;

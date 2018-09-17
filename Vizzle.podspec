@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
   s.source_files  = "Vizzle/**/*.{h,m,c,mm}"
   s.frameworks ='Foundation', 'CoreGraphics', 'UIKit'
   s.requires_arc = true
+  s.dependency "AFNetworking","3.0.0"
 
   
 end

@@ -7,59 +7,38 @@
 //
 
 #import "VZHTTPRequest.h"
-#import "VZHTTPNetwork.h"
 #import "VZHTTPNetworkConfig.h"
 #import "VZHTTPResponseDataCache.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface VZHTTPRequest()
-{
-
-}
-@property(nonatomic,strong) VZHTTPNetworkAgent* networkAgent;
-@property(nonatomic,strong) VZHTTPRequestGenerator* requestGenerator;
-@property(nonatomic,strong) VZHTTPResponseParser* responseParser;
-@property(nonatomic,strong) NSMutableURLRequest* request;
-@property(nonatomic,strong) VZHTTPConnectionOperation* operation;
-
+@property(nonatomic,strong) AFHTTPSessionManager* sessionManager;
 @end
 
 @implementation VZHTTPRequest
 
-@synthesize requestConfig          = _requestConfig;
-@synthesize responseConfig         = _responseConfig;
+@synthesize requestURL      = _requestURL;
+@synthesize requestConfig   = _requestConfig;
+@synthesize responseConfig  = _responseConfig;
+@synthesize delegate        = _delegate;
+@synthesize responseString  = _responseString;
+@synthesize responseObject  = _responseObject;
+@synthesize responseError   = _responseError;
 @synthesize queries         = _queries;
 @synthesize headerParams    = _headerParams;
 @synthesize cachedKey       = _cachedKey;
-@synthesize delegate        = _delegate;
 @synthesize ignoreCachePolicy = _ignoreCachePolicy;
-@synthesize requestURL      = _requestURL;
-@synthesize responseObject = _responseObject;
-@synthesize responseString = _responseString;
-@synthesize responseError  = _responseError;
 
 - (void)initWithBaseURL:(NSString*)url RequestConfig:(VZHTTPRequestConfig)requestConfig ResponseConfig:(VZHTTPResponseConfig)responseConfig;
 {
     NSParameterAssert(url);
-
     _responseConfig   = responseConfig;
     _requestConfig    = requestConfig;
     _requestURL       = url;
     
-    if(responseConfig.responseType == VZHTTPNetworkResponseTypeJSON)
-        _responseParser = [VZHTTPJSONResponseParser new];
-    else if (responseConfig.responseType == VZHTTPNetworkResponseTypeXML)
-        _responseParser = [VZHTTPXMLResponseParser new];
-    else
-        _responseParser = [VZHTTPResponseParser new];
-    
-    _requestGenerator = [VZHTTPRequestGenerator new];
-    _requestGenerator.stringEncoding = requestConfig.stringEncoding;
-    _request = [[_requestGenerator generateRequestWithURLString:url
-                                                        Params:nil
-                                                    HTTPMethod:vz_httpMethod(requestConfig.requestMethod) TimeoutInterval:requestConfig.requestTimeoutSeconds] mutableCopy];
-    _operation        = [[VZHTTPConnectionOperation alloc]initWithRequest:_request];
-    _operation.responseParser = _responseParser;
-  
+
+    _sessionManager = [AFHTTPSessionManager manager];
+    _sessionManager.requestSerializer.timeoutInterval = requestConfig.requestTimeoutSeconds;
 }
 
 - (void)addHeaderParams:(NSDictionary *)params
@@ -67,8 +46,9 @@
     if (!params) {
         return;
     }
-    _headerParams = [params copy];
-    [self.requestGenerator addHeaderParams:params ToRequest:self.request];
+    NSMutableDictionary* originalHeaders = [_headerParams mutableCopy];
+    [originalHeaders addEntriesFromDictionary:params];
+    _headerParams = [originalHeaders copy];
 }
 
 - (void)addQueries:(NSDictionary *)queries
@@ -76,10 +56,11 @@
     if (!queries) {
         return;
     }
-    _queries = [queries copy];
-    [self.requestGenerator addQueryParams:queries EncodingType:self.requestConfig.stringEncoding ToRequest:self.request];
+    NSMutableDictionary* originalQueries = [_queries mutableCopy];
+    [originalQueries addEntriesFromDictionary:queries];
+    _queries = [originalQueries copy];
+    
 }
-
 
 - (void)load
 {
@@ -95,32 +76,32 @@
 - (void)loadHTTP
 {
     __weak typeof(self) weakSelf = self;
-    [_operation setCompletionHandler:^(VZHTTPConnectionOperation *op, NSString *responseString, id responseObj, NSError *error) {
-        
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        
-        if (strongSelf) {
-            
-            strongSelf -> _responseString = [responseString copy];
-            strongSelf -> _responseObject = responseObj;
-            strongSelf -> _responseError = error;
-            
-        }
-        
-        if (!error) {
-            [weakSelf requestDidFinish:responseObj FromCache:NO];
-            [weakSelf saveCache:responseObj];
-        }
-        else
-            [weakSelf requestDidFailWithError:error];
-    }];
-    
-    [[VZHTTPNetworkAgent sharedInstance].operationQueue addOperation:_operation];
+    [self.sessionManager GET:_requestURL
+                  parameters:_queries
+                    progress:nil
+                     success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                         __strong typeof(weakSelf) strongSelf = weakSelf;
+                         if (strongSelf){
+                             strongSelf -> _responseObject = responseObject;
+                         }
+                         dispatch_async(dispatch_get_main_queue(), ^{
+                             [weakSelf requestDidFinish:responseObject FromCache:NO];
+                             [weakSelf saveCache:responseObject];
+                         });
+                         
+                     }
+                     failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                         dispatch_async(dispatch_get_main_queue(), ^{
+                             [weakSelf requestDidFailWithError:error];
+                         });
+                     }];
+
 }
 
-- (void)cancel
-{
-    [self.operation cancel];
+- (void)cancel{
+    for(NSURLSessionTask* task in self.sessionManager.tasks){
+        [task cancel];
+    }
 }
 
 - (void)checkCache
@@ -131,32 +112,25 @@
     {
         
         id<VZHTTPResponseDataCacheInterface> cache = [self globalCache];
-        NSString* key = self.cachedKey?:[cache cachedKeyForVZHTTPRequest:self];
+        NSString* key = [[self class] cacheKey:self.cachedKey?:[cache cachedKeyForVZHTTPRequest:self]];
         if ([cache hasCache:key]) {
-            
             [cache cachedResponseForKey:key completion:^(id object) {
-                
                 if (object) {
-
                     NSLog(@"\xE2\x9C\x85  [%@] --> Fetch Cached Response Succeed!",self);
                     [self requestDidFinish:object FromCache:YES];
                 }
-                else
-                {
+                else{
                      NSLog(@"\xE2\x9D\x8E [%@] --> Fetch Cached Response Failed!",self);
                     [self loadHTTP];
                 }
-                
             }];
-        }
-        else
-        {
+        }else{
             [self loadHTTP];
         }
-        
-    }
-    else
+    }else{
         [self loadHTTP];
+    }
+    
 }
 
 - (void)saveCache:(id)object
@@ -168,19 +142,15 @@
     
         NSTimeInterval t = config.cacheTime;
         id<VZHTTPResponseDataCacheInterface> cache = [self globalCache];
-        NSString* cachedKey = self.cachedKey?:[cache cachedKeyForVZHTTPRequest:self];
+        NSString* cachedKey = [[self class] cacheKey:self.cachedKey?:[cache cachedKeyForVZHTTPRequest:self]];
         [cache saveResponse:object ForKey:cachedKey ExpireTime:t Completion:^(BOOL b) {
-         
             if (b) {
                 NSLog(@"\xE2\x9C\x85 [%@] --> Cache Response Succeed!",[self class]);
-            }
-            else
-            {
+            }else{
                 NSLog(@"\xE2\x9D\x8E [%@] --> Cache Response Failed!",[self class]);
             }
             
         }];
-    
     }
 }
 
@@ -194,8 +164,7 @@
 {
     [self cancel];
     _delegate = nil;
-    _request = nil;
-    _operation = nil;
+    _sessionManager = nil;
 }
 
 - (void)requestDidStart
@@ -217,6 +186,21 @@
     if ([self.delegate respondsToSelector:@selector(request:DidFailWithError:)]) {
         [self.delegate request:self DidFailWithError:error];
     }
+}
+
+#pragma mark - helper methods
+
++ (NSString *)appVersion
+{
+    static NSString *version = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        version = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"];
+    });
+    return version;
+}
++ (NSString* )cacheKey:(NSString* )key{
+    return [NSString stringWithFormat:@"%@_%@",[self appVersion],key];
 }
 
 

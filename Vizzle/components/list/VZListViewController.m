@@ -28,10 +28,6 @@
 
 @synthesize dataSource = _dataSource;
 @synthesize delegate   = _delegate;
-@synthesize footerViewLoading = _footerViewLoading;
-@synthesize footerViewComplete = _footerViewComplete;
-@synthesize footerViewNoResult = _footerViewNoResult;
-@synthesize footerViewError = _footerViewError;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - setters
@@ -67,7 +63,7 @@
     {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.opaque  = YES;
-        _tableView.rowHeight = UITableViewAutomaticDimension; 
+        _tableView.rowHeight = UITableViewAutomaticDimension;
         _tableView.separatorStyle = NO;
         _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _tableView.dataSource = nil;
@@ -101,9 +97,6 @@
     
 }
 
-
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - life cycle
 
@@ -113,7 +106,7 @@
     
     if (self) {
         
-        self = [self init];
+        [self loadDefaultConfig];
     }
     return self;
 }
@@ -123,14 +116,19 @@
     self = [super init];
     
     if (self) {
-        
-        _clearItemsWhenModelReload = NO;
-        _loadmoreAutomatically = YES;
-        _needPullRefresh      = NO;
-        _needLoadMore         = NO;
+        [self loadDefaultConfig];
     }
     return self;
 }
+
+- (void)loadDefaultConfig {
+    _clearItemsWhenModelReload = NO;
+    _loadmoreAutomatically = YES;
+    _needPullRefresh      = NO;
+    _needLoadMore         = NO;
+    _preventUserInteractionWhenPullRefreshing = NO;
+}
+
 
 - (void)dealloc
 {
@@ -144,25 +142,13 @@
 {
     [super loadView];
     
-
+    
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     [self.view addSubview:self.tableView];
-}
-- (void)viewDidUnload
-{
-    _tableView.delegate  =nil;
-    _tableView.dataSource = nil;
-    _tableView.tableFooterView = nil;
-    _tableView.tableHeaderView = nil;
-    _tableView = nil;
-    
-    [super viewDidUnload];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -188,7 +174,7 @@
 }
 
 - (void)reload{
-
+    
     NSAssert(_keyModel != nil, @"至少需要指定一个keymodel");
     if (self.clearItemsWhenModelReload) {
         [self.dataSource removeAllItems];
@@ -219,7 +205,7 @@
             }
         }
         
-
+        
     }
 }
 
@@ -234,7 +220,7 @@
         if (model == self.keyModel ) {
             [self.dataSource tableViewControllerDidLoadModel:model];
         }
-
+        
     }
     else
         [self.dataSource tableViewControllerDidLoadModel:model];
@@ -302,25 +288,24 @@
     
     if (model == _keyModel) {
         
-        //如果下拉刷新在转菊花，不显示loading的footerView
-        if (!self.delegate.isRefreshing) {
-            
-            if (model.sectionNumber == [self.tableView.dataSource numberOfSectionsInTableView:self.tableView]-1) {
+        if (self.needLoadMore) {
+            //如果下拉刷新在转菊花，不显示loading的footerView
+            if (!self.delegate.isRefreshing) {
                 
-                if (self.footerViewLoading) {
-                    self.tableView.tableFooterView = self.footerViewLoading;
+                if (model.sectionNumber == [self.tableView.dataSource numberOfSectionsInTableView:self.tableView]-1) {
+                    
+                    self.tableView.tableFooterView = [self footerViewLoading:@"loading..."];
                 }
-                else
-                    self.tableView.tableFooterView =  [VZFooterViewFactory loadingFooterView:CGRectMake(0, 0,CGRectGetWidth(self.tableView.bounds), 44) Text:@"努力加载中..."];
+                else {
+                    
+                    self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
+                }
             }
-            else{
-                
+            else {
                 self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
             }
         }
-        else
-            self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
-
+        
     }
     else
     {
@@ -351,7 +336,7 @@
     
     //VZMV* => 1.1 : reset footer view
     [self showComplete:model];
-  
+    
     [self endRefreshing];
     
 }
@@ -364,11 +349,12 @@
     
     if (model == _keyModel) {
         
-        //VZMV* => 1.1 : 翻页出错的时候底部展示错误内容
-        if(self.footerViewError)
-            self.tableView.tableFooterView = self.footerViewError;
-        else
-            self.tableView.tableFooterView =  [VZFooterViewFactory errorFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 44) Text:@"加载失败"];
+        if (self.needLoadMore) {
+            //VZMV* => 1.1 : 翻页出错的时候底部展示错误内容
+            self.tableView.tableFooterView = [self footerViewError:error DefaultText:@"Error"];
+            // 尝试修复footerview遮盖section header的问题
+            [self.tableView sendSubviewToBack:self.tableView.tableFooterView];
+        }
         
     }
     else
@@ -453,7 +439,7 @@
         if ([key isEqualToString : targetKey]) {
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                  [model load];
+                [model load];
             });
         }
     }];
@@ -491,6 +477,7 @@
  */
 - (void)endRefreshing
 {
+    self.tableView.userInteractionEnabled = YES;
     [self.delegate endRefreshing];
 }
 /**
@@ -498,10 +485,9 @@
  */
 - (void)pullRefreshDidTrigger
 {
-//    if (self.clearItemsWhenModelReload) {
-//        [self.dataSource removeAllItems];
-//        [self reloadTableView];
-//    }
+    if (self.preventUserInteractionWhenPullRefreshing) {
+        self.tableView.userInteractionEnabled = NO;
+    }
     [self reload];
 }
 
@@ -517,12 +503,9 @@
     
     
     if (model == _keyModel) {
-        
-        if (self.footerViewNoResult) {
-            self.tableView.tableFooterView = self.footerViewNoResult;
+        if (self.needLoadMore) {
+            self.tableView.tableFooterView = [self footerViewNoResult:@""];
         }
-        else
-            self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
     }
     else
     {
@@ -533,7 +516,7 @@
             //创建一个customized item
             VZListDefaultTextItem* item = [VZListDefaultTextItem new];
             item.itemType = kItem_Customize;
-            item.text = @"没有结果";
+            item.text = @"No Result";
             item.itemHeight = 44;
             [self.dataSource setItems:@[item] ForSection:section];
             [self reloadTableView];
@@ -544,11 +527,10 @@
 - (void)showComplete:(VZHTTPListModel *)model
 {
     NSLog(@"[%@]-->showComplete:{section:%ld}",[self class],(long)model.sectionNumber);
-
+    
     if (model == _keyModel) {
-        
-        if(self.footerViewComplete)
-            self.tableView.tableFooterView = self.footerViewComplete;
+        if(self.needLoadMore)
+            self.tableView.tableFooterView = [self footerViewComplete:@""];
         else
             self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
     }
@@ -561,18 +543,38 @@
 {
     NSLog(@"[%@]-->showLoadMoreFooterView",self.class);
     
-    self.tableView.tableFooterView = [VZFooterViewFactory clickableFooterView:CGRectMake(0, 0, self.tableView.frame.size.width, 44)Text:@"点一下加载更多" Target:self Action:@selector(onLoadMoreClicked:) ];
+    self.tableView.tableFooterView = [self footerViewLoadMore:@"Tap to reload"];
 }
 
 - (void)onLoadMoreClicked:(id)sender
 {
     [self.keyModel loadMore];
 }
+- (UIView *)footerViewLoading:(NSString* )text
+{
+    return [VZFooterViewFactory loadingFooterView:CGRectMake(0, 0,CGRectGetWidth(self.tableView.bounds), 44) Text:text];
+}
 
+- (UIView *)footerViewError:(NSError *)error DefaultText:(NSString* )text
+{
+    return [VZFooterViewFactory errorFooterView:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 44) Text:error.localizedDescription ? : text];
+}
+
+- (UIView *)footerViewComplete:(NSString* )text
+{
+    return [VZFooterViewFactory emptyFooterView];
+}
+
+- (UIView *)footerViewNoResult:(NSString* )text
+{
+    return [VZFooterViewFactory emptyFooterView];
+}
+- (UIView *)footerViewLoadMore:(NSString* )text{
+    return [VZFooterViewFactory clickableFooterView:CGRectMake(0, 0, self.tableView.frame.size.width, 44) Text: text Target:self Action:@selector(onLoadMoreClicked:) ];
+}
 @end
 
 @implementation VZListViewController(UITableView)
-
 /*
  * tableView的相关操作
  */
@@ -605,6 +607,11 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {
     
 }

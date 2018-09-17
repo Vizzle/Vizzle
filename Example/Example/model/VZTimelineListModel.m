@@ -25,37 +25,36 @@
 
 - (NSString *)methodName {
     
-    return @"https://api.app.net/stream/0/posts/stream/global";
+    return @"https://jsonplaceholder.typicode.com/posts/";
 }
 
-- (NSMutableArray* )responseObjects:(id)JSON
+- (NSArray* )responseObjects:(id)JSON
 {
     NSMutableArray* ret = [NSMutableArray new];
-  
-    //todo:
-    NSArray* list = JSON[@"data"];
-    
-    for (NSDictionary* dict in list) {
+    for (NSDictionary* dict in JSON) {
         
         VZTimelineListItem* item = [VZTimelineListItem new];
-        item.text = dict[@"text"];
-        item.userName = dict[@"user"][@"username"];
-        item.avatarURL = dict[@"user"][@"avatar_image"][@"url"];
+        [item autoKVCBinding:dict];
         
         //item.textheight:
-        NSString* text = item.text;
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        CGSize sizeToFit = [text sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake(220.0f, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
-#pragma clang diagnostic pop
-        item.textHeight = sizeToFit.height;
-        item.itemHeight = fmaxf(70.0f, (float)sizeToFit.height + 45.0f);
         
+        CGSize textSize = CGSizeMake(UIScreen.mainScreen.bounds.size.width-24, CGFLOAT_MAX);
+        CGRect bodySize = [item.body  boundingRectWithSize:textSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:12], NSForegroundColorAttributeName: [UIColor darkGrayColor]} context:nil];
+        CGRect titleSize = [item.title boundingRectWithSize:textSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16]} context:nil];
+        
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+//        CGSize sizeToFit = [text sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake(220.0f, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
+//#pragma clang diagnostic pop
+//        item.textHeight = sizeToFit.height;
+        item.titleHeight = titleSize.size.height;
+        item.bodyHeight = bodySize.size.height;
+        item.itemHeight = item.titleHeight + item.bodyHeight + 30.0f;
         [ret addObject:item];
     }
   
     
-    return ret;
+    return [ret copy];
 }
 
 - (VZHTTPRequestConfig)requestConfig
@@ -63,6 +62,10 @@
     VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
     config.cachePolicy=VZHTTPNetworkURLCachePolicyDefault;
     return config;
+}
+
+- (NSString* )customRequestClassName{
+    return @"VZAFRequest";
 }
 
 - (NSString* )cacheKey

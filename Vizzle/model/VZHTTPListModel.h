@@ -34,12 +34,8 @@ typedef NS_OPTIONS(NSUInteger, VZPageMode) {
 
 /**
  *  根据返回的response，生成list数据
- *
- *  @param response
- *
- *  @return list数据
  */
-- (NSMutableArray* )responseObjects:(id)response;
+- (NSArray* )responseObjects:(id)response;
 
 /**
  *  当model loadmore前会调用这个方法。

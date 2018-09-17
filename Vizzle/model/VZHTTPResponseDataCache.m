@@ -58,7 +58,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
 
 @interface VZHTTPResponseDataCache() <NSCacheDelegate>
 {
-    dispatch_queue_t _barrierQueue;
+    dispatch_queue_t _cacheQueue;
 }
 
 @property(nonatomic,strong) NSString* cachePath;
@@ -88,8 +88,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
     
     if (self) {
         
-        _barrierQueue = dispatch_queue_create("com.VZHTTPURLResponseCache.www", DISPATCH_QUEUE_CONCURRENT);
-        
+        _cacheQueue = dispatch_queue_create("com.VZHTTPURLResponseCache.www", DISPATCH_QUEUE_CONCURRENT);
         _memCache = [NSCache new];
         _memCache.name = @"VZHTTPURLResponseCache";
         _memCache.delegate = self;
@@ -113,7 +112,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
             //clean expired url
             [_cachePlist enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
                 
-                NSDate* date = [_cachePlist objectForKey:key];
+                NSDate* date = [self->_cachePlist objectForKey:key];
                 
                 if(fabs([date timeIntervalSinceNow]) > kVZHTTPNetworkURLCacheTimeOutValue)
                 {
@@ -287,8 +286,6 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
     [self cleanCachedDataOnDisk];
 }
 
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - private file method
 
@@ -315,7 +312,7 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
         //check plist
         if ([_cachePlist objectForKey:key])
         {
-            dispatch_async(_barrierQueue, ^{
+            dispatch_async(_cacheQueue, ^{
                 
                 response = [self responseForKey:key];
                 
@@ -351,11 +348,9 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
     
     NSString* key = [self keyForURLString : identifier];
     
-    dispatch_async(_barrierQueue, ^{
-        
-        if ([_cachePlist objectForKey:key]) {
-                
-            [self deleteResponseForKey:key withCompletion:callback];
+    dispatch_async(_cacheQueue, ^{
+        if ([self->_cachePlist objectForKey:key]) {
+            [self removeCachedResponseForKey:key completion:callback];
         }
     });
 }
@@ -367,11 +362,9 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
 
 - (void)cleanCachedDataOnDisk
 {
-    dispatch_async(_barrierQueue, ^{
-        
-        for (NSString* key in _cachePlist) {
-            
-            [self deleteResponseForKey:key withCompletion:nil];
+    dispatch_async(_cacheQueue, ^{
+        for (NSString* key in self->_cachePlist) {
+            [self removeCachedResponseForKey:key completion:nil];
         }
     });
 }
@@ -408,20 +401,20 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
 - (void)saveResponse:(NSData *)data forKey:(NSString *)key completion:(void(^)(BOOL b))completion
 {
 
-    dispatch_barrier_async(_barrierQueue, ^{
+    dispatch_barrier_async(_cacheQueue, ^{
         
         NSData* rawUrlList = [NSKeyedArchiver archivedDataWithRootObject:data];
         
         //wirte to file
-        NSString *filePath = [ _cachePath stringByAppendingPathComponent:key];
+        NSString *filePath = [self->_cachePath stringByAppendingPathComponent:key];
         
         BOOL ret = [rawUrlList writeToFile:filePath atomically:YES];
         
         if (ret) {
             
             //update plist
-            [_cachePlist setObject:[NSDate date] forKey:key];
-            ret = [_cachePlist writeToFile:[self cachePathForKey:@"VZUrlCache.plist"] atomically:YES];
+            [self->_cachePlist setObject:[NSDate date] forKey:key];
+            ret = [self->_cachePlist writeToFile:[self cachePathForKey:@"VZUrlCache.plist"] atomically:YES];
             if (completion) {
                 completion(ret);
             }
@@ -448,24 +441,20 @@ const  NSTimeInterval kVZHTTPNetworkURLCacheTimeOutValue = 259200.0;
     return response;
     
 }
-
-- (void)deleteResponseForKey:(NSString*)key withCompletion:(void(^)(BOOL b))completion
-{
-    dispatch_barrier_async(_barrierQueue, ^{
-        
-        [_cachePlist removeObjectForKey:key];
-        BOOL ret = [_cachePlist writeToFile:[self cachePathForKey:@"VZUrlCache.plist"] atomically:YES];
-        
-        if (ret)
-        {
+- (void)removeCachedResponseForKey:(NSString *)key completion:(void (^)(BOOL))aCallback{
+    dispatch_barrier_async(_cacheQueue, ^{
+        [self->_cachePlist removeObjectForKey:key];
+        BOOL ret = [self->_cachePlist writeToFile:[self cachePathForKey:@"VZUrlCache.plist"] atomically:YES];
+        if (ret){
             ret = [[NSFileManager defaultManager] removeItemAtPath:[self cachePathForKey:key] error:nil];
-            if (completion) {
-                completion(ret);
+            if (aCallback) {
+                aCallback(ret);
             }
         }
-        else
-        {
-            if (completion) {completion(false);}
+        else{
+            if (aCallback) {
+                aCallback(false);
+            }
         }
    
     });

@@ -12,11 +12,11 @@
 @class VZListItem;
 @interface VZTimelineListItem : VZListItem
 
-@property(nonatomic,strong) NSString* text;
-@property(nonatomic,strong) NSString* userName;
-@property(nonatomic,strong) NSString* avatarURL;
-
-@property(nonatomic,assign) float textHeight;
+@property(nonatomic,strong) NSNumber* userId;
+@property(nonatomic,strong) NSString* title;
+@property(nonatomic,strong) NSString* body;
+@property(nonatomic,assign) float titleHeight;
+@property(nonatomic,assign) float bodyHeight;
 
 @end
 

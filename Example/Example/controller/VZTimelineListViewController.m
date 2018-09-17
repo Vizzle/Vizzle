@@ -95,8 +95,7 @@
     self.tableView.separatorStyle = YES;
     
     //2,set some properties:下拉刷新，自动翻页
-    self.needLoadMore = YES;
-    //self.needLoadAll = YES;
+//    self.needLoadMore = YES;
     self.needPullRefresh = YES;
 
     //3，bind your delegate and datasource to tableview
@@ -114,44 +113,7 @@
     [self load];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    //todo..
-}
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    //todo..
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    
-    //todo..
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    
-    //todo..
-}
-
-- (void)didReceiveMemoryWarning {
-    
-    [super didReceiveMemoryWarning];
-    
-}
-
--(void)dealloc {
-    
-    //todo..
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController
@@ -160,25 +122,18 @@
 {
     [super showModel:model];
     
-    NSLog(@"!!!Model:FromCache:%d!!!",model.isResponseObjectFromCache);
+    if(model.isResponseObjectFromCache){
+        [self reload];
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZListViewController
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  
-  //todo...
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
   
-}
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath component:(NSDictionary *)bundle{
-
-  //todo:... 
-
 }
 
 //////////////////////////////////////////////////////////// 

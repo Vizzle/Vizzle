@@ -61,19 +61,10 @@
 - (NSArray *)itemsForSection:(NSInteger)section;
 /**
  *  向datasource中插入一个section数据
- *
- *  @param sectionIndex：插入的section位置，sectionIndex >= 0 && sectionIndex < numberOfSections
- *  @param items
- *
- *  @return 操作是否成功
  */
 - (BOOL)insertSectionAtIndex:(NSInteger)sectionIndex withItems:(NSArray* )items;
 /**
  *  删除某个section数据
- *
- *  @param sectionIndex：sectionIndex >= 0 && sectionIndex < numberOfSections
- *
- *  @return 操作是否成功
  */
 - (BOOL)removeSectionByIndex:(NSInteger)section;
 

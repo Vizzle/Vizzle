@@ -9,21 +9,6 @@
 #import "VZModel.h"
 #import "VZHTTPNetworkConfig.h"
 #import "VZHTTPResponseDataCacheInterface.h"
-/**
- *  model的http请求类型
- */
-typedef NS_ENUM(NSInteger,VZModelRequestType)
-{
-    /**
-     *  默认HTTP请求，使用VZHTTPRequest
-     */
-    VZModelDefault = 0,
-    /**
-     *  使用第三方request，需要实现<VZHTTPRequestInterface>
-     */
-    VZModelCustom
-};
-
 
 // 子类需要重写的方法
 @protocol VZHTTPModel <NSObject>
@@ -101,13 +86,6 @@ typedef NS_ENUM(NSInteger,VZModelRequestType)
 
 
 @interface VZHTTPModel : VZModel<VZHTTPModel>
-
-/**
- *  model的请求类型
- *
- *  VZModel  => 1.1
- */
-@property(nonatomic,assign) VZModelRequestType requestType;
 /**
  *  返回的response 对象
  *

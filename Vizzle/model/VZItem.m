@@ -74,14 +74,9 @@ static inline Class getPropertyClass(objc_property_t property);
 - (void)autoKVCBinding:(NSDictionary* )dictionary
 {
     Class clz = [self class];
-    
-    while (clz != [VZItem class])
-    {
-        
+    while (clz != [VZItem class]){
         NSArray* properties = [[self class] properties:clz];
-        
         for (NSValue* value in properties) {
-            
             objc_property_t property;
             [value getValue:&property];
             
@@ -98,7 +93,6 @@ static inline Class getPropertyClass(objc_property_t property);
                 id val = dictionary[propertyName];
                 
                 if (val && [val isKindOfClass:propertyClass]) {
-                    
                     [self setValue:val forKey:propertyName];
                     
                 }
@@ -241,8 +235,7 @@ static inline ENCODE_TYPE getEncodeType(const char* typeStr)
         type == 'i' || type == 'I' ||
         type == 'q' || type == 'Q' ||
         type == 'f'
-        )
-    {
+        ){
         ret = kValue;
     }
     

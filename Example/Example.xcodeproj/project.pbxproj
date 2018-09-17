@@ -13,8 +13,6 @@
 		4593324A21489FA1006E6B5C /* VZTimelineListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4593323821489FA1006E6B5C /* VZTimelineListViewDelegate.m */; };
 		4593324B21489FA1006E6B5C /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4593323B21489FA1006E6B5C /* placeholder@2x.png */; };
 		4593324C21489FA1006E6B5C /* VZTimelineListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4593323D21489FA1006E6B5C /* VZTimelineListCell.m */; };
-		4593324D21489FA1006E6B5C /* timeline_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 4593324021489FA1006E6B5C /* timeline_meta.json */; };
-		4593324E21489FA1006E6B5C /* VZTimelineSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4593324221489FA1006E6B5C /* VZTimelineSubView.m */; };
 		4593324F21489FA1006E6B5C /* VZTimelineListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4593324621489FA1006E6B5C /* VZTimelineListModel.m */; };
 		45A4ABE521489E870003F640 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4ABE421489E870003F640 /* AppDelegate.m */; };
 		45A4ABEB21489E870003F640 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A4ABE921489E870003F640 /* Main.storyboard */; };
@@ -37,9 +35,6 @@
 		4593323B21489FA1006E6B5C /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
 		4593323D21489FA1006E6B5C /* VZTimelineListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTimelineListCell.m; sourceTree = "<group>"; };
 		4593323E21489FA1006E6B5C /* VZTimelineListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTimelineListCell.h; sourceTree = "<group>"; };
-		4593324021489FA1006E6B5C /* timeline_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timeline_meta.json; sourceTree = "<group>"; };
-		4593324221489FA1006E6B5C /* VZTimelineSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTimelineSubView.m; sourceTree = "<group>"; };
-		4593324321489FA1006E6B5C /* VZTimelineSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTimelineSubView.h; sourceTree = "<group>"; };
 		4593324521489FA1006E6B5C /* VZTimelineListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTimelineListModel.h; sourceTree = "<group>"; };
 		4593324621489FA1006E6B5C /* VZTimelineListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTimelineListModel.m; sourceTree = "<group>"; };
 		459332E82148A1D8006E6B5C /* PreCompile.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreCompile.pch; sourceTree = "<group>"; };
@@ -120,23 +115,6 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
-		4593323F21489FA1006E6B5C /* config */ = {
-			isa = PBXGroup;
-			children = (
-				4593324021489FA1006E6B5C /* timeline_meta.json */,
-			);
-			path = config;
-			sourceTree = "<group>";
-		};
-		4593324121489FA1006E6B5C /* view */ = {
-			isa = PBXGroup;
-			children = (
-				4593324221489FA1006E6B5C /* VZTimelineSubView.m */,
-				4593324321489FA1006E6B5C /* VZTimelineSubView.h */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
 		4593324421489FA1006E6B5C /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,14 +147,12 @@
 			isa = PBXGroup;
 			children = (
 				4593323C21489FA1006E6B5C /* cell */,
-				4593323F21489FA1006E6B5C /* config */,
 				4593323121489FA1006E6B5C /* controller */,
 				4593322E21489FA1006E6B5C /* datasource */,
 				4593323721489FA1006E6B5C /* delegate */,
 				4593323421489FA1006E6B5C /* item */,
 				4593324421489FA1006E6B5C /* model */,
 				4593323A21489FA1006E6B5C /* resource */,
-				4593324121489FA1006E6B5C /* view */,
 				45A4ABE321489E870003F640 /* AppDelegate.h */,
 				45A4ABE421489E870003F640 /* AppDelegate.m */,
 				45A4ABE921489E870003F640 /* Main.storyboard */,
@@ -263,7 +239,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4593324D21489FA1006E6B5C /* timeline_meta.json in Resources */,
 				45A4ABF021489E880003F640 /* LaunchScreen.storyboard in Resources */,
 				45A4ABED21489E880003F640 /* Assets.xcassets in Resources */,
 				4593324B21489FA1006E6B5C /* placeholder@2x.png in Resources */,
@@ -299,7 +274,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4593324E21489FA1006E6B5C /* VZTimelineSubView.m in Sources */,
 				4593324A21489FA1006E6B5C /* VZTimelineListViewDelegate.m in Sources */,
 				4593324F21489FA1006E6B5C /* VZTimelineListModel.m in Sources */,
 				4593324C21489FA1006E6B5C /* VZTimelineListCell.m in Sources */,

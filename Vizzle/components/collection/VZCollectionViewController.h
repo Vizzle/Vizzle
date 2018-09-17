@@ -72,14 +72,10 @@
 - (void)reloadModelForSection:(NSInteger)section;
 /**
  *  根据model的key来加载model，保留cache策略
- *
- *  @param key
  */
 - (void)loadModelByKey:(NSString* )key;
 /**
  *  根据model的key来加载model，忽略cache策略
- *
- *  @param key
  */
 - (void)reloadModelByKey:(NSString* )key;
 /**

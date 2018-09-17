@@ -204,7 +204,6 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
     if ([self isLoading]) {
         [self cancel];
     }
-    
     if ([self shouldLoad]) {
         [self reset];
     }

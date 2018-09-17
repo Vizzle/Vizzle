@@ -19,10 +19,6 @@
  *  tablview
  */
 @property(nonatomic,strong) UITableView* tableView;
-@property(nonatomic,strong)UIView* footerViewLoading;
-@property(nonatomic,strong)UIView* footerViewComplete;
-@property(nonatomic,strong)UIView* footerViewError;
-@property(nonatomic,strong)UIView* footerViewNoResult;
 /**
  *  tablview的delegate和datasource
  */
@@ -48,6 +44,11 @@
  *  model reload的时候是否清空当前数据,默认为YES
  */
 @property(nonatomic,assign) BOOL clearItemsWhenModelReload;
+/**
+ *  model在下拉刷新的过程中是否允许列表元素交互，默认为YES
+ */
+@property(nonatomic,assign) BOOL preventUserInteractionWhenPullRefreshing;
+
 
 /**
  *  翻页加载
@@ -70,14 +71,10 @@
 - (void)reloadModelForSection:(NSInteger)section;
 /**
  *  根据model的key来加载model，保留cache策略
- *
- *  @param key
  */
 - (void)loadModelByKey:(NSString* )key;
 /**
  *  根据model的key来加载model，忽略cache策略
- *
- *  @param key
  */
 - (void)reloadModelByKey:(NSString* )key;
 /**
@@ -92,7 +89,6 @@
 @end
 
 @interface VZListViewController(UITableView)
-
 /**
  * tableview cell的点击事件
  */
@@ -122,10 +118,14 @@
  */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView ;
 
+/**
+ * called on finger up as we are moving
+ */
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView;
+
 @end
 
-@interface VZListViewController(FooterView)
-
+@interface VZListViewController(Subclassing)
 
 /**
  *  展示没有数据的footerview状态
@@ -139,9 +139,22 @@
  *  @param model 请求完成的model
  */
 - (void)showComplete:(VZHTTPListModel *)model;
+
+
+
 /**
  *  展示loadmore的footerview状态，如果loadmoreAutomatically则不会显示这个状态
  */
 - (void)showLoadMoreFooterView;
+/**
+ * 自定义个状态的footerview，子类重载
+ */
+- (UIView *)footerViewLoading:(NSString* )text;
+- (UIView *)footerViewError:(NSError *)error DefaultText:(NSString* )text;
+- (UIView *)footerViewComplete:(NSString* )text;
+- (UIView *)footerViewNoResult:(NSString* )text;
+- (UIView *)footerViewLoadMore:(NSString* )text;
+
+
 
 @end

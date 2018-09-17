@@ -28,8 +28,12 @@
         
         //todo: add some UI code
         self.textLabel.adjustsFontSizeToFitWidth = YES;
-        self.textLabel.textColor = [UIColor darkGrayColor];
+        self.textLabel.textColor = [UIColor blackColor];
+        self.textLabel.font = [UIFont boldSystemFontOfSize:16.0f];
+        self.textLabel.numberOfLines = 0;
+    
         self.detailTextLabel.font = [UIFont systemFontOfSize:12.0f];
+        self.detailTextLabel.textColor = [UIColor lightGrayColor];
         self.detailTextLabel.numberOfLines = 0;
     
         
@@ -42,9 +46,14 @@
     [super setItem:item];
     
     self.selectionStyle = UITableViewCellSelectionStyleGray;
-    self.textLabel.text = item.userName;
-    self.detailTextLabel.text = item.text;
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:item.avatarURL] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];  
+    self.textLabel.text = item.title;
+    self.detailTextLabel.text = item.body;
+//    [self.imageView sd_setImageWithURL:[NSURL URLWithString:item.avatarURL] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];  
+}
+- (void)prepareForReuse{
+    [super prepareForReuse];
+    self.textLabel.frame = CGRectZero;
+    self.detailTextLabel.frame = CGRectZero;
 }
 
 - (void)layoutSubviews
@@ -52,15 +61,12 @@
     [super layoutSubviews];
     
     VZTimelineListItem* item = (VZTimelineListItem* )self.item;
+    //    self.imageView.frame = CGRectMake(10.0f, 10.0f, 50.0f, 50.0f);
+    float textWidth = CGRectGetWidth(self.frame)-24;
     
-    self.imageView.frame = CGRectMake(10.0f, 10.0f, 50.0f, 50.0f);
-    self.textLabel.frame = CGRectMake(70.0f, 10.0f, 240.0f, 20.0f);
+    self.textLabel.frame = CGRectMake(12.0f, 10.0f, textWidth , item.titleHeight);
+    self.detailTextLabel.frame = CGRectMake(12.0f, item.titleHeight+20, textWidth, item.bodyHeight);
     
-    CGRect detailTextLabelFrame = CGRectOffset(self.textLabel.frame, 0.0f, 25.0f);
-    detailTextLabelFrame.size.height = item.textHeight;
-    self.detailTextLabel.frame = detailTextLabelFrame;
-  
-  
 }
 @end
   

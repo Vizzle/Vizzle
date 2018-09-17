@@ -9,6 +9,7 @@
 #import "VZHTTPModel.h"
 #import "VZHTTPRequest.h"
 #import "VZHTTPNetworkConfig.h"
+#import <libkern/OSAtomic.h>
 
 @interface VZHTTPModel()<VZHTTPRequestDelegate>
 
@@ -18,17 +19,9 @@
 @end
 
 @implementation VZHTTPModel
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - getters
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - life cycle
-
-
-
-
+{
+    int32_t _sentinel;
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods
 
@@ -53,8 +46,7 @@
 
 - (void)cancel
 {
-    if (self.request)
-    {
+    if (self.request){
         [self.request cancel];
         self.request = nil;
     }
@@ -71,30 +63,12 @@
 
 - (void)loadInternal {
     
-    if (self.requestType == VZModelCustom)
-    {
-        NSString* clzName = [self customRequestClassName];
-        
-        if (clzName.length > 0) {
-            self.request = [[NSClassFromString(clzName) alloc]init];
-        }
-        else
-        {
-            self.request = [self createRequest];
-        }
-    }
-    else
-    {
-        self.request = [self createRequest];
-    }
-    
-    
     //1, prepareRequest
-    [self prepareRequest];
+     self.request = [self createRequest];
     
     
     //2, set delegate
-    self.request.delegate    = self;
+    self.request.delegate = self;
     
     //3, init request
     [self.request initWithBaseURL:[self methodName]
@@ -111,6 +85,7 @@
     self.request.ignoreCachePolicy = [self ignoreCache];
     
     //6, load data
+    OSAtomicIncrement32(&_sentinel);
     [self.request load];
 }
 
@@ -146,7 +121,7 @@
 
 - (NSString* )customRequestClassName
 {
-    return @"VZHTTPRequest";
+    return @"VZAFRequest";
 }
 
 - (NSString* )cacheKey
@@ -179,13 +154,6 @@
     return [VZHTTPRequest new];
 }
 
-
-- (void)prepareRequest
-{
-    
-}
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - request callback
 
@@ -204,22 +172,22 @@
     _responseObject = request.responseObject;
     _isResponseObjectFromCache = fromCache;
 
-    //NSLog(@"[%@]-->REQUEST_FINISH:%@",self.class,responseObject);
-
     
+    //setup a closure here
+    __block int32_t old_sentinel = _sentinel;
     dispatch_async([self sharedQueue], ^{
-       
-        if ([self parseResponse:responseObject]) {
-        
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                [self didFinishLoading];
-                
-            });
-        
+        BOOL ret = [self parseResponse:responseObject];
+        //check closure object
+        if(old_sentinel != self->_sentinel){
+            return;
         }
-        else
-        {
+        
+        if (ret) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self didFinishLoading];
+            });
+        }
+        else{
             NSError* err = [NSError errorWithDomain:VZHTTPErrorDomain code:kVZHTTPParseResponseError userInfo:@{NSLocalizedDescriptionKey:@"Parse Response Error"}];
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -231,9 +199,6 @@
 }
 - (void)request:(id<VZHTTPRequestInterface>) request DidFailWithError:(NSError *)error
 {
-    //NSLog(@"[%@]-->REQUEST_FAILED:%@",self.class,error);
-    
-    
     _responseString = request.responseString;
     _responseObject = request.responseObject;
 
@@ -241,19 +206,14 @@
 }
 
 
-- (dispatch_queue_t)sharedQueue
-{
-    static dispatch_queue_t gResponseProcessinglQueue = NULL;
+static dispatch_queue_t gResponseProcessinglQueue = NULL;
+- (dispatch_queue_t)sharedQueue{
     if (gResponseProcessinglQueue == NULL) {
-        
         static dispatch_once_t onceToken = 0;
         dispatch_once(&onceToken, ^{
-            
-            gResponseProcessinglQueue = dispatch_queue_create("com.vizlab.vizzle.httpmodel", DISPATCH_QUEUE_SERIAL);
-            
+            gResponseProcessinglQueue = dispatch_queue_create("com.vizzle.httpmodel", DISPATCH_QUEUE_SERIAL);
         });
     }
-
     return gResponseProcessinglQueue;
 }
 

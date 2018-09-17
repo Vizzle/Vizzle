@@ -191,10 +191,6 @@
         
         if (list.count > 0) {
             [self.objects addObjectsFromArray:list];
-            
-            //处理当前model中的数据
-            [self processCurrentObjects];
-            
         }
         return YES;
     }
@@ -202,7 +198,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - protocol methods
 
-- (NSMutableArray* )responseObjects:(id)response
+- (NSArray* )responseObjects:(id)response
 {
     return nil;
 }
@@ -225,14 +221,6 @@
     }
     
     return ret;
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - private methods
-
-- (void)processCurrentObjects
-{
-    
 }
 
 @end
