@@ -191,19 +191,19 @@
 
 - (void)registerModel:(VZModel *)model
 {
-    NSAssert([model isKindOfClass:[VZHTTPListModel class]], @"model类型不正确");
+    NSAssert([model isKindOfClass:[VZHTTPListModel class]], @"model type incorrect");
     return [super registerModel:model];
 }
 
 - (void)load
 {
-    NSAssert(_keyModel != nil, @"至少需要指定一个keymodel");
+    NSAssert(_keyModel != nil, @"A key model is required");
     [super load];
 }
 
 - (void)loadMore
 {
-    NSAssert(_keyModel != nil, @"至少需要指定一个keymodel");
+    NSAssert(_keyModel != nil, @"A key model is required");
     if (self.needLoadMore) {
         
         //如果当前页是缓存数据，则不进行翻页

@@ -37,7 +37,7 @@
         _textLabel.textAlignment   = NSTextAlignmentCenter;
         _textLabel.textColor       = [UIColor lightGrayColor];
         _textLabel.backgroundColor = [UIColor clearColor];
-        _textLabel.text            = @"下拉刷新";
+        _textLabel.text            = @"Pull to Refresh";
         [self addSubview:_textLabel];
         
         
@@ -69,11 +69,11 @@
         
         if(self.progress >= 1.0)
         {
-            _textLabel.text = @"松开刷新";
+            _textLabel.text = @"Release to refresh";
         }
         else
         {
-            _textLabel.text = @"下拉刷新";
+            _textLabel.text = @"Pull to refresh";
         }
     }
     
@@ -90,7 +90,7 @@
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 //通知controller
-                _isRefreshing = YES;
+                self->_isRefreshing = YES;
                 if (self.pullRefreshDidTrigger) {
                     self.pullRefreshDidTrigger();
                 }
@@ -117,7 +117,7 @@
     
     UIScrollView *scrollView = (UIScrollView *)self.superview;
     _isRefreshing = YES;
-    _textLabel.text = @"努力加载中";
+    _textLabel.text = @"loading...";
     [_indicator startAnimating];
     [UIView animateWithDuration:0.3 animations:^{
         
@@ -145,9 +145,9 @@
         } completion:^(BOOL finished) {
             
             [self stopAnimation];
-            _isRefreshing = NO;
-            _textLabel.text = @"下拉刷新";
-            [_indicator stopAnimating];
+            self->_isRefreshing = NO;
+            self->_textLabel.text = @"Pull to refresh";
+            [self->_indicator stopAnimating];
             
         }];
         

@@ -1,6 +1,6 @@
 // VZViewController.m 
 // iCoupon 
-//created by Jayson Xu on 2014-09-15 15:35:19 +0800. 
+//created by Tao Xu on 2014-09-15 15:35:19 +0800. 
 // Copyright (c) @VizLab. All rights reserved.
 // 
 

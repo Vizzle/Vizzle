@@ -92,8 +92,6 @@
 
 + (NSURLRequest *)cachedRequest:(NSURLRequest *)request
 {
-//    NSString *URLString = [@"https://mobilegw.alipay.com/rpcetag.html" stringByAppendingFormat:@"#%@", [ASMD5 calculateDigestFromData:request.HTTPBody]];
-//    return [NSURLRequest requestWithURL:[NSURL URLWithString:URLString]];
     return nil;
 }
 

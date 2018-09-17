@@ -2,7 +2,7 @@
 //  VZAssert.h
 //  VizzleListExample
 //
-//  Created by Jayson Xu 15/7/6.
+//  Created by Tao Xu 15/7/6.
 //  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
