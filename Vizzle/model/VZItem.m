@@ -96,10 +96,10 @@ static inline Class getPropertyClass(objc_property_t property);
                     [self setValue:val forKey:propertyName];
                     
                 }
-                else
-                {
-                    [self setValue:nil forKey:propertyName];
-                }
+//                else
+//                {
+//                    [self setValue:nil forKey:propertyName];
+//                }
 
             }
             
@@ -148,21 +148,20 @@ static inline Class getPropertyClass(objc_property_t property);
                 if ([sets containsObject:propertyName]) {
                     
                     id val = [object valueForKey:propertyName];
-                    
                     if (val && [val isKindOfClass:propertyClass]) {
                         
                         [self setValue:val forKey:propertyName];
                     }
-                    else
-                    {
-                        [self setValue:nil forKey:propertyName];
-                    }
+//                    else
+//                    {
+//                        [self setValue:nil forKey:propertyName];
+//                    }
                     
                 }
-                else
-                {
-                    [self setValue:nil forKey:propertyName];
-                }
+//                else
+//                {
+//                    [self setValue:nil forKey:propertyName];
+//                }
                 
             }
         }
