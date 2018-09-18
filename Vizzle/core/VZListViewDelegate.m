@@ -16,6 +16,7 @@
 #import "VZPullToRefreshControlInterface.h"
 #import "VZPullToRefreshControl.h"
 #import "VZListViewDelegate+UIRefreshControl.h"
+#import "VZAssert.h"
 
 @interface VZListViewDelegate()<VZCellActionInterface>
 
@@ -74,7 +75,7 @@
 
 - (void)dealloc
 {
-    NSLog(@"[%@]-->dealloc",self.class);
+    
     
     _controller = nil;
 }

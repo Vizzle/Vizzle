@@ -36,4 +36,23 @@
 #define VZCFailAssert(description, ...) VZCAssert(NO, nil, (description), ##__VA_ARGS__)
 
 
+#define VZLog(format, ...) do{\
+    printf("%s",[NSString stringWithFormat:@" 🥑 | Vizzle | %s | => ",__PRETTY_FUNCTION__].UTF8String);\
+    printf("%s\n",[NSString stringWithFormat:format,##__VA_ARGS__].UTF8String); \
+}while(0);
+
+
+#define VZCLog(format, ...) do{\
+    NSString* path = [[NSString stringWithUTF8String:__FILE__] lastPathComponent];\
+    printf("%s",[NSString stringWithFormat:@" 🥑| Vizzle | %@ | %s | => ",path,__func__].UTF8String); \
+    printf("%s\n",[NSString stringWithFormat:format,##__VA_ARGS__].UTF8String); \
+}while(0);
+
+
+
+
+
+
+
+
 #endif

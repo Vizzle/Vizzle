@@ -23,6 +23,8 @@
     [VZInspector setShouldHookNetworkRequest:YES];
     [VZInspector showOnStatusBar];
     
+    
+    
     return YES;
 }
 

@@ -19,7 +19,7 @@
 		45A4ABED21489E880003F640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45A4ABEC21489E880003F640 /* Assets.xcassets */; };
 		45A4ABF021489E880003F640 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A4ABEE21489E880003F640 /* LaunchScreen.storyboard */; };
 		45A4ABF321489E880003F640 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4ABF221489E880003F640 /* main.m */; };
-		B300778ED92298B0C21AFA9E /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93209688FFD5377C15294FE0 /* libPods-Example.a */; };
+		8F1D52E946C3E1E699161D6F /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86BDFB8507EB1F49AA3A3944 /* libPods-Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,9 +45,9 @@
 		45A4ABEF21489E880003F640 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45A4ABF121489E880003F640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45A4ABF221489E880003F640 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		73F6DBDBB54CAB4031165D12 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
-		93209688FFD5377C15294FE0 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F588C4C0D5E55BDF05FBB203 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		57F04192A84E873799C5FC20 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		86BDFB8507EB1F49AA3A3944 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A81619955259BFF7B32DC456 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +55,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B300778ED92298B0C21AFA9E /* libPods-Example.a in Frameworks */,
+				8F1D52E946C3E1E699161D6F /* libPods-Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3679AAA5E98F9344E5FFDFBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86BDFB8507EB1F49AA3A3944 /* libPods-Example.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D3FBB77AF3ACCF437542CF5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				57F04192A84E873799C5FC20 /* Pods-Example.debug.xcconfig */,
+				A81619955259BFF7B32DC456 /* Pods-Example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4593322E21489FA1006E6B5C /* datasource */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,8 +147,8 @@
 				459332E82148A1D8006E6B5C /* PreCompile.pch */,
 				45A4ABE221489E870003F640 /* Example */,
 				45A4ABE121489E870003F640 /* Products */,
-				B1CB4BB8F2601411D4694A72 /* Pods */,
-				E640B1590622E98C1D0855C2 /* Frameworks */,
+				3D3FBB77AF3ACCF437542CF5 /* Pods */,
+				3679AAA5E98F9344E5FFDFBA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,23 +181,6 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
-		B1CB4BB8F2601411D4694A72 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F588C4C0D5E55BDF05FBB203 /* Pods-Example.debug.xcconfig */,
-				73F6DBDBB54CAB4031165D12 /* Pods-Example.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		E640B1590622E98C1D0855C2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				93209688FFD5377C15294FE0 /* libPods-Example.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -188,7 +188,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45A4ABF621489E880003F640 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
-				3C900209679B78D08E013160 /* [CP] Check Pods Manifest.lock */,
+				DF597B26538F05D9264441FB /* [CP] Check Pods Manifest.lock */,
 				45A4ABDC21489E870003F640 /* Sources */,
 				45A4ABDD21489E870003F640 /* Frameworks */,
 				45A4ABDE21489E870003F640 /* Resources */,
@@ -249,7 +249,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3C900209679B78D08E013160 /* [CP] Check Pods Manifest.lock */ = {
+		DF597B26538F05D9264441FB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -419,7 +419,7 @@
 		};
 		45A4ABF721489E880003F640 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F588C4C0D5E55BDF05FBB203 /* Pods-Example.debug.xcconfig */;
+			baseConfigurationReference = 57F04192A84E873799C5FC20 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -427,10 +427,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PreCompile.pch;
 				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xta0.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -439,7 +436,7 @@
 		};
 		45A4ABF821489E880003F640 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73F6DBDBB54CAB4031165D12 /* Pods-Example.release.xcconfig */;
+			baseConfigurationReference = A81619955259BFF7B32DC456 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -447,10 +444,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PreCompile.pch;
 				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xta0.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

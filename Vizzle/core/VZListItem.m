@@ -40,9 +40,5 @@
     return item;
 }
 
-- (void)dealloc
-{
-    //NSLog(@"[%@]-->dealloc",self.class);
-}
 
 @end

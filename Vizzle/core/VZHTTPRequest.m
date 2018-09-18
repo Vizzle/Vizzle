@@ -10,6 +10,7 @@
 #import "VZHTTPNetworkConfig.h"
 #import "VZHTTPResponseDataCache.h"
 #import <AFNetworking/AFNetworking.h>
+#import "VZAssert.h"
 
 @interface VZHTTPRequest()
 @property(nonatomic,strong) AFHTTPSessionManager* sessionManager;
@@ -116,11 +117,11 @@
         if ([cache hasCache:key]) {
             [cache cachedResponseForKey:key completion:^(id object) {
                 if (object) {
-                    NSLog(@"\xE2\x9C\x85  [%@] --> Fetch Cached Response Succeed!",self);
+                    VZLog(@"✅ Fetch Cached Response Succeed!");
                     [self requestDidFinish:object FromCache:YES];
                 }
                 else{
-                     NSLog(@"\xE2\x9D\x8E [%@] --> Fetch Cached Response Failed!",self);
+                     VZLog(@"❗️Fetch Cached Response Failed!");
                     [self loadHTTP];
                 }
             }];
@@ -145,9 +146,9 @@
         NSString* cachedKey = [[self class] cacheKey:self.cachedKey?:[cache cachedKeyForVZHTTPRequest:self]];
         [cache saveResponse:object ForKey:cachedKey ExpireTime:t Completion:^(BOOL b) {
             if (b) {
-                NSLog(@"\xE2\x9C\x85 [%@] --> Cache Response Succeed!",[self class]);
+                VZLog(@"✅ Cache Response Succeed!");
             }else{
-                NSLog(@"\xE2\x9D\x8E [%@] --> Cache Response Failed!",[self class]);
+                VZLog(@"❗️Cache Response Failed!");
             }
             
         }];

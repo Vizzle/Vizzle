@@ -59,7 +59,7 @@
     [_itemsForSectionInternal removeAllObjects];
     _itemsForSectionInternal = nil;
  
-    NSLog(@"[%@]--->dealloc",self.class);
+    
 }
 
 

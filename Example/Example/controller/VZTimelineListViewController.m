@@ -118,6 +118,10 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController
 
+- (void)showLoading:(VZModel *)model{
+    [super showLoading:model];
+}
+
 - (void)showModel:(VZHTTPListModel *)model
 {
     [super showModel:model];
@@ -133,7 +137,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-  
 }
 
 //////////////////////////////////////////////////////////// 

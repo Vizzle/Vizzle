@@ -5,6 +5,7 @@
 // 
 
 #import "VZModel.h"
+#import "VZAssert.h"
 #import <libkern/OSAtomic.h>
 
 static inline NSString * vz_descForModelState(VZModelState state) {
@@ -35,12 +36,12 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
                 case VZModelStateReady:
                 case VZModelStateLoading:
                 {
-                    NSLog(@"\xE2\x9C\x85 [VZModelState]-->[%@-->%@]",f,t);
+                    VZCLog(@"\xE2\x9C\x85  [%@-->%@]",f,t);
                     return YES;
                 }
                 default:
                 {
-                     NSLog(@"\xE2\x9D\x8C [VZModelState]-->[%@-->%@]",f,t);
+                     VZCLog(@"\xE2\x9D\x8C  [%@-->%@]",f,t);
                     return NO;
                 }
             }
@@ -49,25 +50,25 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
                 case VZModelStateFinished:
                 case VZModelStateError:
                 {
-                    NSLog(@"\xE2\x9C\x85 [VZModelState]-->[%@-->%@]",f,t);
+                    VZCLog(@"\xE2\x9C\x85  [%@-->%@]",f,t);
                     return YES;
                 }
                 case VZModelStateReady:
                 {
                     if (isCancelled) {
-                        NSLog(@"\xE2\x9C\x85[VZModelState]-->[%@-->%@]",f,t);
+                        VZCLog(@"\xE2\x9C\x85 [%@-->%@]",f,t);
                         return YES;
                     }
                     else
                     {
-                        NSLog(@"\xE2\x9D\x8C [VZModelState]-->[%@-->%@]",f,t);
+                        VZCLog(@"\xE2\x9D\x8C  [%@-->%@]",f,t);
                         return NO;
                     }
 
                 }
                 default:
                 {
-                    NSLog(@"\xE2\x9D\x8C[ VZModelState]-->[trans: %@-->%@]",f,t);
+                    VZCLog(@"\xE2\x9D\x8C[ VZModelState]-->[trans: %@-->%@]",f,t);
                     return NO;
                 }
             }
@@ -76,25 +77,25 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
             switch (toState) {
                 case VZModelStateLoading:
                 {
-                    NSLog(@"\xE2\x9C\x85 [VZModelState]-->[%@-->%@]",f,t);
+                    VZCLog(@"\xE2\x9C\x85  [%@-->%@]",f,t);
                     return YES;
                 }
                 case VZModelStateReady:
                 {
                     if (isCancelled) {
-                        NSLog(@"\xE2\x9C\x85[VZModelState]-->[%@-->%@]",f,t);
+                        VZCLog(@"\xE2\x9C\x85 [%@-->%@]",f,t);
                         return YES;
                     }
                     else
                     {
-                        NSLog(@"\xE2\x9D\x8C [VZModelState]-->[%@-->%@]",f,t);
+                        VZCLog(@"\xE2\x9D\x8C  [%@-->%@]",f,t);
                         return NO;
                     }
                 
                 }
                 default:
                 {
-                    NSLog(@"\xE2\x9D\x8C [VZModelState]-->[trans: %@-->%@]",f,t);
+                    VZCLog(@"\xE2\x9D\x8C  [trans: %@-->%@]",f,t);
                     return NO;
                 }
             }
@@ -104,24 +105,24 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
             switch (toState) {
                 case VZModelStateLoading:
                 {
-                    NSLog(@"\xE2\x9C\x85 [VZModelState]-->[%@-->%@]",f,t);
+                    VZCLog(@"\xE2\x9C\x85  [%@-->%@]",f,t);
                     return YES;
                 }
                 case VZModelStateReady:
                 {
                     if (isCancelled) {
-                        NSLog(@"\xE2\x9C\x85[VZModelState]-->[%@-->%@]",f,t);
+                        VZCLog(@"\xE2\x9C\x85 [%@-->%@]",f,t);
                         return YES;
                     }
                     else
                     {
-                        NSLog(@"\xE2\x9D\x8C [VZModelState]-->[%@-->%@]",f,t);
+                        VZCLog(@"\xE2\x9D\x8C  [%@-->%@]",f,t);
                         return NO;
                     }
                 }
                 default:
                 {
-                    NSLog(@"\xE2\x9D\x8C [VZModelState]-->[trans: %@-->%@]",f,t);
+                    VZCLog(@"\xE2\x9D\x8C  [trans: %@-->%@]",f,t);
                     return NO;
                 }
             }
@@ -192,7 +193,7 @@ static inline BOOL vz_isModelStateTransationValid(VZModelState fromState, VZMode
         [self cancel];
     }
 
-    NSLog(@"[%@]--->dealloc", self.class);
+    
 }
 
 

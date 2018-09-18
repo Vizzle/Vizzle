@@ -158,10 +158,7 @@
 #pragma mark - request callback
 
 
-- (void)requestDidStart:(id<VZHTTPRequestInterface>)request
-{
-    //NSLog(@"[%@]-->REQUEST_START:%@",self.class,request.requestURL);
-    
+- (void)requestDidStart:(id<VZHTTPRequestInterface>)request{
     [self didStartLoading];
 }
 

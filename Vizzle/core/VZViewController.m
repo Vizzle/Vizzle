@@ -66,7 +66,7 @@
 
 -(void)dealloc {
     
-    NSLog(@"[%@]-->dealloc",self.class);
+    
     
     VZAssertMainThread();
     [_modelDictInternal removeAllObjects];
@@ -177,7 +177,7 @@
     
     if (status && key) {
         _states[key] = status;
-        NSLog(@"[%@]-->status:%@",self.class,_states);
+        VZLog(@"status:%@",_states);
     }
 }
 

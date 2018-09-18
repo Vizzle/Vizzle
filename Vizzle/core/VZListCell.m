@@ -8,6 +8,7 @@
 
 #import "VZListCell.h"
 #import "VZListItem.h"
+#import "VZAssert.h"
 
 /**
  *  calling sequence:
@@ -29,9 +30,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - life cycle
 
-- (void)dealloc
-{
-    NSLog(@"[%@]-->dealloc",self.class);
+- (void)dealloc{
     
     _item = nil;
     _delegate = nil;

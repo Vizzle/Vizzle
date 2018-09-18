@@ -200,7 +200,7 @@
                     [self.keyModel loadMore];
                 }
                 else
-                    [self showLoadMoreFooterView];
+                [self showLoadMoreFooterView];
                 
             }
         }
@@ -223,7 +223,7 @@
         
     }
     else
-        [self.dataSource tableViewControllerDidLoadModel:model];
+    [self.dataSource tableViewControllerDidLoadModel:model];
     
     
 }
@@ -264,7 +264,7 @@
                 return YES;
             }
             else
-                return NO;
+            return NO;
         }
     }
     return YES;
@@ -273,7 +273,7 @@
 
 - (void)showEmpty:(VZHTTPListModel *)model
 {
-    NSLog(@"[%@]-->showEmpty:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
+    VZLog(@"{key:%@,section:%ld}",model.key,(long)model.sectionNumber);
     
     [super showEmpty:model];
     
@@ -284,28 +284,24 @@
 //默认loading 样式
 - (void)showLoading:(VZHTTPListModel *)model
 {
-    NSLog(@"[%@]-->showLoading:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
+    VZLog(@"{key:%@,section:%ld}",model.key,(long)model.sectionNumber);
     
     if (model == _keyModel) {
-        
-        if (self.needLoadMore) {
-            //如果下拉刷新在转菊花，不显示loading的footerView
-            if (!self.delegate.isRefreshing) {
+        //如果下拉刷新在转菊花，不显示loading的footerView
+        if (!self.delegate.isRefreshing) {
+            
+            if (model.sectionNumber == [self.tableView.dataSource numberOfSectionsInTableView:self.tableView]-1) {
                 
-                if (model.sectionNumber == [self.tableView.dataSource numberOfSectionsInTableView:self.tableView]-1) {
-                    
-                    self.tableView.tableFooterView = [self footerViewLoading:@"loading..."];
-                }
-                else {
-                    
-                    self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
-                }
+                self.tableView.tableFooterView = [self footerViewLoading:@"loading..."];
             }
             else {
+                
                 self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
             }
         }
-        
+        else {
+            self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
+        }
     }
     else
     {
@@ -327,7 +323,7 @@
 
 - (void)showModel:(VZHTTPListModel *)model
 {
-    NSLog(@"[%@]-->showModel:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
+    VZLog(@"{key:%@,section:%ld}",model.key,(long)model.sectionNumber);
     
     [super showModel:model];
     
@@ -343,18 +339,18 @@
 
 - (void)showError:(NSError *)error withModel:(VZHTTPListModel *)model
 {
-    NSLog(@"[%@]-->showError:{key:%@,section:%ld}",[self class], model.key,(long)model.sectionNumber);
+    VZLog(@"{key:%@,section:%ld}",[self class], model.key,(long)model.sectionNumber);
     
     [self endRefreshing];
     
     if (model == _keyModel) {
         
-        if (self.needLoadMore) {
-            //VZMV* => 1.1 : 翻页出错的时候底部展示错误内容
-            self.tableView.tableFooterView = [self footerViewError:error DefaultText:@"Error"];
-            // 尝试修复footerview遮盖section header的问题
-            [self.tableView sendSubviewToBack:self.tableView.tableFooterView];
-        }
+        
+        //VZMV* => 1.1 : 翻页出错的时候底部展示错误内容
+        self.tableView.tableFooterView = [self footerViewError:error DefaultText:@"Error"];
+        // 尝试修复footerview遮盖section header的问题
+        [self.tableView sendSubviewToBack:self.tableView.tableFooterView];
+        
         
     }
     else
@@ -497,15 +493,15 @@
 
 - (void)showNoResult:(VZHTTPListModel *)model
 {
-    NSLog(@"[%@]-->showNoResult:{key:%@,section:%ld}",[self class],model.key,(long)model.sectionNumber);
+    VZLog(@"{key:%@,section:%ld}",model.key,(long)model.sectionNumber);
     
     [self endRefreshing];
     
     
     if (model == _keyModel) {
-        if (self.needLoadMore) {
-            self.tableView.tableFooterView = [self footerViewNoResult:@""];
-        }
+        
+        self.tableView.tableFooterView = [self footerViewNoResult:@""];
+        
     }
     else
     {
@@ -526,23 +522,13 @@
 }
 - (void)showComplete:(VZHTTPListModel *)model
 {
-    NSLog(@"[%@]-->showComplete:{section:%ld}",[self class],(long)model.sectionNumber);
-    
+    VZLog(@"{section:%ld}",(long)model.sectionNumber);
     if (model == _keyModel) {
-        if(self.needLoadMore)
-            self.tableView.tableFooterView = [self footerViewComplete:@""];
-        else
-            self.tableView.tableFooterView = [VZFooterViewFactory emptyFooterView];
-    }
-    else
-    {
-        //todo:
+        self.tableView.tableFooterView = [self footerViewComplete:@""];
     }
 }
 - (void)showLoadMoreFooterView
 {
-    NSLog(@"[%@]-->showLoadMoreFooterView",self.class);
-    
     self.tableView.tableFooterView = [self footerViewLoadMore:@"Tap to reload"];
 }
 
