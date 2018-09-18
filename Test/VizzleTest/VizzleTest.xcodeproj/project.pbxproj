@@ -7,169 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		45559FAC1B596572009BD1AA /* VZHTTPModelCachePolicyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45559FAB1B596572009BD1AA /* VZHTTPModelCachePolicyTests.m */; };
-		4563A0581BA17C5100A2F72B /* VZControllerStateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4563A0571BA17C5100A2F72B /* VZControllerStateTest.m */; };
-		456A53331C439D6100A79A9E /* VZAFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52CD1C439D6100A79A9E /* VZAFRequest.m */; };
-		456A53341C439D6100A79A9E /* VZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52D11C439D6100A79A9E /* VZViewController.m */; };
-		456A53351C439D6100A79A9E /* VZCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52D41C439D6100A79A9E /* VZCollectionCell.m */; };
-		456A53361C439D6100A79A9E /* VZCollectionDefaultErrorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52D61C439D6100A79A9E /* VZCollectionDefaultErrorCell.m */; };
-		456A53371C439D6100A79A9E /* VZCollectionDefaultLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52D81C439D6100A79A9E /* VZCollectionDefaultLoadingCell.m */; };
-		456A53381C439D6100A79A9E /* VZCollectionDefaultTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52DA1C439D6100A79A9E /* VZCollectionDefaultTextCell.m */; };
-		456A53391C439D6100A79A9E /* VZCollectionDefaultTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52DC1C439D6100A79A9E /* VZCollectionDefaultTextItem.m */; };
-		456A533A1C439D6100A79A9E /* VZCollectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52DE1C439D6100A79A9E /* VZCollectionItem.m */; };
-		456A533B1C439D6100A79A9E /* VZCollectionSupplementaryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52E01C439D6100A79A9E /* VZCollectionSupplementaryItem.m */; };
-		456A533C1C439D6100A79A9E /* VZCollectionSupplementaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52E21C439D6100A79A9E /* VZCollectionSupplementaryView.m */; };
-		456A533D1C439D6100A79A9E /* VZCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52E51C439D6100A79A9E /* VZCollectionViewController.m */; };
-		456A533E1C439D6100A79A9E /* VZCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52E71C439D6100A79A9E /* VZCollectionViewDataSource.m */; };
-		456A533F1C439D6100A79A9E /* VZCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52E91C439D6100A79A9E /* VZCollectionViewDelegate.m */; };
-		456A53401C439D6100A79A9E /* VZCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52EB1C439D6100A79A9E /* VZCollectionViewFlowLayout.m */; };
-		456A53411C439D6100A79A9E /* VZCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52ED1C439D6100A79A9E /* VZCollectionViewLayout.m */; };
-		456A53421C439D6100A79A9E /* VZFooterViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52F11C439D6100A79A9E /* VZFooterViewFactory.m */; };
-		456A53431C439D6100A79A9E /* VZListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52F31C439D6100A79A9E /* VZListCell.m */; };
-		456A53441C439D6100A79A9E /* VZListDefaultErrorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52F51C439D6100A79A9E /* VZListDefaultErrorCell.m */; };
-		456A53451C439D6100A79A9E /* VZListDefaultLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52F71C439D6100A79A9E /* VZListDefaultLoadingCell.m */; };
-		456A53461C439D6100A79A9E /* VZListDefaultTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52F91C439D6100A79A9E /* VZListDefaultTextCell.m */; };
-		456A53471C439D6100A79A9E /* VZListDefaultTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52FB1C439D6100A79A9E /* VZListDefaultTextItem.m */; };
-		456A53481C439D6100A79A9E /* VZListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52FD1C439D6100A79A9E /* VZListItem.m */; };
-		456A53491C439D6100A79A9E /* VZListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A52FF1C439D6100A79A9E /* VZListViewController.m */; };
-		456A534A1C439D6100A79A9E /* VZListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53011C439D6100A79A9E /* VZListViewDataSource.m */; };
-		456A534B1C439D6100A79A9E /* VZListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53031C439D6100A79A9E /* VZListViewDelegate.m */; };
-		456A534C1C439D6100A79A9E /* VZPullToRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53091C439D6100A79A9E /* VZPullToRefreshControl.m */; };
-		456A534D1C439D6100A79A9E /* VZPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A530B1C439D6100A79A9E /* VZPullToRefreshView.m */; };
-		456A534E1C439D6100A79A9E /* VZHTTPListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53101C439D6100A79A9E /* VZHTTPListModel.m */; };
-		456A534F1C439D6100A79A9E /* VZHTTPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53121C439D6100A79A9E /* VZHTTPModel.m */; };
-		456A53501C439D6100A79A9E /* VZHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53151C439D6100A79A9E /* VZHTTPRequest.m */; };
-		456A53511C439D6100A79A9E /* VZHTTPResponseDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53181C439D6100A79A9E /* VZHTTPResponseDataCache.m */; };
-		456A53521C439D6100A79A9E /* VZItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A531B1C439D6100A79A9E /* VZItem.m */; };
-		456A53531C439D6100A79A9E /* VZModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A531D1C439D6100A79A9E /* VZModel.m */; };
-		456A53541C439D6100A79A9E /* NSString+VZHTTPNetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53201C439D6100A79A9E /* NSString+VZHTTPNetworkUtil.m */; };
-		456A53551C439D6100A79A9E /* VZHTTPConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53221C439D6100A79A9E /* VZHTTPConnectionOperation.m */; };
-		456A53561C439D6100A79A9E /* VZHTTPNetworkAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53251C439D6100A79A9E /* VZHTTPNetworkAgent.m */; };
-		456A53571C439D6100A79A9E /* VZHTTPNetworkSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53271C439D6100A79A9E /* VZHTTPNetworkSecurity.m */; };
-		456A53581C439D6100A79A9E /* VZHTTPRequestGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53291C439D6100A79A9E /* VZHTTPRequestGenerator.m */; };
-		456A53591C439D6100A79A9E /* VZHTTPResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A532B1C439D6100A79A9E /* VZHTTPResponseParser.m */; };
-		456A535A1C439D6100A79A9E /* VZHTTPRunloopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A532D1C439D6100A79A9E /* VZHTTPRunloopOperation.m */; };
-		456A535B1C439D6100A79A9E /* VZHTTPURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A532F1C439D6100A79A9E /* VZHTTPURLConnectionOperation.m */; };
-		456A535C1C439D6100A79A9E /* VZHTTPURLResponseCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53311C439D6100A79A9E /* VZHTTPURLResponseCache.m */; };
+		3CE6BF91D9B9A82AF538261C /* libPods-VizzleTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 906DC0F13DD456A1DFB0E7CC /* libPods-VizzleTestTests.a */; };
 		456A53801C439DCF00A79A9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A537F1C439DCF00A79A9E /* main.m */; };
 		456A53831C439DCF00A79A9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53821C439DCF00A79A9E /* AppDelegate.m */; };
 		456A53861C439DCF00A79A9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53851C439DCF00A79A9E /* ViewController.m */; };
 		456A53891C439DCF00A79A9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 456A53871C439DCF00A79A9E /* Main.storyboard */; };
 		456A538B1C439DCF00A79A9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 456A538A1C439DCF00A79A9E /* Assets.xcassets */; };
 		456A538E1C439DCF00A79A9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 456A538C1C439DCF00A79A9E /* LaunchScreen.storyboard */; };
-		456A53981C439DFF00A79A9E /* BXTWTripListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53961C439DFF00A79A9E /* BXTWTripListDataSource.m */; };
-		456A53991C439DFF00A79A9E /* VZListDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A53971C439DFF00A79A9E /* VZListDataSourceTest.m */; };
-		4592BA681BB8CD73000214EF /* BXTWMockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4592BA5C1BB8CD73000214EF /* BXTWMockItem.m */; };
-		4592BA691BB8CD73000214EF /* BXTWMockListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4592BA5E1BB8CD73000214EF /* BXTWMockListItem.m */; };
-		4592BA6A1BB8CD73000214EF /* BXTWTripItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4592BA601BB8CD73000214EF /* BXTWTripItem.m */; };
-		4592BA6B1BB8CD73000214EF /* BXTWTripListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4592BA621BB8CD73000214EF /* BXTWTripListItem.m */; };
-		4592BA6C1BB8CD73000214EF /* BXTWTripListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4592BA641BB8CD73000214EF /* BXTWTripListModel.m */; };
-		45B0970C1B5BB88A008B8B60 /* VZHTTPModelCacheTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B0970B1B5BB88A008B8B60 /* VZHTTPModelCacheTimeTests.m */; };
-		45B0970E1B5BB89E008B8B60 /* VZHTTPModelConcurencyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B0970D1B5BB89E008B8B60 /* VZHTTPModelConcurencyTests.m */; };
-		45B097101B5E0CA0008B8B60 /* VZItemAPITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B0970F1B5E0CA0008B8B60 /* VZItemAPITest.m */; };
-		45B82D551B579E740053D51C /* VZControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D521B579E740053D51C /* VZControllerTests.m */; };
-		45B82D561B579E740053D51C /* VZModelStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82D541B579E740053D51C /* VZModelStateTests.m */; };
-		45B82DB71B57A4DB0053D51C /* VZHTTPModelAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82DB61B57A4DB0053D51C /* VZHTTPModelAPITests.m */; };
-		45B82DBB1B58DC990053D51C /* VZHTTPListModelAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B82DBA1B58DC990053D51C /* VZHTTPListModelAPITests.m */; };
+		781F9F1D2150013A0049F7A0 /* VZItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9EEE2150013A0049F7A0 /* VZItem.m */; };
+		781F9F1E2150013A0049F7A0 /* VZHTTPResponseDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9EF02150013A0049F7A0 /* VZHTTPResponseDataCache.m */; };
+		781F9F1F2150013A0049F7A0 /* VZListViewDelegate+UIRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9EF12150013A0049F7A0 /* VZListViewDelegate+UIRefreshControl.m */; };
+		781F9F202150013A0049F7A0 /* VZHTTPListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9EF22150013A0049F7A0 /* VZHTTPListModel.m */; };
+		781F9F212150013A0049F7A0 /* VZPullToRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9EF52150013A0049F7A0 /* VZPullToRefreshControl.m */; };
+		781F9F222150013A0049F7A0 /* VZListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9EFD2150013A0049F7A0 /* VZListViewDataSource.m */; };
+		781F9F232150013A0049F7A0 /* VZListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9EFF2150013A0049F7A0 /* VZListViewController.m */; };
+		781F9F242150013A0049F7A0 /* VZListDefaultLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F002150013A0049F7A0 /* VZListDefaultLoadingCell.m */; };
+		781F9F252150013A0049F7A0 /* VZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F012150013A0049F7A0 /* VZViewController.m */; };
+		781F9F262150013A0049F7A0 /* VZHTTPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F092150013A0049F7A0 /* VZHTTPModel.m */; };
+		781F9F272150013A0049F7A0 /* VZListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F0B2150013A0049F7A0 /* VZListViewDelegate.m */; };
+		781F9F282150013A0049F7A0 /* VZFooterViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F0E2150013A0049F7A0 /* VZFooterViewFactory.m */; };
+		781F9F292150013A0049F7A0 /* VZModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F0F2150013A0049F7A0 /* VZModel.m */; };
+		781F9F2A2150013A0049F7A0 /* VZListDefaultErrorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F112150013A0049F7A0 /* VZListDefaultErrorCell.m */; };
+		781F9F2B2150013A0049F7A0 /* VZPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F122150013A0049F7A0 /* VZPullToRefreshView.m */; };
+		781F9F2C2150013A0049F7A0 /* VZListDefaultTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F132150013A0049F7A0 /* VZListDefaultTextItem.m */; };
+		781F9F2D2150013A0049F7A0 /* VZListDefaultTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F142150013A0049F7A0 /* VZListDefaultTextCell.m */; };
+		781F9F2E2150013A0049F7A0 /* VZHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F152150013A0049F7A0 /* VZHTTPRequest.m */; };
+		781F9F2F2150013A0049F7A0 /* VZListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F162150013A0049F7A0 /* VZListCell.m */; };
+		781F9F302150013A0049F7A0 /* VZListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F172150013A0049F7A0 /* VZListItem.m */; };
+		781F9F4C215002550049F7A0 /* VZControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F32215002550049F7A0 /* VZControllerTests.m */; };
+		781F9F4D215002550049F7A0 /* VZControllerStateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F33215002550049F7A0 /* VZControllerStateTest.m */; };
+		781F9F4E215002550049F7A0 /* VZListDataSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F35215002550049F7A0 /* VZListDataSourceTest.m */; };
+		781F9F4F215002550049F7A0 /* BXTWTripListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F38215002550049F7A0 /* BXTWTripListDataSource.m */; };
+		781F9F50215002550049F7A0 /* VZItemAPITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F3A215002550049F7A0 /* VZItemAPITest.m */; };
+		781F9F51215002550049F7A0 /* VZHTTPModelAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F3B215002550049F7A0 /* VZHTTPModelAPITests.m */; };
+		781F9F52215002550049F7A0 /* VZHTTPModelConcurencyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F3C215002550049F7A0 /* VZHTTPModelConcurencyTests.m */; };
+		781F9F53215002550049F7A0 /* VZModelStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F3D215002550049F7A0 /* VZModelStateTests.m */; };
+		781F9F54215002550049F7A0 /* BXTWTripItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F41215002550049F7A0 /* BXTWTripItem.m */; };
+		781F9F55215002550049F7A0 /* BXTWMockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F43215002550049F7A0 /* BXTWMockItem.m */; };
+		781F9F56215002550049F7A0 /* BXTWMockListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F44215002550049F7A0 /* BXTWMockListItem.m */; };
+		781F9F57215002550049F7A0 /* BXTWTripListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F45215002550049F7A0 /* BXTWTripListModel.m */; };
+		781F9F58215002550049F7A0 /* BXTWTripListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F48215002550049F7A0 /* BXTWTripListItem.m */; };
+		781F9F59215002550049F7A0 /* VZHTTPModelCachePolicyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F49215002550049F7A0 /* VZHTTPModelCachePolicyTests.m */; };
+		781F9F5A215002550049F7A0 /* VZHTTPListModelAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F4A215002550049F7A0 /* VZHTTPListModelAPITests.m */; };
+		781F9F5B215002550049F7A0 /* VZHTTPModelCacheTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F9F4B215002550049F7A0 /* VZHTTPModelCacheTimeTests.m */; };
+		D3E26D7D3ACDF5F398AE55B1 /* libPods-VizzleTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F263BB4EE63BCCB526FD0D /* libPods-VizzleTest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		45559FAB1B596572009BD1AA /* VZHTTPModelCachePolicyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelCachePolicyTests.m; sourceTree = "<group>"; };
-		4563A0571BA17C5100A2F72B /* VZControllerStateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZControllerStateTest.m; sourceTree = "<group>"; };
-		456A52CC1C439D6100A79A9E /* VZAFRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZAFRequest.h; sourceTree = "<group>"; };
-		456A52CD1C439D6100A79A9E /* VZAFRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZAFRequest.m; sourceTree = "<group>"; };
-		456A52D01C439D6100A79A9E /* VZViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZViewController.h; sourceTree = "<group>"; };
-		456A52D11C439D6100A79A9E /* VZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZViewController.m; sourceTree = "<group>"; };
-		456A52D31C439D6100A79A9E /* VZCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionCell.h; sourceTree = "<group>"; };
-		456A52D41C439D6100A79A9E /* VZCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionCell.m; sourceTree = "<group>"; };
-		456A52D51C439D6100A79A9E /* VZCollectionDefaultErrorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionDefaultErrorCell.h; sourceTree = "<group>"; };
-		456A52D61C439D6100A79A9E /* VZCollectionDefaultErrorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionDefaultErrorCell.m; sourceTree = "<group>"; };
-		456A52D71C439D6100A79A9E /* VZCollectionDefaultLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionDefaultLoadingCell.h; sourceTree = "<group>"; };
-		456A52D81C439D6100A79A9E /* VZCollectionDefaultLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionDefaultLoadingCell.m; sourceTree = "<group>"; };
-		456A52D91C439D6100A79A9E /* VZCollectionDefaultTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionDefaultTextCell.h; sourceTree = "<group>"; };
-		456A52DA1C439D6100A79A9E /* VZCollectionDefaultTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionDefaultTextCell.m; sourceTree = "<group>"; };
-		456A52DB1C439D6100A79A9E /* VZCollectionDefaultTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionDefaultTextItem.h; sourceTree = "<group>"; };
-		456A52DC1C439D6100A79A9E /* VZCollectionDefaultTextItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionDefaultTextItem.m; sourceTree = "<group>"; };
-		456A52DD1C439D6100A79A9E /* VZCollectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionItem.h; sourceTree = "<group>"; };
-		456A52DE1C439D6100A79A9E /* VZCollectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionItem.m; sourceTree = "<group>"; };
-		456A52DF1C439D6100A79A9E /* VZCollectionSupplementaryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionSupplementaryItem.h; sourceTree = "<group>"; };
-		456A52E01C439D6100A79A9E /* VZCollectionSupplementaryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionSupplementaryItem.m; sourceTree = "<group>"; };
-		456A52E11C439D6100A79A9E /* VZCollectionSupplementaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionSupplementaryView.h; sourceTree = "<group>"; };
-		456A52E21C439D6100A79A9E /* VZCollectionSupplementaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionSupplementaryView.m; sourceTree = "<group>"; };
-		456A52E31C439D6100A79A9E /* VZCollectionViewConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionViewConfig.h; sourceTree = "<group>"; };
-		456A52E41C439D6100A79A9E /* VZCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionViewController.h; sourceTree = "<group>"; };
-		456A52E51C439D6100A79A9E /* VZCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionViewController.m; sourceTree = "<group>"; };
-		456A52E61C439D6100A79A9E /* VZCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionViewDataSource.h; sourceTree = "<group>"; };
-		456A52E71C439D6100A79A9E /* VZCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionViewDataSource.m; sourceTree = "<group>"; };
-		456A52E81C439D6100A79A9E /* VZCollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionViewDelegate.h; sourceTree = "<group>"; };
-		456A52E91C439D6100A79A9E /* VZCollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionViewDelegate.m; sourceTree = "<group>"; };
-		456A52EA1C439D6100A79A9E /* VZCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		456A52EB1C439D6100A79A9E /* VZCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		456A52EC1C439D6100A79A9E /* VZCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionViewLayout.h; sourceTree = "<group>"; };
-		456A52ED1C439D6100A79A9E /* VZCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZCollectionViewLayout.m; sourceTree = "<group>"; };
-		456A52EE1C439D6100A79A9E /* VZCollectionViewLayoutInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCollectionViewLayoutInterface.h; sourceTree = "<group>"; };
-		456A52F01C439D6100A79A9E /* VZFooterViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFooterViewFactory.h; sourceTree = "<group>"; };
-		456A52F11C439D6100A79A9E /* VZFooterViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFooterViewFactory.m; sourceTree = "<group>"; };
-		456A52F21C439D6100A79A9E /* VZListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListCell.h; sourceTree = "<group>"; };
-		456A52F31C439D6100A79A9E /* VZListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListCell.m; sourceTree = "<group>"; };
-		456A52F41C439D6100A79A9E /* VZListDefaultErrorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultErrorCell.h; sourceTree = "<group>"; };
-		456A52F51C439D6100A79A9E /* VZListDefaultErrorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultErrorCell.m; sourceTree = "<group>"; };
-		456A52F61C439D6100A79A9E /* VZListDefaultLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultLoadingCell.h; sourceTree = "<group>"; };
-		456A52F71C439D6100A79A9E /* VZListDefaultLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultLoadingCell.m; sourceTree = "<group>"; };
-		456A52F81C439D6100A79A9E /* VZListDefaultTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultTextCell.h; sourceTree = "<group>"; };
-		456A52F91C439D6100A79A9E /* VZListDefaultTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultTextCell.m; sourceTree = "<group>"; };
-		456A52FA1C439D6100A79A9E /* VZListDefaultTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultTextItem.h; sourceTree = "<group>"; };
-		456A52FB1C439D6100A79A9E /* VZListDefaultTextItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultTextItem.m; sourceTree = "<group>"; };
-		456A52FC1C439D6100A79A9E /* VZListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListItem.h; sourceTree = "<group>"; };
-		456A52FD1C439D6100A79A9E /* VZListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListItem.m; sourceTree = "<group>"; };
-		456A52FE1C439D6100A79A9E /* VZListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewController.h; sourceTree = "<group>"; };
-		456A52FF1C439D6100A79A9E /* VZListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListViewController.m; sourceTree = "<group>"; };
-		456A53001C439D6100A79A9E /* VZListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewDataSource.h; sourceTree = "<group>"; };
-		456A53011C439D6100A79A9E /* VZListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListViewDataSource.m; sourceTree = "<group>"; };
-		456A53021C439D6100A79A9E /* VZListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewDelegate.h; sourceTree = "<group>"; };
-		456A53031C439D6100A79A9E /* VZListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListViewDelegate.m; sourceTree = "<group>"; };
-		456A53051C439D6100A79A9E /* VZCellActionInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCellActionInterface.h; sourceTree = "<group>"; };
-		456A53061C439D6100A79A9E /* VZPullToRefreshControlInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPullToRefreshControlInterface.h; sourceTree = "<group>"; };
-		456A53081C439D6100A79A9E /* VZPullToRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPullToRefreshControl.h; sourceTree = "<group>"; };
-		456A53091C439D6100A79A9E /* VZPullToRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZPullToRefreshControl.m; sourceTree = "<group>"; };
-		456A530A1C439D6100A79A9E /* VZPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPullToRefreshView.h; sourceTree = "<group>"; };
-		456A530B1C439D6100A79A9E /* VZPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZPullToRefreshView.m; sourceTree = "<group>"; };
-		456A530D1C439D6100A79A9E /* VZAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZAssert.h; sourceTree = "<group>"; };
-		456A530F1C439D6100A79A9E /* VZHTTPListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPListModel.h; sourceTree = "<group>"; };
-		456A53101C439D6100A79A9E /* VZHTTPListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPListModel.m; sourceTree = "<group>"; };
-		456A53111C439D6100A79A9E /* VZHTTPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPModel.h; sourceTree = "<group>"; };
-		456A53121C439D6100A79A9E /* VZHTTPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModel.m; sourceTree = "<group>"; };
-		456A53131C439D6100A79A9E /* VZHTTPNetworkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPNetworkConfig.h; sourceTree = "<group>"; };
-		456A53141C439D6100A79A9E /* VZHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPRequest.h; sourceTree = "<group>"; };
-		456A53151C439D6100A79A9E /* VZHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPRequest.m; sourceTree = "<group>"; };
-		456A53161C439D6100A79A9E /* VZHTTPRequestInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPRequestInterface.h; sourceTree = "<group>"; };
-		456A53171C439D6100A79A9E /* VZHTTPResponseDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseDataCache.h; sourceTree = "<group>"; };
-		456A53181C439D6100A79A9E /* VZHTTPResponseDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPResponseDataCache.m; sourceTree = "<group>"; };
-		456A53191C439D6100A79A9E /* VZHTTPResponseDataCacheInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseDataCacheInterface.h; sourceTree = "<group>"; };
-		456A531A1C439D6100A79A9E /* VZItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZItem.h; sourceTree = "<group>"; };
-		456A531B1C439D6100A79A9E /* VZItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZItem.m; sourceTree = "<group>"; };
-		456A531C1C439D6100A79A9E /* VZModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZModel.h; sourceTree = "<group>"; };
-		456A531D1C439D6100A79A9E /* VZModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZModel.m; sourceTree = "<group>"; };
-		456A531F1C439D6100A79A9E /* NSString+VZHTTPNetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+VZHTTPNetworkUtil.h"; sourceTree = "<group>"; };
-		456A53201C439D6100A79A9E /* NSString+VZHTTPNetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+VZHTTPNetworkUtil.m"; sourceTree = "<group>"; };
-		456A53211C439D6100A79A9E /* VZHTTPConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPConnectionOperation.h; sourceTree = "<group>"; };
-		456A53221C439D6100A79A9E /* VZHTTPConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPConnectionOperation.m; sourceTree = "<group>"; };
-		456A53231C439D6100A79A9E /* VZHTTPNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPNetwork.h; sourceTree = "<group>"; };
-		456A53241C439D6100A79A9E /* VZHTTPNetworkAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPNetworkAgent.h; sourceTree = "<group>"; };
-		456A53251C439D6100A79A9E /* VZHTTPNetworkAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPNetworkAgent.m; sourceTree = "<group>"; };
-		456A53261C439D6100A79A9E /* VZHTTPNetworkSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPNetworkSecurity.h; sourceTree = "<group>"; };
-		456A53271C439D6100A79A9E /* VZHTTPNetworkSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPNetworkSecurity.m; sourceTree = "<group>"; };
-		456A53281C439D6100A79A9E /* VZHTTPRequestGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPRequestGenerator.h; sourceTree = "<group>"; };
-		456A53291C439D6100A79A9E /* VZHTTPRequestGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPRequestGenerator.m; sourceTree = "<group>"; };
-		456A532A1C439D6100A79A9E /* VZHTTPResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseParser.h; sourceTree = "<group>"; };
-		456A532B1C439D6100A79A9E /* VZHTTPResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPResponseParser.m; sourceTree = "<group>"; };
-		456A532C1C439D6100A79A9E /* VZHTTPRunloopOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPRunloopOperation.h; sourceTree = "<group>"; };
-		456A532D1C439D6100A79A9E /* VZHTTPRunloopOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPRunloopOperation.m; sourceTree = "<group>"; };
-		456A532E1C439D6100A79A9E /* VZHTTPURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPURLConnectionOperation.h; sourceTree = "<group>"; };
-		456A532F1C439D6100A79A9E /* VZHTTPURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPURLConnectionOperation.m; sourceTree = "<group>"; };
-		456A53301C439D6100A79A9E /* VZHTTPURLResponseCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPURLResponseCache.h; sourceTree = "<group>"; };
-		456A53311C439D6100A79A9E /* VZHTTPURLResponseCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPURLResponseCache.m; sourceTree = "<group>"; };
-		456A53321C439D6100A79A9E /* Vizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vizzle.h; sourceTree = "<group>"; };
+		37F263BB4EE63BCCB526FD0D /* libPods-VizzleTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VizzleTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		456A537C1C439DCF00A79A9E /* VizzleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VizzleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		456A537F1C439DCF00A79A9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		456A53811C439DCF00A79A9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -180,28 +65,82 @@
 		456A538A1C439DCF00A79A9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		456A538D1C439DCF00A79A9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		456A538F1C439DCF00A79A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		456A53951C439DFF00A79A9E /* BXTWTripListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripListDataSource.h; sourceTree = "<group>"; };
-		456A53961C439DFF00A79A9E /* BXTWTripListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripListDataSource.m; sourceTree = "<group>"; };
-		456A53971C439DFF00A79A9E /* VZListDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDataSourceTest.m; sourceTree = "<group>"; };
-		4592BA5B1BB8CD73000214EF /* BXTWMockItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWMockItem.h; sourceTree = "<group>"; };
-		4592BA5C1BB8CD73000214EF /* BXTWMockItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWMockItem.m; sourceTree = "<group>"; };
-		4592BA5D1BB8CD73000214EF /* BXTWMockListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWMockListItem.h; sourceTree = "<group>"; };
-		4592BA5E1BB8CD73000214EF /* BXTWMockListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWMockListItem.m; sourceTree = "<group>"; };
-		4592BA5F1BB8CD73000214EF /* BXTWTripItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripItem.h; sourceTree = "<group>"; };
-		4592BA601BB8CD73000214EF /* BXTWTripItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripItem.m; sourceTree = "<group>"; };
-		4592BA611BB8CD73000214EF /* BXTWTripListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripListItem.h; sourceTree = "<group>"; };
-		4592BA621BB8CD73000214EF /* BXTWTripListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripListItem.m; sourceTree = "<group>"; };
-		4592BA631BB8CD73000214EF /* BXTWTripListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripListModel.h; sourceTree = "<group>"; };
-		4592BA641BB8CD73000214EF /* BXTWTripListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripListModel.m; sourceTree = "<group>"; };
-		45B0970B1B5BB88A008B8B60 /* VZHTTPModelCacheTimeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelCacheTimeTests.m; sourceTree = "<group>"; };
-		45B0970D1B5BB89E008B8B60 /* VZHTTPModelConcurencyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelConcurencyTests.m; sourceTree = "<group>"; };
-		45B0970F1B5E0CA0008B8B60 /* VZItemAPITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZItemAPITest.m; sourceTree = "<group>"; };
 		45B82D411B579DF40053D51C /* VizzleTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VizzleTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B82D461B579DF40053D51C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		45B82D521B579E740053D51C /* VZControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZControllerTests.m; sourceTree = "<group>"; };
-		45B82D541B579E740053D51C /* VZModelStateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZModelStateTests.m; sourceTree = "<group>"; };
-		45B82DB61B57A4DB0053D51C /* VZHTTPModelAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelAPITests.m; sourceTree = "<group>"; };
-		45B82DBA1B58DC990053D51C /* VZHTTPListModelAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPListModelAPITests.m; sourceTree = "<group>"; };
+		4EE5314BF66D775E6882A3DD /* Pods-VizzleTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VizzleTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VizzleTestTests/Pods-VizzleTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		5FEC905CCD8A6259807D3D68 /* Pods-VizzleTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VizzleTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-VizzleTest/Pods-VizzleTest.release.xcconfig"; sourceTree = "<group>"; };
+		67070F71CCA78A3342D75A3A /* Pods-VizzleTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VizzleTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VizzleTest/Pods-VizzleTest.debug.xcconfig"; sourceTree = "<group>"; };
+		781F9EEE2150013A0049F7A0 /* VZItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZItem.m; sourceTree = "<group>"; };
+		781F9EEF2150013A0049F7A0 /* VZHTTPRequestInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPRequestInterface.h; sourceTree = "<group>"; };
+		781F9EF02150013A0049F7A0 /* VZHTTPResponseDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPResponseDataCache.m; sourceTree = "<group>"; };
+		781F9EF12150013A0049F7A0 /* VZListViewDelegate+UIRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VZListViewDelegate+UIRefreshControl.m"; sourceTree = "<group>"; };
+		781F9EF22150013A0049F7A0 /* VZHTTPListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPListModel.m; sourceTree = "<group>"; };
+		781F9EF32150013A0049F7A0 /* VZFooterViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFooterViewFactory.h; sourceTree = "<group>"; };
+		781F9EF42150013A0049F7A0 /* VZListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewDelegate.h; sourceTree = "<group>"; };
+		781F9EF52150013A0049F7A0 /* VZPullToRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZPullToRefreshControl.m; sourceTree = "<group>"; };
+		781F9EF62150013A0049F7A0 /* VZPullToRefreshControlInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPullToRefreshControlInterface.h; sourceTree = "<group>"; };
+		781F9EF72150013A0049F7A0 /* VZHTTPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPModel.h; sourceTree = "<group>"; };
+		781F9EF82150013A0049F7A0 /* VZHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPRequest.h; sourceTree = "<group>"; };
+		781F9EF92150013A0049F7A0 /* VZListDefaultTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultTextCell.h; sourceTree = "<group>"; };
+		781F9EFA2150013A0049F7A0 /* VZPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPullToRefreshView.h; sourceTree = "<group>"; };
+		781F9EFB2150013A0049F7A0 /* VZListDefaultTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultTextItem.h; sourceTree = "<group>"; };
+		781F9EFC2150013A0049F7A0 /* VZListDefaultErrorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultErrorCell.h; sourceTree = "<group>"; };
+		781F9EFD2150013A0049F7A0 /* VZListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListViewDataSource.m; sourceTree = "<group>"; };
+		781F9EFE2150013A0049F7A0 /* VZModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZModel.h; sourceTree = "<group>"; };
+		781F9EFF2150013A0049F7A0 /* VZListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListViewController.m; sourceTree = "<group>"; };
+		781F9F002150013A0049F7A0 /* VZListDefaultLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultLoadingCell.m; sourceTree = "<group>"; };
+		781F9F012150013A0049F7A0 /* VZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZViewController.m; sourceTree = "<group>"; };
+		781F9F022150013A0049F7A0 /* VZListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListItem.h; sourceTree = "<group>"; };
+		781F9F032150013A0049F7A0 /* VZListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListCell.h; sourceTree = "<group>"; };
+		781F9F042150013A0049F7A0 /* VZListViewDelegate+UIRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VZListViewDelegate+UIRefreshControl.h"; sourceTree = "<group>"; };
+		781F9F052150013A0049F7A0 /* VZHTTPNetworkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPNetworkConfig.h; sourceTree = "<group>"; };
+		781F9F062150013A0049F7A0 /* VZHTTPResponseDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseDataCache.h; sourceTree = "<group>"; };
+		781F9F072150013A0049F7A0 /* VZItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZItem.h; sourceTree = "<group>"; };
+		781F9F082150013A0049F7A0 /* VZAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZAssert.h; sourceTree = "<group>"; };
+		781F9F092150013A0049F7A0 /* VZHTTPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModel.m; sourceTree = "<group>"; };
+		781F9F0A2150013A0049F7A0 /* VZPullToRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPullToRefreshControl.h; sourceTree = "<group>"; };
+		781F9F0B2150013A0049F7A0 /* VZListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListViewDelegate.m; sourceTree = "<group>"; };
+		781F9F0C2150013A0049F7A0 /* VZCellActionInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZCellActionInterface.h; sourceTree = "<group>"; };
+		781F9F0D2150013A0049F7A0 /* VZHTTPListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPListModel.h; sourceTree = "<group>"; };
+		781F9F0E2150013A0049F7A0 /* VZFooterViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFooterViewFactory.m; sourceTree = "<group>"; };
+		781F9F0F2150013A0049F7A0 /* VZModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZModel.m; sourceTree = "<group>"; };
+		781F9F102150013A0049F7A0 /* VZListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewDataSource.h; sourceTree = "<group>"; };
+		781F9F112150013A0049F7A0 /* VZListDefaultErrorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultErrorCell.m; sourceTree = "<group>"; };
+		781F9F122150013A0049F7A0 /* VZPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZPullToRefreshView.m; sourceTree = "<group>"; };
+		781F9F132150013A0049F7A0 /* VZListDefaultTextItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultTextItem.m; sourceTree = "<group>"; };
+		781F9F142150013A0049F7A0 /* VZListDefaultTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultTextCell.m; sourceTree = "<group>"; };
+		781F9F152150013A0049F7A0 /* VZHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPRequest.m; sourceTree = "<group>"; };
+		781F9F162150013A0049F7A0 /* VZListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListCell.m; sourceTree = "<group>"; };
+		781F9F172150013A0049F7A0 /* VZListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListItem.m; sourceTree = "<group>"; };
+		781F9F182150013A0049F7A0 /* VZHTTPResponseDataCacheInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHTTPResponseDataCacheInterface.h; sourceTree = "<group>"; };
+		781F9F192150013A0049F7A0 /* VZViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZViewController.h; sourceTree = "<group>"; };
+		781F9F1A2150013A0049F7A0 /* VZListDefaultLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultLoadingCell.h; sourceTree = "<group>"; };
+		781F9F1B2150013A0049F7A0 /* VZListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListViewController.h; sourceTree = "<group>"; };
+		781F9F1C2150013A0049F7A0 /* Vizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vizzle.h; sourceTree = "<group>"; };
+		781F9F32215002550049F7A0 /* VZControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZControllerTests.m; sourceTree = "<group>"; };
+		781F9F33215002550049F7A0 /* VZControllerStateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZControllerStateTest.m; sourceTree = "<group>"; };
+		781F9F35215002550049F7A0 /* VZListDataSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDataSourceTest.m; sourceTree = "<group>"; };
+		781F9F37215002550049F7A0 /* BXTWTripListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripListDataSource.h; sourceTree = "<group>"; };
+		781F9F38215002550049F7A0 /* BXTWTripListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripListDataSource.m; sourceTree = "<group>"; };
+		781F9F3A215002550049F7A0 /* VZItemAPITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZItemAPITest.m; sourceTree = "<group>"; };
+		781F9F3B215002550049F7A0 /* VZHTTPModelAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelAPITests.m; sourceTree = "<group>"; };
+		781F9F3C215002550049F7A0 /* VZHTTPModelConcurencyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelConcurencyTests.m; sourceTree = "<group>"; };
+		781F9F3D215002550049F7A0 /* VZModelStateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZModelStateTests.m; sourceTree = "<group>"; };
+		781F9F3F215002550049F7A0 /* BXTWTripListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripListModel.h; sourceTree = "<group>"; };
+		781F9F40215002550049F7A0 /* BXTWMockListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWMockListItem.h; sourceTree = "<group>"; };
+		781F9F41215002550049F7A0 /* BXTWTripItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripItem.m; sourceTree = "<group>"; };
+		781F9F42215002550049F7A0 /* BXTWTripListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripListItem.h; sourceTree = "<group>"; };
+		781F9F43215002550049F7A0 /* BXTWMockItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWMockItem.m; sourceTree = "<group>"; };
+		781F9F44215002550049F7A0 /* BXTWMockListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWMockListItem.m; sourceTree = "<group>"; };
+		781F9F45215002550049F7A0 /* BXTWTripListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripListModel.m; sourceTree = "<group>"; };
+		781F9F46215002550049F7A0 /* BXTWTripItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWTripItem.h; sourceTree = "<group>"; };
+		781F9F47215002550049F7A0 /* BXTWMockItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXTWMockItem.h; sourceTree = "<group>"; };
+		781F9F48215002550049F7A0 /* BXTWTripListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXTWTripListItem.m; sourceTree = "<group>"; };
+		781F9F49215002550049F7A0 /* VZHTTPModelCachePolicyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelCachePolicyTests.m; sourceTree = "<group>"; };
+		781F9F4A215002550049F7A0 /* VZHTTPListModelAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPListModelAPITests.m; sourceTree = "<group>"; };
+		781F9F4B215002550049F7A0 /* VZHTTPModelCacheTimeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHTTPModelCacheTimeTests.m; sourceTree = "<group>"; };
+		906DC0F13DD456A1DFB0E7CC /* libPods-VizzleTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VizzleTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA4F2DD310E26A83371D9AB4 /* Pods-VizzleTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VizzleTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VizzleTestTests/Pods-VizzleTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3E26D7D3ACDF5F398AE55B1 /* libPods-VizzleTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,192 +156,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CE6BF91D9B9A82AF538261C /* libPods-VizzleTestTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		456A52CA1C439D6100A79A9E /* Vizzle */ = {
+		14394352882D196D5F3DB991 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				456A52CB1C439D6100A79A9E /* adapter */,
-				456A52CE1C439D6100A79A9E /* components */,
-				456A530C1C439D6100A79A9E /* core */,
-				456A530E1C439D6100A79A9E /* model */,
-				456A53321C439D6100A79A9E /* Vizzle.h */,
+				37F263BB4EE63BCCB526FD0D /* libPods-VizzleTest.a */,
+				906DC0F13DD456A1DFB0E7CC /* libPods-VizzleTestTests.a */,
 			);
-			name = Vizzle;
-			path = ../../../Vizzle;
-			sourceTree = "<group>";
-		};
-		456A52CB1C439D6100A79A9E /* adapter */ = {
-			isa = PBXGroup;
-			children = (
-				456A52CC1C439D6100A79A9E /* VZAFRequest.h */,
-				456A52CD1C439D6100A79A9E /* VZAFRequest.m */,
-			);
-			path = adapter;
-			sourceTree = "<group>";
-		};
-		456A52CE1C439D6100A79A9E /* components */ = {
-			isa = PBXGroup;
-			children = (
-				456A52CF1C439D6100A79A9E /* base */,
-				456A52D21C439D6100A79A9E /* collection */,
-				456A52EF1C439D6100A79A9E /* list */,
-				456A53041C439D6100A79A9E /* protocols */,
-				456A53071C439D6100A79A9E /* refresh */,
-			);
-			path = components;
-			sourceTree = "<group>";
-		};
-		456A52CF1C439D6100A79A9E /* base */ = {
-			isa = PBXGroup;
-			children = (
-				456A52D01C439D6100A79A9E /* VZViewController.h */,
-				456A52D11C439D6100A79A9E /* VZViewController.m */,
-			);
-			path = base;
-			sourceTree = "<group>";
-		};
-		456A52D21C439D6100A79A9E /* collection */ = {
-			isa = PBXGroup;
-			children = (
-				456A52D31C439D6100A79A9E /* VZCollectionCell.h */,
-				456A52D41C439D6100A79A9E /* VZCollectionCell.m */,
-				456A52D51C439D6100A79A9E /* VZCollectionDefaultErrorCell.h */,
-				456A52D61C439D6100A79A9E /* VZCollectionDefaultErrorCell.m */,
-				456A52D71C439D6100A79A9E /* VZCollectionDefaultLoadingCell.h */,
-				456A52D81C439D6100A79A9E /* VZCollectionDefaultLoadingCell.m */,
-				456A52D91C439D6100A79A9E /* VZCollectionDefaultTextCell.h */,
-				456A52DA1C439D6100A79A9E /* VZCollectionDefaultTextCell.m */,
-				456A52DB1C439D6100A79A9E /* VZCollectionDefaultTextItem.h */,
-				456A52DC1C439D6100A79A9E /* VZCollectionDefaultTextItem.m */,
-				456A52DD1C439D6100A79A9E /* VZCollectionItem.h */,
-				456A52DE1C439D6100A79A9E /* VZCollectionItem.m */,
-				456A52DF1C439D6100A79A9E /* VZCollectionSupplementaryItem.h */,
-				456A52E01C439D6100A79A9E /* VZCollectionSupplementaryItem.m */,
-				456A52E11C439D6100A79A9E /* VZCollectionSupplementaryView.h */,
-				456A52E21C439D6100A79A9E /* VZCollectionSupplementaryView.m */,
-				456A52E31C439D6100A79A9E /* VZCollectionViewConfig.h */,
-				456A52E41C439D6100A79A9E /* VZCollectionViewController.h */,
-				456A52E51C439D6100A79A9E /* VZCollectionViewController.m */,
-				456A52E61C439D6100A79A9E /* VZCollectionViewDataSource.h */,
-				456A52E71C439D6100A79A9E /* VZCollectionViewDataSource.m */,
-				456A52E81C439D6100A79A9E /* VZCollectionViewDelegate.h */,
-				456A52E91C439D6100A79A9E /* VZCollectionViewDelegate.m */,
-				456A52EA1C439D6100A79A9E /* VZCollectionViewFlowLayout.h */,
-				456A52EB1C439D6100A79A9E /* VZCollectionViewFlowLayout.m */,
-				456A52EC1C439D6100A79A9E /* VZCollectionViewLayout.h */,
-				456A52ED1C439D6100A79A9E /* VZCollectionViewLayout.m */,
-				456A52EE1C439D6100A79A9E /* VZCollectionViewLayoutInterface.h */,
-			);
-			path = collection;
-			sourceTree = "<group>";
-		};
-		456A52EF1C439D6100A79A9E /* list */ = {
-			isa = PBXGroup;
-			children = (
-				456A52F01C439D6100A79A9E /* VZFooterViewFactory.h */,
-				456A52F11C439D6100A79A9E /* VZFooterViewFactory.m */,
-				456A52F21C439D6100A79A9E /* VZListCell.h */,
-				456A52F31C439D6100A79A9E /* VZListCell.m */,
-				456A52F41C439D6100A79A9E /* VZListDefaultErrorCell.h */,
-				456A52F51C439D6100A79A9E /* VZListDefaultErrorCell.m */,
-				456A52F61C439D6100A79A9E /* VZListDefaultLoadingCell.h */,
-				456A52F71C439D6100A79A9E /* VZListDefaultLoadingCell.m */,
-				456A52F81C439D6100A79A9E /* VZListDefaultTextCell.h */,
-				456A52F91C439D6100A79A9E /* VZListDefaultTextCell.m */,
-				456A52FA1C439D6100A79A9E /* VZListDefaultTextItem.h */,
-				456A52FB1C439D6100A79A9E /* VZListDefaultTextItem.m */,
-				456A52FC1C439D6100A79A9E /* VZListItem.h */,
-				456A52FD1C439D6100A79A9E /* VZListItem.m */,
-				456A52FE1C439D6100A79A9E /* VZListViewController.h */,
-				456A52FF1C439D6100A79A9E /* VZListViewController.m */,
-				456A53001C439D6100A79A9E /* VZListViewDataSource.h */,
-				456A53011C439D6100A79A9E /* VZListViewDataSource.m */,
-				456A53021C439D6100A79A9E /* VZListViewDelegate.h */,
-				456A53031C439D6100A79A9E /* VZListViewDelegate.m */,
-			);
-			path = list;
-			sourceTree = "<group>";
-		};
-		456A53041C439D6100A79A9E /* protocols */ = {
-			isa = PBXGroup;
-			children = (
-				456A53051C439D6100A79A9E /* VZCellActionInterface.h */,
-				456A53061C439D6100A79A9E /* VZPullToRefreshControlInterface.h */,
-			);
-			path = protocols;
-			sourceTree = "<group>";
-		};
-		456A53071C439D6100A79A9E /* refresh */ = {
-			isa = PBXGroup;
-			children = (
-				456A53081C439D6100A79A9E /* VZPullToRefreshControl.h */,
-				456A53091C439D6100A79A9E /* VZPullToRefreshControl.m */,
-				456A530A1C439D6100A79A9E /* VZPullToRefreshView.h */,
-				456A530B1C439D6100A79A9E /* VZPullToRefreshView.m */,
-			);
-			path = refresh;
-			sourceTree = "<group>";
-		};
-		456A530C1C439D6100A79A9E /* core */ = {
-			isa = PBXGroup;
-			children = (
-				456A530D1C439D6100A79A9E /* VZAssert.h */,
-			);
-			path = core;
-			sourceTree = "<group>";
-		};
-		456A530E1C439D6100A79A9E /* model */ = {
-			isa = PBXGroup;
-			children = (
-				456A530F1C439D6100A79A9E /* VZHTTPListModel.h */,
-				456A53101C439D6100A79A9E /* VZHTTPListModel.m */,
-				456A53111C439D6100A79A9E /* VZHTTPModel.h */,
-				456A53121C439D6100A79A9E /* VZHTTPModel.m */,
-				456A53131C439D6100A79A9E /* VZHTTPNetworkConfig.h */,
-				456A53141C439D6100A79A9E /* VZHTTPRequest.h */,
-				456A53151C439D6100A79A9E /* VZHTTPRequest.m */,
-				456A53161C439D6100A79A9E /* VZHTTPRequestInterface.h */,
-				456A53171C439D6100A79A9E /* VZHTTPResponseDataCache.h */,
-				456A53181C439D6100A79A9E /* VZHTTPResponseDataCache.m */,
-				456A53191C439D6100A79A9E /* VZHTTPResponseDataCacheInterface.h */,
-				456A531A1C439D6100A79A9E /* VZItem.h */,
-				456A531B1C439D6100A79A9E /* VZItem.m */,
-				456A531C1C439D6100A79A9E /* VZModel.h */,
-				456A531D1C439D6100A79A9E /* VZModel.m */,
-				456A531E1C439D6100A79A9E /* VZNetwork */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		456A531E1C439D6100A79A9E /* VZNetwork */ = {
-			isa = PBXGroup;
-			children = (
-				456A531F1C439D6100A79A9E /* NSString+VZHTTPNetworkUtil.h */,
-				456A53201C439D6100A79A9E /* NSString+VZHTTPNetworkUtil.m */,
-				456A53211C439D6100A79A9E /* VZHTTPConnectionOperation.h */,
-				456A53221C439D6100A79A9E /* VZHTTPConnectionOperation.m */,
-				456A53231C439D6100A79A9E /* VZHTTPNetwork.h */,
-				456A53241C439D6100A79A9E /* VZHTTPNetworkAgent.h */,
-				456A53251C439D6100A79A9E /* VZHTTPNetworkAgent.m */,
-				456A53261C439D6100A79A9E /* VZHTTPNetworkSecurity.h */,
-				456A53271C439D6100A79A9E /* VZHTTPNetworkSecurity.m */,
-				456A53281C439D6100A79A9E /* VZHTTPRequestGenerator.h */,
-				456A53291C439D6100A79A9E /* VZHTTPRequestGenerator.m */,
-				456A532A1C439D6100A79A9E /* VZHTTPResponseParser.h */,
-				456A532B1C439D6100A79A9E /* VZHTTPResponseParser.m */,
-				456A532C1C439D6100A79A9E /* VZHTTPRunloopOperation.h */,
-				456A532D1C439D6100A79A9E /* VZHTTPRunloopOperation.m */,
-				456A532E1C439D6100A79A9E /* VZHTTPURLConnectionOperation.h */,
-				456A532F1C439D6100A79A9E /* VZHTTPURLConnectionOperation.m */,
-				456A53301C439D6100A79A9E /* VZHTTPURLResponseCache.h */,
-				456A53311C439D6100A79A9E /* VZHTTPURLResponseCache.m */,
-			);
-			path = VZNetwork;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		456A537D1C439DCF00A79A9E /* VizzleTest */ = {
@@ -428,48 +196,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		456A53931C439DFF00A79A9E /* datasource */ = {
-			isa = PBXGroup;
-			children = (
-				456A53941C439DFF00A79A9E /* mock */,
-				456A53971C439DFF00A79A9E /* VZListDataSourceTest.m */,
-			);
-			name = datasource;
-			path = ../../datasource;
-			sourceTree = "<group>";
-		};
-		456A53941C439DFF00A79A9E /* mock */ = {
-			isa = PBXGroup;
-			children = (
-				456A53951C439DFF00A79A9E /* BXTWTripListDataSource.h */,
-				456A53961C439DFF00A79A9E /* BXTWTripListDataSource.m */,
-			);
-			path = mock;
-			sourceTree = "<group>";
-		};
-		4592BA5A1BB8CD73000214EF /* mock */ = {
-			isa = PBXGroup;
-			children = (
-				4592BA5B1BB8CD73000214EF /* BXTWMockItem.h */,
-				4592BA5C1BB8CD73000214EF /* BXTWMockItem.m */,
-				4592BA5D1BB8CD73000214EF /* BXTWMockListItem.h */,
-				4592BA5E1BB8CD73000214EF /* BXTWMockListItem.m */,
-				4592BA5F1BB8CD73000214EF /* BXTWTripItem.h */,
-				4592BA601BB8CD73000214EF /* BXTWTripItem.m */,
-				4592BA611BB8CD73000214EF /* BXTWTripListItem.h */,
-				4592BA621BB8CD73000214EF /* BXTWTripListItem.m */,
-				4592BA631BB8CD73000214EF /* BXTWTripListModel.h */,
-				4592BA641BB8CD73000214EF /* BXTWTripListModel.m */,
-			);
-			path = mock;
-			sourceTree = "<group>";
-		};
 		45B82D1F1B579DF40053D51C = {
 			isa = PBXGroup;
 			children = (
 				45B82D441B579DF40053D51C /* VizzleTestTests */,
 				456A537D1C439DCF00A79A9E /* VizzleTest */,
 				45B82D291B579DF40053D51C /* Products */,
+				F18C2CB47E5BA37FAE0EDCC9 /* Pods */,
+				14394352882D196D5F3DB991 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -485,10 +219,10 @@
 		45B82D441B579DF40053D51C /* VizzleTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				456A52CA1C439D6100A79A9E /* Vizzle */,
-				456A53931C439DFF00A79A9E /* datasource */,
-				45B82D511B579E740053D51C /* controller */,
-				45B82D531B579E740053D51C /* model */,
+				781F9F31215002550049F7A0 /* controller */,
+				781F9F34215002550049F7A0 /* datasource */,
+				781F9F39215002550049F7A0 /* model */,
+				781F9EEC2150013A0049F7A0 /* Vizzle */,
 				45B82D451B579DF40053D51C /* Supporting Files */,
 			);
 			path = VizzleTestTests;
@@ -502,30 +236,137 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		45B82D511B579E740053D51C /* controller */ = {
+		781F9EEC2150013A0049F7A0 /* Vizzle */ = {
 			isa = PBXGroup;
 			children = (
-				45B82D521B579E740053D51C /* VZControllerTests.m */,
-				4563A0571BA17C5100A2F72B /* VZControllerStateTest.m */,
+				781F9EED2150013A0049F7A0 /* core */,
+				781F9F1C2150013A0049F7A0 /* Vizzle.h */,
 			);
-			name = controller;
-			path = ../../controller;
+			name = Vizzle;
+			path = ../../../Vizzle;
 			sourceTree = "<group>";
 		};
-		45B82D531B579E740053D51C /* model */ = {
+		781F9EED2150013A0049F7A0 /* core */ = {
 			isa = PBXGroup;
 			children = (
-				4592BA5A1BB8CD73000214EF /* mock */,
-				45B82D541B579E740053D51C /* VZModelStateTests.m */,
-				45B82DB61B57A4DB0053D51C /* VZHTTPModelAPITests.m */,
-				45B82DBA1B58DC990053D51C /* VZHTTPListModelAPITests.m */,
-				45559FAB1B596572009BD1AA /* VZHTTPModelCachePolicyTests.m */,
-				45B0970B1B5BB88A008B8B60 /* VZHTTPModelCacheTimeTests.m */,
-				45B0970D1B5BB89E008B8B60 /* VZHTTPModelConcurencyTests.m */,
-				45B0970F1B5E0CA0008B8B60 /* VZItemAPITest.m */,
+				781F9EEE2150013A0049F7A0 /* VZItem.m */,
+				781F9EEF2150013A0049F7A0 /* VZHTTPRequestInterface.h */,
+				781F9EF02150013A0049F7A0 /* VZHTTPResponseDataCache.m */,
+				781F9EF12150013A0049F7A0 /* VZListViewDelegate+UIRefreshControl.m */,
+				781F9EF22150013A0049F7A0 /* VZHTTPListModel.m */,
+				781F9EF32150013A0049F7A0 /* VZFooterViewFactory.h */,
+				781F9EF42150013A0049F7A0 /* VZListViewDelegate.h */,
+				781F9EF52150013A0049F7A0 /* VZPullToRefreshControl.m */,
+				781F9EF62150013A0049F7A0 /* VZPullToRefreshControlInterface.h */,
+				781F9EF72150013A0049F7A0 /* VZHTTPModel.h */,
+				781F9EF82150013A0049F7A0 /* VZHTTPRequest.h */,
+				781F9EF92150013A0049F7A0 /* VZListDefaultTextCell.h */,
+				781F9EFA2150013A0049F7A0 /* VZPullToRefreshView.h */,
+				781F9EFB2150013A0049F7A0 /* VZListDefaultTextItem.h */,
+				781F9EFC2150013A0049F7A0 /* VZListDefaultErrorCell.h */,
+				781F9EFD2150013A0049F7A0 /* VZListViewDataSource.m */,
+				781F9EFE2150013A0049F7A0 /* VZModel.h */,
+				781F9EFF2150013A0049F7A0 /* VZListViewController.m */,
+				781F9F002150013A0049F7A0 /* VZListDefaultLoadingCell.m */,
+				781F9F012150013A0049F7A0 /* VZViewController.m */,
+				781F9F022150013A0049F7A0 /* VZListItem.h */,
+				781F9F032150013A0049F7A0 /* VZListCell.h */,
+				781F9F042150013A0049F7A0 /* VZListViewDelegate+UIRefreshControl.h */,
+				781F9F052150013A0049F7A0 /* VZHTTPNetworkConfig.h */,
+				781F9F062150013A0049F7A0 /* VZHTTPResponseDataCache.h */,
+				781F9F072150013A0049F7A0 /* VZItem.h */,
+				781F9F082150013A0049F7A0 /* VZAssert.h */,
+				781F9F092150013A0049F7A0 /* VZHTTPModel.m */,
+				781F9F0A2150013A0049F7A0 /* VZPullToRefreshControl.h */,
+				781F9F0B2150013A0049F7A0 /* VZListViewDelegate.m */,
+				781F9F0C2150013A0049F7A0 /* VZCellActionInterface.h */,
+				781F9F0D2150013A0049F7A0 /* VZHTTPListModel.h */,
+				781F9F0E2150013A0049F7A0 /* VZFooterViewFactory.m */,
+				781F9F0F2150013A0049F7A0 /* VZModel.m */,
+				781F9F102150013A0049F7A0 /* VZListViewDataSource.h */,
+				781F9F112150013A0049F7A0 /* VZListDefaultErrorCell.m */,
+				781F9F122150013A0049F7A0 /* VZPullToRefreshView.m */,
+				781F9F132150013A0049F7A0 /* VZListDefaultTextItem.m */,
+				781F9F142150013A0049F7A0 /* VZListDefaultTextCell.m */,
+				781F9F152150013A0049F7A0 /* VZHTTPRequest.m */,
+				781F9F162150013A0049F7A0 /* VZListCell.m */,
+				781F9F172150013A0049F7A0 /* VZListItem.m */,
+				781F9F182150013A0049F7A0 /* VZHTTPResponseDataCacheInterface.h */,
+				781F9F192150013A0049F7A0 /* VZViewController.h */,
+				781F9F1A2150013A0049F7A0 /* VZListDefaultLoadingCell.h */,
+				781F9F1B2150013A0049F7A0 /* VZListViewController.h */,
 			);
-			name = model;
-			path = ../../model;
+			path = core;
+			sourceTree = "<group>";
+		};
+		781F9F31215002550049F7A0 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				781F9F32215002550049F7A0 /* VZControllerTests.m */,
+				781F9F33215002550049F7A0 /* VZControllerStateTest.m */,
+			);
+			path = controller;
+			sourceTree = SOURCE_ROOT;
+		};
+		781F9F34215002550049F7A0 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				781F9F35215002550049F7A0 /* VZListDataSourceTest.m */,
+				781F9F36215002550049F7A0 /* mock */,
+			);
+			path = datasource;
+			sourceTree = SOURCE_ROOT;
+		};
+		781F9F36215002550049F7A0 /* mock */ = {
+			isa = PBXGroup;
+			children = (
+				781F9F37215002550049F7A0 /* BXTWTripListDataSource.h */,
+				781F9F38215002550049F7A0 /* BXTWTripListDataSource.m */,
+			);
+			path = mock;
+			sourceTree = "<group>";
+		};
+		781F9F39215002550049F7A0 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				781F9F3E215002550049F7A0 /* mock */,
+				781F9F3A215002550049F7A0 /* VZItemAPITest.m */,
+				781F9F3B215002550049F7A0 /* VZHTTPModelAPITests.m */,
+				781F9F3C215002550049F7A0 /* VZHTTPModelConcurencyTests.m */,
+				781F9F3D215002550049F7A0 /* VZModelStateTests.m */,
+				781F9F49215002550049F7A0 /* VZHTTPModelCachePolicyTests.m */,
+				781F9F4A215002550049F7A0 /* VZHTTPListModelAPITests.m */,
+				781F9F4B215002550049F7A0 /* VZHTTPModelCacheTimeTests.m */,
+			);
+			path = model;
+			sourceTree = SOURCE_ROOT;
+		};
+		781F9F3E215002550049F7A0 /* mock */ = {
+			isa = PBXGroup;
+			children = (
+				781F9F3F215002550049F7A0 /* BXTWTripListModel.h */,
+				781F9F45215002550049F7A0 /* BXTWTripListModel.m */,
+				781F9F40215002550049F7A0 /* BXTWMockListItem.h */,
+				781F9F44215002550049F7A0 /* BXTWMockListItem.m */,
+				781F9F46215002550049F7A0 /* BXTWTripItem.h */,
+				781F9F41215002550049F7A0 /* BXTWTripItem.m */,
+				781F9F42215002550049F7A0 /* BXTWTripListItem.h */,
+				781F9F48215002550049F7A0 /* BXTWTripListItem.m */,
+				781F9F43215002550049F7A0 /* BXTWMockItem.m */,
+				781F9F47215002550049F7A0 /* BXTWMockItem.h */,
+			);
+			path = mock;
+			sourceTree = "<group>";
+		};
+		F18C2CB47E5BA37FAE0EDCC9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67070F71CCA78A3342D75A3A /* Pods-VizzleTest.debug.xcconfig */,
+				5FEC905CCD8A6259807D3D68 /* Pods-VizzleTest.release.xcconfig */,
+				FA4F2DD310E26A83371D9AB4 /* Pods-VizzleTestTests.debug.xcconfig */,
+				4EE5314BF66D775E6882A3DD /* Pods-VizzleTestTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -535,6 +376,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 456A53901C439DCF00A79A9E /* Build configuration list for PBXNativeTarget "VizzleTest" */;
 			buildPhases = (
+				9EC31A029A5FE5F0EF17FA85 /* [CP] Check Pods Manifest.lock */,
 				456A53781C439DCF00A79A9E /* Sources */,
 				456A53791C439DCF00A79A9E /* Frameworks */,
 				456A537A1C439DCF00A79A9E /* Resources */,
@@ -552,6 +394,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B82D4E1B579DF50053D51C /* Build configuration list for PBXNativeTarget "VizzleTestTests" */;
 			buildPhases = (
+				2354B74EABF8F91FCBD63DB8 /* [CP] Check Pods Manifest.lock */,
 				45B82D3D1B579DF40053D51C /* Sources */,
 				45B82D3E1B579DF40053D51C /* Frameworks */,
 				45B82D3F1B579DF40053D51C /* Resources */,
@@ -622,6 +465,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2354B74EABF8F91FCBD63DB8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VizzleTestTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EC31A029A5FE5F0EF17FA85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VizzleTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		456A53781C439DCF00A79A9E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -637,64 +519,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				456A53991C439DFF00A79A9E /* VZListDataSourceTest.m in Sources */,
-				456A53331C439D6100A79A9E /* VZAFRequest.m in Sources */,
-				456A53451C439D6100A79A9E /* VZListDefaultLoadingCell.m in Sources */,
-				456A53531C439D6100A79A9E /* VZModel.m in Sources */,
-				45B82DBB1B58DC990053D51C /* VZHTTPListModelAPITests.m in Sources */,
-				456A53591C439D6100A79A9E /* VZHTTPResponseParser.m in Sources */,
-				456A53421C439D6100A79A9E /* VZFooterViewFactory.m in Sources */,
-				456A53461C439D6100A79A9E /* VZListDefaultTextCell.m in Sources */,
-				456A535C1C439D6100A79A9E /* VZHTTPURLResponseCache.m in Sources */,
-				456A534B1C439D6100A79A9E /* VZListViewDelegate.m in Sources */,
-				456A53381C439D6100A79A9E /* VZCollectionDefaultTextCell.m in Sources */,
-				456A53541C439D6100A79A9E /* NSString+VZHTTPNetworkUtil.m in Sources */,
-				45B097101B5E0CA0008B8B60 /* VZItemAPITest.m in Sources */,
-				456A533B1C439D6100A79A9E /* VZCollectionSupplementaryItem.m in Sources */,
-				456A53501C439D6100A79A9E /* VZHTTPRequest.m in Sources */,
-				456A53471C439D6100A79A9E /* VZListDefaultTextItem.m in Sources */,
-				4592BA691BB8CD73000214EF /* BXTWMockListItem.m in Sources */,
-				4592BA681BB8CD73000214EF /* BXTWMockItem.m in Sources */,
-				45B0970E1B5BB89E008B8B60 /* VZHTTPModelConcurencyTests.m in Sources */,
-				456A53341C439D6100A79A9E /* VZViewController.m in Sources */,
-				4592BA6B1BB8CD73000214EF /* BXTWTripListItem.m in Sources */,
-				456A53401C439D6100A79A9E /* VZCollectionViewFlowLayout.m in Sources */,
-				456A53411C439D6100A79A9E /* VZCollectionViewLayout.m in Sources */,
-				456A53521C439D6100A79A9E /* VZItem.m in Sources */,
-				456A53551C439D6100A79A9E /* VZHTTPConnectionOperation.m in Sources */,
-				4592BA6A1BB8CD73000214EF /* BXTWTripItem.m in Sources */,
-				456A533D1C439D6100A79A9E /* VZCollectionViewController.m in Sources */,
-				456A533C1C439D6100A79A9E /* VZCollectionSupplementaryView.m in Sources */,
-				45B82DB71B57A4DB0053D51C /* VZHTTPModelAPITests.m in Sources */,
-				456A53581C439D6100A79A9E /* VZHTTPRequestGenerator.m in Sources */,
-				45B0970C1B5BB88A008B8B60 /* VZHTTPModelCacheTimeTests.m in Sources */,
-				4563A0581BA17C5100A2F72B /* VZControllerStateTest.m in Sources */,
-				456A533E1C439D6100A79A9E /* VZCollectionViewDataSource.m in Sources */,
-				456A534F1C439D6100A79A9E /* VZHTTPModel.m in Sources */,
-				456A53981C439DFF00A79A9E /* BXTWTripListDataSource.m in Sources */,
-				456A53481C439D6100A79A9E /* VZListItem.m in Sources */,
-				456A53571C439D6100A79A9E /* VZHTTPNetworkSecurity.m in Sources */,
-				456A535A1C439D6100A79A9E /* VZHTTPRunloopOperation.m in Sources */,
-				456A53491C439D6100A79A9E /* VZListViewController.m in Sources */,
-				456A53511C439D6100A79A9E /* VZHTTPResponseDataCache.m in Sources */,
-				45559FAC1B596572009BD1AA /* VZHTTPModelCachePolicyTests.m in Sources */,
-				456A534D1C439D6100A79A9E /* VZPullToRefreshView.m in Sources */,
-				456A535B1C439D6100A79A9E /* VZHTTPURLConnectionOperation.m in Sources */,
-				456A533F1C439D6100A79A9E /* VZCollectionViewDelegate.m in Sources */,
-				456A53431C439D6100A79A9E /* VZListCell.m in Sources */,
-				456A533A1C439D6100A79A9E /* VZCollectionItem.m in Sources */,
-				45B82D551B579E740053D51C /* VZControllerTests.m in Sources */,
-				456A53361C439D6100A79A9E /* VZCollectionDefaultErrorCell.m in Sources */,
-				456A53441C439D6100A79A9E /* VZListDefaultErrorCell.m in Sources */,
-				456A53371C439D6100A79A9E /* VZCollectionDefaultLoadingCell.m in Sources */,
-				456A534A1C439D6100A79A9E /* VZListViewDataSource.m in Sources */,
-				45B82D561B579E740053D51C /* VZModelStateTests.m in Sources */,
-				4592BA6C1BB8CD73000214EF /* BXTWTripListModel.m in Sources */,
-				456A53391C439D6100A79A9E /* VZCollectionDefaultTextItem.m in Sources */,
-				456A53561C439D6100A79A9E /* VZHTTPNetworkAgent.m in Sources */,
-				456A534E1C439D6100A79A9E /* VZHTTPListModel.m in Sources */,
-				456A53351C439D6100A79A9E /* VZCollectionCell.m in Sources */,
-				456A534C1C439D6100A79A9E /* VZPullToRefreshControl.m in Sources */,
+				781F9F2B2150013A0049F7A0 /* VZPullToRefreshView.m in Sources */,
+				781F9F58215002550049F7A0 /* BXTWTripListItem.m in Sources */,
+				781F9F5A215002550049F7A0 /* VZHTTPListModelAPITests.m in Sources */,
+				781F9F272150013A0049F7A0 /* VZListViewDelegate.m in Sources */,
+				781F9F202150013A0049F7A0 /* VZHTTPListModel.m in Sources */,
+				781F9F4D215002550049F7A0 /* VZControllerStateTest.m in Sources */,
+				781F9F302150013A0049F7A0 /* VZListItem.m in Sources */,
+				781F9F1D2150013A0049F7A0 /* VZItem.m in Sources */,
+				781F9F4F215002550049F7A0 /* BXTWTripListDataSource.m in Sources */,
+				781F9F53215002550049F7A0 /* VZModelStateTests.m in Sources */,
+				781F9F1E2150013A0049F7A0 /* VZHTTPResponseDataCache.m in Sources */,
+				781F9F252150013A0049F7A0 /* VZViewController.m in Sources */,
+				781F9F232150013A0049F7A0 /* VZListViewController.m in Sources */,
+				781F9F55215002550049F7A0 /* BXTWMockItem.m in Sources */,
+				781F9F282150013A0049F7A0 /* VZFooterViewFactory.m in Sources */,
+				781F9F2D2150013A0049F7A0 /* VZListDefaultTextCell.m in Sources */,
+				781F9F51215002550049F7A0 /* VZHTTPModelAPITests.m in Sources */,
+				781F9F56215002550049F7A0 /* BXTWMockListItem.m in Sources */,
+				781F9F50215002550049F7A0 /* VZItemAPITest.m in Sources */,
+				781F9F4C215002550049F7A0 /* VZControllerTests.m in Sources */,
+				781F9F242150013A0049F7A0 /* VZListDefaultLoadingCell.m in Sources */,
+				781F9F59215002550049F7A0 /* VZHTTPModelCachePolicyTests.m in Sources */,
+				781F9F2A2150013A0049F7A0 /* VZListDefaultErrorCell.m in Sources */,
+				781F9F292150013A0049F7A0 /* VZModel.m in Sources */,
+				781F9F4E215002550049F7A0 /* VZListDataSourceTest.m in Sources */,
+				781F9F2E2150013A0049F7A0 /* VZHTTPRequest.m in Sources */,
+				781F9F222150013A0049F7A0 /* VZListViewDataSource.m in Sources */,
+				781F9F54215002550049F7A0 /* BXTWTripItem.m in Sources */,
+				781F9F52215002550049F7A0 /* VZHTTPModelConcurencyTests.m in Sources */,
+				781F9F5B215002550049F7A0 /* VZHTTPModelCacheTimeTests.m in Sources */,
+				781F9F2F2150013A0049F7A0 /* VZListCell.m in Sources */,
+				781F9F2C2150013A0049F7A0 /* VZListDefaultTextItem.m in Sources */,
+				781F9F1F2150013A0049F7A0 /* VZListViewDelegate+UIRefreshControl.m in Sources */,
+				781F9F212150013A0049F7A0 /* VZPullToRefreshControl.m in Sources */,
+				781F9F262150013A0049F7A0 /* VZHTTPModel.m in Sources */,
+				781F9F57215002550049F7A0 /* BXTWTripListModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +582,7 @@
 /* Begin XCBuildConfiguration section */
 		456A53911C439DCF00A79A9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67070F71CCA78A3342D75A3A /* Pods-VizzleTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -736,6 +597,7 @@
 		};
 		456A53921C439DCF00A79A9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FEC905CCD8A6259807D3D68 /* Pods-VizzleTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VizzleTest/Info.plist;
@@ -830,6 +692,7 @@
 		};
 		45B82D4F1B579DF50053D51C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA4F2DD310E26A83371D9AB4 /* Pods-VizzleTestTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -849,6 +712,7 @@
 		};
 		45B82D501B579DF50053D51C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EE5314BF66D775E6882A3DD /* Pods-VizzleTestTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -872,6 +736,7 @@
 				456A53921C439DCF00A79A9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45B82D231B579DF40053D51C /* Build configuration list for PBXProject "VizzleTest" */ = {
 			isa = XCConfigurationList;
