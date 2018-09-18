@@ -41,12 +41,6 @@
         CGSize textSize = CGSizeMake(UIScreen.mainScreen.bounds.size.width-24, CGFLOAT_MAX);
         CGRect bodySize = [item.body  boundingRectWithSize:textSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:12], NSForegroundColorAttributeName: [UIColor darkGrayColor]} context:nil];
         CGRect titleSize = [item.title boundingRectWithSize:textSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16]} context:nil];
-        
-//#pragma clang diagnostic push
-//#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-//        CGSize sizeToFit = [text sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake(220.0f, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
-//#pragma clang diagnostic pop
-//        item.textHeight = sizeToFit.height;
         item.titleHeight = titleSize.size.height;
         item.bodyHeight = bodySize.size.height;
         item.itemHeight = item.titleHeight + item.bodyHeight + 30.0f;
@@ -62,10 +56,6 @@
     VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
     config.cachePolicy=VZHTTPNetworkURLCachePolicyDefault;
     return config;
-}
-
-- (NSString* )customRequestClassName{
-    return @"VZAFRequest";
 }
 
 - (NSString* )cacheKey
